@@ -1,0 +1,90 @@
+# Table of contents
+
+* [Welcome](README.md)
+
+## Bruti
+
+* [Drupal QA Setup](bruti/untitled/README.md)
+  * [Regression Test Script \(Drupal\)](bruti/untitled/regression-test-script-drupal.md)
+
+## David
+
+* [Code of Conduct](david/untitled.md)
+* [Contributing](david/contributing.md)
+
+## Getting started
+
+* [Life on the Digital team](getting-started/life-on-the-digital-team/README.md)
+  * [Software engineering working agreement](getting-started/life-on-the-digital-team/untitled.md)
+  * [Roles and responsibilities](getting-started/life-on-the-digital-team/roles-and-responsibilities.md)
+  * [Meetings](getting-started/life-on-the-digital-team/meetings.md)
+  * [Communication](getting-started/life-on-the-digital-team/communication.md)
+* [Technology stack](getting-started/technology-stack/README.md)
+  * [Web applications](getting-started/technology-stack/web-applications.md)
+* [Using GitBook](getting-started/using-gitbook.md)
+
+## Standards and best practices
+
+* [General](standards-and-best-practices-1/workflow.md)
+* [Code reviews](standards-and-best-practices-1/code-reviews.md)
+* [Project management](standards-and-best-practices-1/project-management.md)
+* [Git / GitHub](standards-and-best-practices-1/git-and-github.md)
+* [Code quality](standards-and-best-practices-1/code-quality/README.md)
+  * [Automated tests and static analysis](standards-and-best-practices-1/code-quality/automated-tests-and-static-analysis.md)
+  * [Style guides](standards-and-best-practices-1/code-quality/style-guides/README.md)
+    * [PHP](standards-and-best-practices-1/code-quality/style-guides/php.md)
+    * [React/TypeScript](standards-and-best-practices-1/code-quality/style-guides/react-typescript.md)
+* [Documentation](standards-and-best-practices-1/documentation.md)
+* [Deployment](standards-and-best-practices-1/deployments.md)
+
+## Guides
+
+* [GitHub](guides/github/README.md)
+  * [How To Add a Repository to GitHub](guides/github/adding-repositories-to-github-repos.md)
+* [Integrating with Boston.gov](guides/resources.md)
+* [Amazon Web Services](guides/amazon-web-services/README.md)
+  * [Encrypting service configuration for S3](guides/amazon-web-services/encrypting-service-configuration.md)
+* [Testing/QA guides](https://boston.gitbook.io/digital-documentation-private/testing-qa-guides)
+* [Drupal 8](guides/drupal-8/README.md)
+  * [File Migration Strategy](guides/drupal-8/file-migration-strategy.md)
+  * [Development environment](guides/drupal-8/development-environment/README.md)
+    * [VSCode IDE Setup](guides/drupal-8/development-environment/vscode-ide-setup.md)
+    * [Using Windows](guides/drupal-8/development-environment/using-windows.md)
+  * [Installation instructions](guides/drupal-8/installation-instructions.md)
+  * [On Demand Instances](guides/drupal-8/on-demand-instances.md)
+  * [Drupal 8 micro-services \(API end-points\)](guides/drupal-8/drupal-8-micro-services-api-end-points/README.md)
+    * [Site Alerts](guides/drupal-8/drupal-8-micro-services-api-end-points/site-alerts/README.md)
+      * [CodeRed Subscription](guides/drupal-8/drupal-8-micro-services-api-end-points/site-alerts/codered-subscription.md)
+    * [Public Notices](guides/drupal-8/drupal-8-micro-services-api-end-points/public-notices.md)
+    * [Cityscore](guides/drupal-8/drupal-8-micro-services-api-end-points/cityscore.md)
+  * [Site Development Notes](guides/drupal-8/site-development-notes/README.md)
+    * [Custom Modules](guides/drupal-8/site-development-notes/custom-modules/README.md)
+      * [Custom Content Types](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/README.md)
+        * [D7 -&gt; D8 Conversion](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/conversions.md)
+        * [Content Editor UX](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/content-editor-ux/README.md)
+          * [Content Moderation](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/content-editor-ux/content-moderation.md)
+        * [In-page Navigation Menu](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/in-page-navigation-menu.md)
+      * [Custom Paragraphs](guides/drupal-8/site-development-notes/custom-modules/custom-paragraphs/README.md)
+        * [D7 -&gt; D8 Conversion](guides/drupal-8/site-development-notes/custom-modules/custom-paragraphs/conversions.md)
+      * [Custom Taxonomies](guides/drupal-8/site-development-notes/custom-modules/custom-taxonomies.md)
+    * [Custom Backend](guides/drupal-8/site-development-notes/custom-backend.md)
+  * [Continuous Deployment Process](guides/drupal-8/untitled-1.md)
+* [Drupal 7](guides/drupal-7/README.md)
+  * [Deployment \(2019\)](guides/drupal-7/deployment-2019.md)
+  * [Drupal Micro Services \(API End Points\)](guides/drupal-7/end-points/README.md)
+    * [Cityscore](guides/drupal-7/end-points/cityscore/README.md)
+      * [Knowledge Base](guides/drupal-7/end-points/cityscore/knowledgebase..md)
+    * [Public Notices](guides/drupal-7/end-points/public-notices.md)
+
+## Other resources
+
+* [External learning resources](other-resources-1/external-learning-resources.md)
+* [Reference links](other-resources-1/reference-links.md)
+* [Applications and extensions](other-resources-1/applications-extensions.md)
+
+## Projects
+
+* [Fleet pattern library](projects/fleet-pattern-library.md)
+* [Birth certificates](projects/birth-certificates.md)
+* [Boards and commissions](projects/boards-and-commissions.md)
+
