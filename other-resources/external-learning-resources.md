@@ -4,7 +4,7 @@ description: >-
   topics.
 ---
 
-# External learning resources
+# Learning resources
 
 ## Accessibility and inclusive design
 

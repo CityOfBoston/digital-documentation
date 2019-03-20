@@ -2,16 +2,6 @@
 
 * [Welcome](README.md)
 
-## Bruti
-
-* [Drupal QA Setup](bruti/untitled/README.md)
-  * [Regression Test Script \(Drupal\)](bruti/untitled/regression-test-script-drupal.md)
-
-## David
-
-* [Code of Conduct](david/untitled.md)
-* [Contributing](david/contributing.md)
-
 ## Getting started
 
 * [Life on the Digital team](getting-started/life-on-the-digital-team/README.md)
@@ -34,7 +24,7 @@
   * [Style guides](standards-and-best-practices/code-quality/style-guides/README.md)
     * [PHP](standards-and-best-practices/code-quality/style-guides/php.md)
     * [React/TypeScript](standards-and-best-practices/code-quality/style-guides/react-typescript.md)
-* [Documentation](standards-and-best-practices/documentation.md)
+* [Technical documentation](standards-and-best-practices/technical-documentation.md)
 * [Deployment](standards-and-best-practices/deployments.md)
 
 ## Guides
@@ -76,15 +66,26 @@
       * [Knowledge Base](guides/drupal-7/end-points/cityscore/knowledgebase..md)
     * [Public Notices](guides/drupal-7/end-points/public-notices.md)
 
-## Other resources
-
-* [External learning resources](other-resources/external-learning-resources.md)
-* [Reference links](other-resources/reference-links.md)
-* [Applications and extensions](other-resources/applications-extensions.md)
-
 ## Projects
 
 * [Fleet pattern library](projects/fleet-pattern-library.md)
 * [Birth certificates](projects/birth-certificates.md)
-* [Boards and commissions](projects/boards-and-commissions.md)
+* [Inactive projects](projects/inactive-projects/README.md)
+  * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
+
+## External resources
+
+* [Learning resources](other-resources/external-learning-resources.md)
+* [Reference links](other-resources/reference-links.md)
+* [Applications and extensions](other-resources/applications-extensions.md)
+
+## Bruti
+
+* [Drupal QA Setup](bruti/untitled/README.md)
+  * [Regression Test Script \(Drupal\)](bruti/untitled/regression-test-script-drupal.md)
+
+## David
+
+* [Code of Conduct](david/untitled.md)
+* [Contributing](david/contributing.md)
 
