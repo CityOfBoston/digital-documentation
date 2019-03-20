@@ -7,6 +7,7 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 ## General
 
 * [Awesome falsehoods](https://github.com/kdeldycke/awesome-falsehood)
+* [Make a README](https://www.makeareadme.com/) - _good guide to what should be included_
 
 ## Accessibility \(a11y\)
 

@@ -21,6 +21,7 @@
 * [Git / GitHub](standards-and-best-practices/git-and-github.md)
 * [Code quality](standards-and-best-practices/code-quality/README.md)
   * [Automated tests and static analysis](standards-and-best-practices/code-quality/automated-tests-and-static-analysis.md)
+  * [Code comments](standards-and-best-practices/code-quality/code-comments.md)
   * [Style guides](standards-and-best-practices/code-quality/style-guides/README.md)
     * [PHP](standards-and-best-practices/code-quality/style-guides/php.md)
     * [React/TypeScript](standards-and-best-practices/code-quality/style-guides/react-typescript.md)
