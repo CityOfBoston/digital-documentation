@@ -1,9 +1,3 @@
----
-description: >-
-  Product and engineering information for projects the Digital team is
-  developing or supporting.
----
-
 # Welcome
 
 ![City of Boston&#x2019;s Digital Team](.gitbook/assets/image.png)
