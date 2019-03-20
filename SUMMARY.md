@@ -25,17 +25,17 @@
 
 ## Standards and best practices
 
-* [General](standards-and-best-practices-1/workflow.md)
-* [Code reviews](standards-and-best-practices-1/code-reviews.md)
-* [Project management](standards-and-best-practices-1/project-management.md)
-* [Git / GitHub](standards-and-best-practices-1/git-and-github.md)
-* [Code quality](standards-and-best-practices-1/code-quality/README.md)
-  * [Automated tests and static analysis](standards-and-best-practices-1/code-quality/automated-tests-and-static-analysis.md)
-  * [Style guides](standards-and-best-practices-1/code-quality/style-guides/README.md)
-    * [PHP](standards-and-best-practices-1/code-quality/style-guides/php.md)
-    * [React/TypeScript](standards-and-best-practices-1/code-quality/style-guides/react-typescript.md)
-* [Documentation](standards-and-best-practices-1/documentation.md)
-* [Deployment](standards-and-best-practices-1/deployments.md)
+* [General](standards-and-best-practices/general.md)
+* [Code reviews](standards-and-best-practices/code-reviews.md)
+* [Project management](standards-and-best-practices/project-management.md)
+* [Git / GitHub](standards-and-best-practices/git-and-github.md)
+* [Code quality](standards-and-best-practices/code-quality/README.md)
+  * [Automated tests and static analysis](standards-and-best-practices/code-quality/automated-tests-and-static-analysis.md)
+  * [Style guides](standards-and-best-practices/code-quality/style-guides/README.md)
+    * [PHP](standards-and-best-practices/code-quality/style-guides/php.md)
+    * [React/TypeScript](standards-and-best-practices/code-quality/style-guides/react-typescript.md)
+* [Documentation](standards-and-best-practices/documentation.md)
+* [Deployment](standards-and-best-practices/deployments.md)
 
 ## Guides
 
@@ -78,9 +78,9 @@
 
 ## Other resources
 
-* [External learning resources](other-resources-1/external-learning-resources.md)
-* [Reference links](other-resources-1/reference-links.md)
-* [Applications and extensions](other-resources-1/applications-extensions.md)
+* [External learning resources](other-resources/external-learning-resources.md)
+* [Reference links](other-resources/reference-links.md)
+* [Applications and extensions](other-resources/applications-extensions.md)
 
 ## Projects
 

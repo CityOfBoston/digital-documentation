@@ -4,7 +4,7 @@ description: Standards we follow as developers.
 
 # General
 
-## Version control
+##  Version control
 
 * All new software is checked in to GitHub.
 * Legacy software that needs maintenance gets moved to GitHub.
