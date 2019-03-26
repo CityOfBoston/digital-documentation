@@ -7,20 +7,21 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 ## General
 
 * [Awesome falsehoods](https://github.com/kdeldycke/awesome-falsehood)
-* [Make a README](https://www.makeareadme.com/) - _good guide to what should be included_
+* [Make a README](https://www.makeareadme.com/) - good guide to what should be included
 
 ## Accessibility \(a11y\)
 
 ### General
 
 * [Inclusive Design Principles](https://inclusivedesignprinciples.org/)
-* [Testing for accessibility](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility) - _how to detect common issues_
-* [Web Accessibility Content Guidelines _\(WCAG\)_](https://www.w3.org/WAI/standards-guidelines/wcag/) _- w3c_
+* [Testing for accessibility](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility) - how to detect common issues
+* [Web Accessibility Content Guidelines _\(WCAG\)_](https://www.w3.org/WAI/standards-guidelines/wcag/) _-_ w3c
+* [Survey of users with low vision](https://webaim.org/blog/low-vision-survey2-results/) - 2018 results
 
 ### Color
 
-* [Contrast guide](https://usecontrast.com/guide) - _short guide explaining how contrast ratio scores are derived_
-* [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/) - _enter two hex values to determine their contrast ratio_
+* [Contrast guide](https://usecontrast.com/guide) - short guide explaining how contrast ratio scores are derived
+* [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/) - enter two hex values to determine their contrast ratio
 
 ### CSS
 
@@ -28,12 +29,12 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 
 ### WAI-ARIA
 
-* [Using ARIA](https://www.w3.org/TR/using-aria/) - _the rules of ARIA from the w3c_
-* [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices-1.2/) - _w3c_
+* [Using ARIA](https://www.w3.org/TR/using-aria/) - the rules of ARIA from the w3c
+* [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices-1.2/) - w3c
 
 ## SVG
 
-[SVGOMG](https://jakearchibald.github.io/svgomg/) - _In-browser SVG optimization_
+[SVGOMG](https://jakearchibald.github.io/svgomg/) - In-browser SVG optimization
 
 ## HTML forms
 

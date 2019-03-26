@@ -12,6 +12,7 @@
 * [Technology stack](getting-started/technology-stack/README.md)
   * [Web applications](getting-started/technology-stack/web-applications.md)
 * [Using GitBook](getting-started/using-gitbook.md)
+* [Documentation project board](https://github.com/CityOfBoston/digital-documentation/projects/1)
 
 ## Standards and best practices
 
@@ -34,6 +35,7 @@
   * [How To Add a Repository to GitHub](guides/github/adding-repositories-to-github-repos.md)
 * [Integrating with Boston.gov](guides/resources.md)
 * [Amazon Web Services](guides/amazon-web-services/README.md)
+  * [Editing a project’s .env using Cyberduck](guides/amazon-web-services/editing-a-projects-.env-using-cyberduck.md)
   * [Encrypting service configuration for S3](guides/amazon-web-services/encrypting-service-configuration.md)
 * [Testing/QA guides](https://boston.gitbook.io/digital-documentation-private/testing-qa-guides)
 * [Drupal 8](guides/drupal-8/README.md)

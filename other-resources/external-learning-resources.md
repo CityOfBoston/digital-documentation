@@ -8,8 +8,8 @@ description: >-
 
 ## Accessibility and inclusive design
 
-* [Accessibility, Universality, and Inclusion in Design](https://theblog.adobe.com/different-breaking-accessibility-universality-inclusion-design/) - _great introductory article; quick read_
-* [Web Accessibility course](https://www.udacity.com/course/web-accessibility--ud891) - _by Google; free_
+* [Accessibility, Universality, and Inclusion in Design](https://theblog.adobe.com/different-breaking-accessibility-universality-inclusion-design/) - great introductory article; quick read
+* [Web Accessibility course](https://www.udacity.com/course/web-accessibility--ud891) - by Google; free
 * [Google Web Fundamentals: Accessibility](https://developers.google.com/web/fundamentals/accessibility/)
 
 ## Drupal
