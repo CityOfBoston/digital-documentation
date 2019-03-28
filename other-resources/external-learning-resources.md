@@ -24,6 +24,12 @@ description: >-
 
 * [How to GraphQL](https://www.howtographql.com/) - Recommended tutorial
 
+## JavaScript
+
+### Testing
+
+* [Quick introduction to Test-Driven Development](https://medium.freecodecamp.org/a-quick-introduction-to-test-driven-development-with-jest-cac71cb94e50) \(with Jest\)
+
 ## Project management
 
 * [How Fabric Builds Fabric](https://www.youtube.com/watch?v=KIS4ySxWQgU)

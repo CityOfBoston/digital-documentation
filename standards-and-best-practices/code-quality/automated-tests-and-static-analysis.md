@@ -21,7 +21,7 @@ Linting tests can be run locally by developers using lint utilities in their dev
 {% endtab %}
 {% endtabs %}
 
-## Pushing to GitHub
+## Continuous integration
 
 {% tabs %}
 {% tab title="Web applications" %}
@@ -49,13 +49,7 @@ We are currently experimenting with [TestCafe](https://testcafe.devexpress.com/)
 {% endtab %}
 
 {% tab title="Drupal 8" %}
-
+As part of the code acceptance in the CI workflow, Travis runs linting tests via Phing. Code changes cannot be pulled and merged into development branches until these tests are passed.
 {% endtab %}
 {% endtabs %}
-
-## Continuous integration
-
-### Drupal 8
-
-As part of the code acceptance in the CI workflow, Travis runs linting tests via Phing. Code changes cannot be pulled and merged into development branches until these tests are passed.
 

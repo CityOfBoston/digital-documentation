@@ -12,7 +12,6 @@
 * [Technology stack](getting-started/technology-stack/README.md)
   * [Web applications](getting-started/technology-stack/web-applications.md)
 * [Using GitBook](getting-started/using-gitbook.md)
-* [Documentation project board](https://github.com/CityOfBoston/digital-documentation/projects/1)
 
 ## Standards and best practices
 

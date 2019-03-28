@@ -4,7 +4,7 @@ description: Standards we follow as developers.
 
 # General
 
-##  Version control
+## Version control
 
 * All new software is checked in to GitHub.
 * Legacy software that needs maintenance gets moved to GitHub.
@@ -41,4 +41,26 @@ Set up automatic linting with PHPUnit \[???\]
 DoIT use a set of PHPUnit driven linting tests to check coding standards are being met. Local Testing - Linting tests can be run locally by developers using lint utilities in their development environments. Developers can also execute a mirror of the tests run during CI \(by Travis\) using Phing tasks locally.
 {% endtab %}
 {% endtabs %}
+
+## Subdomains
+
+### Criteria
+
+Boston.gov subdomains are assigned on a case-by-case basis. Typically, anything that is a core city service will qualify for a subdomain.
+
+### **Naming Conventions**
+
+If the website qualifies for a subdomain, it should adhere to the following conventions:
+
+#### Specific to the purpose
+
+* Example: [https://mayors24.cityofboston.gov/](https://mayors24.cityofboston.gov/) fulfills service requests for the Mayor’s 24
+
+#### Descriptive of content on the site
+
+* Example: [https://data.cityofboston.gov/](https://data.cityofboston.gov/) is the data hub for the City
+
+#### Is not misleading/does not interfere with other City services
+
+* [100% Talent: The Boston Women’s Compact](http://www.cityofboston.gov/women/talent/) does not use _talent.cityofboston.gov_ because “Talent” could be interpreted as “Employees”, thus misleading users who are searching for the [Career Center](http://www.cityofboston.gov/ohr/careercenter/).
 
