@@ -19,6 +19,7 @@ description: >-
 ## Git
 
 * [Learning Git Branching Tutorial](https://learngitbranching.js.org/)
+* [How to reset, revert, and return to previous states](https://opensource.com/article/18/6/git-reset-revert-rebase-commands)
 
 ## GraphQL
 

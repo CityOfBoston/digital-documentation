@@ -6,9 +6,9 @@ description: The regular meetings conducted by the Digital team.
 
 ## Daily
 
-### Slack Daily Standup
+### Slack daily standup
 
-**Participants:** devs, PMs, QA
+**Participants:** Devs, PMs, QA
 
 * Accomplishments or discoveries from the previous day
 * Priorities for the day
@@ -20,9 +20,8 @@ description: The regular meetings conducted by the Digital team.
 
 **Mondays**
 
-**Participants:** devs, QA, PMs, CDO
-
-**Optional:** design, content
+**Participants:** Devs, QA, PMs, CDO  
+**Optional:** Design, content
 
 **Format:** Look over the [project prioritization](https://github.com/CityOfBoston/digital/wiki/Home) and adjust as necessary.
 
@@ -42,17 +41,16 @@ Team discussion:
 
 **Participants:** All digital team members plus invited guests as appropriate
 
-**Format:** Each team member describes a “learn,” a “brag,” and any “flags” that the team needs to be aware of.
+**Format:** Each team member shares a “brag,” any “flags”, and a “learn” with the rest of the team.
 
 ### \#Demo
 
 **Friday**
 
-**Participants:** devs, PMs, CDO
+**Participants:** Devs, PMs, CDO  
+**Optional:** Design, content, others who want to join
 
-**Optional:** design, content, others who want to join
-
-**Format:** Each member of the team demos something they've accomplished during the week. Prompt on what you’ll demo is made by Slack on Thursday afternoon.
+**Format:** Team members may demo something they’ve accomplished during the week. Prompt on what you’ll demo is made by Slack on Thursday afternoon.
 
 ### Project team meetings
 
@@ -64,9 +62,9 @@ Used when a project has more than one engineer.
 
 1. Remove “Shipped” items from the board
 2. Review “Inventory.” What do we need to do to ship it?
-3. Ask what is needed to move any “In Progress” cards forward.
-4. Update “Next” to reflect what we expect to do for the week.
-5. Ensure that the “Backlog” is still in priority order.
+3. Ask what is needed to move any “In Progress” cards forward
+4. Update “Next” to reflect what we expect to do for the week
+5. Ensure that the “Backlog” is still in priority order
 
 ## Bi-weekly
 
@@ -74,6 +72,6 @@ Used when a project has more than one engineer.
 
 **Participants:** Engineers
 
-* Go over any issues that affect engineering.
-* Share knowledge and wins.
+* Go over any issues that affect engineering
+* Share knowledge and wins
 

@@ -4,7 +4,7 @@ description: Code tells you how; comments tell you why.
 
 # Code comments
 
-Code comments can save a lot of time and stress for the next person working in the codebase \(spoiler: it’s probably future you\) by reducing the effort to understand a piece of code, or the intent behind it.
+Code comments can save a lot of time and stress for the next person working in the codebase \(spoiler: it’s probably future you\) by reducing the effort to understand a piece of code, or the intent behind it. [Context switching is expensive](https://www.joelonsoftware.com/2001/02/12/human-task-switches-considered-harmful/); a well-placed explanatory comment can reduce or prevent the need, and allow a developer to continue on with their initial task uninterrupted.
 
 ## Consider including a comment when...
 

@@ -13,5 +13,7 @@
 
 2. Select “Amazon S3” in the dropdown, and then enter your AWS CLI **Access Key ID** and **Secret Access Key**.
 
-
+{% hint style="warning" %}
+The AWS access key/secret pair is **not** the same thing as the credentials you use to log into AWS via web browser.
+{% endhint %}
 
