@@ -10,6 +10,7 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 * [Make a README](https://www.makeareadme.com/) - good guide to what should be included
 * [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 * [`robots.txt`](https://support.google.com/webmasters/answer/6062596?hl=en&ref_topic=6061961)
+* [Demystifying CORS](https://frontendian.co/cors)
 
 ## Accessibility \(a11y\)
 
