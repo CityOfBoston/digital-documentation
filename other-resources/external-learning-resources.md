@@ -43,6 +43,7 @@ description: >-
 ## TypeScript
 
 * [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/) - book
+* [TypeScript Evolution](https://mariusschulz.com/blog/series/typescript-evolution) - in-depth blog series
 * [TypeScript Playground](https://www.typescriptlang.org/play/) - see TS and its compiled JS side-by-side
 
 
