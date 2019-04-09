@@ -27,6 +27,8 @@ Though there are separate ECS services for each load balancer, they run the same
 
 The Nginx containers are defined in the private [CityOfBoston/devops](https://github.com/CityOfBoston/devops) repo, in the docker/nginx-http-redirect directory. Instructions on building, testing, and deploying the containers are in its [README](https://github.com/CityOfBoston/devops/blob/master/docker/nginx-http-redirect/README.md).
 
+As of this writing, pushing new versions of the Nginx container requires doing command line work and updating CloudFormation Stacks via the AWS web console. Ideally we could migrate this system to work in a more automated way with Terraform and the internal Slack bot.
+
 ### DNS changes
 
 All DNS changes have to be done through a change management request, though given their low risk they typically can be turned around same-day, rather than waiting for a change management meeting approval.
