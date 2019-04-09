@@ -75,6 +75,7 @@
 * [Birth certificates](projects/birth-certificates.md)
 * [Inactive projects](projects/inactive-projects/README.md)
   * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
+* [Alexa Skill](projects/alexa-skill.md)
 
 ## External resources
 
