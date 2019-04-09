@@ -67,6 +67,7 @@
     * [Cityscore](guides/drupal-7/end-points/cityscore/README.md)
       * [Knowledge Base](guides/drupal-7/end-points/cityscore/knowledgebase..md)
     * [Public Notices](guides/drupal-7/end-points/public-notices.md)
+* [DNS Redirects](guides/dns-redirects.md)
 
 ## Projects
 
