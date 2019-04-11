@@ -76,6 +76,7 @@
 * [Inactive projects](projects/inactive-projects/README.md)
   * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
 * [Alexa Skill](projects/alexa-skill.md)
+* [Maps on boston.gov](projects/maps-on-boston.gov.md)
 
 ## External resources
 
