@@ -36,7 +36,7 @@ It’s a good idea to edit .travis.yml to add `deploy` to the list of branches t
 
 ### **Shared load balancer**
 
-Look at the shared resource list and add a new priority entry for your service in the ALB you’re going to use \(or claim an “unused” number\).
+Look at the [shared resource list](shared-resource-list.md) and add a new priority entry for your service in the ALB you’re going to use \(or claim an “unused” number\).
 
 \(See below for picking the stack name and ALB you’ll put in here.\)
 
@@ -46,13 +46,17 @@ Look at the shared resource list and add a new priority entry for your service i
 
 Under IAM &gt; Users click “Add user” to make a user for Travis deploys. \(Don’t do this if you’re adding production to a service that’s already deployed to staging; they’ll share a user.\) Give it the name travis-ci.org+. Enable “Programmatic access” and don’t give it any permissions.
 
+{% hint style="danger" %}
 **Note down the Access ID and Secret Access Key.** You’ll need them for configuring the Travis build environment.
+{% endhint %}
 
 ### **CloudFormation**
 
 In one window, go to CloudFormation and click "Create Stack" and load up the deploy/setup.yml file you just created. Here’s how to fill out the values:
 
-_Worker services will not have all of these parameters._
+{% hint style="warning" %}
+Worker services will not have all of these parameters.
+{% endhint %}
 
 **Stack name:** Apps- \(_e.g._ AppsStaging-ContactForm\) If you will have more than one service in the environment, use another dash to differentiate. \(_e.g._ AppsStaging-311Indexer-Devint2\)
 
@@ -66,7 +70,7 @@ _Worker services will not have all of these parameters._
 
 **Environment:** Either “staging” or “production”. Currently passed to the common / webapp resources templates but not used by anyone.
 
-**LoadBalancerListenerPriority:** The claimed priority from the shared resource list document.
+**LoadBalancerListenerPriority:** The claimed priority from the [shared resource list](shared-resource-list.md).
 
 **LoadBalancerStack:** If you’re on staging, “AppsStagingAlb”. If you’re in production but don’t need Incapsula in front of your service, “AppsPublicAlb”. If you want an ALB that only allows City / Incapsula traffic, “AppsProdAlb”.
 
@@ -155,7 +159,7 @@ You’ll need to create a directory in the appropriate bucket named with your se
 
 The directories in this bucket are protected so that each service can only read its own sub-path.
 
-For information on how to KMS-encrypt secrets, see encrypting service configuration.
+For information on how to KMS-encrypt secrets, see [encrypting service configuration](encrypting-service-configuration.md).
 
 {% page-ref page="encrypting-service-configuration.md" %}
 
