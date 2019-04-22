@@ -32,16 +32,11 @@
 
 ## Guides
 
-* [Storybook](guides/storybook.md)
-* [GitHub](guides/github/README.md)
-  * [How To Add a Repository to GitHub](guides/github/adding-repositories-to-github-repos.md)
-* [Integrating with Boston.gov](guides/resources.md)
 * [Amazon Web Services](guides/amazon-web-services/README.md)
   * [Shared resource list](guides/amazon-web-services/shared-resource-list.md)
   * [New service setup](guides/amazon-web-services/new-service-setup.md)
   * [Editing a project’s .env using Cyberduck](guides/amazon-web-services/editing-a-projects-.env-using-cyberduck.md)
   * [Encrypting service configuration for S3](guides/amazon-web-services/encrypting-service-configuration.md)
-* [Testing/QA guides](https://boston.gitbook.io/digital-documentation-private/testing-qa-guides)
 * [Drupal 8](guides/drupal-8/README.md)
   * [File Migration Strategy](guides/drupal-8/file-migration-strategy.md)
   * [Development environment](guides/drupal-8/development-environment/README.md)
@@ -73,16 +68,21 @@
       * [Knowledge Base](guides/drupal-7/end-points/cityscore/knowledgebase..md)
     * [Public Notices](guides/drupal-7/end-points/public-notices.md)
 * [DNS Redirects](guides/dns-redirects.md)
+* [GitHub](guides/github/README.md)
+  * [How To Add a Repository to GitHub](guides/github/adding-repositories-to-github-repos.md)
+* [Integrating with Boston.gov](guides/resources.md)
+* [Storybook](guides/storybook.md)
+* [Testing/QA guides](https://boston.gitbook.io/digital-documentation-private/testing-qa-guides)
 
 ## Projects
 
-* [Fleet pattern library](projects/fleet-pattern-library.md)
-* [Birth certificates](projects/birth-certificates.md)
 * [Alexa Skill](projects/alexa-skill.md)
+* [Birth certificates](projects/birth-certificates.md)
+* [Budget Website](projects/budget-website.md)
+* [Fleet pattern library](projects/fleet-pattern-library.md)
 * [Maps on boston.gov](projects/maps-on-boston.gov.md)
 * [Inactive projects](projects/inactive-projects/README.md)
   * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
-* [Budget Website](projects/budget-website.md)
 
 ## External resources
 
