@@ -23,17 +23,22 @@
   * [Automated tests and static analysis](standards-and-best-practices/code-quality/automated-tests-and-static-analysis.md)
   * [Code comments](standards-and-best-practices/code-quality/code-comments.md)
   * [Style guides](standards-and-best-practices/code-quality/style-guides/README.md)
-    * [PHP](standards-and-best-practices/code-quality/style-guides/php.md)
+    * [Drupal/PHP](standards-and-best-practices/code-quality/style-guides/php/README.md)
+      * [D8 Dependency Injection \(DI\)](standards-and-best-practices/code-quality/style-guides/php/d8-dependency-injection-di.md)
     * [React/TypeScript](standards-and-best-practices/code-quality/style-guides/react-typescript.md)
 * [Technical documentation](standards-and-best-practices/technical-documentation.md)
+* [Hosting & monitoring](standards-and-best-practices/hosting-and-monitoring.md)
 * [Deployment](standards-and-best-practices/deployments.md)
 
 ## Guides
 
+* [Storybook](guides/storybook.md)
 * [GitHub](guides/github/README.md)
   * [How To Add a Repository to GitHub](guides/github/adding-repositories-to-github-repos.md)
 * [Integrating with Boston.gov](guides/resources.md)
 * [Amazon Web Services](guides/amazon-web-services/README.md)
+  * [Shared resource list](guides/amazon-web-services/shared-resource-list.md)
+  * [New service setup](guides/amazon-web-services/new-service-setup.md)
   * [Editing a project’s .env using Cyberduck](guides/amazon-web-services/editing-a-projects-.env-using-cyberduck.md)
   * [Encrypting service configuration for S3](guides/amazon-web-services/encrypting-service-configuration.md)
 * [Testing/QA guides](https://boston.gitbook.io/digital-documentation-private/testing-qa-guides)
@@ -73,10 +78,10 @@
 
 * [Fleet pattern library](projects/fleet-pattern-library.md)
 * [Birth certificates](projects/birth-certificates.md)
-* [Inactive projects](projects/inactive-projects/README.md)
-  * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
 * [Alexa Skill](projects/alexa-skill.md)
 * [Maps on boston.gov](projects/maps-on-boston.gov.md)
+* [Inactive projects](projects/inactive-projects/README.md)
+  * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
 * [Budget Website](projects/budget-website.md)
 
 ## External resources
