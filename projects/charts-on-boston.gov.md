@@ -14,6 +14,12 @@ In general, content on boston.gov should be at or below an 8th grade reading lev
 
 ### Getting the data
 
+Vega/VegaLite can read in data from a publicly available url. We leverage this functionality so that we can set up separate automation practices for the data charts on boston.gov display. 
+
+#### Using s3
+
+The Analytics Team has the ability to create s3 buckets that can store completely public csv files. **Link to budget pipeline docs.** Once a file has been loaded to a public bucket, you can supply the "Object URL" to Vega. 
+
 ### Making a chart - examples
 
 ## Technical Docs
