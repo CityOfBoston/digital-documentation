@@ -83,6 +83,7 @@
 * [Maps on boston.gov](projects/maps-on-boston.gov.md)
 * [Inactive projects](projects/inactive-projects/README.md)
   * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
+* [Charts on boston.gov](projects/charts-on-boston.gov.md)
 
 ## External resources
 
