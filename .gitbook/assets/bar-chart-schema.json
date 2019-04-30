@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "boston": {
+    "chartID": "upkSeats"
+  },
+  "height": 450,
+  "width": 400,
+  "autosize": "fit",
+  "data": {
+    "name": "data",
+    "url": "https://s3.amazonaws.com/public-budget-data/fy20_upk_seats.csv"
+  },
+  "transform": [
+    {
+      "calculate": "if(datum.Category == 'Community-Based Organizations', 2, 1)",
+      "as": "barOrder"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#1871BD",
+          "#66A5D9"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "labelFont": "Montserrat",
+        "labelLimit": 500,
+        "labelFontSize": 16,
+        "offset": 10,
+        "title": ""
+      }
+    },
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {
+        "title": "",
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Amount",
+      "type": "quantitative",
+      "axis": {
+        "title": "Number of seats",
+        "grid": true
+      }
+    },
+    "order": {
+      "field": "barOrder",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "Amount",
+        "type": "quantitative",
+        "format": ",.0f",
+        "title": "Seats"
+      },
+      {
+        "field": "Category",
+        "type": "nominal",
+        "title": "Seat Type"
+      },
+      {
+        "field": "Year",
+        "type": "nominal",
+        "title": "Year"
+      }
+    ]
+  },
+  "config": {
+    "numberFormat": "f",
+    "axis": {
+      "labelFont": "Lora",
+      "labelFontSize": 16,
+      "labelLimit": 500,
+      "titleFont": "Montserrat",
+      "titleFontSize": 18,
+      "titleFontWeight": "normal",
+      "titlePadding": 15
+    }
+  }
+}

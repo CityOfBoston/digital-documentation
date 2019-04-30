@@ -1,0 +1,133 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "boston": {
+        "chartID": "barChart",
+        "minWidth": 600,
+        "defaultSelection": "Environment Department"
+    },
+    "height": 400,
+    "width": 600,
+    "autosize": "fit",
+    "selection": {
+        "select": {
+            "type": "single",
+            "fields": [
+                "Department_and_Category"
+            ],
+            "bind": {
+                "input": "select",
+                "element": "#select",
+                "name": "Select a Department: "
+            }
+        }
+    },
+    "data": {
+        "name": "capitalProjects",
+        "url": "https://s3.amazonaws.com/public-budget-data/fy20_capital_projects_chart_data.csv",
+        "format": {
+            "parse": {
+                "Total_Project_Budget": "number",
+                "Expended": "number"
+            }
+        }
+    },
+    "transform": [
+        {
+            "fold": [
+                "Total_Project_Budget",
+                "Expended"
+            ],
+            "as": [
+                "Type",
+                "Amount"
+            ]
+        },
+        {
+            "calculate": "if(datum.Type === 'Total_Project_Budget', 'Total Project Budget', 'Expended through FY2018')",
+            "as": "TypeFormatted"
+        },
+        {
+            "filter": {
+                "selection": "select"
+            }
+        }
+    ],
+    "mark": "bar",
+    "encoding": {
+        "color": {
+            "field": "TypeFormatted",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    "#66A5D9",
+                    "#1871bd"
+                ]
+            },
+            "legend": {
+                "orient": "bottom",
+                "labelFont": "Montserrat",
+                "labelLimit": 500,
+                "labelFontSize": 16,
+                "offset": 10,
+                "title": "",
+                "direction": "vertical"
+            }
+        },
+        "y": {
+            "field": "Project_Name",
+            "type": "nominal",
+            "axis": {
+                "title": ""
+            },
+            "sort": {
+                "op": "sum",
+                "field": "Total_Project_Budget",
+                "order": "descending"
+            }
+        },
+        "x": {
+            "field": "Amount",
+            "type": "quantitative",
+            "axis": {
+                "title": "",
+                "grid": true
+            },
+            "stack": null
+        },
+        "tooltip": [
+            {
+                "field": "Total_Project_Budget",
+                "type": "quantitative",
+                "format": "$,r",
+                "title": "Project Budget"
+            },
+            {
+                "field": "Expended",
+                "type": "quantitative",
+                "format": "$,"
+            },
+            {
+                "field": "Department",
+                "type": "nominal",
+                "title": "Department"
+            },
+            {
+                "field": "Status",
+                "type": "nominal",
+                "title": "Status"
+            }
+        ]
+    },
+    "config": {
+        "numberFormat": "s",
+        "axis": {
+            "labelFont": "Lora",
+            "labelFontSize": 16,
+            "labelLimit": 500,
+            "titleFont": "Montserrat",
+            "titleFontSize": 16,
+            "titleFontWeight": "normal",
+            "titlePadding": 15
+        }
+    }
+}
