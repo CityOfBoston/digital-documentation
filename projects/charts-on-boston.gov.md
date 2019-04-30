@@ -94,30 +94,8 @@ The **width** of the chart will be overwritten based on the screen size the char
 
 ![&amp;lt;cob-chart&amp;gt; bar chart.](../.gitbook/assets/image%20%283%29.png)
 
-#### Ordering the bars
+#### Annotated Bar Chart schema
 
-This chart uses a VegaLite transform to create a new field in the data called `"barOrder"`. 
-
-```text
-  "transform": [
-    {
-      "calculate": "if(datum.Category == 'Community-Based Organizations', 2, 1)",
-      "as": "barOrder"
-    }
-  ],
-```
-
-It then uses that field to order the bars so that the number of Community-Based Organization seats is always on top.
-
-```text
-    "order": {
-      "field": "barOrder",
-      "type": "quantitative"
-    },
-```
-{% endtab %}
-
-{% tab title="Annotated Bar Chart Schema" %}
 More details about the inputs in this schema can be found in the [VegaLite docs](https://vega.github.io/vega-lite/docs/). 
 
 ```text
@@ -229,6 +207,30 @@ More details about the inputs in this schema can be found in the [VegaLite docs]
 ```
 {% endtab %}
 {% endtabs %}
+
+### Helpful hints
+
+#### Ordering the colored sections on bar chart
+
+If you want the colored sections of bar charts to display in a specified order, you can use the VegaLite [transform](https://vega.github.io/vega-lite/docs/transform.html) to create a new field in the data. In the example below, this field is called `"barOrder"`.
+
+```text
+"transform": [
+    {
+      "calculate": "if(datum.Category == 'Community-Based Organizations', 2, 1)",
+      "as": "barOrder"
+    }
+  ],
+```
+
+You can then use that field to [order the bars](https://vega.github.io/vega-lite/docs/stack.html#order) so that the number of Community-Based Organization seats is always on top.
+
+```text
+  "order": {
+    "field": "barOrder",
+    "type": "quantitative"
+  },
+```
 
 ## Technical Docs
 
