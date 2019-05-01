@@ -122,7 +122,7 @@ Drop the json linked below into the [COB chart editor](https://patterns.boston.g
 
 If you want the colored sections of bar charts to display in a specified order, you can use the VegaLite [transform](https://vega.github.io/vega-lite/docs/transform.html) to create a new field in the data. In the example below, this field is called `"barOrder"`.
 
-```text
+```javascript
 "transform": [
     {
       "calculate": "if(datum.Category == 'Community-Based Organizations', 2, 1)",
@@ -133,7 +133,7 @@ If you want the colored sections of bar charts to display in a specified order, 
 
 You can then use that field to [order the bars](https://vega.github.io/vega-lite/docs/stack.html#order) so that the number of Community-Based Organization seats is always on top.
 
-```text
+```javascript
   "order": {
     "field": "barOrder",
     "type": "quantitative"
@@ -148,7 +148,7 @@ You can use the ["sort" section](https://vega.github.io/vega-lite/docs/sort.html
 
 To achieve that, we add `"sort"` and define the field, operation, and order of the bars to the axis definition we want sorted.
 
-```text
+```javascript
         "y": {
             "field": "Project_Name",
             "type": "nominal",
@@ -219,7 +219,7 @@ Drop the JSON from the file linked below in the [COB chart editor](https://patte
 
 The main difference between a grouped bar chart and a regular bar chart is that we add a [`"column"`](https://vega.github.io/vega-lite/docs/encoding.html#facet) section, where we define the field to group by and style the header, to the schema's `"encoding"`. 
 
-```text
+```javascript
     "encoding": {
         "column": {
             "field": "Year",
