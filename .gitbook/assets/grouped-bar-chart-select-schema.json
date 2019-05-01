@@ -1,0 +1,92 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "boston": {
+        "chartID": "groupedBarSelect",
+        "minWidth": 500,
+        "defaultSelection": "Office of Tourism"
+    },
+    "height": 400,
+    "width": 100,
+    "autosize": "fit",
+    "selection": {
+        "select": {
+            "type": "single",
+            "fields": [
+                "dept"
+            ],
+            "bind": {
+                "input": "select",
+                "element": "#select",
+                "options": [],
+                "name": "Select a Department: "
+            }
+        }
+    },
+    "data": {
+        "name": "data",
+        "url": "https://s3.amazonaws.com/public-budget-data/test-data/testData-BarCharts.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "selection": "select"
+            }
+        }
+    ],
+    "mark": {
+        "type": "bar"
+    },
+    "encoding": {
+        "column": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "",
+            "header": {
+                "labelFontSize": 16,
+                "labelFont": "Lora",
+                "labelPadding": 15
+            }
+        },
+        "color": {
+            "field": "program",
+            "type": "nominal",
+            "legend": {
+                "orient": "bottom",
+                "labelFont": "Lora",
+                "labelFontSize": 16,
+                "labelLimit": 500,
+                "title": ""
+            }
+        },
+        "y": {
+            "field": "budget",
+            "type": "quantitative",
+            "axis": {
+                "title": ""
+            }
+        },
+        "x": {
+            "field": "program",
+            "type": "nominal",
+            "sort": {
+                "op": "sum",
+                "field": "budget",
+                "order": "descending"
+            },
+            "axis": {
+                "title": "",
+                "grid": false,
+                "labels": false,
+                "ticks": false
+            }
+        }
+    },
+    "config": {
+        "numberFormat": "s",
+        "axis": {
+            "labelFont": "Lora",
+            "labelFontSize": 16,
+            "labelLimit": 500
+        }
+    }
+}

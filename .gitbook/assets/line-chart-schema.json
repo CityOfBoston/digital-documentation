@@ -1,0 +1,136 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "boston": {
+        "chartID": "operatingBudgetSpending"
+    },
+    "description": "",
+    "width": 500,
+    "height": 500,
+    "autosize": "fit",
+    "data": {
+        "name": "data",
+        "url": "https://s3.amazonaws.com/public-budget-data/fy20_net_state_aid.csv",
+        "format": {
+            "type": "csv",
+            "parse": {
+                "State_Aid": "number",
+                "State_Assessments": "number",
+                "Net_State_Aid": "number"
+            }
+        }
+    },
+    "transform": [
+        {
+            "fold": [
+                "State_Aid",
+                "State_Assessments",
+                "Net_State_Aid"
+            ],
+            "as": [
+                "Type",
+                "Amount"
+            ]
+        },
+        {
+            "calculate": "if(datum.Type === 'State_Aid', 'State Aid', if(datum.Type === 'State_Assessments', 'State Assessments', 'Net State Aid'))",
+            "as": "TypeFormat"
+        },
+        {
+            "calculate": "datum.Amount/1000000",
+            "as": "AmountMillions"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "line"
+            },
+            "encoding": {
+                "y": {
+                    "field": "AmountMillions",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "Dollars (in millions)",
+                        "tickCount": 5,
+                        "format": "$,r"
+                    }
+                },
+                "x": {
+                    "field": "Fiscal_Year",
+                    "type": "ordinal",
+                    "axis": {
+                        "title": "Fiscal Year",
+                        "grid": true,
+                        "labelAngle": 0
+                    }
+                },
+                "color": {
+                    "field": "TypeFormat",
+                    "type": "nominal",
+                    "legend": null
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "point",
+                "opacity": 1,
+                "filled": true,
+                "size": 70
+            },
+            "encoding": {
+                "x": {
+                    "field": "Fiscal_Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "AmountMillions",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "TypeFormat",
+                    "type": "nominal",
+                    "legend": {
+                        "orient": "bottom",
+                        "labelFont": "Montserrat",
+                        "labelFontSize": 16,
+                        "title": "",
+                        "direction": "vertical",
+                        "labelLimit": 500
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Fiscal_Year",
+                        "type": "nominal",
+                        "title": "Fiscal Year"
+                    },
+                    {
+                        "field": "Amount",
+                        "type": "quantitative",
+                        "format": "$,"
+                    },
+                    {
+                        "field": "TypeFormat",
+                        "type": "nominal",
+                        "title": "Type"
+                    }
+                ]
+            }
+        }
+    ],
+    "config": {
+        "point": {
+            "size": 60
+        },
+        "axis": {
+            "labelFont": "Lora",
+            "labelFontSize": 16,
+            "labelLimit": 500,
+            "titleFont": "Montserrat",
+            "titleFontSize": 16,
+            "titleFontWeight": "normal",
+            "titlePadding": 15
+        }
+    }
+}

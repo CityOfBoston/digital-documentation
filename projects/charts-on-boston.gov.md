@@ -25,9 +25,10 @@ The general overview for getting a chart on boston.gov is:
 
 1. Get some data
 2. Work with the Analytics Team to get it into a public s3 bucket and set up an automated workflow for it getting updated \(if appropriate\).
-3. Use the [Online Vega Editor](https://vega.github.io/editor/#/edited) to start building your chart with your s3 url for the data. 
-4. Check that your chart works/looks okay using the [COB-chart editor](https://patterns.boston.gov/web-components/chart-editor.html).
-5. Add your chart to boston.gov through Drupal. 
+3. Grab the schema from one of the charts below that looks/is most like the one you want to build
+4. Drop it into the [Online Vega Editor](https://vega.github.io/editor/#/edited) to start editing it to use your data 
+5. Check that your chart works/looks okay using the [COB-chart editor](https://patterns.boston.gov/web-components/chart-editor.html).
+6. Add your chart to boston.gov through Drupal. 
 
 ### Getting the data with the Analytics Team
 
@@ -39,7 +40,7 @@ For testing purposes, you could upload a csv as a [Github Gist](https://gist.git
 
 The Analytics Team has the ability to create s3 buckets that can store completely public csv files. Once a file has been loaded to a public bucket, you can supply the "Object URL" to Vega. 
 
-![Location of the &quot;Object URL&quot; in s3. ](../.gitbook/assets/image%20%285%29.png)
+![Location of the &quot;Object URL&quot; in s3. ](../.gitbook/assets/image%20%2811%29.png)
 
 Storing data for charts on s3, means we can set up separate workflows that will automatically update the data on the chart. For example, for the [FY20 Budget website](https://www.boston.gov/departments/budget/fy20-budget), we set up a workflow in [Civis](https://app.gitbook.com/@boston/s/analytics/guides/civis/introduction) \(the Analytics Teams data wharehouse and ETL platform\) that:
 
@@ -62,13 +63,12 @@ The Vega libraries can do much more than what we've implemented at the City \(e.
 
 | Chart Type | Vega or VegaLite |
 | :--- | :--- |
-| Bar Charts | VegaLite |
-| Line Charts | VegaLite |
-| Grouped Bar Charts | VegaLite |
+| [Bar Charts](charts-on-boston.gov.md#bar-charts) | VegaLite |
+| [Line Charts](charts-on-boston.gov.md#line-charts) | VegaLite |
+| [Grouped Bar Charts](charts-on-boston.gov.md#grouped-bar-charts) | VegaLite |
 | Pie Charts | Vega |
-| Area Charts | VegaLite |
 
-Each of the above charts can be built with **one selection element** as well. 
+Each of the above charts can be built with **one selection element** as well. [All available types of charts on a boston.gov test page.](https://www.boston.gov/test-charts)
 
 When developing a chart, it will likely be easiest to start using the [Vega/VegaLite Online editor](https://vega.github.io/editor/#/edited). Once the chart has largely been built, the [COB-chart editor](https://patterns.boston.gov/web-components/chart-editor.html) is helpful to make sure the chart will still work when rendered as a web component and for making sure fonts look okay. 
 
@@ -104,301 +104,19 @@ The **width** of the chart will be overwritten based on the screen size the char
 {% tab title="Bar Chart" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-education-overview#universal-pre-k)\):
 
-![&amp;lt;cob-chart&amp;gt; simple bar chart.](../.gitbook/assets/image%20%283%29.png)
+![&amp;lt;cob-chart&amp;gt; simple bar chart.](../.gitbook/assets/image%20%287%29.png)
 
 {% file src="../.gitbook/assets/bar-chart-schema.json" caption="Bar Chart schema JSON" %}
-
-#### Commented Bar Chart schema
-
-More details about the inputs in this schema can be found in the [VegaLite docs](https://vega.github.io/vega-lite/docs/). 
-
-```text
-{
-  -- $schema tells the component whether or not we are using Vega or VegaLite.
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  -- boston section of schema explained above.
-  "boston": {
-  -- Only supply chartID, this chart doesn't have a selection or minWidth.
-    "chartID": "upkSeats"
-  },
-  "height": 450,
-  -- This will get overwritten based on the screen size.
-  "width": 400,
-  -- Ensures the chart will re-size if the screen size changes.
-  "autosize": "fit",
-  -- URL and name of data source.
-  "data": {
-    "name": "data",
-    "url": "https://s3.amazonaws.com/public-budget-data/fy20_upk_seats.csv"
-  },
-  "transform": [
-  -- Adding a field to use for ordering the bar colors.
-    {
-      "calculate": "if(datum.Category == 'Community-Based Organizations', 2, 1)",
-      "as": "barOrder"
-    }
-  ],
-  "mark": "bar",
-  "encoding": {
-    "color": {
-    -- Defining the field used to color the sections of the bars.
-      "field": "Category",
-      "type": "nominal",
-      -- Defining the colors used in chart.
-      "scale": {
-        "range": [
-          "#1871BD",
-          "#66A5D9"
-        ]
-      },
-      "legend": {
-        "orient": "bottom",
-        -- Using Montserrat to stay within the city's brand.
-        "labelFont": "Montserrat",
-        "labelLimit": 500,
-        "labelFontSize": 16,
-        -- Distance in pixels from chart.
-        "offset": 10,
-        "title": ""
-      }
-    },
-    "x": {
-      "field": "Year",
-      "type": "ordinal",
-      "axis": {
-        "title": "",
-        "labelAngle": 0
-      }
-    },
-    "y": {
-      "aggregate": "sum",
-      "field": "Amount",
-      "type": "quantitative",
-      "axis": {
-        "title": "Number of seats",
-        "grid": true
-      }
-    },
-    -- Uses the newly calculcated field to order the bar colors on the chart.
-    "order": {
-      "field": "barOrder",
-      "type": "quantitative"
-    },
-    "tooltip": [
-      {
-        "field": "Amount",
-        "type": "quantitative",
-        -- Format numbers in tooltips.
-        "format": ",.0f",
-        "title": "Seats"
-      },
-      {
-        "field": "Category",
-        "type": "nominal",
-        "title": "Seat Type"
-      },
-      {
-        "field": "Year",
-        "type": "nominal",
-        "title": "Year"
-      }
-    ]
-  },
-  "config": {
-    "numberFormat": "f",
-    "axis": {
-    -- We define fonts that keep the chart in-line with COB brand.
-      "labelFont": "Lora",
-      "labelFontSize": 16,
-      "labelLimit": 500,
-      "titleFont": "Montserrat",
-      "titleFontSize": 18,
-      "titleFontWeight": "normal",
-      "titlePadding": 15
-    }
-  }
-}
-```
 {% endtab %}
 
 {% tab title="Bar Chart with Selection" %}
 Drop the json linked below into the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-budget/fy20-capital-budget)\):
 
-![&amp;lt;cob-chart&amp;gt; bar chart with selection.](../.gitbook/assets/image%20%286%29.png)
+![&amp;lt;cob-chart&amp;gt; bar chart with selection.](../.gitbook/assets/image%20%2812%29.png)
 
 {% file src="../.gitbook/assets/bar-chart-select-schema.json" caption="Bar Chart with Selection schema JSON" %}
-
-#### Commented chart schema
-
-```text
-{
--- $schema tells the component whether or not we are using Vega or VegaLite.
-    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-    -- boston section of the schema outlined above.    
-    "boston": {
-        "chartID": "barChart",
-        -- This chart won't autosize to be smaller than 600px.
-        "minWidth": 600,
-        -- Default selected item when the chart loads.
-        "defaultSelection": "Environment Department"
-    },
-    "height": 400,
-    -- Will get overwritten if screen is larger than 600px because 
-    -- of "autosize": "fit" being set but having "minWidth":600 in the 
-    -- "boston" section of the schema.
-    "width": 600,
-    "autosize": "fit",
-    -- Defining information about the select element.
-    "selection": {
-        "select": {
-            "type": "single",
-            -- <cob-chart> only supports one field for selecting from.
-            "fields": [
-                "Department_and_Category"
-            ],
-            "bind": {
-            -- bind this to a select element specifically.
-                "input": "select",
-                "element": "#select",
-                -- Instructions above element.
-                "name": "Select a Department: "
-            }
-        }
-    },
-    "data": {
-        "name": "capitalProjects",
-        "url": "https://s3.amazonaws.com/public-budget-data/fy20_capital_projects_chart_data.csv",
-        -- Ensure specific fields are read in as numbers.
-        "format": {
-            "parse": {
-                "Total_Project_Budget": "number",
-                "Expended": "number"
-            }
-        }
-    },
-    -- Change the shape of the table from long to wide to help
-    -- charting. 
-    "transform": [
-        {
-            "fold": [
-                "Total_Project_Budget",
-                "Expended"
-            ],
-            "as": [
-                "Type",
-                "Amount"
-            ]
-        },
-        -- Calculate fields for displaying. The data comes with underscores in Type field values. We calculate a new
-        -- field without those so the legend values show nicely. 
-        {
-            "calculate": "if(datum.Type === 'Total_Project_Budget', 'Total Project Budget', 'Expended through FY2018')",
-            "as": "TypeFormatted"
-        },
-        -- Need this to ensure that selecting a dropdown element will update 
-        -- the chart.
-        {
-            "filter": {
-                "selection": "select"
-            }
-        }
-    ],
-    "mark": "bar",
-    "encoding": {
-    -- Color the chart by Type. We use the calculated "TypeFormatted" field
-    -- so that the legend uses the values from this field that are easier
-    -- to read. 
-        "color": {
-            "field": "TypeFormatted",
-            "type": "nominal",
-            "scale": {
-            -- Colors for the Type values.
-                "range": [
-                    "#66A5D9",
-                    "#1871bd"
-                ]
-            },
-            "legend": {
-            -- We leverage fonts from COB brand.
-                "orient": "bottom",
-                "labelFont": "Montserrat",
-                "labelLimit": 500,
-                "labelFontSize": 16,
-                -- Distance from chart in pixels.
-                "offset": 10,
-                -- We don't want a legend title since it would be the field name.
-                "title": "",
-                -- Make sure the legend shows vertically instead of horizontally.
-                "direction": "vertical"
-            }
-        },
-        "y": {
-            "field": "Project_Name",
-            "type": "nominal",
-            "axis": {
-                "title": ""
-            },
-            -- We sort bars on the y-axis so that the highest values are at
-            -- the top. 
-            "sort": {
-                "op": "sum",
-                "field": "Total_Project_Budget",
-                "order": "descending"
-            }
-        },
-        "x": {
-            "field": "Amount",
-            "type": "quantitative",
-            "axis": {
-                "title": "",
-                "grid": true
-            },
-            "stack": null
-        },
-        "tooltip": [
-            {
-                "field": "Total_Project_Budget",
-                "type": "quantitative",
-                "format": "$,r",
-                -- Title is what will display in the tooltip.
-                "title": "Project Budget"
-            },
-            {
-                "field": "Expended",
-                "type": "quantitative",
-                "format": "$,"
-            },
-            {
-                "field": "Department",
-                "type": "nominal",
-                "title": "Department"
-            },
-            {
-                "field": "Status",
-                "type": "nominal",
-                "title": "Status"
-            }
-        ]
-    },
-    "config": {
-        "numberFormat": "s",
-        "axis": {
-        -- Use fonts to match the COB brand. 
-            "labelFont": "Lora",
-            "labelFontSize": 16,
-            "labelLimit": 500,
-            "titleFont": "Montserrat",
-            "titleFontSize": 16,
-            "titleFontWeight": "normal",
-            "titlePadding": 15
-        }
-    }
-}
-```
 {% endtab %}
 {% endtabs %}
-
-### Helpful Hints
 
 #### Ordering the Colors on a Bar Chart
 
@@ -426,7 +144,7 @@ You can then use that field to [order the bars](https://vega.github.io/vega-lite
 
 You can use the ["sort" section](https://vega.github.io/vega-lite/docs/sort.html) of the schema or an axis to sort by various metrics. For example, we may want to have the longest bars at the top of a chart on a bar chart. 
 
-![Bars sorted by &quot;amount&quot;.](../.gitbook/assets/image%20%284%29.png)
+![Bars sorted by &quot;amount&quot;.](../.gitbook/assets/image%20%288%29.png)
 
 To achieve that, we add `"sort"` and define the field, operation, and order of the bars to the axis definition we want sorted.
 
@@ -447,6 +165,82 @@ To achieve that, we add `"sort"` and define the field, operation, and order of t
         },
 ```
 
+### Line Charts
+
+{% tabs %}
+{% tab title="Line Chart" %}
+Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-budget/fy20-state-aid#net-state-aid)\):
+
+![&amp;lt;cob-chart&amp;gt; simple line chart.](../.gitbook/assets/image%20%2810%29.png)
+
+{% file src="../.gitbook/assets/line-chart-schema.json" caption="Line chart schema JSON" %}
+{% endtab %}
+
+{% tab title="Line Chart with Selection" %}
+Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
+
+![&amp;lt;cob-chart&amp;gt; line chart with selection.](../.gitbook/assets/image%20%285%29.png)
+
+{% file src="../.gitbook/assets/line-chart-select-schema.json" caption="Line chart with selection JSON schema" %}
+{% endtab %}
+{% endtabs %}
+
+#### Using Lines and Points - 
+
+Due to a [bug](https://github.com/vega/vega-lite/issues/4122) in the version on VegaLite we're using, defining your own tooltip with a "line" mark will **break the chart**. 
+
+![Defining a tooltip when using a line mark will break the chart. ](../.gitbook/assets/image%20%281%29.png)
+
+When you are **not using a selection**, you can get around this by [layering](https://vega.github.io/vega-lite/docs/layer.html) a line mark and a point mark on top of each other in the chart and defining the tooltip in the _point mark's encoding_. Use the line chart schema [linked above](charts-on-boston.gov.md#line-charts) as an example of how to do this. 
+
+If you **are using a selection**, the chart will work if you _do not define tooltips_, so work with the data owner to ensure field names are appropriate for displaying. An example of this is shown in the "Line Chart with Selection" tab above.
+
+### Grouped Bar Charts
+
+{% tabs %}
+{% tab title="Grouped Bar Chart" %}
+Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-operating-budget#expenditures)\):
+
+![&amp;lt;cob-chart&amp;gt; grouped bar chart.](../.gitbook/assets/image%20%289%29.png)
+
+{% file src="../.gitbook/assets/grouped-bar-chart-schema.json" caption="Grouped bar chart JSON schema" %}
+{% endtab %}
+
+{% tab title="Grouped Bar Chart with Selection" %}
+Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
+
+![&amp;lt;cob-chart&amp;gt; grouped bar chart.](../.gitbook/assets/image%20%283%29.png)
+
+{% file src="../.gitbook/assets/grouped-bar-chart-select-schema.json" caption="Grouped bar chart with selection schema JSON" %}
+{% endtab %}
+{% endtabs %}
+
+#### Using Columns
+
+The main difference between a grouped bar chart and a regular bar chart is that we add a [`"column"`](https://vega.github.io/vega-lite/docs/encoding.html#facet) section, where we define the field to group by and style the header, to the schema's `"encoding"`. 
+
+```text
+    "encoding": {
+        "column": {
+            "field": "Year",
+            "type": "nominal",
+            "header": {
+                "labelFont": "Montserrat",
+                "labelFontSize": 16,
+                "labelPadding": 15,
+                "title": ""
+            }
+        },
+```
+
+The COB web component was **not created/tested for supporting** [**"rows"**](https://vega.github.io/vega-lite/docs/facet.html#row-encoding), we only support grouping by [column](https://bl.ocks.org/domoritz/f5abc519dd990bfcbc3f20f634658364). 
+
+### Pie Charts
+
+Pie charts are the only chart type the `<cob-chart>` component supports that use the Vega schema.
+
+### Helpful Hints
+
 #### Using Domain and Range together
 
 To ensure each value is always the same color - just ensure ppl cant/won't edit the values.
@@ -463,7 +257,17 @@ only one field supported
 
 always a select element
 
+#### dividing axis numbers by a million
+
+#### Formatting numbers
+
 ### Known limitations
+
+* [Defining a tooltip when using a line mark will break the chart](charts-on-boston.gov.md#using-lines-and-points). 
+  * This has been fixed in [later versions of VegaLite](https://github.com/vega/vega-lite/releases?after=v3.0.0-rc9), but that release also refactors the [entire way selections operate](https://github.com/vega/vega-lite/pull/4068) which broke our charts in a bunch of other ways, so yours truly decided to save fixing this for "later". 
+* Pie charts aren't responsive - should always be sized to 200px
+* We don't support ["rows"](https://vega.github.io/vega-lite/docs/facet.html#row-encoding), we only supported vertically grouped bar charts that use [columns](https://bl.ocks.org/domoritz/f5abc519dd990bfcbc3f20f634658364).
+* Only one selection is allowed
 
 
 

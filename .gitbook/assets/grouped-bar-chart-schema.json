@@ -1,0 +1,109 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+    "boston": {
+        "minWidth": 500,
+        "chartID": "chart"
+    },
+    "data": {
+        "name": "data",
+        "url": "https://s3.amazonaws.com/public-budget-data/fy20_expenditures_by_category.csv"
+    },
+    "transform": [
+        {
+            "calculate": "datum.Amount/1000000",
+            "as": "AmountDivided"
+        }
+    ],
+    "height": 450,
+    "width": 100,
+    "autosize": "fit",
+    "mark": "bar",
+    "encoding": {
+        "column": {
+            "field": "Year",
+            "type": "nominal",
+            "header": {
+                "labelFont": "Montserrat",
+                "labelFontSize": 16,
+                "labelPadding": 15,
+                "title": ""
+            }
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal",
+            "title": "",
+            "scale": {
+                "range": [
+                    "#0C2639",
+                    "#1e9632",
+                    "#8b5ca5",
+                    "#f9b843",
+                    "#D2D2D2",
+                    "#45789C",
+                    "#c69c6d"
+                ]
+            },
+            "legend": {
+                "orient": "bottom",
+                "labelFont": "Montserrat",
+                "labelLimit": 500,
+                "labelFontSize": 16,
+                "offset": 5,
+                "direction": "vertical"
+            }
+        },
+        "x": {
+            "field": "Type",
+            "type": "ordinal",
+            "title": "",
+            "sort": {
+                "op": "sum",
+                "field": "Amount",
+                "order": "descending"
+            },
+            "axis": {
+                "title": "",
+                "grid": false,
+                "labels": false,
+                "ticks": false
+            }
+        },
+        "y": {
+            "field": "AmountDivided",
+            "type": "quantitative",
+            "axis": {
+                "title": "AMOUNT (IN MILLIONS)",
+                "format": "$,r"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Amount",
+                "type": "quantitative",
+                "title": "Amount",
+                "format": "$,r"
+            },
+            {
+                "field": "Type",
+                "type": "nominal",
+                "title": "Category"
+            },
+            {
+                "field": "Year",
+                "type": "nominal"
+            }
+        ]
+    },
+    "config": {
+        "axis": {
+            "labelFont": "Montserrat",
+            "labelFontSize": 16,
+            "labelLimit": 500,
+            "titleFont": "Montserrat",
+            "titleFontSize": 18,
+            "titleFontWeight": "normal",
+            "titlePadding": 15
+        }
+    }
+}
