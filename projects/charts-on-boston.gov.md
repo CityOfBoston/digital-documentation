@@ -40,7 +40,7 @@ For testing purposes, you could upload a csv as a [Github Gist](https://gist.git
 
 The Analytics Team has the ability to create s3 buckets that can store completely public csv files. Once a file has been loaded to a public bucket, you can supply the "Object URL" to Vega. 
 
-![Location of the &quot;Object URL&quot; in s3. ](../.gitbook/assets/image%20%2811%29.png)
+![Location of the &quot;Object URL&quot; in s3. ](../.gitbook/assets/image%20%2813%29.png)
 
 Storing data for charts on s3, means we can set up separate workflows that will automatically update the data on the chart. For example, for the [FY20 Budget website](https://www.boston.gov/departments/budget/fy20-budget), we set up a workflow in [Civis](https://app.gitbook.com/@boston/s/analytics/guides/civis/introduction) \(the Analytics Teams data wharehouse and ETL platform\) that:
 
@@ -66,7 +66,7 @@ The Vega libraries can do much more than what we've implemented at the City \(e.
 | [Bar Charts](charts-on-boston.gov.md#bar-charts) | VegaLite |
 | [Line Charts](charts-on-boston.gov.md#line-charts) | VegaLite |
 | [Grouped Bar Charts](charts-on-boston.gov.md#grouped-bar-charts) | VegaLite |
-| Pie Charts | Vega |
+| [Pie Charts](charts-on-boston.gov.md#pie-charts) | Vega |
 
 Each of the above charts can be built with **one selection element** as well. [All available types of charts on a boston.gov test page.](https://www.boston.gov/test-charts)
 
@@ -104,7 +104,7 @@ The **width** of the chart will be overwritten based on the screen size the char
 {% tab title="Bar Chart" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-education-overview#universal-pre-k)\):
 
-![&amp;lt;cob-chart&amp;gt; simple bar chart.](../.gitbook/assets/image%20%287%29.png)
+![&amp;lt;cob-chart&amp;gt; simple bar chart.](../.gitbook/assets/image%20%289%29.png)
 
 {% file src="../.gitbook/assets/bar-chart-schema.json" caption="Bar Chart schema JSON" %}
 {% endtab %}
@@ -112,7 +112,7 @@ Drop the JSON from the file linked below in the [COB chart editor](https://patte
 {% tab title="Bar Chart with Selection" %}
 Drop the json linked below into the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-budget/fy20-capital-budget)\):
 
-![&amp;lt;cob-chart&amp;gt; bar chart with selection.](../.gitbook/assets/image%20%2812%29.png)
+![&amp;lt;cob-chart&amp;gt; bar chart with selection.](../.gitbook/assets/image%20%2814%29.png)
 
 {% file src="../.gitbook/assets/bar-chart-select-schema.json" caption="Bar Chart with Selection schema JSON" %}
 {% endtab %}
@@ -144,7 +144,7 @@ You can then use that field to [order the bars](https://vega.github.io/vega-lite
 
 You can use the ["sort" section](https://vega.github.io/vega-lite/docs/sort.html) of the schema or an axis to sort by various metrics. For example, we may want to have the longest bars at the top of a chart on a bar chart. 
 
-![Bars sorted by &quot;amount&quot;.](../.gitbook/assets/image%20%288%29.png)
+![Bars sorted by &quot;amount&quot;.](../.gitbook/assets/image%20%2810%29.png)
 
 To achieve that, we add `"sort"` and define the field, operation, and order of the bars to the axis definition we want sorted.
 
@@ -171,7 +171,7 @@ To achieve that, we add `"sort"` and define the field, operation, and order of t
 {% tab title="Line Chart" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-budget/fy20-state-aid#net-state-aid)\):
 
-![&amp;lt;cob-chart&amp;gt; simple line chart.](../.gitbook/assets/image%20%2810%29.png)
+![&amp;lt;cob-chart&amp;gt; simple line chart.](../.gitbook/assets/image%20%2812%29.png)
 
 {% file src="../.gitbook/assets/line-chart-schema.json" caption="Line chart schema JSON" %}
 {% endtab %}
@@ -179,7 +179,7 @@ Drop the JSON from the file linked below in the [COB chart editor](https://patte
 {% tab title="Line Chart with Selection" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
 
-![&amp;lt;cob-chart&amp;gt; line chart with selection.](../.gitbook/assets/image%20%285%29.png)
+![&amp;lt;cob-chart&amp;gt; line chart with selection.](../.gitbook/assets/image%20%286%29.png)
 
 {% file src="../.gitbook/assets/line-chart-select-schema.json" caption="Line chart with selection JSON schema" %}
 {% endtab %}
@@ -201,7 +201,7 @@ If you **are using a selection**, the chart will work if you _do not define tool
 {% tab title="Grouped Bar Chart" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-operating-budget#expenditures)\):
 
-![&amp;lt;cob-chart&amp;gt; grouped bar chart.](../.gitbook/assets/image%20%289%29.png)
+![&amp;lt;cob-chart&amp;gt; grouped bar chart.](../.gitbook/assets/image%20%2811%29.png)
 
 {% file src="../.gitbook/assets/grouped-bar-chart-schema.json" caption="Grouped bar chart JSON schema" %}
 {% endtab %}
@@ -237,7 +237,33 @@ The COB web component was **not created/tested for supporting** [**"rows"**](htt
 
 ### Pie Charts
 
-Pie charts are the only chart type the `<cob-chart>` component supports that use the Vega schema.
+Pie charts are the only chart type the `<cob-chart>` component supports that use the [Vega schema](https://vega.github.io/vega/docs/).
+
+{% tabs %}
+{% tab title="Pie Chart" %}
+Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below \([chart in production](https://www.boston.gov/departments/budget/fy20-budget#operating-budget)\):
+
+![&amp;lt;cob-chart&amp;gt; pie chart.](../.gitbook/assets/image%20%2815%29.png)
+
+{% file src="../.gitbook/assets/pie-chart-schema.json" caption="Pie chart schema JSON" %}
+{% endtab %}
+
+{% tab title="Pie Chart with Selection" %}
+Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
+
+![&amp;lt;cob-chart&amp;gt; pie chart with a selection.](../.gitbook/assets/image%20%284%29.png)
+
+{% file src="../.gitbook/assets/pie-chart-select-schema.json" caption="Pie chart with Selection schema JSON" %}
+{% endtab %}
+{% endtabs %}
+
+#### Pie Chart Sizing
+
+The height and width on pie charts should pretty much always be set to **200px**. This ensures that the chart fits on all screen sizes. 
+
+If the height and width are set to more than 200px, the chart **will resize to best fit the container it is loaded in**, but the center of the chart will not change if the screen is resized, so it may get **cut off if the user adjusts their screen size.**
+
+![Pie charts don&apos;t perform well if resized, so their height and width should always be 200px. ](../.gitbook/assets/image%20%288%29.png)
 
 ### Helpful Hints
 
@@ -268,8 +294,6 @@ always a select element
 * Pie charts aren't responsive - should always be sized to 200px
 * We don't support ["rows"](https://vega.github.io/vega-lite/docs/facet.html#row-encoding), we only supported vertically grouped bar charts that use [columns](https://bl.ocks.org/domoritz/f5abc519dd990bfcbc3f20f634658364).
 * Only one selection is allowed
-
-
 
 ## Technical Docs
 

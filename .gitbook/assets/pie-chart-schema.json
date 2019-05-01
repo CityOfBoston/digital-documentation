@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v4.json",
+  "boston": {"chartID": "pieChart"},
+  "width": 200,
+  "height": 200,
+  "padding": 0,
+  "data": [
+    {
+      "name": "table",
+      "url": "https://s3.amazonaws.com/public-budget-data/fy20_overall_spending_by_category.csv",
+      "format": {"type": "csv"},
+      "transform": [{"type": "pie", "field": "Percent", "sort": true}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": [
+        "#bcbcbc",
+        "#f28868",
+        "#7dc6af",
+        "#8073ac",
+        "#1c547c",
+        "#d85b69",
+        "#fed976",
+        "#8bc988",
+        "#1871bd"
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom",
+      "labelFont": "Montserrat",
+      "labelLimit": 500,
+      "labelFontSize": 16,
+      "offset": 10,
+      "padding": 15
+    }
+  ],
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "Expenditure"},
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"},
+          "tooltip": {
+            "signal": "{'Category': datum.Expenditure, 'Percent of budget': format(datum.Percent/100, '0.0p')}"
+          }
+        },
+        "update": {
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "padAngle": 0,
+          "innerRadius": {"signal": "width/4"},
+          "outerRadius": {"signal": "width / 2"},
+          "cornerRadius": 0
+        }
+      }
+    }
+  ]
+}
