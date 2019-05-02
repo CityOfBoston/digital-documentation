@@ -417,5 +417,9 @@ When working with large numbers, you can use Vega's [`"calculate"` transform](ht
 
 ### Web Component
 
+The [code for the web component](https://github.com/CityOfBoston/patterns/tree/develop/web-components/chart) is stored in Fleet, our patterns library. 
+
 ### Drupal integration
+
+TDB
 
