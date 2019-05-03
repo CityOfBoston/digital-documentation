@@ -6,8 +6,9 @@
 For our S3 and Node-based apps, which can be pushed to production any time.
 {% endhint %}
 
-* The repo’s default branch is `production`, and PRs should be merged to it and deployed presently. It must be made “protected” in GitHub.
-* Repos have a `staging` branch that can be force-pushed to for deployment to a staging environment, for changes that need production-like validation before being available publicly.
+* We push changes to production as soon as they’re ready. This keeps us from piling up inventory. Shipping small batch sizes is also safer.
+* We’ve built a deployment system that has zero-downtime, so it’s always safe to push.
+* See each repo’s documentation for instructions on how to deploy it.
 
 ## Fixed-schedule deployments
 

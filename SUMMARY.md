@@ -32,11 +32,14 @@
 
 ## Guides
 
-* [Amazon Web Services](guides/amazon-web-services/README.md)
+* [Digital Webapps](guides/amazon-web-services/README.md)
+  * [Service Configuration](guides/amazon-web-services/service-configuration/README.md)
+    * [Editing a project’s configuration using Cyberduck](guides/amazon-web-services/service-configuration/editing-a-projects-.env-using-cyberduck.md)
+    * [Encrypting service configuration for S3](guides/amazon-web-services/service-configuration/encrypting-service-configuration.md)
+    * [Restarting an ECS service](guides/amazon-web-services/service-configuration/restarting-an-ecs-service.md)
   * [Shared resource list](guides/amazon-web-services/shared-resource-list.md)
   * [New service setup](guides/amazon-web-services/new-service-setup.md)
-  * [Editing a project’s .env using Cyberduck](guides/amazon-web-services/editing-a-projects-.env-using-cyberduck.md)
-  * [Encrypting service configuration for S3](guides/amazon-web-services/encrypting-service-configuration.md)
+  * [Making changes with Terraform](guides/amazon-web-services/making-changes-with-terraform.md)
 * [Drupal 8](guides/drupal-8/README.md)
   * [File Migration Strategy](guides/drupal-8/file-migration-strategy.md)
   * [Development environment](guides/drupal-8/development-environment/README.md)

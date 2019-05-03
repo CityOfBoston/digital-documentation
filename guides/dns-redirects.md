@@ -10,24 +10,16 @@ Our DNS provider, DNS Made Easy, does not have a \*.boston.gov HTTPS key, so it 
 
 Making a redirect is a two-step process:
 
-1. Update the “Default Handler” Nginx config to process the host and intended target
+1. Update the ALB config to process the host and intended target
 2. Change the DNS records at DNS Made Easy to point to our apps cluster’s load balancer
 
-### Nginx Server
+### ALB config
 
-The Digital apps cluster has containers running [Nginx](https://www.nginx.com/), a web server, that are configured to be the default handlers for traffic to the production, public, and staging load balancers. Any traffic that is not directed to other containers by listener rules ends up at the Nginx servers.
+Our public load balancer is configured with rules for static redirects. This configuration is kept in Terraform.
 
-They serve several purposes:
+To add a new redirect, edit the [terraform.tfvars](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/terraform.tfvars) file. The `prod_redirects` variable holds the configuration for these redirects.
 
-* Redirecting HTTP traffic to HTTPS \(with the same host name and path\)
-* Proxying apps.boston.gov traffic to the static S3 buckets for statically-deployed apps \(like commissions-search and public-notices\)
-* Configuring custom redirects
-
-Though there are separate ECS services for each load balancer, they run the same Nginx container images.
-
-The Nginx containers are defined in the private [CityOfBoston/devops](https://github.com/CityOfBoston/devops) repo, in the docker/nginx-http-redirect directory. Instructions on building, testing, and deploying the containers are in its [README](https://github.com/CityOfBoston/devops/blob/master/docker/nginx-http-redirect/README.md).
-
-As of this writing, pushing new versions of the Nginx container requires doing command line work and updating CloudFormation Stacks via the AWS web console. Ideally we could migrate this system to work in a more automated way with Terraform and the internal Slack bot.
+Once that’s done, make a PR and use Atlantis to apply the Terraform changes. See the Making changes with Terraform guide.
 
 ### DNS changes
 

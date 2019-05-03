@@ -4,11 +4,9 @@
 
 ### Amazon Web Services 
 
-* All AWS setup should be done through CloudFormation templates. No one-off changes allowed.
-* We use [Terraform](https://www.terraform.io/) for new services and deploys.
-* Generic CloudFormation templates are checked in to the [devops](https://github.com/CityOfBoston/devops) repo. Services will also typically have a setup.yml template for service-specific customizations.
-* We should never be surprised by an outage. CloudWatch should be monitoring our apps and the services they depend on.
-* If an alarm goes off regularly, either its root cause should be fixed or the alarm should be adjusted or removed.
+* We use [Terraform](https://www.terraform.io/) for describing our infrastructure. See the [digital-terraform](https://github.com/CityOfBoston/digital-terraform/) repo.
+* Do not make one-off changes in the UI or with the command line. Everything should be updated through Terraform so we have transparency about what we’re running and why.
+* Terraform changes should be made through [Atlantis](https://www.runatlantis.io/).
 
 ### Heroku
 
@@ -16,6 +14,15 @@
 * We only want to use free tier dynos going forward.
 
 ## Monitoring
+
+We should never be surprised by an outage. CloudWatch and/or Updown.io should be monitoring our apps and the services they depend on.
+
+If an alarm goes off regularly, either its root cause should be fixed or the alarm should be adjusted or removed.
+
+### CloudWatch
+
+* We have a handful of CloudWatch alarms to monitor our instances, VPN, and services.
+* These alarms are sent to the digital-dev@boston.gov email address and posted in the \#digital\_monitoring Slack channel via a custom [Lambda function](https://github.com/CityOfBoston/digital-lambda).
 
 ### Rollbar
 
