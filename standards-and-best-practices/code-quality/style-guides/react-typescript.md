@@ -91,16 +91,5 @@ export default class CustomInput extends React.Component {
 
 ## Emotion
 
-Styling should be declared as a `css()` object variable, and passed in as the element’s `className`. Use ALL\_CAPS when naming these constant variables.
-
-```typescript
-const COMPONENT_STYLING = css({
-  fontSize: '17px',
-  '& a': {
-    display: 'block',
-    width: 20,
-    overflow: 'hidden',
-  },
-});
-```
+See the [Emotion guide](../../../guides/libraries-and-tools/emotion.md).
 

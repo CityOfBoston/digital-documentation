@@ -8,12 +8,12 @@ description: 'Developed by Code for Boston, deployed by the Digital Team.'
 
 #### Development / beta updates
 
-We’ll have a CodeBuild setup that listens to a particular branch of the [CodeForBoston/voiceapp311](https://github.com/CodeForBoston/voiceapp311) repo. When it receives a change it will run:
+We have a CodeBuild setup that listens to a particular branch of the [CodeForBoston/voiceapp311](https://github.com/CodeForBoston/voiceapp311) repo. When it receives a change it runs:
 
 * `deploy_tools.py -f` to update the `$LATEST` Lambda function
 * `deploy_tools.py -i` to update the interaction model
 
-This will cause the latest changes to immediately go live in development and beta uses of the skill.
+This causes the latest changes to immediately go live in development and beta uses of the skill.
 
 #### Deploying a New Version of the Skill
 
