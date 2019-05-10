@@ -41,7 +41,7 @@ storiesOf('Notifications|Modals/StatusModal', module)
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-![Result](../.gitbook/assets/screen-shot-2019-04-19-at-4.52.20-pm.png)
+![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.52.20-pm.png)
 
 {% hint style="info" %}
 If you group any Stories \(i.e. Group\|Folder/Story\) in your Storybook, Stories without a defined group will now appear in an automatically-generated "Others" group in the sidebar.
@@ -116,7 +116,7 @@ storiesOf('Form Elements|Inputs/TextInput', module)
   ));
 ```
 
-![Result](../.gitbook/assets/screen-shot-2019-04-19-at-4.29.25-pm.png)
+![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.29.25-pm.png)
 
 #### Add/remove options from a &lt;select&gt;
 
@@ -138,7 +138,7 @@ storiesOf('Form Elements|SelectDropdown', module)
   ));
 ```
 
-![Result](../.gitbook/assets/screen-shot-2019-04-19-at-4.35.59-pm.png)
+![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.35.59-pm.png)
 
 #### Simulate performing an action
 
@@ -184,5 +184,5 @@ storiesOf('ProgressBar', module)
   ));
 ```
 
-![Result](../.gitbook/assets/screen-shot-2019-04-19-at-4.42.02-pm.png)
+![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.42.02-pm.png)
 

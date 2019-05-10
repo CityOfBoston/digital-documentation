@@ -43,6 +43,7 @@
   * [Making changes with Terraform](guides/amazon-web-services/making-changes-with-terraform.md)
 * [Libraries and Tools](guides/libraries-and-tools/README.md)
   * [Emotion](guides/libraries-and-tools/emotion.md)
+  * [Storybook](guides/libraries-and-tools/storybook.md)
 * [Drupal 8](guides/drupal-8/README.md)
   * [File Migration Strategy](guides/drupal-8/file-migration-strategy.md)
   * [Development environment](guides/drupal-8/development-environment/README.md)
@@ -77,7 +78,6 @@
 * [GitHub](guides/github/README.md)
   * [How To Add a Repository to GitHub](guides/github/adding-repositories-to-github-repos.md)
 * [Integrating with Boston.gov](guides/resources.md)
-* [Storybook](guides/storybook.md)
 * [Testing/QA guides](https://boston.gitbook.io/digital-documentation-private/testing-qa-guides)
 
 ## Projects
