@@ -10,7 +10,7 @@ description: Standards we follow as developers.
 * Legacy software that needs maintenance gets moved to GitHub.
 * Absent a _very_ compelling reason, repos are public from day one and source code is released under the [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/) public domain license.
 
-{% page-ref page="git-and-github.md" %}
+{% page-ref page="git-and-github/" %}
 
 ## Project structure
 
