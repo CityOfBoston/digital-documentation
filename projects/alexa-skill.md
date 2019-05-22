@@ -19,11 +19,13 @@ This causes the latest changes to immediately go live in development and beta us
 
 When the time comes to release changes to the interaction model, we need to do the following:
 
-1. Publish the current Lambda function as a new version
-2. Create a new alias pointing to that version \(make sure it’s enabled for Alexa Skill Kit\)
-3. Update the Alexa skill’s endpoint ARN to reference the new alias
-4. Submit the skill to Amazon for certification \(snapshotting the endpoints\)
-5. Change the Alexa skill’s endpoint back to `$LATEST`
+1. Publish the current BostonInfoSkill Lambda function as a new version, described with the current date \(e.g. ”2019-05-22”\)
+2. Create a new alias pointing to that version
+3. In the UI, add “Alexa Skills Kit” as a trigger and paste the Skill ID into the configuration box, then Save
+4. Update the Alexa skill’s endpoint ARN to reference the new alias
+5. Use the “Test” page to make sure that the lambda is receiving traffic correctly
+6. Submit the skill to Amazon for certification \(snapshotting the endpoints\)
+7. Change the Alexa skill’s endpoint back to `$LATEST`
 
 It might be nice to automate this, but we’ll see how often we need to do it. Also, we could use a blue/green strategy for the aliases rather than creating new ones each time.
 
