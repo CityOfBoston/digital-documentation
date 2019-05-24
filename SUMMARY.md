@@ -19,6 +19,7 @@
 * [Code reviews](standards-and-best-practices/code-reviews.md)
 * [Project management](standards-and-best-practices/project-management.md)
 * [Git / GitHub](standards-and-best-practices/git-and-github/README.md)
+  * [Git Command Tips](standards-and-best-practices/git-and-github/git-command-tips.md)
   * [GitHub Service Accounts](standards-and-best-practices/git-and-github/github-service-accounts.md)
 * [Code quality](standards-and-best-practices/code-quality/README.md)
   * [Automated tests and static analysis](standards-and-best-practices/code-quality/automated-tests-and-static-analysis.md)
