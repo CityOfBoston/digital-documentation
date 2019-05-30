@@ -87,6 +87,7 @@
 
 * [Alexa Skill](projects/alexa-skill.md)
 * [Birth certificates](projects/birth-certificates.md)
+* [Permit Finder](projects/permit-finder.md)
 * [Budget Website](projects/budget-website.md)
 * [Fleet pattern library](projects/fleet-pattern-library.md)
 * [Maps on boston.gov](projects/maps-on-boston.gov.md)
