@@ -38,3 +38,9 @@ We have a SiteScope rule set up with the CoB network team that pings an EC2 inst
 
 Additionally, we have a CloudWatch alarm that fires if one or both of the VPN connections goes down. If one has gone down traffic should still be flowing over the other, and usually it will come back up of its own accord. Contact NOC if there are issues.
 
+#### SSH Access
+
+In general, you should not need to SSH on to the cluster instances. Definitely not for routine maintenance \(do that through an ECS task if you need that kind of thing\). It may be necessary to troubleshoot and debug issues, however.
+
+Instructions for how to SSH on to our bastion machine using an SSH key loaded into your IAM account, and from there how to SSH on to a cluster instance, are in the [digital-terraform’s README.md](https://github.com/CityOfBoston/digital-terraform#bastion-access) file.
+
