@@ -30,3 +30,11 @@ These ECS cluster instances receive traffic from Amazon’s ALB load balancers, 
 
 The instances are further isolated by having security groups that only allow traffic from the security groups of their corresponding ALBs \(and SSH traffic from the bastion instance\).
 
+#### VPN Gateway
+
+The VPN gateway connects from our VPC to the City datacenter. It has two connections running simultaneously for redundancy. AWS VPNs need to have regular traffic to keep them active, and if they do disconnect they need traffic from outside AWS to cause them to come back online.
+
+We have a SiteScope rule set up with the CoB network team that pings an EC2 instance inside of our VPC. \(Currently this EC2 instance does not seem to be created via Terraform.\) This rule does a ping every few minutes, which keeps traffic running on the connection and also will bring it back up if it does go down.
+
+Additionally, we have a CloudWatch alarm that fires if one or both of the VPN connections goes down. If one has gone down traffic should still be flowing over the other, and usually it will come back up of its own accord. Contact NOC if there are issues.
+
