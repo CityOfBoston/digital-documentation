@@ -25,7 +25,10 @@ When the time comes to release changes to the interaction model, we need to do t
 4. Update the Alexa skill’s endpoint ARN to reference the new alias
 5. Use the “Test” page to make sure that the lambda is receiving traffic correctly
 6. Submit the skill to Amazon for certification \(snapshotting the endpoints\)
-7. Change the Alexa skill’s endpoint back to `$LATEST`
+
+After the Amazon verification process completes:
+
+1. Change the Alexa skill’s endpoint back to `$LATEST`
 
 It might be nice to automate this, but we’ll see how often we need to do it. Also, we could use a blue/green strategy for the aliases rather than creating new ones each time.
 
@@ -40,6 +43,25 @@ This is also a manual process:
 1. Have the code built by the development / beta updates CodeBuild so that it becomes current
 2. Publish the current Lambda function as a new version
 3. Update the current production alias to point to that new version
+
+![AWS Web Console screen for updating an alias version](../.gitbook/assets/screen-shot-2019-05-30-at-9.05.40-am.png)
+
+#### Handling a Failed Verification
+
+Sometimes Amazon will reject the skill. Here’s what to do afterwards, which is a combination of the above steps.
+
+1. Remove the `:production-X` alias from the end of the endpoint in the Alexa skills setting so that the dev skill goes back to pointing at the latest version of the Lambda function built by the CodeBuild process
+2. Fix any issues by pushing changes to GitHub and having them be rebuilt
+
+Once you’re sure Amazon will be satisfied:
+
+1. Publish a new version of the Lambda function via the web console
+2. Update the previously-used `production-X` lambda alias to point to that new version
+3. Update the Alexa Skill endpoint settings to add `:production-X` back in to the ARN
+4. Cross fingers
+5. Re-submit
+
+#### Further Reading
 
 More information about Alexa deployment strategies: [https://blog.codecentric.de/en/2018/06/non-breaking-lambda-deployments-for-alexa-skills-using-versions-and-aliases/](https://blog.codecentric.de/en/2018/06/non-breaking-lambda-deployments-for-alexa-skills-using-versions-and-aliases/)
 
