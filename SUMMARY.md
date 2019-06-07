@@ -62,7 +62,7 @@
     * [Cityscore](guides/drupal-8/drupal-8-micro-services-api-end-points/cityscore.md)
   * [Site Development Notes](guides/drupal-8/site-development-notes/README.md)
     * [Custom Modules](guides/drupal-8/site-development-notes/custom-modules/README.md)
-      * [Adding Templates to Modules](guides/drupal-8/site-development-notes/custom-modules/adding-templates-to-modules.md)
+      * [Adding Templates to Custom Modules](guides/drupal-8/site-development-notes/custom-modules/adding-templates-to-modules.md)
       * [Custom Content Types](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/README.md)
         * [D7 -&gt; D8 Conversion](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/conversions.md)
         * [Content Editor UX](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/content-editor-ux/README.md)
