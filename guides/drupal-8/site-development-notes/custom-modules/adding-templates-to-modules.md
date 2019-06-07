@@ -18,6 +18,42 @@ _You can generate other suggestions using the `hook_theme_suggestions_hook` hook
 4. **\[optional\]** Once the cache is cleared you can then catch pre-process events using `hook_preprocess_hook` in our example this would be `node_landing_page_preprocess_node` \(to catch all node pre-process events\) or `node_landing_page_preprocess_node__landing_page__full` \(to catch only this new template pre-process events\) - notice that the hook uses the `template-key` defined in the `hook_theme` array.
 5. **\[optional\]** You can also catch `template_preprocess_hook` events \(in our example this is `template_preprocess_node__landing_page__full`\).  This hook is commonly used to create a `content` variable which contains all the rendered \(or renderable\) elements of the `elements` \(or whatever the field is named in the templates `render element`\) array. 
 
+**Our Example template file:**
+
+{% code-tabs %}
+{% code-tabs-item title="templates/node--landing-page--full.html.twig" %}
+```markup
+{#
+/**
+ * @file
+ *
+ * @see template_preprocess_landing_page()
+ */
+#}
+<article{{ attributes }}>
+  {% if (title_prefix or title_suffix or display_submitted or unpublished or preview or (not page)) and title %}
+    <header>
+
+      {{ title_prefix  }}
+
+      {{ title_suffix  }}
+
+      {% if unpublished %}
+        <mark class="watermark">Unpublished</mark>
+      {% elseif preview %}
+        <mark class="watermark">Preview</mark>
+      {% endif %}
+
+    </header>
+  {% endif %}
+
+  {{ content }}
+
+</article>
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 **Our Example hook\_theme:**
 
 {% code-tabs %}
@@ -51,6 +87,7 @@ _You can generate other suggestions using the `hook_theme_suggestions_hook` hook
 function node_landing_page_preprocess_node(&$variables) {
   if (isset($variables["node"]) && is_object($variables["node"]) && $variables["node"]->getType() == "landing_page") {
     $variables["attributes"]->addClass("full-display");
+    $variables["unpublished"] = 0;
   }
 }
 ```
@@ -67,6 +104,7 @@ function node_landing_page_preprocess_node(&$variables) {
  */
 function node_landing_page_preprocess_node__landing_page__full(&$variables) {
   $variables["attributes"]->addClass("full-display");
+  $variables["unpublished"] = 0;
 }
 ```
 {% endcode-tabs-item %}
