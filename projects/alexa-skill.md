@@ -19,8 +19,8 @@ This causes the latest changes to immediately go live in development and beta us
 
 When the time comes to release changes to the interaction model, we need to do the following:
 
-1. Publish the current BostonInfoSkill Lambda function as a new version, described with the current date \(e.g. ”2019-05-22”\)
-2. Create a new alias pointing to that version
+1. Publish the current BostonInfoSkill Lambda function as a new version, described with the current date \(e.g. ”2019-05-22”\). \[From [AWS console](%20https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)\].
+2. Create a new alias pointing to that version. \[First, select _BostonInfoSkill_ from functions, then select "Create Alias" from the "Actions" button.\]
 3. In the UI, add “Alexa Skills Kit” as a trigger and paste the Skill ID into the configuration box, then Save
 4. Update the Alexa skill’s endpoint ARN to reference the new alias
 5. Use the “Test” page to make sure that the lambda is receiving traffic correctly
@@ -55,7 +55,7 @@ Sometimes Amazon will reject the skill. Here’s what to do afterwards, which is
 
 Once you’re sure Amazon will be satisfied:
 
-1. Publish a new version of the Lambda function via the web console
+1. Publish a new version of the Lambda function via the web console \[[console](%20https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)\]
 2. Update the previously-used `production-X` lambda alias to point to that new version
 3. Update the Alexa Skill endpoint settings to add `:production-X` back in to the ARN
 4. Cross fingers
