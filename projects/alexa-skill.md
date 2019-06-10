@@ -22,7 +22,7 @@ When the time comes to release changes to the interaction model, we need to do t
 1. Publish the current BostonInfoSkill Lambda function as a new version, described with the current date \(e.g. ”2019-05-22”\). \[From [AWS console](%20https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)\].
 2. Create a new alias pointing to that version. \[First, select _BostonInfoSkill_ from functions, then select "Create Alias" from the "Actions" button.\]
 3. In the UI, add “Alexa Skills Kit” as a trigger and paste the Skill ID into the configuration box, then Save
-4. Update the Alexa skill’s endpoint ARN to reference the new alias
+4. Update the Alexa skill’s endpoint ARN to reference the new alias. \[[Alexa here](https://developer.amazon.com/alexa/console/ask/)\]
 5. Use the “Test” page to make sure that the lambda is receiving traffic correctly
 6. Submit the skill to Amazon for certification \(snapshotting the endpoints\)
 
