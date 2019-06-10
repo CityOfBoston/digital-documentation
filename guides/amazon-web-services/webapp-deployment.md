@@ -85,6 +85,10 @@ Docker containers let us trivially deploy many isolated apps on to a few machine
 
 #### Static S3 Sites
 
+Some of our sites are just static HTML, or are static HTML and static JavaScript. The `public-notices` app is an example of this.
+
+These apps are served from the `cob-digital-apps-prod-static` S3 bucket by an nginx server running in a container in the ECS cluster. This is set up by the [`proxy_pass_service`](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/modules/proxy_pass_service/main.tf) module in digital-terraform.
+
 ### Shippy-Toe
 
 All of the webapp deployments through the monorepo use our [`internal-slack-bot`](https://github.com/CityOfBoston/digital/tree/develop/services-js/internal-slack-bot) service, which appears as [Shippy-Toe](https://en.wikipedia.org/wiki/Squirrel_Girl#Tippy-Toe) the [squirrel](https://www.quora.com/On-GitHub-what-is-the-significance-of-the-Ship-It-squirrel) in the `#digital_builds` channel.
