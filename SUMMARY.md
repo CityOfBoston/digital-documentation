@@ -98,7 +98,7 @@
 * [Maps on boston.gov](projects/maps-on-boston.gov.md)
 * [Charts on boston.gov](projects/charts-on-boston.gov.md)
 
-## External resources
+## External resources <a id="other-resources"></a>
 
 * [Learning resources](other-resources/external-learning-resources.md)
 * [Reference links](other-resources/reference-links.md)
