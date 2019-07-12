@@ -10,9 +10,9 @@ description: Helpful applications and browser extensions.
 
 Cloud storage browser.
 
-### [SQLPro](https://www.macsqlclient.com/)
+### [DBeaver](https://dbeaver.io)
 
-SQL Server client for OSX.
+Free, open source universal database tool. Available for Windows, OSX, and Linux.
 
 ### [VirtualBox](https://www.virtualbox.org/)
 
@@ -29,10 +29,13 @@ SQL Server client for OSX.
 
 * [React DevTools](https://github.com/facebook/react-devtools#pre-packaged)
 * [MobX DevTools](https://github.com/mobxjs/mobx-devtools)
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse/#devtools) - now included with Chrome under the “audits” tab in DevTools. Perform audits on performance, PWA, a11y, best practices, and SEO.
 
 ### Other
 
 * [Page Ruler redux](https://chrome.google.com/webstore/detail/page-ruler-redux/giejhjebcalaheckengmchjekofhhmal?hl=en) - measure dimensions on a webpage in the browser
+* [GA Debugger](https://developers.google.com/analytics/devguides/collection/analyticsjs/debugging#the_google_analytics_debugger_chrome_extension) - enables the debug version of analytics.js without having to change the tracking code
+* [Tag Assistant](https://support.google.com/tagassistant/answer/2947093)
 
 ## Editors and IDEs
 
