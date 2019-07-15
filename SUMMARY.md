@@ -13,7 +13,7 @@
   * [Web applications](getting-started/technology-stack/web-applications.md)
 * [Using GitBook](getting-started/using-gitbook.md)
 
-## Standards and best practices
+## Standards & best practices
 
 * [General](standards-and-best-practices/general.md)
 * [Code reviews](standards-and-best-practices/code-reviews.md)
@@ -22,7 +22,7 @@
   * [Git Command Tips](standards-and-best-practices/git-and-github/git-command-tips.md)
   * [GitHub Service Accounts](standards-and-best-practices/git-and-github/github-service-accounts.md)
 * [Code quality](standards-and-best-practices/code-quality/README.md)
-  * [Automated tests and static analysis](standards-and-best-practices/code-quality/automated-tests-and-static-analysis.md)
+  * [Automated tests & static analysis](standards-and-best-practices/code-quality/automated-tests-and-static-analysis.md)
   * [Code comments](standards-and-best-practices/code-quality/code-comments.md)
   * [Style guides](standards-and-best-practices/code-quality/style-guides/README.md)
     * [Drupal/PHP](standards-and-best-practices/code-quality/style-guides/php/README.md)

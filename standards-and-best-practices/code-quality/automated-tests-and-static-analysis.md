@@ -2,7 +2,7 @@
 description: The automated tests we run in our projects.
 ---
 
-# Automated tests and static analysis
+# Automated tests & static analysis
 
 ## Local dev environment
 
