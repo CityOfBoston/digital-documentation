@@ -81,10 +81,9 @@
       * [Knowledge Base](guides/drupal-7/end-points/cityscore/knowledgebase..md)
     * [Public Notices](guides/drupal-7/end-points/public-notices.md)
 * [DNS Redirects](guides/dns-redirects.md)
-* [GitHub](guides/github/README.md)
-  * [How To Add a Repository to GitHub](guides/github/adding-repositories-to-github-repos.md)
 * [Integrating with Boston.gov](guides/resources.md)
-* [Testing/QA guides](https://boston.gitbook.io/digital-documentation-private/testing-qa-guides)
+* [Maps on boston.gov](guides/maps-on-boston.gov.md)
+* [Charts on boston.gov](guides/charts-on-boston.gov.md)
 
 ## Projects
 
@@ -92,22 +91,15 @@
 * [Birth certificates](projects/birth-certificates.md)
 * [Permit Finder](projects/permit-finder.md)
 * [Budget Website](projects/budget-website.md)
+* [Fleet pattern library](projects/fleet-pattern-library.md)
 * [Inactive projects](projects/inactive-projects/README.md)
   * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
-* [Fleet pattern library](projects/fleet-pattern-library.md)
-* [Maps on boston.gov](projects/maps-on-boston.gov.md)
-* [Charts on boston.gov](projects/charts-on-boston.gov.md)
 
 ## External resources <a id="other-resources"></a>
 
 * [Learning resources](other-resources/external-learning-resources.md)
 * [Reference links](other-resources/reference-links.md)
 * [Applications and extensions](other-resources/applications-extensions.md)
-
-## Bruti
-
-* [Drupal QA Setup](bruti/untitled/README.md)
-  * [Regression Test Script \(Drupal\)](bruti/untitled/regression-test-script-drupal.md)
 
 ## David
 
