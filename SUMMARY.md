@@ -15,6 +15,7 @@
 
 ## Standards & best practices
 
+* [Code of Conduct](standards-and-best-practices/untitled.md)
 * [General](standards-and-best-practices/general.md)
 * [Code reviews](standards-and-best-practices/code-reviews.md)
 * [Project management](standards-and-best-practices/project-management.md)
@@ -105,6 +106,5 @@
 
 ## David
 
-* [Code of Conduct](david/untitled.md)
 * [Contributing](david/contributing.md)
 
