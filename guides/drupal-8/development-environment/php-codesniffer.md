@@ -8,7 +8,7 @@ PHP CodeSniffer \(https://github.com/squizlabs/PHP\_CodeSniffer\) is already inc
 
 ### Local Setup:
 
-1. You need to specifically add Drupal coding standards to phpcs. You can do this globally for your computer by running:
+1. You need to specifically download the Drupal coding standards using the coder module. You can do this globally for your computer by running:
 
 ```text
 composer global require drupal/coder:^8.3.1
