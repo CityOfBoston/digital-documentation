@@ -52,6 +52,7 @@
 * [Drupal 8](guides/drupal-8/README.md)
   * [File Migration Strategy](guides/drupal-8/file-migration-strategy.md)
   * [Development environment](guides/drupal-8/development-environment/README.md)
+    * [PHP CodeSniffer](guides/drupal-8/development-environment/php-codesniffer.md)
     * [VSCode IDE Setup](guides/drupal-8/development-environment/vscode-ide-setup.md)
     * [Using Windows](guides/drupal-8/development-environment/using-windows.md)
   * [Installation instructions](guides/drupal-8/installation-instructions.md)
