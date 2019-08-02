@@ -27,3 +27,5 @@ $databases['migrate']['default'] = [
 
 4. Test your connection by checking the migration status in D8 `lando drush ms`
 
+For more info, checkout: [https://www.drupal.org/docs/8/api/migrate-api/migrate-source-plugins/migrating-data-from-a-sql-source](https://www.drupal.org/docs/8/api/migrate-api/migrate-source-plugins/migrating-data-from-a-sql-source)
+
