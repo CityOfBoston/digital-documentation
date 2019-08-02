@@ -50,6 +50,7 @@
   * [Emotion](guides/libraries-and-tools/emotion.md)
   * [Storybook](guides/libraries-and-tools/storybook.md)
 * [Drupal 8](guides/drupal-8/README.md)
+  * [Connecting D7 and D8 databases for migration](guides/drupal-8/connecting-d7-and-d8-databases-for-migration.md)
   * [File Migration Strategy](guides/drupal-8/file-migration-strategy.md)
   * [Development environment](guides/drupal-8/development-environment/README.md)
     * [PHP CodeSniffer](guides/drupal-8/development-environment/php-codesniffer.md)
