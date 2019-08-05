@@ -1,4 +1,4 @@
-# Untitled
+# Image Styles & UX
 
 ## Image folder structure
 
