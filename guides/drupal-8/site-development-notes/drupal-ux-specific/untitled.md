@@ -13,6 +13,13 @@ sites/default/files
     |   ├── [file-firstchar]
     |   └── file
     |       └── [dated]
+    ├── icons                          ICON LIBRARY ROOT FOLDER
+    |   ├── circle                     - from designers
+    |   ├── department                 - from designers
+    |       └── red                    - from designers
+    |   ├── drupal                     - from designers
+    |   ├── experiential               - from designers
+    |   └── map                        - from designers
     ├── img                            IMAGE ROOT FOLDER
     |   ├── [dated]                     - migrated files from public:// (root)
     |   ├── columns                    * Paragraph columns 
@@ -24,7 +31,7 @@ sites/default/files
     |   |   └── [dated]                 - migrated files
     |   ├── how_to                     * Node how_to 
     |   |   └── intro_images            - from field_intro_image
-    |   ├── icons                      * Holds svg icon files 
+    |   ├── icons(legacy)              * Holds svg icon files 
     |   |   ├── department              
     |   |   |   └── [dated]             - migrated files
     |   |   ├── emergency                  
