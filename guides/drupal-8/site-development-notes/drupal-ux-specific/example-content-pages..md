@@ -2,9 +2,7 @@
 description: This page contains a list of sample nodes for content verification.
 ---
 
-# Example Content Pages.
-
-
+# Example Content Pages
 
 | TestPage \(article\) |  | [17356](http://bostond8stg.prod.acquia-sites.com/node/17356) |  |  |  |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -29,7 +27,7 @@ description: This page contains a list of sample nodes for content verification.
 |  | With Header Image | [4266](http://bostond8stg.prod.acquia-sites.com/node/4266) | [4286](http://bostond8stg.prod.acquia-sites.com/node/4286) | [4346](http://bostond8stg.prod.acquia-sites.com/node/4346) |  |
 |  |  |  |  |  |  |
 | Person Profile | [Person Profile Content](http://bostond8stg.prod.acquia-sites.com/admin/content?title=&type=person_profile&status=All&langcode=All) |  |  |  |  |
-|  | | [401](http://bostond8stg.prod.acquia-sites.com/node/401) | [49476](http://bostond8stg.prod.acquia-sites.com/node/49476) | [27636](http://bostond8stg.prod.acquia-sites.com/node/27636) |  |
+|  |  | [401](http://bostond8stg.prod.acquia-sites.com/node/401) | [49476](http://bostond8stg.prod.acquia-sites.com/node/49476) | [27636](http://bostond8stg.prod.acquia-sites.com/node/27636) |  |
 |  |  |  |  |  |  |
 | Program Initiative Profile | [PIP Content](http://bostond8stg.prod.acquia-sites.com/admin/content?title=&type=program_initiative_profile&status=All&langcode=All) |  |  |  |  |
 |  | With Image | [2861](http://bos-d7.lndo.site/node/2861) |  |  |  |
