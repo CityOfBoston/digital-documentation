@@ -77,7 +77,7 @@
     * [Custom Backend](guides/drupal-8/site-development-notes/custom-backend.md)
     * [Drupal UX-specific](guides/drupal-8/site-development-notes/drupal-ux-specific/README.md)
       * [Image Styles & UX](guides/drupal-8/site-development-notes/drupal-ux-specific/untitled.md)
-      * [Example Content Pages](guides/drupal-8/site-development-notes/drupal-ux-specific/example-content-pages..md)
+      * [Example Content Pages](guides/drupal-8/site-development-notes/drupal-ux-specific/example-content-pages.md)
   * [Continuous Deployment Process](guides/drupal-8/untitled-1.md)
 * [Drupal 7](guides/drupal-7/README.md)
   * [Deployment \(2019\)](guides/drupal-7/deployment-2019/README.md)
