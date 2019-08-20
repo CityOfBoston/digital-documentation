@@ -33,5 +33,17 @@ If `lando drush ms` has a blank output, try running the following:
 lando drush cim --partial --source=modules/custom/bos_migration/config/install/ -y; and lando drush cr; and lando drush ms
 ```
 
+If you see errors like "The "d7\_field\_collection\_item" plugin does not exist." you need to:
+
+```text
+lando drush en devel,dblog,automated_cron,syslog,twig_xdebug,config_devel
+```
+
+then:
+
+```text
+lando drush en migrate,migrate_utilities,migrate_upgrade,migrate_drupal,migrate_drupal_ui,field_group_migrate,migrate_plus,migrate_tools,bos_migration 
+```
+
 For more info, checkout: [https://www.drupal.org/docs/8/api/migrate-api/migrate-source-plugins/migrating-data-from-a-sql-source](https://www.drupal.org/docs/8/api/migrate-api/migrate-source-plugins/migrating-data-from-a-sql-source)
 
