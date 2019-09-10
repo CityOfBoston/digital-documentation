@@ -22,7 +22,7 @@ The typical limitations of Docker \(stable storage is a pain, as is running rela
 
 Amazon’s ECS, along with its Application Load Balancers, handle restarting crashed jobs and routing traffic to the containers.
 
-### Network Configuration
+## Network Configuration
 
 Our app containers are run on EC2 instances that live in four private subnets \(2 AZs × 2 environments\). These instances do not have public IPs and therefore cannot communicate directly with the public internet, which gives us some level of safety through isolation.
 
@@ -30,7 +30,7 @@ These ECS cluster instances receive traffic from Amazon’s ALB load balancers, 
 
 The instances are further isolated by having security groups that only allow traffic from the security groups of their corresponding ALBs \(and SSH traffic from the bastion instance\).
 
-#### VPN Gateway
+### VPN Gateway
 
 The VPN gateway connects from our VPC to the City datacenter. It has two connections running simultaneously for redundancy. AWS VPNs need to have regular traffic to keep them active, and if they do disconnect they need traffic from outside AWS to cause them to come back online.
 
@@ -38,7 +38,7 @@ We have a SiteScope rule set up with the CoB network team that pings an EC2 inst
 
 Additionally, we have a CloudWatch alarm that fires if one or both of the VPN connections goes down. If one has gone down traffic should still be flowing over the other, and usually it will come back up of its own accord. Contact NOC if there are issues.
 
-#### SSH Access
+### SSH Access
 
 In general, you should not need to SSH on to the cluster instances. Definitely not for routine maintenance \(do that through an ECS task if you need that kind of thing\). It may be necessary to troubleshoot and debug issues, however.
 
