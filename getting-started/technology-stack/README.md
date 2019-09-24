@@ -21,7 +21,9 @@ We’re big fans of TypeScript, and use it throughout our applications. Our stac
 | [Percy.io](https://docs.percy.io/docs) | Visual regression testing |
 | [Postmark](https://postmarkapp.com/developer) | Sending emails |
 | [Rollbar](https://docs.rollbar.com/docs/javascript) | Server logging |
+| [Siteimprove](http://siteimprove.com) | Quality Assurance |
 | [Slack](https://get.slack.help/) | Realtime messaging |
+| [Swiftype](www.swiftype.com) | Powers search for boston.gov and City intranet |
 | [TravisCI](https://docs.travis-ci.com/) | Continuous integration |
 | [updown.io](https://updown.io/api) | Uptime monitoring |
 
