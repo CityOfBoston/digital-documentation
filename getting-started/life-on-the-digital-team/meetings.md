@@ -8,7 +8,7 @@ description: The regular meetings conducted by the Digital team.
 
 ### Slack daily standup
 
-**Participants:** Devs, PMs, QA
+**Participants:** Developers, Product Managers, Quality Assurance, +Others Who Want to Join
 
 * Accomplishments or discoveries from the previous day
 * Priorities for the day
@@ -18,26 +18,17 @@ description: The regular meetings conducted by the Digital team.
 
 ### Dev/PM sync
 
-**Mondays**
+**Monday afternoons \(typically\)**
 
-**Participants:** Devs, QA, PMs, CDO  
-**Optional:** Design, content
+**Participants:** Developers, Product Managers, Chief Digital Officer, Quality Assurance
 
 **Format:** Look over the [project prioritization](https://github.com/CityOfBoston/digital/wiki/Home) and adjust as necessary.
 
-Each person describes:
-
-1. What is my focus for the week?
-
-Team discussion:
-
-1. What's slowing us down / how can we go faster? \[identify any pain points\]
-2. Is there anything to QA?
-3. Are there any experiments we want to run with our process?
+Sync on weekly priorities, roadmap, open team or process questions, blockers, etc. Generally, a time for us to catch up and make sure we're on the same page and know how we can support and learn from one another.
 
 ### Digital staff meeting
 
-**Tuesdays**
+**Thursday morning \(typically\)**
 
 **Participants:** All digital team members plus invited guests as appropriate
 
@@ -45,33 +36,15 @@ Team discussion:
 
 ### \#Demo
 
-**Friday**
+**Friday afternoons \(typically\)**
 
-**Participants:** Devs, PMs, CDO  
-**Optional:** Design, content, others who want to join
+**Participants:** Any/all
 
 **Format:** Team members may demo something they’ve accomplished during the week. Prompt on what you’ll demo is made by Slack on Thursday afternoon.
 
 ### Project team meetings
 
-Used when a project has more than one engineer.
+**Participants:** Anyone who is a part of the identifying project team. Will typically at least include a product manager and developer from our folks.
 
-**Participants:** Product manager and engineering for a particular project.
-
-**Format:** Go right to left through the project’s Kanban board.
-
-1. Remove “Shipped” items from the board
-2. Review “Inventory.” What do we need to do to ship it?
-3. Ask what is needed to move any “In Progress” cards forward
-4. Update “Next” to reflect what we expect to do for the week
-5. Ensure that the “Backlog” is still in priority order
-
-## Bi-weekly
-
-### Dev Guild
-
-**Participants:** Engineers
-
-* Go over any issues that affect engineering
-* Share knowledge and wins
+**Format:** Determined by project team, but typically includes a review of the kanban project board for part of it.
 
