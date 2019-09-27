@@ -1,7 +1,3 @@
----
-description: 'Essential: read this first!'
----
-
 # Software engineering working agreement
 
 ## Conduct
