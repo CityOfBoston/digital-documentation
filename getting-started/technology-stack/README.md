@@ -16,6 +16,7 @@ We’re big fans of TypeScript, and use it throughout our applications. Our stac
 | Tool | Purpose |
 | :--- | :--- |
 | [AWS](https://docs.aws.amazon.com/) | App hosting |
+| [Browserstack](https://www.browserstack.com/) | Quality Assurance Testing |
 | [GitHub](https://help.github.com/) | Version control / code management |
 | [Google Analytics](https://analytics.google.com/) | Web traffic analytics |
 | [Percy.io](https://docs.percy.io/docs) | Visual regression testing |
