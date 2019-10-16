@@ -5,10 +5,9 @@
 ## Getting started
 
 * [Life on the Digital team](getting-started/life-on-the-digital-team/README.md)
-  * [Software engineering working agreement](getting-started/life-on-the-digital-team/software-engineering-working-agreement.md)
-  * [Roles and responsibilities](getting-started/life-on-the-digital-team/roles-and-responsibilities.md)
   * [Meetings](getting-started/life-on-the-digital-team/meetings.md)
   * [Communication](getting-started/life-on-the-digital-team/communication.md)
+  * [Software engineering working agreement](getting-started/life-on-the-digital-team/software-engineering-working-agreement.md)
 * [Technology stack](getting-started/technology-stack/README.md)
   * [Web applications](getting-started/technology-stack/web-applications.md)
 * [Using GitBook](getting-started/using-gitbook.md)
