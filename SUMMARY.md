@@ -108,5 +108,5 @@
 
 ## David
 
-* [Contributing](david/contributing.md)
+* [Contributing to Boston.gov](david/contributing.md)
 
