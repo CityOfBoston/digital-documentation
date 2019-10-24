@@ -6,10 +6,6 @@ description: Practices and workflows for using Git and GitHub on the Digital tea
 
 ## General
 
-{% hint style="warning" %}
-Don’t forget to enable [two-factor authentication](https://help.github.com/articles/about-two-factor-authentication/) for your GitHub account.
-{% endhint %}
-
 * Changes are made on feature branches and merged via Pull Request, regardless of whether those PRs are reviewed.
 * Preferred naming convention for a feature branch is `service-name/feature`.
 * **Never** commit directly to `develop` or `production` branches.
