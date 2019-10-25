@@ -14,6 +14,7 @@
 
 ## Standards & best practices
 
+* [Analytics and Metrics](standards-and-best-practices/analytics-and-metrics.md)
 * [Code of Conduct](standards-and-best-practices/code-of-conduct.md)
 * [General](standards-and-best-practices/general.md)
 * [Code reviews](standards-and-best-practices/code-reviews.md)
