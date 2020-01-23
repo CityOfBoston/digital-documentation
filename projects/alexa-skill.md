@@ -19,12 +19,30 @@ This causes the latest changes to immediately go live in development and beta us
 
 When the time comes to release changes to the interaction model, we need to do the following:
 
-1. Publish the current BostonInfoSkill Lambda function as a new version, described with the current date \(e.g. ”2019-05-22”\). \[From [AWS console](%20https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)\].
-2. Create a new alias pointing to that version. \[First, select _BostonInfoSkill_ from functions, then select "Create Alias" from the "Actions" button.\]
-3. In the UI, add “Alexa Skills Kit” as a trigger and paste the Skill ID into the configuration box, then Save
-4. Update the Alexa skill’s endpoint ARN to reference the new alias. \[[Alexa here](https://developer.amazon.com/alexa/console/ask/)\]
-5. Use the “Test” page to make sure that the lambda is receiving traffic correctly
-6. Submit the skill to Amazon for certification \(snapshotting the endpoints\)
+1. Note the Alexa Skill ID:
+   1. Access [Alexa Skill](https://developer.amazon.com/alexa/console/ask/),
+   2. Click on "Boston Info", and then click "Endpoint" in right column,
+   3. Copy the Skill ID 
+2. Publish the current BostonInfoSkill Lambda function as a new version, described with the current date \(e.g. ”2019-05-22”\). 
+   1. Access [AWS Lambda Console](%20https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions),
+   2. Select BostonInfoSkill,
+   3. Click on the "BostonInfoSkill" \(orange icon\) in the designer and ensure the `"Function Code"` `"Runtime"` is set to Python 3.7
+   4. Click on "Actions" button,
+   5. Click Publish in drop-down list
+   6. Enter date into the text-box on the pop-up dialog, and click "Publish" button.
+3. Create a new alias pointing to that version. 
+   1.  select _BostonInfoSkill_ from functions, 
+   2. then select "Create Alias" from the "Actions" button.
+4. In the UI, add “Alexa Skills Kit” as a trigger 
+   1. Click on BostonInfoSkill in the Designer panel, 
+   2. Add “Alexa Skills Kit” as a trigger, and paste the Skill ID \(from step 1 above\) into the configuration box, 
+   3. Save
+5. Update the Alexa skill’s endpoint ARN to reference the new alias. 
+   1. Access [Alexa Skill](https://developer.amazon.com/alexa/console/ask/)
+   2. Click on "Boston Info", and then click "Endpoint" in right column,
+   3. Update the Default Regions ARN to reference the alias created above.
+6. Use the “Test” page \(in the Alexa Skill\) to make sure that the lambda is receiving traffic correctly
+7. Submit the skill to Amazon for certification \(snapshotting the endpoints\)
 
 After the Amazon verification process completes:
 

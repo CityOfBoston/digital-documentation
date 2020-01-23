@@ -20,8 +20,7 @@ _You can generate other suggestions using the `hook_theme_suggestions_hook` hook
 
 **Our Example template file:**
 
-{% code-tabs %}
-{% code-tabs-item title="templates/node--landing-page--full.html.twig" %}
+{% code title="templates/node--landing-page--full.html.twig" %}
 ```markup
 {#
 /**
@@ -51,13 +50,11 @@ _You can generate other suggestions using the `hook_theme_suggestions_hook` hook
 
 </article>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 **Our Example hook\_theme:**
 
-{% code-tabs %}
-{% code-tabs-item title="node\_landing\_page.module" %}
+{% code title="node\_landing\_page.module" %}
 ```php
 /**
  * Implements hook_theme().
@@ -73,13 +70,11 @@ _You can generate other suggestions using the `hook_theme_suggestions_hook` hook
   ];
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 **Our Example hook\_preprocess\_hook \(version 1\):**
 
-{% code-tabs %}
-{% code-tabs-item title="node\_landing\_page.module" %}
+{% code title="node\_landing\_page.module" %}
 ```php
 /**
  * Implements hook_preprocess_HOOK().
@@ -91,13 +86,11 @@ function node_landing_page_preprocess_node(&$variables) {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 **Our Example hook\_preprocess\_hook \(version 2\):**
 
-{% code-tabs %}
-{% code-tabs-item title="node\_landing\_page.module" %}
+{% code title="node\_landing\_page.module" %}
 ```php
 /**
  * Implements hook_preprocess_HOOK().
@@ -107,13 +100,11 @@ function node_landing_page_preprocess_node__landing_page__full(&$variables) {
   $variables["unpublished"] = 0;
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 **Our Example template\_preprocess\_hook:**
 
-{% code-tabs %}
-{% code-tabs-item title="node\_landing\_page.module" %}
+{% code title="node\_landing\_page.module" %}
 ```php
 function template_preprocess_node__landing_page__full(array &$variables) {
   foreach (Element::children($variables['elements']) as $key) {
@@ -121,13 +112,11 @@ function template_preprocess_node__landing_page__full(array &$variables) {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 **Our Example hook\_theme\_suggestions\_hook:**
 
-{% code-tabs %}
-{% code-tabs-item title="node\_landing\_page.module" %}
+{% code title="node\_landing\_page.module" %}
 ```php
 /**
  * Implements hook_theme_suggestions_HOOK().
@@ -141,6 +130,5 @@ function node_landing_page_theme_suggestions_node(array $variables) {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 

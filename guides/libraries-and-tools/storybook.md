@@ -25,21 +25,17 @@ If you write a Story for every different use case or state of a component, Percy
 
 ### Setting where a Story should be organized in the sidebar
 
-{% code-tabs %}
-{% code-tabs-item title="CompatibilityWarningContent.stories.tsx" %}
+{% code title="CompatibilityWarningContent.stories.tsx" %}
 ```jsx
 storiesOf('Notifications|CompatibilityWarningContent', module)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-{% code-tabs %}
-{% code-tabs-item title="StatusModal.stories.tsx" %}
+{% code title="StatusModal.stories.tsx" %}
 ```jsx
 storiesOf('Notifications|Modals/StatusModal', module)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.52.20-pm.png)
 

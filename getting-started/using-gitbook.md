@@ -32,11 +32,9 @@ When you are in editing mode, any changes you make will be autosaved as one draf
 
 ### Adding a file to gitbooks
 
-If you add a new file in github, then you must also [add it to the summary](https://docs.gitbook.com/integrations/github/faq#nothing-happens-on-gitbook-after-adding-a-new-file-to-my-repository) for it to appear in gitbooks. 
+If you add a new file in github, then you must also [add it to the summary](https://docs.gitbook.com/integrations/github/faq#nothing-happens-on-gitbook-after-adding-a-new-file-to-my-repository) for it to appear in gitbooks.
 
 ## GitBook roadmap
 
 You can see the roadmap and vote on features [here](https://gitbook.canny.io/).
-
-
 
