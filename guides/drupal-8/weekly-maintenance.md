@@ -105,8 +105,22 @@ _If there is no `composer.lock` file found then composer will read the `composer
 {% hint style="success" %}
 **SUMMARY: Recommended overall composer strategy:  
 -** Manually maintain the `composer.json` file locally, and use_**`composer update`**_ in the local container to update the `composer.lock` file, then  
-- Commit and merge the `composer.lock` and `composer.json` files into the main repository, then  
+- Commit and merge **both** the `composer.lock` and `composer.json` files into the main repository, then  
 - Deploy scripts will execute _**`composer install`**_ \(on Travis\) during the site build process so the exact same versions of all packages are deployed on all Acquia servers.
+{% endhint %}
+
+{% hint style="info" %}
+**Side Note:**  
+- local build script `scripts/local/lando-build-drupal.sh` uses **`composer install`** . This is to ensure that the package versions loaded locally are the same as the currently loaded package versions on the `dev` Acquia server.  
+- Travis script`scripts/deploy/travis_build.sh`\(which builds the full Drupal file system that is deployed to Acquia\) uses **`composer install`**. This is to ensure that the package versions loaded into the build/deploy artifact are the exact same package versions as in the local development container environment.
+{% endhint %}
+
+{% hint style="info" %}
+**Final note \(!\):**
+
+Therefore, the **only way** packages will be updated on the Acquia servers \(ci/uat/dev/stage or prod\) is if a developer runs `composer update` on their local container, and then merges the resultant `composer.lock` file to the `develop` branch of the main repo.    
+- If the `composer.lock` file is not merged, then no update will occur.  
+- It is not necessary to merge changes to the `composer.json` to complete an update. However, the `composer.json` file still should be committed because if it is not, then it will be out of sync with the current lock file any changes to rules will not be available to another developer.
 {% endhint %}
 
 ## Step 2: Check Drupal Status Report.
