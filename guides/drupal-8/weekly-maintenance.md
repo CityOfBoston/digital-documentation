@@ -92,18 +92,19 @@ Finally we should export the configuration. It is unlikely that there will be ch
 $ lando drush cex
 ```
 
-Finally commit the changed `composer.json` and `composer.lock` \(Very important to include both - see composer box-out below\) and any config files \(will **always** be in the `/config/default` folder\) into the main public repository.
+Finally commit the changed `composer.json` and `composer.lock` \(it is very important to include both - see composer box-out below\) and any config files \(which will **always** be in the `/config/default` folder\) into the main public repository.
 
 {% hint style="info" %}
-**composer update:** reads the `composer.json` file, works out the package versions which meet all rules \(and recursive dependencies\), compares to existing packages, downloads the packages which need updating and finally updates `composer.lock`.
+**composer update:** \[[notes](https://getcomposer.org/doc/03-cli.md#install-i)\] ****reads the `composer.json` file, works out the package versions which meet all rules \(and recursive dependencies\), compares versions with the existing packages in the local environment and downloads the packages which need updating.    
+Finally, it updates `composer.lock`with the exact versions of each package that are currently installed.
 
-**composer install:** reads the `composer.lock` file, compares to existing packages and downloads those packages which need updating.   
+**composer install:** \[[notes](https://getcomposer.org/doc/03-cli.md#update-u)\] reads the `composer.lock` file, compares to existing packages and downloads those packages which need updating.   
 _If there is no `composer.lock` file found then composer will read the `composer.json` file and essentially run the `composer update` process._
 {% endhint %}
 
 {% hint style="success" %}
 **SUMMARY: Recommended overall composer strategy:  
--** Manually maintain the `composer.json` file locally, and use _**`composer update`**_ in the locl container to generate the `composer.lock` file, then  
+-** Manually maintain the `composer.json` file locally, and use_**`composer update`**_ in the local container to update the `composer.lock` file, then  
 - Commit and merge the `composer.lock` and `composer.json` files into the main repository, then  
 - Deploy scripts will execute _**`composer install`**_ \(on Travis\) during the site build process so the exact same versions of all packages are deployed on all Acquia servers.
 {% endhint %}
