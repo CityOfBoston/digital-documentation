@@ -16,7 +16,7 @@ If the basic parts of this process are not conducted weekly, then to ensure the 
 
 ### Step 1: Check for updates
 
-Login to the production website at [https://content.boston.gov](https://content.boston.gov/) and then navigate to the status report page at [/admin/reports/updates](https://content.boston.gov/admin/reports/updates).    
+Login to the production website at [https://content.boston.gov](https://content.boston.gov/) and then navigate to the available updates report page at [/admin/reports/updates](https://content.boston.gov/admin/reports/updates).    
 All available updates which managed by composer are listed on this page.
 
 <table>
