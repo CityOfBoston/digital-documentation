@@ -6,7 +6,7 @@ description: Technical and project documentation for charts on boston.gov.
 
 We use the [VegaLite](https://vega.github.io/vega-lite/) and [Vega](https://vega.github.io/vega/) libraries to create our charts on boston.gov. VegaLite is an easier to use version of Vega. Both libraries are built on top of [D3](https://d3js.org/). It does a little more guess work for us so we don't have to be so specific in defining our charts. These libraries let users define/create a chart using a JSON schema. 
 
-From a technical standpoint, we wrap this library up as a web component that is stored in [Fleet](../projects/fleet-pattern-library/), our patterns library. The `<cob-chart>` component takes a JSON object as input in a Vega or VegaLite schema as input and creates a chart. 
+From a technical standpoint, we wrap this library up as a web component that is stored in [Fleet](../projects/fleet-pattern-library.md), our patterns library. The `<cob-chart>` component takes a JSON object as input in a Vega or VegaLite schema as input and creates a chart. 
 
 From a functional standpoint, when putting charts on boston.gov, we place them within text components in an effort to bring context to the data and information the chart is displaying. The [FY20 Budget Website](https://www.boston.gov/departments/budget/fy20-budget) has good examples of how charts should be used with narrative explanation. 
 

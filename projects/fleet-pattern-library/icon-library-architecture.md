@@ -27,6 +27,7 @@ This sub-domain is principally designed to act as a centralized, public CDN serv
 * The AWS **Certificate Manager** _\(us-east-1\)_ has created a wildcard certificate for `*.boston.gov` \(why??\).  This certificate is applied to the CloudFront Distribution to secure https traffic to the sub-domain.
 * The CoB LAN team have created a second **sub-domain** `assets_sftp.boston.gov` on the public DNS servers, and this sub-domain has a CNAME which points to `s-27207a4a63144da48.server.transfer.us-east-1.amazonaws.com`
 * An SFTP server has been created with a custom hostname of `assets_sftp.boston.gov` and users created with home directories pointing to the `/patterns.boston.gov/assets` .
+* There is a **Lambda** function "watching" the s3 bucket `patterns.boston.gov/assets` . When files are added to this folder, and event is fired which launches a **node12.x** script that updates a `manifest.txt` on `assets.boston.gov` file containing the current directory contents.  This file is consumed by a cron process in Drupal which updates the **Drupal Media Library** with the new icons. **Note:** Delete actions do not delete icons from the library.
 
 ### Local Development
 
