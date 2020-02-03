@@ -17,16 +17,16 @@ AWS CloudFront hosts and exposes both:
 
 ### Overview
 
-This sub-domain is principally designed to act as a centralized, public CDN serving assets \(images, icons and docs\) from the patterns server.  It is on a separate sub-domain from the patterns server to simplify relocation of these assets to a different resource \(i.e. apart from the css and js elements of the fleet patterns server\) in the future should the need arise.
+This sub-domain is principally designed to act as a centralized, public CDN serving media assets \(images, icons and docs\) from the patterns server.  It is on a separate sub-domain from the patterns server to simplify relocation of these assets to a different resource \(i.e. apart from the css and js elements of the fleet patterns server\) in the future should the need arise.
 
 ### Architecture
 
 * The icon folder in the fleet pattern library is located inside the main  **s3 bucket** named `patterns.boston.gov`
 * The `/assets` folder of this s3 bucket is referenced by a **CloudFront** Distribution \(`arn:aws:cloudfront::251803681989:distribution/E2NTMFQ3KYUMFB`\) which is exposed as a public website at the URL `https://d33pore7x73r0y.cloudfront.net.`  
 * The CoB LAN team have created a **sub-domain** `assets.boston.gov` on the public DNS servers, and this sub-domain has a CNAME which points to`https://d33pore7x73r0y.cloudfront.net`. 
-* The AWS **Certificate Manager** _\(us-east-1\)_ has created a wildcard certificate for `*.boston.gov` \(why??\).  This certificate is applied to the CloudFront Distribution to secure https traffic to the sub-domain.
+* The AWS **Certificate Manager** _\(us-east-1\)_ manages and AWS wildcard certificate for `*.boston.gov` \(why not use the cob main wildcard cert??\).  This certificate is applied to the CloudFront Distribution to secure HTTPS traffic to the sub-domain endpoint.
 * The CoB LAN team have created a second **sub-domain** `assets_sftp.boston.gov` on the public DNS servers, and this sub-domain has a CNAME which points to `s-27207a4a63144da48.server.transfer.us-east-1.amazonaws.com`
-* An SFTP server has been created with a custom hostname of `assets_sftp.boston.gov` and users created with home directories pointing to the `/patterns.boston.gov/assets` .
+* An **SFTP** **server** has been created with a custom host name of `assets_sftp.boston.gov` and users created with home directories pointing to the `/patterns.boston.gov/assets` .
 * There is a **Lambda** function "watching" the s3 bucket `patterns.boston.gov/assets` . When files are added to this folder, and event is fired which launches a **node12.x** script that updates a `manifest.txt` on `assets.boston.gov` file containing the current directory contents.  This file is consumed by a cron process in Drupal which updates the **Drupal Media Library** with the new icons. **Note:** Delete actions do not delete icons from the library.
 
 ### Local Development
