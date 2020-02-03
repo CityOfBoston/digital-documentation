@@ -90,7 +90,9 @@
 
 * [Alexa Skill](projects/alexa-skill.md)
 * [Permit Finder](projects/permit-finder.md)
-* [Fleet pattern library](projects/fleet-pattern-library.md)
+* [Fleet pattern library](projects/fleet-pattern-library/README.md)
+  * [Patterns Library Architecture](projects/fleet-pattern-library/patterns-library-architecture.md)
+  * [Icon Library Architecture](projects/fleet-pattern-library/icon-library-architecture.md)
 * [Inactive projects](projects/inactive-projects/README.md)
   * [311](projects/inactive-projects/311.md)
   * [Birth certificates](projects/inactive-projects/birth-certificates.md)
