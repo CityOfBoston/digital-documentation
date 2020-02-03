@@ -8,7 +8,7 @@ description: >-
 # Icon Library Architecture
 
 {% hint style="success" %}
-CloudFront exposes both:  
+AWS CloudFront hosts and exposes both:  
 `patterns.boston.gov` and  
 `assets.boston.gov`
 {% endhint %}
