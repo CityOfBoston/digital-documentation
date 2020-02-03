@@ -6,13 +6,17 @@ description: >-
 
 # Weekly Maintenance
 
+It is not necessary to complete all steps each week. In some weeks the module update will consume 100% of the time available, and other weeks there will be no module updates required, or the decision is made not to update any modules this week.
+
+In general, the maintenance process should start with the review of module updates, as this is a cornerstone of any maintenance program and ensures the balance of issues are being addressed on a completely updated site.
+
+## Activity 1: Use Drupal to check for module updates
+
 There are many ways this task can be effectively completed.  This way has the advantage of being responsive and relatively low-burden between cycles.  
 
 {% hint style="warning" %}
 If the basic parts of this process are not conducted weekly, then to ensure the site is kept up-to-date and is adequately patched, there will be a need for monitoring of Drupal/Acquia channels to determine when various patches are available.
 {% endhint %}
-
-## Activity 1: Use Drupal to check for module updates
 
 ### Step 1: Check for updates
 
@@ -135,14 +139,20 @@ Don't make changes in the UI of an Acquia hosted site - these changes should be 
 
 ## Step 3: Check Acquia Cloud Console.
 
+{% hint style="info" %}
+Acquia provide some useful diagnostic information on their Cloud UI Console.  Much of the information in the Insight reports are taken from Drupal processes behind steps 1-2 above, so checking those areas should be done first.
+{% endhint %}
+
 1. Login to the [Acquia Cloud Console](https://cloud.acquia.com/app/develop/all)
 2. Navigate to the Drupal 8 Production environment.
 3. Click on the "Insight" menu item to view a list of config setting mods recommended by Acquia. **Note:** Acquia Insight provides fairly generic best-practice type comments and it may not be appropriate to adopt/change all of the settings recommended - do some research first, and use common sense.
 4. Click on Stack Metrics to view a series of graphs related to resource consumption and basic network performance.  Take a look over these, paying particular attention to disk space and memory utilization graphs.
 
-
-
 ## Step 4: Site Improve Reports.
 
-login to mysiteimprove.com and check any outstanding issues.
+{% hint style="info" %}
+City of Boston use the external siteimprove.com to monitor the website for slow-pages, missing links etc etc.  Content editors are generally monitoring this site for broken links, but the website contains much information on delivery and performance of boston.gov.
+{% endhint %}
+
+login to http://www.mysiteimprove.com and check the console for any significant/new issues highlighted.
 
