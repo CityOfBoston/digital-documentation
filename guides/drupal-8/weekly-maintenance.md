@@ -92,7 +92,7 @@ Finally we should export the configuration. It is unlikely that there will be ch
 $ lando drush cex
 ```
 
-Finally commit the changed `composer.json` and `composer.lock` \(it is very important to include both - see composer box-out below\) and any config files \(which will **always** be in the `/config/default` folder\) into the main public repository.
+Finally commit the changed `composer.json` and `composer.lock` \(it is very important to include both - see "final note" box-out below\) and any config files \(which will **always** be in the `/config/default` folder\) into the main public repository.
 
 {% hint style="info" %}
 **composer update:** \[[notes](https://getcomposer.org/doc/03-cli.md#install-i)\] ****reads the `composer.json` file, works out the package versions which meet all rules \(and recursive dependencies\), compares versions with the existing packages in the local environment and downloads the packages which need updating.    
@@ -137,6 +137,12 @@ Don't make changes in the UI of an Acquia hosted site - these changes should be 
 
 1. Login to the [Acquia Cloud Console](https://cloud.acquia.com/app/develop/all)
 2. Navigate to the Drupal 8 Production environment.
+3. Click on the "Insight" menu item to view a list of config setting mods recommended by Acquia. **Note:** Acquia Insight provides fairly generic best-practice type comments and it may not be appropriate to adopt/change all of the settings recommended - do some research first, and use common sense.
+4. Click on Stack Metrics to view a series of graphs related to resource consumption and basic network performance.  Take a look over these, paying particular attention to disk space and memory utilization graphs.
+
+
 
 ## Step 4: Site Improve Reports.
+
+login to mysiteimprove.com and check any outstanding issues.
 
