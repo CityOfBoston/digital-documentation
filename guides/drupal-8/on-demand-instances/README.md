@@ -12,14 +12,14 @@ These on demand versions of boston.gov are designed to be housed on a near-dupli
 {% tab title="Acquia" %}
 Acquia provide 6 environments to CityOfBoston.
 
-![Acquia&apos;s 6 Boston D8 environments](../../.gitbook/assets/image%20%2811%29.png)
+![Acquia&apos;s 6 Boston D8 environments](../../../.gitbook/assets/image%20%2812%29.png)
 
 {% hint style="danger" %}
-The `Dev, Stage and Prod`environments are associated with git branches used in the [continuous-deploy workflow](https://docs.boston.gov/digital/guides/drupal-8/continuous-deployment-process) and **can not** be attached to different branches or repository tags without disrupting and potentially breaking the workflow.
+The `dev, stage(test) and prod`environments are associated with git branches used in the [continuous-deploy workflow](https://docs.boston.gov/digital/guides/drupal-8/continuous-deployment-process) and **can not** be attached to different branches or repository tags without disrupting and potentially breaking the workflow.
 {% endhint %}
 
 {% hint style="success" %}
-The `Ci and Uat` environments however can track any desired branch or tag \(even `develop-deploy` or `master-deploy` \) without disrupting the [continuous-deployment workflow](https://docs.boston.gov/digital/guides/drupal-8/continuous-deployment-process).
+The `dev2, dev3, ci and uat` environments can track any desired branch or tag \(even `develop-deploy` or `master-deploy` \) without disrupting the [continuous-deployment workflow](https://docs.boston.gov/digital/guides/drupal-8/continuous-deployment-process).
 {% endhint %}
 {% endtab %}
 
@@ -548,8 +548,10 @@ You can direct users to the URL's below, select the environment you switched to 
 
 | Environment | URL |
 | :--- | :--- |
-| UAT | [https://bostond8uat.prod.acquia-sites.com](https://bostond8uat.prod.acquia-sites.com) |
-| CI | [https://bostond8ci.prod.acquia-sites.com](https://bostond8ci.prod.acquia-sites.com) |
+| uat | [https://d8-uat.boston.gov](https://d8-uat.boston.gov) |
+| ci | [https://d8-ci.boston.gov](%20https://d8-ci.boston.gov) |
+| dev2 | [https://d8-dev2.boston.gov](%20https://d8-dev2.boston.gov) |
+| dev3 \(pending\) | https://d8-dev3.boston.gov |
 
 {% hint style="success" %}
 **Housekeeping**.  
