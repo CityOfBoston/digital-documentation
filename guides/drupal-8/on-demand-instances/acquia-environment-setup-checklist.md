@@ -24,7 +24,7 @@ When a new environment is added, it will have a 3-4 character name \(e.g. `uat` 
   ... || [[ "${target_env}" == 'envname' ]] ...
   ```
 
-  save the updated files and commit to the private repo.
+  save the updated files and commit to the private repo.  
 
 * [ ] In the CoB Drupal 8 [private gitHub repository](https://github.com/CityOfBoston/boston.gov-d8-private) find the following line in the script at`/hooks/common/cob_utilities.sh` file \(approx line 270\):
 
@@ -41,6 +41,58 @@ When a new environment is added, it will have a 3-4 character name \(e.g. `uat` 
   ```
 
   save the updated file and commit to the private repo.
+
+### Acquia Settings
+
+* [ ] In the CoB Drupal 8 [private gitHub repository](https://github.com/CityOfBoston/boston.gov-d8-private) find the following line in the script at`/sites/default/settings/hooks/common/cob_utilities.sh` file \(approx line 63\):
+
+  ```text
+  ...
+  elseif ($_ENV['AH_SITE_ENVIRONMENT'] == 'uat') {
+    $conf['acquia_purge_domains'] = array(
+      'bostond8uat.prod.acquia-sites.com',
+    );
+  }
+  ...
+  ```
+
+  add in a new else statement for the new environment:
+
+  ```text
+  elseif ($_ENV['AH_SITE_ENVIRONMENT'] == 'envname') {
+    $conf['acquia_purge_domains'] = array(
+      'bostond8envname.prod.acquia-sites.com',
+      'd8-envname.boston.gov',
+    );
+  }
+  ```
+
+  \(replace "envname" with the new environment name\)
+
+{% hint style="info" %}
+This change adds the specified domains to the acquia-purge registry.  This means the varnish cache for these domains will be automatically purged.  If a sub-domain is attached to an environment and is NOT listed here, then it will not be automatically purged as content is changed.
+{% endhint %}
+
+* [ ] In the same file find the following section \(around line 79\):
+
+  ```text
+  ...
+  if (in_array($siteEnv, ["test", "ci", "uat"])) {
+    $settings['file_public_path'] = 'sites/default/files/linked';
+  ...
+  ```
+
+  and add the new environment name to the list of environments.
+
+  ```text
+  if (in_array($siteEnv, ["test", "ci", "uat", "envname"])) {
+  ```
+
+  save the updated file and commit to the private gitHub repository.
+
+{% hint style="info" %}
+This change directs the new environment to request images and files from a shared \(linked\) folder rather than the default `sites/default/files` folder.  The folder is linked to conserve file space as each environment basic requires the same sets of images and files.
+{% endhint %}
 
 ### Drush
 
@@ -63,7 +115,7 @@ When a new environment is added, it will have a 3-4 character name \(e.g. `uat` 
   ```
 
   \(replace envname with the new environment name\).  
-  Save the updated file and commit to the private repo.
+  Save the updated file and commit to the private gitHub repository.
 
 ### Acquia Cloud
 
@@ -72,6 +124,12 @@ When a new environment is added, it will have a 3-4 character name \(e.g. `uat` 
 * [ ] **CRON:** Click on "Scheduled Jobs" and create the following new Job: **Job name:** Envname Site Cron **Command:** `cd /var/www/html/${AH_SITE_NAME}/docroot && drush @bostond8.envname cron -dv &>> /var/log/sites/${AH_SITE_NAME}/logs/$(hostname -s)/drush-cron.log` **Command frequency:** `*/15 * * * * (entered as a string)`
 * [ ] **ENVAR:** Click on "Variables" and create variables copied from the `dev` environment.
 * [ ] **DOMAIN:** \[optional\] Click on Domains and add an edit sub-domain. \(this is requested from the LAN team, and should be in the pattern of `d8-envname.boston.gov`. Ask them to set it up the same way that d8-`dev.boston.gov` is set up.  The DNS they create would ideally be private \(only to city hall\) but they may need to make it on the public DNS servers, which is OK too\).
+
+### Single Sign On
+
+The following steps need to be completed to allow single sign on via Ping Federated.
+
+* [ ] aa
 
 ### Using the Environment
 
