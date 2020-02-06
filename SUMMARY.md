@@ -81,6 +81,8 @@
       * [Image Styles & UX](guides/drupal-8/site-development-notes/drupal-ux-specific/untitled.md)
       * [Example Content Pages](guides/drupal-8/site-development-notes/drupal-ux-specific/example-content-pages.md)
   * [Continuous Deployment Process](guides/drupal-8/continuous-deployment-process.md)
+  * [Single Sign On \(SSO\)](guides/drupal-8/single-sign-on-sso/README.md)
+    * [SimpleSAMLPHP](guides/drupal-8/single-sign-on-sso/simplesamlphp.md)
 * [DNS Redirects](guides/dns-redirects.md)
 * [Integrating with Boston.gov](guides/resources.md)
 * [Maps on boston.gov](guides/maps-on-boston.gov.md)
@@ -90,7 +92,7 @@
 
 * [Alexa Skill](projects/alexa-skill.md)
 * [Permit Finder](projects/permit-finder.md)
-* [Fleet pattern library](projects/fleet-pattern-library.md)
+* [Fleet pattern library](projects/fleet-pattern-library/README.md)
   * [Patterns Library Architecture](projects/fleet-pattern-library/patterns-library-architecture.md)
   * [Icon Library Architecture](projects/fleet-pattern-library/icon-library-architecture.md)
 * [Inactive projects](projects/inactive-projects/README.md)
