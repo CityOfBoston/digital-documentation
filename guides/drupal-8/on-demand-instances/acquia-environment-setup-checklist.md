@@ -69,11 +69,11 @@ When a new environment is added, it will have a 3-4 character name \(e.g. `uat` 
 
 * [ ] Login to the [Acquia Cloud Console](https://cloud.acquia.com/app/develop/all) and click on the bostond8 application.
 * [ ] Click on the new environment to open the configuration page for that environment.
-* [ ] Click on "Scheduled Jobs" and create the following new Job: **Job name:** Envname Site Cron **Command:** `cd /var/www/html/${AH_SITE_NAME}/docroot && drush @bostond8.envname cron -dv &>> /var/log/sites/${AH_SITE_NAME}/logs/$(hostname -s)/drush-cron.log` **Command frequency:** `*/15 * * * * (entered as a string)`
-* [ ] Click on "Variables" and create variables copied from the `dev` environment.
-* [ ] \[optional\] Click on Domains and add an edit sub-domain. \(this is requested from the LAN team, and should be in the pattern of `d8-envname.boston.gov`. Ask them to set it up the same way that d8-`dev.boston.gov` is set up.  The DNS they create would ideally be private \(only to city hall\) but they may need to make it on the public DNS servers, which is OK too\).  
+* [ ] **CRON:** Click on "Scheduled Jobs" and create the following new Job: **Job name:** Envname Site Cron **Command:** `cd /var/www/html/${AH_SITE_NAME}/docroot && drush @bostond8.envname cron -dv &>> /var/log/sites/${AH_SITE_NAME}/logs/$(hostname -s)/drush-cron.log` **Command frequency:** `*/15 * * * * (entered as a string)`
+* [ ] **ENVAR:** Click on "Variables" and create variables copied from the `dev` environment.
+* [ ] **DOMAIN:** \[optional\] Click on Domains and add an edit sub-domain. \(this is requested from the LAN team, and should be in the pattern of `d8-envname.boston.gov`. Ask them to set it up the same way that d8-`dev.boston.gov` is set up.  The DNS they create would ideally be private \(only to city hall\) but they may need to make it on the public DNS servers, which is OK too\).
 
 ### Using the Environment
 
-See [On Demand](./) section.
+To use the environment as a Drupal site, you need to attach a branch from the Acquia git repository.  For detailed instructions see [On Demand](./) section.
 
