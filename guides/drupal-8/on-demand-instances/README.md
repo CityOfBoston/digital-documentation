@@ -12,7 +12,7 @@ These on demand versions of boston.gov are designed to be housed on a near-dupli
 {% tab title="Acquia" %}
 Acquia provide 6 environments to CityOfBoston.
 
-![Acquia&apos;s 6 Boston D8 environments](../../../.gitbook/assets/image%20%2812%29.png)
+![](../../../.gitbook/assets/acquiacloudenvironments.png)
 
 {% hint style="danger" %}
 The `dev, stage(test) and prod`environments are associated with git branches used in the [continuous-deploy workflow](https://docs.boston.gov/digital/guides/drupal-8/continuous-deployment-process) and **can not** be attached to different branches or repository tags without disrupting and potentially breaking the workflow.
@@ -546,17 +546,52 @@ _**Elsewhere this might be termed spinning up an on-demand instance of the site.
 
 You can direct users to the URL's below, select the environment you switched to the `on-demand-branchname-deploy` branch \(in step 8\) from the table below.
 
-| Environment | URL |
-| :--- | :--- |
-| uat | [https://d8-uat.boston.gov](https://d8-uat.boston.gov) |
-| ci | [https://d8-ci.boston.gov](%20https://d8-ci.boston.gov) |
-| dev2 | [https://d8-dev2.boston.gov](%20https://d8-dev2.boston.gov) |
-| dev3 \(pending\) | https://d8-dev3.boston.gov |
-
-{% hint style="success" %}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Environment</th>
+      <th style="text-align:left">URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">uat</td>
+      <td style="text-align:left">
+        <p><a href="https://d8-uat.boston.gov">https://d8-uat.boston.gov</a>
+        </p>
+        <p>(public DNS entry)</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ci</td>
+      <td style="text-align:left">
+        <p><a href=" https://d8-ci.boston.gov">https://d8-ci.boston.gov</a>
+        </p>
+        <p>(public DNS entry)</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">dev2</td>
+      <td style="text-align:left">
+        <p><a href=" https://d8-dev2.boston.gov">https://d8-dev2.boston.gov</a>
+        </p>
+        <p>(no DNS - make entry in local hosts file)</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">dev3 (pending)</td>
+      <td style="text-align:left">
+        <p>https://d8-dev3.boston.gov</p>
+        <p>(no DNS - make entry in local hosts file)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>{% hint style="success" %}
 **Housekeeping**.  
 When finished with the environment, you should consider rolling-back the changes you made to `.travis.yml` and `.config.yml` in steps 4 & 5 before finally merging `on-demand-branchname` to `develop.`  
 It is likely that the on-demand instance is no longer required, and its unnecessary for the the `on-demand-branchname` to be tracked by Travis.
+
+Also as a courtesy, change the branch on the environment back to `tags/WELCOME` so it is clear that the environment is available for use by other developers.
 {% endhint %}
 
 ### On-demand instance gotcha's:
