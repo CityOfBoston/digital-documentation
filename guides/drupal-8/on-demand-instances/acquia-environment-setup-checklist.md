@@ -117,6 +117,23 @@ This change directs the new environment to request images and files from a share
   \(replace envname with the new environment name\).  
   Save the updated file and commit to the private gitHub repository.
 
+### .htaccess
+
+* [ ] In the `.htaccess` file in the CoB Drupal 8 [private gitHub repository](https://github.com/CityOfBoston/boston.gov-d8-private) alter the domain filters as follows:  
+  **Everywhere** you see this pattern in the file:
+
+  ```text
+  RewriteCond %{HTTP_HOST}... dev|stg|ci|ra|uat ...
+  ```
+
+  Add the following entry:
+
+  ```text
+  RewriteCond %{HTTP_HOST}... dev|stg|ci|ra|uat|envname ...
+  ```
+
+  Save the updated file and commit to the private gitHub repository.
+
 ### Acquia Cloud
 
 * [ ] Login to the [Acquia Cloud Console](https://cloud.acquia.com/app/develop/all) and click on the bostond8 application.
