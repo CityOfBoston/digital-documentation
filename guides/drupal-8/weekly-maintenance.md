@@ -74,7 +74,12 @@ Run composer update in your local development container.
 $ lando composer update
 ```
 
-Check the output of the composer command, and verify that the modules/packages you expect have been added/remove/updated and that patches have been applied without errors.  If necessary fix the errors by updating the `composer.json` file and re-running **`composer update`**.
+Check the output of the composer command, and verify that the modules/packages you expect have been added/remove/updated and that patches have been applied without errors.  If necessary fix the errors by updating the `composer.json` file and re-running **`lando composer update`**.
+
+{% hint style="success" %}
+**Tip:** You can see what changes are required by running:**`lando composer update --dry-run`**   
+and checking the output to see which modules have been added, removed and updated.
+{% endhint %}
 
 {% hint style="info" %}
 You may see patches for a module fail after the version is updated. 
