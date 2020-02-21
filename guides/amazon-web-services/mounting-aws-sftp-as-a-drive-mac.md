@@ -49,12 +49,13 @@ description: Guide to mounting an s3 bucket via SFTP as a drive on your computer
     ```
 
 13. From the Terminal app, make the file executable: \`\`\`chmod +x /Library/Startup.sh\`\`\`
-14. Open up “System Preferences” and go to “Users & Groups”
-15. Switch to the “Login Items” tab, unlock the ability to edit these settings by clicking the Padlock in the bottom left.
-16. Use the “+” button to add a new action in “Login Items”, this will open up a file browser window.
-17. Use the File Browser to locate the “Startup.sh” file we created in the “Library” and select it.
-18. Use the Apple icon on the top left of the screen to “Log Out”
-19. When you sign in again open up a “Finder” window and check if the drive mounted at ~/mnt/patterns
+14. Get to this file using the \`Finder\`, then right-click on the file and select the 'Get Info' option. Use the 'Open with:' to use 'Terminal'. Can be found under 'Applications &gt; Utilities' and check the 'Enable' drop down to 'All Applications'
+15. Open up “System Preferences” and go to “Users & Groups”
+16. Switch to the “Login Items” tab, unlock the ability to edit these settings by clicking the Padlock in the bottom left.
+17. Use the “+” button to add a new action in “Login Items”, this will open up a file browser window.
+18. Use the File Browser to locate the “Startup.sh” file we created in the “Library” and select it.
+19. Use the Apple icon on the top left of the screen to “Log Out”
+20. When you sign in again open up a “Finder” window and check if the drive mounted at ~/mnt/patterns
 
 
 

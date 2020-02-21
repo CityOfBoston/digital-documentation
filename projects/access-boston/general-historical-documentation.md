@@ -11,6 +11,7 @@
 * Active tickets can be found at [Digital Maintenance Project Board](https://github.com/orgs/CityOfBoston/projects/23); 
   * Historical tickets for the product can be found [online here](https://github.com/CityOfBoston/digital/issues?q=is%3Aopen+is%3Aissue+label%3Aaccess-boston).
 * [All content on the website](https://docs.google.com/spreadsheets/d/1OiH2HBLE55X8MzGaB7H9VC_a2WpQQcjV4-eyNpJGTPY/edit?)
+  * [Folder of icons](https://drive.google.com/drive/folders/1j4RV6uBZ3mkHGotxEoGcRTGxt5byqpjQ)
 * [IdentityIQ workflow examples](https://drive.google.com/file/d/0B2nwidq4cybTSW9VUU9qVWVSbV9hYzZnWWFQMmFTWmNVRzU4/view)
 * [PingID sample code](https://github.com/pingidentity/pingid-node-samples)
 
