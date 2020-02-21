@@ -20,5 +20,7 @@ When the ticket has been discussed it will be moved into the 'Low priority' colu
 
 When there is more than more environment \(i.e. dev and/or test\) both Access Boston and Digital Teams will test on the different, available environments. Digital will move the icon to production when Access Boston has confirmed good to go on any applicable test environments. If there is only a production environment, then Digital will make the change straight to production. Approvals from testing should be recorded in the github ticket as well as told verbally to Reilly.
 
+Tickets ready for testing should be assigned to Gretchen as well as flagged for her in-person for her to assign to the accurate Access Boston staff member. If she is unavailable, then the ticket can be assigned to Dinesh; be sure to add the label 'validation'.
+
 Digital will confirm via the github ticket and verbally to Gretchen when the icon is in production.
 
