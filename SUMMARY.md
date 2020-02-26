@@ -104,6 +104,7 @@
   * [Registry Suite](projects/inactive-projects/registry-suite/README.md)
     * [Birth certificates](projects/inactive-projects/registry-suite/birth-certificates.md)
     * [Marriage Certificates](projects/inactive-projects/registry-suite/marriage-certificates.md)
+    * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
   * [Access Boston](projects/inactive-projects/access-boston/README.md)
     * [General/Historical Documentation](projects/inactive-projects/access-boston/general-historical-documentation.md)
     * [Processes](projects/inactive-projects/access-boston/processes/README.md)
