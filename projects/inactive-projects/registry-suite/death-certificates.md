@@ -10,9 +10,3 @@ Add links to dev and test
 
 Add links to news articles or press releases
 
-**Original Project Team**
-
-* Product: Josh Gee, Rachel Braun
-* Front End Engineering: Fin Hopkins
-* Back End \(Fulfillment\) Engineering: Scott Blackwell, Rich Oliver
-

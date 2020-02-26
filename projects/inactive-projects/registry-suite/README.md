@@ -14,3 +14,7 @@ The Department of Innovation and Technology’s \(DoIT\) Digital Team brought th
 
 Add in statistics from Patty's most recent email re: split of online and other things.
 
+Along the way, items got added to certain of the three apps, but at times they didn't get completely added. 
+
+Items that need to be address/re-addressed: [https://github.com/orgs/CityOfBoston/projects/2](https://github.com/orgs/CityOfBoston/projects/2)
+
