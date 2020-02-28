@@ -100,6 +100,7 @@
 
 ## Projects
 
+* [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
 * [Alexa Skill](projects/alexa-skill.md)
 * [Permit Finder](projects/permit-finder.md)
 * [Fleet pattern library](projects/fleet-pattern-library/README.md)
