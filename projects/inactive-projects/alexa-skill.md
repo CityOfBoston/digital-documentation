@@ -62,7 +62,7 @@ This is also a manual process:
 2. Publish the current Lambda function as a new version
 3. Update the current production alias to point to that new version
 
-![AWS Web Console screen for updating an alias version](../.gitbook/assets/screen-shot-2019-05-30-at-9.05.40-am.png)
+![AWS Web Console screen for updating an alias version](../../.gitbook/assets/screen-shot-2019-05-30-at-9.05.40-am.png)
 
 #### Handling a Failed Verification
 

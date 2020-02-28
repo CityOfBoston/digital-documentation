@@ -100,23 +100,19 @@
 
 ## Projects
 
-* [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
-* [Alexa Skill](projects/alexa-skill.md)
-* [Permit Finder](projects/permit-finder.md)
 * [Fleet pattern library](projects/fleet-pattern-library/README.md)
   * [Patterns Library Architecture](projects/fleet-pattern-library/patterns-library-architecture.md)
   * [Icon Library Architecture](projects/fleet-pattern-library/icon-library-architecture.md)
+* [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
+* [Permit Finder](projects/permit-finder.md)
 * [Inactive projects](projects/inactive-projects/README.md)
-  * [Registry Suite](projects/inactive-projects/registry-suite/README.md)
-    * [Birth certificates](projects/inactive-projects/registry-suite/birth-certificates.md)
-    * [Marriage Certificates](projects/inactive-projects/registry-suite/marriage-certificates.md)
-    * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
+  * [311](projects/inactive-projects/311.md)
   * [Access Boston](projects/inactive-projects/access-boston/README.md)
     * [General/Historical Documentation](projects/inactive-projects/access-boston/general-historical-documentation.md)
     * [Processes](projects/inactive-projects/access-boston/processes/README.md)
       * [Process: Adding New Icon to Access Boston Website](projects/inactive-projects/access-boston/processes/requesting-a-new-icon-for-access-boston-website.md)
       * [Process: Non-icon Access Boston Feature or Bug Requests](projects/inactive-projects/access-boston/processes/process-non-icon-access-boston-feature-or-bug-requests.md)
-  * [311](projects/inactive-projects/311.md)
+  * [Alexa Skill](projects/inactive-projects/alexa-skill.md)
   * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
   * [Budget Website](projects/inactive-projects/budget-website.md)
   * [Dog Licenses](projects/inactive-projects/dog-licenses.md)
@@ -128,6 +124,10 @@
         * [Knowledge Base](projects/inactive-projects/drupal-7/end-points/cityscore/knowledgebase..md)
       * [Public Notices](projects/inactive-projects/drupal-7/end-points/public-notices.md)
   * [Public Notice Signage](projects/inactive-projects/public-notice-signage.md)
+  * [Registry Suite](projects/inactive-projects/registry-suite/README.md)
+    * [Birth certificates](projects/inactive-projects/registry-suite/birth-certificates.md)
+    * [Marriage Certificates](projects/inactive-projects/registry-suite/marriage-certificates.md)
+    * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
   * [Upaknee](projects/inactive-projects/upaknee.md)
 
 ## External resources <a id="other-resources"></a>
