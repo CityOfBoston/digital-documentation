@@ -1,5 +1,7 @@
 ---
-description: The City's newsletter platform.
+description: >-
+  The City's newsletter platform [vendor], which sends emails, but also hosts a
+  newsletter subscription page. | https://newsletters.boston.gov/subscribe
 ---
 
 # Upaknee
@@ -8,7 +10,9 @@ description: The City's newsletter platform.
 
 Emailing from the City can be confusing. It can be called any number of things \(List serves, alerts, newsletter, receipts, etc\). Email is the medium, and different kinds of emails can be sent from a number of different source systems.
 
-In general, Upaknee is used for 'marketing' emails. These are emails sent from the City to residents to inform or drive action. These can be editorial, such as newsletters, or automatically generated, like receipts or towing alerts. This section focuses on Upaknee, but you can go here to see information about [other city of Boston systems that](https://github.com/CityOfBoston/upaknee/wiki/Other-City-of-Boston-tools-that-send-email) generate emails.
+In general, Upaknee is used for 'marketing' emails. These are emails sent from the City to residents to inform or drive action. These can be editorial, such as newsletters, or automatically generated, like receipts or towing alerts. 
+
+Currently, Upaknee only pushes communication. It is not 'transactional' and does not provide receipts or towing alerts. Receipts are processed via Postmark. Towing and street sweeping alerts are processed via Lyris.
 
 ### Best contacts
 
