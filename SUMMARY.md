@@ -110,6 +110,7 @@
   * [Access Boston](projects/inactive-projects/access-boston/README.md)
     * [General/Historical Documentation](projects/inactive-projects/access-boston/general-historical-documentation.md)
     * [Processes](projects/inactive-projects/access-boston/processes/README.md)
+      * [Edit Config and Upload Icons](projects/inactive-projects/access-boston/processes/edit-config-and-upload-icons.md)
       * [Process: Adding New Icon to Access Boston Website](projects/inactive-projects/access-boston/processes/requesting-a-new-icon-for-access-boston-website.md)
       * [Process: Non-icon Access Boston Feature or Bug Requests](projects/inactive-projects/access-boston/processes/process-non-icon-access-boston-feature-or-bug-requests.md)
   * [Alexa Skill](projects/inactive-projects/alexa-skill.md)
