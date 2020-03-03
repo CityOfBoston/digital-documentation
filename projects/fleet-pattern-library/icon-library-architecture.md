@@ -41,7 +41,7 @@ Designers and other individuals who require FTP access to contribute to assets i
 4. Test a connection to the SFTP server at https://assets\_sftp.boston.gov using filezilla or another FTP client which can create SFTP connections.
 5. ~~\[optional\] Create a local mount on the designers Mac.`sshfs -o rw,IdentityFile=/Users/doitimac/.ssh/id_rsa username@assets_sftp.boston.gov:/patterns.boston.gov/assets /mnt/patterns/`~~
 
-\(Optional\) [Mounting AWS SFTP as a Drive \(Mac\)](../../guides/amazon-web-services/mounting-aws-sftp-as-a-drive-mac.md)
+**\(Optional\)** [**Mounting AWS SFTP as a Drive \(Mac\)**](../../guides/amazon-web-services/mounting-aws-sftp-as-a-drive-mac.md)\*\*\*\*
 
 
 
