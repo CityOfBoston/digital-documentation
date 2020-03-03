@@ -33,9 +33,19 @@ This sub-domain is principally designed to act as a centralized, public CDN serv
 
 Designers and other individuals who require FTP access to contribute to assets in the patterns library need to do the following:
 
+**Connect Via SFTP Client**
+
 1. Ask and AWS admin to create an IAM account in AWS \(if not one already\).
 2. Have the user \(create and\) load an SSH key onto their account in AWS.
 3. [Add the user](https://console.aws.amazon.com/transfer/home?region=us-east-1#/servers/s-27207a4a63144da48) to the Users list in the SFTP server on AWS.
 4. Test a connection to the SFTP server at https://assets\_sftp.boston.gov using filezilla or another FTP client which can create SFTP connections.
-5. \[optional\] Create a local mount on the designers Mac.`sshfs -o rw,IdentityFile=/Users/doitimac/.ssh/id_rsa username@assets_sftp.boston.gov:/patterns.boston.gov/assets /mnt/patterns/`
+5. ~~\[optional\] Create a local mount on the designers Mac.`sshfs -o rw,IdentityFile=/Users/doitimac/.ssh/id_rsa username@assets_sftp.boston.gov:/patterns.boston.gov/assets /mnt/patterns/`~~
+
+\(Optional\) [Mounting AWS SFTP as a Drive \(Mac\)](../../guides/amazon-web-services/mounting-aws-sftp-as-a-drive-mac.md)
+
+
+
+
+
+
 
