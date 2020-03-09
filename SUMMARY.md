@@ -47,6 +47,7 @@
   * [Updating the ECS cluster](guides/amazon-web-services/updating-the-ecs-cluster.md)
   * [Making changes with Terraform](guides/amazon-web-services/making-changes-with-terraform.md)
   * [Mounting AWS SFTP as a Drive \(Mac\)](guides/amazon-web-services/mounting-aws-sftp-as-a-drive-mac.md)
+  * [Services](guides/amazon-web-services/services.md)
 * [Libraries and Tools](guides/libraries-and-tools/README.md)
   * [Emotion](guides/libraries-and-tools/emotion.md)
   * [Storybook](guides/libraries-and-tools/storybook.md)
