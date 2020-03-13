@@ -59,6 +59,30 @@ description: Guide to mounting an s3 bucket via SFTP as a drive on your computer
 
 
 
+Debug Tips
+
+```text
+# Manual Mount
+sshfs -o IdentityFile=~/.ssh/id_rsa_cob -odebug,sshfs_debug,loglevel=debug -o defer_permissions -o noappledouble -o volname=patterns phillip_kelly@assets_sftp.boston.gov:/patterns.boston.gov/assets ~/mnt/patterns/
+
+Unmount
+- diskutil unmount ~/mnt/assets/
+- sudo mount -a
+
+CHOWN
+780  sudo chown phillipkelly /Users/phillipkelly/mnt/patterns2/
+
+CHMOD
+672  sudo chmod 777 ~/mnt/assets
+794  sudo chmod +x ~/Library/Startup.cmd
+```
+
+
+
+
+
+
+
 
 
 
