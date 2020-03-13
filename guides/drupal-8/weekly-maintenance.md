@@ -68,6 +68,14 @@ A useful reference for writing versioning rules in composer can be found [here](
 
 ### Step 3: Use Composer to apply updates.
 
+{% hint style="info" %}
+**Before you start...**
+
+1. Be sure your git working tree is clean and you have pulled the latest `develop` branch from GitHub.
+2. Run `drush cex` to be sure that all configurations are exported  \(if you find configurations are exported then you will need to rebuild your develop environment - or at least sync the local database with the one on Acquia develop - use `lando drush sql:sync @bostond8.dev @self`\).
+3. Create a new branch e.g. `maintenance-03-03-2020`
+{% endhint %}
+
 Run composer update in your local development container.
 
 ```
@@ -77,8 +85,9 @@ $ lando composer update
 Check the output of the composer command, and verify that the modules/packages you expect have been added/remove/updated and that patches have been applied without errors.  If necessary fix the errors by updating the `composer.json` file and re-running **`lando composer update`**.
 
 {% hint style="success" %}
-**Tip:** You can see what changes are required by running:**`lando composer update --dry-run`**   
-and checking the output to see which modules have been added, removed and updated.
+**Tip:** You can see what changes will actually be made when updating by first running:**`lando composer update --dry-run`**   
+and comparing the output with the [status reports page](https://content.boston.gov/admin/reports/updates) to see that the required modules have been added, removed and updated.    
+_\(**Note**: you can expect composer to update a considerable number of modules which are not listed on the status report because composer also checks dependencies and symfony components that Drupal does not\)_
 {% endhint %}
 
 {% hint style="info" %}
@@ -89,10 +98,28 @@ This will either be because the patch is no longer needed \(you can probably wor
 In the latter case, you may need to modify the patch or check the issue related to the patch and see if there is an updated patch you can apply.
 {% endhint %}
 
+{% hint style="danger" %}
+If you see this message: 
+
+`Writing lock file Generating autoload files`
+
+`In CopyRequest.php line 91:`
+
+`fopen(/app/docroot/sites/default/default.services.yml): failed to open stream: Permission denied`  
+  
+Then you need to change the permissions on your local \(i.e. on your host not in the docker container\)`docroot/sites/default`folder to 777, and then rerun the composer command.
+{% endhint %}
+
 After the update is completed, update the Drupal caches \(so that the Drupal registries are updated\).
 
 ```
 $ lando drush cr
+```
+
+Then, see if the updated modules need to apply any updates to the database.
+
+```
+$ lando drush updb
 ```
 
 Finally we should export the configuration. It is unlikely that there will be changes to configuration, but it is theoretically possible, so to be safe this is a recommended step.
@@ -101,13 +128,17 @@ Finally we should export the configuration. It is unlikely that there will be ch
 $ lando drush cex
 ```
 
-Finally commit the changed `composer.json` and `composer.lock` \(it is very important to include both - see "final note" box-out below\) and any config files \(which will **always** be in the `/config/default` folder\) into the main public repository.
+Finally, commit into the main public d8 repository:  
+- the`composer.lock` and \(if changed\) the`composer.json` files -it is very important to include both \(see "final note" box-out below\), and  
+- any config files generated from `drush cex` -these will **always** be in the `/config/default` folder.
 
 {% hint style="info" %}
-**composer update:** \[[notes](https://getcomposer.org/doc/03-cli.md#install-i)\] ****reads the `composer.json` file, works out the package versions which meet all rules \(and recursive dependencies\), compares versions with the existing packages in the local environment and downloads the packages which need updating.    
+**COMPOSER Command Overview:**
+
+**composer update:** \[[notes](https://getcomposer.org/doc/03-cli.md#install-i)\] ****reads the `composer.json` file, works out the package versions which meet all rules \(and recursive dependencies\), compares versions with the existing packages in the local environment and downloads the packages _and dependencies_ which need updating.    
 Finally, it updates `composer.lock`with the exact versions of each package that are currently installed.
 
-**composer install:** \[[notes](https://getcomposer.org/doc/03-cli.md#update-u)\] reads the `composer.lock` file, compares to existing packages and downloads those packages which need updating.   
+**composer install:** \[[notes](https://getcomposer.org/doc/03-cli.md#update-u)\] reads the `composer.lock` file, compares to existing packages and downloads those packages _and dependencies_ which need updating.   
 _If there is no `composer.lock` file found then composer will read the `composer.json` file and essentially run the `composer update` process._
 {% endhint %}
 
@@ -120,8 +151,8 @@ _If there is no `composer.lock` file found then composer will read the `composer
 
 {% hint style="info" %}
 **Side Note:**  
-- local build script `scripts/local/lando-build-drupal.sh` uses **`composer install`** . This is to ensure that the package versions loaded locally are the same as the currently loaded package versions on the `dev` Acquia server.  
-- Travis script`scripts/deploy/travis_build.sh`\(which builds the full Drupal file system that is deployed to Acquia\) uses **`composer install`**. This is to ensure that the package versions loaded into the build/deploy artifact are the exact same package versions as in the local development container environment.
+- The local Lando build script `scripts/local/lando-build-drupal.sh` which is executed by `lando start` , `lando restart` , `lando build`and `lando rebuild`uses **`composer install`** . This is to ensure that the package versions installed locally are the same as the currently loaded package versions on the `dev` Acquia server.  
+- Travis script`scripts/deploy/travis_build.sh`\(which builds the full Drupal file system that is deployed to Acquia\) also uses **`composer install.`** This is also to ensure that the package versions loaded into the build/deploy artifact are the exact same package versions as in the local development container environment.
 {% endhint %}
 
 {% hint style="info" %}
