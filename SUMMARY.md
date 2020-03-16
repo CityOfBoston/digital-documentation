@@ -87,6 +87,7 @@
       * [Custom Taxonomies](guides/drupal-8/site-development-notes/custom-modules/custom-taxonomies.md)
     * [Custom Backend](guides/drupal-8/site-development-notes/custom-backend.md)
     * [Drupal UX-specific](guides/drupal-8/site-development-notes/drupal-ux-specific/README.md)
+      * [AWS Setup Drupal](guides/drupal-8/site-development-notes/drupal-ux-specific/aws-setup-drupal.md)
       * [Image Styles & UX](guides/drupal-8/site-development-notes/drupal-ux-specific/untitled.md)
       * [Example Content Pages](guides/drupal-8/site-development-notes/drupal-ux-specific/example-content-pages.md)
   * [Continuous Deployment Process](guides/drupal-8/continuous-deployment-process.md)
