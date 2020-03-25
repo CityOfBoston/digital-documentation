@@ -8,7 +8,7 @@ description: >-
 
 ### Types of email
 
-Emailing from the City can be confusing. It can be called any number of things \(List serves, alerts, newsletter, receipts, etc\). Email is the medium, and different kinds of emails can be sent from a number of different source systems.
+Emailing from the City can be confusing. It can be called any number of things \(Listservs, alerts, newsletter, receipts, etc\). Email is the medium, and different kinds of emails can be sent from a number of different source systems.
 
 In general, Upaknee is used for 'marketing' emails. These are emails sent from the City to residents to inform or drive action. These can be editorial, such as newsletters, or automatically generated, like receipts or towing alerts. 
 
