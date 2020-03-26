@@ -1,5 +1,5 @@
 ---
-description: 'Developed by Code for Boston, deployed by the Digital Team.'
+description: 'Developed by Code for Boston, deployed and hosted by the Digital Team.'
 ---
 
 # Alexa Skill
