@@ -92,6 +92,7 @@
       * [Example Content Pages](guides/drupal-8/site-development-notes/drupal-ux-specific/example-content-pages.md)
   * [Continuous Deployment Process](guides/drupal-8/continuous-deployment-process.md)
   * [Single Sign On \(SSO\)](guides/drupal-8/single-sign-on-sso/README.md)
+    * [SAML Checklist](guides/drupal-8/single-sign-on-sso/saml-checklist.md)
     * [SimpleSAMLPHP](guides/drupal-8/single-sign-on-sso/simplesamlphp.md)
 * [Redirects](guides/redirects/README.md)
   * [Redirecting from cityofboston.gov](guides/redirects/redirecting-from-cityofboston.gov.md)
