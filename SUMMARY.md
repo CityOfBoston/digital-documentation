@@ -106,6 +106,7 @@
 * [Fleet pattern library](projects/fleet-pattern-library/README.md)
   * [Patterns Library Architecture](projects/fleet-pattern-library/patterns-library-architecture.md)
   * [Icon Library Architecture](projects/fleet-pattern-library/icon-library-architecture.md)
+* [City Hall Scheduler](projects/city-hall-scheduler.md)
 * [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
 * [Permit Finder](projects/permit-finder.md)
 * [Inactive projects](projects/inactive-projects/README.md)
