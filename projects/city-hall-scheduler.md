@@ -28,5 +28,9 @@ To set up department:
 1. Log in to Hubspot
 2. Go to Sales &gt; Meetings &gt; Click on a department to edit and/or click add action
 
+Punchlist:
+
+Video of what happens: [https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw](https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw)
+
 
 
