@@ -18,7 +18,7 @@ Currently, Upaknee only pushes communication. It is not 'transactional' and does
 
 Support \(at\) upaknee.com  
 Sara.Lawrence \(at\) upaknee.com  
-Josh.Ramdhan \(at\) upaknee.com
+Josh.Ramdhan \(at\) upaknee.com - Direct: 1 \(416\) 304-9818
 
 ### Technology
 
