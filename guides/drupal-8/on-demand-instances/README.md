@@ -460,7 +460,7 @@ _**Elsewhere this might be termed spinning up an on-demand instance of the site.
    <=== Addition ===
    ```
 
-5. Edit `<rep-root-path>/scripts/local/.config.yml` file and make the following additions:  
+5. Edit `<rep-root-path>/scripts/.config.yml` file and make the following additions:  
    \(**Note:** This partial example addition is configured to deploy to the Ci environment on Acquia\)  
    \(**Note:** replace `<on-demand-branchname>` with `on-demand-branchname`.\)
 
