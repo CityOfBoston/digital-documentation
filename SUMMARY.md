@@ -105,6 +105,7 @@
 
 ## Projects
 
+* [311 CRM Upgrade](projects/311-crm-upgrade.md)
 * [Fleet pattern library](projects/fleet-pattern-library/README.md)
   * [Patterns Library Architecture](projects/fleet-pattern-library/patterns-library-architecture.md)
   * [Icon Library Architecture](projects/fleet-pattern-library/icon-library-architecture.md)
