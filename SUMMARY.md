@@ -105,7 +105,9 @@
 
 ## Projects
 
-* [311 CRM Upgrade](projects/311-crm-upgrade.md)
+* [311 CRM Upgrade](projects/311-crm-upgrade/README.md)
+  * [City Worker Upgrade to City Worker 5](projects/311-crm-upgrade/city-worker-upgrade-to-city-worker-5.md)
+  * [Lagan 311 CRM upgrade to 15r4](projects/311-crm-upgrade/lagan-311-crm-upgrade-to-15r4.md)
 * [Fleet pattern library](projects/fleet-pattern-library/README.md)
   * [Patterns Library Architecture](projects/fleet-pattern-library/patterns-library-architecture.md)
   * [Icon Library Architecture](projects/fleet-pattern-library/icon-library-architecture.md)
