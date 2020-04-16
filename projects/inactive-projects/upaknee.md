@@ -1,10 +1,15 @@
 ---
 description: >-
   The City's newsletter platform [vendor], which sends emails, but also hosts a
-  newsletter subscription page. | https://newsletters.boston.gov/subscribe
+  newsletter subscription page.
 ---
 
 # Upaknee
+
+### Links:
+
+Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe)  
+Login link for employees: boston.upaknee.com
 
 ### Types of email
 
@@ -16,9 +21,9 @@ Currently, Upaknee only pushes communication. It is not 'transactional' and does
 
 ### Best contacts
 
-Support \(at\) upaknee.com  
-Sara.Lawrence \(at\) upaknee.com  
-Josh.Ramdhan \(at\) upaknee.com - Direct: 1 \(416\) 304-9818
+Support@upaknee.com  
+Sara.Lawrence@upaknee.com - City's account manager  
+Josh.Ramdhan@upaknee.com - Direct: 1 \(416\) 304-9818 - operations manager
 
 ### Technology
 
