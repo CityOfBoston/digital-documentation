@@ -4,7 +4,11 @@ description: 'Developed by Code for Boston, deployed and hosted by the Digital T
 
 # Alexa Skill
 
-### Deployment
+**UX Testing and Enhancements**
+
+A General Assembly UXDI team did user research and testing on the Alexa skill. Copy of their work here: [https://drive.google.com/open?id=12lQXgtARUEt5\_Uo\_kBLuAlE8DyJJ-UL0](https://drive.google.com/open?id=12lQXgtARUEt5_Uo_kBLuAlE8DyJJ-UL0)
+
+#### Deployment
 
 #### Development / beta updates
 
