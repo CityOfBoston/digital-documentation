@@ -101,6 +101,7 @@
   * [URL redirects versus URL aliases - Drupal](guides/redirects/url-redirects-versus-url-aliases-drupal.md)
   * [DNS Redirects](guides/redirects/dns-redirects.md)
 * [Integrating with Boston.gov](guides/resources.md)
+* [Translation on boston.gov](guides/translation-on-boston.gov.md)
 * [Charts on boston.gov](guides/charts-on-boston.gov.md)
 * [Maps on boston.gov](guides/maps-on-boston.gov.md)
 
