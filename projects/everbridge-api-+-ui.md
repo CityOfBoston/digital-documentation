@@ -9,8 +9,8 @@ The City of Boston switched from CodeRed to Everbridge for emergency notificatio
 For historical information on emergency alert sign ups see here: [https://app.gitbook.com/@boston/s/digital/projects/decommissioned-apps-or-services/codered](https://app.gitbook.com/@boston/s/digital/projects/decommissioned-apps-or-services/codered)
 
 **City of Boston organization ID’s are:**  
-ALERTBoston : 892807736721548   
-Alert Boston API Testing : 454102597238915
+ALERTBoston: 892807736721548   
+Alert Boston API Testing: 454102597238915
 
 **Contact at Everbridge:**  
 Chris Rigby   
