@@ -110,6 +110,7 @@
   * [City Worker Upgrade to City Worker 5](projects/311-crm-upgrade/city-worker-upgrade-to-city-worker-5.md)
   * [Lagan 311 CRM upgrade to 15r4](projects/311-crm-upgrade/lagan-311-crm-upgrade-to-15r4.md)
 * [City Hall Scheduler](projects/city-hall-scheduler.md)
+* [Everbridge API + UI](projects/everbridge-api-+-ui.md)
 * [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
 * [Permit Finder](projects/permit-finder.md)
 * [Work With U.S. Digital Response Team](projects/work-with-u.s.-digital-response-team.md)
@@ -141,6 +142,8 @@
     * [Marriage Certificates](projects/inactive-projects/registry-suite/marriage-certificates.md)
     * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
   * [Upaknee](projects/inactive-projects/upaknee.md)
+* [Decommissioned Apps or Services](projects/decommissioned-apps-or-services/README.md)
+  * [CodeRed](projects/decommissioned-apps-or-services/codered.md)
 
 ## External resources <a id="other-resources"></a>
 
