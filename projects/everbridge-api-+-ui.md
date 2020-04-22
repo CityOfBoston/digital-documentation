@@ -34,7 +34,7 @@ chris.rigby@everbridge.com
 * Need to set up/build on [boston.gov](http://boston.gov) component &gt; should be the 10 languages set up via text with everbridge
 * Can geolocate, but would need full address
 
-**Scope for Version 1 \(installing API\):**  
+**Scope for Version 1:**  
 1. Swap Everbridge API in for CodeRed API on boston.gov \(there is an emergency notifications component. Determine if email or phone is unique identifier \(still TBD\).  
 2. Add additional address fields so that address is address line \(street number and name\), city, state, and zip code \(rather than just zip code\)  
 3. Add additional languages to drop down, so that the dropdown includes 10 languages, which are and should be in this order: English, Español, Kreyòl ayisyen, 中文, Tiếng Việt, Kriolu, Русский, عربية\#, Português, Français, Af Soomaali
