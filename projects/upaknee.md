@@ -6,6 +6,8 @@ description: >-
 
 # Upaknee
 
+### _Issue with API as of April 2020. Matt McGowan actively looking to resolve._
+
 ### Links:
 
 Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe)  

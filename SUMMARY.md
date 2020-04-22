@@ -114,6 +114,7 @@
 * [Everbridge API + UI](projects/everbridge-api-+-ui.md)
 * [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
 * [Permit Finder](projects/permit-finder.md)
+* [Upaknee](projects/upaknee.md)
 * [Work With U.S. Digital Response Team](projects/work-with-u.s.-digital-response-team.md)
 * [Inactive projects](projects/inactive-projects/README.md)
   * [311 \(Salesforce Upgrade\)](projects/inactive-projects/311.md)
@@ -141,7 +142,6 @@
     * [Birth certificates](projects/inactive-projects/registry-suite/birth-certificates.md)
     * [Marriage Certificates](projects/inactive-projects/registry-suite/marriage-certificates.md)
     * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
-  * [Upaknee](projects/inactive-projects/upaknee.md)
 * [Decommissioned Apps or Services](projects/decommissioned-apps-or-services/README.md)
   * [CodeRed](projects/decommissioned-apps-or-services/codered.md)
 
