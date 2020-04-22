@@ -26,7 +26,7 @@ For historical information on emergency alert sign ups see here: [https://app.gi
 **Scope for Version 1 \(installing API\):**  
 1. Swap Everbridge API in for CodeRed API on boston.gov \(there is an emergency notifications component. Determine if email or phone is unique identifier \(still TBD\).  
 2. Add additional address fields so that address is address line \(street number and name\), city, state, and zip code \(rather than just zip code\)  
-3. Add additional languages to drop down 
+3. Add additional languages to drop down, so that the dropdown includes 10 languages, which are and should be in this order: English, Español, Kreyòl ayisyen, 中文, Tiếng Việt, Kriolu, Русский, عربية\#, Português, Français, Af Soomaali
 
 **Future Enhancements:** 
 
