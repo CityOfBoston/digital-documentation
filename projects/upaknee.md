@@ -8,6 +8,8 @@ description: >-
 
 ### _Issue with API as of April 2020. Matt McGowan actively looking to resolve._
 
+**Notes from meetings with Upaknee on how to resolve can be found here:** __[_https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit_](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit)\_\_
+
 ### Links:
 
 Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe)  
@@ -36,39 +38,6 @@ Upaknee is the City of Boston's main email marketing platform. Upaknee replaced 
 To add or remove someone from a list, email support \(at\) upaknee.com. Upaknee is building more optimized list management functionality, but it is still under development, with the new system hopefully rolling out sometime in 2020.
 
 [View the preference center](https://newsletters.boston.gov/subscribe), which has all newsletters the public can sign up for. We also have a number of internal newsletters, like the Digital Digest, that are not available in the subscription center and are only circulated among City staff.
-
-**Call with Upaknee - 4/13/20**  
-
-
-* Happening for ‘all city list’
-* Pending users
-* Primary contact list - 40% being pending \(higher than other clients\)
-* Up to 12 confirmation emails to one person 
-* Resubscribe - from AWS in U.S. &gt; unknown where
-* Josh will help us triage this on Upaknee side
-
-Amy asked: Can we not send subscription emails? From LMA or list management \(If coming through subscription center\) &gt; NO
-
-* They can look into this
-* Could be done on the ‘imports’ that metrolist sends over &gt; not doing this anymore
-* Options to subscribe:
-* Newsletter subscription center
-* ‘Widget’ &gt; [boston.gov](https://slack-redir.net/link?url=http%3A%2F%2Fboston.gov) component
-* [Data.boston.gov](https://slack-redir.net/link?url=http%3A%2F%2FData.boston.gov) in the footer
-* Believe no other clients ‘built their own forms’ - forms could’ve been built 
-* Should only get one confirmation per email — shouldn’t get an email 
-* Subscription number: For upaknee - send up a support ticket to get the numbers for report mayor .. particularly for 
-* 4.1 .. migrated by May 2020 &gt; one to two weeks for requirements gathering
-* This will a good UI
-* Told them Reilly is a good contact to help James
-
-[https://contactform.boston.gov/subscriptions?list=11](https://slack-redir.net/link?url=https%3A%2F%2Fcontactform.boston.gov%2Fsubscriptions%3Flist%3D11) &gt; what is this \(I.e. [contactform.boston.gov](https://slack-redir.net/link?url=http%3A%2F%2Fcontactform.boston.gov)\)?Next steps:  
-
-
-* Reilly send them a few different examples of how people sign up
-* City of Boston try to sleuth on where the the 34.xxx.xxx.xx IPs are coming from
-
-Adding the above info plus new findings from Matt into gitbooks right now[3:31](https://cityofboston-doit.slack.com/archives/GGZBECP0S/p1586806304044000)And stuff you forwarded in email
 
 ### Strategy 
 
