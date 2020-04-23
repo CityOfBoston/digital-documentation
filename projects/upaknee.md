@@ -13,6 +13,8 @@ description: >-
 Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe)  
 Login link for employees: boston.upaknee.com
 
+### Manual on Upaknee found here: [https://docs.google.com/document/d/1IbjTbpWpNGaaqzy\_-BmrqH4zYxq1D0M90T\_nIVqcSQA/edit](https://docs.google.com/document/d/1IbjTbpWpNGaaqzy_-BmrqH4zYxq1D0M90T_nIVqcSQA/edit)
+
 ### Types of email
 
 Emailing from the City can be confusing. It can be called any number of things \(Listservs, alerts, newsletter, receipts, etc\). Email is the medium, and different kinds of emails can be sent from a number of different source systems.
