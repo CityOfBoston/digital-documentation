@@ -71,3 +71,9 @@ We have a [number of different systems](https://github.com/CityOfBoston/upaknee/
 
 _**No longer a thing - was decommissioned in February/Marchish 2020 -**_ **Upaknee widget for Salesforce:** Several parts of the city use Salesforce as a database \(Metrolist being the largest example\). If we co-develop a Salesforce Appexchange Upaknee widget, it will mean departments can use Salesforce as they system of record, but send through Upaknee. It will also mean we no longer have to do manual reconciliation. The Department of Neighborhood Development has put in for budget to do this. We could build direct connects more quickly and easily, but syncing two databases is a nightmare.
 
+**Other Clients of Upaknee/Examples of Other Subscription Centers Built by Upaknee**
+
+[Washington Post](https://subscribe.washingtonpost.com/newsletters/#/newsletters)
+
+[A subscription center they had helped build](https://www.screencast.com/t/xqABpFv97T) \[unknown for whom\]
+
