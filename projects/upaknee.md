@@ -6,7 +6,7 @@ description: >-
 
 # Upaknee
 
-### _Issue with API as of April 2020. Matt McGowan actively looking to resolve._
+### _Issue with API as of April 2020. Matt McGowan actively looking to resolve; may be resolved but still pending confirmation by Upaknee._
 
 **Notes from meetings with Upaknee on how to resolve can be found here:** __[_https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit_](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit)\_\_
 
