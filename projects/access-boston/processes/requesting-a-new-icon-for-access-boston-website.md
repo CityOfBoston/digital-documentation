@@ -1,6 +1,6 @@
 # Process: Adding New Icon to Access Boston Website
 
-All design requests \(including icons\) can go to Caroline Stjarnborg via email; Jeanethe Falvey and Reilly Zlab should be cc:ed. 
+All design requests \(including icons\) can go to Sebastian Ebarb via email; Jeanethe Falvey and Reilly Zlab should be cc:ed. 
 
 Include the following information in the email/design request \(so we have all of it from the beginning\): 
 
@@ -12,7 +12,7 @@ Include the following information in the email/design request \(so we have all o
 
 Reilly will create a ticket for the icon including all of the above in the ['Digital' github repository](https://github.com/CityOfBoston/digital/issues). Reilly will respond to the initial request email with a link to the github ticket.
 
-Once the icon is complete Caroline will add the icon to the aforementioned github ticket as well as respond to the email chain.
+Once the icon is complete Sebastian will add the icon to the aforementioned github ticket as well as respond to the email chain.
 
 Simultaneously, Reilly will add this github ticket into the 'Needs triage' column of the [main digital project board](https://github.com/orgs/CityOfBoston/projects/23). Issues will remain in this 'Needs triage' column until they can be discussed during a digital team sync that typically happens on Monday mornings, but periodically moves to Tuesdays due to days off.
 
@@ -20,7 +20,7 @@ When the ticket has been discussed it will be moved into the 'Low priority' colu
 
 When there is more than more environment \(i.e. dev and/or test\) both Access Boston and Digital Teams will test on the different, available environments. Digital will move the icon to production when Access Boston has confirmed good to go on any applicable test environments. If there is only a production environment, then Digital will make the change straight to production. Approvals from testing should be recorded in the github ticket as well as told verbally to Reilly.
 
-Tickets ready for testing should be assigned to Gretchen as well as flagged for her in-person for her to assign to the accurate Access Boston staff member. If she is unavailable, then the ticket can be assigned to Dinesh; be sure to add the label 'validation'.
+Tickets ready for testing should be assigned to Andreea as well as flagged for her in-person for her to assign to the accurate Access Boston staff member. If she is unavailable, then the ticket can be assigned to Dinesh; be sure to add the label 'validation'.
 
-Digital will confirm via the github ticket and verbally to Gretchen when the icon is in production.
+Digital will confirm via the github ticket and verbally to Andreea when the icon is in production.
 
