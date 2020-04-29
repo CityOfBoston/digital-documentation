@@ -38,7 +38,7 @@ Based on all the available options, we decided to move forward with a short and 
 
 ## Short term translation strategy
 
-Use translate.google.com to provide translations for 5 major languages spoken in Boston after English: Spanish, Simplified Chinese, Haitian Creole, Cape Verdean Creole, Portuguese. 
+Use translate.google.com to provide translations for all languages provided/supported by the tool. Users should be able to translate any page or document \(on pages\) after selecting a language of their choice.
 
 There is no cost associated with translation in this first iteration, given that we are proposing to use the free Google Translate web translator.
 
