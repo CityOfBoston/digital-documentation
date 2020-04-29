@@ -128,13 +128,6 @@
   * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
   * [Budget Website](projects/inactive-projects/budget-website.md)
   * [Dog Licenses](projects/inactive-projects/dog-licenses.md)
-  * [Drupal 7](projects/inactive-projects/drupal-7/README.md)
-    * [Deployment \(2019\)](projects/inactive-projects/drupal-7/deployment-2019/README.md)
-      * [Why do we peer-review pull-requests ?](projects/inactive-projects/drupal-7/deployment-2019/why-do-we-peer-review-pull-requests.md)
-    * [Drupal Micro Services \(API End Points\)](projects/inactive-projects/drupal-7/end-points/README.md)
-      * [Cityscore](projects/inactive-projects/drupal-7/end-points/cityscore/README.md)
-        * [Knowledge Base](projects/inactive-projects/drupal-7/end-points/cityscore/knowledgebase..md)
-      * [Public Notices](projects/inactive-projects/drupal-7/end-points/public-notices.md)
   * [Fleet pattern library](projects/inactive-projects/fleet-pattern-library/README.md)
     * [Patterns Library Architecture](projects/inactive-projects/fleet-pattern-library/patterns-library-architecture.md)
     * [Icon Library Architecture](projects/inactive-projects/fleet-pattern-library/icon-library-architecture.md)
@@ -145,6 +138,13 @@
     * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
 * [Decommissioned Apps or Services](projects/decommissioned-apps-or-services/README.md)
   * [CodeRed](projects/decommissioned-apps-or-services/codered.md)
+  * [Drupal 7](projects/decommissioned-apps-or-services/drupal-7/README.md)
+    * [Deployment \(2019\)](projects/decommissioned-apps-or-services/drupal-7/deployment-2019/README.md)
+      * [Why do we peer-review pull-requests ?](projects/decommissioned-apps-or-services/drupal-7/deployment-2019/why-do-we-peer-review-pull-requests.md)
+    * [Drupal Micro Services \(API End Points\)](projects/decommissioned-apps-or-services/drupal-7/end-points/README.md)
+      * [Cityscore](projects/decommissioned-apps-or-services/drupal-7/end-points/cityscore/README.md)
+        * [Knowledge Base](projects/decommissioned-apps-or-services/drupal-7/end-points/cityscore/knowledgebase..md)
+      * [Public Notices](projects/decommissioned-apps-or-services/drupal-7/end-points/public-notices.md)
 
 ## External resources <a id="other-resources"></a>
 
