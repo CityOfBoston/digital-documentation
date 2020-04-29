@@ -29,7 +29,7 @@ Currently, Upaknee only pushes communication. It is not 'transactional' and does
 
 Support@upaknee.com  
 Sara.Lawrence@upaknee.com - City's account manager  
-Josh.Ramdhan@upaknee.com - Direct: 1 \(416\) 304-9818 - operations manager
+Josh.Ramdhan@upaknee.com - Direct: 1 \(416\) 304-9818 - operations/project manager
 
 ### Technology
 
