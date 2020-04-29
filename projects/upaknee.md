@@ -25,6 +25,8 @@ In general, Upaknee is used for 'marketing' emails. These are emails sent from t
 
 Currently, Upaknee only pushes communication. It is not 'transactional' and does not provide receipts or towing alerts. Receipts are processed via Postmark. Towing and street sweeping alerts are processed via Lyris.
 
+The City of Boston Press Office and Boston Public Library both use separate instances of Constant Contact, and do not use Upaknee. 
+
 ### Best contacts
 
 Support@upaknee.com  
