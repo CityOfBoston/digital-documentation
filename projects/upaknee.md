@@ -79,3 +79,9 @@ _**No longer a thing - was decommissioned in February/Marchish 2020 -**_ **Upakn
 
 [A subscription center they had helped build](https://www.screencast.com/t/xqABpFv97T) \[unknown for whom\]
 
+**Open \(and unresolved\) items with Upaknee:**
+
+1. Item listed at top of this documentation
+2. Links on homepage for scheduled and sending don't work
+3. DND specific subscriber requests
+
