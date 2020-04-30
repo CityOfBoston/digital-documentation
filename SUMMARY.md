@@ -120,6 +120,7 @@
 * [City Hall Scheduler](projects/city-hall-scheduler.md)
 * [Everbridge API + UI](projects/everbridge-api-+-ui.md)
 * [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
+* [\(Todo los\) Notifications](projects/todo-los-notifications.md)
 * [Permit Finder](projects/permit-finder.md)
 * [Upaknee](projects/upaknee.md)
 * [Work With U.S. Digital Response Team](projects/work-with-u.s.-digital-response-team.md)
