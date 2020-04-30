@@ -8,6 +8,11 @@ The City of Boston switched from CodeRed to Everbridge for emergency notificatio
 
 For historical information on emergency alert sign ups see here: [https://app.gitbook.com/@boston/s/digital/projects/decommissioned-apps-or-services/codered](https://app.gitbook.com/@boston/s/digital/projects/decommissioned-apps-or-services/codered)
 
+**Boston.gov pages where API appears:**
+
+1. Production: boston.gov/alerts &gt; [https://www.boston.gov/departments/emergency-management/city-boston-alerts-and-notifications](https://www.boston.gov/departments/emergency-management/city-boston-alerts-and-notifications) \(connected the production Everbridge API\)
+2. Development: d8-dev.boston.gov/alerts &gt; [https://d8-dev.boston.gov/departments/711/city-boston-alerts-and-notifications](https://d8-dev.boston.gov/departments/711/city-boston-alerts-and-notifications) \(connected to the test API\)
+
 **City of Boston organization ID’s are:**  
 ALERTBoston: 892807736721548   
 Alert Boston API Testing: 454102597238915
