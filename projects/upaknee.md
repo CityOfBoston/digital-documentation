@@ -16,7 +16,7 @@ Login link for employees: boston.upaknee.com
 
 **The Different Ways People Can Sign Up for Upaknee**
 
-1. [Newsletters.boston.gov](http://newsletters.boston.gov/) \(subscription center built and hosted by Upaknee\) - for any newsletter
+1. [Newsletters.boston.gov](http://newsletters.boston.gov/) \(subscription center built and hosted by Upaknee\) - for any newsletter - This is hosted by Upaknee.
 2. 'Widget' on our [boston.gov](http://boston.gov/) website -- this is a custom built Drupal component \(system that is PHP/mysql\) displayed on our website that is hosted by Acquia. Many City departments have these on their webpages. If you need more you can explore on [boston.gov/departments](http://boston.gov/departments), but I've included a few here:- [https://www.boston.gov/departments/archaeology\#updates](https://www.boston.gov/departments/archaeology#updates) &gt; List number 30 [https://www.boston.gov/departments/arts-and-culture\#newsletter](https://www.boston.gov/departments/arts-and-culture#newsletter) &gt; List number 13
 3. City of Boston open data portal \(hosted by opengov\): [data.boston.gov](http://data.boston.gov/) in the footer connecting to list number 101  These use: [https://contactform.boston.gov/subscriptions?list=LISTNUMBER](https://contactform.boston.gov/subscriptions?list=LISTNUMBER), which is a domain running through our \[City's\] AWS instance.
 
