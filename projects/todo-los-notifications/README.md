@@ -40,7 +40,11 @@ Bais HCM
 
 Salesforce
 
-CodeRed/Everbridge
+CodeRed/Everbridge  
+
+
+* [https://app.gitbook.com/@boston/s/digital/~/drafts/-M6Vo9ozJ-aGyTCR6DdW/projects/decommissioned-apps-or-services/codered](https://app.gitbook.com/@boston/s/digital/~/drafts/-M6Vo9ozJ-aGyTCR6DdW/projects/decommissioned-apps-or-services/codered)
+* [https://app.gitbook.com/@boston/s/digital/projects/everbridge-api-+-ui](https://app.gitbook.com/@boston/s/digital/projects/everbridge-api-+-ui)
 
 Twilio 
 
