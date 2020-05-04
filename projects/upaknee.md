@@ -9,8 +9,9 @@ description: >-
 _**Issue with API as of April 2020.** Matt McGowan actively looking to resolve; may be resolved but still pending confirmation by Upaknee._ Notes from meetings with Upaknee on how to resolve can be found here: __[_https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit_](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit)\_\_
 
 **Links:**  
-Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe)  
-Login link for employees: boston.upaknee.com
+- ****Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe)  
+- Login link for employees: https://boston.upaknee.com or https://boston-admin.upaknee.com  
+- QA site: [https://boston-qa.upaknee.com](https://boston-qa.upaknee.com) 
 
 **Manual on Upaknee found here:** [https://docs.google.com/document/d/1IbjTbpWpNGaaqzy\_-BmrqH4zYxq1D0M90T\_nIVqcSQA/edit](https://docs.google.com/document/d/1IbjTbpWpNGaaqzy_-BmrqH4zYxq1D0M90T_nIVqcSQA/edit)
 
