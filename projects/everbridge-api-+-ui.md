@@ -4,6 +4,8 @@ description: Emergency Messaging Platform
 
 # Everbridge API + UI
 
+_Swapping the API for boston.gov/alerts from codered to everbridge is ready to go, but waiting on approval from OEM - as of 5/4/2020_
+
 The City of Boston switched from CodeRed to Everbridge for emergency notifications \(mainly text messages\) in April 2020.
 
 For historical information on emergency alert sign ups see here: [https://app.gitbook.com/@boston/s/digital/projects/decommissioned-apps-or-services/codered](https://app.gitbook.com/@boston/s/digital/projects/decommissioned-apps-or-services/codered)
