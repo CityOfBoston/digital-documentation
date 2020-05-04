@@ -8,7 +8,7 @@ description: Overview of technologies used for notifications.
 
 Agilepoint
 
-Upaknee 
+Upaknee: [https://app.gitbook.com/@boston/s/digital/projects/upaknee](https://app.gitbook.com/@boston/s/digital/projects/upaknee)
 
 Lyris - Street sweeping/towing
 
