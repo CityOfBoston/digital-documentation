@@ -31,10 +31,10 @@ Currently, Upaknee only pushes communication. It is not 'transactional' and does
 The City of Boston Press Office and Boston Public Library both use separate instances of Constant Contact, and do not use Upaknee. 
 
 **Best contacts**  
-Support@upaknee.com  
-Sara.Lawrence@upaknee.com - City's account manager  
-Josh.Ramdhan@upaknee.com - Direct: 1 \(416\) 304-9818 - operations/project manager  
-Historically, City staff have been told they can directly contact Support. This should not be happening moving forward. All communications to Upaknee should go through Reilly, James, Jeanethe, or André.
+- ****Support@upaknee.com \(There is also a [support 'portal'](https://support.upaknee.com/hc/en-us) found via the footer in Upaknee. To see tickets, click on your name in the upper right and click 'my activities'.\)  
+     - Historically, City staff have been told they can directly contact Support. This should not be happening moving forward. All communications to Upaknee should go through Reilly, James, Jeanethe, or André.  
+- Sara.Lawrence@upaknee.com - City's account manager  
+- Josh.Ramdhan@upaknee.com - Direct: 1 \(416\) 304-9818 - operations/project manager
 
 **Technology**  
 Upaknee is the City of Boston's main email marketing platform. Upaknee replaced Lyris after a competitive bid process in the summer and fall of 2016. [View a copy of the RFP](https://github.com/CityOfBoston/upaknee/blob/master/FINAL%20EV00003360%20Enterprise%20Email%20Marketing%20Solution%20RFP.pdf). Upaknee is currently used for all newsletters.
