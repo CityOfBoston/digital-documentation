@@ -85,6 +85,7 @@
       * [Custom Paragraphs](guides/drupal-8/site-development-notes/custom-modules/custom-paragraphs/README.md)
         * [D7 -&gt; D8 Conversion](guides/drupal-8/site-development-notes/custom-modules/custom-paragraphs/conversions.md)
       * [Custom Taxonomies](guides/drupal-8/site-development-notes/custom-modules/custom-taxonomies.md)
+      * [WebApps](guides/drupal-8/site-development-notes/custom-modules/webapps.md)
     * [Custom Backend](guides/drupal-8/site-development-notes/custom-backend.md)
     * [Drupal UX-specific](guides/drupal-8/site-development-notes/drupal-ux-specific/README.md)
       * [AWS Setup Drupal](guides/drupal-8/site-development-notes/drupal-ux-specific/aws-setup-drupal.md)

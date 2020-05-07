@@ -52,7 +52,7 @@ The cost of translation for the Basic API is $20 per million characters translat
 
 This long term strategy requires some changes to our current content creation workflow: 
 
-![Future workflow](../.gitbook/assets/image%20%2820%29.png)
+![Future workflow](../.gitbook/assets/image%20%2821%29.png)
 
 
 
