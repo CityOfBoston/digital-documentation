@@ -1,8 +1,7 @@
 ---
 description: >-
-  City of Boston strives to automate each step of the develop, test, package and
-  deploy process at each step from local development to deployment in live
-  production,
+  City of Boston strives to automate the develop, test, package and deploy
+  process at each step from local development to deployment in live production,
 ---
 
 # Continuous Deployment Process
