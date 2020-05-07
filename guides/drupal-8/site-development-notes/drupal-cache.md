@@ -54,7 +54,15 @@ curl -IXGET http://boston.lndo.site
 * Does not cache content for authenticated users.
 * Is fully independent from the Drupal kernel, and therefore is decoupled from Drupal -except for a purge module provided by Acquia which manipulates a Varnish API. - [https://docs.acquia.com/resource/caching/purge/](https://docs.acquia.com/resource/caching/purge/) \(**Beware:** notes are for Drupal 7\) - [https://www.drupal.org/project/acquia\_purge](https://www.drupal.org/project/acquia_purge)
 * [Drupal documentation](https://support.acquia.com/hc/en-us/articles/360005853313-Introduction-to-Varnish#whathappenswheniupdatemysite%E2%80%99scontent?) says in Acquia Cloud, **pages are cached for 2 minutes** by default.
-* On boston.gov, the Acquia Purge module is configured to remove entities \(pages\) from the Varnish cache as they are updated by content editors in Drupal.  This invalidation process uses queues in Drupal.  The Drupal queue processor is triggered by cron and runs until the queue is exhausted.   - **On `production` cron runs every 5 minutes, so \(if there is no active queue\) it could take up to 5 minutes for content changes to appear.  -** On`stage`and`develop`cron runs every 15 minutes.
+* Varnish will accept caching instruction from a web-page headers, so we use [Advanced Page Expiry](https://www.drupal.org/project/ape) \(APE\) in drupal to send specific cache instructions to Varnish. The default caching time \(set by APE\) for CoB drupal pages is 4 weeks \(i.e. overrides default 2minutes with 4 weeks!\).
+* On boston.gov, the Acquia Purge module is configured to remove entities \(pages\) from the Varnish cache as they are updated by content editors in Drupal.  This invalidation process uses queues in Drupal.  The Drupal queue processor is triggered by cron and runs until the queue is exhausted.  
+
+{% hint style="info" %}
+**On `production` cron runs every 5 minutes,**   
+_so \(if there is no active queue\) it could take up to 5 minutes for content changes to appear._ 
+
+On**`stage`and`develop`cron runs every 15 minutes.**
+{% endhint %}
 {% endtab %}
 
 {% tab title="Memcache" %}
