@@ -90,6 +90,7 @@
       * [AWS Setup Drupal](guides/drupal-8/site-development-notes/drupal-ux-specific/aws-setup-drupal.md)
       * [Image Styles & UX](guides/drupal-8/site-development-notes/drupal-ux-specific/untitled.md)
       * [Example Content Pages](guides/drupal-8/site-development-notes/drupal-ux-specific/example-content-pages.md)
+    * [PHPStorm IDE](guides/drupal-8/site-development-notes/phpstorm-ide.md)
   * [Drupal 8 micro-services \(API end-points\)](guides/drupal-8/drupal-8-micro-services-api-end-points/README.md)
     * [Site Alerts](guides/drupal-8/drupal-8-micro-services-api-end-points/site-alerts/README.md)
       * [CodeRed Subscription](guides/drupal-8/drupal-8-micro-services-api-end-points/site-alerts/codered-subscription.md)
