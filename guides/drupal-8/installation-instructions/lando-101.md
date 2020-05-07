@@ -169,6 +169,26 @@ Lando provides a CLI for tasks developers commonly need to perform **in** the co
         </p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left"><code>lando validate</code>
+      </td>
+      <td style="text-align:left">Locally runs the linting and PHPCode sniffing checks that are run by Travis.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>lando switch-patterns</code>
+      </td>
+      <td style="text-align:left">
+        <p>Allows you to switch between patterns CDN hosts.</p>
+        <p> <code>lando switch-patterns 2</code> switches to the local CDN in the patterns
+          container</p>
+        <p> <code>lando switch-patterns 3</code> switches to the production CDN</p>
+        <p> <code>lando switch-patterns 4</code> switches to the stage patterns CDN.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
   </tbody>
 </table>{% hint style="info" %}
 A full list of defined Lando commands can be obtained by executing:   
