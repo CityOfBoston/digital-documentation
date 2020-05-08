@@ -11,127 +11,26 @@ lando start
 ### Lando build log
 
 ```text
-Let's get this party started! Starting app..
+Let's get this party started! Starting app boston...
+node version 8 is a legacy version! We recommend upgrading.
 landoproxyhyperion5000gandalfedition_proxy_1 is up-to-date
-Creating network "boston_default" with the default driver
-Creating volume "boston_data_appserver" with default driver
-Creating volume "boston_home_appserver" with default driver
-Creating volume "boston_data_database" with default driver
-Creating volume "boston_home_database" with default driver
-Creating volume "boston_data_node" with default driver
-Creating volume "boston_home_node" with default driver
-Creating boston_node_1 ... done
-Killing boston_node_1 ... done
-Creating boston_appserver_1 ... done
-Killing boston_appserver_1 ... done
+Starting boston_patterns_1  ... done
 Starting boston_appserver_1 ... done
-Killing boston_appserver_1 ... done
-Starting boston_appserver_1 ... done
-
-[LANDO] Appserver Event - build as root
-
-Killing boston_appserver_1 ... done
-Starting boston_appserver_1 ... done
-
-[INFO] Installing Linux packages in appserver container. 
-[INFO] During build, container build actions will be logged to files in /app/setup 
-     - After build, log files can be accessed from https://boston.lndo.site/sites/default/files/setup/ 
-[SUCCESS] Docker container 'appserver' is built.
- 
-Killing boston_appserver_1 ... done
-Starting boston_appserver_1 ... done
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   599    0   599    0     0   2036      0 --:--:-- --:--:-- --:--:--  2037
-100 4580k  100 4580k    0     0   816k      0  0:00:05  0:00:05 --:--:--  948k
-Drush Commandline Tool 9.7.1
-Killing boston_appserver_1 ... done
-Starting boston_appserver_1 ... done
-
-[LANDO] Appserver Event - build
-
-Killing boston_appserver_1 ... done
-Starting boston_appserver_1 ... done
-Killing boston_appserver_1 ... done
-Starting boston_node_1 ... done
-/var/www/.npm-global/bin/gulp -> /var/www/.npm-global/lib/node_modules/gulp-cli/bin/gulp.js
-+ gulp-cli@2.2.0
-added 237 packages from 156 contributors in 8.983s
-Killing boston_node_1 ... done
-Starting boston_appserver_1 ... done
-Starting boston_node_1      ... done
-Creating boston_database_1  ... done
+Starting boston_database_1  ... done
 Waiting until database service is ready...
 Waiting until appserver service is ready...
-Waiting until node service is ready...
-Waiting until database service is ready...
-Waiting until database service is ready...
-Waiting until database service is ready...
+Waiting until patterns service is ready...
 Waiting until database service is ready...
 Waiting until database service is ready...
 Waiting until database service is ready...
 Waiting until database service is ready...
 
-[LANDO] Appserver Event - run
-
-========================================================================================= 
-[INFO] Installing Drupal and dependencies in appserver & database containers. 
-=========================================================================================
- 
-[INFO] see /app/setup/composer.log for output. - (or https://boston.lndo.site/sites/default/files/setup/composer.log)
-[INFO] Executes: > composer install --prefer-dist --no-suggest --no-interaction 
-[SUCCESS] Composer has loaded Drupal core, contrib modules and third-party packages/libraries.
- 
-[INFO] Clone and merge private repo into main project repo. 
-[SUCCESS] Repo merged.
- 
-[INFO] Update settings files. 
-[SUCCESS] Settings updated.
- 
-==== Installing Drupal =========== 
-[INFO] see /app/setup/drush_site_install.log for output. - (or https://boston.lndo.site/sites/default/files/setup/drush_site_install.log)
-[INFO] SYNC Mode: Will copy remote DB and then import repo configs. 
-[INFO] Copying database (and content) from @bostond8.test into docker database container. 
- [notice] Starting to dump database on source.
- [notice] Starting to discover temporary files directory on target.
- [notice] Copying dump file from source to target.
- [notice] Starting to import dump file onto target database.
-[SUCCESS] Site has database and content from remote environment.
- 
-[INFO] Import configuration from sync folder: '/app/docroot/../config/default' into database - This may take some time ...
-       - -> follow along at /app/setup/config_import.log (or https://boston.lndo.site/sites/default/files/setup/config_import.log
-[SUCCESS] Config from the repo has been applied to the database.
- 
-[INFO] Enable/disable appropriate development features and functionality. -  This may also take some time ...
- [action] Enable DEVELOPMENT-ONLY modules.
- [action] Enable and set stage_file_proxy.
- [action] Disable acquia connector and purge.
- [action] Disable prod-only and unwanted modules.
-[SUCCESS] Development environment set.
- 
-[INFO] Apply pending database updates etc. 
- [success] No pending updates.
-[SUCCESS] Done.
- 
-[INFO] Update the drush configuration and aliases. 
-[SUCCESS] Drush file updated.
- 
-[SUCCESS] Drupal build finished. - 
-Appserver Drupal install/build took  14 minutes and  40 seconds.
-
-
-[LANDO] Database Event - run as root
-
-[INFO] Install MySQl tools (mycli and pspg) into the database container. 
-OK
-[SUCCESS] Installed mycli and pspg.
- 
-
+ref: lando-drupal-post-start.sh
 [LANDO] Project Event - post-start
 
 ================================================================================
-[SUCCESS] - Appserver and MySQL Docker containers are now started.
-------------------------------------------------------------------------------------
+[SUCCESS] Docker containers are now started.
+================================================================================
 
      ____________      ______________________________________  
    ________________   |.H.H.H.H.H.H.H.H.H.H.H.H.H.H.H.H.H.H.H| 
@@ -146,22 +45,26 @@ OK
      ____________          |____|'''''''|~~|'''''''|____|      
 
 
-The admin account password is reset to: admin.
-http://default/user/reset/1/1576514209/bZfPbdXRoGuVkdx7KeKL1pvUZQfxD1B_ZTsJZz069PA/login
+[INFO] Host is MacOSX
 
-BOOMSHAKALAKA!!!
+   ___                      __        __        __     __        ______
+  / _ )___  ___  __ _  ___ / /  ___ _/ /_____ _/ /__ _/ /_____ _/ / / /
+ / _  / _ \/ _ \/  ' \(_-</ _ \/ _ `/  '_/ _ `/ / _ `/  '_/ _ `/_/_/_/ 
+/____/\___/\___/_/_/_/___/_//_/\_,_/_/\_\\_,_/_/\_,_/_/\_\\_,_(_|_|_)  
+                                                                       
 
 Your app has started up correctly.
 Here are some vitals:
 
- NAME            boston                    
- LOCATION        /home/david/sources/test  
- SERVICES        appserver, database, node 
- APPSERVER URLS  https://localhost:33302   
-                 http://localhost:33303    
-                 http://boston.lndo.site   
-                 https://boston.lndo.site  
-
+ NAME            boston                                     
+ LOCATION        /Users/stellaubaha/Documents/boston.gov-d8 
+ SERVICES        appserver, database, patterns              
+ APPSERVER URLS  https://localhost:32813                    
+                 http://localhost:32814                     
+                 http://boston.lndo.site/                   
+                 https://boston.lndo.site/                  
+ PATTERNS URLS   http://localhost:32815  
+                 https://patterns.lndo.site/
 ```
 
 ### .lando.yml
@@ -183,10 +86,25 @@ config:
   drupal: false
 
 services:
-  node:
-    type: node:10
+  patterns:
+    type: node:8
+    overrides:
+      environment:
+        PORT: "3030"
+        FRACTAL_PORT: "3030"
+      labels:
+        traefik.0.port: "3030"
+        traefik.docker.network: "landoproxyhyperion5000gandalfedition_edge"
+        traefik.0.frontend.rule: "HostRegexp:patterns.lndo.site"
     globals:
       gulp-cli: "latest"
+    build_as_root:
+      - printf "\n[LANDO] Node Container Event - build as root\n\n"
+      - /app/scripts/local/lando-patterns-customize.sh
+    run:
+      - printf "\n[LANDO] Node Container Event - run\n\n"
+      - /app/scripts/local/lando-build-patterns.sh
+    command: /app/scripts/local/lando-patterns-post-start.sh
 
   database:
     type: mysql
@@ -207,8 +125,8 @@ services:
     xdebug: true
     overrides:
       environment:
-        PHP_IDE_CONFIG: "serverName=bostontest.lndo.site"
-        XDEBUG_CONFIG: "remote_enable=1 remote_host=10.0.0.74 idekey=PHPSTORM"
+        PHP_IDE_CONFIG: "serverName=boston.lndo.site"
+        XDEBUG_CONFIG: "remote_enable=1 idekey=PHPSTORM"
     config:
       conf: xdebug.ini
 
@@ -242,22 +160,18 @@ tooling:
     - drupal
 
   npm:
-    service: node
-    description: "Run npm commands in node container: lando npm <command>"
+    service: patterns
+    description: "Run npm commands in patterns:node container: lando npm <command>"
+    cmd:
+      - echo a; cd /app/patterns && npm
 
   node:
-    service: node
-    description: "Run node commands in node container: lando node <command>"
+    service: patterns
+    description: "Run node commands in patterns container: lando node <command>"
 
   gulp:
-    service: node
-    description: "Run node:gulp commands in node container: lando gulp <command>"
-
-  phing:
-    service: appserver
-    description: "Run Phing tasks in app container: lando phing <task>"
-    cmd:
-      - /app/vendor/bin/phing
+    service: patterns
+    description: "Run node:gulp commands in patterns container: lando gulp <command>"
 
   mycli:
     service: database
@@ -276,13 +190,22 @@ tooling:
     cmd:
       - /app/scripts/local/pull.sh
 
+  validate:
+    service: appserver
+    description: "Run the Linting and PHPCS routines on the current branch."
+    cmd:
+      - /app/scripts/local/validate.sh all
+
+  switch-patterns:
+    service: appserver
+    description: "Switch the patterns library: 2 = local, 3 = prod, 4 = stage."
+    cmd:
+      - /app/vendor/bin/drush drush bcss
+
 events:
   post-start:
-    - printf "\n[LANDO] Project Event - post-start\n\n"
-    - printf "================================================================================\n"
-    - printf "\033[1;32m[SUCCESS] - Appserver and MySQL Docker containers are now started.\033[0m\n"
-    - printf "------------------------------------------------------------------------------------\n\n"
-    - cat ${LANDO_MOUNT}/setup/uli.log && rm -f ${LANDO_MOUNT}/setup/uli.log
+    - appserver: /app/scripts/local/lando-drupal-post-start.sh
+
 ```
 
 ### .config.yml
@@ -291,7 +214,7 @@ The log above was generated using `lando start` with this`config.yml` project fi
 
 ```text
 project:
-  docroot: ${LANDO_MOUNT}/${lando_config_webroot}
+  docroot: ${REPO_ROOT}/${lando_config_webroot}
   profile:
     name: bos_profile
   themes:
@@ -309,6 +232,17 @@ drupal:
     # Use 'default' as the name if there are no multisites.
     name: default
 
+patterns:
+  local:
+    build: true
+    repo:
+      name: CityOfBoston/patterns.git
+      branch: develop
+      # Where the repo will be cloned to.
+      local_dir: ${REPO_ROOT}/patterns
+  travis:
+    build: false
+
 build:
   local:
     # Build Type = dev or prod.
@@ -323,86 +257,86 @@ build:
       # Otherwise set it to 'sync' (and provide a drush-alias) to sync from the drush-alias environment.
       # Tip: Develop environment has database in closest state to the github repo configs.
       source: sync
-      drush_alias: "@bostond8.test"
+      drush_alias: "@bostond8.dev"
       host: boston_database_1
       port: 3306
 
   travis:
     develop:
-      # With Travis, the type will control what type of build is deployed to Acquia (dev/prod).
+      # With Travis, the type will control what type of build is deployed to Acquia (dev/prod/none).
+      # none = don't alter modules enabled from configuration
       type: dev
+      suppress_output: 0
       database:
         # Set source to 'initialize' to start a fresh install.
-        # Otherwise set it to sync to sync from the drush-alias environment.
+        # Otherwise set it to 'sync' to sync from the drush-alias environment.
         source: initialize
         drush_alias: "@bostond8.dev"
       config:
-        # define the folder, relative to the drupal docroot, for config files to be synchronised, no trailing slash.
-        # aquia require ./config/default:
-        #     @see https://docs.acquia.com/acquia-cloud/develop/config-d8/
-        sync: "../config/default"
+        # Set to 'true' or 'false'.  False means no configs will be imported during build/deploy
+        # Note: if the commit is a hotfix, then configs wont be imported for expediency.
+        sync: "true"
     master:
       # With Travis, the type will control what type of build is deployed to Acquia (dev/prod).
+      # none = don't alter modules enabled from configuration
       type: prod
+      suppress_output: 0
       database:
         # Set source to 'initialize' to start a fresh install.
-        # Otherwise set it to sync to sync from the drush-alias environment.
+        # Otherwise set it to 'sync' to sync from the drush-alias environment.
         source: initialize
         drush_alias: "@bostond8.test"
       config:
-        # define the folder, relative to the drupal docroot, for config files to be synchronised, no trailing slash.
-        # aquia require ./config/default:
-        #     @see https://docs.acquia.com/acquia-cloud/develop/config-d8/
-        sync: "../config/default"
+        # Set to 'true' or 'false'.  False means no configs will be imported during build/deploy
+        # Note: if the commit is a hotfix, then configs wont be imported for expediency.
+        sync: "true"
 
 deploy:
-  # each element of the deploy object is a branch in the main CoB repo.
+  # Each element of this deploy node is a branch in the main CoB repo.
+  # WARNING, scripts cannot track branches with spaces or dashes ("-") in their name.  AVOID and use _ instead.
+  #          If your branchname must have a space or "-", then in this file just remove them (i.e. my-branch = mybranch)
+
   develop:
     # Folder in Travis container where deploy files will be "built"
-    dir: ${LANDO_MOUNT}/deploy
-    # Name of the target branch in the Acquia repo.
-    deploy_branch: develop-deploy
+    dir: ${REPO_ROOT}/deploy
+    # Name of the target branch in the Acquia repo. Should be quoted if it contains - or _ or spaces.
+    deploy_branch: "develop-deploy"
     # Path to the drush command in the Travis container.
-    travis_drush_path: '${LANDO_MOUNT}/vendor/bin/drush'
+    travis_drush_path: '${REPO_ROOT}/vendor/bin/drush'
     # Alias for deploy target Aquia server.
     drush_alias: "@bostond8.dev"
     # Definition of files that will and wont be copied from build to deploy.
-    includes_file: ${LANDO_MOUNT}/scripts/deploy/deploy-includes.txt
-    excludes_file: ${LANDO_MOUNT}/scripts/deploy/deploy-excludes.txt
-    sanitize_file: ${LANDO_MOUNT}/scripts/deploy/deploy-sanitize-files.txt
-    # Message we want to appear in Acquia repo for the deployment commit.
-    commit_message: "Automated commit by Travis CI for Build \#\${travis.id}"
+    includes_file: ${REPO_ROOT}/scripts/deploy/deploy-includes.txt
+    excludes_file: ${REPO_ROOT}/scripts/deploy/deploy-excludes.txt
+    sanitize_file: ${REPO_ROOT}/scripts/deploy/deploy-sanitize-files.txt
     # Dry-run (for testing).
     dry_run: false
     # Whether (and where) to sync the database on the deploy target. NB: copy-db=false means db left intact.
     copy_db: false
-    drush_db_source: "@bostond8.stage"
-    # Array of user:host for (Acquia) git remotes to be used for deployment.
-    remotes:
-      - bostond8@svn-29892.prod.hosting.acquia.com:bostond8.git
+    drush_db_source: "@bostond8.test"
+    # user:host for (Acquia) git remote to be used for deployment.
+    acquia_repo: bostond8@svn-29892.prod.hosting.acquia.com:bostond8.git
+    
   master:
     # Folder in Travis container where deploy files will be "built"
-    dir: ${LANDO_MOUNT}/deploy
-    # Name of the target branch in the Acquia repo.
-    deploy_branch: master-deploy
+    dir: ${REPO_ROOT}/deploy
+    # Name of the target branch in the Acquia repo. Should be quoted if it contains - or _ or spaces.
+    deploy_branch: "master-deploy"
     # Path to the drush command in the Travis container.
-    travis_drush_path: '${LANDO_MOUNT}/vendor/bin/drush'
+    travis_drush_path: '${REPO_ROOT}/vendor/bin/drush'
     # Alias for deploy target Aquia server.
     drush_alias: "@bostond8.test"
     # Definition of files that will and wont be copied from build to deploy.
-    includes_file: ${LANDO_MOUNT}/scripts/deploy/deploy-includes.txt
-    excludes_file: ${LANDO_MOUNT}/scripts/deploy/deploy-excludes.txt
-    sanitize_file: ${LANDO_MOUNT}/scripts/deploy/deploy-sanitize-files.txt
-    # Message we want to appear in Acquia repo for the deployment commit.
-    commit_message: "Automated commit by Travis CI for Build \#\${travis.id}"
+    includes_file: ${REPO_ROOT}/scripts/deploy/deploy-includes.txt
+    excludes_file: ${REPO_ROOT}/scripts/deploy/deploy-excludes.txt
+    sanitize_file: ${REPO_ROOT}/scripts/deploy/deploy-sanitize-files.txt
     # Dry-run (for testing).
     dry_run: false
     # Whether (and where) to sync the database on the deploy target. NB: copy-db=false means db left intact.
     copy_db: false
     drush_db_source: "@bostond8.prod"
-    # Array of user:host for (Acquia) git remotes to be used for deployment.
-    remotes:
-      - bostond8@svn-29892.prod.hosting.acquia.com:bostond8.git
+    # user:host for (Acquia) git remote to be used for deployment.
+    acquia_repo: bostond8@svn-29892.prod.hosting.acquia.com:bostond8.git
 
 # Configuration settings for new git repository.
 git:
