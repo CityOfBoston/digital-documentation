@@ -124,6 +124,7 @@
   * [Processes](projects/access-boston/processes/README.md)
     * [Process: Adding New Icon to Access Boston Website](projects/access-boston/processes/requesting-a-new-icon-for-access-boston-website.md)
     * [Process: Non-icon Access Boston Feature or Bug Requests](projects/access-boston/processes/process-non-icon-access-boston-feature-or-bug-requests.md)
+    * [Self-Service](projects/access-boston/processes/self-service.md)
 * [Alexa Skill](projects/alexa-skill.md)
 * [City Hall Scheduler](projects/city-hall-scheduler.md)
 * [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
