@@ -21,6 +21,13 @@ _**Issue with API as of April 2020.** Matt McGowan actively looking to resolve; 
 2. 'Widget' on our [boston.gov](http://boston.gov/) website -- this is a custom built Drupal component \(system that is PHP/mysql\) displayed on our website that is hosted by Acquia. Many City departments have these on their webpages. If you need more you can explore on [boston.gov/departments](http://boston.gov/departments), but I've included a few here:- [https://www.boston.gov/departments/archaeology\#updates](https://www.boston.gov/departments/archaeology#updates) &gt; List number 30 [https://www.boston.gov/departments/arts-and-culture\#newsletter](https://www.boston.gov/departments/arts-and-culture#newsletter) &gt; List number 13
 3. City of Boston open data portal \(hosted by opengov\): [data.boston.gov](http://data.boston.gov/) in the footer connecting to list number 101  These use: [https://contactform.boston.gov/subscriptions?list=LISTNUMBER](https://contactform.boston.gov/subscriptions?list=LISTNUMBER), which is a domain running through our \[City's\] AWS instance.
 
+These are the **domains** that are set up in DNS Made Easy for Upaknee.
+
+* What Upaknee asked of us: 
+* What Frank Skelton was able to do in DNS Made Easy:
+
+![](../../.gitbook/assets/unnamed.png)
+
 **Types of email**  
 Emailing from the City can be confusing. It can be called any number of things \(Listservs, alerts, newsletter, receipts, etc\). Email is the medium, and different kinds of emails can be sent from a number of different source systems.
 
