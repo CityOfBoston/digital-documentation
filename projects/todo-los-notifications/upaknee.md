@@ -23,7 +23,7 @@ _**Issue with API as of April 2020.** Matt McGowan actively looking to resolve; 
 
 These are the **domains** that are set up in DNS Made Easy for Upaknee.
 
-* What Upaknee asked of us: 
+* What Upaknee asked of us: (.gitbook/assets/(City of Boston) Full Whitelisting Implementation - DNS Entries.pdf)
 * What Frank Skelton was able to do in DNS Made Easy:
 
 ![](../../.gitbook/assets/unnamed.png)
