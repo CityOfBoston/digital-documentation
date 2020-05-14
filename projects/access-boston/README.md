@@ -6,9 +6,7 @@ description: >-
 
 # Access Boston
 
-[Historical Documentation](https://app.gitbook.com/@boston/s/digital/~/drafts/-M-zEz_10oYZMEzJpMPE/projects/access-boston/historical-documentation)
-
-[Processes](https://app.gitbook.com/@boston/s/digital/~/drafts/-M-zEz_10oYZMEzJpMPE/projects/access-boston/processes)
+Go to dropdown in menu for more.
 
 
 
