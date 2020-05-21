@@ -11,7 +11,8 @@ _**Issue with API as of April 2020.** Matt McGowan actively looking to resolve; 
 **Links:**
 
 * Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe)  
-* Login link for employees: [https://boston.upaknee.com](https://boston.upaknee.com) or [https://boston-admin.upaknee.com](https://boston-admin.upaknee.com)  
+* Login link for all employees: [https://boston.upaknee.com](https://boston.upaknee.com) or [https://boston-admin.upaknee.com](https://boston-admin.upaknee.com)  
+* Login link for admins: [https://boston-admin.upaknee.com/](https://boston-admin.upaknee.com/) \[There is an overarching admin view. If admins log in to this, they must then go into the 'production' or 'test' environment.
 * QA site: [https://boston-qa.upaknee.com](https://boston-qa.upaknee.com) \[same credentails as prod\]
 
 **Manual on Upaknee found here:** [https://docs.google.com/document/d/1IbjTbpWpNGaaqzy\_-BmrqH4zYxq1D0M90T\_nIVqcSQA/edit](https://docs.google.com/document/d/1IbjTbpWpNGaaqzy_-BmrqH4zYxq1D0M90T_nIVqcSQA/edit)
