@@ -7,6 +7,8 @@ description: >-
 
 # City Hall Scheduler
 
+Reilly actively updating this documentation.
+
 As of May 2020 the following departments needs to be able to offer online scheduling:
 
 * Registry 
