@@ -7,7 +7,7 @@ description: >-
 
 # City Hall Scheduler
 
-As of March 2020 the following departments needs to be able to offer online scheduling:
+As of May 2020 the following departments needs to be able to offer online scheduling:
 
 * Registry 
 * Collecting 
@@ -17,17 +17,28 @@ As of March 2020 the following departments needs to be able to offer online sche
 * Elections 
 * City Clerk 
 * Assessing 
+* ISD - currently: planning and zoning; maybe more
+* DoIT - set up but not yet in use
 
-A historical tracker fort he work can be found here: [https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit\#gid=0](https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit#gid=0)
+
+
+All meetings are found on unique user profiles at: Log in to Hubspot &gt; Go to Sales &gt; Meetings &gt; Click on a department to edit and/or click add action
+
+Video of what happens/how this works: [https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw](https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw)
+
+
+
+How to: Set Up HubSpot Appointment Scheduler at City of Boston: [https://docs.google.com/document/d/1aVDsaxLVwxqAFdlhI5yVMp3EajAfc0\_yFkufbhKw-ZI/edit](https://docs.google.com/document/d/1aVDsaxLVwxqAFdlhI5yVMp3EajAfc0_yFkufbhKw-ZI/edit)
 
 Email script to get people set up: [https://docs.google.com/document/d/1lg033DF3FIGfL7zfgoWkPBjEjmfx51vOj7tlYYPbxOY/edit](https://docs.google.com/document/d/1lg033DF3FIGfL7zfgoWkPBjEjmfx51vOj7tlYYPbxOY/edit)
 
-To set up department:
+Email script once people are set up/to get their approval: [https://docs.google.com/document/d/1l7laj6j721Fg9Hhg\_qW-2OtlDqHd5ymG8eOlxp9qzX4/edit](https://docs.google.com/document/d/1l7laj6j721Fg9Hhg_qW-2OtlDqHd5ymG8eOlxp9qzX4/edit)
 
-1. Log in to Hubspot
-2. Go to Sales &gt; Meetings &gt; Click on a department to edit and/or click add action
 
-Video of what happens/how this works: [https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw](https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw)
+
+A historical tracker for the work can be found here: [https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit\#gid=0](https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit#gid=0)
+
+
 
 Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to Hubspot.
 
