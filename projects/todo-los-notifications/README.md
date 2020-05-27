@@ -8,7 +8,7 @@ Inventory \(actively being built out\): [https://docs.google.com/spreadsheets/d/
 
 ## DoIT 
 
-Agilepoint
+Agilepoint 
 
 Upaknee: [https://app.gitbook.com/@boston/s/digital/projects/upaknee](https://app.gitbook.com/@boston/s/digital/projects/upaknee)
 
@@ -38,11 +38,13 @@ iCIMS
 
 Bais HCM
 
+Alexa Skill
+
 ## Other Departments 
 
 Salesforce
 
-CodeRed/Everbridge
+CodeRed/Everbridge \(OEM , Police/Fire, BPHC\)
 
 * [https://app.gitbook.com/@boston/s/digital/~/drafts/-M6Vo9ozJ-aGyTCR6DdW/projects/decommissioned-apps-or-services/codered](https://app.gitbook.com/@boston/s/digital/~/drafts/-M6Vo9ozJ-aGyTCR6DdW/projects/decommissioned-apps-or-services/codered)
 * [https://app.gitbook.com/@boston/s/digital/projects/everbridge-api-+-ui](https://app.gitbook.com/@boston/s/digital/projects/everbridge-api-+-ui)
@@ -52,6 +54,10 @@ Twilio
 Invoice Cloud \(some emails, text-to-pay?\)
 
 Etims
+
+Constant Contact
+
+
 
  
 

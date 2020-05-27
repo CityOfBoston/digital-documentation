@@ -44,6 +44,12 @@ There is no cost associated with translation in this first iteration, given that
 
 This short term strategy has no effect on any of our current content creation workflows.
 
+### Issues
+
+1. **Pre-translated content**
+
+   We encountered an issue with existing multilingual content on boston.gov, i.e. pre-translated pages in Drupal. When, for example, user visits the boston.gov homepage and selects a given language using the translate button in the site header, the URL of the homepage \(www.boston.gov\) is run through the Google web translator and a translated version of the homepage is displayed to the user. When the user subsequently navigates through the site, new pages openedy the user are also opened in the Google web translator. Thus, a user could navigate from the homepage \(post-translation\) to the one of the existing multilingual pages on boston.gov. In this case, the Google web translator will re-translate the translated text, even if the translation setting of the translator and the language of the text on the page are  the same. And most importantly, there are differences in the two version of the text, i.e. between the pre-translated text \(translated by a human\) and the re-translated pre-translated text \(re-translated by Google web translator\). To solve this issue, we followed these steps:
+
 ##  Long term translation strategy
 
 Integrate Basic Google Translate  API into current Drupal workflow such that when a new English language page is created in Drupal, multilingual copies of that page can be automatically generated, saved as drafts, and then subsequently quality checked and published by translators. 
@@ -52,7 +58,7 @@ The cost of translation for the Basic API is $20 per million characters translat
 
 This long term strategy requires some changes to our current content creation workflow: 
 
-![Future workflow](../.gitbook/assets/image%20%2821%29.png)
+![Future workflow](../.gitbook/assets/image%20%2820%29.png)
 
 
 
