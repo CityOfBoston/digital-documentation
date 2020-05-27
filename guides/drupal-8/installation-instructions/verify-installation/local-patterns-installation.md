@@ -7,7 +7,7 @@ description: >-
 
 # Local Patterns installation
 
-## Getting Super Powers
+## Introduction
 
 The local development version of the CDN is hosted by Fleet at **http://localhost:3030**. This local CDN is served \(by Node/Fractal\) from your local environment.
 
