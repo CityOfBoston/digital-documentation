@@ -586,7 +586,9 @@ You can direct users to the URL's below, select the environment you switched to 
       </td>
     </tr>
   </tbody>
-</table>{% hint style="success" %}
+</table>
+
+{% hint style="success" %}
 **Housekeeping**.  
 When finished with the environment, you should consider rolling-back the changes you made to `.travis.yml` and `.config.yml` in steps 4 & 5 before finally merging `on-demand-branchname` to `develop.`  
 It is likely that the on-demand instance is no longer required, and its unnecessary for the the `on-demand-branchname` to be tracked by Travis.

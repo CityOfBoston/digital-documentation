@@ -52,7 +52,9 @@ All available updates which managed by composer are listed on this page.
       </td>
     </tr>
   </tbody>
-</table>### Step 2: Verify composer version rules.
+</table>
+
+### Step 2: Verify composer version rules.
 
 Following Drupal Best Practices, the downloading and version control of contributed modules \(including Drupal core itself\) is managed by **composer**.  
 

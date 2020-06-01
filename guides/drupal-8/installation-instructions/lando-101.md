@@ -85,7 +85,9 @@ A full list of defined Lando commands can be obtained by executing:
         </td>
     </tr>
   </tbody>
-</table>### 3. Command Line Interface for tasks in the  
+</table>
+
+### 3. Command Line Interface for tasks in the  
 
 Lando provides a CLI for tasks developers commonly need to perform **in** the container.
 
@@ -190,7 +192,9 @@ Lando provides a CLI for tasks developers commonly need to perform **in** the co
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>{% hint style="info" %}
+</table>
+
+{% hint style="info" %}
 A full list of defined Lando commands can be obtained by executing:   
 `lando`
 {% endhint %}
