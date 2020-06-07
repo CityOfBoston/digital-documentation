@@ -14,7 +14,8 @@ If any updates or changes need to be made, then backup your local database befor
 
 * Check that the rule in `composer.json` will allow the update. e.g. to update from v7.58 to v7.61 the rule must allow this - reccomend that the rule used for Drupal is `drupal/drupal: 7.*`.
 * Open a terminal on your local machine and change to the repository root \(parent folder for the `docroot` folder- i.e. the root for drupal\)
-* execute `lando composer update` to cause the required modules in `composer.json` file to  be checked for more recent versions, and based on the version rules then downloads the latest eligible version for each.
+* chmod 777 the `docroot/sites/hub/settings` folder.
+* execute `lando composer update` to cause the required modules in `composer.json` file to  be checked for more recent versions, and based on the version rules then downloads the latest eligible version for each.  Expect to see a lot of vaendo packages being updated, and don't worry, this is normal.
 * Run `lando drush cc all` and `lando drush updb` to execute any database changes etc.
 * Commit the updated files to the repo, and deploy.
 

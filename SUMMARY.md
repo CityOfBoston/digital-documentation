@@ -58,7 +58,7 @@
     * [Icon Library Architecture](guides/libraries-and-tools/fleet-pattern-library/icon-library-architecture.md)
   * [Emotion](guides/libraries-and-tools/emotion.md)
   * [Storybook](guides/libraries-and-tools/storybook.md)
-* [Drupal 8](guides/drupal-8/README.md)
+* [Drupal](guides/drupal-8/README.md)
   * [Onboarding](guides/drupal-8/onboarding/README.md)
     * [Step 1: Local Dev Environments](guides/drupal-8/onboarding/step-1-local-dev-environments.md)
     * [Step 2: Version control](guides/drupal-8/onboarding/step-2-version-control.md)

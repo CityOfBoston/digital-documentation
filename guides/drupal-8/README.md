@@ -1,2 +1,2 @@
-# Drupal 8
+# Drupal
 
