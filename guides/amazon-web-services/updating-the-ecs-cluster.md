@@ -20,6 +20,18 @@ This process is sometimes referred to as “rolling” the cluster though it’
 
 2. Make a PR in [CityOfBoston/digital-terraform](https://github.com/CityOfBoston/digital-terraform/) that updates the `instance_image_id` value for the `staging_cluster` module in [`clusters.tf`](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/clusters.tf) to the new value you found.
 
+{% hint style="success" %}
+When you make the PR, github will automatically execute an `atlantis plan`process.   
+When the plan is done, inspect the output and expect to see changes to:
+
+* resource "aws\_autoscaling\_group" "instances"
+* resource "aws\_cloudwatch\_metric\_alarm" "low\_instance\_alarm"
+* resource "aws\_launch\_configuration" "instances" _\(This last one will have the new AMI guid\)_
+
+**Any other changes the plan identifies should be carefully investigated.   
+Terraform may be proposing to make changes to the AWS environment you don't want, or at least are not expecting.** 
+{% endhint %}
+
 3. Get the PR approved and comment `atlantis apply` to have Atlantis run the update. \(See [Making changes with Terraform](making-changes-with-terraform.md) for more details.\)
 
 4. Terraform will create a new Launch Configuration for staging cluster instances that uses the new AMI, and a new Autoscaling Group that uses it. It will then trigger deletion of the old Autoscaling Group.
