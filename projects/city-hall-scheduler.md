@@ -42,7 +42,7 @@ A historical tracker for the work can be found here: [https://docs.google.com/sp
 
 
 
-Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to Hubspot.
+Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to Hubspot. These plus additional features \(listed below\) that Patty, City Clerk, ISD, and expressed in for future iterations of scheduler. Haven't been deal breakers to date, but could be eventually:
 
 1. Ability to remove the below message prompting for people to contact the department for meeting available. We cannot disable this.
 
@@ -50,9 +50,9 @@ Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if
 
 2. Limited ability for reporting and automation of reporting.
 
-Additional features that Patty expressed in for the scheduler:
-
 * Reilly to add these in
+* Lack of need 
+* Back and forth between customers
 
 
 
