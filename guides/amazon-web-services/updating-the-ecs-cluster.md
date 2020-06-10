@@ -16,9 +16,7 @@ Thanks to our [instance-drain Lambda function](https://github.com/CityOfBoston/d
 
 This process is sometimes referred to as “rolling” the cluster though it’s more accurate that we set up a second cluster of machines and migrate to it.
 
-1. Find the latest ID for the ECS-optimized AMI. You can do this on the [Amazon ECS-optimized AMIs page](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html). Make sure you’re looking under the “Amazon Linux 2” tab and pick the one for `us-east-1`.
-
-![ECS-optimized AMI page, highlighting Linux 2 / us-east-1](../../.gitbook/assets/screen-shot-2019-05-07-at-12.34.26-pm.png)
+1. Find the latest ID for the ECS-optimized AMI. You can do this on the [Amazon ECS-optimized AMIs page](https://us-east-1.console.aws.amazon.com/systems-manager/parameters/aws/service/ecs/optimized-ami/amazon-linux-2/recommended/image_id/description?region=us-east-1). 
 
 2. Make a PR in [CityOfBoston/digital-terraform](https://github.com/CityOfBoston/digital-terraform/) that updates the `instance_image_id` value for the `staging_cluster` module in [`clusters.tf`](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/clusters.tf) to the new value you found.
 
