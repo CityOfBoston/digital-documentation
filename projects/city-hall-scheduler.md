@@ -19,7 +19,7 @@ As of May 2020 the following departments needs to be able to offer online schedu
 * Elections 
 * City Clerk 
 * Assessing 
-* ISD - currently: planning and zoning \(awaiting approval\); maybe more
+* ISD - currently: planning and zoning division \[Lisa/Luis\] \(awaiting approval; will go live week of 7/6 and try for one month\); maybe more
 * DoIT - set up but not yet in use
 
 
