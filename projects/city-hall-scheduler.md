@@ -36,7 +36,7 @@ Email script once people are set up/to get their approval: [https://docs.google.
 
 
 
-A historical tracker for the work can be found here: [https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit\#gid=0](https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit#gid=0)
+\[No longer actively being updated, but left here for context.\] A historical tracker for the work can be found here: [https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit\#gid=0](https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit#gid=0)
 
 
 
