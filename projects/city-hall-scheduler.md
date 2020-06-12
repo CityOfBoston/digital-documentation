@@ -9,7 +9,7 @@ description: >-
 
 Reilly actively updating this documentation.
 
-As of May 2020 the following departments needs to be able to offer online scheduling:
+As of June 2020 the following departments needs to be able to offer online scheduling:
 
 * Registry 
 * Collecting 
@@ -19,7 +19,7 @@ As of May 2020 the following departments needs to be able to offer online schedu
 * Elections 
 * City Clerk 
 * Assessing 
-* ISD - currently: planning and zoning division \[Lisa/Luis\] \(awaiting approval; will go live week of 7/6 and try for one month\); maybe more
+* ISD - currently: planning and zoning division \[Lisa/Luis\] \(awaiting approval; will go live week of 7/6 and try for one month\); setting up for: building inspection, electrical inspection, mechanical inspection, counter, cashier, special enforcement, zba, doc room, health, housing
 * DoIT - set up but not yet in use 
 
 All meetings are found on unique user profiles at: Log in to Hubspot &gt; Go to Sales &gt; Meetings &gt; Click on a department to edit and/or click add action
