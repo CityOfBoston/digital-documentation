@@ -129,7 +129,7 @@
     * [Self-Service](projects/access-boston/processes/self-service.md)
 * [Alexa Skill](projects/alexa-skill.md)
 * [Marriage Intention](projects/marriage-intention.md)
-* [City Hall Scheduler](projects/city-hall-scheduler.md)
+* [City Hall Appointment Scheduler](projects/city-hall-scheduler.md)
 * [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
 * [\(Todo los\) Notifications](projects/todo-los-notifications/README.md)
   * [Everbridge API + UI](projects/todo-los-notifications/everbridge-api-+-ui.md)

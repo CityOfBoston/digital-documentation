@@ -5,7 +5,7 @@ description: >-
   feature for this.
 ---
 
-# City Hall Scheduler
+# City Hall Appointment Scheduler
 
 Reilly actively updating this documentation.
 
@@ -16,11 +16,13 @@ As of June 2020 the following departments needs to be able to offer online sched
 * Bid counter for Public Facilities, Parks, and Neighborhood Development Bids 
 * Transportation - Parking Clerk for resident parking, cashiering, and moving permits
 * Transportation - tow lot
-* Elections 
-* City Clerk 
+* Elections  
 * Assessing 
 * ISD - currently: planning and zoning division \[Lisa/Luis\] \(awaiting approval; will go live week of 7/6 and try for one month\); setting up for: building inspection, electrical inspection, mechanical inspection, counter, cashier, special enforcement, zba, doc room, health, housing
-* DoIT - set up but not yet in use 
+* DoIT - set up but not yet in use
+* City Clerk - decided to stop using 6/15/20
+
+  
 
 All meetings are found on unique user profiles at: Log in to Hubspot &gt; Go to Sales &gt; Meetings &gt; Click on a department to edit and/or click add action
 
