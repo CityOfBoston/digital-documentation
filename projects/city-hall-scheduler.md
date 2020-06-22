@@ -18,7 +18,7 @@ As of June 2020 the following departments needs to be able to offer online sched
 * Transportation - tow lot
 * Elections  
 * Assessing 
-* ISD - Many of their divisions
+* ISD - [Many of their divisions](https://docs.google.com/spreadsheets/d/1yj2P51vIQgdZdBrx8xgRjW2tkxVno0szZ3GON3o8MSI/edit?usp=sharing)
 * DoIT - set up but not yet in use
 * City Clerk - decided to stop using 6/15/20
 
