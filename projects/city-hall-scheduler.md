@@ -18,7 +18,7 @@ As of June 2020 the following departments needs to be able to offer online sched
 * Transportation - tow lot
 * Elections  
 * Assessing 
-* ISD - currently: planning and zoning division \[Lisa/Luis\] \(awaiting approval; will go live week of 7/6 and try for one month\); setting up for: building inspection, electrical inspection, mechanical inspection, counter, cashier, special enforcement, zba, doc room, health, housing
+* ISD - Many of their divisions
 * DoIT - set up but not yet in use
 * City Clerk - decided to stop using 6/15/20
 
