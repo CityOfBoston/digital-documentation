@@ -42,9 +42,9 @@ Email script once people are set up/to get their approval: [https://docs.google.
 
 
 
-Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to Hubspot. These plus additional features \(listed below\) that Patty, City Clerk, ISD, and expressed in for future iterations of scheduler. Haven't been deal breakers to date, but could be eventually:
+Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to Hubspot. These plus additional features \(listed below\) that Patty, City Clerk, ISD, and OPC-Reexpressed in for future iterations of scheduler. Haven't been deal breakers to date, but could be eventually:
 
-1. Ability to remove the below message prompting for people to contact the department for meeting available. We cannot disable this.
+1. Ability to remove the below message prompting for people to contact the department for meeting available. We cannot disable this. \(Requested by Registry and OPC-Resident Parking\)
 
 ![](../.gitbook/assets/screen-shot-2020-05-15-at-2.22.13-pm.png)
 
