@@ -13,11 +13,11 @@ As of June 2020 the following departments needs to be able to offer online sched
 
 * Registry 
 * Collecting 
-* Bid counter for Public Facilities, Parks, and Neighborhood Development Bids 
-* Transportation - Parking Clerk for resident parking, cashiering, and moving permits
-* Transportation - tow lot
-* Elections  
-* Assessing 
+* Bid counter for Public Facilities, Parks, and Neighborhood Development Bids \(no ask for additional features\)
+* Transportation - Parking Clerk for resident parking, cashiering, and moving permits \(no ask for additional features\)
+* Transportation - tow lot \(no ask for additional features\)
+* Elections \(no ask for additional features\)
+* Assessing \(no ask for additional features\)
 * ISD - [Many of their divisions](https://docs.google.com/spreadsheets/d/1yj2P51vIQgdZdBrx8xgRjW2tkxVno0szZ3GON3o8MSI/edit?usp=sharing)
 * DoIT - set up but not yet in use
 * City Clerk - decided to stop using 6/15/20
