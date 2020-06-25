@@ -7,7 +7,7 @@ description: >-
 
 # City Hall Appointment Scheduler
 
-Reilly actively updating this documentation.
+Reilly actively updating this documentation. Requirements being built out here: [https://docs.google.com/spreadsheets/d/1nq47Ox8ubPogYGlob5yYR\_wszvAl-TEl4gkj-Q44Mjo/edit\#gid=9366165](https://docs.google.com/spreadsheets/d/1nq47Ox8ubPogYGlob5yYR_wszvAl-TEl4gkj-Q44Mjo/edit#gid=9366165)
 
 As of June 2020 the following departments needs to be able to offer online scheduling:
 
