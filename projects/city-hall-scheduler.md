@@ -50,10 +50,5 @@ Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if
 
 2. Ability for constituent to clarify reason for appointment while scheduling \(departments would ideally like radio buttons/pre-set options to choose from \(Requested by Registry, Collecting \[they only mentioned this upon initial launch, and haven't mentioned again\], City Clerk\)
 
-3. Limited ability for reporting and automation of reporting. \[Idea more from Reilly based on how to best departments\]
+3. Limited ability for reporting and automation of reporting. \[Idea more from Reilly based on how to best departments.
 
-
-
-Praise for the tool that Patty has forwarded from constituents: 
-
-* 
