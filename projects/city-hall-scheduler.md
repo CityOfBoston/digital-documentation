@@ -11,14 +11,14 @@ Reilly actively updating this documentation. Requirements being built out here: 
 
 As of June 2020 the following departments needs to be able to offer online scheduling:
 
-* Registry 
-* Collecting 
+* Registry \(some ask for additional features, see bottom\)
+* Collecting \(one initial ask for additional features, but not since launch, see bottom\)
 * Bid counter for Public Facilities, Parks, and Neighborhood Development Bids \(no ask for additional features\)
 * Transportation - Parking Clerk for resident parking, cashiering, and moving permits \(no ask for additional features\)
 * Transportation - tow lot \(no ask for additional features\)
 * Elections \(no ask for additional features\)
 * Assessing \(no ask for additional features\)
-* ISD - [Many of their divisions](https://docs.google.com/spreadsheets/d/1yj2P51vIQgdZdBrx8xgRjW2tkxVno0szZ3GON3o8MSI/edit?usp=sharing)
+* ISD - [Many of their divisions](https://docs.google.com/spreadsheets/d/1yj2P51vIQgdZdBrx8xgRjW2tkxVno0szZ3GON3o8MSI/edit?usp=sharing) \(minimal ask for additional feature, see bottom\)
 * DoIT - set up but not yet in use
 * City Clerk - decided to stop using 6/15/20
 
@@ -54,3 +54,6 @@ Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if
 
 
 
+Praise for the tool that Patty has forwarded from constituents: 
+
+* 
