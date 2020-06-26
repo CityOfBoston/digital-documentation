@@ -42,17 +42,15 @@ Email script once people are set up/to get their approval: [https://docs.google.
 
 
 
-Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to Hubspot. These plus additional features \(listed below\) that Patty, City Clerk, ISD, and OPC-Reexpressed in for future iterations of scheduler. Haven't been deal breakers to date, but could be eventually:
+Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to Hubspot. These plus additional features \(listed below\) that Patty, City Clerk, ISD, and OPC expressed in for future iterations of scheduler. Haven't been deal breakers to date, but could be eventually:
 
 1. Ability to remove the below message prompting for people to contact the department for meeting available. We cannot disable this. \(Requested by Registry and OPC-Resident Parking\)
 
 ![](../.gitbook/assets/screen-shot-2020-05-15-at-2.22.13-pm.png)
 
-2. Limited ability for reporting and automation of reporting.
+2. Ability for constituent to clarify reason for appointment while scheduling \(departments would ideally like radio buttons/pre-set options to choose from \(Requested by Registry, Collecting \[they only mentioned this upon initial launch, and haven't mentioned again\], City Clerk\)
 
-* Reilly to add these in
-* Lack of need 
-* Back and forth between customers
+3. Limited ability for reporting and automation of reporting. \[Idea more from Reilly based on how to best departments\]
 
 
 
