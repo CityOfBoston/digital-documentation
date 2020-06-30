@@ -13,7 +13,7 @@ As of June 2020 the following departments needs to be able to offer online sched
 
 * Registry \(some ask for additional features, see bottom\)
 * Collecting \(one initial ask for additional features, but not since launch, see bottom\)
-* Bid counter for Public Facilities, Parks, and Neighborhood Development Bids \(no ask for additional features\)
+* Bid counter for Public Facilities, Parks, and Neighborhood Development Bids \(no ask for additional features\); Parks removed 6/29/20
 * Transportation - Parking Clerk for resident parking, cashiering, and moving permits \(no ask for additional features\)
 * Transportation - tow lot \(no ask for additional features\)
 * Elections \(no ask for additional features\)
