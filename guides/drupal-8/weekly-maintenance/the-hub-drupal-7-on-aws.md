@@ -12,7 +12,7 @@ If any updates or changes need to be made, then backup your local database befor
 
 ### **If Drupal itself needs updating then:**
 
-* Check that the rule in `composer.json` will allow the update. e.g. to update from v7.58 to v7.61 the rule must allow this - reccomend that the rule used for Drupal is `drupal/drupal: 7.*`.
+* Check that the rule in `composer.json` will allow the update. e.g. to update from v7.58 to v7.61 the rule must allow this - recommend that the rule used for Drupal is `drupal/drupal: 7.*`.
 * Open a terminal on your local machine and change to the repository root \(parent folder for the `docroot` folder- i.e. the root for drupal\)
 * **Backup the `docroot/sites`, `docroot/profiles`and `docroot/crispus`folders, the `*.html`files and the `.htaccess` file on the `docroot` root folder.**
 * Execute`chmod 777 -R`on the `docroot/sites` folder.
@@ -31,16 +31,22 @@ If any updates or changes need to be made, then backup your local database befor
 * Check the file is running properly at https://hub.lndo.site.
 * Commit the updated files to the repo, and deploy.
 
-{% hint style="info" %}
-If you are having issues using composer to do the update \(e.g. composer reports that there is nothing to update ... \) then follow these steps:
+{% hint style="success" %}
+**TIP \(for the impatient\)**
 
-1. Download the latest drupal core release archive from [drupal.org](https://www.drupal.org/project/drupal/releases?version=7).
+If all that above seems too hard, or you are having issues using composer to do the update \(e.g. composer reports that there is nothing to update ... \) then follow these steps to get the job done fast and dirty:
+
+1. Download the latest Drupal core release archive from [drupal.org](https://www.drupal.org/project/drupal/releases?version=7).
 2. Unzip the archive into a local folder
-3. Open a terminal and goto the folder you just unzipped.
-4. Run `rsync -arz -essh -P . /[abs-path]/docroot/`
-5. Check that files have copied correctly
-6. Run `lando drush cc all` and `lando drush updb`
-7. Commit changes and deploy.
+3. Open a terminal and go to the folder you just unzipped.
+4. Check over "key file"s to see if you want them changed \(usually you don't\).   This is a list of "key files":
+   * .htaccess files \(especially the one in the docroot\)
+   * any settings files you find in /docroot/sites/default
+5. Run `rsync -arz -essh -P . /[abs-path]/docroot/`
+6. Check that files have copied correctly
+7. Run `lando drush cc all` and `lando drush updb`
+8. Commit the changes and deploy them.
+9. Delete the local folder from step 2 above.
 {% endhint %}
 
 ### **For all other** _**non-Drupal core**_ **module updates**
@@ -48,8 +54,8 @@ If you are having issues using composer to do the update \(e.g. composer reports
 * On your local version of the website \(https://hub.lndo.site\)
 * Make sure you have the latest version of the `develop` branch checked out and up to date with the remote \(AWS CodeCommit\) repo.
 * Open the [Update Status](https://hub.lndo.site/admin/reports/updates/update) page in the UI.
-* Select the all updates you wish to apply, and then click the "Download these Updates" button
+* Select all the updates you wish to apply, and then click the "Download these Updates" button
 * The updates will be downloaded, and then you will be prompted to apply the updates, **Do not put the site in maintenance mode** \(because you are running locally, this is not required\).
 * After the download is complete, you will see a list of all updates applied, and at the bottom of the page a link to "Run Database Updates". Even though you are working locally and therefore DB changes applied will remain local - you should click this link to allow that to happen to be sure there are no errors.
-* Commit the changes and deploy.
+* Commit the changes and deploy them.
 
