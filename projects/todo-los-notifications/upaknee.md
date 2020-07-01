@@ -53,6 +53,8 @@ To add or remove someone from a list, email support \(at\) upaknee.com. Upaknee 
 
 [View the preference center](https://newsletters.boston.gov/subscribe), which has all newsletters the public can sign up for. We also have a number of internal newsletters, like the Digital Digest, that are not available in the subscription center and are only circulated among City staff.
 
+As of 6/19, we use Google ReCaptcha V3 to verify good, healthy sign ups: [https://www.google.com/recaptcha/admin/site/430165885](https://www.google.com/recaptcha/admin/site/430165885)
+
 **Strategy**  
 The original City of Boston email content strategy \(compiled by Joshua Gee\) is [outlined here](https://docs.google.com/presentation/d/1rlOybTebsrXAqEhIi5sH2jV4ovZVMDHfGIVKBa-Oewg/edit?usp=sharing). In general, it breaks down into two phases.
 
