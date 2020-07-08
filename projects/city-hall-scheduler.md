@@ -31,6 +31,15 @@ All meetings are found on unique user profiles at: Log in to Hubspot &gt; Go to 
 
 Video of what happens/how this works: [https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw](https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw)
 
+How to run a report on appointments:
+
+1. Log into HubSpot using the cityhall.appointments@boston.gov email address
+2. In the menu, go to reports &gt; dashboards; you should go to a page and see a 'sales dashboard'
+3. Hover over the 'dashboard' until 'actions' appears on the upper right hand side. Click on 'actions' and select 'export'.
+4. This will be sent as email to cityhall.appointments@boston.gov with a short link to access the export file in the upper right hand 'notifications'. 
+5. Open the report in excel.
+6. Filter by dates and department to get the information that you're looking for/to report on.
+
 
 
 How to: Set Up HubSpot Appointment Scheduler at City of Boston: [https://docs.google.com/document/d/1aVDsaxLVwxqAFdlhI5yVMp3EajAfc0\_yFkufbhKw-ZI/edit](https://docs.google.com/document/d/1aVDsaxLVwxqAFdlhI5yVMp3EajAfc0_yFkufbhKw-ZI/edit)
