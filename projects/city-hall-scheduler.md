@@ -31,7 +31,7 @@ All meetings are found on unique user profiles at: Log in to Hubspot &gt; Go to 
 
 Video of what happens/how this works: [https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw](https://drive.google.com/open?id=1GeOryUHFz8aqg7iUC5RYHlWwuz2dDwCw)
 
-How to run a report on appointments:
+How to run a report on appointments \(this is only who booked appointments, not who showed up\):
 
 1. Log into HubSpot using the cityhall.appointments@boston.gov email address
 2. In the menu, go to reports &gt; dashboards; you should go to a page and see a 'sales dashboard'
