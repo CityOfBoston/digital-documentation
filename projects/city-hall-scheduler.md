@@ -25,7 +25,8 @@ As of June 2020 the following departments needs to be able to offer online sched
 Departments that have a Google service account to manage appointments, but are not using the online scheduler \(because it's so few appointments\):
 
 * ZBA hearings - essentially to schedule room/hearing at City Hall \(see Kelly Mackey or Sarah Figalora for additional information\): ISD ZBA Hearing Appointments \[Kelly created and shared\]
-* BTD permitting: btdpermitting@boston.gov 
+* BTD permitting: btdpermitting@boston.gov
+* Not a City department, but City credit union working with  
 
 All meetings are found on unique user profiles at: Log in to Hubspot &gt; Go to Sales &gt; Meetings &gt; Click on a department to edit and/or click add action
 
