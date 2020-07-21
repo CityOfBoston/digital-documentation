@@ -1,8 +1,8 @@
 ---
 description: >-
   Allow departments to have an automated appointment scheduling system to limit
-  person-to-person contact during COVID-19. We are using HubSpot Appointment
-  feature for this.
+  person-to-person contact during COVID-19. Actively using HubSpot appointments;
+  actively piloting Acuity Scheduling.
 ---
 
 # City Hall Appointment Scheduler
