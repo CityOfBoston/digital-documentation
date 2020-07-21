@@ -9,6 +9,8 @@ description: >-
 
 Documentation on tool requirements/feature requests and insight into potential new tools: [https://docs.google.com/spreadsheets/d/1nq47Ox8ubPogYGlob5yYR\_wszvAl-TEl4gkj-Q44Mjo/edit\#gid=9366165](https://docs.google.com/spreadsheets/d/1nq47Ox8ubPogYGlob5yYR_wszvAl-TEl4gkj-Q44Mjo/edit#gid=9366165)
 
+City Hall Scheduler Setup/Management Tracker: [https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit\#gid=0](https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit#gid=0)
+
 --
 
 As of July 2020 the following departments needs to be able to offer online scheduling:
