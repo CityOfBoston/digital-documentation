@@ -38,7 +38,7 @@ Departments that have a Google service account to manage appointments, but are n
 * BTD permitting: btdpermitting@boston.gov
 * Not a City department, but City credit union working with Cynthia somehow
 
-Parking clerk-appeals: These are handled separately through a Conduent \(vendor\) system. Sarah Figalora actively working on getting more information.
+Parking clerk-appeals: These are handled separately through a Conduent \(vendor\) system. Sarah Figalora actively working on getting more information. See boston.gov/parking for language \(should flag for Jordan and A&F\).
 
 --
 
