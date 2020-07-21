@@ -34,7 +34,7 @@ Departments that have a Google service account to manage appointments, but are n
 
 * ZBA hearings - essentially to schedule room/hearing at City Hall \(see Kelly Mackey or Sarah Figalora for additional information\): ISD ZBA Hearing Appointments \[Kelly created and shared\]
 * BTD permitting: btdpermitting@boston.gov
-* Not a City department, but City credit union working with 
+* Not a City department, but City credit union working with Cynthia somehow
 
 Parking clerk-appeals: These are handled separately through a Conduent \(vendor\) system. Sarah Figalora actively working on getting more information.
 
