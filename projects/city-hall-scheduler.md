@@ -7,9 +7,13 @@ description: >-
 
 # City Hall Appointment Scheduler
 
-**Documentation on tool requirements/feature requests and insight into potential new tools:** [**https://docs.google.com/spreadsheets/d/1nq47Ox8ubPogYGlob5yYR\_wszvAl-TEl4gkj-Q44Mjo/edit\#gid=9366165**](https://docs.google.com/spreadsheets/d/1nq47Ox8ubPogYGlob5yYR_wszvAl-TEl4gkj-Q44Mjo/edit#gid=9366165)\*\*\*\*
+Documentation on tool requirements/feature requests and insight into potential new tools: [https://docs.google.com/spreadsheets/d/1nq47Ox8ubPogYGlob5yYR\_wszvAl-TEl4gkj-Q44Mjo/edit\#gid=9366165](https://docs.google.com/spreadsheets/d/1nq47Ox8ubPogYGlob5yYR_wszvAl-TEl4gkj-Q44Mjo/edit#gid=9366165)
 
-As of June 2020 the following departments needs to be able to offer online scheduling:
+--
+
+As of July 2020 the following departments needs to be able to offer online scheduling:
+
+Using HubSpot:
 
 * Registry \(some ask for additional features, see bottom\)
 * Collecting \(one initial ask for additional features, but not since launch, see bottom\)
@@ -22,11 +26,21 @@ As of June 2020 the following departments needs to be able to offer online sched
 * DoIT - set up but not yet in use
 * City Clerk - decided to stop using 6/15/20
 
+Using Acuity Scheduling:
+
+* xx
+
 Departments that have a Google service account to manage appointments, but are not using the online scheduler \(because it's so few appointments\):
 
 * ZBA hearings - essentially to schedule room/hearing at City Hall \(see Kelly Mackey or Sarah Figalora for additional information\): ISD ZBA Hearing Appointments \[Kelly created and shared\]
 * BTD permitting: btdpermitting@boston.gov
-* Not a City department, but City credit union working with  
+* Not a City department, but City credit union working with 
+
+Parking clerk-appeals: These are handled separately through a Conduent \(vendor\) system. Sarah Figalora actively working on getting more information.
+
+--
+
+HubSpot specific information:
 
 All meetings are found on unique user profiles at: Log in to Hubspot &gt; Go to Sales &gt; Meetings &gt; Click on a department to edit and/or click add action
 
@@ -41,21 +55,15 @@ How to run a report on appointments \(this is only who booked appointments, not 
 5. Open the report in excel.
 6. Filter by dates and department to get the information that you're looking for/to report on.
 
-
-
 How to: Set Up HubSpot Appointment Scheduler at City of Boston: [https://docs.google.com/document/d/1aVDsaxLVwxqAFdlhI5yVMp3EajAfc0\_yFkufbhKw-ZI/edit](https://docs.google.com/document/d/1aVDsaxLVwxqAFdlhI5yVMp3EajAfc0_yFkufbhKw-ZI/edit)
 
 Email script to get people set up: [https://docs.google.com/document/d/1lg033DF3FIGfL7zfgoWkPBjEjmfx51vOj7tlYYPbxOY/edit](https://docs.google.com/document/d/1lg033DF3FIGfL7zfgoWkPBjEjmfx51vOj7tlYYPbxOY/edit)
 
 Email script once people are set up/to get their approval: [https://docs.google.com/document/d/1l7laj6j721Fg9Hhg\_qW-2OtlDqHd5ymG8eOlxp9qzX4/edit](https://docs.google.com/document/d/1l7laj6j721Fg9Hhg_qW-2OtlDqHd5ymG8eOlxp9qzX4/edit)
 
+--
 
-
-\[No longer actively being updated, but left here for context.\] A historical tracker for the work can be found here: [https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit\#gid=0](https://docs.google.com/spreadsheets/d/1eCRHovix9ah8oGnffURY6GlK-LdiZrRwd3D8n84Ht84/edit#gid=0)
-
-
-
-Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to Hubspot. These plus additional features \(listed below\) that Patty, City Clerk, ISD, and OPC expressed in for future iterations of scheduler. Haven't been deal breakers to date, but could be eventually:
+Things that HubSpot Scheduler cannot do; Reilly reached out to support to see if they were possible and are not. Reilly submitted feature requests to HubSpot. These plus additional features \(listed below\) that Patty, City Clerk, ISD, and OPC expressed in for future iterations of scheduler. Haven't been deal breakers to date, but could be eventually:
 
 1. Ability to remove the below message prompting for people to contact the department for meeting available. We cannot disable this. \(Requested by Registry and OPC-Resident Parking\)
 
