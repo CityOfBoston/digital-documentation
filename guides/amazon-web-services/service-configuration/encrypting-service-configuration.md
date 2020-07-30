@@ -32,3 +32,36 @@ To create an encrypted environment variable value:
 Note that using `--plaintext` on the command line will cause `aws kms` to encrypt the ASCII as-is. When using the `fileb://` form to reference a file on disk, `aws kms` will first Base64 encode the value, which will cause a failure on the app side, which does not expect Base64-encoded values.
 {% endhint %}
 
+### Decrypting Environment Variables
+
+Decrypting a variable which was encrypted  using the method above is possible using the following commands in a terminal session:
+
+{% tabs %}
+{% tab title="Linux" %}
+```text
+ENCRSTR="AQICAHiwpwrMhuNm...."
+aws kms decrypt \
+  --ciphertext-blob fileb://<(echo '$ENCRSTR' | base64 -d) \
+  --output text \
+  --region "us-east-1" \
+  --query Plaintext | base64 -d
+```
+{% endtab %}
+
+{% tab title="Mac & Windows" %}
+```text
+ENCRSTR="AQICAHiwpwrMhuNm...."
+aws kms decrypt \
+  --profile=cityofboston \
+  --ciphertext-blob fileb://<(echo '$ENCRSTR' | base64 -D) \
+  --output text \
+  --region "us-east-1" \
+  --query Plaintext | base64 -D
+```
+{% endtab %}
+{% endtabs %}
+
+If you have multiple profiles on your computer, you may use this option in the **aws kms decrypt** command:
+
+`--profile=myprofile`
+
