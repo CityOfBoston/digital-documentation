@@ -41,7 +41,7 @@ Decrypting a variable which was encrypted  using the method above is possible us
 ```text
 ENCRSTR="AQICAHiwpwrMhuNm...."
 aws kms decrypt \
-  --ciphertext-blob fileb://<(echo '$ENCRSTR' | base64 -d) \
+  --ciphertext-blob fileb://<(echo $ENCRSTR | base64 -d) \
   --output text \
   --region "us-east-1" \
   --query Plaintext | base64 -d
@@ -53,7 +53,7 @@ aws kms decrypt \
 ENCRSTR="AQICAHiwpwrMhuNm...."
 aws kms decrypt \
   --profile=cityofboston \
-  --ciphertext-blob fileb://<(echo '$ENCRSTR' | base64 -D) \
+  --ciphertext-blob fileb://<(echo $ENCRSTR | base64 -D) \
   --output text \
   --region "us-east-1" \
   --query Plaintext | base64 -D
