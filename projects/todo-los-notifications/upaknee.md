@@ -6,7 +6,7 @@ description: >-
 
 # Upaknee
 
-_**Issue with API as of April 2020.** Matt McGowan actively looking to resolve; may be resolved but still pending confirmation by Upaknee._ Notes from meetings with Upaknee on how to resolve can be found here: _\_\[\__[https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit)\]\([https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit\)\_\_](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit%29__)
+**Migrating to 4.1 on 8/9, 5 p.m.**
 
 **Links:**
 
@@ -96,4 +96,5 @@ _**3. No longer a thing - was decommissioned in February/Marchish 2020 -**_ **Up
 1. Item listed at top of this documentation
 2. Links on homepage for scheduled and sending don't work
 3. DND specific subscriber requests
+4. Issue with API. Notes from meetings with Upaknee on how to resolve can be found here: [https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit)\]\([https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit\)\_\_](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit%29__)
 
