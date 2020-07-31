@@ -10,7 +10,7 @@ description: >-
 
 **4.1 Information:**
 
-* Admin training: [https://drive.google.com/file/d/1XS4TXauQ5leg6vrmQGYMiE1qLho7b9hu/view?usp=sharing](https://drive.google.com/file/d/1XS4TXauQ5leg6vrmQGYMiE1qLho7b9hu/view?usp=sharing)
+* Admin training recording: [https://drive.google.com/file/d/1XS4TXauQ5leg6vrmQGYMiE1qLho7b9hu/view?usp=sharing](https://drive.google.com/file/d/1XS4TXauQ5leg6vrmQGYMiE1qLho7b9hu/view?usp=sharing)
 
 **Links:**
 
