@@ -8,7 +8,20 @@ description: >-
 
 ## Maps that have been created
 
-This [spreadsheet](https://docs.google.com/spreadsheets/d/1qBQrTCPEveSf-M6sPJ1HVInlijNmvXrf156Wc5o38UY/edit?usp=sharing) contains all maps in that have been created.
+This [spreadsheet](https://docs.google.com/spreadsheets/d/1qBQrTCPEveSf-M6sPJ1HVInlijNmvXrf156Wc5o38UY/edit?usp=sharing) contains all maps in that have been created. If updating that spreadsheet gets away from you and you want to know what pages on boston.gov are using maps, ask a Drupal dev on the Digital Team to run this query:
+
+```sql
+select n.type, nfd.title, nfd.status, concat('https://www.boston.gov/node/', n.nid) as link
+from paragraph__field_map_inline pm
+inner join node__field_components nc on pm.entity_id = nc.field_components_target_id
+inner join node n on nc.entity_id = n.nid
+inner join node_field_data nfd on n.nid = nfd.nid
+where pm.bundle = 'map'
+```
+
+That will give you an output that looks something like this JSON file \(last ran 10/1/20\). A "1" in the status field means they are published pages and publicly accessible, a "0" means they are not published and cannot be seen unless the user can log into the website.
+
+{% file src="../.gitbook/assets/maps-on-bostongov.json" caption="JSON file of maps on boston.gov" %}
 
 ## Creating a map for boston.gov
 
@@ -105,15 +118,65 @@ To manually update a map:
 
 {% file src="../.gitbook/assets/overwrite-entire-layer.mov" caption="Manually update hosted feature service" %}
 
-## Things to note
+#### Things to note about manually updating
 
-Dates can be weird; addresses can get geocoded to odd locations
+Date fields can get read into ArcGIS Online as what I think are unix time stamps \(number of seconds since Jan 1, 1970\). 
 
+![Date and time getting shown as a unix timestamp on boston.gov map.](../.gitbook/assets/screen-shot-2020-10-01-at-2.28.38-pm.png)
 
+A hack-y fix for this is the add an additional row to the spreadsheet and just add "test" into the date field for that row. All other fields can be blank.
 
+![Add an extra field to force dates to strings.](../.gitbook/assets/screen-shot-2020-10-01-at-2.32.21-pm.png)
 
+This extra field with force the dates to be parsed as strings in ArcMap. After you've updated the map, you can delete the test entry so you don't confuse the stakeholder, just remember to put it in again before you update it next time. Again, this is a hack-y solution! I do not believe this issue exists when lat/longs are used and the connection is automated.
+
+#### Using the ArcGIS World Geocoder
+
+You may have to work with your stakeholders to fudge some addresses to get them to show up on the map if you are relying on the ArcGIS World Geocoder. If you open map viewer in ArcGIS Online, you can search for addresses and figure out what one will get you closest to the location you are trying to map. 
+
+For example, mapping City hall with the ArcGIS world geocoder can lead to different results depending on the address entered: 
+
+![Location of 1 City Hall Plz according to Arc World Geocoder.](../.gitbook/assets/screen-shot-2020-10-01-at-3.22.48-pm.png)
+
+![Location of 1 City Hall Sq according to Arc World Geocoder.](../.gitbook/assets/screen-shot-2020-10-01-at-3.23.34-pm.png)
+
+## Functionality Overview of the Maps component
+
+The maps component on boston.gov is made for very simple, operational maps. Best practice is to keep the layers as minimal as possible - 1-2 layers max is best. 
+
+### Points
+
+Any map icons need to be publicly accessible somewhere on the internet for us to be able to use them on a map. In most cases, we use icons available via the Digital Team's [pattern library \(Fleet\)](https://patterns.boston.gov/components/detail/mapping.html). You will see maps the leverage icons that are not in that list, if that happens and you want to use it or you want any of the other experiential icons in this [google drive location](https://drive.google.com/drive/folders/0B0RwQU94BhGeWWVFTDhkNWZjNEk?usp=sharing), email the Digital Team. They should be able to get it onto boston.gov and give you back a link to it. 
+
+#### Point Clustering and points sitting on top of each other
+
+We can cluster points on maps, we use leaflet's marker clustering functionality to do this. This is important to note, because this is one of the **only** ways to view points that are on top of each other. The other way is to leverage filtering, discussed below. 
+
+![Point clustering on the public restrooms map.](../.gitbook/assets/screen-shot-2020-10-01-at-3.41.35-pm.png)
+
+If you have a dataset or are mapping two datasets where points over lap, you need to move to location of one of the points if you don't want to use clustering to display them both. We **do not** have the functionality to click through multiple pop-ups like ArcGIS Online maps do. 
+
+For example, in the 2020 early voting map, we display both ballot dropboxes and early voting locations on the same map as two separate layers. There is a ballot dropbox at City Hall as well as an early voting location. The were originally sitting on top of each other until we updated the address for the early voting location.
+
+![Early voting and dropbox location at the same location, but adjusted so they don&apos;t cover each other.](../.gitbook/assets/screen-shot-2020-10-01-at-3.52.20-pm.png)
+
+### Polygons and Lines
+
+Polygons and lines can only have one color. For polygons the color will be made transparent and fill the space. The outline of the shape will be the true color.
+
+![Transparent polygons on Drupal maps component.](../.gitbook/assets/screen-shot-2020-10-01-at-4.12.41-pm.png)
+
+For lines, the line will be that color but as the user zooms in, it will get transparent so that street names are visible. 
+
+![Lines turn transparent when you zoom in.](../.gitbook/assets/screen-shot-2020-10-01-at-4.13.36-pm.png)
+
+### Color by attribute does not exist for these maps
+
+On these maps we cannot color by attribute \(e.g. locations with "Type" of "x" are blue, type "y" is red\). If you encounter a situation where this is necessary, the best thing to do is **create views in ArcGIS** Online that filter by specific type. Then each view can be added to the map as its own layer.
 
 ## Create the map on boston.gov
+
+These maps are configured using JSON
 
 ## Technical Documentation
 
