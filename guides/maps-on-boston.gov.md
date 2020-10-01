@@ -18,14 +18,14 @@ Below are the main steps in getting a map on boston.gov:
 2. Make sure the data stays up-to-date
 3. Create a map on boston.gov in Drupal
 
-### Get Data
+## Get Data
 
 There are two main ways you can set up the data for maps on boston.gov: 
 
 1. Google Sheet
 2. ArcGIS Online hosted feature service 
 
-#### Google Sheet Data Source
+### Google Sheet Data Source
 
 If the stakeholder you are working with is more comfortable editing and updating information in a Google Sheet, you can create a hosted feature service using this. 
 
@@ -64,7 +64,7 @@ Below is a screen recording of this process:
 
 ![Update the created feature service to be set to &quot;public&quot;.](../.gitbook/assets/share-settings-set-to-public.png)
 
-#### Use an ArcGIS hosted feature service.
+### Use an ArcGIS hosted feature service.
 
 If the stakeholder you are working with is comfortable editing hosted feature services in ArcGIS Online, you can use that as well. **The only thing needed for the boston.gov maps is that the feature layer be shared publicly**. 
 
@@ -79,13 +79,13 @@ You can create an ArcGIS web application that allows the stakeholder to edit and
 
 The pro of setting the map up this way is that when the stakeholder makes an update it is _immediately and automatically_ updated on the boston.gov map. 
 
-### Make sure the data stays up to date
+## Make sure the data stays up to date
 
-#### Editing a ArcGIS Hosted Feature Service Directly
+### Editing a ArcGIS Hosted Feature Service Directly
 
 If you are using an ArcGIS hosted feature service and having the stakeholder edit that, you just need to get them directions on how to add to a map with full editing control, they can then update the service. 
 
-#### Google Sheet with Latitude and Longitude fields
+### Google Sheet with Latitude and Longitude fields
 
 If you are using a google sheet that has Lat/Long fields, you need to give the stakeholder instructions on how to update that information. Generally, we point people to google maps. [Here is a screen recording of how to get the values](https://drive.google.com/file/d/1tgKH77jO7h2YVf1gXb4D9Dvuti5NyeAW/view?usp=sharing).
 
@@ -93,7 +93,7 @@ Once you have that, you can submit a ticket to the Data Engineering team via [th
 
 It might take a few days for the connection to get automated, and you may have a time sensitive map you are working on \(e.g. early voting locations, covid testing sites, etc.\). In this case, you can follow the instructions for manually updating a map below.
 
-#### Google Sheet without Lat/Long fields or that is just not automated yet
+### Google Sheet without Lat/Long fields or that is just not automated yet
 
 To manually update a map:
 
@@ -105,7 +105,7 @@ To manually update a map:
 
 {% file src="../.gitbook/assets/overwrite-entire-layer.mov" caption="Manually update hosted feature service" %}
 
-### Things to note
+## Things to note
 
 Dates can be weird; addresses can get geocoded to odd locations
 
@@ -113,7 +113,7 @@ Dates can be weird; addresses can get geocoded to odd locations
 
 
 
-### Create the map on boston.gov
+## Create the map on boston.gov
 
 ## Technical Documentation
 
