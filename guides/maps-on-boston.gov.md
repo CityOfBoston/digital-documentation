@@ -170,6 +170,8 @@ For lines, the line will be that color but as the user zooms in, it will get tra
 
 ![Lines turn transparent when you zoom in.](../.gitbook/assets/screen-shot-2020-10-01-at-4.13.36-pm.png)
 
+#### Hover Color
+
 ### Color by attribute does not exist for these maps
 
 On these maps we cannot color by attribute \(e.g. locations with "Type" of "x" are blue, type "y" is red\). If you encounter a situation where this is necessary, the best thing to do is **create views in ArcGIS** Online that filter by specific type. Then each view can be added to the map as its own layer.
