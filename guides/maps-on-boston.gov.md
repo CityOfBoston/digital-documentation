@@ -214,7 +214,7 @@ These maps are configured using JSON. [This folder](https://drive.google.com/dri
 
 The best way to get started when creating a new map, is to look through [this list](https://docs.google.com/spreadsheets/d/1qBQrTCPEveSf-M6sPJ1HVInlijNmvXrf156Wc5o38UY/edit#gid=280579724) and choose a map that has similar functionality to what you are going for. Then grab the JSON configuration linked there, and drop it into [this map editor page](https://patterns.boston.gov/web-components/map-editor.html). You can then start making updates to the JSON and when you want to see the change reflected on the map press the tab key and it will updated.
 
-This is the [technical documentation](https://github.com/CityOfBoston/patterns/blob/develop/web-components/map/map-1.0.schema.json) for how to configure the map's JSON.
+
 
 ## Technical Documentation
 
