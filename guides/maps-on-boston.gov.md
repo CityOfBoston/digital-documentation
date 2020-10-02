@@ -23,6 +23,11 @@ That will give you an output that looks something like this JSON file \(last ran
 
 {% file src="../.gitbook/assets/maps-on-bostongov.json" caption="JSON file of maps on boston.gov" %}
 
+It's important to note that maps will come on and off the website with time as many of them are seasonal or for certain events. Therefore, you may not always be able to see the maps on the pages linked to in the spreadsheet above or in the output of that query. If you need to assist in getting a map that once was on the site but now isn't one of two things can happen:
+
+1. The Digital Team can get to old JSON configuration file from a past revision of the page and you can work off that to start
+2. You should be able to find the JSON in [this Google Drive folder](https://drive.google.com/drive/folders/1nJNF3OsP3uvcKfjHZWTa4pw7eLN62qd0?usp=sharing) which has every JSON config we've created for a map on boston.gov. 
+
 ## Creating a map for boston.gov
 
 Below are the main steps in getting a map on boston.gov:
@@ -37,6 +42,13 @@ There are two main ways you can set up the data for maps on boston.gov:
 
 1. Google Sheet
 2. ArcGIS Online hosted feature service 
+
+#### Https is necessary 
+
+For boston.gov to be able to access and render the dataset, it **has** to be https. This means anything published to ArcGIS Online via the EGIS database cannot be used for a boston.gov map since they have http feature service urls. 
+
+1. Feature service url for Landmarks published via EGIS database: [**http://**gis.cityofboston.gov/arcgis/rest/services/EnvironmentEnergy/OpenData/MapServer/3](http://gis.cityofboston.gov/arcgis/rest/services/EnvironmentEnergy/OpenData/MapServer/3)
+2. Feature service url for Landmarks hosted feature layer: [**https://**services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/BLC\_Landmarks\_Hosted\_Approved\_Landmarks/FeatureServer](https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/BLC_Landmarks_Hosted_Approved_Landmarks/FeatureServer)
 
 ### Google Sheet Data Source
 
@@ -172,17 +184,35 @@ For lines, the line will be that color but as the user zooms in, it will get tra
 
 #### Hover Color
 
+Polygons and lines can be set to change color when a user hovers over them: 
+
+![Map with a hover color set on layer.](../.gitbook/assets/screen-shot-2020-10-02-at-1.40.51-pm.png)
+
 ### Color by attribute does not exist for these maps
 
 On these maps we cannot color by attribute \(e.g. locations with "Type" of "x" are blue, type "y" is red\). If you encounter a situation where this is necessary, the best thing to do is **create views in ArcGIS** Online that filter by specific type. Then each view can be added to the map as its own layer.
 
 ### Filtering
 
-## Create the map on boston.gov
+The layers on this maps can be set up to be filtered by the user. Each filter will only work on one layer, but this can be used to help display points that may lay on top of each other.  
 
-These maps are configured using JSON
+For example, the food trucks map has multiple trucks in the same location various days of the week. We use filters with a default value of the current day to determine what trucks to show when the map is opened: 
+
+![Filters can be set to a default value. ](../.gitbook/assets/screen-shot-2020-10-02-at-2.01.43-pm.png)
+
+These filters can also be aware of each other. For example, the "Truck" filter above will only show trucks that show up on Fridays now that the Day has been set to that.
 
 ## 311 Geocoder Problem
+
+For certain maps, it is important that we use SAM addresses because the precision is extremely important. This generally the case when we are trying to tell people which polygon their address is inside \(e.g. what City Council district you live in, whether or not your address is in a Historic District\). 
+
+In these cases, the ESRI world geocoder is not precise enough as it may geocode addresses to the street centerline which could mean we tell someone they are represented by the wrong person. 
+
+## Create the map on boston.gov
+
+These maps are configured using JSON. [This folder](https://drive.google.com/drive/folders/1nJNF3OsP3uvcKfjHZWTa4pw7eLN62qd0?usp=sharing) contains all the JSONs that have been created for maps on boston.gov.
+
+The best way to get started create a new map, is to look through this list 
 
 ## Technical Documentation
 
