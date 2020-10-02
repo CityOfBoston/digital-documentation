@@ -174,9 +174,13 @@ For lines, the line will be that color but as the user zooms in, it will get tra
 
 On these maps we cannot color by attribute \(e.g. locations with "Type" of "x" are blue, type "y" is red\). If you encounter a situation where this is necessary, the best thing to do is **create views in ArcGIS** Online that filter by specific type. Then each view can be added to the map as its own layer.
 
+### Filtering
+
 ## Create the map on boston.gov
 
 These maps are configured using JSON
+
+## 311 Geocoder Problem
 
 ## Technical Documentation
 
