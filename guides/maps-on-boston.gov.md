@@ -40,7 +40,7 @@ Below are the main steps in getting a map on boston.gov:
 
 There are two main ways you can set up the data for maps on boston.gov: 
 
-1. Google Sheet
+1. Google Sheet that feeds into a hosted feature service 
 2. ArcGIS Online hosted feature service 
 
 #### Https is necessary 
