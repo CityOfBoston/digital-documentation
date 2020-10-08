@@ -6,7 +6,7 @@ description: An overview of the currently inactive Dog Licenses project
 
 ## Project Overview
 
-The Dog Licenses app is a tool for applying for, renewing and looking up a dog license in the City of Boston. The app is owned by Animal 
+The Dog Licenses app is a tool for applying for, renewing and looking up a dog license in the City of Boston. The app is owned by Animal Care/Control.
 
 App is currently located here:  [https://www.cityofboston.gov/animals/licenseapp/](https://www.cityofboston.gov/animals/licenseapp/) 
 
@@ -36,7 +36,7 @@ Animal Care and Control mentioned that Georges/Enterprise worked with Chameleon,
 
 ### Things to explore:
 
-* General discovery with Amanda/Alexis/Animal Care and Control 
+* General discovery with Alexis/Animal Care and Control 
 * Explore use of chameleon \([https://chameleonbeach.com/](https://chameleonbeach.com/)\), i.e. software used by Animal Care and Control to track the licenses - all info that is submitted.
 * Explore automation of manual entry of  information from emails \(cityofboston.gov\) into Chameleon. Can this be automated?
 * Discrepancies between what is asked in person or via mail versus what is asked online. Note: There are differences - Example: We don't prompt for the aging population to get a discount like we do in person and via mail.
