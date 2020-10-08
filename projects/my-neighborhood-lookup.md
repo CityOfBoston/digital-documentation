@@ -25,7 +25,7 @@ The data used in this application come from a variety of GIS data sources. [This
 
 These datasources are combined with the SAM address dataset in Civis. [This workflow](https://github.com/CityOfBoston/civis_pipelines/blob/dcfe088e154f010e9090ee3d57130882d7dbdaaa/workflows/my_neighborhood.yaml) is the one that combines all the datasets. 
 
-Every night, the workflow runs and sends the any records that have updated or changed to boston.gov. Once a month on the 1st, the workflow sends the entire load of records to Drupal.
+Every night, [the my neighborhood workflow](https://github.com/CityOfBoston/civis_pipelines/blob/dcfe088e154f010e9090ee3d57130882d7dbdaaa/workflows/my_neighborhood.yaml) runs and sends the any records that have updated or changed to boston.gov. Once a month on the 1st, the workflow sends the entire load of records to Drupal.
 
 
 
