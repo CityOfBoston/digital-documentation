@@ -148,7 +148,6 @@
     * [Marriage Certificates](projects/inactive-projects/registry-suite/marriage-certificates.md)
     * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
 * [Decommissioned Apps or Services](projects/decommissioned-apps-or-services/README.md)
-  * [SnowStats](projects/decommissioned-apps-or-services/snowstats.md)
   * [CodeRed](projects/decommissioned-apps-or-services/codered.md)
   * [Drupal 7](projects/decommissioned-apps-or-services/drupal-7/README.md)
     * [Deployment \(2019\)](projects/decommissioned-apps-or-services/drupal-7/deployment-2019/README.md)
@@ -157,6 +156,7 @@
       * [Cityscore](projects/decommissioned-apps-or-services/drupal-7/end-points/cityscore/README.md)
         * [Knowledge Base](projects/decommissioned-apps-or-services/drupal-7/end-points/cityscore/knowledgebase..md)
       * [Public Notices](projects/decommissioned-apps-or-services/drupal-7/end-points/public-notices.md)
+  * [SnowStats](projects/decommissioned-apps-or-services/snowstats.md)
 
 ## External resources <a id="other-resources"></a>
 
