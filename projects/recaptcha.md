@@ -1,0 +1,9 @@
+---
+description: >-
+  The Google reCAPTCHA v3 returns a score for each request without user
+  friction. The score is based on interactions with your site and enables you to
+  take an appropriate action for your site.
+---
+
+# Google reCAPTCHA
+
