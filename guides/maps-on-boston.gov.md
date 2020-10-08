@@ -158,7 +158,7 @@ The maps component on boston.gov is made for very simple, operational maps. Best
 
 ### Points
 
-Any map icons need to be publicly accessible somewhere on the internet for us to be able to use them on a map. In most cases, we use icons available via the Digital Team's [pattern library \(Fleet\)](https://patterns.boston.gov/components/detail/mapping.html). You will see maps the leverage icons that are not in that list, if that happens and you want to use it or you want any of the other experiential icons in this [google drive location](https://drive.google.com/drive/folders/0B0RwQU94BhGeWWVFTDhkNWZjNEk?usp=sharing), email the Digital Team. They should be able to get it onto boston.gov and give you back a link to it. 
+Any map icons need to be publicly accessible somewhere on the internet for us to be able to use them on a map. In most cases, we use icons available via the Digital Team's [pattern library \(Fleet\)](https://patterns.boston.gov/components/detail/mapping.html). You will see maps the leverage icons that are not in that list, if that happens and you want to use it or you want any of the other experiential icons in this google drive location, email the Digital Team. They should be able to get it onto boston.gov and give you back a link to it. 
 
 #### Point Clustering and points sitting on top of each other
 
