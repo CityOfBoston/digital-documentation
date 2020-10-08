@@ -12,6 +12,11 @@ The my neighborhood application is a Drupal component that can be added to any p
 
 ### Drupal Import Scripts
 
+There are two Drupal endpoints associated with this application.one for receiving the updates
+
+* One for receiving the updated records on a nightly basis \(updates\): [`https://www.boston.gov/rest/mnl/update`](https://www.boston.gov/rest/mnl/update?)\`\`
+* One for receiving the full load of records: [`https://www.boston.gov/rest/mnl/import`](https://www.boston.gov/rest/mnl/import)\`\`
+
 [This page](https://content.boston.gov/admin/config/services/mnl) has information on the status of Drupal import scripts that run nightly and once a month. 
 
 ## Data Sources
