@@ -14,6 +14,10 @@
 
 ## Standards & best practices
 
+* [Accessibility at COB](standards-and-best-practices/accessibility/README.md)
+  * [Developers](standards-and-best-practices/accessibility/developers.md)
+  * [Content Editors](standards-and-best-practices/accessibility/editors.md)
+  * [Resources](standards-and-best-practices/accessibility/resources.md)
 * [Analytics and Metrics](standards-and-best-practices/analytics-and-metrics.md)
 * [Code of Conduct](standards-and-best-practices/code-of-conduct.md)
 * [General](standards-and-best-practices/general.md)
