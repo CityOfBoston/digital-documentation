@@ -35,3 +35,26 @@ City has ~100 that are hard install of boxes in the vehicles. Have about ~700 co
 
 Currently redirecting to boston.gov/snow
 
+
+
+--
+
+Allows residents to monitor Boston’s snow operations including an overview of the season showing the total miles and hours plowed, salt used, and total snowfall. Also shows what phase the snow operation is in, and what tasks are being completed in each snow response phase.
+
+Links
+
+App: [http://snowstats.boston.gov/](http://snowstats.boston.gov/) \[currently unresponsive\]   
+Github: [https://github.com/CityOfBoston/snowstats](https://github.com/CityOfBoston/snowstats)
+
+Contacts
+
+Historical App Engineering: Max Handler/Qlarion, Claire Lane 
+
+Public Works Representative: Paul Taylor
+
+Latest iteration launch: 2015 Related news articles: 
+
+1. [https://www.cityofboston.gov/news/Default.aspx?id=18976](https://www.cityofboston.gov/news/Default.aspx?id=18976) 
+
+2. [https://www.americaninno.com/boston/boston-snow-stats-mayor-marty-walsh-announces-snowstats-boston-gov/](https://www.americaninno.com/boston/boston-snow-stats-mayor-marty-walsh-announces-snowstats-boston-gov/) 3. [http://www.wbur.org/news/2015/02/02/boston-snow-stats](http://www.wbur.org/news/2015/02/02/boston-snow-stats)
+
