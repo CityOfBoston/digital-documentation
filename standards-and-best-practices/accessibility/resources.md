@@ -1,10 +1,30 @@
+---
+description: >-
+  Articles, links, tools, and other programs to help us understand
+  accessibility.
+---
+
 # Resources
 
-### Articles
+**Articles**
 
 {% embed url="https://www.smashingmagazine.com/2018/07/web-with-just-a-keyboard/" %}
 
-### Other resources
+{% embed url="https://usability.yale.edu/web-accessibility/articles/links" %}
 
-[w3.org](https://www.w3.org/WAI/standards-guidelines/wcag/#:~:text=Web%20Content%20Accessibility%20Guidelines%20%28WCAG%29%20is%20developed%20through%20the%20W3C,%2C%20organizations%2C%20and%20governments%20internationally)
+{% embed url="https://developer.mozilla.org/en-US/docs/Learn/Accessibility" %}
+
+\*\*\*\*
+
+\*\*\*\*
+
+**Other resources**
+
+{% embed url="https://www.w3.org/WAI/fundamentals/accessibility-intro/" %}
+
+\*\*\*\*
+
+**Tools**
+
+* [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html)
 
