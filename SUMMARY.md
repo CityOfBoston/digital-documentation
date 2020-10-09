@@ -145,6 +145,7 @@
 * [Permit Finder](projects/permit-finder.md)
 * [Work With U.S. Digital Response Team](projects/work-with-u.s.-digital-response-team.md)
 * [Inactive projects](projects/inactive-projects/README.md)
+  * [Rentsmart](projects/inactive-projects/rentsmart.md)
   * [311 \(Salesforce Upgrade\)](projects/inactive-projects/311.md)
   * [Boards and commissions](projects/inactive-projects/boards-and-commissions.md)
   * [Budget Website](projects/inactive-projects/budget-website.md)
