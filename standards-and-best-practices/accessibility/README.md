@@ -38,13 +38,13 @@ description: >-
 
 **Titles, captions, and summaries**
 
-* Iframes
-* Tables
-* Images
+* Iframes should always have a title to explain the content of the iframe
+* Tables must have `summaries` explaining the content of the table and `Captions` foe really large tables.
+* Images should always have meaningful titles for screen readers to read
+* Anchor tags `<a>...</a>` should always have a title
 
 **Links and buttons**
 
-* Production: [https://access.boston.gov](https://access.boston.gov)
-* Test: [https://access-boston-test.digital-staging.boston.gov/](https://access-boston-test.digital-staging.boston.gov/)
-* Development: [https://access-boston-dev.digital-staging.boston.gov/](https://access-boston-dev.digital-staging.boston.gov/)
-
+* A link should always be a link and not a placeholder
+* Buttons 
+* 
