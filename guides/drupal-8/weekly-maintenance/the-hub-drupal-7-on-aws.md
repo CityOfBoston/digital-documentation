@@ -59,3 +59,9 @@ If all that above seems too hard, or you are having issues using composer to do 
 * After the download is complete, you will see a list of all updates applied, and at the bottom of the page a link to "Run Database Updates". Even though you are working locally and therefore DB changes applied will remain local - you should click this link to allow that to happen to be sure there are no errors.
 * Commit the changes and deploy them.
 
+### Other weekly checks
+
+#### HCM Feed \(Active Directory Sync\)
+
+* Check [https://hub.boston.gov/admin/content/migrate/groups/hub-user](https://hub.boston.gov/admin/content/migrate/groups/hub-user) to see that the HCM import is not stuck `importing` or some non-idle state.  If it is, then reset each of the **User** and **Profile** migration tasks so they show `idle` as their status. You can ssh to the eb server \(`$ eb ssh HubProduction`\) and then check the contents of the log file `$ cat /var/log/drupal/drush-hcm.log`, check the script at `$ sudo vim /var/app/current/docroot/sites/default/files-private/drush_HCM.sh`and finally check cron launches the script properly `sudo crontab -l` you can also manually run the script using `$ . /var/app/current/docroot/sites/default/files-private/drush_HCM.sh`
+
