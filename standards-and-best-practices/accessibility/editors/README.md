@@ -33,5 +33,5 @@ _The above example creates a simple button which is first in the focus order**.*
 
 * Youtube videos:
 * HTML videos:
-* Development: [https://d8-dev.boston.gov/](https://d8-dev.boston.gov/)
+* Other video types:
 
