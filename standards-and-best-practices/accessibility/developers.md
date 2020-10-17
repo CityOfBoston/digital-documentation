@@ -63,13 +63,25 @@ Developers can emulate links with other elements, such as `<div>` or `<span>` el
 * Add `tabindex=”0”` so that the link becomes keyboard focusable
 * Add `role=”link”` so that assistive technology recognizes the element as a link
 * Add the styling cursor: pointer so that mouse users will recognize the element as a link.
+* Same applies to html elements used as buttons instead of the actual `<button>` or `<input>` element. 
 
 ```text
+<!-- Link example -->
 <span role=”link” tabindex=”0” style=”cursor:pointer;text-decoration:underline;color:blue;”>This is an emulated link</span>
 
+<a href="https://boston.gov">Click Here</a>
+
+<a class="subnav-anchor" id="stay-connected" data-text="Stay Connected" href="javascript:void(0)" title="This is an anchor"></a>
+
+<!-- Button example -->
+<div id="saveChanges" tabindex="0" role="button" aria-pressed="false">Save</div>
+
+<button id="saveChanges">Save</button>
 ```
 
 For example, the markup for an accessible emulated link might look like the following:
 
 To avoid needing to implement the above, developers should prefer to use the `<a>` tag instead.
+
+**Note**: If using role="button" instead of the semantic `<button>` or `<input type="button">` elements, you will need to make the element focusable and have to define event handlers for [`click`](https://developer.mozilla.org/en-US/docs/Web/Events/click) and [`keydown`](https://developer.mozilla.org/en-US/docs/Web/Events/keydown) events, including the Enter and Space keys, in order to process the user's input. See the [official WAI-ARIA example code](https://www.w3.org/TR/wai-aria-practices/examples/button/button.html).
 
