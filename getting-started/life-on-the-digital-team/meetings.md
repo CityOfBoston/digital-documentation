@@ -8,7 +8,7 @@ description: The regular meetings conducted by the Digital team.
 
 ### Slack daily standup
 
-**Participants:** Developers, Product Managers, Quality Assurance, +Others Who Want to Join
+**Participants:** Entire digital team
 
 * Accomplishments or discoveries from the previous day
 * Priorities for the day
@@ -16,15 +16,13 @@ description: The regular meetings conducted by the Digital team.
 
 ## Weekly
 
-### Dev/PM sync
+### Product development sync
 
-**Monday afternoons \(typically\)**
+**Monday mornings** 
 
-**Participants:** Developers, Product Managers, Chief Digital Officer, Quality Assurance
+**Participants:** Developers, Product Managers, Chief Digital Officer, Quality Assurance, UX, etc.
 
-**Format:** Look over the [project prioritization](https://github.com/CityOfBoston/digital/wiki/Home) and adjust as necessary.
-
-Sync on weekly priorities, roadmap, open team or process questions, blockers, etc. Generally, a time for us to catch up and make sure we're on the same page and know how we can support and learn from one another.
+**Format:** Talk through accomplishment\(s\) last week, priority\(ies\) this week, flags
 
 ### Digital staff meeting
 
