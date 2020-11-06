@@ -1,5 +1,7 @@
 ---
-description: 'Info about https://permitfinder.boston.gov/'
+description: >-
+  production: https://permitfinder.boston.gov/ (UI updated by Fiona Hopkins in
+  2019) | staging: https://permit-finder.digital-staging.boston.gov/permit
 ---
 
 # Permit Finder
@@ -12,7 +14,7 @@ Permit Finder currently receives about 500 unique users a week.
 
 ### Documentation
 
-* [PermitFinder Product Proposal](https://docs.google.com/document/d/1BKtVSitjEiEv1vmrlUCppdAxxwYZRNoNIbLO75VNnmY/edit)
+* [PermitFinder Product Proposal](https://docs.google.com/document/d/1BKtVSitjEiEv1vmrlUCppdAxxwYZRNoNIbLO75VNnmY/edit) \(for future iterations, mostly completed by Susanna Ronalds Hannon\)
 * [Permit Finder ETL Documentation](https://docs.google.com/document/d/1PlwKWRNHg688VSRPOYYTtBkFwWGqT-2VS1S5jYWRoI0/edit)
 * Code archive: [PMv3.27.zip](https://drive.google.com/file/d/17j0C7EJrqHkRvKjSubFs4adzigAN7cJP/view?usp=sharing)
 
