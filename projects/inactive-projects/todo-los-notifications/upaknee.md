@@ -6,11 +6,7 @@ description: >-
 
 # Upaknee
 
-**Migrating to 4.1 on 8/9, 5 p.m.**
-
-**4.1 Information:**
-
-* Admin training recording: [https://drive.google.com/file/d/1XS4TXauQ5leg6vrmQGYMiE1qLho7b9hu/view?usp=sharing](https://drive.google.com/file/d/1XS4TXauQ5leg6vrmQGYMiE1qLho7b9hu/view?usp=sharing)
+**4.1 Information:** Admin training recording: [https://drive.google.com/file/d/1XS4TXauQ5leg6vrmQGYMiE1qLho7b9hu/view?usp=sharing](https://drive.google.com/file/d/1XS4TXauQ5leg6vrmQGYMiE1qLho7b9hu/view?usp=sharing)
 
 **Links:**
 
