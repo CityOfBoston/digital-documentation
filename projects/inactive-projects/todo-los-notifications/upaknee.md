@@ -33,7 +33,7 @@ These are the **domains** that are set up in DNS Made Easy for Upaknee.
 * \[What Upaknee asked of us for domains\]\([https://github.com/CityOfBoston/digital-documentation/blob/master/.gitbook/assets/\(City of Boston\) Full Whitelisting Implementation - DNS Entries.pdf](https://github.com/CityOfBoston/digital-documentation/blob/master/.gitbook/assets/%28City%20of%20Boston%29%20Full%20Whitelisting%20Implementation%20-%20DNS%20Entries.pdf)\)
 * What Frank Skelton was able to do in DNS Made Easy:
 
-![](../../.gitbook/assets/unnamed.png)
+![](../../../.gitbook/assets/unnamed.png)
 
 **Types of email**  
 Emailing from the City can be confusing. It can be called any number of things \(Listservs, alerts, newsletter, receipts, etc\). Email is the medium, and different kinds of emails can be sent from a number of different source systems.
