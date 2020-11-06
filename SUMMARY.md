@@ -156,6 +156,7 @@
     * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
   * [Work With U.S. Digital Response Team](projects/inactive-projects/work-with-u.s.-digital-response-team.md)
 * [Decommissioned Apps or Services](projects/decommissioned-apps-or-services/README.md)
+  * [Archived Forms Information](projects/decommissioned-apps-or-services/archived-forms-information.md)
   * [CodeRed](projects/decommissioned-apps-or-services/codered.md)
   * [Drupal 7](projects/decommissioned-apps-or-services/drupal-7/README.md)
     * [Deployment \(2019\)](projects/decommissioned-apps-or-services/drupal-7/deployment-2019/README.md)
