@@ -12,6 +12,8 @@
 
 * Heroku is appropriate for very one-off apps \(such as the 311 crowdsource app\) where we don’t mind not being on a boston.gov URL or waiting for the dyno to spin up after inactivity.
 * We only want to use free tier dynos going forward.
+* We need to get off all paid Heroku services, migrating to AWS/S3 as appropriate. Staging apps, however, should generally deploy to AWS to match production-like environments. 
+  * [App status / migration plan spreadsheet](https://docs.google.com/a/boston.gov/spreadsheets/d/1rUV91I0PfQK6L4MHGAWdkNc-NJ8Qya3MOT48W70QAwQ/edit?usp=sharing)
 
 ## Monitoring
 
