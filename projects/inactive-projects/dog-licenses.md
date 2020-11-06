@@ -8,7 +8,9 @@ description: An overview of the currently inactive Dog Licenses project
 
 The Dog Licenses app is a tool for applying for, renewing and looking up a dog license in the City of Boston. The app is owned by Animal Care/Control.
 
-App is currently located here:  [https://www.cityofboston.gov/animals/licenseapp/](https://www.cityofboston.gov/animals/licenseapp/) 
+App is currently located here:  [https://www.cityofboston.gov/animals/licenseapp/](https://www.cityofboston.gov/animals/licenseapp/)
+
+Yearly maintenance needed on this app: Dropdown for previous year needs to be updated yearly around the turn of the new year \(January 1\) so that people can reference a license number from the year prior.Dropdown for year needs to be updated yearly around the turn of the new year \(January 1\) so that people can reference a license number from the year prior. 
 
 ### Project Purpose
 
