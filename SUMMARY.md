@@ -128,6 +128,7 @@
   * [City Worker Upgrade to City Worker 5](projects/311-crm-upgrade/city-worker-upgrade-to-city-worker-5.md)
   * [Lagan 311 CRM upgrade to 15r4](projects/311-crm-upgrade/lagan-311-crm-upgrade-to-15r4.md)
 * [Contact Form](projects/contact-form.md)
+* [Fleet \(Pattern Library Design System\)](projects/fleet-pattern-library-design-system.md)
 * [Marriage Intention](projects/marriage-intention.md)
 * [My Neighborhood Lookup](projects/my-neighborhood-lookup.md)
 * [Inactive projects](projects/inactive-projects/README.md)
