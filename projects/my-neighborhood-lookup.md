@@ -27,6 +27,8 @@ These datasources are combined with the SAM address dataset in Civis. [This work
 
 Every night, [the my neighborhood workflow](https://github.com/CityOfBoston/civis_pipelines/blob/dcfe088e154f010e9090ee3d57130882d7dbdaaa/workflows/my_neighborhood.yaml) runs and sends the any records that have updated or changed to boston.gov. Once a month on the 1st, the workflow sends the entire load of records to Drupal.
 
+Jonathan Porter \(Analytics division of DoIT\) is the best point of contact for the Civis portion. Matt McGowan \(Digital division of DoIT\) is the best point of contact for the Drupal REST information.
+
 ## Historical Information
 
 * [Product requirements](https://docs.google.com/document/d/1w_BknpFRHAudTEO2wdSdPIFboNSroY5LHmMWn4vwjRA/edit#heading=h.kfsq8a92ggxf)
