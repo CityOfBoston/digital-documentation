@@ -9,3 +9,13 @@ description: >-
 
 All documentation has been moved to Google Docs to accommodate cross department documentation: [https://docs.google.com/document/d/18ysPPLnKkUCp\_JxoCDQ2xQfJhCfmDi3mrZm9IT5BUk8/edit](https://docs.google.com/document/d/18ysPPLnKkUCp_JxoCDQ2xQfJhCfmDi3mrZm9IT5BUk8/edit)
 
+
+
+City solely using Acuity Scheduling
+
+HubSpot account was deleted 11/12/20
+
+
+
+Any questions? See Natalie Schwartz, Mayor's Office Fellow
+
