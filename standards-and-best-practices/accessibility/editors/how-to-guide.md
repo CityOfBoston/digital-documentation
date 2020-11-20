@@ -1,3 +1,10 @@
+---
+description: >-
+  This guide is Drupal specific. This will help content editors using Drupal to
+  add content to the website. It will also help with troubleshooting issues that
+  may arise.
+---
+
 # How to guide
 
 **Editing/Adding Tables**
