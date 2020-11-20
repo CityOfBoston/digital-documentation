@@ -12,7 +12,7 @@ The Department of Innovation and Technology’s \(DoIT\) Digital Team brought th
 
 
 
-When these applications are worked on Rich Oliver and Georges Hawat should be in the loop so that we ensure database or back end application changes happen alongside Digital development.
+When these applications are worked on Rich Oliver and Georges Hawat should be in the loop so that we ensure database or back end application changes happen alongside Digital development. Scott Blackwell can be a resource for this as well.
 
 
 
