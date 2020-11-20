@@ -12,7 +12,9 @@ The Department of Innovation and Technology’s \(DoIT\) Digital Team brought th
 
 
 
-Add in statistics from Patty's most recent email re: split of online and other things.
+When these applications are worked on Rich Oliver and Georges Hawat should be in the loop so that we ensure database or back end application changes happen alongside Digital development.
+
+
 
 Along the way, items got added to certain of the three apps, but at times they didn't get completely added. 
 
