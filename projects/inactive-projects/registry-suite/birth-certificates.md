@@ -8,6 +8,8 @@ description: 'https://registry.boston.gov/birth'
 
 There were more constraints with this product than there were with death certificates. State law prohibits access to the records of individuals whose parents were not married when they were born. These _restricted_ records create a security and privacy challenge for us to tackle.
 
+Also found here: [https://drive.google.com/drive/u/0/folders/14pKZCyDCDXWP32\_opAPOuog-DFbdxBCJ](https://drive.google.com/drive/u/0/folders/14pKZCyDCDXWP32_opAPOuog-DFbdxBCJ)
+
 #### Where We Started
 
 We focused on death certificates first because of the way the laws are structured in Massachusetts. Death certificates are entirely public record throughout the Commonwealth, so there are fewer privacy and security concerns associated with them.
