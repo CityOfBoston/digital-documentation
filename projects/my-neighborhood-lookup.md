@@ -29,9 +29,9 @@ Every night, [the my neighborhood workflow](https://github.com/CityOfBoston/civi
 
 Jonathan Porter \(Analytics division of DoIT\) is the best point of contact for the Civis portion. Matt McGowan \(Digital division of DoIT\) is the best point of contact for the Drupal REST information.
 
-## Historical Information
+**Product**
 
-* [Product requirements](https://docs.google.com/document/d/1w_BknpFRHAudTEO2wdSdPIFboNSroY5LHmMWn4vwjRA/edit#heading=h.kfsq8a92ggxf)
+* \*\*\*\*[Product requirements](https://docs.google.com/document/d/1w_BknpFRHAudTEO2wdSdPIFboNSroY5LHmMWn4vwjRA/edit#heading=h.kfsq8a92ggxf) \(historical and current\)
 
 
 
