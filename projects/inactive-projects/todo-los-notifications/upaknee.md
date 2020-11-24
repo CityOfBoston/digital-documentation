@@ -13,9 +13,7 @@ description: >-
 * Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe)  
 * Login link for all employees: [https://boston.upaknee.com](https://boston.upaknee.com) or [https://boston-admin.upaknee.com](https://boston-admin.upaknee.com)  
 * Login link for admins: [https://boston-admin.upaknee.com/](https://boston-admin.upaknee.com/) \[There is an overarching admin view. If admins log in to this, they must then go into the 'production' or 'test' environment.
-* QA site: [https://boston-qa.upaknee.com](https://boston-qa.upaknee.com) \[same credentails as prod\]
-
-**Manual on Upaknee found here:** [https://docs.google.com/document/d/1IbjTbpWpNGaaqzy\_-BmrqH4zYxq1D0M90T\_nIVqcSQA/edit](https://docs.google.com/document/d/1IbjTbpWpNGaaqzy_-BmrqH4zYxq1D0M90T_nIVqcSQA/edit)
+* QA site: [https://boston-qa.upaknee.com](https://boston-qa.upaknee.com) \[same credentials as prod\]
 
 **The Different Ways People Can Sign Up for Upaknee**
 
@@ -47,6 +45,9 @@ The City of Boston Press Office and Boston Public Library both use separate inst
 * Sara.Lawrence@upaknee.com - City's account manager  
 * Josh.Ramdhan@upaknee.com - Direct: 1 \(416\) 304-9818 - operations/project manager
 
+**Active Development**  
+Upaknee handles most of the development. They have a standard feature/bug pipeline. We can pay them more to prioritize things, which can be negotiated on a case-by-case basis. Things built using the Upaknee API, like boston.gov email signup forms, are built by our team and live in the boston.gov repo.
+
 **Technology**  
 Upaknee is the City of Boston's main email marketing platform. Upaknee replaced Lyris after a competitive bid process in the summer and fall of 2016. [View a copy of the RFP](https://github.com/CityOfBoston/upaknee/blob/master/FINAL%20EV00003360%20Enterprise%20Email%20Marketing%20Solution%20RFP.pdf). Upaknee is currently used for all newsletters.
 
@@ -54,9 +55,9 @@ To add or remove someone from a list, email support \(at\) upaknee.com. Upaknee 
 
 [View the preference center](https://newsletters.boston.gov/subscribe), which has all newsletters the public can sign up for. We also have a number of internal newsletters, like the Digital Digest, that are not available in the subscription center and are only circulated among City staff.
 
-As of 6/19, we use Google ReCaptcha V3 to verify good, healthy sign ups: [https://www.google.com/recaptcha/admin/site/430165885](https://www.google.com/recaptcha/admin/site/430165885)
+As of 6/19/20, we use Google ReCaptcha V3 to verify good, healthy sign ups: [https://www.google.com/recaptcha/admin/site/430165885](https://www.google.com/recaptcha/admin/site/430165885)
 
-**Strategy**  
+**Historical Strategy**  
 The original City of Boston email content strategy \(compiled by Joshua Gee\) is [outlined here](https://docs.google.com/presentation/d/1rlOybTebsrXAqEhIi5sH2jV4ovZVMDHfGIVKBa-Oewg/edit?usp=sharing). In general, it breaks down into two phases.
 
 * **Phase 1** - Have a modern tool in place that lets departments send beautiful and mobile-optimized emails, track basic stats, and allows users to sign up and manage their preferences. _This is largely done, though we are still waiting on the ability for users to manage their own preferences \(Upaknee is creating a new back-end system that will give users more power, but this has not been rolled out to Boston yet\)._
@@ -64,10 +65,7 @@ The original City of Boston email content strategy \(compiled by Joshua Gee\) is
 
 As with all strategies, this is subject to change based on new conditions and information.
 
-**Active Development**  
-Upaknee handles most of the development. They have a standard feature/bug pipeline. We can pay them more to prioritize things, which can be negotiated on a case-by-case basis. Things built using the Upaknee API, like boston.gov email signup forms, are built by our team and live in the boston.gov repo.
-
-**Currently Supporting**
+**Template Info**
 
 * **City of Boston template:** what a majority of emails are sent out using. Recent updates include a social media section where folks can add custom links to their department's social media accounts.
 * **Library template:** The Boston Public Library was once going to move to Upaknee, but decided it was not the best fit. When this move was being contemplated, Upaknee created a custom template. It still exists in our Upaknee environment, but it's something we could potentially rework and reuse, we would just need to fix the address in the footer. 
@@ -89,12 +87,8 @@ _**3. No longer a thing - was decommissioned in February/Marchish 2020 -**_ **Up
 
 [Washington Post](https://subscribe.washingtonpost.com/newsletters/#/newsletters)
 
-[A subscription center they had helped build](https://www.screencast.com/t/xqABpFv97T) \[unknown for whom\]
+[A subscription center they had helped build](https://www.screencast.com/t/xqABpFv97T) \[unknown for whom\]  
 
-**Open \(and unresolved\) items with Upaknee as of May 2020:**
 
-1. Item listed at top of this documentation
-2. Links on homepage for scheduled and sending don't work
-3. DND specific subscriber requests
-4. Issue with API. Notes from meetings with Upaknee on how to resolve can be found here: [https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit)\]\([https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y\_OEunHuVIgc66yygw/edit\)\_\_](https://docs.google.com/document/d/10oueQE9qFRXyHz3fcm4Hw4EN5Y_OEunHuVIgc66yygw/edit%29__)
+Other historical documentation: [https://drive.google.com/drive/u/0/folders/1213C312i3IXNWkyO41Cm\_89KQe-L26kM](https://drive.google.com/drive/u/0/folders/1213C312i3IXNWkyO41Cm_89KQe-L26kM)
 
