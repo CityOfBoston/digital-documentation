@@ -4,9 +4,7 @@ description: 'Developed by Code for Boston, deployed and hosted by the Digital T
 
 # Alexa Skill
 
-**UX Testing and Enhancements**
-
-A General Assembly UXDI team did user research and testing on the Alexa skill. Copy of their work here: [https://drive.google.com/open?id=12lQXgtARUEt5\_Uo\_kBLuAlE8DyJJ-UL0](https://drive.google.com/open?id=12lQXgtARUEt5_Uo_kBLuAlE8DyJJ-UL0)
+#### MOU on the skill: [https://drive.google.com/file/d/0B1oti3UdK1VUX3J6YkJYemhzUnFQUUtrLWFCOFFDdEJjUjhr/view?usp=sharing](https://drive.google.com/file/d/0B1oti3UdK1VUX3J6YkJYemhzUnFQUUtrLWFCOFFDdEJjUjhr/view?usp=sharing)
 
 #### Deployment
 
@@ -117,6 +115,10 @@ Additionally, we need to provide `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
 #### Vendors
 
 Amazon associates a "Vendor ID" with an account organizations. You can see the Vendor ID for City of Boston by running `ask api list-vendors`. 
+
+**UX Testing and Enhancements 2020**
+
+A General Assembly UXDI team did user research and testing on the Alexa skill. Copy of their work here: [https://drive.google.com/open?id=12lQXgtARUEt5\_Uo\_kBLuAlE8DyJJ-UL0](https://drive.google.com/open?id=12lQXgtARUEt5_Uo_kBLuAlE8DyJJ-UL0)
 
 #### 
 
