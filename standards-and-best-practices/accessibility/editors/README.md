@@ -31,7 +31,7 @@ _The above example creates a simple button which is first in the focus order**.*
 
 **Audios & Videos**
 
-* Youtube videos:
+* Youtube videos: 
 * HTML videos:
 * Other video types:
 
