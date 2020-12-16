@@ -54,9 +54,10 @@ If all that above seems too hard, or you are having issues using composer to do 
 * On your local version of the website \(https://hub.lndo.site\)
 * Make sure you have the latest version of the `develop` branch checked out and up to date with the remote \(AWS CodeCommit\) repo.
 * Open the [Update Status](https://hub.lndo.site/admin/reports/updates/update) page in the UI.
-* Select all the updates you wish to apply, and then click the "Download these Updates" button
-* The updates will be downloaded, and then you will be prompted to apply the updates, **Do not put the site in maintenance mode** \(because you are running locally, this is not required\).
-* After the download is complete, you will see a list of all updates applied, and at the bottom of the page a link to "Run Database Updates". Even though you are working locally and therefore DB changes applied will remain local - you should click this link to allow that to happen to be sure there are no errors.
+* Note all the updates you wish to apply \(from page admin/reports/updates/update\).
+* Switch to the docroot folder on your host computer and run `lando drush up modulename1, modulename2 ...`
+* The updates will be downloaded, and then you will be given a list of updates that will be performed, check this with the list noted above. If all is OK type `yes` at the prompt to apply the updates. \(Note: database updates are applied by drush\).
+* [Check the updates](https://hub.lndo.site/admin/reports/updates/update) have been applied.
 * Commit the changes and deploy them.
 
 ### Other weekly checks
