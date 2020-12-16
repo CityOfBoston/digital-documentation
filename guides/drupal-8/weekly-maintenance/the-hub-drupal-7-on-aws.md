@@ -12,42 +12,24 @@ If any updates or changes need to be made, then backup your local database befor
 
 ### **If Drupal itself needs updating then:**
 
-* Check that the rule in `composer.json` will allow the update. e.g. to update from v7.58 to v7.61 the rule must allow this - recommend that the rule used for Drupal is `drupal/drupal: 7.*`.
-* Open a terminal on your local machine and change to the repository root \(parent folder for the `docroot` folder- i.e. the root for drupal\)
-* **Backup the `docroot/sites`, `docroot/profiles`and `docroot/crispus`folders, the `*.html`files and the `.htaccess` file on the `docroot` root folder.**
-* Execute`chmod 777 -R`on the `docroot/sites` folder.
-* Execute `lando composer update` to cause the required modules in `composer.json` file to  be checked for more recent versions, and based on the version rules then downloads the latest eligible version for each.  Expect to see a lot of vendor packages being updated, and don't worry, this is normal.
-* Restore all the files previously backed up, and check to see if any other files have been removed or altered by the update that should not have been.  Git is your friend here, the git working tree will show you changes made by the composer update process.  Take time to look this over, using a git GUI such as SourceTree, VSCode, Sublime Merge or PHPStorm as the update process deletes quite a few files we may actually need to keep. 
-* Run `lando drush cc all` and `lando drush updb` to execute any database changes etc.
-* If the site throws errors during drush commands, particularly if it seems like there is an issue with the class registry, try running `lando drush rr`or `lando drush rr --fire-bazooka` , then `lando drush cc all` and see if that helps.
-* Execute:
-  * `chmod 755 -R`on 
-    * `docroot/sites` folder, 
-  * `chmod -R 644` on 
-    * `docroot/sites/default`folder, 
-    * `docroot/sites/hub` folder, 
-    * `docroot/sites/all/settings` folder, and
-  * finally, `chmod -R 775` on the `docroot/sites/default/files` folder
-* Check the file is running properly at https://hub.lndo.site.
-* Commit the updated files to the repo, and deploy.
+1. Ensure your git working tree is clean \(i.e no uncommitted changes to files\)
+2. Download the latest Drupal core release archive from [drupal.org](https://www.drupal.org/project/drupal/releases?version=7).
+3. Unzip the archive into a local folder
+4. Open a terminal and go to the folder you just unzipped.
+5. Run `rsync -arz -essh -P . /[abs-path]/docroot/`\(where abs-path is the folder where you have the repo checked out\)
+6. Check that files have copied correctly
+7. Check the changes being reported by git, especially "key file"s to see if you want them changed \(usually you don't\).    
+   This is a list of "key files":
 
-{% hint style="success" %}
-**TIP \(for the impatient\)**
-
-If all that above seems too hard, or you are having issues using composer to do the update \(e.g. composer reports that there is nothing to update ... \) then follow these steps to get the job done fast and dirty:
-
-1. Download the latest Drupal core release archive from [drupal.org](https://www.drupal.org/project/drupal/releases?version=7).
-2. Unzip the archive into a local folder
-3. Open a terminal and go to the folder you just unzipped.
-4. Check over "key file"s to see if you want them changed \(usually you don't\).   This is a list of "key files":
    * .htaccess files \(especially the one in the docroot\)
    * any settings files you find in /docroot/sites/default
-5. Run `rsync -arz -essh -P . /[abs-path]/docroot/`
-6. Check that files have copied correctly
-7. Run `lando drush cc all` and `lando drush updb`
-8. Commit the changes and deploy them.
-9. Delete the local folder from step 2 above.
-{% endhint %}
+
+   revert or rollback any changes you do not wish to keep \(e.g. `.htaccess` file\) 
+
+8. Run `lando drush cc all` and `lando drush updb`
+9. Check the site at `https://hub.lndo.site`and see that it is working properly.
+10. Commit the changes and deploy them.
+11. Delete the local folder from step 2 above.
 
 ### **For all other** _**non-Drupal core**_ **module updates**
 
