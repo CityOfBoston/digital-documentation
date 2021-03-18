@@ -37,7 +37,7 @@ If any updates or changes need to be made, then backup your local database befor
 * Make sure you have the latest version of the `develop` branch checked out and up to date with the remote \(AWS CodeCommit\) repo.
 * Open the [Update Status](https://hub.lndo.site/admin/reports/updates/update) page in the UI.
 * Note all the updates you wish to apply \(from page admin/reports/updates/update\).
-* Switch to the docroot folder on your host computer and run `lando drush up modulename1, modulename2 ...` alternatively you can do this to update all outdated contributed modules in one go: `lando drush up --no-core --notes [--security-only]`
+* Switch to the docroot folder on your host computer and run `lando drush up modulename1, modulename2 ...` alternatively you can do this to update all outdated contributed modules in one go: `lando drush up --no-core --notes [--security-only] [--entity-updates]`
 * The updates will be downloaded, and then you will be given a list of updates that will be performed, check this with the list noted above. If all is OK type `yes` at the prompt to apply the updates. \(Note: database updates are applied by drush\).
 * [Check the updates](https://hub.lndo.site/admin/reports/updates/update) have been applied.
 * Commit the changes and deploy them.
