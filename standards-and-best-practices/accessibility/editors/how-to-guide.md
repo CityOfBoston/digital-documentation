@@ -25,3 +25,9 @@ description: >-
 * Test: [https://access-boston-test.digital-staging.boston.gov/](https://access-boston-test.digital-staging.boston.gov/)
 * Development: [https://access-boston-dev.digital-staging.boston.gov/](https://access-boston-dev.digital-staging.boston.gov/)
 
+**Content Editor Guide**
+
+* The links with the same name should have the same href values when on the same page
+* Test: [https://access-boston-test.digital-staging.boston.gov/](https://access-boston-test.digital-staging.boston.gov/)
+* Development: [https://access-boston-dev.digital-staging.boston.gov/](https://access-boston-dev.digital-staging.boston.gov/)
+
