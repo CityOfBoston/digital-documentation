@@ -28,6 +28,11 @@ description: >-
 **Content Editor Guide**
 
 * The links with the same name should have the same href values when on the same page
-* Test: [https://access-boston-test.digital-staging.boston.gov/](https://access-boston-test.digital-staging.boston.gov/)
+* Using classes on html elements you want to hide from screen but allow screen readers to access:
+
+  ```text
+  sr-only sr-only-focusable
+  ```
+
 * Development: [https://access-boston-dev.digital-staging.boston.gov/](https://access-boston-dev.digital-staging.boston.gov/)
 
