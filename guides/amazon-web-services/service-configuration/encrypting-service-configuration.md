@@ -25,7 +25,7 @@ To create an encrypted environment variable value:
 1. Visit the “Customer managed keys” section of the KMS part of the AWS web console.
 2. Look for the **Key ID** for your service. Save it in the `$CONFIG_KEY_ID` environment variable.
 3. Log in to AWS CLI with an account that has `kms:Encrypt` permissions for the key.
-4. Run the following command **with a leading space so that it doesn’t appear in your command history**: `aws kms encrypt --output text --key-id $CONFIG_KEY_ID --plaintext …`
+4. Run the following command **with a leading space so that it doesn’t appear in your command history**: `aws kms encrypt --output text --key-id $CONFIG_KEY_ID --plaintext STR-TO-BE-ENCRYPTED`
 5. Copy the encrypted value \(the output up to the whitespace\) as the value in `.env`: `PASSWORD_KMS_ENCRYPTED=…`
 
 {% hint style="info" %}
