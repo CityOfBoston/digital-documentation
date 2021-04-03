@@ -7,9 +7,24 @@ description: >-
 
 # How to guide
 
+**Adding images/svgs**
+
+* SVGs - please remove all **"id"** attribute in the **svg**. It is always the same and creates a BIG error when the browser sees the same id for so many images/svgs
+* Images: Always add a title or alt tag to an image. But, make it meaningful. See example below. 
+* Development: [https://access-boston-dev.digital-staging.boston.gov/](https://access-boston-dev.digital-staging.boston.gov/)
+
+```text
+DO:
+title/alt - "Demolition Delay application: 50 Landseer Street, West Roxbury"
+
+Don't:
+title/alt - "Image and/or photo of Demolition Delay application: 50 Landseer Street, West Roxbury" 
+
+```
+
 **Editing/Adding Tables**
 
-* Production: [https://access.boston.gov](https://access.boston.gov)
+* Adding Tables: Always make sure you add a table title and/or summary and/or caption
 * Test: [https://access-boston-test.digital-staging.boston.gov/](https://access-boston-test.digital-staging.boston.gov/)
 * Development: [https://access-boston-dev.digital-staging.boston.gov/](https://access-boston-dev.digital-staging.boston.gov/)
 
