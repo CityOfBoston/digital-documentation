@@ -125,7 +125,7 @@
 
 ## Projects
 
-* [Google reCAPTCHA](projects/recaptcha.md)
+* [Assessing Online](projects/assessing-online.md)
 * [311 CRM Upgrade](projects/311-crm-upgrade/README.md)
   * [City Worker Upgrade to City Worker 5](projects/311-crm-upgrade/city-worker-upgrade-to-city-worker-5.md)
   * [Lagan 311 CRM upgrade to 15r4](projects/311-crm-upgrade/lagan-311-crm-upgrade-to-15r4.md)
@@ -147,6 +147,7 @@
   * [CityScore](projects/inactive-projects/cityscore.md)
   * [Dog Licenses](projects/inactive-projects/dog-licenses.md)
   * [Election results](projects/inactive-projects/election-results.md)
+  * [Google reCAPTCHA](projects/inactive-projects/recaptcha.md)
   * [Marriage Intention](projects/inactive-projects/marriage-intention.md)
   * [Metrolist](projects/inactive-projects/metrolist.md)
   * [My Neighborhood Lookup](projects/inactive-projects/my-neighborhood-lookup.md)
