@@ -7,6 +7,10 @@ description: >-
 
 # City Hall Appointment Scheduler
 
+\*Ray Mejia actively helping maintain.
+
+
+
 All documentation has been moved to Google Docs to accommodate cross department documentation: [https://docs.google.com/document/d/18ysPPLnKkUCp\_JxoCDQ2xQfJhCfmDi3mrZm9IT5BUk8/edit](https://docs.google.com/document/d/18ysPPLnKkUCp_JxoCDQ2xQfJhCfmDi3mrZm9IT5BUk8/edit)
 
 
