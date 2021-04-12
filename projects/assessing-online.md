@@ -15,6 +15,8 @@ Project board \(initially implemented by Joan Liu and picked up by Matt McGowan\
 
 Data model and requirements \(originally drafted by Matt McGowan; being collectively worked on between Matt and Jonathan Porter \[Analytics\]: [https://docs.google.com/document/d/1uDnFV2Zv2TeSpO6oFYS5IkqQLMWkyhHFr6U8fptfiYE/edit?usp=sharing](https://docs.google.com/document/d/1uDnFV2Zv2TeSpO6oFYS5IkqQLMWkyhHFr6U8fptfiYE/edit?usp=sharing)
 
+Misc. documents, notes, etc. can be found here: [https://drive.google.com/drive/u/0/folders/1YVq9VZKIiisBCRZStUHwMA7ZCDIdIFCZ](https://drive.google.com/drive/u/0/folders/1YVq9VZKIiisBCRZStUHwMA7ZCDIdIFCZ)
+
 
 
 We have moved on to the development stage, which is being run by Matt McGowan and Phil Kelly.
