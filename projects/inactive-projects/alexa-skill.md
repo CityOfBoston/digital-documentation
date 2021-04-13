@@ -4,6 +4,10 @@ description: 'Developed by Code for Boston, deployed and hosted by the Digital T
 
 # Alexa Skill
 
+_\*Put in to 'maintenance mode' by Code for Boston as of March 2021. They will continue to monitor any pull requests and do their best to fix issues that come up re: broken functionality. They also asked about passing ownership fully to City. Jeanethe told them we don't currently have the bandwidth, but that we could potentially reconsider in late 2021._
+
+_--_
+
 #### MOU on the skill: [https://drive.google.com/file/d/0B1oti3UdK1VUX3J6YkJYemhzUnFQUUtrLWFCOFFDdEJjUjhr/view?usp=sharing](https://drive.google.com/file/d/0B1oti3UdK1VUX3J6YkJYemhzUnFQUUtrLWFCOFFDdEJjUjhr/view?usp=sharing)
 
 #### Deployment
