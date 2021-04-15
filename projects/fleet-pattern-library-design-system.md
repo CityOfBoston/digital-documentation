@@ -1,5 +1,9 @@
 # Fleet \(Pattern Library Design System\)
 
+In 2021, the team actively worked with Craft to come up with alternative recommendations and to get their support of the work. Information on that work can be found here: [https://drive.google.com/drive/folders/1gPHjSSRMRjaP7CpI9FggnFttPrpE5F89?usp=sharing](https://drive.google.com/drive/folders/1gPHjSSRMRjaP7CpI9FggnFttPrpE5F89?usp=sharing)
+
+--
+
 Pattern library built on the new design of Boston.gov. Used on Boston.gov and all web apps and sites that need to match its design \(which should be all of them\).
 
 Named to honor Bostonian Peter Fleet, an engraver who was enslaved by noted printer Thomas Fleet during the first half of the 18th century.
