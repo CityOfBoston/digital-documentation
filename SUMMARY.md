@@ -125,12 +125,13 @@
 
 ## Projects
 
-* [Assessing Online](projects/assessing-online.md)
 * [311 CRM Upgrade](projects/311-crm-upgrade/README.md)
   * [City Worker Upgrade to City Worker 5](projects/311-crm-upgrade/city-worker-upgrade-to-city-worker-5.md)
   * [Lagan 311 CRM upgrade to 15r4](projects/311-crm-upgrade/lagan-311-crm-upgrade-to-15r4.md)
+* [Assessing Online](projects/assessing-online.md)
 * [Contact Form](projects/contact-form.md)
 * [Fleet \(Pattern Library Design System\)](projects/fleet-pattern-library-design-system.md)
+* [Street Sweeping/No Tow](projects/street-sweeping-no-tow.md)
 * [\(Todo los\) Notifications](projects/todo-los-notifications/README.md)
   * [Everbridge API + UI](projects/todo-los-notifications/everbridge-api-+-ui.md)
   * [Upaknee](projects/todo-los-notifications/upaknee.md)
