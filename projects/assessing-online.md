@@ -9,7 +9,7 @@ Some students have done initial research for the City, find that here:
 
 In early 2021, we worked with a small project group from the United State Digital Response \(Joan Liu, John Sullivan Hamilton, and Chris Matthews\). They reviewed the above student research, came up with product requirements, and proposed initial designs. They'd like to periodically be kept in the loop on progress, if possible.
 
-Design docs: [https://drive.google.com/file/d/1L3vlrzXBrI9vFDzkW6QJZ\_s9r6BJE1po/view?usp=sharing](https://drive.google.com/file/d/1L3vlrzXBrI9vFDzkW6QJZ_s9r6BJE1po/view?usp=sharing)
+Designs, a synthesis of the research, and copies of property bills for referenced can be found at : [https://drive.google.com/file/d/1L3vlrzXBrI9vFDzkW6QJZ\_s9r6BJE1po/view?usp=sharing](https://drive.google.com/file/d/1L3vlrzXBrI9vFDzkW6QJZ_s9r6BJE1po/view?usp=sharing)
 
 Project board \(initially implemented by Joan Liu and picked up by Matt McGowan\): [https://github.com/orgs/CityOfBoston/projects/34](https://github.com/orgs/CityOfBoston/projects/34)
 
