@@ -20,4 +20,6 @@ description: >-
 * [VPAT](https://www.itic.org/policy/accessibility/vpat)
 * [A Complete Guide To Accessible Front-End Components](https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/#top%20)
 * [Intro to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
-
+* [Focus and Focus Styles](https://css-tricks.com/focusing-on-focus-styles/)
+* [More about Keyboard :hover, :focus, and :active ](https://bitsofco.de/when-do-the-hover-focus-and-active-pseudo-classes-apply/)pseudo-classes 
+* 

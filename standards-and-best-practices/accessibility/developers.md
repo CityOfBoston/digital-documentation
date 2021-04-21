@@ -83,5 +83,9 @@ For example, the markup for an accessible emulated link might look like the foll
 
 To avoid needing to implement the above, developers should prefer to use the `<a>` tag instead.
 
+## Focus vs Focus-within
+
+What is css `:focus and :focus-within`? How do you know when to use them? [Read more](https://css-tricks.com/focusing-on-focus-styles/) about how to use `:focus` [here](https://css-tricks.com/focusing-on-focus-styles/). 
+
 **Note**: If using role="button" instead of the semantic `<button>` or `<input type="button">` elements, you will need to make the element focusable and have to define event handlers for [`click`](https://developer.mozilla.org/en-US/docs/Web/Events/click) and [`keydown`](https://developer.mozilla.org/en-US/docs/Web/Events/keydown) events, including the Enter and Space keys, in order to process the user's input. See the [official WAI-ARIA example code](https://www.w3.org/TR/wai-aria-practices/examples/button/button.html).
 
