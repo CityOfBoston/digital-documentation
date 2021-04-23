@@ -42,7 +42,7 @@
 
 ## Guides
 
-* [Patterns Library](guides/patterns-library.md)
+* [Patterns Library Cleanup](guides/patterns-library.md)
 * [Digital Webapps](guides/amazon-web-services/README.md)
   * [Production Overview](guides/amazon-web-services/production-overview.md)
   * [Service Configuration](guides/amazon-web-services/service-configuration/README.md)
