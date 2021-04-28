@@ -74,8 +74,9 @@ A useful reference for writing versioning rules in composer can be found [here](
 **Before you start...**
 
 1. Be sure your git working tree is clean and you have pulled the latest `develop` branch from GitHub.
-2. Run `drush cex` to be sure that all configurations are exported  \(if you find configurations are exported then you will need to rebuild your develop environment - or at least sync the local database with the one on Acquia develop - use `lando drush sql:sync @bostond8.dev @self`\).
-3. Create a new branch e.g. `maintenance-03-03-2020`
+2. Run `drush cim` on the develop branch to be sure you have the latest yml files imported into your local DB
+3. Run `drush cex` to be sure that all configurations are exported  \(if you find configurations are exported then you will need to rebuild your develop environment - or at least sync the local database with the one on Acquia develop - use `lando drush sql:sync @bostond8.dev @self`\).
+4. Create a new branch e.g. `maintenance-03-03-2020`
 {% endhint %}
 
 Run composer update in your local development container.
@@ -118,13 +119,15 @@ After the update is completed, update the Drupal caches \(so that the Drupal reg
 $ lando drush cr
 ```
 
-Then, see if the updated modules need to apply any updates to the database.
+Then, see if the updated modules need to apply any updates to the database.  
+_This step is done to ensure that the updates will apply properly on the Acquia servers when the deploy scripts run this command._
 
 ```
 $ lando drush updb
 ```
 
-Finally we should export the configuration. It is unlikely that there will be changes to configuration, but it is theoretically possible, so to be safe this is a recommended step.
+\[Optional\] We can export the configuration. It is unlikely that there will be changes to configuration, but it is theoretically possible, so to be safe this is a recommended step.  
+_Take care with this and ensure that any configuration changes are changes you expect.  You should expect configuration updates only to .yml files from contributed modules updated by composer during this maintenance cycle._
 
 ```
 $ lando drush cex
@@ -132,7 +135,8 @@ $ lando drush cex
 
 Finally, commit into the main public d8 repository:  
 - the`composer.lock` and \(if changed\) the`composer.json` files -it is very important to include both \(see "final note" box-out below\), and  
-- any config files generated from `drush cex` -these will **always** be in the `/config/default` folder.
+- any config files generated from `drush cex` -these will **always** be in the `/config/default` folder.  
+_again, take care to check these over, changes to settings files \(in particular\) could affect production settings._
 
 {% hint style="info" %}
 **COMPOSER Command Overview:**
