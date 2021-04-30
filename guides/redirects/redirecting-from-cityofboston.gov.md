@@ -17,8 +17,3 @@ Include this at the top of the file:
 Include t his in the &lt;head&gt; tag:  
 &lt;meta http-equiv="Refresh" content="0; url=[https://www.boston.gov/finance/boston-about-results](https://www.boston.gov/finance/boston-about-results) \[BOSTON.GOV LOCATION TO REDIRECT TO\]" /&gt;
 
-  
-
-
-
-
