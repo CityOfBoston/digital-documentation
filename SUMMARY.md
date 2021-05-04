@@ -154,6 +154,7 @@
   * [Election results](projects/inactive-projects/election-results.md)
   * [Google reCAPTCHA](projects/inactive-projects/recaptcha.md)
   * [Metrolist](projects/inactive-projects/metrolist.md)
+  * [Mobile Apps](projects/inactive-projects/mobile-apps.md)
   * [My Neighborhood Lookup](projects/inactive-projects/my-neighborhood-lookup.md)
   * [Permit Finder](projects/inactive-projects/permit-finder.md)
   * [Public Notice Signage](projects/inactive-projects/public-notice-signage.md)
