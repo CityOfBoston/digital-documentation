@@ -31,7 +31,9 @@ Jonathan Porter \(Analytics division of DoIT\) is the best point of contact for 
 
 **Product**
 
-* \*\*\*\*[Product requirements](https://docs.google.com/document/d/1w_BknpFRHAudTEO2wdSdPIFboNSroY5LHmMWn4vwjRA/edit#heading=h.kfsq8a92ggxf) \(historical and current\)
+* \*\*\*\*[Product requirements](https://docs.google.com/document/d/1w_BknpFRHAudTEO2wdSdPIFboNSroY5LHmMWn4vwjRA/edit#heading=h.kfsq8a92ggxf) \(historical and current\) 
+
+Historical work that \*potentially\* isn't reflected above: [https://drive.google.com/drive/u/0/folders/1QVSDn6CgJiMY7dbYEiKKDRRX1cYOEHmu](https://drive.google.com/drive/u/0/folders/1QVSDn6CgJiMY7dbYEiKKDRRX1cYOEHmu)
 
 
 
