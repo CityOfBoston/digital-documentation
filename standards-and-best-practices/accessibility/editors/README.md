@@ -25,6 +25,12 @@ description: >-
 
 ```text
 <div id="saveChanges" tabindex="0" role="button" aria-pressed="false">Save</div>
+
+Don't add mailto link as:
+<a mailto="mayor@boston.gov" class="someclasshere"> Send an email </a>
+
+Do add mailto: link as:
+<a href="mailto:mayor@boston.gov" class="someclasshere"> Send an email </a>
 ```
 
 _The above example creates a simple button which is first in the focus order**.**_
