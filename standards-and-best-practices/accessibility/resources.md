@@ -22,4 +22,6 @@ description: >-
 * [Intro to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
 * [Focus and Focus Styles](https://css-tricks.com/focusing-on-focus-styles/)
 * [More about Keyboard :hover, :focus, and :active ](https://bitsofco.de/when-do-the-hover-focus-and-active-pseudo-classes-apply/)pseudo-classes 
-* 
+* [https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/](https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/)
+* [https://learn-the-web.algonquindesign.ca/topics/accessibility-cheat-sheet/](https://learn-the-web.algonquindesign.ca/topics/accessibility-cheat-sheet/)
+

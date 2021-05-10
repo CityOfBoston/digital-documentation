@@ -89,3 +89,7 @@ What is css `:focus and :focus-within`? How do you know when to use them? [Read 
 
 **Note**: If using role="button" instead of the semantic `<button>` or `<input type="button">` elements, you will need to make the element focusable and have to define event handlers for [`click`](https://developer.mozilla.org/en-US/docs/Web/Events/click) and [`keydown`](https://developer.mozilla.org/en-US/docs/Web/Events/keydown) events, including the Enter and Space keys, in order to process the user's input. See the [official WAI-ARIA example code](https://www.w3.org/TR/wai-aria-practices/examples/button/button.html).
 
+### Semantic HTML5
+
+Remember that most browser will automatically validate correctly written HTML for you. Keep them simple with less layers of html tags wrapping them endlessly.  
+
