@@ -31,6 +31,18 @@ Don't add mailto link as:
 
 Do add mailto: link as:
 <a href="mailto:mayor@boston.gov" class="someclasshere"> Send an email </a>
+
+Don't add the classes "button cta-button" in a "div" like this
+<div class="button cta-button">
+  <a href="/departments/innovation-and-technology">Test internal link in CTA</a>
+</div>
+
+Do add the classes "button cta-button" on the link itself like this
+<div class="someclassnamehere">
+  <a href="/departments/innovation-and-technology" class="button cta-button">Test internal link in CTA</a>
+</div>
+
+
 ```
 
 _The above example creates a simple button which is first in the focus order**.**_
