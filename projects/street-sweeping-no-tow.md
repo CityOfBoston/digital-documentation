@@ -1,16 +1,15 @@
 # Street Sweeping/No Tow
 
-The [street sweepin](https://www.cityofboston.gov/publicworks/sweeping/)g and [no tow](https://www.cityofboston.gov/publicworks/sweeping/remindme.asp) applications are legacy applications 
+The [street sweepin](https://www.cityofboston.gov/publicworks/sweeping/)g and [no tow](https://www.cityofboston.gov/publicworks/sweeping/remindme.asp) applications are legacy applications. As part of the 'Apps Modernization' capitally funded project for DoIT/Digital we are re-doing this application. 
 
-of the most trafficked items on boston.gov / Boston's digital properties \(see older cityofboston.gov google analytics\). As part of the 'Apps Modernization' capitally funded project for DoIT/Digital we are re-doing this application. The Assessing Department is aware of these changes and is on board with the project.  
+Historical Satyen Shah has helped maintain the applications. 
+
+The applications need a complete overhaul. Preliminary research by students groups has been completed. However, a synthesis of the research and how to proceed is needed \(i.e. build versus buy; if build then how\), designs, and implementation still need to be completed.  
 
 
 Student research 1: [https://drive.google.com/drive/folders/1OG9rH34o1NCwci1k6Vb7sXBcnoyglpy6?usp=sharing](https://drive.google.com/drive/folders/1OG9rH34o1NCwci1k6Vb7sXBcnoyglpy6?usp=sharing)
 
-Student research 2: [https://drive.google.com/drive/folders/16C0NGhkNFQgr1CI2Rg6WEBNH-pdCwwdV?usp=sharing](https://drive.google.com/drive/folders/16C0NGhkNFQgr1CI2Rg6WEBNH-pdCwwdV?usp=sharing)  
-
-
-Product decisions need to be made as an initial step - build versus buy, and if build then how + overall product/project and staffing plan
+Student research 2: [https://drive.google.com/drive/folders/16C0NGhkNFQgr1CI2Rg6WEBNH-pdCwwdV?usp=sharing](https://drive.google.com/drive/folders/16C0NGhkNFQgr1CI2Rg6WEBNH-pdCwwdV?usp=sharing)
 
 
 
