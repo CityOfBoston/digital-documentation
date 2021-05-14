@@ -2,7 +2,7 @@
 
 The [street sweepin](https://www.cityofboston.gov/publicworks/sweeping/)g and [no tow](https://www.cityofboston.gov/publicworks/sweeping/remindme.asp) applications are legacy applications. As part of the 'Apps Modernization' capitally funded project for DoIT/Digital we are re-doing this application. 
 
-Historical Satyen Shah has helped maintain the applications. 
+Historical Satyen Shah \(very part-time consultant\) has helped maintain the applications. 
 
 The applications need a complete overhaul. Preliminary research by students groups has been completed. However, a synthesis of the research and how to proceed is needed \(i.e. build versus buy; if build then how\), designs, and implementation still need to be completed.  
 
