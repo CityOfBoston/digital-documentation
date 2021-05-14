@@ -1,6 +1,6 @@
 # Street Sweeping/No Tow
 
-The [street sweepin](https://www.cityofboston.gov/publicworks/sweeping/)g and [no tow](https://www.cityofboston.gov/publicworks/sweeping/remindme.asp) applications are legacy applications. As part of the 'Apps Modernization' capitally funded project for DoIT/Digital we are re-doing this application. 
+The [street sweepin](https://www.cityofboston.gov/publicworks/sweeping/)g and no tow \([this link](https://www.cityofboston.gov/publicworks/sweeping/remindme.asp) and [this link](https://www.cityofboston.gov/towing/alerts/)\) applications are legacy applications. As part of the 'Apps Modernization' capitally funded project for DoIT/Digital we are re-doing this application. 
 
 Historical Satyen Shah \(very part-time consultant\) has helped maintain the applications. 
 
@@ -14,4 +14,12 @@ Student research 2: [https://drive.google.com/drive/folders/16C0NGhkNFQgr1CI2Rg6
 
 
 [Historical context/notes](https://docs.google.com/document/d/198b-mgtxnlvFRdQRqXQ-0Zvus12hpvIRGVhYiwrz8ao/edit?ts=601c3126) from a company that registers/monitors a fleet of vehicles.
+
+
+
+At one point in time Satyen suggested the City suggest we connect the data to the RMV, which they have not agreed to.
+
+
+
+When boston.gov was first launched this was included, but not implemented elsewhere. Should decide if/how keeping when these applications are re-visited: [https://www.boston.gov/having-car-city\#towed-cars](https://www.boston.gov/having-car-city#towed-cars)
 
