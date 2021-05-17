@@ -4,7 +4,9 @@ The [street sweepin](https://www.cityofboston.gov/publicworks/sweeping/)g and no
 
 Historical Satyen Shah \(very part-time consultant\) has helped maintain the applications. 
 
-The applications need a complete overhaul. Preliminary research by students groups has been completed. However, a synthesis of the research and how to proceed is needed \(i.e. build versus buy; if build then how\), designs, and implementation still need to be completed.  
+The applications need a complete overhaul. Preliminary research by students groups has been completed. However, a synthesis of the research and how to proceed is needed \(i.e. build versus buy; if build then how\), designs, and implementation still need to be completed.
+
+Street sweeping information is found online and on physical street signs on City streets. The City tells constituents that the street sign is the source of truth. The City database for the physical signage doesn't currently match the database for the web page/application; they're close but sometimes changes are made to the signage without updating the web. This means that sometimes the two are out of sync. Paul Taylor, IT for Public Works Department, can update the information so they match. This is an opportunity for improvement.  
 
 
 Student research 1: [https://drive.google.com/drive/folders/1OG9rH34o1NCwci1k6Vb7sXBcnoyglpy6?usp=sharing](https://drive.google.com/drive/folders/1OG9rH34o1NCwci1k6Vb7sXBcnoyglpy6?usp=sharing)
