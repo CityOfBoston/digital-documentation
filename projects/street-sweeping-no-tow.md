@@ -23,3 +23,7 @@ At one point in time Satyen suggested the City suggest we connect the data to th
 
 When boston.gov was first launched this was included, but not implemented elsewhere. Should decide if/how keeping when these applications are re-visited: [https://www.boston.gov/having-car-city\#towed-cars](https://www.boston.gov/having-car-city#towed-cars)
 
+
+
+Semi-related: Analytics is helping move this to Analyze Boston rather than cityofboston.gov \(Courtney Moores is running point on the effort\): [https://www.cityofboston.gov/publicworks/sweeping/Resurfacing.aspx](https://www.cityofboston.gov/publicworks/sweeping/Resurfacing.aspx)
+
