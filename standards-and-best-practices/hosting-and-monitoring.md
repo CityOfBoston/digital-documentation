@@ -8,6 +8,10 @@
 * Do not make one-off changes in the UI or with the command line. Everything should be updated through Terraform so we have transparency about what we’re running and why.
 * Terraform changes should be made through [Atlantis](https://www.runatlantis.io/).
 
+### Acquia Cloud
+
+* Acquia externally hosts our main website, boston.gov in their cloud instance.
+
 ### Heroku
 
 * Heroku is appropriate for very one-off apps \(such as the 311 crowdsource app\) where we don’t mind not being on a boston.gov URL or waiting for the dyno to spin up after inactivity.
