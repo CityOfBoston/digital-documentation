@@ -1,4 +1,4 @@
-# Technology stack
+# Technology stack and technologies used
 
 ## Main City Website
 
@@ -13,19 +13,25 @@ We’re big fans of TypeScript, and use it throughout our applications. Our stac
 
 {% page-ref page="web-applications.md" %}
 
-## Third-party integrations
+## Third-party integrations and tools
 
 | Tool | Purpose |
 | :--- | :--- |
 | [AWS](https://docs.aws.amazon.com/) | App hosting |
+| Browserstack | Allows testing on different devices |
 | [GitHub](https://help.github.com/) | Version control / code management |
-| [Google Analytics](https://analytics.google.com/) | Web traffic analytics |
+| GChat | Realtime messaging for those not on Slack |
+| [Google Analytics](https://analytics.google.com/) and Google Tag Manager | Web traffic analytics |
+| Google Meet | City's main form of video conferencing |
+| Google Optimize | A/B testing |
 | [Percy.io](https://docs.percy.io/docs) | Visual regression testing |
-| [Postmark](https://postmarkapp.com/developer) | Sending emails |
+| [Postmark](https://postmarkapp.com/developer) | Sending transactional emails |
 | [Rollbar](https://docs.rollbar.com/docs/javascript) | Server logging |
 | [Siteimprove](http://siteimprove.com) | Quality Assurance |
 | [Slack](https://get.slack.help/) | Realtime messaging |
-| [Swiftype](www.swiftype.com) | Powers search for boston.gov and City intranet |
+| [Swiftype](www.swiftype.com) | Powers global search for boston.gov |
 | [TravisCI](https://docs.travis-ci.com/) | Continuous integration |
+| Upaknee |  |
 | [updown.io](https://updown.io/api) | Uptime monitoring |
+| Webex | City's main platform for large video presentations and conferencing \(if Google Meet doesn't accommodate\) |
 

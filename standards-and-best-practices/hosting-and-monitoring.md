@@ -1,4 +1,4 @@
-# Hosting & monitoring
+# Hosting and monitoring
 
 ## Hosting
 

@@ -18,7 +18,7 @@ description: The regular meetings conducted by the Digital team.
 
 ### Product development sync
 
-**Monday mornings** 
+**Monday mornings, required** 
 
 **Participants:** Developers, Product Managers, Chief Digital Officer, Quality Assurance, UX, etc.
 
@@ -26,7 +26,7 @@ description: The regular meetings conducted by the Digital team.
 
 ### Digital staff meeting
 
-**Thursday morning \(typically\)**
+**Thursday morning, required**
 
 **Participants:** All digital team members plus invited guests as appropriate
 
@@ -34,7 +34,7 @@ description: The regular meetings conducted by the Digital team.
 
 ### \#Demo
 
-**Friday afternoons \(typically\)**
+**Friday afternoons, optional but encouraged**
 
 **Participants:** Any/all
 

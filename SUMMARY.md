@@ -8,7 +8,7 @@
   * [Meetings](getting-started/life-on-the-digital-team/meetings.md)
   * [Communication](getting-started/life-on-the-digital-team/communication.md)
   * [Software engineering working agreement](getting-started/life-on-the-digital-team/software-engineering-working-agreement.md)
-* [Technology stack](getting-started/technology-stack/README.md)
+* [Technology stack and technologies used](getting-started/technology-stack/README.md)
   * [Web applications](getting-started/technology-stack/web-applications.md)
 * [Using GitBook](getting-started/using-gitbook.md)
 
@@ -37,7 +37,7 @@
       * [D8 Dependency Injection \(DI\)](standards-and-best-practices/code-quality/style-guides/php/d8-dependency-injection-di.md)
     * [React/TypeScript](standards-and-best-practices/code-quality/style-guides/react-typescript.md)
 * [Technical documentation](standards-and-best-practices/technical-documentation.md)
-* [Hosting & monitoring](standards-and-best-practices/hosting-and-monitoring.md)
+* [Hosting and monitoring](standards-and-best-practices/hosting-and-monitoring.md)
 * [Deployment](standards-and-best-practices/deployments.md)
 
 ## Guides
@@ -133,7 +133,7 @@
 * [Contact Form](projects/contact-form.md)
 * [Fleet \(Pattern Library Design System\)](projects/fleet-pattern-library-design-system.md)
 * [Street Sweeping/No Tow](projects/street-sweeping-no-tow.md)
-* [\(Todo los\) Notifications](projects/todo-los-notifications/README.md)
+* [Notifications](projects/todo-los-notifications/README.md)
   * [Everbridge API + UI](projects/todo-los-notifications/everbridge-api-+-ui.md)
   * [Upaknee](projects/todo-los-notifications/upaknee.md)
 * [Inactive projects](projects/inactive-projects/README.md)

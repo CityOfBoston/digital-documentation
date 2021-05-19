@@ -22,7 +22,7 @@ description: >-
 
 * Text colors should be tested for contrast. Make sure there is good color contrast between the text and the background
 * A recommended minimum **font** size is 16 px. Use bold to add emphasis rather than italics or UPPERCASE, but use it sparingly!
-* 
+
 **Images vs background images**
 
 * Use background images only if necessary
@@ -51,6 +51,8 @@ description: >-
 \*\*\*\*
 
 **Miscellaneous**
+
+See boston.gov/digital for a lot of historical write ups on this work.
 
 Write up on accessibility and text to speech completed for Jeniffer Vivar Wong/Office of Language and Communications Access on 4/5/21: [https://docs.google.com/document/d/1aa9wCaG3AzPsh6pPC-padNOv4YgazwyUs2VkWglvSHA/edit](https://docs.google.com/document/d/1aa9wCaG3AzPsh6pPC-padNOv4YgazwyUs2VkWglvSHA/edit)
 
