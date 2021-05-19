@@ -2,6 +2,10 @@
 
 ## Hosting
 
+### Apple Developer and Google Play
+
+Digital is in charge of maintain/help support/be technical advisors on nearly all of the mobile apps obtained by the City. They can be found on these.
+
 ### Amazon Web Services 
 
 * We use [Terraform](https://www.terraform.io/) for describing our infrastructure. See the [digital-terraform](https://github.com/CityOfBoston/digital-terraform/) repo.
