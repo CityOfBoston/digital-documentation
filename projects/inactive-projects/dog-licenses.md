@@ -48,7 +48,7 @@ Animal Care and Control mentioned that Georges/Enterprise worked with Chameleon,
 
 ### Existing issues/obstacles:
 
-* Currently breaks all of the time
+* 'Breaks' from time to time due to miscellaneous issues
 
 ### Existing assets:
 
