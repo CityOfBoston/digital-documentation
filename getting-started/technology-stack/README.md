@@ -37,7 +37,7 @@ Some of these are attached to vsql22 for data.
 | [Percy.io](https://docs.percy.io/docs) | Visual regression testing |
 | [Postmark](https://postmarkapp.com/developer) | Sending transactional emails |
 | [Rollbar](https://docs.rollbar.com/docs/javascript) | Server logging |
-| [Siteimprove](http://siteimprove.com) | Quality Assurance |
+| [Siteimprove](http://siteimprove.com) | Quality Assurance and behavior mapping |
 | [Slack](https://get.slack.help/) | Realtime messaging |
 | [Swiftype](www.swiftype.com) | Powers global search for boston.gov |
 | Stripe | Payment processor used for Registry suite |
