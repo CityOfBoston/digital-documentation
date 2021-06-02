@@ -24,4 +24,5 @@ description: >-
 * [More about Keyboard :hover, :focus, and :active ](https://bitsofco.de/when-do-the-hover-focus-and-active-pseudo-classes-apply/)pseudo-classes 
 * [https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/](https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/)
 * [https://learn-the-web.algonquindesign.ca/topics/accessibility-cheat-sheet/](https://learn-the-web.algonquindesign.ca/topics/accessibility-cheat-sheet/)
+* [https://www.deque.com/blog/auditing-design-systems-for-accessibility/](https://www.deque.com/blog/auditing-design-systems-for-accessibility/)
 
