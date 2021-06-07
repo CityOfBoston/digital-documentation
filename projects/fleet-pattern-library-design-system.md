@@ -11,7 +11,7 @@ Named to honor Bostonian Peter Fleet, an engraver who was enslaved by noted prin
 #### Links
 
 * **Production:** [https://patterns.boston.gov/](https://patterns.boston.gov/)
-* **Dev/Staging:** [https://cob-patterns-staging.herokuapp.com/](https://cob-patterns-staging.herokuapp.com/)
+* **Dev/Staging:** [https://patterns-stg.boston.gov/](https://patterns-stg.boston.gov/)
 * **GitHub:** [CityOfBoston/patterns](https://github.com/CityOfBoston/patterns)
 
 #### Contact: [Digital Team](mailto:digital@boston.gov)
