@@ -535,7 +535,7 @@ _**Elsewhere this might be termed spinning up an on-demand instance of the site.
 6. Commit the `.config.yml and .travis.yml`changes to `on-demand-branchname` and push to GitHub - but _**do not**_ merge into `develop`.
 7. Make a small inconsequential change to the code and commit to the `on-demand-branchname` branch, and push to GitHub.  This will cause the first-time build on Travis, and deploy into the `on-demand-branchname-deploy` branch in the Acquia Repository.
 
-   The Travis build can be [tracked here in Travis](https://travis-ci.org/CityOfBoston/boston.gov-d8?utm_medium=notification&utm_source=github_status).
+   The Travis build can be [tracked here in Travis](https://travis-ci.com/).
 
 8. Login to the Acquia Cloud console.  In the UI switch the code in the Ci/Uat environment to the `on-demand-branchname-deploy` branch.   This will cause a [deploy on the Acquia server](https://cloud.acquia.com/app/develop/applications/5ad427f5-60d6-48fd-983e-670ddc7767c4), which will copy across the current `stage` database and update with configuration from the `on-demand-branchname`branch.
 9. **The "on-demand" environment is now set.** Users may view and interact with the environment as required.  See Notes in "gotcha's" box below.
