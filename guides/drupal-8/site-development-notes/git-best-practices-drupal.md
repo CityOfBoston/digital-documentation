@@ -6,9 +6,9 @@ City of Boston use Acquia to host our Drupal website.
 
 Acquia provide a number of different environments for COB to use. One of those environments is **production** \(prod\) the others are non-production - named: stage, dev, uat, ci & dev2.
 
-Detail on deployment is covered [elsewhere](../../../projects/decommissioned-apps-or-services/drupal-7/deployment-2019/), but in summary we are able to "bind" certain branches of our github repo \([CityofBoston/boston.gov-d8](https://github.com/CityOfBoston/boston.gov-d8)\) to these Acquia environments, and when changes occur in those branches, a deployment is automatically triggered.
+Detail on deployment is covered [elsewhere](../continuous-deployment-process.md), but in summary we are able to "bind" certain branches of our github repo \([CityofBoston/boston.gov-d8](https://github.com/CityOfBoston/boston.gov-d8)\) to these Acquia environments, and when changes occur in those branches, a deployment is automatically triggered.
 
-Therefore, the way we branch off and push/merge into the main branches is important.
+Therefore, the way we branch off and push/merge into the "bound" branches is important.
 
 The `master` and `develop`branches are bound to the development and staging Acquia environments are used as the continuous deployment pipeline. _Changes cannot be made directly onto the `master`branch, and changes should not be made directly onto the `develop`branch, except when hotfixes are needed_.
 
@@ -25,7 +25,7 @@ In the above diagram,
   * The code on the Acquia Environment is updated during the deploy.
 * Orange arrows cause a build, test and deployment  process \(controlled by Travis, taking approx 30 mins\). 
   * The code on the Acquia Environment is updated during the deploy.
-* Branches can be attached to multiple Acquia Environments, and deploys will occur in all environments when the repo branch is updated.
+* Branches can be bound to multiple Acquia Environments, and deploys will occur in all environments when the repo branch is updated.
 
 ## Useful Links
 
