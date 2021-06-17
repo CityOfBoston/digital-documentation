@@ -26,7 +26,7 @@ _**Memcache is not used on boston.gov \(at this time\).**_
 
 You can inspect the headers of requests to a webserver to see if varnish is enabled, and if content was served from the Varnish and/or Drupal caches.
 
-This terminal command will return the headers or a request to a URL:
+This terminal command will return the headers from a request to a URL:
 
 ```bash
 curl -IXGET <URL>
