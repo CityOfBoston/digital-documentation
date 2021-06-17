@@ -85,6 +85,7 @@
     * [PhpStorm settings configurations](guides/drupal-8/installation-instructions/phpstorm-settings-configurations.md)
   * [Continuous Deployment Process](guides/drupal-8/continuous-deployment-process.md)
   * [Site Development Notes](guides/drupal-8/site-development-notes/README.md)
+    * [Git Best Practices - Drupal](guides/drupal-8/site-development-notes/git-best-practices-drupal.md)
     * [Drupal Cache](guides/drupal-8/site-development-notes/drupal-cache.md)
     * [Custom Modules](guides/drupal-8/site-development-notes/custom-modules/README.md)
       * [Adding Templates to Custom Modules](guides/drupal-8/site-development-notes/custom-modules/adding-templates-to-modules.md)
