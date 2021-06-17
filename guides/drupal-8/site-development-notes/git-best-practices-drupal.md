@@ -4,9 +4,9 @@
 
 City of Boston use Acquia to host our Drupal website.
 
-Acquia provide a number of different environments for us to use, one of those environments is **production** \(prod\) the others are named, but all are non-production.
+Acquia provide a number of different environments for COB to use. One of those environments is **production** \(prod\) the others are non-production - named: stage, dev, uat, ci & dev2.
 
-Detail on deployment is covered elsewhere, but in summary we are able to "bind" certain branches of our github repo \([CityofBoston/boston.gov-d8](https://github.com/CityOfBoston/boston.gov-d8)\) to these Acquia environments, and when changes occur in those branches, a deployment is automatically triggered.
+Detail on deployment is covered [elsewhere](../../../projects/decommissioned-apps-or-services/drupal-7/deployment-2019/), but in summary we are able to "bind" certain branches of our github repo \([CityofBoston/boston.gov-d8](https://github.com/CityOfBoston/boston.gov-d8)\) to these Acquia environments, and when changes occur in those branches, a deployment is automatically triggered.
 
 Therefore, the way we branch off and push/merge into the main branches is important.
 

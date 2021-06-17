@@ -17,3 +17,7 @@ Find the full Git series at: [https://drupalize.me/videos/introduction-git-serie
 You will see the listing of videos in the series in upper right panel; there are also a couple of different levels of scrollbar, so it’s easy to miss the later videos.   
 
 
+{% page-ref page="../site-development-notes/git-best-practices-drupal.md" %}
+
+
+
