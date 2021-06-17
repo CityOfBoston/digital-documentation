@@ -1,9 +1,5 @@
 # Git Best Practices - Drupal
 
-{% hint style="danger" %}
-This page is out of date and needs review 17 June 2021
-{% endhint %}
-
 ## Boston.gov-d8 Repo Branching
 
 City of Boston use Acquia to host our Drupal website.
