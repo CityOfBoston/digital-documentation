@@ -6,6 +6,10 @@ description: >-
 
 # Continuous Deployment Process
 
+{% hint style="danger" %}
+This page is out of date and needs review \(as at 17 June 2021\)
+{% endhint %}
+
 ### Local Build
 
 {% tabs %}
