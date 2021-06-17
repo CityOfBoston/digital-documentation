@@ -4,19 +4,17 @@
 
 City of Boston use Acquia to host our Drupal website.
 
-Acquia provide a number of different environments for COB to use. One of those environments is **production** \(prod\) the others are non-production - named: stage, dev, uat, ci & dev2.
+Acquia provide a number of different environments for COB to use. One of those environments is **production** the others are non-production - named: **stage**, **dev**, **uat**, **ci** & **dev2**.
 
-Detail on deployment is covered [elsewhere](../continuous-deployment-process.md), but in summary we are able to "bind" certain branches of our github repo \([CityofBoston/boston.gov-d8](https://github.com/CityOfBoston/boston.gov-d8)\) to these Acquia environments, and when changes occur in those branches, a deployment is automatically triggered.
+Detail on deployment is covered [elsewhere](../continuous-deployment-process.md), but in summary we are able to "bind" certain branches of our GitHub repo \([CityofBoston/boston.gov-d8](https://github.com/CityOfBoston/boston.gov-d8)\) to these Acquia environments, and when changes occur in those branches, a deployment is automatically triggered.
 
-Therefore, the way we branch off and push/merge into the "bound" branches is important.
-
-The `master` and `develop`branches are bound to the development and staging Acquia environments are used as the continuous deployment pipeline. _Changes cannot be made directly onto the `master`branch, and changes should not be made directly onto the `develop`branch, except when hotfixes are needed_.
+Therefore, the way we branch-off, push-to and merge the "bound" branches is important.
 
 ### Normal Deployment Pipeline
 
-The `develop` branch is bound to the Acquia **Dev** environment, and the `master` branch to the **stage** environment.
+The `develop` branch is bound to the Acquia **dev** environment, and the `master` branch to the **stage** environment. _Changes cannot be made directly onto the `master`branch, and changes should not be made directly onto the `develop`branch - except when hotfixes are needed_.
 
-* Best Practice is to create a _**working branche**_ off `develop` , then check out that `working branch` locally. 
+* Best Practice is to create a _**working branch**_ off `develop` , then check out that `working branch` locally. 
 * Updated code should be committed to the locally checked out copy of the `working branch` 
   * Updating the local `working branch` will update the local containerized website for testing.
 * Periodically, the local `working branch` should be pushed to the remote `working branch` in GitHub_._ 
@@ -29,18 +27,22 @@ The `develop` branch is bound to the Acquia **Dev** environment, and the `master
 
 ### On-Demand Pipeline
 
+We can bind a branch to the **dev2, ci** or **uat** environments so that we can share proposed or interim website changes with stakeholders or other individuals where a local containerized website is not appropriate.  These environments can be considered on-demand, and the way to update them is similar but slightly to the normal deploy piepline, requiring an extra branch.
+
 Branches attached to environments other than **dev**, **stage** and **production** in Acquia are termed _**environment branches**_  \(see also [On-Demand Instances](../on-demand-instances/)\). 
 
-* Initially, an `environment branch` is created from the `develop`branch. This `environment branch` is then bound to the desired Acquia environment \(**dev2**, **ci** or **uat**\). 
-* Developers then create a `working branch` off the `environment branch` and check that out locally and commit their updates to the local branch.  
+* Initially, an `environment branch` is created from the `develop`branch. 
+  * This `environment branch` is then bound to the desired Acquia environment \(**dev2**, **ci** or **uat**\). 
+* Developers then create a `working branch` off the `environment branch` and check out that `working branch`locally.  
 * Developers commit their work to the local copy of the `working branch` which can be pushed to the remote `working branch` in GitHub whenever desired. 
   * Updating the local `working branch` will update the local containerized website for testing.
   * Updating the `working branch` in GitHub will not trigger any deploys or update any website.  
 * When ready to update the website on the bound environment, using a PR, the GitHub copy of the `working branch` is merged to the `environment branch` in GitHub. 
   * Merging will trigger a deploy to the bound Acquia environment \(i.e. **dev2**, **uat** or **ci**\) and update the website on that environment.  
+  * Stakeholders can be directed to the website on the Acquia environment.
 * Once the project or piece of work is complete, a PR to merge the GitHub`environment branch` to the `develop` branch is created. 
   * Merging will trigger a deploy to **dev** and update the website.
-* To continue to deploy to **stage** and **production** environments, see notes in Normal Deploy Pipeline above.
+* To continue to deploy to **stage** and **production** environments, follow the notes in Normal Deploy Pipeline above.
 
 ![Example Git Branch Usage](../../../.gitbook/assets/image%20%2827%29.png)
 
