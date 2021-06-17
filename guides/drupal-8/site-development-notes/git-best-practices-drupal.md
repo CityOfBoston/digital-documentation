@@ -44,13 +44,17 @@ Branches attached to environments other than **dev**, **stage** and **production
   * Merging will trigger a deploy to **dev** and update the website.
 * To continue to deploy to **stage** and **production** environments, follow the notes in Normal Deploy Pipeline above.
 
+### Branch Diagram
+
+Sometimes a picture is worth 1,000 words.
+
 ![Example Git Branch Usage](../../../.gitbook/assets/image%20%2827%29.png)
 
 In the above diagram, 
 
-* Lines with an arrow indicate a merge \(and/or push\) to the branch in the direction of the arrow.
-* Lines with a dot connector indicate the creation \(or updating\) of a branch - and when the line is to a local branch it is a checkout to create \(or update\) a local branch.
-* The `master` branch is the **production** branch and cannot be pushed to directly. 
+* Lines with an arrow indicate a merge to the branch in the direction of the arrow.
+* Lines with a dot connector indicate the creation \(or updating\) of a branch - and when the line is to a local branch it is a checkout to a local branch.
+* The `master` branch is the **production** branch and cannot be pushed/merged to directly. 
   * The correct way to update `master` is to merge the `develop`branch into the `master` branch.  
   * At all times the `master` branch should be a copy of the code on the production environment. \(see [continuous deployment](../continuous-deployment-process.md#deploy-to-staging-includes-automated-testing)\)
 * Green arrows cause a deployment process:
@@ -63,10 +67,13 @@ In the above diagram,
   * The website hosted on the Acquia Environment is updated during the deploy.
     * Travis is configured so that this is extended process usually only runs when committing to the `develop` branch - triggering a deploy to the Acquia Dev environment as the first step of the deployment pipeline.
 * Black arrows indicate a simple commit/merge process with no building or deploying:
-  * Best practice reuquires that a `working branch` is not bound to Acquia Environments, so
-  * Travis is not involved, there is no deploy and 0 Travis credits are used
-* **Note:** A GitHub `environment branch` can be bound to **one or more** Acquia Environments, and deploys will occur to all bound environments when the GitHub `environment branch` is updated.
-  * Travis always controls deploys, but only one set of credits is used per `environment branch` update regardless of how many Acquia environments it is bound to.
+  * Best practice reuquires that a `working branch` is not bound to Acquia Environments
+  * Merging does not trigger Travis, there is no deploy and 0 Travis credits are used
+
+\*\*\*\*
+
+* **Note:** A GitHub `environment branch` can be bound to **one or more** Acquia Environments. When this is the case, deploys will occur simultaeously to all bound environments when the GitHub `environment branch` is updated.
+  * Travis always controls deploys, but only one set of credits is used per `environment branch` merge regardless of how many Acquia environments it is bound to.
 
 ## Useful Links
 
