@@ -89,3 +89,10 @@ On**`stage`and`develop`cron runs every 15 minutes.**
 {% endtab %}
 {% endtabs %}
 
+{% hint style="success" %}
+The Varnish cache performs 2 functions, one intended and one somewhat unintended.
+
+1. Reduces load on the application server \(i.e. webserver\), but also
+2. The cache will continue to serve cached pages even if the application server \(webserver\) is down or otherwise unavailable. Any cached pages in varnish will continue to be served until the pages expire in the cache. **Note:** Not all pages are cached, and authenticated sessions are not cached.
+{% endhint %}
+
