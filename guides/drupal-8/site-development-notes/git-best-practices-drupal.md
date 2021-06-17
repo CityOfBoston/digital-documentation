@@ -12,31 +12,59 @@ Therefore, the way we branch off and push/merge into the "bound" branches is imp
 
 The `master` and `develop`branches are bound to the development and staging Acquia environments are used as the continuous deployment pipeline. _Changes cannot be made directly onto the `master`branch, and changes should not be made directly onto the `develop`branch, except when hotfixes are needed_.
 
-Best Practice is to create _**working branches**_ off `develop` , then check those branches out locally. Once code is ready to be applied to repo, it should be committed and merged to the _working branch_ and then pushed to the `develop` branch in GitHub.
+### Normal Deployment Pipeline
 
-Branches attached to non-pipeline environments in Acquia are termed _**environment branches**_  \(see also [On-Demand Instances](../on-demand-instances/)\). These branches are created from the `develop`branch and attached to the environment. Developer then create their working branches off the environment branch and commit/push to that branch.  Once the project or piece of work is complete, the environment branch is merged down to the `develop` branch.
+The `develop` branch is bound to the Acquia **Dev** environment, and the `master` branch to the **stage** environment.
+
+* Best Practice is to create a _**working branche**_ off `develop` , then check out that `working branch` locally. 
+* Updated code should be committed to the locally checked out copy of the `working branch` 
+  * Updating the local `working branch` will update the local containerized website for testing.
+* Periodically, the local `working branch` should be pushed to the remote `working branch` in GitHub_._ 
+  * Updating the `working branch` in GitHub will not trigger any deploys or update any website.  __
+* To start the deploy to the **dev** environment,  a PR is created in GitHub to merge the `working branch` in GitHub into __the `develop` branch in GitHub. 
+  * Merging will trigger a build and the website on the **dev** environment will be updated.
+* When ready to deploy to the **stage** environment,  a PR is created in GitHub to merge the `develop` __into __the `master` branch in GitHub. 
+  * Merging will trigger a build and the website on the **stage** environment will be updated.
+* To deploy to the **production** environment, use the Acquia Cloud UI - see [continuous deployment](../continuous-deployment-process.md#deploy-to-production) notes.
+
+### On-Demand Pipeline
+
+Branches attached to environments other than **dev**, **stage** and **production** in Acquia are termed _**environment branches**_  \(see also [On-Demand Instances](../on-demand-instances/)\). 
+
+* Initially, an `environment branch` is created from the `develop`branch. This `environment branch` is then bound to the desired Acquia environment \(**dev2**, **ci** or **uat**\). 
+* Developers then create a `working branch` off the `environment branch` and check that out locally and commit their updates to the local branch.  
+* Developers commit their work to the local copy of the `working branch` which can be pushed to the remote `working branch` in GitHub whenever desired. 
+  * Updating the local `working branch` will update the local containerized website for testing.
+  * Updating the `working branch` in GitHub will not trigger any deploys or update any website.  
+* When ready to update the website on the bound environment, using a PR, the GitHub copy of the `working branch` is merged to the `environment branch` in GitHub. 
+  * Merging will trigger a deploy to the bound Acquia environment \(i.e. **dev2**, **uat** or **ci**\) and update the website on that environment.  
+* Once the project or piece of work is complete, a PR to merge the GitHub`environment branch` to the `develop` branch is created. 
+  * Merging will trigger a deploy to **dev** and update the website.
+* To continue to deploy to **stage** and **production** environments, see notes in Normal Deploy Pipeline above.
 
 ![Example Git Branch Usage](../../../.gitbook/assets/image%20%2827%29.png)
 
 In the above diagram, 
 
 * Lines with an arrow indicate a merge \(and/or push\) to the branch in the direction of the arrow.
-* Lines with a dot connector indicate the creation or updating of branch, and when to a local branch a pull to that local branch.
-* The `master` branch is the production branch and cannot be pushed to directly. The correct way to update it is to merge the `develop`branch into the `master` branch.  At all times the `master` branch should be a copy of the code on the production environment. \(see [continuous deployment](../continuous-deployment-process.md#deploy-to-staging-includes-automated-testing)\)
+* Lines with a dot connector indicate the creation \(or updating\) of a branch - and when the line is to a local branch it is a checkout to create \(or update\) a local branch.
+* The `master` branch is the **production** branch and cannot be pushed to directly. 
+  * The correct way to update `master` is to merge the `develop`branch into the `master` branch.  
+  * At all times the `master` branch should be a copy of the code on the production environment. \(see [continuous deployment](../continuous-deployment-process.md#deploy-to-staging-includes-automated-testing)\)
 * Green arrows cause a deployment process:
-  * Only if the branch being merged into is bound to an acquia environment, and 
+  * Only if the branch being merged into is bound to an Acquia environment, and 
   * This is controlled/executed  by Travis, taking approx 3 mins \(uses 30 Travis credits\), and
   * The website hosted on the Acquia Environment is updated during the deploy.
 * Orange arrows cause a build, test and deployment process:
-  * Only if the branch being merged into is bound to an acquia environment, and
+  * Only if the branch being merged into is bound to an Acquia environment, and
   * This is controlled/executed by Travis, taking approx 30 mins \(uses 300 Travis credits\), and
   * The website hosted on the Acquia Environment is updated during the deploy.
     * Travis is configured so that this is extended process usually only runs when committing to the `develop` branch - triggering a deploy to the Acquia Dev environment as the first step of the deployment pipeline.
 * Black arrows indicate a simple commit/merge process with no building or deploying:
-  * Best practice reuquires that "working branches" are never bound to Acquia Environments, so
-  * Travis is not involved, so uses 0 Travis credits
-* **Note:** Any github branch can be bound to **one or more** Acquia Environments, and deploys will occur to all bound environments when the github branch is updated.
-  * Travis always controls deploys and only one set of credits is used per branch update regardless of how many Acquia environments are bound to it.
+  * Best practice reuquires that a `working branch` is not bound to Acquia Environments, so
+  * Travis is not involved, there is no deploy and 0 Travis credits are used
+* **Note:** A GitHub `environment branch` can be bound to **one or more** Acquia Environments, and deploys will occur to all bound environments when the GitHub `environment branch` is updated.
+  * Travis always controls deploys, but only one set of credits is used per `environment branch` update regardless of how many Acquia environments it is bound to.
 
 ## Useful Links
 
