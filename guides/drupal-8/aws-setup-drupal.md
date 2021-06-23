@@ -14,7 +14,7 @@ description: Create a functional drupal site on AWS.
 | :--- | :--- | :--- | :--- |
 | Region | us-east-2c |  |  |
 | DB Instance | thehubdev |  |  |
-| DB Password | stIFuLFRED | s16788 |  |
+| DB Password | \*\*\*\*\* | s16788 |  |
 | Size | db.m5.large |  |  |
 | Storage | SSD 100GB | autoscale 1000GB + No Standby |  |
 | Connectivity | public: no | existing VPC |  |
