@@ -665,12 +665,12 @@ A single statement or command that can be executed on the remote system.
 A JSON string containing parameters to be substituted into the **statement** parameter.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="limit" type="string" required=true %}
-Number of results to return in a page. 
+{% api-method-parameter name="limit" type="string" required=false %}
+Number of results to return in a page. Defaults to 100
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="page" type="string" required=true %}
-Page to be returned.
+{% api-method-parameter name="page" type="string" required=false %}
+Page to be returned. Defaults to page 0 \(first page\)
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
