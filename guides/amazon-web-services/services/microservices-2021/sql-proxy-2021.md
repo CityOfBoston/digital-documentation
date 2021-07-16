@@ -51,11 +51,15 @@ This endpoint is used to initially authenticate the user, and returns an Authent
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Returns an Authentication Token and a Refresh Token, and also the ID of the user, which can/should be used for other endpoint calls.
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+  "userid": 1,
+  "accssToken": "xxx-xxxx-xxxx",
+  "refreshToken": "xxx-xxxx"
+}
 ```
 {% endapi-method-response-example %}
 
