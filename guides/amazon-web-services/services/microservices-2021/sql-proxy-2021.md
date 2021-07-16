@@ -10,9 +10,9 @@ The City have a number of Data services \(e.g. SQL Servers\) that reside on the 
 
 ## API User Guide
 
-The dbconnector microservice is available from https://ssssssss.com.
+The dbconnector microservice is available at https://ssssssss.com.
 
-The first step is to post to the **/auth** endpoint, providing a **username** and password.  If authenticated, an Authentication Token, and Refresh Token will be returned.  The Authentication Token is valid for 60 seconds, and the Refresh Token for 90 seconds.
+The first step is to post to the **/auth** endpoint, providing a **username** and **password**.  If authenticated, an Authentication Token, and Refresh Token will be returned.  The Authentication Token is valid for 60 seconds, and the Refresh Token for 90 seconds.
 
 The Authentication Token is then passed as a bearer authorization token and can be used multiple times until it expires.
 
@@ -37,11 +37,15 @@ This endpoint is used to initially authenticate the user, and returns an Authent
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="username" type="string" required=false %}
 
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+
+{% api-method-parameter name="password" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -52,6 +56,39 @@ This endpoint is used to initially authenticate the user, and returns an Authent
 
 ```
 
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Errors in authenticating will return one of the following:
+{% endapi-method-response-example-description %}
+
+```
+{"error": "Missing XXX field"}
+{"error": "Invalid username or password"}
+{"error": "Unauthorized IPAddress"}
+{"error": "User Disabled"}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+If the username/password does not validate, then an empty JSON object is returned.
+{% endapi-method-response-example-description %}
+
+```
+{}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=500 %}
+{% api-method-response-example-description %}
+If there is an error generating the token, or any other unhandled server-side error a 500 status will be returned with an empty JSON string.
+{% endapi-method-response-example-description %}
+
+```
+{}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
