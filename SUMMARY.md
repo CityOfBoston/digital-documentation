@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Welcome](README.md)
+* [Untitled](untitled.md)
 
 ## Getting started
 
@@ -56,6 +57,8 @@
   * [Making changes with Terraform](guides/amazon-web-services/making-changes-with-terraform.md)
   * [Mounting AWS SFTP as a Drive \(Mac\)](guides/amazon-web-services/mounting-aws-sftp-as-a-drive-mac.md)
   * [Services](guides/amazon-web-services/services/README.md)
+    * [Microservices 2021](guides/amazon-web-services/services/microservices-2021/README.md)
+      * [SQL Proxy 2021](guides/amazon-web-services/services/microservices-2021/sql-proxy-2021.md)
     * [Registry-Certs](guides/amazon-web-services/services/registry-certs/README.md)
       * [Marriage Intention](guides/amazon-web-services/services/registry-certs/marriage-intention.md)
     * [Ruby](guides/amazon-web-services/services/ruby.md)
