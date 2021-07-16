@@ -12,6 +12,18 @@ The City have a number of Data services \(e.g. SQL Servers\) that reside on the 
 
 The dbconnector microservice is available from https://ssssssss.com.
 
+The first step is to post to the **/auth** endpoint, providing a **username** and password.  If authenticated, an Authentication Token, and Refresh Token will be returned.  The Authentication Token is valid for 60 seconds, and the Refresh Token for 90 seconds.
+
+The Authentication Token is then passed as a bearer authorization token and can be used multiple times until it expires.
+
+When the Authentication Token expires, the Refresh Token can be passed to the **/auth/refresh** endpoint and a new Authentication Token will be returned with a 60 second lifetime.  A new Refresh Token will also be generated and returned with a 90 second lifetime.  Using the refresh token is faster and more efficient in the back-end as the user is not re-validated in the database, saving the database connection overhead.
+
+Once authenticated the API can be used, provided the valid Token is passed in the header.
+
+```text
+HEADER "Authorization: bearer xxxx-xxxxx-xxxxx"
+```
+
 ### Authentication
 
 {% api-method method="post" host="" path="/auth" %}
