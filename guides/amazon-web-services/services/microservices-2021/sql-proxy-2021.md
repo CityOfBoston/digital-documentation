@@ -32,18 +32,20 @@ Authenticate User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint is used to initially authenticate the user, and returns an Authentication Token which must be used in the header of all subsequent endpoint calls.
+This endpoint is used to initially authenticate the user, and returns an Authentication Token which must be used in the header of all subsequent endpoint calls.  
+- The Auth Token has a default lifetime of 180 seconds \(3 min\) \(can be set per username\),  
+- The Refresh Token has an additional validity of 180 seconds \(3 min\).
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-body-parameters %}
 {% api-method-parameter name="username" type="string" required=true %}
-
+A username \(either a name or an email\) which is registered in the dbconnector \(see /users\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="password" type="string" required=true %}
-
+The password set for the username provided.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -57,22 +59,56 @@ Returns an Authentication Token and a Refresh Token, and also the ID of the user
 ```
 {
   "userid": 1,
-  "accssToken": "xxx-xxxx-xxxx",
+  "authToken": "xxx-xxxx-xxxx",
   "refreshToken": "xxx-xxxx"
 }
+
+** If the user is found to be over-using the endpoint, (flooding) then 
+   the following will be returned:
+{"error": "No Data"}
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-Errors in authenticating will return one of the following:
+Errors determined while authenticating will return one of the following:
 {% endapi-method-response-example-description %}
 
 ```
-{"error": "Missing XXX field"}
+** No body
+{"error": "Missing authentication payload"}
+** No username in body
+{"error": "Missing username/email field"}
+** No password in body
+{"error": "Missing password field"}
+
+** Username not found
 {"error": "Invalid username or password"}
-{"error": "Unauthorized IPAddress"}
+** Password does not match
+{"error": "Invalid username or password"}
+
+** Other un expected errors
+{"error": "error message text"}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+This will be returned if the user is disabled.
+{% endapi-method-response-example-description %}
+
+```
 {"error": "User Disabled"}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=403 %}
+{% api-method-response-example-description %}
+A 403 may be returned if the request came from an IPAddress not listed for this username, an empty JSON object is returned.
+{% endapi-method-response-example-description %}
+
+```
+{}
 ```
 {% endapi-method-response-example %}
 
@@ -88,7 +124,7 @@ If the username/password does not validate, then an empty JSON object is returne
 
 {% api-method-response-example httpCode=500 %}
 {% api-method-response-example-description %}
-If there is an error generating the token, or any other unhandled server-side error a 500 status will be returned with an empty JSON string.
+If there is an error generating the token, or any other server-side error a 500 status will be returned with an empty JSON string.
 {% endapi-method-response-example-description %}
 
 ```
@@ -110,6 +146,18 @@ Using a valid Refresh Token \(provided from **/auth** endpoint\), this endpoint 
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="" type="string" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}

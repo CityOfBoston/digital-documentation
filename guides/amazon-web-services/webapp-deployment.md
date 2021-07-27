@@ -73,7 +73,7 @@ The DNS for staging is taken care of by a wildcard `*.digital-staging.boston.gov
 * Does not support variants
 * Containers are replicated across 2 AZs for resilience
 
-New `boston.gov` subdomains need to be manually added by the network team. See [New service setup](new-service-setup.md).
+New `boston.gov` subdomains need to be manually added by the network team. See [New service setup](new-service-setup/).
 
 ### Types of Deployment
 
