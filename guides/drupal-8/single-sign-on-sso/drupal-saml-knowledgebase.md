@@ -10,11 +10,13 @@ From time to time the IDP certificate will expire and need to be re-issued by th
 
 ~~You need to remove all the spaces from the openssl command above so the certificate is a single long string \(approx 2500 chars long\)~~
 
-You should request the metadata xml from IAM, this will come as a file with the extension .xml.
+{% hint style="success" %}
+You should request the metadata xml from IAM, this will come as a single file per environment - with the extension .xml.
+{% endhint %}
 
 Follow these steps:
 
-1. Login to the boston.gov environment \(.i.e dev stage prod etc.\) at xxx.boston.gov/user/login
+1. Login to the boston.gov environment \(.i.e dev, stage, prod etc.\) at xxx.boston.gov/user/login
 2. Access the simplesaml config system at xxx.boston.gov/simplesaml
 3. \(in the SAML config system\) On the _Welcome_ tab, login using the _**Login as administrator**_ ****link in the top right of the welcome box.  The password is available in the `simplesamlphp/config/config.php` file in the private repository.
 4. \(in the SAML config system\) Click on the _Federation_  tab and then at the bottom of the page click on XML to _**SimpleSAMLphp metadata converter.**_  On the page that opens, either paste in the metadata file contents, or select the metadata xml file you have been sent, and click the **Parse** button.
