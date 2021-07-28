@@ -2,33 +2,46 @@
 
 ## Update IDP Certificate \(Annual\).
 
-From time to time the IDP certificate will expire and need to be re-issued by the Identity and Access Management team.  The certificate will likely be received as a .cer file and it needs to be loaded into a config file in Drupal/SimpleSAMLPHP.
+From time to time the IDP certificate will expire and need to be re-issued by the Identity and Access Management team.  ~~The certificate will likely be received as a .cer file and it needs to be loaded into a config file in Drupal/SimpleSAMLPHP.~~
 
-To extract the certificate string from the certificate file, you can use this command \(assuming Linux or MacOS\)
+~~To extract the certificate string from the certificate file, you can use this command \(assuming Linux or MacOS\)~~
+
+~~sudo openssl x509 -inform der -in pf\_test\_cert.cer -text~~
+
+~~You need to remove all the spaces from the openssl command above so the certificate is a single long string \(approx 2500 chars long\)~~
+
+You should request the metadata xml from IAM, this will come as a file with the extension .xml.
+
+Follow these steps:
+
+1. Login to the boston.gov environment \(.i.e dev stage prod etc.\) at xxx.boston.gov/user/login
+2. Access the simplesaml config system at xxx.boston.gov/simplesaml
+3. \(in the SAML config system\) On the _Welcome_ tab, login using the _**Login as administrator**_ ****link in the top right of the welcome box.  The password is available in the `simplesamlphp/config/config.php` file in the private repository.
+4. \(in the SAML config system\) Click on the _Federation_  tab and then at the bottom of the page click on XML to _**SimpleSAMLphp metadata converter.**_  On the page that opens, either paste in the metadata file contents, or select the metadata xml file you have been sent, and click the **Parse** button.
+5. In the _Converted metadata_ section of the page, copy the entire contents of the **saml20-idp-remote** converted meta data.
+6. Finally, The copied content needs to be added to the `saml20-idp-remote.php` file which is found in `simplesamlphp/metadata/saml20-idp-remote.php` folder in the **boston.gov-d8-private**  repository in GitHub.  The file defines a `$metadata` PHP std\_object with a node for each environment \(see box below\).  Select the correct environment node and paste the metadata as follows:  
 
 ```text
-$ sudo openssl x509 -inform der -in pf_test_cert.cer -text
-```
+$metadata['urn:XXX:sso:boston.gov'] = array (
 
-You need to remove all the spaces from the openssl command above so the certificate is a single long string \(approx 2500 chars long\)
-
-The string needs to be added to the `saml20-idp-remote.php` file which is found in `simplesamlphp/metadata/saml20-idp-remote.php` folder in the **boston.gov-d8-private**  repository in GitHub.
-
-The file defines a $metadata PHP std\_object with a node for each environment \(see box below\).  Select the correct environment node and update the `keys` sub-node as follows:  
-
-```text
-'keys' => array (
-    0 => array (
-      'encryption' => false,
-      'signing' => true,
-      'type' => 'X509Certificate',
-      'X509Certificate' => '####new-cert-string',
+  ...
+  
+  'keys' => array (
+      0 => array (
+        'encryption' => false,
+        'signing' => true,
+        'type' => 'X509Certificate',
+        'X509Certificate' => '####new-cert-string',
+      ),
     ),
-  ),
+    
+    ...
+
+  );
 ```
 
 {% hint style="info" %}
-There is a separate certificate for each Ping environment we use.   
+There is a separate metadata/certificate for each Ping environment we use.   
 Currently there are 3, dev, test and prod.
 {% endhint %}
 
