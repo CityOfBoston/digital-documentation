@@ -651,7 +651,7 @@ A  valid Authentication Token in format:
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter required=true %}
+{% api-method-parameter required=true name="statement" type="string" %}
 A single statement or command that can be executed on the remote system.
 {% endapi-method-parameter %}
 
