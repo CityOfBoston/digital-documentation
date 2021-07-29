@@ -50,6 +50,6 @@ Currently there are 3, dev, test and prod.
 Save the file, commit and deploy the code-base to the relevant Acquia environment to test.
 
 {% hint style="danger" %}
-The same certificate is used for **Access-Boston** \(web app on AWS\) and **The Hub** Drupal app on Elastic Beanstalk on AWS.  You will need to update the certs on thos systems as well.
+The same certificate is used for **Access-Boston** \(web app on AWS\) and **The Hub** Drupal app on Elastic Beanstalk on AWS.  You will need to update the certs on those systems as well.
 {% endhint %}
 
