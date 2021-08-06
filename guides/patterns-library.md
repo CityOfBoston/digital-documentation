@@ -4,7 +4,9 @@ description: This is the pattern library for the City of Boston.
 
 # Patterns Library Cleanup
 
-### Work flow process: [https://docs.google.com/document/d/1cMJrdJnP2G20zxIZDU3tZXWQLvOBJSLzNneWOaRZOTg/edit?usp=sharing](https://docs.google.com/document/d/1cMJrdJnP2G20zxIZDU3tZXWQLvOBJSLzNneWOaRZOTg/edit?usp=sharing)
+### Work flow process: 
+
+[Workflow documentation](https://docs.google.com/document/d/1cMJrdJnP2G20zxIZDU3tZXWQLvOBJSLzNneWOaRZOTg/edit?usp=sharing)
 
 ### CSS files
 
