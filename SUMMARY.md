@@ -43,7 +43,8 @@
 
 ## Guides
 
-* [Patterns Library Cleanup](guides/patterns-library.md)
+* [Patterns Library Cleanup](guides/patterns-library/README.md)
+  * [Legacy CSS removal](guides/patterns-library/legacy-css-removal.md)
 * [Digital Webapps](guides/amazon-web-services/README.md)
   * [Production Overview](guides/amazon-web-services/production-overview.md)
   * [Service Configuration](guides/amazon-web-services/service-configuration/README.md)
