@@ -4,7 +4,7 @@ description: >-
   presentation.
 ---
 
-# Legacy CSS removal
+# Refactoring Legacy CSS
 
 However, this simplicity leaves the door open for many potential issues and **technical debt** — bloated code, specificity hell, duplicated code blocks with very little to no difference, leftover unused selectors, unnecessary hacks, and workarounds, to name a few.
 

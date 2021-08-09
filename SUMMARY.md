@@ -44,8 +44,7 @@
 ## Guides
 
 * [Patterns Library Cleanup](guides/patterns-library/README.md)
-  * [Legacy CSS removal](guides/patterns-library/legacy-css-removal/README.md)
-    * [Refactoring CSS](guides/patterns-library/legacy-css-removal/refactoring-css-1.md)
+  * [Refactoring Legacy CSS](guides/patterns-library/legacy-css-removal/README.md)
     * [Strategy](guides/patterns-library/legacy-css-removal/strategy.md)
     * [Regression Testing](guides/patterns-library/legacy-css-removal/regression-testing.md)
     * [Maintenance](guides/patterns-library/legacy-css-removal/maintenance.md)
