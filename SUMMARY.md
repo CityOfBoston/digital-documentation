@@ -44,7 +44,11 @@
 ## Guides
 
 * [Patterns Library Cleanup](guides/patterns-library/README.md)
-  * [Legacy CSS removal](guides/patterns-library/legacy-css-removal.md)
+  * [Legacy CSS removal](guides/patterns-library/legacy-css-removal/README.md)
+    * [Refactoring CSS](guides/patterns-library/legacy-css-removal/refactoring-css-1.md)
+    * [Strategy](guides/patterns-library/legacy-css-removal/strategy.md)
+    * [Regression Testing](guides/patterns-library/legacy-css-removal/regression-testing.md)
+    * [Maintenance](guides/patterns-library/legacy-css-removal/maintenance.md)
 * [Digital Webapps](guides/amazon-web-services/README.md)
   * [Production Overview](guides/amazon-web-services/production-overview.md)
   * [Service Configuration](guides/amazon-web-services/service-configuration/README.md)
