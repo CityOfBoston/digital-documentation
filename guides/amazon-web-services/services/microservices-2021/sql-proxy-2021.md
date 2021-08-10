@@ -266,6 +266,36 @@ Successfully generates a new authToken \(and also a new refreshToken\).
 }
 ```
 {% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Other errors.
+{% endapi-method-response-example-description %}
+
+```
+
+*** General Error.
+{"error": <explanation>}
+
+*** If no refreshToken was supplied in the body payload.
+{"error": "Missing refresh token"}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+If there are issues with the authToken.
+{% endapi-method-response-example-description %}
+
+```
+*** If no authToken was supplied.
+{"error": "Missing Authentication Token"}
+*** If the AuthToken supplied has expired.
+{"error": "Expired Token"}
+*** If the token is unknown or badly formatted.
+{"error": "Bad Token"}
+```
+{% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
@@ -291,13 +321,18 @@ Successfully generates a new authToken \(and also a new refreshToken\).
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=200 %}
+{% api-method-response-example httpCode=401 %}
 {% api-method-response-example-description %}
-
+Generally, these are issues with the Authentication Token supplied.
 {% endapi-method-response-example-description %}
 
 ```
-
+*** If no authToken was supplied
+{"error": "Missing Authentication Token"}
+*** If the AuthToken supplied has expired.
+{"error": "Expired Token"}
+*** If the token is unknown or badly formatted
+{"error": "Bad Token"}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
