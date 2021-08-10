@@ -255,14 +255,21 @@ A valid refreshToken
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Successfully generates a new authToken \(and also a new refreshToken\):
+Successfully generates a new authToken \(and also a new refreshToken\).  
+_**If too many requests have been made in a given time period, then the user will be blocked and a 200 response code will be returned with an error message.**_
 {% endapi-method-response-example-description %}
 
 ```
+*** Normal response
 {
     "userid": 6,
     "authToken": "XXXXXX",
     "refreshToken": "XXXXX"
+}
+
+*** Response if abuse detected
+{
+    "error": "No Data"
 }
 ```
 {% endapi-method-response-example %}
@@ -298,49 +305,10 @@ If there are issues with the authToken, these are the expected messages:
 {"error": "Bad Token"}
 ```
 {% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-### General Error Messages
-
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="" %}
-{% api-method-summary %}
-
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-Generally, these are issues with the Authentication Token supplied.
-{% endapi-method-response-example-description %}
-
-```
-*** If no authToken was supplied
-{"error": "Missing Authentication Token"}
-*** If the AuthToken supplied has expired.
-{"error": "Expired Token"}
-*** If the token is unknown or badly formatted
-{"error": "Bad Token"}
-```
-{% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=403 %}
 {% api-method-response-example-description %}
-When a user attempts to perform a task with insufficient permissions, a 403 error is generated.
+Usually returned because the callers originating IPAddress does not appear to match the whitelist provided in the user Account.
 {% endapi-method-response-example-description %}
 
 ```
@@ -350,6 +318,44 @@ When a user attempts to perform a task with insufficient permissions, a 403 erro
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+### Common Endpoint Error Messages
+
+The following errors can be raised from calls to the various endpoints.
+
+**400: Bad Request**
+
+400 errors usually indicte some issue with the payload/body submitted to the endpoint. A JSON string is returned with an _error_ node in it.  The error description is a short explanation of the issue encountered.
+
+```text
+{
+    "error": <description>
+}
+```
+
+**401: Unauthorised**
+
+Generally, 401 errors are returned when there is an issue with the AuthToken provided in he header.
+
+```text
+*** If no authToken was supplied
+{"error": "Missing Authentication Token"}
+*** If the authToken supplied has expired.
+{"error": "Expired Token"}
+*** If the authToken is unknown or badly formatted
+{"error": "Bad Token"}
+```
+
+**403: Forbidden**
+
+When a user attempts to perform a task with insufficient permissions, a 403 error is generated.  The 403 Errors raised by `DBConnector` typically do not provide much information, but errors are logged. Typical 403 errors are:
+
+* Authenticating account or using token from an unregistered IPAddress
+* Account has insufficient permissions to perform requested task \(see [User Permissions](sql-proxy-2021.md#user-permissions)\)
+
+```text
+{}
+```
 
 ### User Management
 
@@ -931,4 +937,17 @@ Expands out to:
 ```text
 SELECT ID FROM dbo.users ORDER BY CreateDate;
 ```
+
+### User Permissions
+
+Each user account defined in DBConnector has an assigned role.  
+
+| Role | Description |
+| :--- | :--- |
+| NORMAL USER | Can authenticate and then use the **/query** endpoint |
+| SUPER USER | Can authenticate and then use the **/query** and  **/select** endpoints |
+| ADMIN | Can use all endpoints |
+| OWNER | Can use all endpoints |
+
+Generally, the roles are additive, so a SUPER-USER can perform all the tasks a NORMAL-USER can perform.
 
