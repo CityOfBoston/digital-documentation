@@ -546,11 +546,12 @@ Bearer: A valid authToken.
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="username" type="string" required=true %}
-Any unique string to identify this user.  Recommended to use email addresses for human users \(e.g. someone@boston.gov\) or a meaningful name built around the calling service name \(e.g. "cmdb\_nightly\_update"\)
+Any unique string to identify this user.  Recommended to use email addresses for human users \(e.g. "someone@boston.gov"\) or a meaningful name built around the calling service name \(e.g. "cmdb\_nightly\_update"\).   
+Maximum 100 chars.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="password" type="string" required=true %}
-A password
+A complex password. The longer and more complex the better. 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="role" type="number" required=true %}
@@ -562,12 +563,14 @@ See User Permissions
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ipaddresses" type="string" required=false %}
-A comma separated list of IPAddresses the user can make requests from.  If this is left blank, then requests are accepted from all IPAddresses.
+A comma separated list of IPAddresses the user can make requests from.  If this is left blank, then requests are accepted from all IPAddresses.   
+Maximum 150 chars.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ttl" type="string" required=false %}
 The lifetime of authTokens generated for this user.  If this is left blank, then 180s will be used.  Format is "xxxm/s" \(e.g. "90s" for 90 seconds, or "3m" for 3 minutes\)  
-**Note:** Shorter key lifetimes provide better security.
+**Note:** Shorter key lifetimes provide better security.  
+Maxmum 10m or 600s.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -575,12 +578,31 @@ The lifetime of authTokens generated for this user.  If this is left blank, then
 {% api-method-response %}
 {% api-method-response-example httpCode=201 %}
 {% api-method-response-example-description %}
-
+The ID of the newly created user.
 {% endapi-method-response-example-description %}
 
 ```
 {
     "id": 16
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+As well as the common error messages, an error will be thrown if:  
+- A duplicate username is attempted to be created.  
+- The username is more than 100 chars long.
+{% endapi-method-response-example-description %}
+
+```
+{
+    "error": ""Statement 3 failed: RequestError: Cannot insert duplicate key row in object 'dbo.users' with unique index 'UK_Username'. The duplicate key value is (<xxx>)"
+}
+
+
+{
+    "error": "Statement 3 failed: RequestError: String or binary data would be truncated."
 }
 ```
 {% endapi-method-response-example %}
