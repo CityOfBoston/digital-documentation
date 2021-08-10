@@ -255,7 +255,7 @@ A valid refreshToken
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Successfully generates a new authToken \(and also a new refreshToken\).
+Successfully generates a new authToken \(and also a new refreshToken\):
 {% endapi-method-response-example-description %}
 
 ```
@@ -269,22 +269,24 @@ Successfully generates a new authToken \(and also a new refreshToken\).
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-Other errors.
+Other errors that may be returned:
 {% endapi-method-response-example-description %}
 
 ```
-
 *** General Error.
 {"error": <explanation>}
 
 *** If no refreshToken was supplied in the body payload.
 {"error": "Missing refresh token"}
+
+*** If the refreshToken is not valid.
+{"error": "Invalid refresh token"}
 ```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=401 %}
 {% api-method-response-example-description %}
-If there are issues with the authToken.
+If there are issues with the authToken, these are the expected messages:
 {% endapi-method-response-example-description %}
 
 ```
@@ -333,6 +335,16 @@ Generally, these are issues with the Authentication Token supplied.
 {"error": "Expired Token"}
 *** If the token is unknown or badly formatted
 {"error": "Bad Token"}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=403 %}
+{% api-method-response-example-description %}
+When a user attempts to perform a task with insufficient permissions, a 403 error is generated.
+{% endapi-method-response-example-description %}
+
+```
+{}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
