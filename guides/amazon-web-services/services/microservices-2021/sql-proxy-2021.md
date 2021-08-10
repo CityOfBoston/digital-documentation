@@ -450,7 +450,7 @@ Bearer: A valid connToken.
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
 Returns a JSON Array with user details.   
-**Note:** The password field is obfuscated.   
+**Note:** The password field is not obfuscated.   
 \(see user permissions for roles\)
 {% endapi-method-response-example-description %}
 
@@ -459,7 +459,7 @@ Returns a JSON Array with user details.
     {
         "ID": 1,
         "Username": "david.upton@boston.gov",
-        "Password": "*****",
+        "Password": "the-password",
         "IPAddresses": "",
         "Enabled": true,
         "Role": 4096,
@@ -473,39 +473,7 @@ Returns a JSON Array with user details.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/users" %}
-{% api-method-summary %}
-
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Bearer - A valid connToken
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/users/:userid/connections" %}
+{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/users/:useridentifier/connections" %}
 {% api-method-summary %}
 List Connections available to a User
 {% endapi-method-summary %}
@@ -517,8 +485,10 @@ List Connections available to a User
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="userid" type="integer" %}
-The userid from the **/auth** request.
+{% api-method-parameter name="useridentifier" type="string" required=true %}
+The useridentifier may be either of:  
+- **userID** \(_numeric_\): unique user number  
+- **username** \(_string_\): unique username
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -532,75 +502,24 @@ Bearer: A valid authToken.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Returns an array of connection string records which the requested user is permissioned to use.
 {% endapi-method-response-example-description %}
 
 ```
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/users" %}
-{% api-method-summary %}
-
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=false %}
-Bearer - A valid connToken
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/users" %}
-{% api-method-summary %}
-
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Bearer - A valid connToken
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-
+[
+ {
+   "Username":"david.upton@boston.gov",
+   "userid":1,
+   "connid":1,
+   "Token":"xx-xx-xx-xx-xx",
+   "ConnectionString":"{\"host\":\"MSSQL_CMDB\", \"port\":\"1433\", \"schema\":\"dbo\", \"database\":\"CMDB\", \"user\":\"myUser\", \"password\":\"myPassword\"}",
+   "Description":"Updated Dummy",
+   "Enabled":true,
+   "Count":0,
+   "LastUse":
+   "2021-08-10T19:30:20.160Z"
+  }
+]
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
