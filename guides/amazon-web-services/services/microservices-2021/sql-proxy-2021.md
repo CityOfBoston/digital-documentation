@@ -546,27 +546,28 @@ Bearer: A valid authToken.
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="username" type="string" required=true %}
-
+Any unique string to identify this user.  Recommended to use email addresses for human users \(e.g. someone@boston.gov\) or a meaningful name built around the calling service name \(e.g. "cmdb\_nightly\_update"\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="password" type="string" required=true %}
-
+A password
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="role" type="string" required=true %}
-
+{% api-method-parameter name="role" type="number" required=true %}
+See User Permissions
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="enabled" type="number" required=false %}
-
+1 or 0.  Is this account to be created enabled or disabled. \(0=disabled\).
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ipaddresses" type="string" required=false %}
-
+A comma separated list of IPAddresses the user can make requests from.  If this is left blank, then requests are accepted from all IPAddresses.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="ttl" type="string" required=false %}
-
+The lifetime of authTokens generated for this user.  If this is left blank, then 180s will be used.  Format is "xxxm/s" \(e.g. "90s" for 90 seconds, or "3m" for 3 minutes\)  
+**Note:** Shorter key lifetimes provide better security.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
