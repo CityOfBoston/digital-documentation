@@ -24,6 +24,98 @@ Once authenticated the API can be used, provided the valid Token is passed in th
 HEADER "Authorization: bearer xxxx-xxxxx-xxxxx"
 ```
 
+### Terminology
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Term</th>
+      <th style="text-align:left">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><b>AuthToken</b>
+      </td>
+      <td style="text-align:left">
+        <p>A token which is generated when a user successfully authenticates against
+          the <b>/auth</b> endpoint and starts a session.</p>
+        <ul>
+          <li>This token is used for all subsequent calls to the endpoint during a session.</li>
+          <li>The AuthToken has a lifetime which is typically 180s. After that the AuthToken
+            expires and needs to be refreshed.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>RefreshToken</b>
+      </td>
+      <td style="text-align:left">
+        <p>A token which can be used to generate a new AuthToken without re-authenticating.
+          A new AuthToken with a new lifetime of 180s can be generated at <b>/auth/refresh. </b>
+        </p>
+        <ul>
+          <li>The RefreshToken is generated at the same time as the AuthToken and has
+            a lifetime of 900s.</li>
+          <li>After the RefreshToken expires, the only way to generate an AuthToken
+            is to authenticate against the <b>/auth</b> endpoint.</li>
+          <li>The benefit of the RefreshToken is to ease load on the database server
+            as AuthToken regeneration at <b>/auth/refresh</b> endpoint does not require
+            a database request,</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>User Account</b>
+      </td>
+      <td style="text-align:left">A user account is required to authenticate, and is identified by a username
+        and password. A user account may be only allow connections from a specified
+        IPAddress, and will only be allowed to use certain ConnTokens.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>username/userid</b>
+      </td>
+      <td style="text-align:left">Each user account has a unique string and numeric identifier. The username
+        is the string identifier, it must be unique and may be an email address.
+        The userid is a system-generated number which can be used to identify the
+        user in some endpoint operations.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>ConnectionString</b>
+      </td>
+      <td style="text-align:left">The DBConnector connects to remote (database) environments which are either
+        publicly available, or are housed within the City of Boston network. To
+        connect to an environment, a connection<b> </b>string is required. Typically
+        the connection string contains the following information about the target:
+        Host, Port, Driver, Credentials.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>ConnToken / ConnectionToken</b>
+      </td>
+      <td style="text-align:left">
+        <p>Each ConnectionString defined within the DBConnector is issued a unique
+          ConnToken when it is saved. Any query requests made via the DBConnector <b>/query</b> or <b>/select</b> endpoints
+          provide the ConnToken (rather than a Connection String).</p>
+        <ul>
+          <li>No Host or Credentials information needs to be stored in the caller system,
+            nor passed across the network by the caller.</li>
+          <li>No Host or Credentials are passed across the internet from the caller
+            system.</li>
+          <li>If Credentials need to be changed, the change is done once in the DBConnector
+            and all callers will use the new credentials without having to update their
+            ConnTokens.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Session</b>
+      </td>
+      <td style="text-align:left">A session begins when a user authenticates and receives an AuthToken,
+        and ends when the AuthToken expires.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Authentication
 
 {% api-method method="post" host="" path="/auth" %}
@@ -147,14 +239,14 @@ Using a valid Refresh Token \(provided from **/auth** endpoint\), this endpoint 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-parameter name="token" type="string" required=false %}
+A valid authToken.  This may be expired.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-parameter name="refresh\_token" type="string" required=false %}
+A valid refreshToken
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
