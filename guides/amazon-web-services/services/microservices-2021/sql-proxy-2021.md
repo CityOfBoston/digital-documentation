@@ -240,13 +240,13 @@ Also generates a new Refresh Token.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="token" type="string" required=false %}
-A valid authToken.  An expired autToken may be used provided it matches the refreshToken and the refreshToken is not expired.
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Bearer: A valid authToken.  An expired autToken may be used provided it matches the refreshToken and the refreshToken is not expired.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="refresh\_token" type="string" required=false %}
+{% api-method-parameter name="refresh\_token" type="string" required=true %}
 A valid refreshToken
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
