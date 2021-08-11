@@ -29,5 +29,7 @@ move all.js on drupal into patterns all.js
 
 ### Functional Specification
 
-The original functional specification for the City of Boston Website. Click here to download document.
+The original functional specification for the City of Boston Website. [Click here](https://drive.google.com/file/d/1MjaUhpvLOoTJbdCXCZ-V6BLh-KhCwgID/view?usp=sharing) to download document.
+
+
 
