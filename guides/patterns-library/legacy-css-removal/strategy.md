@@ -26,3 +26,15 @@ Visual regression testing can be treated as the last line of defense before merg
 
 When the codebase has been completely refactored and we’ve removed all makeshift TODO items from the `overrides.css` file, we can safely remove it and we are left with the refactored and improved CSS codebase.
 
+### TASK MANAGEMENT IN GITHUB
+
+* [ ] Create a new git branch for each task
+* [ ] With your first commit Create a PR\(Pull Requests\) for each branch
+* [ ] Point the PR from your branch to an integration branch
+
+#### Branch naming convention 
+
+`legacy-css__first-name]--[abbr. issue name]__issue[#number]` 
+
+ `legacy-css__carolyn--sticky-submenu__issue571`
+
