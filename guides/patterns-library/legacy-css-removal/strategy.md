@@ -28,9 +28,9 @@ When the codebase has been completely refactored and we’ve removed all makeshi
 
 ### TASK MANAGEMENT IN GITHUB
 
-* [ ] Create a new git branch for each task
-* [ ] With your first commit Create a PR\(Pull Requests\) for each branch
-* [ ] Point the PR from your branch to an integration branch
+1. Create a new git branch for each task
+2. With your first commit Create a PR\(Pull Requests\) for each branch
+3. Point the PR from your branch to an integration branch
 
 #### Branch naming convention 
 
