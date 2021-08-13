@@ -1044,7 +1044,7 @@ A  valid Authentication Token in format:
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="token" type="string" required=true %}
-A valid auth Token
+A valid connection string Token
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="table" type="string" required=true %}
