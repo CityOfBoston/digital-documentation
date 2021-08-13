@@ -1043,16 +1043,27 @@ A  valid Authentication Token in format:
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="token" required=true %}
-A token
+{% api-method-parameter name="token" type="string" required=true %}
+A valid auth Token
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="statement" required=true %}
-A single statement or command that can be executed on the remote system.
+{% api-method-parameter name="table" type="string" required=true %}
+The table to select data from.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="args" type="string" required=false %}
-A JSON string containing parameters to be substituted into the **statement** parameter.
+{% api-method-parameter name="fields" required=false type="array" %}
+Fields to return. If omitted then all fields will be returned.  
+e.g. `[ "ID", "name", "enabled" ]`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="where" required=false type="array" %}
+A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.   
+e.g. `[ {"ID": 1}, {"enabled": "false"} ]`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="order" type="array" required=false %}
+A JSON string array of fields to sort by  
+e.g. `[ "ID DESC", "name" ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="limit" type="string" required=false %}
