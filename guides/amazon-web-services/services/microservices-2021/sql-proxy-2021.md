@@ -989,7 +989,7 @@ A  valid Authentication Token in format:
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="connectionToken" type="string" required=true %}
+{% api-method-parameter name="token" type="string" required=true %}
 
 {% endapi-method-parameter %}
 
@@ -1043,7 +1043,7 @@ A  valid Authentication Token in format:
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="connectionToken" required=true %}
+{% api-method-parameter name="token" required=true %}
 A token
 {% endapi-method-parameter %}
 
