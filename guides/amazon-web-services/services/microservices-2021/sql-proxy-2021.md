@@ -1109,3 +1109,82 @@ Each user account defined in DBConnector has an assigned role.
 
 Generally, the roles are additive, so a SUPER-USER can perform all the tasks a NORMAL-USER can perform.
 
+### Test Data
+
+The endpoint can be tested using some test data pre-loaded into the application.
+
+**The credentials to use are:**
+
+```text
+username: devuser
+password: Boston2021
+```
+
+These credentials can be used with the connToken 
+
+```text
+45826BE6-1E29-CC64-B49E-550B9610C2EA
+```
+
+**Data contained in devTable available from connStr \#4**
+
+```text
+  {
+    "ID": 1,
+    "Name": "David Upton",
+    "Address": "1 Nevermind St, Nowhere",
+    "Sex": "Male",
+    "Age": 21
+  },
+  {
+    "ID": 2,
+    "Name": "Matt McGowan",
+    "Address": "14 Glochester Park",
+    "Sex": "Male",
+    "Age": 21
+  },
+  {
+    "ID": 3,
+    "Name": "Phiilip Kelly",
+    "Address": "2 Redline, Boston",
+    "Sex": "Male",
+    "Age": 21
+  },
+  {
+    "ID": 4,
+    "Name": "Stella Ubana",
+    "Address": "3 Kids is too many, Boston",
+    "Sex": "Female",
+    "Age": 21
+  },
+  {
+    "ID": 5,
+    "Name": "Caroline Stjarnborg",
+    "Address": "1 City Hall Plaza, Boston",
+    "Sex": "Female",
+    "Age": 21
+  },
+  {
+    "ID": 6,
+    "Name": "James Duffy",
+    "Address": "1 Boston",
+    "Sex": "Male",
+    "Age": 21
+  },
+  {
+    "ID": 7,
+    "Name": "Sebastian Ebard",
+    "Address": "2 Nice Street, Rosendale",
+    "Sex": "Male",
+    "Age": 21
+  },
+  {
+    "ID": 8,
+    "Name": "Jeanethe Falvey",
+    "Address": "3 Nice Street, Rosendale",
+    "Sex": "Female",
+    "Age": 21
+  }
+]
+```
+
