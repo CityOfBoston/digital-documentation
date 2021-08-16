@@ -118,7 +118,7 @@ HEADER "Authorization: bearer xxxx-xxxxx-xxxxx"
 
 ### Authentication
 
-{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/auth" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/auth" %}
 {% api-method-summary %}
 Authenticate User
 {% endapi-method-summary %}
@@ -227,7 +227,7 @@ If there is an error generating the token, or any other server-side error a 500 
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/auth/refresh" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/auth/refresh" %}
 {% api-method-summary %}
 Refresh Authentication Token
 {% endapi-method-summary %}
@@ -361,7 +361,7 @@ When a user attempts to perform a task with insufficient permissions, a 403 erro
 
 ### User Management
 
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/users" %}
+{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/v1/users" %}
 {% api-method-summary %}
 List all Users \(paged\)
 {% endapi-method-summary %}
@@ -419,7 +419,7 @@ Returns a JSON Array with user details.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/users/:useridentifier" %}
+{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/v1/users/:useridentifier" %}
 {% api-method-summary %}
 List a single User
 {% endapi-method-summary %}
@@ -473,7 +473,7 @@ Returns a JSON Array with user details.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/users/:useridentifier/connections" %}
+{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/v1/users/:useridentifier/connections" %}
 {% api-method-summary %}
 List Connections available to a User
 {% endapi-method-summary %}
@@ -526,7 +526,7 @@ Returns an array of connection string records which the requested user is permis
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/users" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/users" %}
 {% api-method-summary %}
 Add a new User
 {% endapi-method-summary %}
@@ -610,7 +610,7 @@ As well as the common error messages, an error will be thrown if:
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="patch" host="https://dbconnector.digital-staging.boston.gov" path="/users/:useridentifier" %}
+{% api-method method="patch" host="https://dbconnector.digital-staging.boston.gov" path="/v1/users/:useridentifier" %}
 {% api-method-summary %}
 Update an existing User
 {% endapi-method-summary %}
@@ -651,7 +651,7 @@ Bearer: A valid authToken
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://dbconnector.digital-staging.boston.gov" path="/user/userid" %}
+{% api-method method="delete" host="https://dbconnector.digital-staging.boston.gov" path="/v1/user/userid" %}
 {% api-method-summary %}
 Delete an existing User
 {% endapi-method-summary %}
@@ -692,7 +692,7 @@ Bearer: A valid authToken
 
 ### Remote System Connections
 
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/connections" %}
+{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connections" %}
 {% api-method-summary %}
 List all Connections \(paged\)
 {% endapi-method-summary %}
@@ -725,7 +725,7 @@ Bearer: A valid authToken.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/connections/:token" %}
+{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token" %}
 {% api-method-summary %}
 List single Connection
 {% endapi-method-summary %}
@@ -758,7 +758,7 @@ Bearer: A valid connToken.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/connections/:token/users" %}
+{% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token/users" %}
 {% api-method-summary %}
 List Users who may use a Connection
 {% endapi-method-summary %}
@@ -790,7 +790,7 @@ Bearer: A valid connToken.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/connection" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connection" %}
 {% api-method-summary %}
 Add a new Connection
 {% endapi-method-summary %}
@@ -823,7 +823,7 @@ Bearer: A valid authToken.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/connections/:token/user/:userid" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token/user/:userid" %}
 {% api-method-summary %}
 Permission User to use Connection
 {% endapi-method-summary %}
@@ -859,7 +859,7 @@ A userid from the **/auth** request.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="patch" host="https://dbconnector.digital-staging.boston.gov" path="/connections/:token" %}
+{% api-method method="patch" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token" %}
 {% api-method-summary %}
 Update an existing Connection
 {% endapi-method-summary %}
@@ -891,7 +891,7 @@ Bearer: A valid authToken.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://dbconnector.digital-staging.boston.gov" path="/connections/:token" %}
+{% api-method method="delete" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token" %}
 {% api-method-summary %}
 Delete an existing Connection
 {% endapi-method-summary %}
@@ -924,7 +924,7 @@ Bearer: A valid authToken
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://dbconnector.digital-staging.boston.gov" path="/connection/:token/user/:userid" %}
+{% api-method method="delete" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connection/:token/user/:userid" %}
 {% api-method-summary %}
 Remove permission for User on Connection
 {% endapi-method-summary %}
@@ -962,7 +962,7 @@ The userid from the **/auth** request.
 
 ### Execute Commands on Remote System
 
-{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/query/:driver" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/query/:driver" %}
 {% api-method-summary %}
 Run SQL Query
 {% endapi-method-summary %}
@@ -1017,7 +1017,7 @@ A JSON string containing parameters to be substituted into the **statement** par
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/select/:driver" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/select/:driver" %}
 {% api-method-summary %}
 Run Select Query
 {% endapi-method-summary %}
