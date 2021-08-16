@@ -1017,6 +1017,23 @@ A JSON string containing parameters to be substituted into the **statement** par
 {% endapi-method-spec %}
 {% endapi-method %}
 
+####  Note on statement and args \(parameters\)
+
+The statement field may contain "named tokens" which will be substituted into the statement prior to execution.
+
+ For Example: 
+
+```javascript
+statement: 'SELECT {a} FROM {c} ORDER BY {b};',
+args: '{"a": "ID", "b": "CreateDate", "c": "dbo.users"}'
+```
+
+Expands out to:
+
+```sql
+SELECT ID FROM dbo.users ORDER BY CreateDate;
+```
+
 {% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/select/:driver" %}
 {% api-method-summary %}
 Run Select Query
@@ -1089,23 +1106,6 @@ Page to be returned. Defaults to page 0 \(first page\)
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-#### Note on statement and args \(parameters\).
-
-The statement field may contain "named tokens" which will be substituted into the statement prior to execution.
-
-For Example: 
-
-```text
-statement: 'SELECT {a} FROM {c} ORDER BY {b};',
-args: '{"a": "ID", "b": "CreateDate", "c": "dbo.users"}'
-```
-
-Expands out to:
-
-```text
-SELECT ID FROM dbo.users ORDER BY CreateDate;
-```
 
 ### User Permissions
 
