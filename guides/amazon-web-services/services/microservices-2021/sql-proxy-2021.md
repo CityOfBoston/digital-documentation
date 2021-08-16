@@ -1126,12 +1126,13 @@ In the filter fields for the `/select`, `/update` and `/delete` endpoints, the f
 
 | Filter field shorthand | Meaning |
 | :--- | :--- |
-| {"username": "david"} | return records where the **username** is exactly equal to "david". |
-| {"username": "!david"} | return records where the username is not equal to "david". \(the '!' must be the first char of the string.\) |
-| {"username": "david%"} | return records where "david" is at the start of the username field. |
-| {"username": "%david"} | return records where "david" at the end of the username field. |
-| {"username": "%david%"} | return records where "david" is contained in the username field. |
-| {"username": \["david", "michael"\] | return records where the username is "david" or "michael" |
+| {"username": "david"} | return records where the _username_ is exactly equal to "david". |
+| {"**!**username": "david"} | return records where the _username_ is not equal to "david". \(the '!' must be the first char of the string.\) |
+| {"username": "david**%**"} | return records where "david" is at the start of the _username_ field. |
+| {"username": "**%**david"} | return records where "david" at the end of the _username_ field. |
+| {"username": "**%**david**%**"} | return records where "david" is contained in the _username_ field. |
+| {"username": **\[**"david", "michael"**\]** | return records where the _username_ is "david" or "michael". |
+| {"**^**username": "david"} | return records using an OR join for this filter.  Care as the AND/OR predicates are applied in order they occur in the filter array. |
 
 ### Test Data
 
