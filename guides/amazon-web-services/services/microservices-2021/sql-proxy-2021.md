@@ -1061,7 +1061,7 @@ A JSON array of key/value pair objects containing filtering options for the data
 e.g. `[ {"ID": 1}, {"enabled": "false"} ]`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="order" type="array" required=false %}
+{% api-method-parameter name="sort" type="array" required=false %}
 A JSON string array of fields to sort by  
 e.g. `[ "ID DESC", "name" ]`
 {% endapi-method-parameter %}
