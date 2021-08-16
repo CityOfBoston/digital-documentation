@@ -1056,8 +1056,8 @@ Fields to return. If omitted then all fields will be returned.
 e.g. `[ "ID", "name", "enabled" ]`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="where" required=false type="array" %}
-A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.   
+{% api-method-parameter name="filter" required=false type="array" %}
+A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  \(see where arrays\)  
 e.g. `[ {"ID": 1}, {"enabled": "false"} ]`
 {% endapi-method-parameter %}
 
@@ -1119,6 +1119,19 @@ Each user account defined in DBConnector has an assigned role.
 | OWNER | 4096 | Can use all endpoints |
 
 Generally, the roles are additive, so a SUPER-USER can perform all the tasks a NORMAL-USER can perform.
+
+### **Where Arrays**
+
+In the filter fields for the `/select`, `/update` and `/delete` endpoints, the following directives can be used: 
+
+| Filter field shorthand | Meaning |
+| :--- | :--- |
+| {"username": "david"} | return records where the **username** is exactly equal to "david". |
+| {"username": "!david"} | return records where the username is not equal to "david". \(the '!' must be the first char of the string.\) |
+| {"username": "david%"} | return records where "david" is at the start of the username field. |
+| {"username": "%david"} | return records where "david" at the end of the username field. |
+| {"username": "%david%"} | return records where "david" is contained in the username field. |
+| {"username": \["david", "michael"\] | return records where the username is "david" or "michael" |
 
 ### Test Data
 
