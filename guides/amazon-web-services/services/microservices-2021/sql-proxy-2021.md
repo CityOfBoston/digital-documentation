@@ -1120,7 +1120,7 @@ Runs a command on the remote system to create a new record.
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name=":driver" type="string" required=true %}
-The driver to use to execute the statement on the remote system. At this time, we only have mssql.
+The driver to use to execute the statement on the remote system. At this time, we only have **mssql**.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -1141,7 +1141,7 @@ The table to insert data into
 
 {% api-method-parameter name="fields" type="array" required=true %}
 An array of fields to add values to. Each array element is a separate record to be added to the table.   
-e.g. `{"ID", "Name"}`
+e.g.  `[ "ID", "Name" ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="values" type="array" required=true %}
@@ -1162,6 +1162,70 @@ e.g. `[ [ 1, "david" ], [ 2, "mike" ] ]`
 {
     "result": "success"
 }
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/update/:driver" %}
+{% api-method-summary %}
+Run Update Query
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name=":driver" type="string" required=true %}
+The driver to use to execute the statement on the remote system. At this time, we only have **mssql**.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/vi/delete/:driver" %}
+{% api-method-summary %}
+Run Delete Query
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name=":driver" type="string" required=true %}
+The driver to use to execute the statement on the remote system. At this time, we only have **mssql**.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
