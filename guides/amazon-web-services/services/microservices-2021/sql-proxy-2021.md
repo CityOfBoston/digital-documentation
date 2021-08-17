@@ -1107,6 +1107,67 @@ Page to be returned. Defaults to page 0 \(first page\)
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/insert/:driver" %}
+{% api-method-summary %}
+Run Insert Query
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Runs a command on the remote system to create a new record.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name=":driver" type="string" required=true %}
+The driver to use to execute the statement on the remote system. At this time, we only have mssql.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+A valid authToken.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="token" type="string" required=true %}
+A valid connection string token \(connToken\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="table" type="string" required=true %}
+The table to insert data into
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="fields" type="array" required=true %}
+An array of fields to add values to. Each array element is a separate record to be added to the table.   
+e.g. `{"ID", "Name"}`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="values" type="array" required=true %}
+An array of arrays. Each array is a record. Each field in the record array is a value to add.  
+**Note:** The order of values must match the order of fields.  
+e.g. `[ {1, "david"}, {2, "mike"} ]`
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "result": "success"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 ### User Permissions
 
 Each user account defined in DBConnector has an assigned role.  
