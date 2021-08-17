@@ -962,9 +962,34 @@ The userid from the **/auth** request.
 
 ### Execute Commands on Remote System
 
+#### General SQL Errors
+
+Errors which occur whilst executing the SQL command on the host server are passed back as cleanly as possible.    
+Except for the /query endpoint, syntax errors should not occcur.
+
+Errors which might occur include:
+
+* connection string errors \(credentials, host IPAddress etc\),
+* incorrectly named tables,
+* incorrectly named fields,
+* insufficient permissions to perform task on host,
+* creating duplicate records,
+* table locks,
+* foreign key constraints,
+* ... etc ...
+
+Actual error messages depend upon the drivers being used, and the wording of error reporting from the host.  
+Generally a 400 error will be generated with a "cleaned" error message in this general JSON format:
+
+```text
+{
+    "error": "cleaned error message from host system"
+}
+```
+
 {% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/query/:driver" %}
 {% api-method-summary %}
-Run SQL Query
+Run SQL Statement
 {% endapi-method-summary %}
 
 {% api-method-description %}
