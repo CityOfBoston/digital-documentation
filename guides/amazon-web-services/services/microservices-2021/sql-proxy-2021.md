@@ -1113,7 +1113,7 @@ Run Insert Query
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Runs a command on the remote system to create a new record.
+This endpoint creates a new record \(or records\) in the specified table.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -1126,7 +1126,8 @@ The driver to use to execute the statement on the remote system. At this time, w
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-A valid authToken.
+A valid Authentication Token in format:  
+   "Bearer xxxxx-xxxxxx-xxxxxx"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -1174,7 +1175,7 @@ Run Update Query
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+This endpoint will update existing records in a table.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -1187,9 +1188,30 @@ The driver to use to execute the statement on the remote system. At this time, w
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-A valid authToken.
+A valid authToken in the format:  
+"Bearer xxxxx-xxxxxx-xxxxxx
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="token" type="string" required=true %}
+A valid connection string token \(connToken\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="table" type="string" required=true %}
+The table in which to update data.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="values" type="object" required=true %}
+Object containing key:value pairs where the key is the fieldname and the value is the fields value.  
+e.g. `{ "name":"david", "address": "my house" }`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="filter" type="array" required=true %}
+A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  \(see where arrays\)  
+e.g. `[ {"ID": 1}, {"enabled": "false"} ]` 
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1225,9 +1247,24 @@ The driver to use to execute the statement on the remote system. At this time, w
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-A valid authToken.
+A valid authToken in the format:  
+ "Bearer xxxxx-xxxxxx-xxxxxx"
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="token" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="table" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="filter" type="array" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1271,6 +1308,14 @@ In the filter fields for the `/select`, `/update` and `/delete` endpoints, the f
 | {"username": "**%**david**%**"} | return records where "david" is contained in the _username_ field. |
 | {"username": **\[**"david", "michael"**\]** | return records where the _username_ is "david" or "michael". |
 | {"**^**username": "david"} | return records using an OR join for this filter.  Care as the AND/OR predicates are applied in order they occur in the filter array. |
+
+**Why use an array of objects and not an object?**  
+Because some filters might define the same field twice, which would not make sense in an object.   
+e.g. Suppose we wanted to run this: `SELECT * FROM MyTable WHERE name ='a' OR name = 'b' or name ='c';`    
+To accommodate the filter as an object we would have    
+  `{ "name": "a", "^name": "b", "^name": "c"}` which is not a valid structure.  
+So we use an array of objects thus:  
+   `[ {"name": "a"}, {"^name": "b"}, {"^name": "c"} ]`which is a valid structure.
 
 ### Test Data
 
