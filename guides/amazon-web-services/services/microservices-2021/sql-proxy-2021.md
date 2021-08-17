@@ -1184,6 +1184,12 @@ Run Update Query
 The driver to use to execute the statement on the remote system. At this time, we only have **mssql**.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+A valid authToken.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -1216,6 +1222,12 @@ Run Delete Query
 The driver to use to execute the statement on the remote system. At this time, we only have **mssql**.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+A valid authToken.
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
