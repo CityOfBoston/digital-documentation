@@ -994,7 +994,8 @@ A  valid Authentication Token in format:
 {% endapi-method-parameter %}
 
 {% api-method-parameter required=true name="statement" type="string" %}
-A single statement or command that can be executed on the remote system.
+A single statement or command that can be executed on the remote system.  
+Multiple statements may be included and should be separated by semi-colons.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="args" type="string" required=false %}
@@ -1006,11 +1007,47 @@ A JSON string containing parameters to be substituted into the **statement** par
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
- 
+ Returns a JSON array of arrays of objects.  
+Because the SQL Query \(statement parameter\) may have multiple valid SQL Statements , there is an array returned for each SQL  Statement found. Statements that do not return recordsets \(e.g. delete statements\) will return an empty array. Statements that do return recordsets will return an array of objects where each object is a row from the recordset. 
 {% endapi-method-response-example-description %}
 
 ```
+[
+    [],
+    [
+        {
+            "ID": 1,
+            "Name": "david",
+            ...
+        },
+        {    
+            "ID": 2,
+            "Name": "Jim",
+            ...
+        },
+        ...
+    ],
+    [
+        {
+            "MyVar": "Good Job!"
+        }
+    ],
+    ...
+]
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{ "error": "Missing connection string token" }
+{ "error": "Missing payload" }
+{ "error": "Missing table in payload" }
+{ "error": "Paged query must have sort/order" }
+{ "error": "Must have limit and sort if page defined" }
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -1079,16 +1116,19 @@ e.g. `[ {"ID": 1}, {"enabled": "false"} ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="sort" type="array" required=false %}
-A JSON string array of fields to sort by  
+A JSON string array of fields to sort by. Required if _**limit**_ parameter is provided.  
 e.g. `[ "ID DESC", "name" ]`
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="limit" type="string" required=false %}
-Number of results to return in a page. Defaults to 100
+Number of results to return in a page.   
+If omitted, then defaults to 100 if the _**sort**_ parameter is provided - else all records are returned.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="page" type="string" required=false %}
-Page to be returned. Defaults to page 0 \(first page\)
+Page to be returned.   
+If omitted then defaults to page 0 \(first page\).  
+**Note:** _**Page numbering starts at zero.**_
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1096,11 +1136,37 @@ Page to be returned. Defaults to page 0 \(first page\)
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Returns a JSON array with each record in the table expressed as a row.
 {% endapi-method-response-example-description %}
 
 ```
+[
+    {
+        "ID": 1,
+        "Name": "david",
+        ...
+    },
+    {    
+        "ID": 2,
+        "Name": "Jim",
+        ...
+    },
+    ...
+]      
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Separate errors are reported if fields are missing from the payload.
+{% endapi-method-response-example-description %}
+
+```
+{ "error": "Missing connection string token" }
+{ "error": "Missing payload" }
+{ "error": "Missing table in payload" }
+{ "error": "Paged query must have sort/order" }
+{ "error": "Must have limit and sort if page defined" }
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -1156,13 +1222,33 @@ e.g. `[ [ 1, "david" ], [ 2, "mike" ] ]`
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Returns a confirmation or else the @@IDENTITY value of the record added.
 {% endapi-method-response-example-description %}
 
 ```
+If a single new record is defined in the values array:
+{
+    "Identity": N
+}
+If multiple records defined in the values array:
 {
     "result": "success"
 }
+
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Separate errors are reported if fields are missing from the payload.
+{% endapi-method-response-example-description %}
+
+```
+{ "error": "Missing connection string token" }
+{ "error": "Missing payload" }
+{ "error": "Missing table in payload" }
+{ "error": "Insert must have fields defined" }
+{ "error": "Insert must have field values defined" }
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -1217,11 +1303,28 @@ e.g. `[ {"ID": 1}, {"enabled": "false"} ]`
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+If the command executes successfully.  The Updated value \(N\) indicates how many records were actually updated.  
+**Note:** _The returned value for Updated should be checked, because if no records match the filter provided then no records will be updated - but a 200 code will still be returned._
 {% endapi-method-response-example-description %}
 
 ```
+{
+    "Updated": N
+}
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Separate errors are reported if fields are missing from the payload.
+{% endapi-method-response-example-description %}
+
+```
+{ "error": "Missing connection string token" }
+{ "error": "Missing payload" }
+{ "error": "Missing table in payload" }
+{ "error": "Update must have a filter defined" }
+{ "error": "Update must have field values defined" }
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -1254,15 +1357,16 @@ A valid authToken in the format:
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="token" type="string" required=true %}
-
+A valid connToken
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="table" type="string" required=true %}
-
+The table to delete data from.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="filter" type="array" required=true %}
-
+{% api-method-parameter name="filter" required=true type="array" %}
+A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  \(see where arrays\)  
+e.g. `[ {"ID": 1}, {"enabled": "false"} ]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -1270,11 +1374,27 @@ A valid authToken in the format:
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+If the command executes successfully.  The Deleted value \(N\) indicates how many records were actually deleted.  
+**Note:** _The returned value for Deleted should be checked, because if no records match the filter provided then no records will be deleted - but a 200 code will still be returned._
 {% endapi-method-response-example-description %}
 
 ```
+{
+    "Deleted": N
+}
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Separate errors are reported if fields are missing from the payload.
+{% endapi-method-response-example-description %}
+
+```
+{ "error": "Missing connection string token" }
+{ "error": "Missing payload" }
+{ "error": "Missing table in payload" }
+{ "error": "Delete must have a filter defined" }
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
