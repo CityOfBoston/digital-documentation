@@ -1031,8 +1031,8 @@ A JSON string containing parameters to be substituted into the **statement** par
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
- Returns a JSON array of arrays of objects.  
-Because the SQL Query \(statement parameter\) may have multiple valid SQL Statements , there is an array returned for each SQL  Statement found. Statements that do not return recordsets \(e.g. delete statements\) will return an empty array. Statements that do return recordsets will return an array of objects where each object is a row from the recordset. 
+Returns a JSON array of arrays of objects.  
+Because the statement parameter may be comprised of multiple valid SQL Statements, there is an array returned for each SQL  Statement found. Statements that do not return recordsets \(e.g. delete statements\) will return an empty array. Statements that do return recordsets will return an array of objects where each object is a row from the recordset. 
 {% endapi-method-response-example-description %}
 
 ```
@@ -1078,7 +1078,7 @@ Separate errors are reported if fields are missing from the payload.
 
 ####  Note on statement and args \(parameters\)
 
-The statement field may contain "named tokens" which will be substituted into the statement prior to execution.
+To allow statements to be dynamic/re-used, the statement field may contain "named tokens" which will be substituted into the statement prior to execution. This creates a kind of stored procedure.
 
  For Example: 
 
@@ -1092,6 +1092,21 @@ Expands out to:
 ```sql
 SELECT ID FROM dbo.users ORDER BY CreateDate;
 ```
+
+{% hint style="success" %}
+**Calling Views and Stored Procedures**
+
+You can call views and stored procedures using the `/query` endpoint.  
+**Views:** Treat a view like a table.  
+**SP:** Just pass the following string into the endpoints **statement** payload field:  
+     `EXEC sp_name @param1='david', @param2=21`  
+__where _sp\_name_ is the name of the stored procedure and _@param1_ and _@param2_ are parameters to be passed into the stored procedure.  
+[_https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql?view=sql-server-ver15_](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql?view=sql-server-ver15)  
+  
+_The sp parameters can be passed in via args too !!  
+   statement : "`EXEC sp_name @param1='{a}', @param2={b}`_ `"`  
+   _args : "`{'a': 'david', 'b': 21}`"_
+{% endhint %}
 
 {% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/select/:driver" %}
 {% api-method-summary %}
