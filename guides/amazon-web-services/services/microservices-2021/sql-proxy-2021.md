@@ -1039,7 +1039,7 @@ Because the SQL Query \(statement parameter\) may have multiple valid SQL Statem
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-
+Separate errors are reported if fields are missing from the payload.
 {% endapi-method-response-example-description %}
 
 ```
