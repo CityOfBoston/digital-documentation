@@ -969,9 +969,8 @@ Errors which occur whilst executing an SQL command on the host server are passed
 
 Errors which might occur include:
 
-* connection string errors \(credentials, host IPAddress etc\),
-* incorrectly named tables,
-* incorrectly named fields,
+* connection string errors \(credentials, host DNS/IPAddress etc\),
+* incorrectly named tables and/or incorrectly named fields,
 * insufficient permissions to perform task on host,
 * creating duplicate records,
 * table locks,
