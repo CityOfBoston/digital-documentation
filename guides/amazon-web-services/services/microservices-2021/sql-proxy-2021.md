@@ -964,8 +964,8 @@ The userid from the **/auth** request.
 
 #### General SQL Errors
 
-Errors which occur whilst executing the SQL command on the host server are passed back as cleanly as possible.    
-Except for the /query endpoint, syntax errors should not occcur.
+Errors which occur whilst executing an SQL command on the host server are passed back as cleanly as possible.    
+**Except for the /query endpoint, syntax errors should not occur.**
 
 Errors which might occur include:
 
