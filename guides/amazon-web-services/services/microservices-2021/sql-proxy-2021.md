@@ -1115,7 +1115,7 @@ Each user account defined in DBConnector has an assigned role.
 | :--- | :--- | :--- |
 | READ USER \(NORMAL\) | 1 | Can authenticate and then use the **/select** endpoint |
 | ALTER USER \(SUPER\) | 2 | Can authenticate and then use the **/select, /update** and  **/insert** endpoints |
-| FULL QUERY USER | 4 | Can authenticate and then use the **/select, /update, /insert** and **/delete** endpoints |
+| FULL QUERY USER | 4 | Can authenticate and then use the **/select, /update, /insert, /delete** and **/query** endpoints |
 | ADMIN | 2048 | Can use all query endpoints and can CRUD users and connections and grant user rights to connections |
 | OWNER | 4096 | Can use all endpoints |
 
