@@ -1114,12 +1114,12 @@ Each user account defined in DBConnector has an assigned role.
 | Role | Role\# | Description |
 | :--- | :--- | :--- |
 | READ USER \(NORMAL\) | 1 | Can authenticate and then use the **/select** endpoint |
-| ALTER USER \(SUPER\) | 4 | Can authenticate and then use the **/select, /update** and  **/insert** endpoints |
-| FULL QUERY USER | 8 | Can authenticate and then use the **/select, /update, /insert** and **/delete** endpoints |
+| ALTER USER \(SUPER\) | 2 | Can authenticate and then use the **/select, /update** and  **/insert** endpoints |
+| FULL QUERY USER | 4 | Can authenticate and then use the **/select, /update, /insert** and **/delete** endpoints |
 | ADMIN | 2048 | Can use all query endpoints and can CRUD users and connections and grant user rights to connections |
 | OWNER | 4096 | Can use all endpoints |
 
-Generally, the roles are additive, so a SUPER-USER can perform all the tasks a NORMAL-USER can perform.
+Generally, the roles are hierarchical, so for example: a FULL-QUERY-USER can perform all the tasks a READ-USER can perform.
 
 ### **Where Arrays**
 
