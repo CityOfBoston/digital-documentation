@@ -1045,9 +1045,7 @@ Because the SQL Query \(statement parameter\) may have multiple valid SQL Statem
 ```
 { "error": "Missing connection string token" }
 { "error": "Missing payload" }
-{ "error": "Missing table in payload" }
-{ "error": "Paged query must have sort/order" }
-{ "error": "Must have limit and sort if page defined" }
+{ "error": "Missing statement" }
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
