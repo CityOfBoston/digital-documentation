@@ -1147,7 +1147,7 @@ e.g. `{"ID", "Name"}`
 {% api-method-parameter name="values" type="array" required=true %}
 An array of arrays. Each array is a record. Each field in the record array is a value to add.  
 **Note:** The order of values must match the order of fields.  
-e.g. `[ {1, "david"}, {2, "mike"} ]`
+e.g. `[ [ 1, "david" ], [ 2, "mike" ] ]`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
