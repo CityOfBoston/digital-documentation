@@ -41,7 +41,7 @@ When the Authentication Token expires, the Refresh Token can be passed to the **
 _You could also just re-authenticate on the **/v1/auth** endpoint, but using the refresh token is faster and more efficient in the back-end because the user is not re-validated \(using the DBConnector database\) -saving database connection overhead._
 {% endhint %}
 
-#### 2. Fetch or Verify connToken \(optional\)
+#### 2. Fetch or verify connToken \(optional\)
 
 If you have not saved or been given a connToken \(which is a uuid representing a connection string\) then the connToken can be obtained from the **/v1/connections/:name** endpoint.
 
