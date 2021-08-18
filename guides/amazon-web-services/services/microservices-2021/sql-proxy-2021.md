@@ -962,16 +962,43 @@ Saves a connection string.
 Bearer: A valid authToken.
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="connectionString" type="string" required=true %}
+The connection string, usually as a JSON string.  
+`"{  
+  \"host\":\"somewhere.com\",   
+  \"username\":\"sa\",  
+  \"password\": \"asdfasd\"  
+}"`
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="name" type="string" required=true %}
+A name by which this connection string can be easily referred to.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="description" type="string" required=false %}
+The purpose of the connection string.  
+**Tip:** Include the driver and/or type of connection defined.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="enabled" type="number" required=false %}
+1 \(enabled\) or 0 \(disabled\).  
+Defaults to 1 \(enabled\) 
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=200 %}
+{% api-method-response-example httpCode=201 %}
 {% api-method-response-example-description %}
-
+Returns a message with the newly created connToken.
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "connToken": "12342343412341"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
