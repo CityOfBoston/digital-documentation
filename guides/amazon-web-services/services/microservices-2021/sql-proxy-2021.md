@@ -1681,7 +1681,7 @@ These credentials can be used with the connToken
 45826BE6-1E29-CC64-B49E-550B9610C2EA
 ```
 
-**Data contained in devTable available from connStr \#4**
+**Data contained in testTable available from connStr \#4**
 
 ```text
   {
