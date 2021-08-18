@@ -33,7 +33,7 @@ The authToken is then passed as a "bearer token" in the "Authroization" header -
 **Example request header**
 
 ```text
-HEADER "Authorization: bearer xxxx-xxxxx-xxxxx"
+HEADER "Authorization: Bearer xxxx-xxxxx-xxxxx"
 ```
 
 {% hint style="info" %}
