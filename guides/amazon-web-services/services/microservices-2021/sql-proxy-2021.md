@@ -754,6 +754,17 @@ Bearer: A valid connToken.
 
 ```
 {% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+If the requested connToken is not found in the database.
+{% endapi-method-response-example-description %}
+
+```
+{ "error": "connToken not found" }
+{ "error": "malformed connToken" }
+```
+{% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
