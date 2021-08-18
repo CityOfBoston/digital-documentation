@@ -10,19 +10,52 @@ The City have a number of Data services \(e.g. SQL Servers\) that reside on the 
 
 ## API User Guide
 
-The `DBConnector` microservice is available at **https://dbconnector.digital-staging.boston.gov**
+The `DBConnector` micro-service is available at:
 
-The first step is to post to the **/auth** endpoint, providing a **username** and **password**.  If authenticated, an Authentication Token, and Refresh Token will be returned.  The Authentication Token is valid for 60 seconds, and the Refresh Token for 90 seconds.
+| Environment | API Base URL |
+| :--- | :--- |
+| test | **https://dbconnector.digital-staging.boston.gov** |
+| prod | **-** |
 
-The Authentication Token is then passed as a bearer authorization token and can be used multiple times until it expires.
+### Flow
 
-When the Authentication Token expires, the Refresh Token can be passed to the **/auth/refresh** endpoint and a new Authentication Token will be returned with a 60 second lifetime.  A new Refresh Token will also be generated and returned with a 90 second lifetime.  Using the refresh token is faster and more efficient in the back-end as the user is not re-validated in the database, saving the database connection overhead.
+#### 1. Authenticate \(get or refresh an authToken\)
 
-Once authenticated the API can be used, provided the valid Token is passed in the header.
+The first step is to post to the ****[**/v1/auth**](sql-proxy-2021.md#authenticate-user) ****endpoint, providing **username** and **password** credentials.  
+
+* If authenticated, an Authentication Token, and Refresh Token will be returned.
+* By default, the Authentication Token \(authToken\) is valid for 180 seconds, and the Refresh Token for 900 seconds.
+* When your account was setup, a different lifetime may have been specified for authTokens issued using your credentials.
+* The authToken inherits [role-based permissions](sql-proxy-2021.md#user-permissions) that have been assigned to your credentials.
+
+The authToken is then passed as a "bearer token" in the "Authroization" header - and can be used multiple times until it expires.
+
+**Example request header**
 
 ```text
 HEADER "Authorization: bearer xxxx-xxxxx-xxxxx"
 ```
+
+{% hint style="info" %}
+When the Authentication Token expires, the Refresh Token can be passed to the **/v1/auth/refresh** endpoint and a new Authentication Token will be returned with a 180 second lifetime. A new Refresh Token will also be generated and returned with a 900 second lifetime.   
+_You could also just re-authenticate on the **/v1/auth** endpoint, but using the refresh token is faster and more efficient in the back-end because the user is not re-validated \(using the DBConnector database\) -saving database connection overhead._
+{% endhint %}
+
+#### 2. Fetch or Verify connToken \(optional\)
+
+If you have not saved or been given a connToken \(which is a uuid representing a connection string\) then the connToken can be obtained from the **/v1/connections/:name** endpoint.
+
+**Note:** You will need to pass the authToken in header.
+
+#### 3. Perform database/remoteAPI operation
+
+Depending on the role attached to the authToken \(see [User Permissions](sql-proxy-2021.md#user-permissions)\), you can use the **/select, /insert, /update, /delete** and **/query** endpoints to interact with data on the remote host defined by a connToken.
+
+**Notes:**   
+1. You will need to pass the authToken in the "Authorization" header of your request.   
+2. You will need to pass the connToken \(and other parameters\) in the body/payload of your request
+
+Results from all endpoints will be returned in JSON format.
 
 ### Terminology
 
@@ -39,7 +72,7 @@ HEADER "Authorization: bearer xxxx-xxxxx-xxxxx"
       </td>
       <td style="text-align:left">
         <p>A token which is generated when a user successfully authenticates against
-          the <b>/auth</b> endpoint and starts a session.</p>
+          the <b>/v1/auth</b> endpoint and starts a session.</p>
         <ul>
           <li>This token is used for all subsequent calls to the endpoint during a session.</li>
           <li>The AuthToken has a lifetime which is typically 180s. After that the AuthToken
@@ -52,15 +85,15 @@ HEADER "Authorization: bearer xxxx-xxxxx-xxxxx"
       </td>
       <td style="text-align:left">
         <p>A token which can be used to generate a new AuthToken without re-authenticating.
-          A new AuthToken with a new lifetime of 180s can be generated at <b>/auth/refresh. </b>
+          A new AuthToken with a new lifetime of 180s can be generated at <b>/v1/auth/refresh. </b>
         </p>
         <ul>
           <li>The RefreshToken is generated at the same time as the AuthToken and has
             a lifetime of 900s.</li>
           <li>After the RefreshToken expires, the only way to generate an AuthToken
-            is to authenticate against the <b>/auth</b> endpoint.</li>
+            is to authenticate against the <b>/v1/auth</b> endpoint.</li>
           <li>The benefit of the RefreshToken is to ease load on the database server
-            as AuthToken regeneration at <b>/auth/refresh</b> endpoint does not require
+            as AuthToken regeneration at <b>/v1/auth/refresh</b> endpoint does not require
             a database request,</li>
         </ul>
       </td>
@@ -94,7 +127,7 @@ HEADER "Authorization: bearer xxxx-xxxxx-xxxxx"
       </td>
       <td style="text-align:left">
         <p>Each ConnectionString defined within the <code>DBConnector</code> is issued
-          a unique ConnToken when it is saved. Any query requests made via the <code>DBConnector</code>  <b>/query</b> or <b>/select</b> endpoints
+          a unique ConnToken when it is saved. Any query requests made via the <code>DBConnector</code>  <b>/v1/query</b> or <b>/v1/select</b> endpoints
           provide the ConnToken (rather than a Connection String).</p>
         <ul>
           <li>No Host or Credentials information needs to be stored in the caller system,
@@ -133,7 +166,7 @@ This endpoint is used to initially authenticate the user, and returns an Authent
 {% api-method-request %}
 {% api-method-body-parameters %}
 {% api-method-parameter name="username" type="string" required=true %}
-A username \(either a name or an email\) which is registered in the `DBConnector` \(see /users\)
+A username \(either a name or an email\) which is registered in the `DBConnector` \(see /v1/users\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="password" type="string" required=true %}
@@ -233,7 +266,7 @@ Refresh Authentication Token
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Using a valid Refresh Token \(provided from **/auth** endpoint\), this endpoint will refresh a current \(or expired\) Authentication Token.  
+Using a valid Refresh Token \(provided from **/v1/auth** endpoint\), this endpoint will refresh a current \(or expired\) Authentication Token.  
 Also generates a new Refresh Token.
 {% endapi-method-description %}
 
