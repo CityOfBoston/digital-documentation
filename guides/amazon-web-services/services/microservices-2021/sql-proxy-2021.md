@@ -146,6 +146,11 @@ Results from all endpoints will be returned in JSON format.
       <td style="text-align:left">A session begins when a user authenticates and receives an AuthToken,
         and ends when the AuthToken expires.</td>
     </tr>
+    <tr>
+      <td style="text-align:left"><b>Calling System</b>
+      </td>
+      <td style="text-align:left">The originating application which calls endpoints in this API.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -761,7 +766,19 @@ If the `userid` was not found.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Remote System Connections
+### Connection Strings
+
+A connection string record contains all the information required for a suitable driver to connect to a remote system.
+
+Each connection string record is defined by a unique UUID \(the connToken\) -and also a unique name.
+
+{% hint style="info" %}
+The connToken is used to refer to the remote system in [execution endpoints](sql-proxy-2021.md#execute-commands-on-remote-system) so that connectivity details do not need to be stored in and passed from the calling system.
+{% endhint %}
+
+{% hint style="success" %}
+The connToken \(UUID\) should never change once the connections string record is created, and therefore can be safely stored in the calling system.
+{% endhint %}
 
 {% api-method method="get" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connections" %}
 {% api-method-summary %}
@@ -1117,11 +1134,13 @@ Bearer: A valid authToken
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Execute Commands on Remote System
+### Execution Endpoints 
+
+Running data commands on a Remote System.
 
 #### General SQL Errors
 
-Errors which occur whilst executing an SQL command on the host server are passed back as cleanly as possible.    
+Errors which occur whilst executing an data command on the host server are passed back as cleanly as possible.    
 **Except for the /query endpoint, syntax errors should not occur.**
 
 Errors which might occur include:
