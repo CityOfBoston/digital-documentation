@@ -1179,13 +1179,26 @@ Bearer: A valid authToken
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=200 %}
+{% api-method-response-example httpCode=204 %}
 {% api-method-response-example-description %}
-
+The connection string is disabled.
 {% endapi-method-response-example-description %}
 
 ```
+{}
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+If the connToken provided cannot be found.
+{% endapi-method-response-example-description %}
+
+```
+*** Connection string was not found in system.
+{
+    "error": "Not Found"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -1194,7 +1207,7 @@ Bearer: A valid authToken
 
 {% api-method method="delete" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connection/:token/user/:userid" %}
 {% api-method-summary %}
-Remove permission for User on Connection
+Revoke User Permission for Connection
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -1224,13 +1237,25 @@ Bearer: A valid authToken
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=200 %}
+{% api-method-response-example httpCode=204 %}
 {% api-method-response-example-description %}
-
+If the permission was removed.
 {% endapi-method-response-example-description %}
 
 ```
+{}
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+If the connToken provided was not found.
+{% endapi-method-response-example-description %}
+
+```
+{
+    "error": "Not Found"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
