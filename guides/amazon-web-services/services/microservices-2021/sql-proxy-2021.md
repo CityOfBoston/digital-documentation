@@ -1030,7 +1030,7 @@ Errors related to the parameters passed, or caused by insert action.
 
 {% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connection/:token/user/:userid" %}
 {% api-method-summary %}
-Permission User to use Connection
+Grant User Permission to Connection
 {% endapi-method-summary %}
 
 {% api-method-description %}
