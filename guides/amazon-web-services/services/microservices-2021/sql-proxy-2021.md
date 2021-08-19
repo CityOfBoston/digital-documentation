@@ -1001,6 +1001,26 @@ Returns a message with the newly created connToken.
 }
 ```
 {% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Errors related to the parameters passed, or caused by insert action.
+{% endapi-method-response-example-description %}
+
+```
+{
+    error: "Missing connectionString in payload"
+}
+{
+    error: "Missing name in payload"
+}
+
+*** If the provided Name already exists.
+{
+    error: "Cannot insert duplicate key row in object 'dbo.connTokens' with unique index 'XXXX'. The duplicate key value is (xxx)."
+}
+```
+{% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
