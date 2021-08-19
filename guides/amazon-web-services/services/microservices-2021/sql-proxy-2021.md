@@ -710,6 +710,12 @@ If no record for the `userid` is found:
 {
     "error": "Not Found"
 }
+
+*** Tries to rename username with duplicate
+ {
+     "error": "Username already exists."
+ }
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
