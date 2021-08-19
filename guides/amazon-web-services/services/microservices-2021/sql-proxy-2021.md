@@ -1028,7 +1028,7 @@ Errors related to the parameters passed, or caused by insert action.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token/user/:userid" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/connection/:token/user/:userid" %}
 {% api-method-summary %}
 Permission User to use Connection
 {% endapi-method-summary %}
@@ -1060,13 +1060,34 @@ Bearer: a valid authToken
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=200 %}
+{% api-method-response-example httpCode=201 %}
 {% api-method-response-example-description %}
-
+If the permission is granted.
 {% endapi-method-response-example-description %}
 
 ```
+{}
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Errors related to the payload or actual insertion of the permission
+{% endapi-method-response-example-description %}
+
+```
+*** Required fields missing
+{
+    error: "Missing connectionString in payload"
+}
+{
+    error: "Missing name in payload"
+}
+
+*** Token with that Name already exists
+{
+    error: "Cannot insert duplicate key row in object 'dbo.connTokens' with unique index 'UK_Name'. The duplicate key value is (XXX)."
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
