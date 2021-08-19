@@ -374,8 +374,10 @@ Generally, 401 errors are returned when there is an issue with the AuthToken pro
 ```text
 *** If no authToken was supplied
 {"error": "Missing Authentication Token"}
+
 *** If the authToken supplied has expired.
 {"error": "Expired Token"}
+
 *** If the authToken is unknown or badly formatted
 {"error": "Bad Token"}
 ```
@@ -385,7 +387,7 @@ Generally, 401 errors are returned when there is an issue with the AuthToken pro
 When a user attempts to perform a task with insufficient permissions, a 403 error is generated.  The 403 Errors raised by `DBConnector` typically do not provide much information, but errors are logged. Typical 403 errors are:
 
 * Authenticating account or using token from an unregistered IPAddress
-* Account has insufficient permissions to perform requested task \(see [User Permissions](sql-proxy-2021.md#user-permissions)\)
+* Account has insufficient permissions to perform requested task \(see **Permission** description for each endpoint in this guide and also [User Permissions](sql-proxy-2021.md#user-permissions) section\)
 
 ```text
 {}
