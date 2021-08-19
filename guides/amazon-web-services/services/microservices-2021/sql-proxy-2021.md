@@ -428,7 +428,8 @@ Bearer - A valid connToken
 
 {% api-method-query-parameters %}
 {% api-method-parameter name="page" type="number" required=false %}
-The page number to return.
+The page number to return.  
+**Note:** Page numbering starts at zero.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="limit" type="number" required=false %}
@@ -1096,16 +1097,34 @@ A valid connToken.
 Bearer: A valid authToken
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="connectionString" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="name" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="description" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="enabled" type="integer" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=200 %}
+{% api-method-response-example httpCode=204 %}
 {% api-method-response-example-description %}
-
+If the connection is successfully updated.
 {% endapi-method-response-example-description %}
 
 ```
-
+{}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
