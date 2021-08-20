@@ -1513,7 +1513,8 @@ A valid connection string Token
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="table" type="string" required=true %}
-The table to select data from.
+The table to select data from.  
+**Note:** Can also be a view name
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="fields" required=false type="array" %}
