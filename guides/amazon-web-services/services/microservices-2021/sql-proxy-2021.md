@@ -1452,6 +1452,7 @@ An object containing key:value pairs for parameters to be passed into the stored
 
 {% api-method-parameter name="output" type="object" required=false %}
 An object containing name:type pairs for output parameters to be passed into the stored procedure.  
+The type must be one of the following strings: "number" or "varchar"   
 **Note:** Ouput parameters can be declared in any order.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
