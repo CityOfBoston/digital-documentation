@@ -1418,13 +1418,14 @@ _The sp parameters can be passed in via args too !!
    _args : "`{'a': 'david', 'b': 21}`"_
 {% endhint %}
 
-{% api-method method="post" host="" path="/v1/exec/:driver" %}
+{% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/exec/:driver" %}
 {% api-method-summary %}
 Execute Stored Procedure
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+Execute a stored procedure on the remote system.  
+**Permission:** ALTER, FULL, ADMIN or OWNER
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -1461,6 +1462,18 @@ An object containing key:value pairs for parameters to be passed into the stored
 
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    <results from stored procedure (if any)>
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
 
 {% endapi-method-response-example-description %}
