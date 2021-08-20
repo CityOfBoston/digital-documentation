@@ -1298,7 +1298,7 @@ Generally a 400 error will be generated with a "cleaned" error message in this g
 
 {% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/query/:driver" %}
 {% api-method-summary %}
-Run SQL Statement
+Execute SQL Statement
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -1418,6 +1418,60 @@ _The sp parameters can be passed in via args too !!
    _args : "`{'a': 'david', 'b': 21}`"_
 {% endhint %}
 
+{% api-method method="post" host="" path="/v1/exec/:driver" %}
+{% api-method-summary %}
+Execute Stored Procedure
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name=":driver" type="string" required=true %}
+The driver to use to execute the statement on the remote system.   
+At this time, we only have **mssql**
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+A valid Authentication Token in format:  
+   "Bearer xxxxx-xxxxxx-xxxxxx"
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="token" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="procname" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="params" type="object" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 {% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/select/:driver" %}
 {% api-method-summary %}
 Run Select Query
@@ -1510,6 +1564,7 @@ Separate errors are reported if fields are missing from the payload.
 
 ```
 { "error": "Missing connection string token" }
+{ "error": "connToken not found" }
 { "error": "Missing payload" }
 { "error": "Missing table in payload" }
 { "error": "Paged query must have sort/order" }
@@ -1592,6 +1647,7 @@ Separate errors are reported if fields are missing from the payload.
 
 ```
 { "error": "Missing connection string token" }
+{ "error": "connToken not found" }
 { "error": "Missing payload" }
 { "error": "Missing table in payload" }
 { "error": "Insert must have fields defined" }
@@ -1668,6 +1724,7 @@ Separate errors are reported if fields are missing from the payload.
 
 ```
 { "error": "Missing connection string token" }
+{ "error": "connToken not found" }
 { "error": "Missing payload" }
 { "error": "Missing table in payload" }
 { "error": "Update must have a filter defined" }
@@ -1739,6 +1796,7 @@ Separate errors are reported if fields are missing from the payload.
 
 ```
 { "error": "Missing connection string token" }
+{ "error": "connToken not found" }
 { "error": "Missing payload" }
 { "error": "Missing table in payload" }
 { "error": "Delete must have a filter defined" }
