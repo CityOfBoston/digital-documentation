@@ -1404,18 +1404,10 @@ SELECT ID FROM dbo.users ORDER BY CreateDate;
 ```
 
 {% hint style="success" %}
-**Calling Views and Stored Procedures**
+**Calling Views**
 
-You can call views and stored procedures using the `/query` endpoint.  
-**Views:** Treat a view like a table.  
-**SP:** Just pass the following string into the endpoints **statement** payload field:  
-     `EXEC sp_name @param1='david', @param2=21`  
-__where _sp\_name_ is the name of the stored procedure and _@param1_ and _@param2_ are parameters to be passed into the stored procedure.  
-[_https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql?view=sql-server-ver15_](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql?view=sql-server-ver15)  
-  
-_The sp parameters can be passed in via args too !!  
-   statement : "`EXEC sp_name @param1='{a}', @param2={b}`_ `"`  
-   _args : "`{'a': 'david', 'b': 21}`"_
+You can call views using the `/query` endpoint \(and also the `/select` endpoint\).  
+Treat a view like a table.
 {% endhint %}
 
 {% api-method method="post" host="https://dbconnector.digital-staging.boston.gov" path="/v1/exec/:driver" %}
