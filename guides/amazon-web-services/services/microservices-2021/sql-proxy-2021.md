@@ -1463,7 +1463,7 @@ An object containing key:value pairs for parameters to be passed into the stored
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Return recordset or recordsets from the stored procedure - if any.
 {% endapi-method-response-example-description %}
 
 ```
@@ -1475,11 +1475,15 @@ An object containing key:value pairs for parameters to be passed into the stored
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-
+Separate errors are reported if fields are missing from the payload.
 {% endapi-method-response-example-description %}
 
 ```
-
+{ "error": "Missing connection string token" }
+{ "error": "connToken not found" }
+{ "error": "Missing payload" }
+{ "error": "Missing table in payload" }
+{ "error": "Missing procname in payload" }
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
