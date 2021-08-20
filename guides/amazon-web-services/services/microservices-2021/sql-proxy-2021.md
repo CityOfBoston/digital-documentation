@@ -1445,15 +1445,16 @@ A valid Authentication Token in format:
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="token" type="string" required=true %}
-
+A valid connection string token
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="procname" type="string" required=true %}
-
+The name of the stored procedure to execute
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="params" type="object" required=false %}
-
+An object containing key:value pairs for parameters to be passed into the stored procedure.  
+**Note:** Parameters can be declared in any order.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
