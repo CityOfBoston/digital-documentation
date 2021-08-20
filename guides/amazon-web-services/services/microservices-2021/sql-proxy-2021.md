@@ -1437,17 +1437,22 @@ A valid Authentication Token in format:
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="token" type="string" required=true %}
+{% api-method-parameter name="token" required=true %}
 A valid connection string token
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="procname" type="string" required=true %}
-The name of the stored procedure to execute
+The name of the procedure to execute
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="params" type="object" required=false %}
+{% api-method-parameter type="object" name="params" %}
 An object containing key:value pairs for parameters to be passed into the stored procedure.  
-**Note:** Parameters can be declared in any order.
+**Note**: Input parameters can be declared in any order
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="output" type="object" required=false %}
+An object containing name:type pairs for output parameters to be passed into the stored procedure.  
+**Note:** Ouput parameters can be declared in any order.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
