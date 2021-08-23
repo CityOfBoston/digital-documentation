@@ -1346,6 +1346,22 @@ Because the statement parameter may be comprised of multiple valid SQL Statement
 {% endapi-method-response-example-description %}
 
 ```
+*** If the statement provided contains a single sql statement.
+[
+    {
+        "ID": 1,
+        "Name": "david",
+        ...
+    },
+    {    
+        "ID": 2,
+        "Name": "Jim",
+        ...
+    },
+    ...
+]
+
+*** If the statement provided contains multiple sql statements.
 [
     [],
     [
@@ -1465,8 +1481,96 @@ Return recordset or recordsets from the stored procedure - if any.
 {% endapi-method-response-example-description %}
 
 ```
+*** If the stored procedure contains a single sql statement.
+[
+    {
+        "ID": 1,
+        "Name": "david",
+        ...
+    },
+    {    
+        "ID": 2,
+        "Name": "Jim",
+        ...
+    },
+    ...
+]
+*** If the stored procedure contains multiple statements
+[
+    [],
+    [
+        {
+            "ID": 1,
+            "Name": "david",
+            ...
+        },
+        {    
+            "ID": 2,
+            "Name": "Jim",
+            ...
+        },
+        ...
+    ],
+    [
+        {
+            "MyVar": "Good Job!"
+        }
+    ],
+    ...
+]
+
+*** If the stored procedure executed contains a single sql statement 
+    and output variables.
 {
-    <results from stored procedure (if any)>
+    result: [
+        {
+            "ID": 1,
+            "Name": "david",
+            ...
+        },
+        {    
+            "ID": 2,
+            "Name": "Jim",
+            ...
+        },
+        ...
+    ],
+    output: {
+        param1: "value",
+        param2: "value",
+        ...
+    }
+}
+*** If the stored procedure executed contains multiple sql statements 
+    and output variables.
+{
+    result: [
+        [],
+        [
+            {
+                "ID": 1,
+                "Name": "david",
+                ...
+            },
+            {    
+                "ID": 2,
+                "Name": "Jim",
+                ...
+            },
+            ...
+        ],
+        [
+            {
+                "MyVar": "Good Job!"
+            }
+        ],
+        ...
+    ],
+    output: {
+        param1: "value",
+        param2: "value",
+        ...
+    }
 }
 ```
 {% endapi-method-response-example %}
