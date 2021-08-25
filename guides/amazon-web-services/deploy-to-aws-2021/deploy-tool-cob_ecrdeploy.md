@@ -4,30 +4,11 @@ description: This covers deploying (and using) the deploy tool.
 
 # Deploy Tool \(cob\_ecrDeploy\)
 
-The application uses several AWS resources, including Lambda functions and an EventBridge Rule. These resources are defined in the `template.yaml` file in the project. You can update the template to add AWS resources as needed.
+The application uses several AWS resources, including Lambda functions and an EventBridge Rule. These resources are defined in the `template.yaml` file in the project. 
 
-### Clone the application
-
-To clone the cob\_ecrDeploy source code to your local machine you need the following tools.
-
-* git
-* AWS Credentials
-
-#### AWS Credentials
-
-To clone the repo you will need to have an [SSH Key registered](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html#setting-up-ssh-unixes-keys) in your AWS User account.
-
-Then the repo can be cloned into any directory with this command:
-
-```bash
-git clone ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/cob_ecr_deploy
-```
-
-### Develop, build and test locally
+### SAM CLI
 
 {% hint style="success" %}
-**The SAM CLI**
-
 To Develop and Deploy this application, you will need the Serverless Application Model Command Line Interface \([SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\). SAM CLI is an extension of the AWS CLI that adds functionality for building and testing Lambda applications
 
 To use the SAM CLI, you need the following tools.
@@ -54,6 +35,25 @@ See the following links to get started with your preferred IDE:
 * [Visual Studio](https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/welcome.html)
 {% endhint %}
 
+### Cloning the application
+
+To clone the cob\_ecrDeploy source code to your local machine you need the following tools.
+
+* git
+* AWS Credentials
+
+#### AWS Credentials
+
+To clone the repo you will need to have an [SSH Key registered](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html#setting-up-ssh-unixes-keys) in your AWS User account.
+
+Then the repo can be cloned into any directory with this command:
+
+```bash
+git clone ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/cob_ecr_deploy
+```
+
+### Develop, build and test locally
+
 #### Build locally
 
 The code contained within the repo needs to be built before it can be run, deployed or tested.
@@ -64,9 +64,24 @@ Build the application with the `sam build` command from the root folder of the l
 cob_ecr_deploy$ sam build
 ```
 
-The SAM CLI installs dependencies defined in `ecrDeploy_function/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
+The SAM CLI installs dependencies defined in `ecrDeploy_function/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.  
 
-#### Running and debugging
+#### Development
+
+The actual work of deploying an ECR image is performed by the `lambda_handler()` function in the `app.py` file in the `ecrDeploy_function/ecrDeploy`folder.
+
+* The `lambda_function()`is where you will likely need to make changes to the functions' interaction with ECS: i.e. stopping and starting tasks.
+* The EventBridge rule which triggers the Lambda function is defined within the `template.yaml`file.  _You could also just modify EventBridge Rules in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
+* The IAM permissions for the Lambda function are defined in `template.yaml`and can be changed there. Y_ou could also just modify the Lambda \(or roles/policies in IAM\) in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
+* Environment variables control the passing of variables into the application \(tags/cluster-names etc\).  These can be changed in the `template.yaml`file. Y_ou could also just modify the Lambda in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
+
+{% hint style="info" %}
+After making changes to `app.py`or `template.yaml`\(or any other file in the project\) save the files and test \(see running and debugging sections\).  
+
+When satisfied, commit and push the changed code into the repository and then re-build and re-deploy the app using the SAM CLI \(see next sections\).
+{% endhint %}
+
+#### Running the application
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
@@ -76,13 +91,15 @@ Run functions locally and invoke them with the `sam local invoke` command.
 cob_ecr_deploy$ sam local invoke ecrDeploy_function --event events/event.json
 ```
 
+#### Debugging the application
+
 With the AWS Toolkit, your IDE can be used to add breakpoints and step through code line by line.  See the box-out above for links to installation and debugging instructions for your IDE.
 
 #### Add or edit a resource 
 
 The application template uses AWS Serverless Application Model \(AWS SAM\) to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources such as functions, triggers, and APIs. For resources not included in [the SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use standard [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) resource types.
 
-The template is saved in `template.yaml` which is found in the application root folder.
+The application uses several AWS resources, including Lambda functions and an **EventBridge** Rule. These resources are defined in the `template.yaml` file in the project. 
 
 #### Fetch, tail, and filter Lambda function logs
 
@@ -105,7 +122,7 @@ cob_ecr_deploy$ pip install pytest pytest-mock --user
 cob_ecr_deploy$ python -m pytest tests/ -v
 ```
 
-### Deploy the cob\_ecrDeploy application
+### Deploy the application
 
 Deployment must be performed using the **SAM CLI**.  SAM CLI will use **Docker** to run the repo's functions in an Amazon Linux environment that matches Lambda.
 
@@ -120,13 +137,15 @@ cob_ecr_deploy$ sam deploy
 
 ### Cleanup
 
-To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
+To delete the application after you have created it, use the AWS CLI or the [Cloud Formation pages](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false&stackId=) in the AWS Console. 
+
+**AWS CLI -** Asuming the `samconfig.toml` file has not been used to change the `stack-name`, you can run the following:
 
 ```bash
-aws cloudformation delete-stack --stack-name ecrDeploy-application
+$ aws cloudformation delete-stack --stack-name ecrDeploy-application
 ```
 
-### Resources
+### Other Resources
 
 See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
 
