@@ -9,14 +9,19 @@ The application uses several AWS resources, including Lambda functions and an Ev
 ### SAM CLI
 
 {% hint style="success" %}
-To Develop and Deploy this application, you will need the Serverless Application Model Command Line Interface \([SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\). SAM CLI is an extension of the AWS CLI that adds functionality for building and testing Lambda applications
+To develop and deploy this application, you will need the _Serverless Application Model Command Line Interface_ \([SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\). 
+
+The SAM CLI is an extension of the AWS CLI that adds functionality for building and testing Lambda applications
 
 To use the SAM CLI, you need the following tools.
 
-* AWS Access Keys - [Create credentials file](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-set-up-credentials.html)
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * [Python 3 installed](https://www.python.org/downloads/)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
+
+You will also need to:
+
+* [Create AWS credentials file](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-set-up-credentials.html)
 
 You can also download and use the **AWS Toolkit** plug-in in your preferred integrated development environment \(IDE\).  The AWS Toolkit provides extensions to use the SAM CLI, and also adds step-through debugging experience for Lambda function code. 
 
