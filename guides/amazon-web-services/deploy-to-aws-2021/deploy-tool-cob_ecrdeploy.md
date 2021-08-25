@@ -15,6 +15,14 @@ To clone the cob\_ecrDeploy source code to your local machine you need the follo
 
 #### AWS Credentials
 
+To clone the repo you will need to have an [SSH Key registered](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html#setting-up-ssh-unixes-keys) in your AWS User account.
+
+Then the repo can be cloned into any directory with this command:
+
+```bash
+git clone ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/cob_ecr_deploy
+```
+
 ### Develop, build and test locally
 
 {% hint style="success" %}
@@ -24,6 +32,7 @@ To Develop and Deploy this application, you will need the Serverless Application
 
 To use the SAM CLI, you need the following tools.
 
+* AWS Access Keys - [Create credentials file](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-set-up-credentials.html)
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * [Python 3 installed](https://www.python.org/downloads/)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
