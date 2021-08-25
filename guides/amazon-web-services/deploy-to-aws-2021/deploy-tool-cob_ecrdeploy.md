@@ -42,7 +42,7 @@ See the following links to get started with your preferred IDE:
 
 ### Cloning the application
 
-To clone the cob\_ecrDeploy source code to your local machine you need the following tools.
+To clone the [cob\_ecrDeploy source code ](https://console.aws.amazon.com/codesuite/codecommit/repositories/cob_ecr_deploy/browse/refs/heads/master?region=us-east-1)to your local machine you need the following tools.
 
 * git
 * AWS Credentials
