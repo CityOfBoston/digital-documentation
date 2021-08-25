@@ -66,6 +66,8 @@
     * [Registry-Certs](guides/amazon-web-services/services/registry-certs/README.md)
       * [Marriage Intention](guides/amazon-web-services/services/registry-certs/marriage-intention.md)
     * [Ruby](guides/amazon-web-services/services/ruby.md)
+  * [Deploy to AWS 2021](guides/amazon-web-services/deploy-to-aws-2021/README.md)
+    * [Deploy Tool \(cob\_ecrDeploy\)](guides/amazon-web-services/deploy-to-aws-2021/deploy-tool-cob_ecrdeploy.md)
 * [Libraries and Tools](guides/libraries-and-tools/README.md)
   * [Fleet pattern library](guides/libraries-and-tools/fleet-pattern-library/README.md)
     * [Developers](guides/libraries-and-tools/fleet-pattern-library/developers/README.md)
