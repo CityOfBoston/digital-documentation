@@ -2,17 +2,17 @@
 description: How to update the AMI on our ECS cluster instances
 ---
 
-# Updating the ECS cluster
+# Updating the ECS cluster AMI
 
-The Digital webapps cluster uses the Elastic Container Service on AWS. We have a handful of EC2 instances that actually run the containers.
+The Digital webapps cluster uses the Elastic Container Service on AWS. We have a handful of EC2 instances that actually host the containers.
 
 These instances use a stock Amazon Machine Image \(AMI\) from Amazon designed for Docker that comes with the ECS agent pre-installed. From time to time, Amazon releases a new version of this “ECS-optimized” image, either to upgrade the ECS agent or the underlying OS.
 
-You’ll know there’s a new version of the AMI because we’ve subscribed the digital-dev@boston.gov email address up to Amazon’s notification queue for updates. There will also be a yellow notice box on the ECS interface in the AWS web console.
+~~You’ll know there’s a new version of the AMI because we’ve subscribed the digital-dev@boston.gov email address up to Amazon’s notification queue for updates. There will also be a yellow notice box on the ECS interface in the AWS web console.~~ _**This appears to have stopped as at 09/2021.**_
 
-## Running the update
+## Performing the AMI update
 
-Thanks to our [instance-drain Lambda function](https://github.com/CityOfBoston/digital-lambda/tree/production/instance-drain), updating the cluster images is a zero-downtime process. Nevertheless, it’s best to run this during the weekly digital maintenance window, and make sure that staging looks good before doing it on production.
+Thanks to our [instance-drain Lambda function](https://github.com/CityOfBoston/digital-lambda/tree/production/instance-drain), updating the cluster EC2 images is a zero-downtime process. Nevertheless, it’s best to run this during the weekly digital maintenance window, and make sure that staging looks good before doing it on production.
 
 This process is sometimes referred to as “rolling” the cluster though it’s more accurate that we set up a second cluster of machines and migrate to it.
 

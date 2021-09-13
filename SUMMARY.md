@@ -57,7 +57,7 @@
   * [New service setup](guides/amazon-web-services/new-service-setup/README.md)
     * [Non-Monorepo Service Setup](guides/amazon-web-services/new-service-setup/non-monorepo-service-setup.md)
   * [Webapp Deployment](guides/amazon-web-services/webapp-deployment.md)
-  * [Updating the ECS cluster](guides/amazon-web-services/updating-the-ecs-cluster.md)
+  * [Updating the ECS cluster AMI](guides/amazon-web-services/updating-the-ecs-cluster.md)
   * [Making changes with Terraform](guides/amazon-web-services/making-changes-with-terraform.md)
   * [Mounting AWS SFTP as a Drive \(Mac\)](guides/amazon-web-services/mounting-aws-sftp-as-a-drive-mac.md)
   * [Services](guides/amazon-web-services/services/README.md)
