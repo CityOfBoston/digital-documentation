@@ -42,9 +42,9 @@ The search form for the registration process is contained on this page.  The sea
 
 The residents subscription choices \(streets & dates\) are managed by this page for use in the subscription process.
 
-Subscription is initiated on this page but the actual subscription process is handed off to subscribetostreet.asp \(see below\).
+Subscription is initiated on this page but the actual subscription process is handed off to `subscribetostreet.asp` \([see below](street-sweeping-reminders.md#subscribetostreet-asp)\).
 
-Also the user can download a file which can be imported into calendars supporting the iCalendar format \(this is most calendars\). The file generation and download is managed by addtocalendar.ics.asp \(see below\)
+Also the user can download a file which can be imported into calendars supporting the iCalendar format \(this is most calendars\). The file generation and download is managed by `addtocalendar.ics.asp` \([see below](street-sweeping-reminders.md#addtocalendar-ics-asp)\)
 
 {% hint style="danger" %}
 **Announcements column has a very outdated entry for 2013.**

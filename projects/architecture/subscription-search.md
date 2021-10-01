@@ -1,5 +1,7 @@
 ---
-description: City residents can get a list of subscriptions for a supplied email.
+description: >-
+  City residents can get a list of No Tow related subscriptions for a supplied
+  email.
 ---
 
 # Subscription Search

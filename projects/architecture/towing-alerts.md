@@ -1,14 +1,15 @@
 ---
 description: >-
-  A subscription service where city residents can register a license plate and
-  then receive alerts (email/text/voice) if a vehicle with that plate is towed.
+  A No Tow subscription service where city residents can register a license
+  plate and then receive alerts (email/text/voice) if a vehicle with that plate
+  is towed.
 ---
 
 # Towing Alerts
 
 ## Summary
 
-Residents can use the page at https://www.cityofboston.gov/towing/alerts.
+Residents can use the page at [https://www.cityofboston.gov/towing/alerts](https://www.cityofboston.gov/towing/alerts).
 
 The resident is able to register a license plate and receive one or any of:
 
@@ -29,6 +30,8 @@ D:\wwwcob\towing\alerts
 ```
 
 ### : default.asp
+
+This page generates forms to collect information for email, text and voice alert subscriptions.  The forms all submit to `subscribe.asp` which does the actual subscription for alerts that are sent when a registered vehicle is towed.
 
 ### : subscribe.asp
 
