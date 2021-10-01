@@ -35,6 +35,22 @@ This page generates forms to collect information for email, text and voice alert
 
 ### : subscribe.asp
 
+**Email and text:**
+
+_Subscription -_ First the script checks if the email & plate is already subscribed. If it is not, then the script checks how many license plates are already registered against the email address, if its more than 10 it wont register this new one \(unless the email is on a whitelist - see box out below\).  If the plate is not registered to this address, and the address has less than 10 plates registered to it \(or is whitelisted\) then the email/plate combo is registered in the table `towed_emails` in the database `Towing` on vSQL01 \(aka ZPDMZSQL01\).
+
+_Unsubscription_ - First the script checks if the email & plate is already subscribed. If it is, then the entry is removed from `towed_emails` and is added to `towed_emails_optout` in the database `Towing` on vSQL01 \(aka ZPDMZSQL01\).
+
+{% hint style="info" %}
+Line 125 contains a white list of subscribers who can register more than 10 vehicles.
+{% endhint %}
+
+**Voice:**
+
+_Subscription -_ First the script checks if the email & plate is already subscribed. If it is not, then the script checks how many license plates are already registered against the email address, if its more than 10 it wont register this new one \(there is no whitelist for voice registrations\).  If the plate is not registered to this address, and the address has less than 10 plates registered to it then the email/plate combo is registered in the table `towed_phonenumbers` in the database `Towing` on vSQL01 \(aka ZPDMZSQL01\).
+
+_Unsubscription_ - First the script checks if the email & plate is already subscribed. If it is, then the entry is removed from `towed_phonenumbers` and is added to `towed_phonenumbers_optout` in the database `Towing` on vSQL01 \(aka ZPDMZSQL01\).
+
 ### : remindme.asp
 
 ## Database
