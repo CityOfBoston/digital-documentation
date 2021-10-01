@@ -18,9 +18,15 @@ Emails are managed by a Lyris email server installed on the city network.
 
 ## Code
 
-This is an ASP application hosted on ZPCOBWEB01.web.cob \(a DMZ IIS Server\)
+This is an ASP application hosted on ZPCOBWEB01.web.cob \(a DMZ IIS Server\).
 
-### default.asp
+The code is is found in the following folder:
+
+```text
+D:\wwwcob\publicworks\sweeping
+```
+
+### : default.asp
 
 This page contains a list of cancellations.  It looks like known sweeping holidays \(e.g. Veterans day\) are loaded for the year in advance, and then ad-hoc cancellations \(e.g. Snow or Ice\) are loaded as the cancellation is advised by PWD.  Cancellations for general street sweeping and overnight sweeping are maintained separately.
 
@@ -36,7 +42,7 @@ Also the user can download a file which can be imported into calendars supportin
 Announcements column has a very outdated entry for 2013.
 {% endhint %}
 
-### subscribetostreet.asp
+### : subscribetostreet.asp
 
 This page controls subscriptions and unsubscriptions.
 
@@ -44,7 +50,7 @@ Subscriptions/unsubscriptions involve adding or removing the residents email and
 
 Also, the subscription is added or removed from the Lyris email server at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).
 
-### addtocalendar.ics.asp
+### : addtocalendar.ics.asp
 
 _The iCalendar \(ics\) format is presently supported by: Google Calendar, Apple Calendar \(formerly iCal\), IBM Notes \(formerly Lotus Notes\), Yahoo! Calendar, Evolution \(software\), eM Client, Lightning extension for Mozilla Thunderbird and SeaMonkey, and partially by Microsoft Outlook and Novell GroupWise_
 
