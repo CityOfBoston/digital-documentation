@@ -26,6 +26,10 @@ The code is is found in the following folder:
 D:\wwwcob\publicworks\sweeping
 ```
 
+### : web.config
+
+This is the configuration file and this contains the database credentials.
+
 ### : default.asp
 
 This page contains a list of cancellations.  It looks like known sweeping holidays \(e.g. Veterans day\) are loaded for the year in advance, and then ad-hoc cancellations \(e.g. Snow or Ice\) are loaded as the cancellation is advised by PWD.  Cancellations for general street sweeping and overnight sweeping are maintained separately.
