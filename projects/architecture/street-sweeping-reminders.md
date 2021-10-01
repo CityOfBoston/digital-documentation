@@ -64,7 +64,7 @@ _The iCalendar \(ics\) format is presently supported by: Google Calendar, Apple 
 
 This page extracts a schedule from the `PwdSweeping` table in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\) and formats into an ics format and then downloads the ics file to the residents computer.
 
-## Databases
+## Database
 
 The database server used by this sub-service is **vSQL01** \(aka ZPDMZSQL01\).  The server is hosted in the DMZ in the web.cob \(aka lincdom\) domain.  Developers need a separate and specific account to be set up on the web.cob domain to view/edit databases and tables on this server.
 
