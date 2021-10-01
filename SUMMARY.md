@@ -145,6 +145,7 @@
 * [Contact Form](projects/contact-form.md)
 * [Fleet \(Pattern Library Design System\)](projects/fleet-pattern-library-design-system.md)
 * [Street Sweeping/No Tow](projects/street-sweeping-no-tow.md)
+* [Architecture](projects/architecture.md)
 * [Notifications](projects/todo-los-notifications/README.md)
   * [Everbridge API + UI](projects/todo-los-notifications/everbridge-api-+-ui.md)
   * [Upaknee](projects/todo-los-notifications/upaknee.md)
