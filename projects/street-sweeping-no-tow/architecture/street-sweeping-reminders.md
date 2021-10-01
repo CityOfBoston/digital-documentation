@@ -42,11 +42,13 @@ This page controls subscriptions and unsubscriptions.
 
 Subscriptions/unsubscriptions involve adding or removing the residents email and street into the table `PwdSweepingEmails` in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\).
 
-Also, the subscription needs to be added or removed from Lyris at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).
+Also, the subscription is added or removed from the Lyris email server at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).
 
 ### addtocalendar.ics.asp
 
-Google Calendar, Apple Calendar \(formerly iCal\), IBM Notes \(formerly Lotus Notes\), Yahoo! Calendar, Evolution \(software\), eM Client, Lightning extension for Mozilla Thunderbird and SeaMonkey, and partially by Microsoft Outlook and Novell GroupWis
+_The iCalendar \(ics\) format is presently supported by: Google Calendar, Apple Calendar \(formerly iCal\), IBM Notes \(formerly Lotus Notes\), Yahoo! Calendar, Evolution \(software\), eM Client, Lightning extension for Mozilla Thunderbird and SeaMonkey, and partially by Microsoft Outlook and Novell GroupWise_
+
+This page extracts a schedule from the `PwdSweeping` table in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\) and formats into an ics format and then downloads the ics file.
 
 ## Databases
 
