@@ -16,6 +16,10 @@ Subscription from this page registers the resident for street sweeping reminders
 
 Emails are managed by a Lyris email server installed on the city network.
 
+This service is active, there appear to be around 5 new subscriptions per day.  There are 100,488 \(as at 2021-10-01\) current active subscriptions, but many may be old and refer to defunct emails.  Lyris should be able to provide bounce reports.  
+
+_**If the list is managed in Lyris, then entries removed in Lyris should be manually removed from the PwdSweepingEmails table or the remindme.asp \(see Subscription Search\) will be inaccurate.**_
+
 ## Code
 
 This is an ASP application hosted on **ZPCOBWEB01.web.cob** \(a DMZ IIS Server\).
@@ -93,12 +97,29 @@ The tables used by this sub-service are:
             <br />[schedule info]</li>
         </ul>
       </td>
-      <td style="text-align:left">Contains street sweeping schedule information for streets in the city.</td>
+      <td style="text-align:left">
+        <p>Contains street sweeping schedule information for streets in the city.</p>
+        <p></p>
+        <p>It is unknown how this table is maintained.</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">PwdSweepingEmails</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <ul>
+          <li>EmailAddr</li>
+          <li>StreetID</li>
+        </ul>
+      </td>
+      <td style="text-align:left">
+        <p>Contains information on who has subscribed to what.</p>
+        <p>
+          <br />StreetID maps to the MainID in the PwdSweeping table.
+          <br />
+        </p>
+        <p>This table is maintained by the scripts in this sub-service. It is also
+          used by the <b>Subscription Search </b>(aka remind me).</p>
+      </td>
     </tr>
   </tbody>
 </table>
