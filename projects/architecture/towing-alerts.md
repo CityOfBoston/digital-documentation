@@ -35,7 +35,7 @@ This page generates forms to collect information for email, text and voice alert
 
 ### : subscribe.asp
 
-**Email and text:**
+**Email:**
 
 _Subscription -_ First the script checks if the email & plate is already subscribed. If it is not, then the script checks how many license plates are already registered against the email address, if its more than 10 it wont register this new one \(unless the email is on a whitelist - see box out below\).  If the plate is not registered to this address, and the address has less than 10 plates registered to it \(or is whitelisted\) then the email/plate combo is registered in the table `towed_emails` in the database `Towing` on vSQL01 \(aka ZPDMZSQL01\).
 
@@ -43,6 +43,12 @@ _Unsubscription_ - First the script checks if the email & plate is already subsc
 
 {% hint style="info" %}
 Line 125 contains a white list of subscribers who can register more than 10 vehicles.
+{% endhint %}
+
+**Text:**
+
+{% hint style="danger" %}
+**It seems that you cannot register a text alert, but the process may apper to have done so successfully.**
 {% endhint %}
 
 **Voice:**
@@ -66,6 +72,44 @@ The utility code which manages connections to the Database Server and posts quer
 
 **Note:** the same include file has a mail handler which connects to \(public\) mail.cityofboston.gov \(140.241.251.209\) - but this seems to be deprecated.
 {% endhint %}
+
+The database server used by this sub-service is **vSQL01** \(aka ZPDMZSQL01\).  The server is hosted in the DMZ in the web.cob \(aka lincdom\) domain.  Developers need a separate and specific account to be set up on the web.cob domain to view/edit databases and tables on this server.
+
+### Towing
+
+
+
+The tables used by this sub-service are:
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">TableName</th>
+      <th style="text-align:left">Key Fields</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p>TowedEmails</p>
+        <p>Towed_PhoneNumbers</p>
+      </td>
+      <td style="text-align:left">
+        <ul>
+          <li>subscriber_email, or
+            <ul>
+              <li>subscriber_phone</li>
+            </ul>
+          </li>
+          <li>subscriber_plate</li>
+          <li>subscriber_state</li>
+        </ul>
+      </td>
+      <td style="text-align:left">Contains list of mail and voice subscribers and their plates to monitor.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Connected Services
 
