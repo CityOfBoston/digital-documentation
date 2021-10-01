@@ -54,9 +54,16 @@ Also the user can download a file which can be imported into calendars supportin
 
 This page controls subscriptions and unsubscriptions.
 
-Subscriptions/unsubscriptions involve adding or removing the residents email and street into the table `PwdSweepingEmails` in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\).
+_Subscriptions:_ 
 
-Also, the subscription is added or removed from the Lyris email server at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).
+Subscribing involves first removing and then adding the residents email and street into the table `PwdSweepingEmails` in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\).
+
+* if this is a first time subscription, the user is added or removed from the Lyris email server at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).
+* If this is not a first time subscription, then the users time preference is added to the `members_` table in the `Lyris` database on vSQL01 \(aka\(ZPDMZSQL01\).
+
+_Unsubscriptions:_
+
+Unsubscribing involves removing the residents email and street from the table `PwdSweepingEmails` in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\).
 
 ### : addtocalendar.ics.asp
 
@@ -66,9 +73,17 @@ This page extracts a schedule from the `PwdSweeping` table in the `Towing` datab
 
 ## Database
 
+{% hint style="info" %}
+The utility code which manages connections to the Database Server and posts queries etc to the server is contained within:
+
+`D:\wwwcob\includes\stdf.inc`
+{% endhint %}
+
 The database server used by this sub-service is **vSQL01** \(aka ZPDMZSQL01\).  The server is hosted in the DMZ in the web.cob \(aka lincdom\) domain.  Developers need a separate and specific account to be set up on the web.cob domain to view/edit databases and tables on this server.
 
-The database used by this sub-service is **Towing.**
+### Towing
+
+The main database used by this sub-service is **Towing.**
 
 It appears that the code uses a trusted connection to the database server. To connect to this database you first need to have an account in the lincdom domain.  Then you need to have the Microsoft SQL Server Management Studio installed on your work PC. Then you need to connect to the server at **zpdmzsql01.web.cob** using your lincdom account \(user:LINCDOM\username + password:userpassword\).  This should work.
 
@@ -126,7 +141,15 @@ The tables used by this sub-service are:
 
 PwdSweeping is maintained elsewhere and is active - The last update \(as at 2021-10-01\) was 2021-09-07.  \[**Check with Satyen on how the data gets into that table**\]
 
+### Lyris
+
+There is a database called **Lyris** on the same server \(vSQL01\).  When subscriptions are made to the Lyris endpoint, then 
+
 ## Connected Services
 
-Lyris is used for emails. This is an inhouse email server \(a mailing list server\) which has an API at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml)
+### Lyris
+
+Lyris is used for handling the street sweeping emails. This is an in-house email server \(a mailing list server\) which has an API at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml)
+
+Lyris has a number of standard lists, based on the street sweeping schedule. Based on the users selected options, the code in `subscribe.asp`which receive template emails based Based on the list subscribed to, the 
 
