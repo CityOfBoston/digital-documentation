@@ -99,11 +99,9 @@ The tables used by this sub-service are:
   </tbody>
 </table>
 
-PwdSweeping is maintained elsewhere and is active - The last update \(as at 2021-10-01\) was 2021-09-07.  \[**Checking with Sundar on how the data gets into that table**\]
+PwdSweeping is maintained elsewhere and is active - The last update \(as at 2021-10-01\) was 2021-09-07.  \[**Check with Satyen on how the data gets into that table**\]
 
 ## Connected Services
 
-Lyris is used for emails.
-
-Twillio is used for voice and text alerts.
+Lyris is used for emails. This is an inhouse email server \(a mailing list server\) which has an API at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml)
 
