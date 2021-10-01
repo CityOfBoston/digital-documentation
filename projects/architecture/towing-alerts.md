@@ -53,9 +53,25 @@ _Unsubscription_ - First the script checks if the email & plate is already subsc
 
 ### : remindme.asp
 
+This page allows the user to provide an email address and the system will email a list of plates registered to that email address.
+
+The email handler used is installed as part of the IIS service at ZPCOBWEB01.web.cob \(10.241.250.22\), and the SMTP server the mail is routed through is at **smtp.web.cob** \(10.241.250.209\)
+
 ## Database
 
+{% hint style="info" %}
+The utility code which manages connections to the Database Server and posts queries etc to the server is contained within:
+
+`D:\wwwcob\includes\stdf.inc`
+
+**Note:** the same include file has a mail handler which connects to \(public\) mail.cityofboston.gov \(140.241.251.209\) - but this seems to be deprecated.
+{% endhint %}
+
 ## Connected Services
+
+### Emails originated by sub-service
+
+The emails created and sent by the `remindme.asp` page are routed through an SMTP server the mail at **smtp.web.cob.**
 
 ## Offline Services
 
