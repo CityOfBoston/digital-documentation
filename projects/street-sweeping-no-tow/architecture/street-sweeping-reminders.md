@@ -1,0 +1,60 @@
+---
+description: >-
+  A No Tow subscription service where emails can be sent to registered
+  constituents reminding them of sweeping days for a nominated street.
+---
+
+# Street Sweeping Reminders
+
+## Summary
+
+Residents can use the page at [https://www.cityofboston.gov/publicworks/sweeping/](https://www.cityofboston.gov/publicworks/sweeping/).
+
+First the resident searches for their street or a calendar.  Matching street results are returned from a master schedule/calendar and the resident nominates which streets should be included in the alert.  The resident then supplies an email address and a preferred email reminder time.
+
+Subscription from this page registers the resident for street sweeping reminders, and also for Street Occupancy alerts.
+
+Emails are managed by a Lyris email server installed on the city network.
+
+## Code
+
+This is an ASP application hosted on ZPCOBWEB01.web.cob \(a DMZ IIS Server\)
+
+### default.asp
+
+This page contains a list of cancellations.  It looks like known sweeping holidays \(e.g. Veterans day\) are loaded for the year in advance, and then ad-hoc cancellations \(e.g. Snow or Ice\) are loaded as the cancellation is advised by PWD.  Cancellations for general street sweeping and overnight sweeping are maintained separately.
+
+The search form for the registration process is contained on this page.  The search is conducted against the `PwdSweeping` table in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\).
+
+The residents subscription choices \(streets & dates\) are managed by this page for use in the subscription process.
+
+Actual subscription is initiated on this page but the actual subscription process is handed off to subscribetostreet.asp.
+
+Also the user can download a file which can be imported into calendars supporting the iCalendar format \(this is most calendars\). The file generation and download is managed by addtocalendar.ics.asp
+
+{% hint style="danger" %}
+Announcements column has a very outdated entry for 2013.
+{% endhint %}
+
+### subscribetostreet.asp
+
+This page controls subscriptions and unsubscriptions.
+
+Subscriptions/unsubscriptions involve adding or removing the residents email and street into the table `PwdSweepingEmails` in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\).
+
+Also, the subscription needs to be added or removed from Lyris at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).
+
+### addtocalendar.ics.asp
+
+Google Calendar, Apple Calendar \(formerly iCal\), IBM Notes \(formerly Lotus Notes\), Yahoo! Calendar, Evolution \(software\), eM Client, Lightning extension for Mozilla Thunderbird and SeaMonkey, and partially by Microsoft Outlook and Novell GroupWis
+
+## Databases
+
+The database is Lyris
+
+## Connected Services
+
+Lyris is used for emails.
+
+Twillio is used for voice and text alerts.
+
