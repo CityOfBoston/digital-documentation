@@ -18,7 +18,7 @@ Emails are managed by a Lyris email server installed on the city network.
 
 ## Code
 
-This is an ASP application hosted on ZPCOBWEB01.web.cob \(a DMZ IIS Server\).
+This is an ASP application hosted on **ZPCOBWEB01.web.cob** \(a DMZ IIS Server\).
 
 The code is is found in the following folder:
 
@@ -34,12 +34,12 @@ The search form for the registration process is contained on this page.  The sea
 
 The residents subscription choices \(streets & dates\) are managed by this page for use in the subscription process.
 
-Actual subscription is initiated on this page but the actual subscription process is handed off to subscribetostreet.asp.
+Subscription is initiated on this page but the actual subscription process is handed off to subscribetostreet.asp \(see below\).
 
-Also the user can download a file which can be imported into calendars supporting the iCalendar format \(this is most calendars\). The file generation and download is managed by addtocalendar.ics.asp
+Also the user can download a file which can be imported into calendars supporting the iCalendar format \(this is most calendars\). The file generation and download is managed by addtocalendar.ics.asp \(see below\)
 
 {% hint style="danger" %}
-Announcements column has a very outdated entry for 2013.
+**Announcements column has a very outdated entry for 2013.**
 {% endhint %}
 
 ### : subscribetostreet.asp
@@ -54,7 +54,7 @@ Also, the subscription is added or removed from the Lyris email server at [http:
 
 _The iCalendar \(ics\) format is presently supported by: Google Calendar, Apple Calendar \(formerly iCal\), IBM Notes \(formerly Lotus Notes\), Yahoo! Calendar, Evolution \(software\), eM Client, Lightning extension for Mozilla Thunderbird and SeaMonkey, and partially by Microsoft Outlook and Novell GroupWise_
 
-This page extracts a schedule from the `PwdSweeping` table in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\) and formats into an ics format and then downloads the ics file.
+This page extracts a schedule from the `PwdSweeping` table in the `Towing` database on vSQL01 \(aka ZPDMZSQL01\) and formats into an ics format and then downloads the ics file to the residents computer.
 
 ## Databases
 
