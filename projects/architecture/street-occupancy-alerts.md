@@ -82,6 +82,10 @@ It seems that the Lyris mail server uses the `Lyris` database on vSQL01. It also
 **Get a login to Lyris to see how the listserv process works.**
 {% endhint %}
 
+{% hint style="danger" %}
+**It is possible that the emails are generated outside of Lyris and by the MSSQL Server.  This needs investigation.**
+{% endhint %}
+
 ## Connected Services
 
 ### SAM
