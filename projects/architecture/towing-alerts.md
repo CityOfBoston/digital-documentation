@@ -157,6 +157,8 @@ The police update information on newly towed vehicles every 10 minutes.  It is b
 It is possible that the police push directly to vSQL01.
 {% endhint %}
 
+The data ends up in the table `towed_cars`and insertion causes a trigger to run stored procedures which send out the data and update other log tables.
+
 ### Twillio - Voice Alerts
 
 ### Twillio - Text Alerts
