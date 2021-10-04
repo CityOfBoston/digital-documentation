@@ -145,7 +145,9 @@ PwdSweeping is maintained elsewhere and is active - The last update \(as at 2021
 
 There is a database called **Lyris** on the same server \(vSQL01\).  
 
-It seems that the Lyris mail server uses the `Lyris` database on vSQL01. It also seems the recipients and their send-time preferences are described in the `members_` table.  Further, Lyris seems to get the streets the members are subscribed to from the `PwdSweepingEmails` table. 
+It seems that the Lyris mail server uses the `Lyris` database on vSQL01. It also seems the recipients and their send-time preferences are described in the `members_` table.  Further, Lyris seems to get the streets the members are subscribed to from the `PwdSweepingEmails` table.  
+
+The list used is `no-tow`.
 
 {% hint style="danger" %}
 **Get a login to Lyris to see how the listserv process works.**
@@ -155,5 +157,5 @@ It seems that the Lyris mail server uses the `Lyris` database on vSQL01. It also
 
 ### Lyris
 
-Lyris is used for handling the street sweeping emails. This is an in-house email server \(a mailing list server\) which has an API at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml)
+Lyris is used for handling the street sweeping emails. This is an in-house email server \(a mailing list server\) which has an API at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).  The list used is `no-tow`.
 

@@ -11,13 +11,13 @@ description: >-
 
 Residents can use the page at [https://www.cityofboston.gov/streetoccupancy/search/](https://www.cityofboston.gov/streetoccupancy/search/).
 
-First the resident searches for their street or a specific permit number.  Matching permits are returned as a list, along with a list of streets matching the searchterm or permit provided.  The resident nominates which streets should be included in the alert and then supplies an email address and a preferred email reminder time.
+First the resident searches for their street or a specific permit number.  Matching permits are returned as a list, along with a list of streets matching the search term or permit provided.  The resident nominates which streets should be included in the alert and then supplies an email address and a preferred email reminder time.
 
 ## Code
 
 This is an ASP application hosted on **ZPCOBWEB01.web.cob** \(a DMZ IIS Server\).
 
-The code is is found in the following folder:
+The code is found in the following folder:
 
 ```text
 D:\wwwcob\streetoccupancy\search\
@@ -48,8 +48,6 @@ Unsubscribing involves removing the residents email and street from the table `O
 
 ## Database
 
-
-
 {% hint style="info" %}
 The utility code which manages connections to the Database Server and posts queries etc to the server is contained within:
 
@@ -60,7 +58,7 @@ The database server used by this sub-service is **vSQL01** \(aka ZPDMZSQL01\).  
 
 ### Towing
 
-The main database used by this sub-service is **Towing.**
+The database used by this sub-service is **Towing.**
 
 It appears that the code uses a trusted connection to the database server. To connect to this database you first need to have an account in the lincdom domain.  Then you need to have the Microsoft SQL Server Management Studio installed on your work PC. Then you need to connect to the server at **zpdmzsql01.web.cob** using your lincdom account \(user:LINCDOM\username + password:userpassword\).  This should work.
 
@@ -69,6 +67,20 @@ The tables used by this sub-service are:
 * `OccupancyUpdates`appears to contain information on that last date the permits were synchronized from some external system \(probably Hansen\),
 * `OccupancyPermitsHansen`contains information on issued permits,
 * `SAM_Streets` contains street name information, from the \(most likely sync'd from the SAM system\).
+* `OccupancyEmails` contains a list of subscribers for street occupancy emails
+* `members_`table contains information on email scheduling.
+
+### Lyris
+
+There is a database called **Lyris** on the same server \(vSQL01\).  
+
+It seems that the Lyris mail server uses the `Lyris` database on vSQL01. It also seems the recipients and their send-time preferences are described in the `members_` table.  Further, Lyris seems to get the streets the members are subscribed to from the `OccupancyEmails` table. 
+
+ The list used is `no-tow`.
+
+{% hint style="danger" %}
+**Get a login to Lyris to see how the listserv process works.**
+{% endhint %}
 
 ## Connected Services
 
@@ -87,4 +99,8 @@ Someone should find this migration process.  Maybe Sundar/Satyen or Analytics ha
 Hansen is the CoB permitting system.
 
 Hansen is the authoritative source for issued permits. It is likely that there is some ERL process \(managed by Analytics?\) to move data from Hansen \(MSSQL\) to the Towing Database on ZPDMZSQL01 \(vSQL01\).  The date of the last data sync with Hansen is shown on the search page.
+
+### Lyris
+
+Lyris is used for handling the street occupancy emails. This is an in-house email server \(a mailing list server\) which has an API at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).  The list used is `no-tow`.
 
