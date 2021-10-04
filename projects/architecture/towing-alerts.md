@@ -48,7 +48,7 @@ Line 125 contains a white list of subscribers who can register more than 10 vehi
 **Text:**
 
 {% hint style="danger" %}
-**It seems that you cannot register a text alert, but the process may apper to have done so successfully.**
+**It seems that you cannot register an sms/text alert, but the process may appear to have done so successfully.**
 {% endhint %}
 
 **Voice:**
@@ -92,8 +92,9 @@ The tables used by this sub-service are:
   <tbody>
     <tr>
       <td style="text-align:left">
-        <p>TowedEmails</p>
-        <p>Towed_PhoneNumbers</p>
+        <p>towed_emails</p>
+        <p>towed_phonenumbers</p>
+        <p>towed_sms</p>
       </td>
       <td style="text-align:left">
         <ul>
@@ -119,12 +120,26 @@ The tables used by this sub-service are:
       </td>
       <td style="text-align:left">Contains a list of all vehicles towed by services authorized by the City.</td>
     </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>towed_emails_log</p>
+        <p>towed_phonenumbers_log</p>
+        <p>towed_sms_log</p>
+      </td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">Contains some sort of log of alerts raised</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">towed_warning_log</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">Contains some soft of warnings... possible internal issue log?</td>
+    </tr>
   </tbody>
 </table>
 
-A _trigger_ on the `Towed_Cars`table causes a stored procedure to run when data is added to the table.  The stored procedure evaluates the inserted rows, looks to see if the license plate is registered, and if so ends out an email.  
+A _trigger_ on the `Towed_Cars`table causes a stored procedure to run when data is added to the table.  The stored procedure evaluates the inserted rows, looks to see if the license plate is registered \(`towed_emails, towed_phoennumbers and towed_sms`\), and if so ends out an alert.  
 
-**The email is handled by the SMTP service on the MSSQL Server.**
+**The email/voice is handled by the SMTP service on the MSSQL Server.**
 
 ## Connected Services
 

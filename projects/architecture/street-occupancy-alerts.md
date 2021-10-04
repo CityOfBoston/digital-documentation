@@ -65,7 +65,7 @@ It appears that the code uses a trusted connection to the database server. To co
 The tables used by this sub-service are:
 
 * `OccupancyUpdates`appears to contain information on that last date the permits were synchronized from some external system \(probably Hansen\),
-* `OccupancyPermitsHansen`contains information on issued permits,
+* `OccupancyPermits/OccupancyPermitsHansen`contains information on issued permits,
 * `SAM_Streets` contains street name information, from the \(most likely sync'd from the SAM system\).
 * `OccupancyEmails` contains a list of subscribers for street occupancy emails
 * `members_`table contains information on email scheduling.
