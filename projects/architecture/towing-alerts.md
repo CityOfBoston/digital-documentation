@@ -77,7 +77,7 @@ The database server used by this sub-service is **vSQL01** \(aka ZPDMZSQL01\).  
 
 ### Towing
 
-
+The primary database used by this sub-service is **Towing**. This database holds information on registered plates and vehicles towed.
 
 The tables used by this sub-service are:
 
@@ -108,20 +108,41 @@ The tables used by this sub-service are:
       </td>
       <td style="text-align:left">Contains list of mail and voice subscribers and their plates to monitor.</td>
     </tr>
+    <tr>
+      <td style="text-align:left">Towed_Cars</td>
+      <td style="text-align:left">
+        <ul>
+          <li>License Plate</li>
+          <li>Tow Date-Time</li>
+          <li>Infringement Location</li>
+        </ul>
+      </td>
+      <td style="text-align:left">Contains a list of all vehicles towed by services authorized by the City.</td>
+    </tr>
   </tbody>
 </table>
+
+A _trigger_ on the `Towed_Cars`table causes a stored procedure to run when data is added to the table.  The stored procedure evaluates the inserted rows, looks to see if the license plate is registered, and if so ends out an email.  
+
+**The email is handled by the SMTP service on the MSSQL Server.**
 
 ## Connected Services
 
 ### Emails originated by sub-service
 
-The emails created and sent by the `remindme.asp` page are routed through an SMTP server the mail at **smtp.web.cob.**
+Reminder emails created and sent by the `remindme.asp` page \(one-time & on-demand by the resident\) are routed through an SMTP server the mail at **smtp.web.cob.**
 
-## Offline Services
+Alert emails which are generated as vehicles are towed are originated and handled by the **Towing** database on the MSSQL Server at **vSQL01.** 
 
 ### Police Updates
 
-### Alert Generation
+The police update information on newly towed vehicles every 10 minutes.  It is believed that this information initially goes into the mainframe, and then an ETL process pushes the data to vSQL01. 
+
+{% hint style="info" %}
+It is possible that the police push directly to vSQL01.
+{% endhint %}
+
+### Voice Alerts
 
 qwqw
 
