@@ -157,7 +157,9 @@ The police update information on newly towed vehicles every 10 minutes.  It is b
 It is possible that the police push directly to vSQL01.
 {% endhint %}
 
-### Voice Alerts
+### Twillio - Voice Alerts
+
+### Twillio - Text Alerts
 
 qwqw
 
