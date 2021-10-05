@@ -6,21 +6,21 @@ description: Periodically SSL certificates need updating.
 
 ## Digitcert Issued Certificates
 
-### Acquia - boston.gov
-
-The certificate is updated directly on the Acquia Cloud web console.
-
-To perform this task, you will need to obtain from the **Security Team**, the following:
+To perform these tasks, you will need to obtain from the **Security Team**, the following:
 
 * the `SSL Certificate` \(possibly a `.crt` file\), 
-* the `SSL private key` \(a `.key` file\),
+* the `SSL private key` \(a `.key` file\), and
 * one or more`CA intermediate certificates` \(possibly `.pem` files\).  _\(If there are multiple intermediate certs, you can cut and paste them into a single file with each cert starting on a new line below the old cert.  The order is not important.\)_
 
 All of these files should be readable in a text editor.
 
+### Acquia - boston.gov
+
+The new/updated certificate is updated directly on the Acquia Cloud web console.
+
 **To install the new certificate:**
 
-1. Login to the cloud console, click **Develop** in top menu.
+1. Login to the [cloud console](https://cloud.acquia.com/login), click **Develop** in top menu.
 2. Select an **Organization** "_City of Boston_"\), **Application** \("_bostond8_"\) and **environment** \(e.g. "_Dev_"\).
 3. In the left column menu, select **SSL**
 4. Click the "**Install SSL Certificate**" button
@@ -31,15 +31,34 @@ All of these files should be readable in a text editor.
 
 ### AWS - webapps \(incl. registry.boston.gov\)
 
-04Oct2021.  The registry app uses an Amazon managed certificates. **This will be changed during 10/2021.**
+{% hint style="info" %}
+AWS manages SSL certificates in its **Certificate Manager** service.  
+{% endhint %}
 
-04Oct2021. Other webapps use Amazon Managed Certificates.
+The new/updated Digicert certificate can be loaded into the AWS Certificate Manager and then applied to various services within AWS as required.
 
-AWS manages certificates in its **Certificate Manager** service.  AWS automatically renews expiring certificates and sends out an email.  Simply click on the approval link in the email to allow the cert to be regenerated and installed.
+1. Login to the [AWSConsole](https://console.aws.amazon.com/).
+2. Navigate to the **Certificate Manager**.
+3. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The right entry will have a Type=Imported.
+4. Expand the entry and click the "**Reimport Certificate"** button.
+5. Cut and past the certificate parts onto the page and click "**Review and Import**".
+
+AWS Services which used the old certificate will now use the new one.
+
+_04Oct2021_.  The registry app uses an AWS managed certificate.  
+ **=&gt; This will be changed during 10/2021.**
 
 ### IIS - cityofboston.gov
 
 The cityofboston.gov certificate is installed on the Imperva load balancer/WAF.  Digital do not need to install the certificate on the IIS server at zpcobweb01.
 
 ## AWS Issued Certificates
+
+{% hint style="info" %}
+AWS manages SSL certificates in its **Certificate Manager** service.  
+{% endhint %}
+
+04Oct2021. AWS hosted webapps use Amazon Managed Certificates.
+
+AWS automatically renews expiring certificates and sends out an email.  Simply click on the approval link in the email to allow the cert to be automatically regenerated and installed.
 
