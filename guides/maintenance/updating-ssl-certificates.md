@@ -68,6 +68,6 @@ AWS hosted webapps use certificates managed by AWS.  All webapps without permane
 AWS automatically renews expiring certificates and sends out an email to _webmaster@boston.gov._  Simply click on the approval link in the email to allow the cert to be automatically regenerated and installed.
 
 {% hint style="success" %}
-Someone in the digital needs to be in the webmaster@boston.gov email group, and needs to have the AWS policy [AWSCertificateManagerPrivateCAPrivilegedUser](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AWSCertificateManagerPrivateCAPrivilegedUser) or [AWSCertificateManagerFullAccess](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess) in order to receive the emails and authorize the certificate renewal.
+Someone in the Digital Team needs to be in the webmaster@boston.gov email group, and needs to have the AWS policy [AWSCertificateManagerPrivateCAPrivilegedUser](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AWSCertificateManagerPrivateCAPrivilegedUser) or [AWSCertificateManagerFullAccess](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess) in order to receive the emails and authorize the certificate renewal.
 {% endhint %}
 
