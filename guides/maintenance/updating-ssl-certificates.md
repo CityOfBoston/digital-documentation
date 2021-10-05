@@ -58,7 +58,10 @@ The cityofboston.gov certificate is installed on the Imperva load balancer/WAF. 
 AWS manages SSL certificates in its **Certificate Manager** service.  
 {% endhint %}
 
-04Oct2021. AWS hosted webapps use Amazon Managed Certificates.
+AWS hosted webapps use the AWS Managed Certificates:
+
+* \*.digital-public.boston.gov and 
+* \*.digital-staging.boston.gov.
 
 AWS automatically renews expiring certificates and sends out an email.  Simply click on the approval link in the email to allow the cert to be automatically regenerated and installed.
 
