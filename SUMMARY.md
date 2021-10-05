@@ -132,6 +132,7 @@
 * [Maintenance](guides/maintenance/README.md)
   * [Boston.gov Weekly Maintenance](guides/maintenance/weekly-maintenance.md)
   * [The Hub \(Drupal 7 on AWS\)](guides/maintenance/the-hub-drupal-7-on-aws.md)
+  * [Updating SSL Certificates](guides/maintenance/updating-ssl-certificates.md)
 * [Integrating with Boston.gov](guides/resources.md)
 * [Translation on boston.gov](guides/translation-on-boston.gov.md)
 * [Charts on boston.gov](guides/charts-on-boston.gov.md)
