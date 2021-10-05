@@ -4,7 +4,7 @@ description: >-
   health of Drupal and modules.
 ---
 
-# Weekly Maintenance
+# Boston.gov Weekly Maintenance
 
 It is not necessary to complete all steps each week. In some weeks the module update will consume 100% of the time available, and other weeks there will be no module updates required, or the decision is made not to update any modules this week.
 
