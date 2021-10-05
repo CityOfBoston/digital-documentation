@@ -39,14 +39,16 @@ The new/updated Digicert certificate can be loaded into the AWS Certificate Mana
 
 1. Login to the [AWSConsole](https://console.aws.amazon.com/).
 2. Navigate to the **Certificate Manager**.
-3. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The right entry will have a Type=Imported.
+3. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The correct entry will have a Type=Imported.
 4. Expand the entry and click the "**Reimport Certificate"** button.
 5. Cut and past the certificate parts onto the page and click "**Review and Import**".
 
-AWS Services which used the old certificate will now use the new one.
+AWS Services which used the old certificate will now use the new one without any further changes required.
 
+{% hint style="danger" %}
 _04Oct2021_.  The registry app uses an AWS managed certificate.  
  **=&gt; This will be changed during 10/2021.**
+{% endhint %}
 
 ### IIS - cityofboston.gov
 
