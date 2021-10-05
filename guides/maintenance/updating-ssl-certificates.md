@@ -46,7 +46,7 @@ The new/updated Digicert certificate can be loaded into the AWS Certificate Mana
 AWS Services which used the old certificate will now use the new one without any further changes required.
 
 {% hint style="danger" %}
-_04Oct2021_.  The registry app uses an AWS managed certificate.  
+_04Oct2021_.  The registry app uses an AWS issued certificate.  
  **=&gt; This will be changed during 10/2021.**
 {% endhint %}
 
@@ -57,13 +57,17 @@ The cityofboston.gov certificate is installed on the Imperva load balancer/WAF. 
 ## AWS Issued Certificates
 
 {% hint style="info" %}
-AWS manages SSL certificates in its **Certificate Manager** service.  
+AWS manages and issues SSL certificates in its **Certificate Manager** service.  
 {% endhint %}
 
-AWS hosted webapps use the AWS Managed Certificates:
+AWS hosted webapps use certificates managed by AWS.  All webapps without permanent **\*.boston.gov** URLs use AWS issued certificates.
 
 * \*.digital-public.boston.gov and 
 * \*.digital-staging.boston.gov.
 
-AWS automatically renews expiring certificates and sends out an email.  Simply click on the approval link in the email to allow the cert to be automatically regenerated and installed.
+AWS automatically renews expiring certificates and sends out an email to _webmaster@boston.gov._  Simply click on the approval link in the email to allow the cert to be automatically regenerated and installed.
+
+{% hint style="success" %}
+Someone in the digital needs to be in the webmaster@boston.gov email group, and needs to have the AWS policy [AWSCertificateManagerPrivateCAPrivilegedUser](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AWSCertificateManagerPrivateCAPrivilegedUser) or [AWSCertificateManagerFullAccess](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AWSCertificateManagerFullAccess) in order to receive the emails and authorize the certificate renewal.
+{% endhint %}
 
