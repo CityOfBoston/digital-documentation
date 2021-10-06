@@ -12,6 +12,11 @@ description: Periodically SSL certificates need updating.
 * [ ] cityofboston.gov - city's legacy website, legacy apps hosted on IIS as ZPCOBWEB01,
 * [ ] microservices/apps - utilities hosted on AWS's ECS service.
 
+{% hint style="success" %}
+Ideally certificate cycling activities should be conducted during the weekly Digital maintenance window.  
+If that is not possible, then a Change Management ticket should be raised, \(even if retrospectively\) b/c these are production changes. 
+{% endhint %}
+
 ## Digitcert Issued Certificates
 
 To perform these tasks, you will need to obtain from the **Security Team**, the following:
