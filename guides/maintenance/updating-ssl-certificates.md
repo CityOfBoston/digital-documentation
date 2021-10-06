@@ -26,6 +26,9 @@ All of these files should be readable in a text editor.
 
 The new/updated certificate is updated directly on the Acquia Cloud web console.
 
+This process should be repeated on all environments on Acquia.    
+It is _recommended_ that the certificate first be applied to the `dev` environment so that any issues can be discovered on a non-prod resource ...
+
 **To install the new certificate:**
 
 1. Login to the [cloud console](https://cloud.acquia.com/login), click **Develop** in top menu.
@@ -36,6 +39,7 @@ The new/updated certificate is updated directly on the Acquia Cloud web console.
 6. Open the files provided and insert their contents into the text boxes.  **Note:** The files will all have text in 80 char wide columns and start with text`---- BEGIN CERTIFICATE/RSA KEY ----` 
 7. Click the "**Install"** button
 8. You should see a summary page with the old certificate \(active\) and the new certificate you just installed \(inactive\). When you are ready, you can _Activate_ the new certificate, and then _Deactivate_ and _Remove_ the old certificate.
+9. Repeat for each Acquia environment, \(stage, ci, uat,dev2 & **prod**\)
 
 ### AWS - WebApps & TheHub
 
