@@ -4,6 +4,14 @@ description: Periodically SSL certificates need updating.
 
 # Updating SSL Certificates
 
+## Checklist: Domains managed by Digital
+
+* [ ] www.boston.gov - city's public website hosted by Acquia,
+* [ ] registry.boston.gov - registry suite of apps hosted on AWS's ECS service,
+* [ ] hub.boston.gov - city's intranet hosted  on AWS's ElasticBeanstalk service,
+* [ ] cityofboston.gov - city's legacy website, legacy apps hosted on IIS as ZPCOBWEB01,
+* [ ] microservices/apps - utilities hosted on AWS's ECS service.
+
 ## Digitcert Issued Certificates
 
 To perform these tasks, you will need to obtain from the **Security Team**, the following:
