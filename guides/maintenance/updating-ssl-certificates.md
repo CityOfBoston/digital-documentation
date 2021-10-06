@@ -29,19 +29,22 @@ The new/updated certificate is updated directly on the Acquia Cloud web console.
 7. Click the "**Install"** button
 8. You should see a summary page with the old certificate \(active\) and the new certificate you just installed \(inactive\). When you are ready, you can _Activate_ the new certificate, and then _Deactivate_ and _Remove_ the old certificate.
 
-### AWS - webapps \(incl. registry.boston.gov\)
+### AWS
 
 {% hint style="info" %}
 AWS manages SSL certificates in its **Certificate Manager** service.  
 {% endhint %}
 
+#### WebApps \(incl. registry.boston.gov\)
+
 The new/updated Digicert certificate can be loaded into the AWS Certificate Manager and then applied to various services within AWS as required.
 
 1. Login to the [AWSConsole](https://console.aws.amazon.com/).
-2. Navigate to the **Certificate Manager**.
-3. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The correct entry will have a Type=Imported.
-4. Expand the entry and click the "**Reimport Certificate"** button.
-5. Cut and past the certificate parts onto the page and click "**Review and Import**".
+2. Ensure you are in the `us-east-1`region
+3. Navigate to the **Certificate Manager**.
+4. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The correct entry will have a Type=Imported.
+5. Expand the entry and click the "**Reimport Certificate"** button.
+6. Cut and past the certificate parts onto the page and click "**Review and Import**".
 
 AWS Services which used the old certificate will now use the new one without any further changes required.
 
@@ -49,6 +52,19 @@ AWS Services which used the old certificate will now use the new one without any
 _04Oct2021_.  The registry app uses an AWS issued certificate.  
  **=&gt; This will be changed during 10/2021.**
 {% endhint %}
+
+#### The Hub \(hub.boston.gov\)
+
+The Hub is hosted on AWS using the ElasticBeanstalk service: It is in region `us-east-2`.
+
+1. Login to the [AWSConsole](https://console.aws.amazon.com/).
+2. Ensure you are in the `us-east-2`region
+3. Navigate to the **Certificate Manager**.
+4. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The correct entry will have a Type=Imported.
+5. Expand the entry and click the "**Reimport Certificate"** button.
+6. Cut and past the certificate parts onto the page and click "**Review and Import**".
+
+The hub will now use the new certificate without any further changes required.
 
 ### IIS - cityofboston.gov
 
