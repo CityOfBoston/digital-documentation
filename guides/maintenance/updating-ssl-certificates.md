@@ -37,7 +37,7 @@ The new/updated certificate is updated directly on the Acquia Cloud web console.
 7. Click the "**Install"** button
 8. You should see a summary page with the old certificate \(active\) and the new certificate you just installed \(inactive\). When you are ready, you can _Activate_ the new certificate, and then _Deactivate_ and _Remove_ the old certificate.
 
-### AWS
+### AWS - WebApps & TheHub
 
 {% hint style="info" %}
 AWS manages SSL certificates in its **Certificate Manager** service.  
