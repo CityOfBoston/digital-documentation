@@ -102,13 +102,12 @@ There is a database called **Lyris** on the same server (vSQL01). &#x20;
 
 It seems that the Lyris mail server uses the `Lyris` database on vSQL01. It also seems the recipients and their send-time preferences are described in the `members_` table.  Further, Lyris seems to get the streets the members are subscribed to from the `PwdSweepingEmails` table. &#x20;
 
-The Lyris server is available on `https://listserv.cityofboston.gov` login  can be provided by James Duffy and will be your city email address and a password.  If you are a Server Administrator you will be able to configure the actual Lyris service.
-
-The list used is named `no-tow` and separate Segments are created for the street sweeping "groups" (i.e. groups of streets that get cleaned at the same time).  Users are added to a Segment based on their subscription selections.
-
 ## Connected Services
 
 ### Lyris
 
-Lyris is used for handling the street sweeping emails. This is an in-house email server (a mailing list server) which has an API at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).  The list used is `no-tow`.
+Lyris is used for handling the street sweeping emails. This is an in-house email server (a mailing list server) which has a subscription API at [http://listserv.cityofboston.gov/subscribe/subscribe.tml](http://listserv.cityofboston.gov/subscribe/subscribe.tml).  The list subscribed to for sweeping alerts is `no-tow`.
 
+The Lyris server is available on `https://listserv.cityofboston.gov` login  can be provided by James Duffy and will be your city email address and a password.  If you are a Server Administrator you will be able to configure the actual Lyris service.
+
+The list used is named `no-tow` and separate Segments are created for the street sweeping "groups" (i.e. groups of streets that get cleaned at the same time).  Users are added to a Segment based on their subscription selections.
