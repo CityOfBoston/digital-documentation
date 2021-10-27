@@ -2,14 +2,14 @@
 description: This covers deploying (and using) the deploy tool.
 ---
 
-# Deploy Tool \(cob\_ecrDeploy\)
+# Deploy Tool (cob\_ecrDeploy)
 
-The application uses several AWS resources, including Lambda functions and an EventBridge Rule. These resources are defined in the `template.yaml` file in the project. 
+The application uses several AWS resources, including Lambda functions and an EventBridge Rule. These resources are defined in the `template.yaml` file in the project.&#x20;
 
 ### SAM CLI
 
 {% hint style="success" %}
-To develop and deploy this application, you will need the _Serverless Application Model Command Line Interface_ \([SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\). 
+To develop and deploy this application, you will need the _Serverless Application Model Command Line Interface_ ([SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)).&#x20;
 
 The SAM CLI is an extension of the AWS CLI that adds functionality for building and testing Lambda applications
 
@@ -17,13 +17,13 @@ To use the SAM CLI, you need the following tools.
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * [Python 3 installed](https://www.python.org/downloads/)
-* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
+* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition\&offering=community)
 
 You will also need to:
 
 * [Create AWS credentials file](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-set-up-credentials.html)
 
-You can also download and use the **AWS Toolkit** plug-in in your preferred integrated development environment \(IDE\).  The AWS Toolkit provides extensions to use the SAM CLI, and also adds step-through debugging experience for Lambda function code. 
+You can also download and use the **AWS Toolkit** plug-in in your preferred integrated development environment (IDE).  The AWS Toolkit provides extensions to use the SAM CLI, and also adds step-through debugging experience for Lambda function code.&#x20;
 
 See the following links to get started with your preferred IDE:
 
@@ -42,7 +42,7 @@ See the following links to get started with your preferred IDE:
 
 ### Cloning the application
 
-To clone the [cob\_ecrDeploy source code ](https://console.aws.amazon.com/codesuite/codecommit/repositories/cob_ecr_deploy/browse/refs/heads/master?region=us-east-1)to your local machine you need the following tools.
+To clone the [cob\_ecrDeploy source code ](https://console.aws.amazon.com/codesuite/codecommit/repositories/cob\_ecr\_deploy/browse/refs/heads/master?region=us-east-1)to your local machine you need the following tools.
 
 * git
 * AWS Credentials
@@ -69,21 +69,24 @@ Build the application with the `sam build` command from the root folder of the l
 cob_ecr_deploy$ sam build
 ```
 
-The SAM CLI installs dependencies defined in `ecrDeploy_function/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.  
+The SAM CLI installs dependencies defined in `ecrDeploy_function/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder. &#x20;
 
 #### Development
 
 The actual work of deploying an ECR image is performed by the `lambda_handler()` function in the `app.py` file in the `ecrDeploy_function/ecrDeploy`folder.
 
 * The `lambda_function()`is where you will likely need to make changes to the functions' interaction with ECS: i.e. stopping and starting tasks.
-* The EventBridge rule which triggers the Lambda function is defined within the `template.yaml`file.  _You could also just modify EventBridge Rules in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
-* The IAM permissions for the Lambda function are defined in `template.yaml`and can be changed there. Y_ou could also just modify the Lambda \(or roles/policies in IAM\) in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
-* Environment variables control the passing of variables into the application \(tags/cluster-names etc\).  These can be changed in the `template.yaml`file. Y_ou could also just modify the Lambda in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
+* The EventBridge rule which triggers the Lambda function is defined within the `template.yaml`file. \
+  _You could also just modify EventBridge Rules in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
+* The IAM permissions for the Lambda function are defined in `template.yaml`and can be changed there.\
+  Y_ou could also just modify the Lambda (or roles/policies in IAM) in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
+* Environment variables control the passing of variables into the application (tags/cluster-names etc).  These can be changed in the `template.yaml`file.\
+  Y_ou could also just modify the Lambda in the AWS Console, but if you do that then any future deployment of this app may reset those changes._
 
 {% hint style="info" %}
-After making changes to `app.py`or `template.yaml`\(or any other file in the project\) save the files and test \(see running and debugging sections\).  
+After making changes to `app.py`or `template.yaml`(or any other file in the project) save the files and test (see running and debugging sections). &#x20;
 
-When satisfied, commit and push the changed code into the repository and then re-build and re-deploy the app using the SAM CLI \(see next sections\).
+When satisfied, commit and push the changed code into the repository and then re-build and re-deploy the app using the SAM CLI (see next sections).
 {% endhint %}
 
 #### Running the application
@@ -100,11 +103,11 @@ cob_ecr_deploy$ sam local invoke ecrDeploy_function --event events/event.json
 
 With the AWS Toolkit, your IDE can be used to add breakpoints and step through code line by line.  See the box-out above for links to installation and debugging instructions for your IDE.
 
-#### Add or edit a resource 
+#### Add or edit a resource&#x20;
 
-The application template uses AWS Serverless Application Model \(AWS SAM\) to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources such as functions, triggers, and APIs. For resources not included in [the SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use standard [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) resource types.
+The application template uses AWS Serverless Application Model (AWS SAM) to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources such as functions, triggers, and APIs. For resources not included in [the SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use standard [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) resource types.
 
-The application uses several AWS resources, including Lambda functions and an **EventBridge** Rule. These resources are defined in the `template.yaml` file in the project. 
+The application uses several AWS resources, including Lambda functions and an **EventBridge** Rule. These resources are defined in the `template.yaml` file in the project.&#x20;
 
 #### Fetch, tail, and filter Lambda function logs
 
@@ -142,9 +145,9 @@ cob_ecr_deploy$ sam deploy
 
 ### Cleanup
 
-To delete the application after you have created it, use the AWS CLI or the [Cloud Formation pages](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false&stackId=) in the AWS Console. 
+To delete the application after you have created it, use the AWS CLI or the [Cloud Formation pages](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filteringStatus=active\&filteringText=\&viewNested=true\&hideStacks=false\&stackId=) in the AWS Console.&#x20;
 
-**AWS CLI -** Asuming the `samconfig.toml` file has not been used to change the `stack-name`, you can run the following:
+**AWS CLI - **Asuming the `samconfig.toml` file has not been used to change the `stack-name`, you can run the following:
 
 ```bash
 $ aws cloudformation delete-stack --stack-name ecrDeploy-application
@@ -155,4 +158,3 @@ $ aws cloudformation delete-stack --stack-name ecrDeploy-application
 See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
 
 Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond hello world samples and learn how authors developed their applications: [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
-

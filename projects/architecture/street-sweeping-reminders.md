@@ -20,6 +20,24 @@ This service is active, there appear to be around 5 new subscriptions per day.  
 
 _**If the list is managed in Lyris, then entries removed in Lyris should be manually removed from the PwdSweepingEmails table or the remindme.asp (see Subscription Search) will be inaccurate.**_
 
+### Statistics
+
+_Lyris maintains subscribers (members) in its **no-tow** list._
+
+| Statistics as at 10/27/2021  | Value                                                               |
+| ---------------------------- | ------------------------------------------------------------------- |
+| Total List                   | <p>39,218 (lyris)</p><p>101,139 (PwdSweepingEmails - Towing DB)</p> |
+| August 2021 subscriptions    | 317                                                                 |
+| September 2021 subscriptions | 473                                                                 |
+| August 2021 Unsubscribe      | -258                                                                |
+| August 2021 unsubscribe      | -256                                                                |
+
+![](<../../.gitbook/assets/image (28).png>)
+
+**Note:  **_Lyris subscribes street occupancy and street sweeping members to the same **no-tow** list._
+
+_**Note: **Lyris manages its list members and removes those which cannot be delivered to.  Hence the numbers in Lyris are lower than in the Towing DB tables._
+
 ## Code
 
 This is an ASP application hosted on **ZPCOBWEB01.web.cob** (a DMZ IIS Server).
@@ -80,7 +98,11 @@ The endpoint is designed to be called with an email address and date in the quer
 The script runs sql statements against the `PWDSweepingEmails`, `PWDSweeping` and `PwdDist` tables in the `Towing` database on vSQL01 and applies logic to determine if an email is required for that recipient.
 
 {% hint style="success" %}
-\*The body text for emails is set in this script.\*
+**The body text for the Street Sweeping reminder emails is set in this script.**
+{% endhint %}
+
+{% hint style="info" %}
+The script can be manually edited and cancellation dates can be added.  If the logic determines that a recipient should receive an email, and a matching date is found in the list of cancellations, note is added to the reminder that sweeping is cancelled for the day/night.
 {% endhint %}
 
 ## Database

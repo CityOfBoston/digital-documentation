@@ -14,7 +14,7 @@ Permit Finder currently receives about 500 unique users a week.
 
 ### Documentation
 
-* [PermitFinder Product Proposal](https://docs.google.com/document/d/1BKtVSitjEiEv1vmrlUCppdAxxwYZRNoNIbLO75VNnmY/edit) \(for future iterations, mostly completed by Susanna Ronalds Hannon\)
+* [PermitFinder Product Proposal](https://docs.google.com/document/d/1BKtVSitjEiEv1vmrlUCppdAxxwYZRNoNIbLO75VNnmY/edit) (for future iterations, mostly completed by Susanna Ronalds Hannon)
 * [Permit Finder ETL Documentation](https://docs.google.com/document/d/1PlwKWRNHg688VSRPOYYTtBkFwWGqT-2VS1S5jYWRoI0/edit)
 * Code archive: [PMv3.27.zip](https://drive.google.com/file/d/17j0C7EJrqHkRvKjSubFs4adzigAN7cJP/view?usp=sharing)
 
@@ -33,16 +33,16 @@ The ETL job exports the data via SFTP.
 * In the previous implementation, this was by SFTPing to the EC2 instance that was running the webserver. The PHP scripts would load and parse the CSV for each request.
 * In the rewrite, the SFTP destination is an [AWS Transfer](https://aws.amazon.com/sftp/) endpoint in the Digital team’s AWS account. AWS Transfer uses S3 as its backend. In our case, Civis authenticates as the `civis` user using an SSH private key and the data gets written to the `cob-digital-analytics-buckets` S3 bucket under `permit-finder/`.
 
-The AWS Transfer endpoint, `civis` user, and bucket are all generated from Digital’s Terraform templates: [sftp.tf](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/sftp.tf) and [analytics\_uploads.tf](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/analytics_uploads.tf). If the user’s public key needs to be changed, or if new users or buckets need to be added, that can be done from those templates.
+The AWS Transfer endpoint, `civis` user, and bucket are all generated from Digital’s Terraform templates: [sftp.tf](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/sftp.tf) and [analytics\_uploads.tf](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/analytics\_uploads.tf). If the user’s public key needs to be changed, or if new users or buckets need to be added, that can be done from those templates.
 
-The containerized Node servers in the new version periodically query S3 to see if the files’ last modified date has changed. If it has, they stream the files in, parsing the CSV, and write the rows to a local, temporary [Level](https://github.com/google/leveldb) database. \(See: [PermitFiles.ts](https://github.com/CityOfBoston/digital/blob/develop/services-js/permit-finder/src/server/services/PermitFiles.ts)\)
+The containerized Node servers in the new version periodically query S3 to see if the files’ last modified date has changed. If it has, they stream the files in, parsing the CSV, and write the rows to a local, temporary [Level](https://github.com/google/leveldb) database. (See: [PermitFiles.ts](https://github.com/CityOfBoston/digital/blob/develop/services-js/permit-finder/src/server/services/PermitFiles.ts))
 
 {% hint style="info" %}
-**What’s Level?** Level, developed by Google and used in Chrome, is a very fast disk-based key-value store with a straightforward Node API.
+**What’s Level? **Level, developed by Google and used in Chrome, is a very fast disk-based key-value store with a straightforward Node API.
 
 There’s too much data to store comfortably in memory in the Node processes, but we don’t need the added complexity of a completely separate database or Redis store.
 
-Level is a happy medium between the two that keeps the data localized in the Node process’s container \(the databases are created under `/tmp`\) but without taking up too much memory.
+Level is a happy medium between the two that keeps the data localized in the Node process’s container (the databases are created under `/tmp`) but without taking up too much memory.
 {% endhint %}
 
 ### Next Steps
@@ -72,6 +72,5 @@ The rewrite maintained the SFTPing of CSV files just to keep the number of chang
 
 Here are areas for improvement:
 
-* Have Civis upload to S3 directly. We could enable the Civis account to have access to the Digital team’s S3 bucket via IAM permissions. Civis could put the CSV files there directly, allowing us to remove the AWS Transfer endpoint \(unless some other process has adopted it in the meantime\).
-* Use a format other than CSV files. It would be ideal if Civis could generate a file per permit in JSON format, with the milestone and review data collected in it. Those files could be put directly in S3, and the web server could just download the specific permit’s data from S3 and not need to keep its own local store.  
-
+* Have Civis upload to S3 directly. We could enable the Civis account to have access to the Digital team’s S3 bucket via IAM permissions. Civis could put the CSV files there directly, allowing us to remove the AWS Transfer endpoint (unless some other process has adopted it in the meantime).
+* Use a format other than CSV files. It would be ideal if Civis could generate a file per permit in JSON format, with the milestone and review data collected in it. Those files could be put directly in S3, and the web server could just download the specific permit’s data from S3 and not need to keep its own local store. &#x20;

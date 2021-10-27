@@ -8,25 +8,33 @@ description: >-
 
 ## Quick install guide
 
-For more detailed install and usage instructions for various platforms, see "**More Help**" below. 
+For more detailed install and usage instructions for various platforms, see "**More Help**" below.&#x20;
 
 Ensure you have set up your development environment as described here:
 
-{% page-ref page="../development-environment/" %}
+{% content-ref url="../development-environment/" %}
+[development-environment](../development-environment/)
+{% endcontent-ref %}
 
-1. Clone the public [boston.gov-d8 repo](https://github.com/CityOfBoston/boston.gov-d8) into a local folder `git clone -b <branchname> git@github.com:CityOfBoston/boston.gov-d8.git` _\(City of Boston DoIT recommends that the **develop** branch be used\)_ 
-2. On host computer, change directory to the repository root and use lando to create and start containers: `lando start`
+1. Clone the public [boston.gov-d8 repo](https://github.com/CityOfBoston/boston.gov-d8) into a local folder\
+   `git clone -b <branchname> git@github.com:CityOfBoston/boston.gov-d8.git`\
+   _(City of Boston DoIT recommends that the **develop** branch be used)_\
 
-{% page-ref page="typical-build-output.md" %}
+2. On host computer, change directory to the repository root and use lando to create and start containers:\
+   `lando start`
+
+{% content-ref url="typical-build-output.md" %}
+[typical-build-output.md](typical-build-output.md)
+{% endcontent-ref %}
 
 {% hint style="info" %}
-Depending on the power of the host machine, the Drupal 8 build process for boston.gov can take more than 15-20 minutes.  The composer install and site install \(esp. config import\) tasks can take 5-10 minutes each - with no updates being directed to the console.
+Depending on the power of the host machine, the Drupal 8 build process for boston.gov can take more than 15-20 minutes.  The composer install and site install (esp. config import) tasks can take 5-10 minutes each - with no updates being directed to the console.
 
--&gt; You can follow the process by inspecting the log files in `docroot/setup/`there are links to these files in the console.
+\-> You can follow the process by inspecting the log files in `docroot/setup/`there are links to these files in the console.
 {% endhint %}
 
 {% hint style="success" %}
-From the repository root \(on host\): 
+From the repository root (on host):&#x20;
 
 * to view a list of available **lando** commands:`lando`
 * to view **phing** tasks: `lando phing -l`
@@ -42,7 +50,7 @@ From the repository root \(on host\):
 
 ### **Linux aliases**
 
-To reduce typing at the console, you can add the following aliases to your `~/bashrc`, `~/.bash_aliases` or `~/.bash_profile` files on your development \(host\) OS.
+To reduce typing at the console, you can add the following aliases to your `~/bashrc`, `~/.bash_aliases` or `~/.bash_profile` files on your development (host) OS.
 
 ```bash
 alias ldrush='lando drush'
@@ -57,11 +65,12 @@ function lls() {
 }
 ```
 
-With these aliases, typing \(in a console\) `lls <folder>` will use lando to run `ls -la <folder>` in the default container \(in our case appserver\) and list files there. Whereas, `ls <folder>` will list the folder locally \(i.e. on the host\) as usual.
+With these aliases, typing (in a console) `lls <folder>` will use lando to run `ls -la <folder>` in the default container (in our case appserver) and list files there. Whereas, `ls <folder>` will list the folder locally (i.e. on the host) as usual.
 
 ## More help
 
 For more information on installation, usage and administration of the development area, go to the next section.
 
-{% page-ref page="../development-environment/" %}
-
+{% content-ref url="../development-environment/" %}
+[development-environment](../development-environment/)
+{% endcontent-ref %}

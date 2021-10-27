@@ -1,5 +1,5 @@
 ---
-description: 'Interesting links we’ve come across for documentation, tools, etc.'
+description: Interesting links we’ve come across for documentation, tools, etc.
 ---
 
 # Reference links
@@ -7,18 +7,18 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 ## General
 
 * [Awesome falsehoods](https://github.com/kdeldycke/awesome-falsehood)
-* [Make a README](https://www.makeareadme.com/) - good guide to what should be included
-* [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-* [`robots.txt`](https://support.google.com/webmasters/answer/6062596?hl=en&ref_topic=6061961)
+* [Make a README](https://www.makeareadme.com) - good guide to what should be included
+* [List of HTTP status codes](https://en.wikipedia.org/wiki/List\_of\_HTTP\_status\_codes)
+* [`robots.txt`](https://support.google.com/webmasters/answer/6062596?hl=en\&ref\_topic=6061961)
 * [Demystifying CORS](https://frontendian.co/cors)
 
-## Accessibility \(a11y\)
+## Accessibility (a11y)
 
 ### General
 
-* [Inclusive Design Principles](https://inclusivedesignprinciples.org/)
-* [Testing for accessibility](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility) - how to detect common issues
-* [Web Accessibility Content Guidelines _\(WCAG\)_](https://www.w3.org/WAI/standards-guidelines/wcag/) _-_ w3c
+* [Inclusive Design Principles](https://inclusivedesignprinciples.org)
+* [Testing for accessibility](https://developer.mozilla.org/en-US/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Accessibility) - how to detect common issues
+* [Web Accessibility Content Guidelines _(WCAG)_](https://www.w3.org/WAI/standards-guidelines/wcag/)_ - _w3c
 * [Survey of users with low vision](https://webaim.org/blog/low-vision-survey2-results/) - 2018 results
 
 ### Color
@@ -34,7 +34,7 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 
 ## CSS
 
-* [Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+* [Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media\_Queries/Using\_media\_queries)
 * [Easing functions cheatsheet](https://easings.net/en#)
 * [Guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
@@ -48,7 +48,7 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 
 ## HTML
 
-* [`<head>` element reference](https://gethead.info/)
+* [`<head>` element reference](https://gethead.info)
 
 ### Forms
 
@@ -57,7 +57,7 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 ## JavaScript
 
 * [DOM event reference](https://developer.mozilla.org/en-US/docs/Web/Events)
-* [debounce vs. throttle visual demo](http://demo.nimius.net/debounce_throttle/) - quickly remind yourself what the difference is!
+* [debounce vs. throttle visual demo](http://demo.nimius.net/debounce\_throttle/) - quickly remind yourself what the difference is!
 
 ### Testing
 
@@ -68,11 +68,10 @@ description: 'Interesting links we’ve come across for documentation, tools, et
 * [Lifecycle methods diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 * [Lifecycle methods reference](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
 * [React + TypeScript cheatsheets](https://github.com/sw-yx/react-typescript-cheatsheet)
-* [Hooks interactive cheatsheet](https://react-hooks-cheatsheet.com/)
+* [Hooks interactive cheatsheet](https://react-hooks-cheatsheet.com)
 
 ## SVG
 
 * [SVGOMG](https://jakearchibald.github.io/svgomg/) - In-browser SVG optimization
 * [Element reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element)
 * [Attribute reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute)
-

@@ -8,7 +8,7 @@ Apps are configured by putting files in a secure configuration bucket on S3. The
 
 ## Prerequisites
 
-* An AWS CLI login \(this is different from the AWS account you can log into via the web\)
+* An AWS CLI login (this is different from the AWS account you can log into via the web)
 * `kms:Encrypt` permissions
 * The [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) package installed and [configured](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 
@@ -26,7 +26,7 @@ To create an encrypted environment variable value:
 2. Look for the **Key ID** for your service. Save it in the `$CONFIG_KEY_ID` environment variable.
 3. Log in to AWS CLI with an account that has `kms:Encrypt` permissions for the key.
 4. Run the following command **with a leading space so that it doesn’t appear in your command history**: `aws kms encrypt --output text --key-id $CONFIG_KEY_ID --plaintext STR-TO-BE-ENCRYPTED`
-5. Copy the encrypted value \(the output up to the whitespace\) as the value in `.env`: `PASSWORD_KMS_ENCRYPTED=…`
+5. Copy the encrypted value (the output up to the whitespace) as the value in `.env`: `PASSWORD_KMS_ENCRYPTED=…`
 
 {% hint style="info" %}
 Note that using `--plaintext` on the command line will cause `aws kms` to encrypt the ASCII as-is. When using the `fileb://` form to reference a file on disk, `aws kms` will first Base64 encode the value, which will cause a failure on the app side, which does not expect Base64-encoded values.
@@ -38,7 +38,7 @@ Decrypting a variable which was encrypted  using the method above is possible us
 
 {% tabs %}
 {% tab title="Linux" %}
-```text
+```
 ENCRSTR="AQICAHiwpwrMhuNm...."
 aws kms decrypt \
   --ciphertext-blob fileb://<(echo $ENCRSTR | base64 -d) \
@@ -49,7 +49,7 @@ aws kms decrypt \
 {% endtab %}
 
 {% tab title="Mac & Windows" %}
-```text
+```
 ENCRSTR="AQICAHiwpwrMhuNm...."
 aws kms decrypt \
   --profile=cityofboston \
@@ -61,7 +61,6 @@ aws kms decrypt \
 {% endtab %}
 {% endtabs %}
 
-If you have multiple profiles on your computer, you may use this option in the **aws kms decrypt** command:
+If you have multiple profiles on your computer, you may use this option in the **aws kms decrypt **command:
 
 `--profile=myprofile`
-

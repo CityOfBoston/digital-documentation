@@ -8,7 +8,7 @@ description: One possible workflow / set of tips for using Git
 
 Git has a reputation for being complicated, and part of that is because the problem that it addresses — distributed version control — is a complicated problem.
 
-Here’s a \(hopefully\) short way of thinking about Git that might help you avoid getting your repo in a messy state, or at least guide you out of it when it happens.
+Here’s a (hopefully) short way of thinking about Git that might help you avoid getting your repo in a messy state, or at least guide you out of it when it happens.
 
 ### Commits
 
@@ -34,7 +34,7 @@ This will minimize the number of conflicting changes, which will reduce the numb
 
 A lot of attention when using Git is focused just on branches, but it’s helpful to think of  them in terms of commits, since that’s how Git does.
 
-A branch is nothing more / less than a name that is referring to a particular commit. What makes them particularly useful \(and distinct from Git tags\) is that they can be changed to point to a different commit.
+A branch is nothing more / less than a name that is referring to a particular commit. What makes them particularly useful (and distinct from Git tags) is that they can be changed to point to a different commit.
 
 It’s worth underlining that the history of changes that lead from nothing to a code base is kept not in the branches, but in the commits. The `develop` branch just _points_ to a particular commit and it is that commit — not the `develop` branch — that is a diff against one or more parent commits, all the way back to 0.
 
@@ -44,13 +44,13 @@ For example, `git commit` is used to make a new commit. It takes all the staged 
 
 This works even when you’re not using branches, what Git refers to as “detached HEAD state.” You can still create commits. You’ll need to use their SHAs to reference them, but they’re still there.
 
-![Screenshot of what it looks like to switch to &#x201C;detached HEAD state&#x201D;](../../.gitbook/assets/screen-shot-2019-05-24-at-10.25.35-am.png)
+![Screenshot of what it looks like to switch to “detached HEAD state”](../../.gitbook/assets/screen-shot-2019-05-24-at-10.25.35-am.png)
 
-Now, if your repo is currently checked out to a branch \(because you did `git checkout my-branch`\), the above description of `git commit` all still applies. The `git` tool just does the _added_ behavior of updating the name `my-branch` to point to the new `HEAD` commit you just made.
+Now, if your repo is currently checked out to a branch (because you did `git checkout my-branch`), the above description of `git commit` all still applies. The `git` tool just does the _added _behavior of updating the name `my-branch` to point to the new `HEAD` commit you just made.
 
 Once you think in these terms, Git commands like `reset` make a little more sense. `reset` takes the current branch and points it at a different commit.
 
-So, to undo a `git commit`, you can run `git reset HEAD^` \(`HEAD` is a special name for “what’s checked out now” and `^` means “the commit before”\). `reset` by default does not change the files on disk, so you didn’t lose any work. But, since you’ve changed what `my-branch` is pointing at, the changes that were previously committed now appear as uncommitted. \(If you check your terminal history and find the SHA from the commit, you could run `git reset <SHA>` to re-do the commit by pointing the branch back to it.\)
+So, to undo a `git commit`, you can run `git reset HEAD^` (`HEAD` is a special name for “what’s checked out now” and `^` means “the commit before”). `reset` by default does not change the files on disk, so you didn’t lose any work. But, since you’ve changed what `my-branch` is pointing at, the changes that were previously committed now appear as uncommitted. (If you check your terminal history and find the SHA from the commit, you could run `git reset <SHA>` to re-do the commit by pointing the branch back to it.)
 
 An important caveat: commits that are not either pointed to directly by a branch or in the branch commit’s ancestry are eligible to be garbage-collected by Git. They tend to last in your local repository for about 30 days, and can be referred to by their SHA during that time.
 
@@ -64,15 +64,15 @@ Make sure your shell prompt is Git-aware. It should show you what branch you’r
 
 ### Editor
 
-Use an editor that is Git-aware, in particular one that shows you diffs \(preferably side-by-side\) and lets you edit in the diff. This is invaluable for seeing your work and doing pre-push editing passes on the code before putting it up as a PR.
+Use an editor that is Git-aware, in particular one that shows you diffs (preferably side-by-side) and lets you edit in the diff. This is invaluable for seeing your work and doing pre-push editing passes on the code before putting it up as a PR.
 
-Visual Studio Code is very good at this, with the caveat that if you diff staged changes against the latest commit you can’t edit them with the diff tool. You can edit unstaged changes, however. You can `git reset HEAD` to unstage everything if you need to, or `git reset HEAD^` to un-commit your previous commit \(while preserving its changes in your working directory\).
+Visual Studio Code is very good at this, with the caveat that if you diff staged changes against the latest commit you can’t edit them with the diff tool. You can edit unstaged changes, however. You can `git reset HEAD` to unstage everything if you need to, or `git reset HEAD^` to un-commit your previous commit (while preserving its changes in your working directory).
 
 ### Aliases
 
 You can add “aliases” to your `~/.gitconfig` file that mean you don’t have to type as much on the command line.
 
-```text
+```
 [alias]
 	co = checkout
 	st = status
@@ -83,7 +83,7 @@ You can add “aliases” to your `~/.gitconfig` file that mean you don’t hav
 
 These make `git co` short for `git checkout` and `git st` short for `git status`.
 
-`git amend` is useful for adding the currently staged changes to the previous commit. This is very useful in development to pre-squash your commit and avoid a chain of “tmp” commits in your history. \(Use `git commit --amend` if you want to add to the previous commit but edit the commit message.\)
+`git amend` is useful for adding the currently staged changes to the previous commit. This is very useful in development to pre-squash your commit and avoid a chain of “tmp” commits in your history. (Use `git commit --amend` if you want to add to the previous commit but edit the commit message.)
 
 `git delete-merged` is a cute little housecleaning command that removes all local branches that point at commits that are parents of the current branch. So if you do: `git fetch` `git co origin/develop` `git delete-merged` it will remove any local branch that you’ve already merged into `develop`, keeping the output of `git branch` cleaner.
 
@@ -91,15 +91,15 @@ These make `git co` short for `git checkout` and `git st` short for `git status`
 
 ### Starting a new change
 
-If you’re working on a new feature or bug fix, you’ll want to make a particular branch for it so it can be code-reviewed as a PR. \(See our [GitHub working agreement](./) for proper behavior.\) Since you’re intending to merge it back into the `develop` branch, it’s best to start by branching off of `develop`. But, not just anywhere, but the _latest_ version of `develop` that your coworkers / roommates have committed.
+If you’re working on a new feature or bug fix, you’ll want to make a particular branch for it so it can be code-reviewed as a PR. (See our [GitHub working agreement](./) for proper behavior.) Since you’re intending to merge it back into the `develop` branch, it’s best to start by branching off of `develop`. But, not just anywhere, but the _latest _version of `develop` that your coworkers / roommates have committed.
 
-```text
+```
 $ git fetch
 $ git checkout origin/develop
 $ git checkout -b my-new-branch-name
 ```
 
-This first uses `fetch` to update our local cache of the default `origin` remote \(_i.e._ the GitHub repository\) to the absolute latest. It then checks out the commit that `origin`’s `develop` branch is pointing to in “detached HEAD” state. Finally it creates a new branch with your new name. \(You can use `git co` if you’ve put in the aliases from above.\)
+This first uses `fetch` to update our local cache of the default `origin` remote (_i.e. _the GitHub repository) to the absolute latest. It then checks out the commit that `origin`’s `develop` branch is pointing to in “detached HEAD” state. Finally it creates a new branch with your new name. (You can use `git co` if you’ve put in the aliases from above.)
 
 Following this recipe will ensure that you’re starting new work from the absolute latest that has been checked in to GitHub and will keep you from accidentally committing things to a local `develop` branch and getting mixed up.
 
@@ -111,7 +111,7 @@ While Git provides a “stash” feature for saving things, it can be easy to lo
 
 #### Saving your work
 
-```text
+```
 $ git add -A
 $ git commit -m tmp
 ```
@@ -122,7 +122,7 @@ Then, follow the above “starting a new change” recipe to get yourself set u
 
 #### Restarting your work
 
-```text
+```
 $ git checkout my-previous-branch
 $ git reset HEAD^
 ```
@@ -131,16 +131,16 @@ Use this recipe to get back to what you were working on, with a `git reset HEAD^
 
 ### Updating your branch with the latest
 
-It’s a good habit to make sure your branch is based on the latest changes from the branch you’ll be merging into \(probably `develop`\). You also sometimes _need_ to do this if your change is going to rely on something that got merged after you started working on it \(often because of the above context switch\).
+It’s a good habit to make sure your branch is based on the latest changes from the branch you’ll be merging into (probably `develop`). You also sometimes _need _to do this if your change is going to rely on something that got merged after you started working on it (often because of the above context switch).
 
 #### Fingers-crossed method
 
-```text
+```
 $ git fetch
 $ git rebase origin/develop
 ```
 
-This method updates our cache of `origin` as before, and then runs `git rebase`. Rebasing is a powerful capability of Git that can also get you into a mess of trouble. The first thing `rebase` does is the equivalent of a `reset --hard` to make both your current branch and the contents of your working directory match `origin/develop`. It then re-commits every change from where your branch and `origin/develop` diverged. \(The equivalent of repeated `git cherry-pick`.\)
+This method updates our cache of `origin` as before, and then runs `git rebase`. Rebasing is a powerful capability of Git that can also get you into a mess of trouble. The first thing `rebase` does is the equivalent of a `reset --hard` to make both your current branch and the contents of your working directory match `origin/develop`. It then re-commits every change from where your branch and `origin/develop` diverged. (The equivalent of repeated `git cherry-pick`.)
 
 If your changes are in conflict with ones from the latest version of `develop`, you’ll have to follow the instructions to resolve those.
 
@@ -158,7 +158,7 @@ If you end up in a bad, confusing place, just type `git rebase --abort` to cance
 
 If `git rebase` gave you trouble and you also don’t mind squashing your commits and re-writing the commit message, you can use this method.
 
-```text
+```
 $ git fetch
 $ git merge origin/develop
 $ git reset origin/develop
@@ -166,9 +166,9 @@ $ git add -A
 $ git commit
 ```
 
-This starts with the easy-to-forget `git fetch` to get us up-to-date. It then _merges_ the latest from the `develop` branch into our current branch. Unlike `rebase`, `merge` does _not_ rewrite history and re-apply your commits. This means that when you resolve conflicts you only need to do it between the latest versions of the `develop` branch and your own. You don’t have to do the intermediate state stuff that made `rebase` painful.
+This starts with the easy-to-forget `git fetch` to get us up-to-date. It then _merges _the latest from the `develop` branch into our current branch. Unlike `rebase`, `merge` does _not _rewrite history and re-apply your commits. This means that when you resolve conflicts you only need to do it between the latest versions of the `develop` branch and your own. You don’t have to do the intermediate state stuff that made `rebase` painful.
 
-When used in this way, however, `git merge` will typically leave behind a “merge commit” that points to the two parents \(whatever commits `origin/develop` and your branch were on when it was run\) and contains any diff necessary to resolve conflicts. This is an untidy artifact.
+When used in this way, however, `git merge` will typically leave behind a “merge commit” that points to the two parents (whatever commits `origin/develop` and your branch were on when it was run) and contains any diff necessary to resolve conflicts. This is an untidy artifact.
 
 To excise the merge commit from our branch’s history so that it’s neat, we do a `git reset origin/develop` to point our branch to `develop`’s latest commit. Since `reset` without `--hard` doesn’t change the working directory at all, all of our changes, including the conflict resolutions from the `git merge` , are all still there. `git add -A` followed by `git commit` bundles them all up and commits them.
 
@@ -191,7 +191,7 @@ $ git push
 
 Ready?
 
-This starts with a `git reset` so that all of the changes we’ve been working on are out-in-the-open as uncommitted. \(This is why making sure we’re up-to-date with `origin/develop` is so important before starting.\)
+This starts with a `git reset` so that all of the changes we’ve been working on are out-in-the-open as uncommitted. (This is why making sure we’re up-to-date with `origin/develop` is so important before starting.)
 
 Then, use `git add <filename>` to selectively add changes in that you want to put up for review now. If some files have changes where you only want some of the changes you can often use your editor or `git add -p` to stage just what you need.
 
@@ -217,7 +217,7 @@ $ git rebase HEAD^ --onto origin/develop
 
 After the standard `git fetch`, use `git log` to see how many commits you’ve made since extracting the other PR. If you haven’t done anything since, or have been using `--amend` to squash changes, there will only be one. If there are more, you’ll need a `^` after `HEAD` for each change.
 
-This use of `rebase` takes all changes since `HEAD^` \(meaning: the commit before the current one\) and replays them on to `origin/develop`. Depending on whether or not the test/PR fixes you made intersect with your later work, this will be either annoying to resolve or automatic.
+This use of `rebase` takes all changes since `HEAD^` (meaning: the commit before the current one) and replays them on to `origin/develop`. Depending on whether or not the test/PR fixes you made intersect with your later work, this will be either annoying to resolve or automatic.
 
 ### Being defensive
 
@@ -239,6 +239,4 @@ If you’ve been committing fairly regularly, you can typically always get yours
 * It’s ok to force-push. Doing a `git push --force` has historically been super-dangerous because Git would update all branches on the remote repo to what they look like locally, destroying other folks’ work. This has given it a bad reputation. But, force pushing can be useful for keeping the commit history clean, such as when implementing changes from a PR. The rule of thumb is: _don’t force-push branches that other people are using._ That gets messy because you’re rewriting history on someone and they have to take special actions to accommodate you. But typically you shouldn’t be working from other people’s branches. Get them committed to develop!
 * Give your main branch a better name than “master.” It’s a word that has not-great connotations while also being wholly undescriptive. Is your main branch where development work happens? Call it “develop”. Does it automatically reflect production? Call it “production”.
 * Don’t use a your local branch called `develop`. In fact, run `git branch -D develop` to delete it. It’s too easy to start working from `develop` without realizing that it’s long out-of-date relative to GitHub, or to make commits on your local `develop` branch that you then can’t find anymore. Use `git fetch` and `git checkout origin/develop` to get your working directory to the latest from GitHub.
-
-
 
