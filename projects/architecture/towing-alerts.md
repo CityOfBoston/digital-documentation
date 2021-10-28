@@ -42,7 +42,9 @@ _Subscription - _First the script checks if the email & plate is already subscri
 _Unsubscription_ - First the script checks if the email & plate is already subscribed. If it is, then the entry is removed from `towed_emails` and is added to `towed_emails_optout `in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
 
 {% hint style="info" %}
-Line 125 contains a white list of subscribers who can register more than 10 vehicles.
+**Fleet Owners Whitelist.**
+
+Line 125 of subscribe.asp contains a white list of subscribers who can register more than 10 vehicles.
 {% endhint %}
 
 **Text:**
@@ -90,6 +92,10 @@ The tables used by this sub-service are:
 
 A _trigger_ on the `Towline_bpd`Table  runs when data is added to the table.  The stored procedure evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phoennumbers and towed_sms`), and if so ends out an alert. &#x20;
 
+{% hint style="danger" %}
+**We need to establish if the police are filtering records being submitted to the Towline\_bpd table.  It appears that there are a relatively limited number of towing reasons, and these do largely seem to be related to street sweeping, parking bay or road closures etc.**
+{% endhint %}
+
 **The email/voice is handled by the SMTP service on the MSSQL Server.**
 
 ### Lyris
@@ -116,13 +122,25 @@ Alert emails which are generated as vehicles are towed are originated and handle
 
 ### Police Updates
 
-The police update information on newly towed vehicles every 10 minutes.  It is believed that this information initially goes into the mainframe, and then an ETL process pushes the data to vSQL01.&#x20;
+The police update information on newly towed vehicles every 15 minutes.  The police have a job/process that pushes the data to vSQL01.&#x20;
 
-{% hint style="info" %}
-It is possible that the police push directly to vSQL01.
-{% endhint %}
+![](<../../.gitbook/assets/image (29).png>)
 
-The data ends up in the table `towed_cars`and insertion causes a trigger to run stored procedures which send out the data and update other log tables.
+The data ends up in the table `Towline_bpd`and insertion causes a trigger to run which sends out the required communications and updates other log tables.
+
+**Contacts**
+
+| Staff                    | Position              | Email                                                                       |
+| ------------------------ | --------------------- | --------------------------------------------------------------------------- |
+| Rich Petruccelli         | Data Services Manager | [Rich.Petruccelli@pd.boston.gov](mailto:Rich.Petruccelli@pd.boston.gov)     |
+| Thomas Hutchings (Hutch) |                       | **t**[homas.hutchings@pd.boston.gov](mailto:thomas.hutchings@pd.boston.gov) |
+| Frank Alexopoulos        | Apps development      | [Frank.Alexopoulos@pd.boston.gov](mailto:Frank.Alexopoulos@pd.boston.gov)   |
+
+&#x20;
+
+&#x20;
+
+
 
 ### Twilio - Voice Alerts
 
