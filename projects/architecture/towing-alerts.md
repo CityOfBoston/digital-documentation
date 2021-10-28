@@ -17,7 +17,7 @@ The resident is able to register a license plate and receive one or any of:
 * a text alert (managed by Twillio)
 * a voice alert (managed by Twillio)
 
-Every 10 minutes the city gets [an update from the police](towing-alerts.md#police-updates) on towed vehicles.  For each new vehicle towed the license plate is checked against plates registered by residents and alerts are sent when matches are found.  See [Offline processes](towing-alerts.md#alert-generation) for more information.
+Every 15 minutes the city gets [an update from the police](towing-alerts.md#police-updates) on towed vehicles.  For each new vehicle towed the license plate is checked against plates registered by residents and alerts are sent when matches are found.  See [Offline processes](towing-alerts.md#alert-generation) for more information.
 
 ## Code
 
