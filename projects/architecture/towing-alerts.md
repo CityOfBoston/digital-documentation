@@ -83,20 +83,30 @@ The primary database used by this sub-service is **Towing**. This database holds
 
 The tables used by this sub-service are:
 
-| TableName                                                                | Key Fields                                                                                                                         | Description                                                               |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| <p>towed_emails</p><p>towed_phonenumbers</p><p>towed_sms</p>             | <ul><li><p>subscriber_email, or </p><ul><li>subscriber_phone</li></ul></li><li>subscriber_plate</li><li>subscriber_state</li></ul> | Contains list of mail and voice subscribers and their plates to monitor.  |
-| Towline\_bpd                                                             | <ul><li>License Plate</li><li>Tow Date-Time</li><li>Infringement Location</li></ul>                                                | Contains a list of all vehicles towed by services authorized by the City. |
-| <p>towed_emails_log</p><p>towed_phonenumbers_log</p><p>towed_sms_log</p> |                                                                                                                                    | Contains some sort of log of alerts raised                                |
-| towed\_warning\_log                                                      |                                                                                                                                    | Contains some soft of warnings... possible internal issue log?            |
+| TableName                                                                | Key Fields                                                                                                                         | Description                                                                          |
+| ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| <p>towed_emails</p><p>towed_phonenumbers</p><p>towed_sms</p>             | <ul><li><p>subscriber_email, or </p><ul><li>subscriber_phone</li></ul></li><li>subscriber_plate</li><li>subscriber_state</li></ul> | Contains list of mail and voice subscribers and their plates to monitor.             |
+| Towline\_bpd                                                             | <ul><li>License Plate</li><li>Tow Date-Time</li><li>Infringement Location</li></ul>                                                | Contains a list of all vehicles towed by services authorized by the City.            |
+| <p>towed_emails_log</p><p>towed_phonenumbers_log</p><p>towed_sms_log</p> |                                                                                                                                    | Contains log of alerts raised                                                        |
+| towed\_warning\_log                                                      |                                                                                                                                    | Contains some soft of warnings... possible internal issue log?                       |
+| towed\_import\_log                                                       |                                                                                                                                    | Contains a summary of activity (used in daily report)                                |
+| towed\_phone\_alerts\_queue                                              |                                                                                                                                    | Contains a queue for voice messages which are then processed by an external service. |
 
-A _trigger_ on the `Towline_bpd`Table  runs when data is added to the table.  The stored procedure evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phoennumbers and towed_sms`), and if so ends out an alert. &#x20;
+A _trigger_ on the `Towline_bpd`Table  runs when data is added to the table.  The stored procedure evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert.  This trigger uses the system stored procedure sp\_send_\__emails, interfaces directly with Twillio (for SMS's) and drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
 
 {% hint style="danger" %}
 **We need to establish if the police are filtering records being submitted to the Towline\_bpd table.  It appears that there are a relatively limited number of towing reasons, and these do largely seem to be related to street sweeping, parking bay or road closures etc.**
 {% endhint %}
 
 **The email/voice is handled by the SMTP service on the MSSQL Server.**
+
+#### **Summary**
+
+email subscribers 765,168 (as at 10/28/2021)
+
+voice subscribers 3,292 (as at 10/28/2021)
+
+SMS subscribers 1.
 
 ### Lyris
 
