@@ -17,7 +17,15 @@ The resident is able to register a license plate and receive one or any of:
 * a text alert (managed by Twillio)
 * a voice alert (managed by Twillio)
 
-Every 15 minutes the city gets [an update from the police](towing-alerts.md#police-updates) on towed vehicles.  For each new vehicle towed the license plate is checked against plates registered by residents and alerts are sent when matches are found.  See [Offline processes](towing-alerts.md#alert-generation) for more information.
+Every 15 minutes the city gets [an update from the police](towing-alerts.md#police-updates) on towed vehicles.  For each new vehicle towed the license plate is checked against plates registered by residents and alerts are sent when matches are found.&#x20;
+
+### **Statistics**
+
+| Statistics as at 10/27/2021 | Value      |
+| --------------------------- | ---------- |
+| Email subscribers List      | 765,168    |
+| Voice Subscribers           | 3.292      |
+| SMS Subscribers             | 1 (Satyen) |
 
 ## Code
 
@@ -88,31 +96,10 @@ The tables used by this sub-service are:
 | <p>towed_emails</p><p>towed_phonenumbers</p><p>towed_sms</p>             | <ul><li><p>subscriber_email, or </p><ul><li>subscriber_phone</li></ul></li><li>subscriber_plate</li><li>subscriber_state</li></ul> | Contains list of mail and voice subscribers and their plates to monitor.             |
 | Towline\_bpd                                                             | <ul><li>License Plate</li><li>Tow Date-Time</li><li>Infringement Location</li></ul>                                                | Contains a list of all vehicles towed by services authorized by the City.            |
 | <p>towed_emails_log</p><p>towed_phonenumbers_log</p><p>towed_sms_log</p> |                                                                                                                                    | Contains log of alerts raised                                                        |
-| towed\_warning\_log                                                      |                                                                                                                                    | Contains some soft of warnings... possible internal issue log?                       |
 | towed\_import\_log                                                       |                                                                                                                                    | Contains a summary of activity (used in daily report)                                |
 | towed\_phone\_alerts\_queue                                              |                                                                                                                                    | Contains a queue for voice messages which are then processed by an external service. |
 
-A _trigger_ on the `Towline_bpd`Table  runs when data is added to the table.  The stored procedure evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert.  This trigger uses the system stored procedure sp\_send_\__emails, interfaces directly with Twillio (for SMS's) and drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
-
-{% hint style="danger" %}
-**We need to establish if the police are filtering records being submitted to the Towline\_bpd table.  It appears that there are a relatively limited number of towing reasons, and these do largely seem to be related to street sweeping, parking bay or road closures etc.**
-{% endhint %}
-
 **The email/voice is handled by the SMTP service on the MSSQL Server.**
-
-#### **Summary**
-
-email subscribers 765,168 (as at 10/28/2021)
-
-voice subscribers 3,292 (as at 10/28/2021)
-
-SMS subscribers 1.
-
-### Lyris
-
-_Attached to the stand-alone Lyris application hosted on zLyris._
-
-
 
 ### _twiSQL_
 
@@ -130,7 +117,27 @@ Reminder emails created and sent by the `remindme.asp` page (one-time & on-deman
 
 Alert emails which are generated as vehicles are towed are originated and handled by the **Towing** database on the MSSQL Server at **vSQL01.**&#x20;
 
+A _trigger_ on the `Towline_bpd`Table  runs when data is added to the table. &#x20;
+
+* The trigger evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert. &#x20;
+* The trigger uses the system stored procedure `sp_send_dbmail`, to send mails directly to the subscriber from the MS SQL server
+* The trigger interfaces directly with Twillio (for SMS's)&#x20;
+* The trigger drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
+* The trigger records which recipients have been communicated with
+* The trigger maintains statistics on what has been sent out.
+* The trigger (permanently) deletes tow data for events more than 120 days in the past, and more than 2 hours in the future.
+
+{% hint style="info" %}
+There should never be more than 120 days of police-originated records in the Towline\_bpd table.
+
+However, there is a record of all communications sent.
+{% endhint %}
+
 ### Police Updates
+
+{% hint style="danger" %}
+**We need to establish if the police are filtering records being submitted to the Towline\_bpd table.  It appears that there are a relatively limited number of towing reasons, and these do largely seem to be related to street sweeping, parking bay or road closures etc.**
+{% endhint %}
 
 The police update information on newly towed vehicles every 15 minutes.  The police have a job/process that pushes the data to vSQL01.&#x20;
 
@@ -138,7 +145,7 @@ The police update information on newly towed vehicles every 15 minutes.  The pol
 
 The data ends up in the table `Towline_bpd`and insertion causes a trigger to run which sends out the required communications and updates other log tables.
 
-**Contacts**
+#### **Contacts**
 
 | Staff                    | Position              | Email                                                                       |
 | ------------------------ | --------------------- | --------------------------------------------------------------------------- |
@@ -146,11 +153,36 @@ The data ends up in the table `Towline_bpd`and insertion causes a trigger to run
 | Thomas Hutchings (Hutch) |                       | **t**[homas.hutchings@pd.boston.gov](mailto:thomas.hutchings@pd.boston.gov) |
 | Frank Alexopoulos        | Apps development      | [Frank.Alexopoulos@pd.boston.gov](mailto:Frank.Alexopoulos@pd.boston.gov)   |
 
-&#x20;
+#### Permissions&#x20;
 
-&#x20;
+The police account (youvebeentowed (?)) used for updates initiates the insert trigger and therefore needs the following permissions:
 
+**Stored Procedures **(execute permission)**:**
 
+* **msdb.dbo.sp\_send\_dbmail: ** to actually send out emails using MSSQL Mail services.
+* **twiSQl.dbo.SendBrokerMessage**: This interacts with a service on the twiSQL DB on the same server
+
+**Functions **(Call/Execute permission)**:**
+
+* **Towing.dbo.functionVerboseReasonCode**
+* **Towing.dbo.functionUnabbreviateTowCompany**
+* **Towing.dbo.functionUnabbreviateYear**
+* **Towing.dbo.functionUnabbreviateCarMake**
+* **Towing.dbo.functionUnabbreviateCarColor**
+* **Towing.dbo.URLEncode**
+
+**Tables **(Insert and read permission)**:**
+
+* **Towing.dbo.Towline\_bpd** _(also requires delete permission)_
+* **Towing.dbo.towed\_import\_log**
+* **Towing.dbo.towed\_emails**
+* **Towing.dbo.towed\_emails\_optout**
+* **Towing.dbo.towed\_alerts\_log**
+* **Towing.dbo.towed\_phonenumber**
+* **Towing.dbo.towed\_phone\_alerts\_queued**
+* **Towing.dbo.towed\_phone\_alerts\_log**
+* **Towing.dbo.towed\_sms**
+* **Towing.dbo.towed\_sms\_alerts\_log**
 
 ### Twilio - Voice Alerts
 
