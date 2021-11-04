@@ -98,6 +98,7 @@ The tables used by this sub-service are:
 | <p>towed_emails_log</p><p>towed_phonenumbers_log</p><p>towed_sms_log</p> |                                                                                                                                    | Contains log of alerts raised                                                        |
 | towed\_import\_log                                                       |                                                                                                                                    | Contains a summary of activity (used in daily report)                                |
 | towed\_phone\_alerts\_queue                                              |                                                                                                                                    | Contains a queue for voice messages which are then processed by an external service. |
+| Towline\_complete                                                        |                                                                                                                                    | Archive for the complete list of towed vehicles since time began.                    |
 
 **The email/voice is handled by the SMTP service on the MSSQL Server.**
 
