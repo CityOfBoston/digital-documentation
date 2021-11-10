@@ -154,6 +154,7 @@
   * [Towing Search](projects/architecture/towing-search.md)
   * [Subscription Search](projects/architecture/subscription-search.md)
   * [Proposed Restructure](projects/architecture/proposed-restructure.md)
+* [Legacy Animal Control (Dog Licensing)](projects/legacy-animal-control-dog-licensing.md)
 * [Notifications](projects/todo-los-notifications/README.md)
   * [Everbridge API + UI](projects/todo-los-notifications/everbridge-api-+-ui.md)
   * [Upaknee](projects/todo-los-notifications/upaknee.md)
