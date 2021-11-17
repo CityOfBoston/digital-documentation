@@ -1,36 +1,62 @@
 # Libraries and Tools
 
-{% swagger baseUrl="https://api.cakes.com" path="/v1/cakes/:id" method="get" summary="Get Cakes" %}
-{% swagger-description %}
+{% api-method method="get" host="https://api.cakes.com" path="/v1/cakes/:id" %}
+{% api-method-summary %}
+Get Cakes
+{% endapi-method-summary %}
+
+{% api-method-description %}
 This endpoint allows you to get free cakes.
-{% endswagger-description %}
+{% endapi-method-description %}
 
-{% swagger-parameter in="path" name="id" type="string" %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" %}
 ID of the cake to get, for free of course.
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
 
-{% swagger-parameter in="header" name="Authentication" type="string" %}
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
 Authentication token to track down who is emptying our stocks.
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 
-{% swagger-parameter in="query" name="recipe" type="string" %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="recipe" type="string" %}
 The API will do its best to find a cake matching the provided recipe.
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
 
-{% swagger-parameter in="query" name="gluten" type="boolean" %}
+{% api-method-parameter name="gluten" type="boolean" %}
 Whether the cake should be gluten-free or not.
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="Cake successfully retrieved." %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Cake successfully retrieved.
+{% endapi-method-response-example-description %}
+
 ```
 {    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
 ```
-{% endswagger-response %}
+{% endapi-method-response-example %}
 
-{% swagger-response status="404" description="Could not find a cake matching this query." %}
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+Could not find a cake matching this query.
+{% endapi-method-response-example-description %}
+
 ```
 {    "message": "Ain't no cake like that."}
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
 

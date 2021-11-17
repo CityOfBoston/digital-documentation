@@ -7,18 +7,18 @@ description: >-
 # In-page Navigation Menu
 
 {% hint style="info" %}
-The in-page menu requires the node to embed paragraphs, the node--_xxxx_.html.twig to contain a \<div> and for each embedded paragraph to have a key field.
+The in-page menu requires the node to embed paragraphs, the node--_xxxx_.html.twig to contain a &lt;div&gt; and for each embedded paragraph to have a key field.
 {% endhint %}
 
 ## Requirements
 
 ### Node: field\_components.
 
-If the node has components (paragraphs) embedded, then the node will have a field called `field_components` and this field will be of a type `Entity reference revisions`.  The field will allow only paragraphs, and will specify the paragraph types that are allowed on the node.
+If the node has components \(paragraphs\) embedded, then the node will have a field called `field_components` and this field will be of a type `Entity reference revisions`.  The field will allow only paragraphs, and will specify the paragraph types that are allowed on the node.
 
 ### Paragraph: field\_short\_title.
 
-To enable in-page navigation, each paragraph must have a (text field) `field_short_title`, and to reduce confusion for content editors, that field should be named "**Navigation Title**". &#x20;
+To enable in-page navigation, each paragraph must have a \(text field\) `field_short_title`, and to reduce confusion for content editors, that field should be named "**Navigation Title**".  
 
 {% hint style="success" %}
 To make the menu look nice and work well on mobile devices, content editors and authors should be encouraged to keep the content added to the **Navigation Title** to 20 chars or less.
@@ -28,7 +28,7 @@ To make the menu look nice and work well on mobile devices, content editors and 
 
 To enable the in-page navigation menu, the nodes template should include the following:
 
-```
+```text
 {% if navOutput %}
     <div class="sub-nav-trigger drawer-trigger">
         <div class="sub-nav-chevron">
@@ -52,11 +52,11 @@ This block should ideally be located below the title and intro-text sections.
 
 ## How it works
 
-### Expected behavior&#x20;
+### Expected behavior 
 
 When there is more than 1 paragraphs embedded in a nodes web page, an in-page navigation menu should appear on the page.  The menu should be styled from the patterns library.
 
-**UX Desktop: **When the page first loads, the menu should display above the fold.  As the user scrolls down the page, the menu should collapse into a fixed toolbar at the top of the page, below the seal menu with the seal retracted.  Theme should come from patterns.
+**UX Desktop:** When the page first loads, the menu should display above the fold.  As the user scrolls down the page, the menu should collapse into a fixed toolbar at the top of the page, below the seal menu with the seal retracted.  Theme should come from patterns.
 
 **UX Mobile**:   Menu should appear as a collapsed set of drawers with a chevron icon to expand. Css from patterns controls the collapse across the responsive page width.
 
@@ -64,7 +64,7 @@ In either UX, when the user clicks on the menu, the page should scroll smoothly 
 
 ### Locating and creating menu
 
-The twig template (e.g. `node--xxx.html.twig`) for the node is responsible for locating the menu on the node.  The code required is described above.
+The twig template \(e.g. `node--xxx.html.twig`\) for the node is responsible for locating the menu on the node.  The code required is described above.
 
 On-page menu elements are rendered from the `bos_theme_preprocess_node()` and `bos_theme_preprocess_field()`  hooks in `bos_theme.theme` found in `/themes/custom/bos_theme/`.
 
@@ -74,4 +74,5 @@ The page click and scrolling is provided by `component-navigation.boston.js` whi
 
 ### Making paragraphs compatible
 
-To make a paragraph include itself in the in-page navigation menu, it just needs to contain a text field named `field_short_title` (and for that field to be included in the display being used on the node).
+To make a paragraph include itself in the in-page navigation menu, it just needs to contain a text field named `field_short_title` \(and for that field to be included in the display being used on the node\).
+

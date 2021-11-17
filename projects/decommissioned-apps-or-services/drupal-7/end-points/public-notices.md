@@ -6,12 +6,24 @@ description: >-
 
 # Public Notices
 
-{% swagger baseUrl="https://www.boston.gov" path="/api/v2/public-notices" method="get" summary="Public Notices." %}
-{% swagger-description %}
-This endpoint provides a listing of the next 30 public notices which started in the last 3 hours or will start at some time in the future.
-{% endswagger-description %}
+{% api-method method="get" host="https://www.boston.gov" path="/api/v2/public-notices" %}
+{% api-method-summary %}
+Public Notices.
+{% endapi-method-summary %}
 
-{% swagger-response status="200" description="Listing of filtered public notices." %}
+{% api-method-description %}
+This endpoint provides a listing of the next 30 public notices which started in the last 3 hours or will start at some time in the future.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Listing of filtered public notices.
+{% endapi-method-response-example-description %}
+
 ```
 [
     {
@@ -34,12 +46,16 @@ This endpoint provides a listing of the next 30 public notices which started in 
     }
 ]
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 **Response Notes:**
 
 * All response fields are _**always**_ strings.
-* Blank (empty) fields are still provided as key:value pairs, with the value being an empty string ("") - the API does not use the keyword "null".
+* Blank \(empty\) fields are still provided as key:value pairs, with the value being an empty string \(""\) - the API does not use the keyword "null".
 * Title, body and field\_drawer may contain basic HTML mark-up.
+
+
 

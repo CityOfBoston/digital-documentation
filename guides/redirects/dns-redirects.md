@@ -27,6 +27,7 @@ All DNS changes have to be done through a change management request, though give
 
 Frank Skelton is usually responsible for making the changes in the DNS Made Easy UI, so contact him as you put in the change management request.
 
-For subdomains, (_e.g. _budget.boston.gov) you can simply make a CNAME record from the subdomain to the public ALB’s domain name, which is AppsPublicAlb-861712829.us-east-1.elb.amazonaws.com.
+For subdomains, \(_e.g._ budget.boston.gov\) you can simply make a CNAME record from the subdomain to the public ALB’s domain name, which is AppsPublicAlb-861712829.us-east-1.elb.amazonaws.com.
 
 For bare domains, like publicartsboston.com which cannot be CNAMEd, you make an “ANAME” record. This is a DNS Made Easy feature that periodically pings the target domain name for its IP addresses, and updates the A record accordingly.
+
