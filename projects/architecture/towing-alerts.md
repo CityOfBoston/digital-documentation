@@ -14,7 +14,7 @@ Residents can use the page at [https://www.cityofboston.gov/towing/alerts](https
 The resident is able to register a license plate and receive one or any of:
 
 * an email alert (managed by SQL Server)
-* a text alert (managed by Twillio)
+* a text alert (sometimes managed by Twillio, otherwise is SMS via email)
 * a voice alert (managed by Twillio)
 
 Every 15 minutes the city gets [an update from the police](towing-alerts.md#police-updates) on towed vehicles.  For each new vehicle towed the license plate is checked against plates registered by residents and alerts are sent when matches are found.&#x20;
@@ -57,9 +57,15 @@ Line 125 of subscribe.asp contains a white list of subscribers who can register 
 
 **Text:**
 
+Text subscription is completed by adding a record to the `towing_emails` table, but using an email address that routes through the subscribers telephone provider.  In this way sms messages can be sent without needing to use an sms gateway.
+
 {% hint style="danger" %}
-**It seems that you cannot register an sms/text alert, but the process may appear to have done so successfully.**
+**There is a "No Provider' option, which should ideally be removed.**
+
+**Provider email to text gateways can be found here: **[**https://avtech.com/articles/138/list-of-email-to-sms-addresses/**](https://avtech.com/articles/138/list-of-email-to-sms-addresses/)****
 {% endhint %}
+
+**Note: **We do have the option to send SMS via Twillio using a stored procedure in the `twiSQL` database, however this incurs an additional cost.  As at 2021-11-17, this process does work, and is used by the SMS block in the `sp_process_towing_messages` stored procedure.  To be certain that SMS messages are delivered, it could be that users who select 'No Provider' are added to the `towing_sms` table.
 
 **Voice:**
 
@@ -93,7 +99,7 @@ The tables used by this sub-service are:
 
 | TableName                                                                | Key Fields                                                                                                                         | Description                                                                          |
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| <p>towed_emails</p><p>towed_phonenumbers</p><p>towed_sms</p>             | <ul><li><p>subscriber_email, or </p><ul><li>subscriber_phone</li></ul></li><li>subscriber_plate</li><li>subscriber_state</li></ul> | Contains list of mail and voice subscribers and their plates to monitor.             |
+| <p>towed_emails</p><p>towed_phonenumbers</p><p>towed_sms</p>             | <ul><li><p>subscriber_email, or </p><ul><li>subscriber_phone</li></ul></li><li>subscriber_plate</li><li>subscriber_state</li></ul> | Contains list of mail, sms and voice subscribers and their plates to monitor.        |
 | Towline\_bpd                                                             | <ul><li>License Plate</li><li>Tow Date-Time</li><li>Infringement Location</li></ul>                                                | Contains a list of all vehicles towed by services authorized by the City.            |
 | <p>towed_emails_log</p><p>towed_phonenumbers_log</p><p>towed_sms_log</p> |                                                                                                                                    | Contains log of alerts raised                                                        |
 | towed\_import\_log                                                       |                                                                                                                                    | Contains a summary of activity (used in daily report)                                |
@@ -104,47 +110,46 @@ The tables used by this sub-service are:
 
 ### _twiSQL_
 
-_Manages voice and SMS message dispatech._
+Manages SMS message dispatch via the Twillio SMS gateway.
 
-This database is used by the insert trigger on Towing.dbo.Towline\_bpd.  There are no tables inside the database, and 3 stored procedures.  There is also an Assembly twilioSQL loaded., plus (possibly auto-created) a Service Broker.
+This database is used by the `sp_process_towing_messages`.  There are no tables inside the database, and 3 stored procedures.  There is also an Assembly (twilioSQL) loaded., plus (possibly auto-created) a Service Broker.
 
 The stored procedure `SendBrokerMessage` is called in order to route an SMS message via Twilio.
 
 ## Connected Services
 
-### Emails originated by sub-service
+### Emails originated by towing alert sub-service
+
+**Reminder emails:**
 
 Reminder emails created and sent by the `remindme.asp` page (one-time & on-demand by the resident) are routed through an SMTP server the mail at **smtp.web.cob.**
 
-Alert emails which are generated as vehicles are towed are originated and handled by the **Towing** database on the MSSQL Server at **vSQL01.**&#x20;
+**Alert emails:**
 
-A _trigger_ on the `Towline_bpd`Table  runs when data is added to the table. &#x20;
+Alert emails which are generated as vehicles are towed are originated and handled by the **Towing** database on the MSSQL Server at **vSQL01.**  This process is fully decoupled from the cityofboston.gov hosted asp pages, and fully contained within the MSSQL server vSQL01.
 
-* The trigger evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert. &#x20;
-* The trigger uses the system stored procedure `sp_send_dbmail`, to send mails directly to the subscriber from the MS SQL server
-* The trigger interfaces directly with Twillio (for SMS's)&#x20;
-* The trigger drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
-* The trigger records which recipients have been communicated with
-* The trigger maintains statistics on what has been sent out.
-* The trigger (permanently) deletes tow data for events more than 120 days in the past, and more than 2 hours in the future.
+The process is managed within a _stored procedure_ (`sp_process_towing_messages` ) in the `Towing`Database which is executed every 5 minutes by an SQL Job. &#x20;
+
+* The sp evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert. &#x20;
+* The sp uses the system stored procedure `sp_send_dbmail`, to send mails directly to the subscriber from the MS SQL server
+* The sp interfaces directly with Twillio (for SMS's)&#x20;
+* The sp drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
+* The sp records which recipients have been communicated with, and which have been processed
+* The sp maintains statistics on what has been sent out.
 
 {% hint style="info" %}
-There should never be more than 120 days of police-originated records in the Towline\_bpd table.
-
-However, there is a record of all communications sent.
+The email process handles both emails and (the majority of) sms messages. SMS strategy is to send an email to a mobile provider specific email address which then routes the SMS to the recipient/subscriber.
 {% endhint %}
 
 ### Police Updates
-
-{% hint style="danger" %}
-**We need to establish if the police are filtering records being submitted to the Towline\_bpd table.  It appears that there are a relatively limited number of towing reasons, and these do largely seem to be related to street sweeping, parking bay or road closures etc.**
-{% endhint %}
 
 The police update information on newly towed vehicles every 15 minutes.  The police have a job/process that pushes the data to vSQL01.&#x20;
 
 ![](<../../.gitbook/assets/image (29).png>)
 
-The data ends up in the table `Towline_bpd`and insertion causes a trigger to run which sends out the required communications and updates other log tables.
+The police data is inserted directly into the `Towline_bpd`table by the Police IT department (contacts below). The actual SSIS-ODBC process involves truncating the towline\_bpd table and then bulk inserting a complete set of new records. &#x20;
+
+**Note: **The MSSQL bulk insert does not fire triggers by default.
 
 #### **Contacts**
 
@@ -156,7 +161,9 @@ The data ends up in the table `Towline_bpd`and insertion causes a trigger to run
 
 #### Permissions&#x20;
 
-The police account (youvebeentowed (?)) used for updates initiates the insert trigger and therefore needs the following permissions:
+The police account (youvebeentowed (?)) needs permission to truncate the `Towline_bpd` table and to (bulk) insert new records.  It does not need permissions to stored procedures, triggers or the twiSQL database.
+
+The job which initiates the sp which processes new alerts does need extensive permissions.
 
 **Stored Procedures **(execute permission)**:**
 
@@ -187,6 +194,14 @@ The police account (youvebeentowed (?)) used for updates initiates the insert tr
 
 ### Twilio - Voice Alerts
 
+Voice alerts are somehow processed by Twillio using a complicated call-back process to cityofboston.gov. &#x20;
+
+**This needs further investigation and access to the twillio UI.**
+
 ### Twilio - Text Alerts
 
 Text alerts are sent via Twilio.
+
+{% hint style="warning" %}
+This process is effectively blocked as no-one can subscribe themselves to the `towing_sms` table.
+{% endhint %}
