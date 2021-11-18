@@ -7,17 +7,15 @@ description: >-
 
 # Street Occupancy Alerts
 
-{% hint style="danger" %}
-**Need to establish how emails are sent.  **
-
-**This doc describes searching and subscribing, but it is unknown if and how emails are generated and/or sent at this time.**
-{% endhint %}
-
 ## Summary
 
 Residents can use the page at [https://www.cityofboston.gov/streetoccupancy/search/](https://www.cityofboston.gov/streetoccupancy/search/).
 
 First the resident searches for their street or a specific permit number.  Matching permits are returned as a list, along with a list of streets matching the search term or permit provided.  The resident nominates which streets should be included in the alert and then supplies an email address and a preferred email reminder time.
+
+{% hint style="info" %}
+Email body text is generated in the `lyris.asp` script and the email generation is managed by the Lyris server (listserv.boston.gov)
+{% endhint %}
 
 ### Statistics
 

@@ -14,7 +14,7 @@ First the resident searches for their street or a calendar.  Matching street res
 
 Subscription from this page registers the resident for street sweeping reminders, and also for Street Occupancy alerts.
 
-Emails are managed by a Lyris email server installed on the city network.
+The sending of emails is managed by a Lyris email server installed on the city network. The body of the email is constructed in a script called by lyris at `lyris.asp`.
 
 This service is active, there appear to be around 5 new subscriptions per day.  There are 100,488 (as at 2021-10-01) current active subscriptions, but many may be old and refer to defunct emails.  Lyris should be able to provide bounce reports. &#x20;
 
@@ -99,12 +99,20 @@ The endpoint is designed to be called with an email address and date in the quer
 ?email=david.upton@boston.gov&date=3/20/2021
 ```
 
-The script runs sql statements against the `PWDSweepingEmails`, `PWDSweeping` and `PwdDist` tables in the `Towing` database on vSQL01 and applies logic to determine if an email is required for that recipient.
+The script runs SQL statements against the `PWDSweepingEmails`, `PWDSweeping` and `PwdDist` tables in the `Towing` database on vSQL01 and applies logic to determine if an email is required for that recipient.
 
-See Lyris below in Connected Services.
+(See Lyris below in Connected Services)
+
+The script manages the annual program dates according to this "rule":
+
+_The Daytime Street Cleaning Program runs from April 1 to November 30 in most Boston neighborhoods ... (however) ... Daytime street sweeping continues into the winter in the North End, South End, and Beacon Hill ... (which) ... stops on December 31 and starts up again on March 1._
 
 {% hint style="success" %}
 **The body text for the Street Sweeping reminder emails is set in this script.**
+{% endhint %}
+
+{% hint style="success" %}
+**The body of the Street Occupancy emails is also set in this script.eh**
 {% endhint %}
 
 {% hint style="info" %}
