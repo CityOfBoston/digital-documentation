@@ -64,6 +64,14 @@ Subscription is initiated on this page but the actual subscription process is ha
 
 Also the user can download a file which can be imported into calendars supporting the iCalendar format (this is most calendars). The file generation and download is managed by `addtocalendar.ics.asp` ([see below](street-sweeping-reminders.md#addtocalendar-ics-asp))
 
+If the default page is called with a querystring, then a search is performed and results returned. This is a relatively sophisticated search and provides schedules and the next sweeping event date.
+
+```
+?streetname=Portland+St
+?neighborhood=xxxxx
+?weekofmonth=xx&dayofmonth=xx
+```
+
 {% hint style="danger" %}
 **Announcements column has a very outdated entry for 2013.**
 {% endhint %}
@@ -92,6 +100,8 @@ This page extracts a schedule from the `PwdSweeping` table in the `Towing` datab
 ### :lyris.asp
 
 This page is a microservice endpoint managed by IIS/ASP.&#x20;
+
+A list of cancellation and block-out dates is provided at the top of the script. (This list mirrors those input into default.asp).
 
 The endpoint is designed to be called with an email address and date in the querystring. The script will return nothing if the email recipient is not scheduled to receive an email, and a full html if the recipient is due an email (according to the streets and Email time preference settings).
 
