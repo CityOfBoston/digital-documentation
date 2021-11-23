@@ -65,6 +65,7 @@
     * [Microservices 2021](guides/amazon-web-services/services/microservices-2021/README.md)
       * [SQL Proxy (DBConnector)](guides/amazon-web-services/services/microservices-2021/sql-proxy-2021.md)
     * [Access-Boston](guides/amazon-web-services/services/access-boston/README.md)
+      * [Node Server](guides/amazon-web-services/services/access-boston/node-server.md)
       * [Config Repository](guides/amazon-web-services/services/access-boston/config-repository.md)
     * [Registry-Certs](guides/amazon-web-services/services/registry-certs/README.md)
       * [Marriage Intention](guides/amazon-web-services/services/registry-certs/marriage-intention.md)
