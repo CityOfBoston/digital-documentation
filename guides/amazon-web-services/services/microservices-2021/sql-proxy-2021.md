@@ -660,7 +660,7 @@ Bearer: A valid authToken
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/user/:userid" method="delete" summary="Delete an existing User" %}
+{% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/users/:userid" method="delete" summary="Delete an existing User" %}
 {% swagger-description %}
 Deletes the specified user.
 
@@ -679,7 +679,7 @@ Deletes the specified user.
  ADMIN or OWNER
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="userid" type="number" %}
+{% swagger-parameter in="path" name="userid" type="number" required="true" %}
 The userid (number).
 
 \
@@ -692,7 +692,7 @@ Userid is returned from the
  request.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
 Bearer: A valid authToken
 {% endswagger-parameter %}
 
