@@ -22,7 +22,7 @@ If that is not possible, then a Change Management ticket should be raised, (even
 
 To perform these tasks, you will need to obtain from the **Security Team**, the following:
 
-* the `SSL Certificate `(possibly a `.crt` file),&#x20;
+* the `SSL Certificate` (possibly a `.crt` file),&#x20;
 * the `SSL private key` (a `.key` file), and
 * one or more`CA intermediate certificates` (possibly `.pem` files). \
   _(If there are multiple intermediate certs, you can cut and paste them into a single file with each cert starting on a new line below the old cert.  The order is not important.)_
@@ -43,7 +43,7 @@ It is _recommended_ that the certificate first be applied to the `dev` environme
 3. In the left column menu, select **SSL**
 4. Click the "**Install SSL Certificate**" button
 5. Provide a sensible label (for example _\*.boston.gov 20xx_)
-6. Open the files provided and insert their contents into the text boxes.  **Note: **The files will all have text in 80 char wide columns and start with text`---- BEGIN CERTIFICATE/RSA KEY ----`&#x20;
+6. Open the files provided and insert their contents into the text boxes.  **Note:** The files will all have text in 80 char wide columns and start with text`---- BEGIN CERTIFICATE/RSA KEY ----`&#x20;
 7. Click the "**Install"** button
 8. You should see a summary page with the old certificate (active) and the new certificate you just installed (inactive). When you are ready, you can _Activate_ the new certificate, and then _Deactivate_ and _Remove_ the old certificate.
 9. Repeat for each Acquia environment, (stage, ci, uat,dev2 & **prod**)
@@ -61,7 +61,7 @@ The new/updated Digicert certificate can be loaded into the AWS Certificate Mana
 1. Login to the [AWSConsole](https://console.aws.amazon.com).
 2. Ensure you are in the `us-east-1`region
 3. Navigate to the **Certificate Manager**.
-4. Locate the _\*.boston.gov_ certificate in the list.  **Importantly: **The correct entry will have a Type=Imported.
+4. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The correct entry will have a Type=Imported.
 5. Expand the entry and click the "**Reimport Certificate"** button.
 6. Cut and past the certificate parts onto the page and click "**Review and Import**".
 
@@ -79,7 +79,7 @@ The Hub is hosted on AWS using the ElasticBeanstalk service: It is in region `us
 1. Login to the [AWSConsole](https://console.aws.amazon.com).
 2. Ensure you are in the `us-east-2`region
 3. Navigate to the **Certificate Manager**.
-4. Locate the _\*.boston.gov_ certificate in the list.  **Importantly: **The correct entry will have a Type=Imported.
+4. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The correct entry will have a Type=Imported.
 5. Expand the entry and click the "**Reimport Certificate"** button.
 6. Cut and past the certificate parts onto the page and click "**Review and Import**".
 
@@ -112,7 +112,9 @@ Someone in the Digital Team needs to be in the webmaster@boston.gov email group,
 
 {% embed url="https://www.passportinc.com" %}
 
-Email: james\_loper@passportinc.com - support@passportinc.com
+Email: james\_loper@passportinc.com - support@passportinc.com\
+Alt: [mu.saleem@passportinc.com](mailto:mu.saleem@passportinc.com).\
+Technical: jeremy.proffitt@passportinc.com
 
 Need to send Passport a copy of the certificate so that they can add it to the website (and possibly app) they host for parking in boston.
 
