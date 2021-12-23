@@ -1,5 +1,5 @@
 ---
-description: 'Developed by Code for Boston, deployed and hosted by the Digital Team.'
+description: Developed by Code for Boston, deployed and hosted by the Digital Team.
 ---
 
 # Alexa Skill
@@ -28,27 +28,27 @@ When the time comes to release changes to the interaction model, we need to do t
 1. Note the Alexa Skill ID:
    1. Access [Alexa Skill](https://developer.amazon.com/alexa/console/ask/),
    2. Click on "Boston Info", and then click "Endpoint" in right column,
-   3. Copy the Skill ID 
-2. Publish the current BostonInfoSkill Lambda function as a new version, described with the current date \(e.g. ”2019-05-22”\). 
-   1. Access [AWS Lambda Console](%20https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions),
+   3. Copy the Skill ID&#x20;
+2. Publish the current BostonInfoSkill Lambda function as a new version, described with the current date (e.g. ”2019-05-22”).&#x20;
+   1. Access [AWS Lambda Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions),
    2. Select BostonInfoSkill,
-   3. Click on the "BostonInfoSkill" \(orange icon\) in the designer and ensure the `"Function Code"` `"Runtime"` is set to Python 3.7
+   3. Click on the "BostonInfoSkill" (orange icon) in the designer and ensure the `"Function Code"` `"Runtime"` is set to Python 3.7
    4. Click on "Actions" button,
    5. Click Publish in drop-down list
    6. Enter date into the text-box on the pop-up dialog, and click "Publish" button.
-3. Create a new alias pointing to that version. 
-   1.  select _BostonInfoSkill_ from functions, 
+3. Create a new alias pointing to that version.&#x20;
+   1. &#x20;select _BostonInfoSkill_ from functions,&#x20;
    2. then select "Create Alias" from the "Actions" button.
-4. In the UI, add “Alexa Skills Kit” as a trigger 
-   1. Click on BostonInfoSkill in the Designer panel, 
-   2. Add “Alexa Skills Kit” as a trigger, and paste the Skill ID \(from step 1 above\) into the configuration box, 
+4. In the UI, add “Alexa Skills Kit” as a trigger&#x20;
+   1. Click on BostonInfoSkill in the Designer panel,&#x20;
+   2. Add “Alexa Skills Kit” as a trigger, and paste the Skill ID (from step 1 above) into the configuration box,&#x20;
    3. Save
-5. Update the Alexa skill’s endpoint ARN to reference the new alias. 
+5. Update the Alexa skill’s endpoint ARN to reference the new alias.&#x20;
    1. Access [Alexa Skill](https://developer.amazon.com/alexa/console/ask/)
    2. Click on "Boston Info", and then click "Endpoint" in right column,
    3. Update the Default Regions ARN to reference the alias created above.
-6. Use the “Test” page \(in the Alexa Skill\) to make sure that the lambda is receiving traffic correctly
-7. Submit the skill to Amazon for certification \(snapshotting the endpoints\)
+6. Use the “Test” page (in the Alexa Skill) to make sure that the lambda is receiving traffic correctly
+7. Submit the skill to Amazon for certification (snapshotting the endpoints)
 
 After the Amazon verification process completes:
 
@@ -79,7 +79,7 @@ Sometimes Amazon will reject the skill. Here’s what to do afterwards, which is
 
 Once you’re sure Amazon will be satisfied:
 
-1. Publish a new version of the Lambda function via the web console \[[console](%20https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)\]
+1. Publish a new version of the Lambda function via the web console \[[console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)]
 2. Update the previously-used `production-X` lambda alias to point to that new version
 3. Update the Alexa Skill endpoint settings to add `:production-X` back in to the ARN
 4. Cross fingers
@@ -93,11 +93,11 @@ More information about Alexa deployment strategies: [https://blog.codecentric.de
 
 #### Accounts, Authentication, and Authorization
 
-The Alexa skill belongs to the City of Boston organization within the Amazon Developer console at [https://developer.amazon.com/](https://developer.amazon.com/)
+The Alexa skill belongs to the City of Boston organization within the Amazon Developer console at [https://developer.amazon.com/](https://developer.amazon.com)
 
 Amazon Developer accounts are in the same namespace as Amazon.com shopping accounts, and are completely separate from AWS and IAM accounts.
 
-Deployment tools authenticate with Amazon using the Login with Amazon \("LWA"\) system. This is based off of OAuth, and provides access and refresh tokens. These tokens allow the tools to act on behalf of accounts.
+Deployment tools authenticate with Amazon using the Login with Amazon ("LWA") system. This is based off of OAuth, and provides access and refresh tokens. These tokens allow the tools to act on behalf of accounts.
 
 Applications using OAuth must be registered with LWA and receive a client ID and client secret. The `ask` CLI tool is already registered with Amazon and has an ID and secret baked into it. For for our own tools, we register by creating a "Security Profile" in the Amazon Developer console. You can also specify a client ID and client secret when running `ask` by setting the `ASK_LWA_CLIENT_ID` and `ASK_LWA_CLIENT_SECRET` environment variables, respectively.
 
@@ -118,11 +118,10 @@ Additionally, we need to provide `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
 
 #### Vendors
 
-Amazon associates a "Vendor ID" with an account organizations. You can see the Vendor ID for City of Boston by running `ask api list-vendors`. 
+Amazon associates a "Vendor ID" with an account organizations. You can see the Vendor ID for City of Boston by running `ask api list-vendors`.&#x20;
 
 **UX Testing and Enhancements 2020**
 
-A General Assembly UXDI team did user research and testing on the Alexa skill. Copy of their work here: [https://drive.google.com/open?id=12lQXgtARUEt5\_Uo\_kBLuAlE8DyJJ-UL0](https://drive.google.com/open?id=12lQXgtARUEt5_Uo_kBLuAlE8DyJJ-UL0)
+A General Assembly UXDI team did user research and testing on the Alexa skill. Copy of their work here: [https://drive.google.com/open?id=12lQXgtARUEt5\_Uo\_kBLuAlE8DyJJ-UL0](https://drive.google.com/open?id=12lQXgtARUEt5\_Uo\_kBLuAlE8DyJJ-UL0)
 
-#### 
-
+####

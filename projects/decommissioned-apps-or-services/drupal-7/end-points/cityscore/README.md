@@ -6,36 +6,22 @@ description: >-
 
 # Cityscore
 
-Drupal \(via https://www.boston.gov\) is used to provide a public endpoint or micro service which can be used by other departments or external organizations to retrieve current cityscore data for use in their own applications.
+Drupal (via https://www.boston.gov) is used to provide a public endpoint or micro service which can be used by other departments or external organizations to retrieve current cityscore data for use in their own applications.
 
-{% api-method method="post" host="https://www.boston.gov" path="/rest/cityscore/load" %}
-{% api-method-summary %}
-Load Cityscore Data
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://www.boston.gov" path="/rest/cityscore/load" method="post" summary="Load Cityscore Data" %}
+{% swagger-description %}
 This secure endpoint is used by analytics to load and update the current cityscore data.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="payload" type="string" required=true %}
+{% swagger-parameter in="body" name="payload" type="string" %}
 A JSON formatted array of cityscore metric objects.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="api-key" type="string" required=true %}
+{% swagger-parameter in="body" name="api-key" type="string" %}
 Authentication token
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-The endpoint always returns a 200 OK status, with a JSON message in the body.  One of the following messages will be returned:
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="The endpoint always returns a 200 OK status, with a JSON message in the body.  One of the following messages will be returned:" %}
 ```javascript
 // Message received and processed correctly.
 {
@@ -63,14 +49,12 @@ The endpoint always returns a 200 OK status, with a JSON message in the body.  O
     "message": "Not all records saved"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 **Payload Format.**
 
-```text
+```
 [
     {
 		"metric_name" : "311 CONSTITUENT EXPERIENCE SURVEYS",
@@ -88,25 +72,13 @@ The endpoint always returns a 200 OK status, with a JSON message in the body.  O
 ]
 ```
 
-{% api-method method="get" host="https://www.boston.gov" path="/rest/cityscore/json" %}
-{% api-method-summary %}
-Get Cityscore Totals
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://www.boston.gov" path="/rest/cityscore/json" method="get" summary="Get Cityscore Totals" %}
+{% swagger-description %}
 This public endpoint returns the latest cityscore indicator value.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 {
     "day":0.98,
     "week":0.97,
@@ -115,29 +87,15 @@ This public endpoint returns the latest cityscore indicator value.
     "date_posted":"01\/16\/2019"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="https://www.boston.gov" path="/rest/cityscore/html" %}
-{% api-method-summary %}
-Get Cityscore HTML Table
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://www.boston.gov" path="/rest/cityscore/html" method="get" summary="Get Cityscore HTML Table" %}
+{% swagger-description %}
 This public endpoint returns an HTML string which contains a cityscore metric table using the CoB style.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cityscore metric table markedup as an HTML table.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Cityscore metric table markedup as an HTML table." %}
 ```
 <div class="view view-cityscore view-id-cityscore view-display-id-html_cs_table view-dom-id-1ca52cee94c665121a6ce66a2cbf7fe9">
   <div class="view-content">
@@ -167,8 +125,5 @@ Cityscore metric table markedup as an HTML table.
   </div>
 </div>
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

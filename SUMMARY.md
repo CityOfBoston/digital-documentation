@@ -191,6 +191,8 @@
     * [Marriage Intention](projects/inactive-projects/registry-suite/marriage-intention.md)
     * [Death Certificates](projects/inactive-projects/registry-suite/death-certificates.md)
   * [Work With U.S. Digital Response Team](projects/inactive-projects/work-with-u.s.-digital-response-team.md)
+  * [Metrolist (Drupal)](projects/inactive-projects/metrolist-drupal.md)
+  * [Building Housing](projects/inactive-projects/building-housing.md)
 * [Decommissioned Apps or Services](projects/decommissioned-apps-or-services/README.md)
   * [CodeRed](projects/decommissioned-apps-or-services/codered.md)
   * [Archived Forms Information](projects/decommissioned-apps-or-services/archived-forms-information.md)
@@ -203,7 +205,7 @@
       * [Public Notices](projects/decommissioned-apps-or-services/drupal-7/end-points/public-notices.md)
   * [SnowStats](projects/decommissioned-apps-or-services/snowstats.md)
 
-## External resources <a href="other-resources" id="other-resources"></a>
+## External resources <a href="#other-resources" id="other-resources"></a>
 
 * [Learning resources](other-resources/external-learning-resources.md)
 * [Reference links](other-resources/reference-links.md)

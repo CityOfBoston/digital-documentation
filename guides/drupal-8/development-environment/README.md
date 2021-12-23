@@ -11,9 +11,9 @@ Select your operating system from below, and follow the instructions to setup yo
 ### 1. Generate and register ssh key with GitHub
 
 {% hint style="info" %}
-**Tip** 
+**Tip**&#x20;
 
-You can \(re\)use an existing key on your development computer, so long as it meets the requirements of GitHub.
+You can (re)use an existing key on your development computer, so long as it meets the requirements of GitHub.
 {% endhint %}
 
 [How to create SSH keys for github](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
@@ -23,9 +23,9 @@ Be sure you load the public keys you create into GitHub.
 ### 2. Register ssh key with Acquia
 
 {% hint style="info" %}
-**Tip** 
+**Tip**&#x20;
 
-You can \(re\)use an existing key on your development computer, so long as it meets the requirements of Acquia.
+You can (re)use an existing key on your development computer, so long as it meets the requirements of Acquia.
 {% endhint %}
 {% endtab %}
 {% endtabs %}
@@ -33,7 +33,7 @@ You can \(re\)use an existing key on your development computer, so long as it me
 {% tabs %}
 {% tab title="Linux" %}
 {% hint style="warning" %}
-City of Boston recommend the Ubuntu 16.04 or later distribution.  While other Linux distributions will operate well, the instructions below assume the use of Ubuntu and, in particular, the `apt` package manager. 
+City of Boston recommend the Ubuntu 16.04 or later distribution.  While other Linux distributions will operate well, the instructions below assume the use of Ubuntu and, in particular, the `apt` package manager.&#x20;
 {% endhint %}
 
 ### 3. Install Git
@@ -57,7 +57,7 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-If using PHPStorm, [install Docker-machine](https://docs.docker.com/machine/install-machine/#install-machine-directly) 
+If using PHPStorm, [install Docker-machine](https://docs.docker.com/machine/install-machine/#install-machine-directly)&#x20;
 
 ```bash
 base=https://github.com/docker/machine/releases/download/v0.14.0 &&
@@ -97,7 +97,7 @@ brew cask install lando
 ```
 
 {% hint style="info" %}
-Using brew is quick and simple and will definitely get you started.    
+Using brew is quick and simple and will definitely get you started.  \
 _If you later find that you have issues with Lando and/or Docker versions, then follow the instructions on_ [_this page_ ](https://docs.lando.dev/basics/installation.html#macos)_under the title **"Install DMG via direct download"** to get the latest versions**.**_
 {% endhint %}
 {% endtab %}
@@ -111,22 +111,23 @@ Because Drupal is most commonly installed on Linux servers, City of Boston DoIT 
 
 However, if you have no alternative, or harbor an unquenchable desire to use Windows® then the following best practices and instructions should get you headed in the right direction.
 
-{% page-ref page="using-windows.md" %}
+{% content-ref url="using-windows.md" %}
+[using-windows.md](using-windows.md)
+{% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
 {% tab title="All Environments" %}
-### Install IDE and configure debugger \[optional\].
+### Install IDE and configure debugger \[optional].
 
 There are many IDE's capable of being used to write, verify and deploy PHP code.  City of Boston do not endorse any particular platform, but have successfully used the following:
 
-* [Notepad++](https://notepad-plus-plus.org/download/) \(basic text editor\)
-* [Sublime Text](https://www.sublimetext.com/3) \(improved text editor\)
-* VIM \(Linux-based advanced text editor\)
-* [Visual Studio Code](https://code.visualstudio.com/) \(full IDE\)
-* Eclipse \(full IDE\)
-* [PHPStorm](https://www.jetbrains.com/phpstorm/download/) \(full IDE\)
+* [Notepad++](https://notepad-plus-plus.org/download/) (basic text editor)
+* [Sublime Text](https://www.sublimetext.com/3) (improved text editor)
+* VIM (Linux-based advanced text editor)
+* [Visual Studio Code](https://code.visualstudio.com) (full IDE)
+* Eclipse (full IDE)
+* [PHPStorm](https://www.jetbrains.com/phpstorm/download/) (full IDE)
 {% endtab %}
 {% endtabs %}
-

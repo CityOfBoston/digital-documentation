@@ -45,9 +45,9 @@ This page generates forms to collect information for email, text and voice alert
 
 **Email:**
 
-_Subscription - _First the script checks if the email & plate is already subscribed. If it is not, then the script checks how many license plates are already registered against the email address, if its more than 10 it wont register this new one (unless the email is on a whitelist - see box out below).  If the plate is not registered to this address, and the address has less than 10 plates registered to it (or is whitelisted) then the email/plate combo is registered in the table `towed_emails` in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
+_Subscription -_ First the script checks if the email & plate is already subscribed. If it is not, then the script checks how many license plates are already registered against the email address, if its more than 10 it wont register this new one (unless the email is on a whitelist - see box out below).  If the plate is not registered to this address, and the address has less than 10 plates registered to it (or is whitelisted) then the email/plate combo is registered in the table `towed_emails` in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
 
-_Unsubscription_ - First the script checks if the email & plate is already subscribed. If it is, then the entry is removed from `towed_emails` and is added to `towed_emails_optout `in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
+_Unsubscription_ - First the script checks if the email & plate is already subscribed. If it is, then the entry is removed from `towed_emails` and is added to `towed_emails_optout` in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
 
 {% hint style="info" %}
 **Fleet Owners Whitelist.**
@@ -62,16 +62,16 @@ Text subscription is completed by adding a record to the `towing_emails` table, 
 {% hint style="danger" %}
 **There is a "No Provider' option, which should ideally be removed.**
 
-**Provider email to text gateways can be found here: **[**https://avtech.com/articles/138/list-of-email-to-sms-addresses/**](https://avtech.com/articles/138/list-of-email-to-sms-addresses/)****
+**Provider email to text gateways can be found here:** [**https://avtech.com/articles/138/list-of-email-to-sms-addresses/**](https://avtech.com/articles/138/list-of-email-to-sms-addresses/)****
 {% endhint %}
 
-**Note: **We do have the option to send SMS via Twillio using a stored procedure in the `twiSQL` database, however this incurs an additional cost.  As at 2021-11-17, this process does work, and is used by the SMS block in the `sp_process_towing_messages` stored procedure.  To be certain that SMS messages are delivered, it could be that users who select 'No Provider' are added to the `towing_sms` table.
+**Note:** We do have the option to send SMS via Twillio using a stored procedure in the `twiSQL` database, however this incurs an additional cost.  As at 2021-11-17, this process does work, and is used by the SMS block in the `sp_process_towing_messages` stored procedure.  To be certain that SMS messages are delivered, it could be that users who select 'No Provider' are added to the `towing_sms` table.
 
 **Voice:**
 
-_Subscription - _First the script checks if the email & plate is already subscribed. If it is not, then the script checks how many license plates are already registered against the email address, if its more than 10 it wont register this new one (there is no whitelist for voice registrations).  If the plate is not registered to this address, and the address has less than 10 plates registered to it then the email/plate combo is registered in the table `towed_phonenumbers` in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
+_Subscription -_ First the script checks if the email & plate is already subscribed. If it is not, then the script checks how many license plates are already registered against the email address, if its more than 10 it wont register this new one (there is no whitelist for voice registrations).  If the plate is not registered to this address, and the address has less than 10 plates registered to it then the email/plate combo is registered in the table `towed_phonenumbers` in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
 
-_Unsubscription_ - First the script checks if the email & plate is already subscribed. If it is, then the entry is removed from `towed_phonenumbers` and is added to `towed_phonenumbers_optout `in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
+_Unsubscription_ - First the script checks if the email & plate is already subscribed. If it is, then the entry is removed from `towed_phonenumbers` and is added to `towed_phonenumbers_optout` in the database `Towing` on vSQL01 (aka ZPDMZSQL01).
 
 ### : remindme.asp
 
@@ -149,7 +149,7 @@ The police update information on newly towed vehicles every 15 minutes.  The pol
 
 The police data is inserted directly into the `Towline_bpd`table by the Police IT department (contacts below). The actual SSIS-ODBC process involves truncating the towline\_bpd table and then bulk inserting a complete set of new records. &#x20;
 
-**Note: **The MSSQL bulk insert does not fire triggers by default.
+**Note:** The MSSQL bulk insert does not fire triggers by default.
 
 #### **Contacts**
 
@@ -165,12 +165,12 @@ The police account (youvebeentowed (?)) needs permission to truncate the `Towlin
 
 The job which initiates the sp which processes new alerts does need extensive permissions.
 
-**Stored Procedures **(execute permission)**:**
+**Stored Procedures** (execute permission)**:**
 
-* **msdb.dbo.sp\_send\_dbmail: ** to actually send out emails using MSSQL Mail services.
+* **msdb.dbo.sp\_send\_dbmail:** to actually send out emails using MSSQL Mail services.
 * **twiSQl.dbo.SendBrokerMessage**: This interacts with a service on the twiSQL DB on the same server
 
-**Functions **(Call/Execute permission)**:**
+**Functions** (Call/Execute permission)**:**
 
 * **Towing.dbo.functionVerboseReasonCode**
 * **Towing.dbo.functionUnabbreviateTowCompany**
@@ -179,7 +179,7 @@ The job which initiates the sp which processes new alerts does need extensive pe
 * **Towing.dbo.functionUnabbreviateCarColor**
 * **Towing.dbo.URLEncode**
 
-**Tables **(Insert and read permission)**:**
+**Tables** (Insert and read permission)**:**
 
 * **Towing.dbo.Towline\_bpd** _(also requires delete permission)_
 * **Towing.dbo.towed\_import\_log**

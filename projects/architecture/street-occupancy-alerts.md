@@ -48,7 +48,7 @@ Subscription is initiated on this page but the actual subscription process is ha
 
 This page controls subscriptions and unsubscriptions.
 
-_Subscriptions: _
+_Subscriptions:_&#x20;
 
 Subscribing involves first removing and then adding the residents email and street into the table `OccupancyEmails` in the `Towing` database on vSQL01 (aka ZPDMZSQL01).
 

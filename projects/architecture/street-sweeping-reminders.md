@@ -34,9 +34,9 @@ _Lyris maintains subscribers (members) in its **no-tow** list._
 
 ![](<../../.gitbook/assets/image (28).png>)![](<../../.gitbook/assets/image (29) (1).png>)
 
-**Note:  **_Lyris subscribes street occupancy and street sweeping members to the same **no-tow** list._
+**Note:**  _Lyris subscribes street occupancy and street sweeping members to the same **no-tow** list._
 
-_**Note: **Lyris manages its list members and removes those which cannot be delivered to.  Hence the numbers in Lyris are lower than in the Towing DB tables._
+_**Note:** Lyris manages its list members and removes those which cannot be delivered to.  Hence the numbers in Lyris are lower than in the Towing DB tables._
 
 ## Code
 
@@ -80,7 +80,7 @@ If the default page is called with a querystring, then a search is performed and
 
 This page controls subscriptions and unsubscriptions.
 
-_Subscriptions: _
+_Subscriptions:_&#x20;
 
 Subscribing involves first removing and then adding the residents email and street into the table `PwdSweepingEmails` in the `Towing` database on vSQL01 (aka ZPDMZSQL01).
 
@@ -132,7 +132,7 @@ If the logic determines that a recipient should receive an email, and a matching
 
 This is useful for planned events - city holidays (e.g. Christmas), but if cancellation is known sufficiently far in advance or the cancellation is for an extended period (e.g. snow storms) then it could be used to advise subscribers of the cancellation.
 
-* _but remember emails remind about sweeping the next day _
+* _but remember emails remind about sweeping the next day_&#x20;
 {% endhint %}
 
 ## Database
@@ -156,7 +156,7 @@ The tables used by this sub-service are:
 | Table Name        | Key Fields                                                                                                                                | Description                                                                                                                                                                                                                                                                     |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | PwdSweeping       | <ul><li>MainID</li><li>St_name</li><li>Dist(rict)</li><li>StartTime</li><li>EndTime</li><li>Side</li><li>...<br>[schedule info]</li></ul> | <p>Contains street sweeping schedule information for streets in the city.</p><p></p><p>It is unknown how this table is maintained.</p>                                                                                                                                          |
-| PwdSweepingEmails | <ul><li>EmailAddr</li><li>StreetID</li></ul>                                                                                              | <p>Contains information on who has subscribed to what.</p><p><br>StreetID maps to the MainID in the PwdSweeping table.<br></p><p>This table is maintained by the scripts in this sub-service.  It is also used by the <strong>Subscription Search </strong>(aka remind me).</p> |
+| PwdSweepingEmails | <ul><li>EmailAddr</li><li>StreetID</li></ul>                                                                                              | <p>Contains information on who has subscribed to what.</p><p><br>StreetID maps to the MainID in the PwdSweeping table.<br></p><p>This table is maintained by the scripts in this sub-service.  It is also used by the <strong>Subscription Search</strong> (aka remind me).</p> |
 
 PwdSweeping is maintained elsewhere and is active - The last update (as at 2021-10-01) was 2021-09-07.  \[**Check with Satyen on how the data gets into that table**]
 
@@ -197,7 +197,7 @@ Lyris is responsible for:
 * Scheduling and initiating the 7am, 2pm and 5pm mailings each day, and
 * Physically sending the emails required.
 
-**BUT Lyris does not **
+**BUT Lyris does not**&#x20;
 
 * Know the members preferred email time, or
 * Know the members street selection, or
