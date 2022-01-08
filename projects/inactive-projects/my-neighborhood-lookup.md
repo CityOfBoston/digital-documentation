@@ -27,7 +27,9 @@ These datasources are combined with the SAM address dataset in Civis. [This work
 
 Every night, [the my neighborhood workflow](https://github.com/CityOfBoston/civis\_pipelines/blob/dcfe088e154f010e9090ee3d57130882d7dbdaaa/workflows/my\_neighborhood.yaml) runs and sends the any records that have updated or changed to boston.gov. Once a month on the 1st, the workflow sends the entire load of records to Drupal.
 
-**NOTE:** There are two cards that show data which are hard coded and don't sync with Civis. They are the mayor's name in the "YOUR MAYOR" card found in "mnl\_config.js" file and the "YOUR AT-LARGE CITY COUNCILORS: card found in "Representation.js" file.&#x20;
+**NOTES:** There are two cards that show data which are hard coded and don't sync with Civis. They are the mayor's name in the "YOUR MAYOR" card found in "mnl\_config.js" file and the "YOUR AT-LARGE CITY COUNCILORS" card found in "Representation.js" file.&#x20;
+
+In addition to the hard coded items, there too is a data dependency on ReCollect. We built an endpoint in Drupal "rest/recollect" found in Drupal module "bos\_mnl" to query ReCollect API with the user's inputted address and returns the next trash and recycling date for that specific address.
 
 Jonathan Porter (Analytics division of DoIT) is the best point of contact for the Civis portion. Matt McGowan (Digital division of DoIT) is the best point of contact for the Drupal REST information.
 
