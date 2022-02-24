@@ -24,7 +24,7 @@
 * [Code of Conduct](standards-and-best-practices/code-of-conduct.md)
 * [General](standards-and-best-practices/general.md)
 * [Code reviews](standards-and-best-practices/code-reviews.md)
-* [Digital Team Project management](standards-and-best-practices/project-management.md)
+* [Digital Team Project Management](standards-and-best-practices/project-management.md)
 * [Git / GitHub](standards-and-best-practices/git-and-github/README.md)
   * [Contacts at Github](standards-and-best-practices/git-and-github/contacts-at-github.md)
   * [Git Command Tips](standards-and-best-practices/git-and-github/git-command-tips.md)
