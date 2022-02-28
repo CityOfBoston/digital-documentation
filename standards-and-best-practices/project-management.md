@@ -1,4 +1,4 @@
-# Digital Team Project management
+# Project Management
 
 The DoIT Digital team is currently working on a number of projects to improve the digital experience for both City of Boston’s constituents and workers. We also have a backlog of projects that are slated to begin over the next number of months.
 
@@ -139,3 +139,17 @@ We have created a project intake form that people can fill out if they are inter
 If you want to add this to your email signature here is some suggested phrasing:
 
 _Have an idea for a digital project or application?_ [_Submit your ideas here!_](https://docs.google.com/forms/d/1avlYGpadvhVNwU9O7Y8-5i8bOY\_0Y6UGBVPSwwA0RUg/edit)__
+
+## Enhancement Requests/Bug Reporting
+
+If someone on the Digital Team receives a request from another Department at City of Boston to report a bug or discuss an enhancement for a previously completed project on Boston.gov we established the following procedure to triage and prioritize these issues:
+
+1. A GitHub issue/ticket is created in one of the following projects and assigned to James Duffy
+   * [**Digital Completed Projects (Maintenance)**](https://github.com/orgs/CityOfBoston/projects/50/views/1)
+   * [**Boston.gov - Non-Project Issues**](https://github.com/orgs/CityOfBoston/projects/54/views/1)
+2. The Boston.gov Product Owner - James Duffy - will triage the ticket&#x20;
+3. The Product Owner will connect with the original reporter of the issue and gather any requirements&#x20;
+4. The Product Owner will discuss the issue with the Development Manager -David Upton- they will decide if the issue is a bug or a potential new project&#x20;
+5. The Product Owner will prioritize the work&#x20;
+6. **Bugs:** The Dev Manager and Product Owner will allocate to the appropriate developer&#x20;
+7. **Projects:** Product Owner will hand it off to a Project Manager to start the new project process detailed in this document
