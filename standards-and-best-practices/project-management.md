@@ -16,6 +16,7 @@ We created a [Digital Project Board](https://github.com/orgs/CityOfBoston/projec
 
 By definition projects are a sequence of tasks that must be completed to attain a certain outcome. Digital team projects can vary in size and scope based on the requirements. A project team should be made up of the following:
 
+* Product Owner/Manager
 * Project Manager
 * Stakeholder(s)
 * Developer(s)
@@ -33,7 +34,9 @@ Project Managers should set up a GitHub Project for each of their projects. Proj
 
 Project Managers will be assigned to approved projects from the backlog when they are ready to kickoff. They will be responsible for managing projects from start to finish.
 
-Project Managers will be responsible for the following:
+The Product Owner/Manager is responsible for triaging bugs and potential new projects as well as prioritizing the product backlog. They define the vision for the project and work closely with the Project Manager on project timelines.
+
+Project Managers are responsible for the following:
 
 * Scheduling Kickoff meeting - invite stakeholders, Devs, UI Team&#x20;
 * Project Set up in GitHub&#x20;
@@ -50,6 +53,40 @@ We have a shared [Digital Google Drive](https://drive.google.com/drive/folders/0
 We also have a GitHub project called [Digital Completed Projects - (Maintenance)](https://github.com/orgs/CityOfBoston/projects/50/views/4)
 
 This project is reserved for issues that arise on projects that have been completed. These may be bug fixes or small enhancements to projects that do not meet the requirements of a project.
+
+### Project Tracking Common Practices&#x20;
+
+You can find the steps for setting up a new project in Git Hub here: [Project Set Up in GitHub](https://docs.google.com/presentation/d/1d-ch4cofuFnub1C1XZ1Eqod7XfgugIiES6S3LklDrrE/edit#slide=id.g2ccbb63ee7\_1\_0). As stated above each PM can set up and run their projects in a way that works for their team. Below are some suggested common practices you can follow.
+
+Once a project is set up in GitHub, it will be easy to track issues using the following status’/swim lanes:
+
+* To Do/Backlog&#x20;
+* Triaged/Sized
+* In Development/In Progress
+* Ready for Review/QAT
+* Ready for Production
+* Done
+
+#### Issues/Tickets&#x20;
+
+* Created by the PM and or Lead Developer and added to a project
+* Issues contain tasks or acceptance criteria for the development team&#x20;
+* Prioritized by the team in the backlog based on sizing and timing&#x20;
+* Moved through the swim lanes or status’ by any team member as the work is being completed&#x20;
+* Once tested and considered complete closed by PM or Lead Dev
+
+#### QAT(quality assurance testing)
+
+* Once an issue is assigned QAT status the PM should review the work in a test environment against the acceptance criteria in the ticket&#x20;
+* If the project involves extensive User Facing components the UI team member(s) should also review the stories and sign off as complete&#x20;
+* PMs or UI team members should add any comments or questions directly into the ticket for the developer to address&#x20;
+* Some larger projects may need to involve outside vendors for comprehensive testing&#x20;
+* PMs should work with Dev to team to create test scenarios and use cases for testing
+
+#### Project closure
+
+* All issues/tickets have been tested and deemed done&#x20;
+* Code is successfully deployed to Prod
 
 ### Project Development
 
