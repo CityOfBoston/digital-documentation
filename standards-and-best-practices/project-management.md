@@ -34,7 +34,7 @@ Project Managers should set up a GitHub Project for each of their projects. Proj
 
 Project Managers will be assigned to approved projects from the backlog when they are ready to kickoff. They will be responsible for managing projects from start to finish.
 
-The Product Owner/Manager defines the vision for the project and works closely with the project manager on project timelines. Product Owners are responsible for triaging bugs, new project requests and prioritizing the product backlog.&#x20;
+The Product Owner/Manager defines the vision for the product and works closely with the project manager on project timelines. Product Owners are responsible for triaging bugs, new project requests and prioritizing the product backlog.&#x20;
 
 Project Managers are responsible for the following:
 
