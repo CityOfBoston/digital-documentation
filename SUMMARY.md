@@ -95,6 +95,7 @@
     * [Lando 101](guides/drupal-8/installation-instructions/lando-101.md)
     * [Verify Installation](guides/drupal-8/installation-instructions/verify-installation/README.md)
       * [Local Patterns installation](guides/drupal-8/installation-instructions/verify-installation/local-patterns-installation.md)
+    * [Windows install](guides/drupal-8/installation-instructions/windows-install.md)
     * [PhpStorm settings configurations](guides/drupal-8/installation-instructions/phpstorm-settings-configurations.md)
   * [Continuous Deployment Process](guides/drupal-8/continuous-deployment-process.md)
   * [Site Development Notes](guides/drupal-8/site-development-notes/README.md)
