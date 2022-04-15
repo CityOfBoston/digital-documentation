@@ -101,6 +101,7 @@
   * [Site Development Notes](guides/drupal-8/site-development-notes/README.md)
     * [Git Best Practices - Drupal](guides/drupal-8/site-development-notes/git-best-practices-drupal.md)
     * [Drupal Cache](guides/drupal-8/site-development-notes/drupal-cache.md)
+    * [Drupal Config](guides/drupal-8/site-development-notes/drupal-config.md)
     * [Custom Modules](guides/drupal-8/site-development-notes/custom-modules/README.md)
       * [Adding Templates to Custom Modules](guides/drupal-8/site-development-notes/custom-modules/adding-templates-to-modules.md)
       * [Custom Content Types](guides/drupal-8/site-development-notes/custom-modules/content-type-back-end/README.md)
