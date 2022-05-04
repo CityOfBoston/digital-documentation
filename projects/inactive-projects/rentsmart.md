@@ -6,7 +6,7 @@ description: As of 2019
 
 **Project Background**
 
-* Project came out of Department of Neighborhood Development \(DND\)
+* Project came out of Department of Neighborhood Development (DND)
 * Qlarion built
 * When originally developed open data portal didn’t exist/wasn’t in its current state to be used could use ckan API
 * Launched publicly early August 2017 - no known issues or outages since launch
@@ -19,12 +19,12 @@ description: As of 2019
 
 **Technology used**
 
-* Hosted on heroku \[migrated from Qlarion to City's heroku in July 2018\]
+* Hosted on heroku \[migrated from Qlarion to City's heroku in July 2018]
 * Uses heroku resources - uses single production dyno
-* Could be moved to AWS \[down the road\], but would need to create a PHP container in the current AWS setup
+* Could be moved to AWS \[down the road], but would need to create a PHP container in the current AWS setup
 * Built in php and javascript
-* Bootstrap front end \[Sebastian advised on this at some point\]
-* Data services \(SAP\) sits on City side. Every night loads/nightly job into postgres database \(data services drops data then PHP to post gres to stage the data/make it look nice\). SAP = ATl platform. PHP script to get data to website.
+* Bootstrap front end \[Sebastian advised on this at some point]
+* Data services (SAP) sits on City side. Every night loads/nightly job into postgres database (data services drops data then PHP to post gres to stage the data/make it look nice). SAP = ATl platform. PHP script to get data to website.
 * Assurance that the data runs before page load is set within the code.
 * index.html - served on apache
 
@@ -37,7 +37,12 @@ description: As of 2019
 
 **Areas for improvement**
 
-* Adjust dynos and other heroku resource \(to bring cost of app down\)
-* Adjust data source/feed set up  
+* Adjust dynos and other heroku resource (to bring cost of app down)
+* Adjust data source/feed set up &#x20;
 * Revisit entire structure: Qlarion estimated would probably take 1 week of time to switch the data sources and restructure data
 
+#### 05/2022 Update
+
+DNS redirect for rentsmart.boston.gov => [data.boston.gov/dataset/rentsmart](https://data.boston.gov/dataset/rentsmart)
+
+Heroku app backed up to github, and database and some creds saved on s3 cob\_digital\_archives.
