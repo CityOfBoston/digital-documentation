@@ -10,14 +10,32 @@ BUILD
   * (powershell) wsl --install -d Debian
 * ensure wsl2 is being used
   * (powershell) wsl --set-default-version 2
-* (linux console)
-  * sudo rm -rf /etc/resolv.conf (this is a symlink and changes to it get overwritten when wsl starts)
-  * sudo echo nameserver 8.8.4.4 > /etc/resolv.conf (set the nameserver to valid nameserver or 8.8.4.4)
-  * sudo apt-get update
-  * sudo apt-get install gzip unzip vim git curl groff
-  * curl "https://awscli.amazonaws.com/awscli-exe-linux-x86\_64.zip" -o "awscliv2.zip"
-  * unzip awscliv2.zip
-  * sudo ./aws/install
+*   (linux console)
+
+    * Set up so swl can access the internet.
+
+    ```
+    sudo rm -rf /etc/resolv.conf
+    sudo bash -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'
+    sudo bash -c 'echo "[network]" > /etc/wsl.conf'
+    sudo bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
+    sudo chattr +i /etc/resolv.conf
+    ```
+
+    * sudo apt-get update
+    * If you have trouble try:
+
+    ```
+    netsh winsock reset 
+    netsh int ip reset all
+    netsh winhttp reset proxy
+    ipconfig /flushdns
+    ```
+
+    * sudo apt-get install gzip unzip vim git curl groff
+    * curl "https://awscli.amazonaws.com/awscli-exe-linux-x86\_64.zip" -o "awscliv2.zip"
+    * unzip awscliv2.zip
+    * sudo ./aws/install
 * Docker desktop for windows
 * Microsoft Visual Studio Code (VSC)
 * PHP Storm
