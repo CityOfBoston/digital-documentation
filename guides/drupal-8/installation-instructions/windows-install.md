@@ -12,7 +12,7 @@ BUILD
   * (powershell) wsl --set-default-version 2
 *   (linux console)
 
-    * Set up so swl can access the internet.
+    * Set up so wsl can access the internet.
 
     ```
     sudo rm -rf /etc/resolv.conf
