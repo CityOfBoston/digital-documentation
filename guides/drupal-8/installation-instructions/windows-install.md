@@ -45,7 +45,7 @@ Step 4: install packages needed in WSL:
 
 ```
 sudo apt-get update
-sudo apt-get install gzip unzip vim git curl groff
+sudo apt-get install -y gzip unzip vim git curl groff
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
