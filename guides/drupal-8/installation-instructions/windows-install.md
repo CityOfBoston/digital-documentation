@@ -130,14 +130,16 @@ You could also create and edit the credentials file using `vim` which is install
 sudo -s
 rm -rf /etc/fstab
 echo "c:/Users/xxxx/sources /home/yyyy/sources drvfs default,metadata,uid=1000,gid=1000 0 0" > /etc/fstab
+mkdir /home/yyyy/sources
 mount -a
 exit
 ```
 
 {% hint style="success" %}
-Replace xxxx with your EmployeeID/User Account from CoB.
-
-Replace yyyy with the accountname you used when you installed WSL (you can find this in the LINUX console by running `cd ~ && pwd` the path displayed be in the format /home/accountname
+1. Replace `c:/Users/xxxx/sources` with the location in the windows host where you plan to keep all development source files. \
+   _This is the folder where you will be cloning the CoB repos._ \
+   _If in doubt, create a `sources` folder in your **windows home** folder, and for the command above just replace `xxxx` with your CoB supplied EmployeeID/User Account._
+2. Replace `yyyy` with the accountname you used when you installed WSL (you can find this in the LINUX console by running `cd ~ && pwd` - the path displayed be in the format /home/accountname
 {% endhint %}
 
 **USEFUL**
