@@ -59,3 +59,18 @@ USEFUL
 * unmount the sources folder (linux console) sudo umount /home/david/sources/
 * remount the sources folder (linux console) sudo umount -a
 * mount the sources folder manually (linux console) sudo mount -t drvfs c:/Users/167926/sources /home/david/sources -o metadata,uid=1000,gid=1000
+
+
+
+Uninstall WSL:
+
+```
+wsl --disconnect
+wsl --terminate -s debian
+Disable-WindowsOptionalFeature -Online -FeatureName $("VirtualMachinePlatform", "Microsoft-Windows-Subsystem-Linux")
+
+restart computer...
+```
+
+
+
