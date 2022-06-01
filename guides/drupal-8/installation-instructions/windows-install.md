@@ -125,7 +125,6 @@ echo "aws_secret_access_key = xxxxx" >> ~/.aws/credentials
 ```
 sudo -s
 rm -rf /etc/fstab
-touch /etc/fstab
 echo "c:/Users/xxxx/sources /home/yyyy/sources drvfs default,metadata,uid=1000,gid=1000 0 0" > /etc/fstab
 mount -a
 exit
