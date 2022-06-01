@@ -126,7 +126,7 @@ There are many IDE's capable of being used to write, verify and deploy PHP code.
 * [Notepad++](https://notepad-plus-plus.org/download/) (basic text editor)
 * [Sublime Text](https://www.sublimetext.com/3) (improved text editor)
 * VIM (Linux-based advanced text editor)
-* [Visual Studio Code](https://code.visualstudio.com) (full IDE)
+* [Visual Studio Code](https://code.visualstudio.com/) (full IDE)
 * Eclipse (full IDE)
 * [PHPStorm](https://www.jetbrains.com/phpstorm/download/) (full IDE)
 {% endtab %}

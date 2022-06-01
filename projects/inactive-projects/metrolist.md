@@ -205,10 +205,10 @@ Due to [compatibility issues with Google Translate](broken-reference), the AMI A
 
 The domain from which this data is fetched can be specified with the following environment IDs:
 
-* `www` or `prod` → [https://www.boston.gov](https://www.boston.gov)
+* `www` or `prod` → [https://www.boston.gov](https://www.boston.gov/)
 * Acquia environment
-  * `ci` → [https://d8-ci.boston.gov](https://d8-ci.boston.gov)
-  * `dev2` → [https://d8-dev2.boston.gov](https://d8-dev2.boston.gov)
+  * `ci` → [https://d8-ci.boston.gov](https://d8-ci.boston.gov/)
+  * `dev2` → [https://d8-dev2.boston.gov](https://d8-dev2.boston.gov/)
   * etc.
 
 The default value is `ci`, as that should have the most recent data set in most cases.
@@ -278,14 +278,14 @@ Use Functional Programming principals as often as possible to aid maintainabilit
     * `setupTests.js`: Jest configuration.
   * `_redirects`: Netlify redirects.
   * `.env`, `.env.development`, `.env.production`: [Dotenv](https://github.com/motdotla/dotenv#readme) configuration (environment variables).
-  * `.eslintrc.js`: [ESLint](https://eslint.org) configuration.
-  * `.travis.yml`: [Travis CI](https://travis-ci.com) configuration.
-  * `babel.config.js`: [Babel](https://babeljs.io) configuration.
+  * `.eslintrc.js`: [ESLint](https://eslint.org/) configuration.
+  * `.travis.yml`: [Travis CI](https://travis-ci.com/) configuration.
+  * `babel.config.js`: [Babel](https://babeljs.io/) configuration.
   * `DEVNOTES.md`: Notes taken during development.
   * `package.json`: Project metadata/NPM dependencies.
-  * `postcss.config.js`: [PostCSS](https://postcss.org) configuration. Used to postprocess CSS output.
+  * `postcss.config.js`: [PostCSS](https://postcss.org/) configuration. Used to postprocess CSS output.
   * `README.md`: Project documentation (this file).
-  * `webpack.config.js`, `webpack.production.js`, `webpack.staging.js`: [Webpack](https://webpack.js.org) configurations for different environments.
+  * `webpack.config.js`, `webpack.production.js`, `webpack.staging.js`: [Webpack](https://webpack.js.org/) configurations for different environments.
   * `yarn.lock`/`package-lock.json`: Yarn/NPM dependency lock file.
 
 ### Component Layout
@@ -377,7 +377,7 @@ Don’t declare margins directly on components, only in wrappers.
 
 ### Postprocessing
 
-[Rucksack](https://www.rucksackcss.org) is installed to enable the same CSS helper functions that are used on Patterns, such as `font-size: responsive 16px 24px`.
+[Rucksack](https://www.rucksackcss.org/) is installed to enable the same CSS helper functions that are used on Patterns, such as `font-size: responsive 16px 24px`.
 
 ## Build Process
 
@@ -457,7 +457,7 @@ module.exports = {
 
 ## Testing
 
-We’re using [Jest](https://jestjs.io) + [React Testing Library](https://testing-library.com) to ensure that future development doesn’t break existing functionality.
+We’re using [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/) to ensure that future development doesn’t break existing functionality.
 
 ### Unit Tests
 

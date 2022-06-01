@@ -10,7 +10,7 @@ City of Boston use Acquia to host all non local (docker) servers on our [deploym
 
 ### Varnish
 
-Acquia's servers are contained within an [Acquia Cloud](https://cloud.acquia.com/app/develop/applications/5ad427f5-60d6-48fd-983e-670ddc7767c4) subscription and implement a [Varnish](https://varnish-cache.org) cache outside the load-balancer, as [described here](https://support.acquia.com/hc/en-us/articles/360005853313-Introduction-to-Varnish).
+Acquia's servers are contained within an [Acquia Cloud](https://cloud.acquia.com/app/develop/applications/5ad427f5-60d6-48fd-983e-670ddc7767c4) subscription and implement a [Varnish](https://varnish-cache.org/) cache outside the load-balancer, as [described here](https://support.acquia.com/hc/en-us/articles/360005853313-Introduction-to-Varnish).
 
 ### Drupal Core Cache
 
@@ -18,7 +18,7 @@ The release of Drupal 8 contains a [rebuilt cache strategy](https://www.drupal.o
 
 ### Memcache
 
-[Memcache](http://memcached.org) (for the purposes of this summary document) can be considered to be a low-level cache which optimizes caching by saving more dynamic process responses to memory.  The principal value is to minimize requests between the Drupal kernel and MySQL for queries that are run multiple times during bootstrap and page requests.&#x20;
+[Memcache](http://memcached.org/) (for the purposes of this summary document) can be considered to be a low-level cache which optimizes caching by saving more dynamic process responses to memory.  The principal value is to minimize requests between the Drupal kernel and MySQL for queries that are run multiple times during bootstrap and page requests.&#x20;
 
 _**Memcache is not used on boston.gov (at this time).**_
 

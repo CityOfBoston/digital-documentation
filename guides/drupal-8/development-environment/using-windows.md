@@ -91,7 +91,7 @@ Download the latest Windows .exe installer from [here](https://github.com/lando/
 On Windows®, DoIT recommends:&#x20;
 
 * [PHPStorm](https://www.jetbrains.com/phpstorm/download/)
-* [VS Code](https://code.visualstudio.com)
+* [VS Code](https://code.visualstudio.com/)
 * [Sublime Text](https://www.sublimetext.com/3)
 * [Notepad++](https://notepad-plus-plus.org/download/)
 

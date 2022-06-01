@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* [Cyberduck](https://cyberduck.io)
+* [Cyberduck](https://cyberduck.io/)
 * AWS CLI access key
 
 ## Setup

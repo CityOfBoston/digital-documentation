@@ -9,7 +9,7 @@ description: >-
 
 **Visit them at:** [**https://iteratorstesting.com/services/accessibility-testing**](https://iteratorstesting.com/services/accessibility-testing)****
 
-**Trusted Tester Tests:** The Section 508 Trusted Tester program groups the WCAG requirements into related groupings that can be tested (and developed) at the same time. With the help of Iterators the VPAT documentation for boston.gov was created. You can read the [documentation here.](https://docs.google.com/document/d/1vtRusx1qgyiyYx2tUl1hixUTiQqyHQeaVfpECj-HZsc/edit?ts=604fb78c#)
+**Trusted Tester Tests:** The Section 508 Trusted Tester program groups the WCAG requirements into related groupings that can be tested (and developed) at the same time. With the help of Iterators the VPAT documentation for boston.gov was created. You can read the [documentation here.](https://docs.google.com/document/d/1vtRusx1qgyiyYx2tUl1hixUTiQqyHQeaVfpECj-HZsc/edit?ts=604fb78c)
 
 **Test #4) Keyboard and Focus**&#x20;
 
@@ -102,6 +102,6 @@ b. Some web pages have multiple sections of different content, such as â€œnewsâ€
 
 **Environments**
 
-* Production: [https://boston.gov](https://boston.gov)
-* Test: [https://d8-stg.boston.gov/](https://d8-stg.boston.gov)
-* Development: [https://d8-dev.boston.gov/](https://d8-dev.boston.gov), [https://d8-uat.boston.gov/](https://d8-uat.boston.gov), [https://d8-dev2.boston.gov/](https://d8-dev2.boston.gov), [https://d8-ci.boston.gov/](https://d8-ci.boston.gov)
+* Production: [https://boston.gov](https://boston.gov/)
+* Test: [https://d8-stg.boston.gov/](https://d8-stg.boston.gov/)
+* Development: [https://d8-dev.boston.gov/](https://d8-dev.boston.gov/), [https://d8-uat.boston.gov/](https://d8-uat.boston.gov/), [https://d8-dev2.boston.gov/](https://d8-dev2.boston.gov/), [https://d8-ci.boston.gov/](https://d8-ci.boston.gov/)

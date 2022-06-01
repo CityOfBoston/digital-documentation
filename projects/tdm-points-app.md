@@ -16,4 +16,8 @@ _Mobility Score is a factor that determines the target score for selecting TDM s
 
 _Development projects will need to select TDM strategies to meet this minimum number of points to satisfy Boston Transportation Department (BTD) development review requirements_
 
+### Design
+
+![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.57.37 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.58.04 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.58.33 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.59.08 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.59.49 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 4.03.01 PM.png>)
+
 \

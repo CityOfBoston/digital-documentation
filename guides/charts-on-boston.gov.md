@@ -4,7 +4,7 @@ description: Technical and project documentation for charts on boston.gov.
 
 # Charts on boston.gov
 
-We use the [VegaLite](https://vega.github.io/vega-lite/) and [Vega](https://vega.github.io/vega/) libraries to create our charts on boston.gov. VegaLite is an easier to use version of Vega. Both libraries are built on top of [D3](https://d3js.org). It does a little more guess work for us so we don't have to be so specific in defining our charts. These libraries let users define/create a chart using a JSON schema.&#x20;
+We use the [VegaLite](https://vega.github.io/vega-lite/) and [Vega](https://vega.github.io/vega/) libraries to create our charts on boston.gov. VegaLite is an easier to use version of Vega. Both libraries are built on top of [D3](https://d3js.org/). It does a little more guess work for us so we don't have to be so specific in defining our charts. These libraries let users define/create a chart using a JSON schema.&#x20;
 
 From a technical standpoint, we wrap this library up as a web component that is stored in [Fleet](libraries-and-tools/fleet-pattern-library/), our patterns library. The `<cob-chart>` component takes a JSON object as input in a Vega or VegaLite schema as input and creates a chart.&#x20;
 
@@ -35,7 +35,7 @@ The general overview for getting a chart on boston.gov is:
 
 Vega/VegaLite can read in data from a publicly available url. We leverage this functionality so that we can set up separate automation practices for the data charts on boston.gov display. This helps ensure the data on the chart stays up-to-date.
 
-For testing purposes, you could upload a csv as a [Github Gist](https://gist.github.com) and use that url, but when things move to production, all data should be pushing/pulling from an s3 bucket.
+For testing purposes, you could upload a csv as a [Github Gist](https://gist.github.com/) and use that url, but when things move to production, all data should be pushing/pulling from an s3 bucket.
 
 #### Using s3
 
@@ -424,7 +424,7 @@ When working with large numbers, you can use Vega's [`"calculate"` transform](ht
 
 ### General Charting Good Reads
 
-* [The entire Datawrapper blog](https://blog.datawrapper.de)
+* [The entire Datawrapper blog](https://blog.datawrapper.de/)
   * [What Questions to Ask When Creating Charts](https://blog.datawrapper.de/better-charts/)
   * [Colors on charts](https://blog.datawrapper.de/colorguide/), [another colors on charts post](https://blog.datawrapper.de/colors/)
 * [Flowing Data's "basic rules"](https://flowingdata.com/2010/07/22/7-basic-rules-for-making-charts-and-graphs/)

@@ -18,7 +18,7 @@ This (GitBook) is the place to document technical information that isn’t speci
 
 ## Project-specific documentation
 
-Any technical information that’s specific to a particular project should be in a `README.md` at the root directory of the project’s source files. Examples include: how a new developer could install the project locally, a list of npm/Yarn tasks... basically, anything that “should be in a README”. [https://www.makeareadme.com/](https://www.makeareadme.com) is a great reference for the types of information that should be included.
+Any technical information that’s specific to a particular project should be in a `README.md` at the root directory of the project’s source files. Examples include: how a new developer could install the project locally, a list of npm/Yarn tasks... basically, anything that “should be in a README”. [https://www.makeareadme.com/](https://www.makeareadme.com/) is a great reference for the types of information that should be included.
 
 Also see project specific information further down in Gitbook.\
 \

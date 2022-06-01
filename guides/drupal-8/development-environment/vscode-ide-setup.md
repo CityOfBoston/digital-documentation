@@ -6,13 +6,13 @@ description: Setting up the Visual Studio Code editor to work well with Drupal
 
 #### Add XDebug
 
-![](../../../.gitbook/assets/debug%20%281%29.png)
+![](<../../../.gitbook/assets/debug (1).png>)
 
-1. Under Extensions ![](../../../.gitbook/assets/extensions.png)in the left sidebar, search for "PHP Debug" and click "Install" ![](../../../.gitbook/assets/install.png) 
-2. Edit `.vscode/launch.json`   
+1. Under Extensions <img src="../../../.gitbook/assets/extensions.png" alt="" data-size="line">in the left sidebar, search for "PHP Debug" and click "Install" <img src="../../../.gitbook/assets/install.png" alt="" data-size="line">&#x20;
+2. Edit `.vscode/launch.json`  &#x20;
 3. Add the following configuration:
 
-```text
+```
 {
     "version": "0.2.0",
     "configurations": [
@@ -39,17 +39,16 @@ description: Setting up the Visual Studio Code editor to work well with Drupal
 
 #### Add Drupal coding standards
 
-![](../../../.gitbook/assets/phpcs_drupal.png)
+![](../../../.gitbook/assets/phpcs\_drupal.png)
 
-1. Under Extensions ![](../../../.gitbook/assets/extensions.png)in the left sidebar, search for "phpcs" and click "Install" ![](../../../.gitbook/assets/install.png) 
-2. Click in top navbar navigate to `file > preferences > settings` 
-3. Under `Workspace Settings` expand the `Extensions` option 
+1. Under Extensions <img src="../../../.gitbook/assets/extensions.png" alt="" data-size="line">in the left sidebar, search for "phpcs" and click "Install" <img src="../../../.gitbook/assets/install.png" alt="" data-size="line">&#x20;
+2. Click in top navbar navigate to `file > preferences > settings`&#x20;
+3. Under `Workspace Settings` expand the `Extensions` option&#x20;
 4. Locate `PHP CodeSniffer configuration` and scroll down to the `Standard` section and click the "Edit in settings.json" link
 5. Add the following configuration to your `Workspace Settings`:
 
-```text
+```
 {
     "phpcs.standard": "vendor/drupal/coder/coder_sniffer/Drupal",
 }
 ```
-

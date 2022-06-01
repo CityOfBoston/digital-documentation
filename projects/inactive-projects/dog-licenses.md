@@ -18,7 +18,7 @@ Improve the existing business process(es) associated with applying for new dog l
 
 #### Current process:
 
-**Tracking**: Essentially the [cityofboston.gov](http://cityofboston.gov) sends Animal Care and Control an email, and staff manually enter information from that email into [Chameleon](https://chameleonbeach.com).&#x20;
+**Tracking**: Essentially the [cityofboston.gov](http://cityofboston.gov/) sends Animal Care and Control an email, and staff manually enter information from that email into [Chameleon](https://chameleonbeach.com/).&#x20;
 
 Chameleon is a software used by Animal Care and Control to track the licenses - all info that is submitted. __ Theoretically shares information nationally with any groups that also use the software and/or with major sites for lost pets, etc.
 
@@ -32,14 +32,14 @@ Chameleon is a software used by Animal Care and Control to track the licenses - 
 
 05/07/2019 - Reilly checked with Susan Hynes - Susan couldn’t find any contracts in Peoplesoft financials for Chameleon or Chameleon beach
 
-Animal Care and Control mentioned that Georges/Enterprise worked with Chameleon, so Jeanethe check with Joe/Goerges on this. Georges said the only one he knew that worked on a connection for animal licenses was Jeff Ng who helped connect [cityofboston.gov](http://cityofboston.gov) to invoice cloud a few years ago. More on this here: See line 20 here: [https://docs.google.com/spreadsheets/d/1P6aBfR0rlltQgrCupTcvCvO70HzViQe6HxI3IiJWLXA/edit#gid=1207577308](https://docs.google.com/spreadsheets/d/1P6aBfR0rlltQgrCupTcvCvO70HzViQe6HxI3IiJWLXA/edit#gid=1207577308)
+Animal Care and Control mentioned that Georges/Enterprise worked with Chameleon, so Jeanethe check with Joe/Goerges on this. Georges said the only one he knew that worked on a connection for animal licenses was Jeff Ng who helped connect [cityofboston.gov](http://cityofboston.gov/) to invoice cloud a few years ago. More on this here: See line 20 here: [https://docs.google.com/spreadsheets/d/1P6aBfR0rlltQgrCupTcvCvO70HzViQe6HxI3IiJWLXA/edit#gid=1207577308](https://docs.google.com/spreadsheets/d/1P6aBfR0rlltQgrCupTcvCvO70HzViQe6HxI3IiJWLXA/edit#gid=1207577308)
 
 ## Project next steps
 
 ### Things to explore:
 
 * General discovery with Alexis/Animal Care and Control&#x20;
-* Explore use of chameleon ([https://chameleonbeach.com/](https://chameleonbeach.com)), i.e. software used by Animal Care and Control to track the licenses - all info that is submitted.
+* Explore use of chameleon ([https://chameleonbeach.com/](https://chameleonbeach.com/)), i.e. software used by Animal Care and Control to track the licenses - all info that is submitted.
 * Explore automation of manual entry of  information from emails (cityofboston.gov) into Chameleon. Can this be automated?
 * Discrepancies between what is asked in person or via mail versus what is asked online. Note: There are differences - Example: We don't prompt for the aging population to get a discount like we do in person and via mail.
 * Explore fee waiver use cases (e.g., do seeing eye dogs get fees waived?)

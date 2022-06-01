@@ -12,14 +12,14 @@ description: >-
 
 * Public newsletter subscription center: [https://newsletters.boston.gov/subscribe](https://newsletters.boston.gov/subscribe) &#x20;
 * Login link for all employees: [https://boston.upaknee.com](https://boston.upaknee.com) or [https://boston-admin.upaknee.com](https://boston-admin.upaknee.com) &#x20;
-* Login link for admins: [https://boston-admin.upaknee.com/](https://boston-admin.upaknee.com) \[There is an overarching admin view. If admins log in to this, they must then go into the 'production' or 'test' environment.
+* Login link for admins: [https://boston-admin.upaknee.com/](https://boston-admin.upaknee.com/) \[There is an overarching admin view. If admins log in to this, they must then go into the 'production' or 'test' environment.
 * QA site: [https://boston-qa.upaknee.com](https://boston-qa.upaknee.com) \[same credentials as prod]
 
 **The Different Ways People Can Sign Up for Upaknee**
 
-1. [Newsletters.boston.gov](http://newsletters.boston.gov) (subscription center built and hosted by Upaknee) - for any newsletter - This is hosted by Upaknee.
-2. 'Widget' on our [boston.gov](http://boston.gov) website -- this is a custom built Drupal component (system that is PHP/mysql) displayed on our website that is hosted by Acquia. Many City departments have these on their webpages. If you need more you can explore on [boston.gov/departments](http://boston.gov/departments), but I've included a few here:- [https://www.boston.gov/departments/archaeology#updates](https://www.boston.gov/departments/archaeology#updates) > List number 30 [https://www.boston.gov/departments/arts-and-culture#newsletter](https://www.boston.gov/departments/arts-and-culture#newsletter) > List number 13
-3. City of Boston open data portal (hosted by opengov): [data.boston.gov](http://data.boston.gov) in the footer connecting to list number 101  These use: [https://contactform.boston.gov/subscriptions?list=LISTNUMBER](https://contactform.boston.gov/subscriptions?list=LISTNUMBER), which is a domain running through our \[City's] AWS instance.
+1. [Newsletters.boston.gov](http://newsletters.boston.gov/) (subscription center built and hosted by Upaknee) - for any newsletter - This is hosted by Upaknee.
+2. 'Widget' on our [boston.gov](http://boston.gov/) website -- this is a custom built Drupal component (system that is PHP/mysql) displayed on our website that is hosted by Acquia. Many City departments have these on their webpages. If you need more you can explore on [boston.gov/departments](http://boston.gov/departments), but I've included a few here:- [https://www.boston.gov/departments/archaeology#updates](https://www.boston.gov/departments/archaeology#updates) > List number 30 [https://www.boston.gov/departments/arts-and-culture#newsletter](https://www.boston.gov/departments/arts-and-culture#newsletter) > List number 13
+3. City of Boston open data portal (hosted by opengov): [data.boston.gov](http://data.boston.gov/) in the footer connecting to list number 101  These use: [https://contactform.boston.gov/subscriptions?list=LISTNUMBER](https://contactform.boston.gov/subscriptions?list=LISTNUMBER), which is a domain running through our \[City's] AWS instance.
 4. One off subscription sites (enabled by Upaknee without City knowledge during summer 2020). All email lists have this, but these aren't actively used (to Digital's knowledge). Example: [https://newsletters.boston.gov/subscribe/index/metrolist](https://newsletters.boston.gov/subscribe/index/metrolist)
 
 These are the **domains** that are set up in DNS Made Easy for Upaknee.

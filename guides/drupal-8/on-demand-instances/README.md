@@ -533,7 +533,7 @@ _**Elsewhere this might be termed spinning up an on-demand instance of the site.
 6. Commit the `.config.yml and .travis.yml`changes to `on-demand-branchname` and push to GitHub - but _**do not**_ merge into `develop`.
 7.  Make a small inconsequential change to the code and commit to the `on-demand-branchname` branch, and push to GitHub.  This will cause the first-time build on Travis, and deploy into the `on-demand-branchname-deploy` branch in the Acquia Repository.
 
-    The Travis build can be [tracked here in Travis](https://travis-ci.com).
+    The Travis build can be [tracked here in Travis](https://travis-ci.com/).
 8. Login to the Acquia Cloud console.  In the UI switch the code in the Ci/Uat environment to the `on-demand-branchname-deploy` branch.  \
    This will cause a [deploy on the Acquia server](https://cloud.acquia.com/app/develop/applications/5ad427f5-60d6-48fd-983e-670ddc7767c4), which will copy across the current `stage` database and update with configuration from the `on-demand-branchname`branch.
 9. **The "on-demand" environment is now set.** Users may view and interact with the environment as required.  See Notes in "gotcha's" box below.
@@ -563,7 +563,7 @@ Also as a courtesy, change the branch on the environment back to `tags/WELCOME` 
 
 {% hint style="warning" %}
 1. **Updating:** If you push changes to `on-demand-branchname` in GitHub (which eventually causes Acquia's`on-demand-branchname-deploy`to be updated) - then in Aquia's terminology you are "_updating_" the code. \
-   Any commits you push to the GitHub`on-demand-branchname` will cause [Travis to rebuild](https://travis-ci.org/CityOfBoston/boston.gov-d8) and update the code on the[ Ci/Uat environment](https://cloud.acquia.com/app/develop/applications/5ad427f5-60d6-48fd-983e-670ddc7767c4) and this will cause Acquia's`post-code-update` hook script to run.  \
+   Any commits you push to the GitHub`on-demand-branchname` will cause [Travis to rebuild](https://travis-ci.org/CityOfBoston/boston.gov-d8?utm\_medium=notification\&utm\_source=github\_status) and update the code on the[ Ci/Uat environment](https://cloud.acquia.com/app/develop/applications/5ad427f5-60d6-48fd-983e-670ddc7767c4) and this will cause Acquia's`post-code-update` hook script to run.  \
    \- That update-hook script will backup your database and update and new configurations but will not update or overwrite any content (so changes made by users will be retained).
 2. **Deploying:** If you switch the code on the Acquia server from `on-demand-branchname-deploy` to some other branch or tag, and then back again - then in Acquia's terminology each switch of branch is a "_deploy_" of the code.  GitHub is not affected by this change, so nothing will run on Travis, but once each switch is complete, Acquia's`post-code-deploy`hook script will run.\
    \- That deploy-hook script will sync the database from the `stage` environment and will overwrite any content in the database.  Therefore, any content previously added/changed by users will be lost.

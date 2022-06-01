@@ -6,7 +6,7 @@ description: Using Lando in City of Boston.
 
 {% hint style="success" %}
 **In the context of this document:** \
-&#x20;  **   **_**Think of**_ [_**Lando**_](https://docs.lando.dev) _**as a**_ [_**CLI**_](https://en.wikipedia.org/wiki/Command-line\_interface) _**for a**_ [_**Drupal**_](https://en.wikipedia.org/wiki/Drupal) _****_ [_**LAMP**_](https://en.wikipedia.org/wiki/LAMP\_\(software\_bundle\)) _**stack constructed in**_ [_**docker**_](https://en.wikipedia.org/wiki/Docker\_\(software\))_**.**_
+&#x20;  **   **_**Think of**_ [_**Lando**_](https://docs.lando.dev/) _**as a**_ [_**CLI**_](https://en.wikipedia.org/wiki/Command-line\_interface) _**for a**_ [_**Drupal**_](https://en.wikipedia.org/wiki/Drupal) _****_ [_**LAMP**_](https://en.wikipedia.org/wiki/LAMP\_\(software\_bundle\)) _**stack constructed in**_ [_**docker**_](https://en.wikipedia.org/wiki/Docker\_\(software\))_**.**_
 {% endhint %}
 
 ## What is Lando ?

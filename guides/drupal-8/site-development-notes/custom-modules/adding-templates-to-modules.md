@@ -43,7 +43,8 @@ _You can generate other suggestions using the `hook_theme_suggestions_hook` hook
  */
 #}
 <article{{ attributes }}>
-  {% if (title_prefix or title_suffix or display_submitted or unpublished or preview or (not page)) and title %}
+  {% raw %}
+{% if (title_prefix or title_suffix or display_submitted or unpublished or preview or (not page)) and title %}
     <header>
 
       {{ title_prefix  }}
@@ -58,6 +59,7 @@ _You can generate other suggestions using the `hook_theme_suggestions_hook` hook
 
     </header>
   {% endif %}
+{% endraw %}
 
   {{ content }}
 

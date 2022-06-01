@@ -43,7 +43,7 @@ Allows residents to monitor Boston’s snow operations including an overview of 
 
 Links
 
-App: [http://snowstats.boston.gov/](http://snowstats.boston.gov) \[currently unresponsive] \
+App: [http://snowstats.boston.gov/](http://snowstats.boston.gov/) \[currently unresponsive] \
 Github: [https://github.com/CityOfBoston/snowstats](https://github.com/CityOfBoston/snowstats)
 
 Contacts

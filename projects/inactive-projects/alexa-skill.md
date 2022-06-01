@@ -93,7 +93,7 @@ More information about Alexa deployment strategies: [https://blog.codecentric.de
 
 #### Accounts, Authentication, and Authorization
 
-The Alexa skill belongs to the City of Boston organization within the Amazon Developer console at [https://developer.amazon.com/](https://developer.amazon.com)
+The Alexa skill belongs to the City of Boston organization within the Amazon Developer console at [https://developer.amazon.com/](https://developer.amazon.com/)
 
 Amazon Developer accounts are in the same namespace as Amazon.com shopping accounts, and are completely separate from AWS and IAM accounts.
 

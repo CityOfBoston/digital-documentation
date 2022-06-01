@@ -58,7 +58,7 @@ AWS manages SSL certificates in its **Certificate Manager** service. &#x20;
 
 The new/updated Digicert certificate can be loaded into the AWS Certificate Manager and then applied to various services within AWS as required.
 
-1. Login to the [AWSConsole](https://console.aws.amazon.com).
+1. Login to the [AWSConsole](https://console.aws.amazon.com/).
 2. Ensure you are in the `us-east-1`region
 3. Navigate to the **Certificate Manager**.
 4. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The correct entry will have a Type=Imported.
@@ -76,7 +76,7 @@ _04Oct2021_.  The registry app uses an AWS issued certificate.\
 
 The Hub is hosted on AWS using the ElasticBeanstalk service: It is in region `us-east-2`.
 
-1. Login to the [AWSConsole](https://console.aws.amazon.com).
+1. Login to the [AWSConsole](https://console.aws.amazon.com/).
 2. Ensure you are in the `us-east-2`region
 3. Navigate to the **Certificate Manager**.
 4. Locate the _\*.boston.gov_ certificate in the list.  **Importantly:** The correct entry will have a Type=Imported.
