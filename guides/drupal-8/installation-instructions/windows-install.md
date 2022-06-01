@@ -120,6 +120,10 @@ echo "aws_access_key_id = xxxxxx" >> ~/.aws/credentials
 echo "aws_secret_access_key = xxxxx" >> ~/.aws/credentials
 ```
 
+{% hint style="info" %}
+You could also create and edit the credentials file using `vim` which is installed in the WSL instance (from step 4 above).
+{% endhint %}
+
 * Mount your development folders into WSL using the LINUX console:&#x20;
 
 ```
