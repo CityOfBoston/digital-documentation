@@ -4,6 +4,10 @@
 
 **EVERYONE**
 
+{% hint style="danger" %}
+**Steps 1 - 6 must be completed while the computer is connected to the city network.**&#x20;
+{% endhint %}
+
 **Step 1**: Enable WSL using Windows POWERSHELL:
 
 {% hint style="success" %}
@@ -67,7 +71,16 @@ then restart the computer.
 
 **Step 5**: Install Docker desktop for windows
 
-[https://docs.docker.com/desktop/windows/install/](https://docs.docker.com/desktop/windows/install/)
+1. Download installer from h[ttps://docs.docker.com/desktop/windows/install/](https://docs.docker.com/desktop/windows/install/)
+2. Double click the installer to launch:\
+   \+ Click OK to accept non-windows app,\
+   \+ Select WSL2 as the backend (rather than Hyper-V)
+
+{% hint style="info" %}
+**Restart your computer after this step.**
+
+_If you do not, and subsequently restart the computer while off the city network, your installation will be broken, and you will have to remove Docker and WSL, and start over._
+{% endhint %}
 
 **Step 6:** Install IDE:
 
