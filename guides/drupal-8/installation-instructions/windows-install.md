@@ -105,7 +105,11 @@ _If you do not, and subsequently restart the computer while off the city network
 * Add your ssh keys to into your windows account (typically into a windows folder on you home drive) and then from a LINUX console:
 
 ```
-ln -s  /mnt/c/Users/XXX/.ssh ~/.ssh
+mkdir ~/.ssh
+cp -r /mnt/c/Users/XXX/.ssh  ~/.ssh
+sudo chmod -R 600 ~/.ssh/*
+sudo chmod -R 644 ~/.ssh/*.pub
+sudo chmod 700 ~/.ssh
 ```
 
 {% hint style="info" %}
