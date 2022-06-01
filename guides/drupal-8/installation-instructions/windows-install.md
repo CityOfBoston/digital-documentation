@@ -5,7 +5,7 @@
 **EVERYONE**
 
 {% hint style="danger" %}
-**Steps 1 - 6 must be completed while the computer is connected to the city network.**&#x20;
+**Steps 1 - 5 must be completed while the computer is connected to the city network.**&#x20;
 {% endhint %}
 
 **Step 1**: Enable WSL using Windows POWERSHELL:
@@ -75,6 +75,7 @@ then restart the computer.
 2. Double click the installer to launch:\
    \+ Click OK to accept non-windows app,\
    \+ Select WSL2 as the backend (rather than Hyper-V)
+3. Docker desktop does not automatically start after the install, you need to start it the first time from the Start menu.
 
 {% hint style="info" %}
 **Restart your computer after this step.**
@@ -95,14 +96,46 @@ _If you do not, and subsequently restart the computer while off the city network
 
 **DEVELOPER**
 
-* (linux console)
-  * /usr/local/bin/aws --version (to check installed ok)
-* add ssh keys to \~/.ssh
-  * cd \~ && cp -r /mnt/c/Users/167926/.ssh \~/
-* add aws creds to \~/.aws
-* (linux console) Create the file /etc/fstab
-  * insert the line c:/Users/167926/sources /home/david/sources drvfs default,metadata,uid=1000,gid=1000 0 0
-  * sudo mount -a
+* Verify AWS is installed using LINUX console:
+
+```
+/usr/local/bin/aws --version
+```
+
+* Add your ssh keys to into your windows account (typically into a windows folder on you home drive) and then from a LINUX console:
+
+```
+ln -s  /mnt/c/Users/XXX/.ssh ~/.ssh
+```
+
+{% hint style="info" %}
+Replace XXX with your EmployeeID/User Account from CoB.
+{% endhint %}
+
+* Obtain your secret access keys for AWS from the AWS administrator, and then create the AWS credentials file using the LINUX console:
+
+```
+echo "[cityofboston]" > ~/.aws/credentials
+echo "aws_access_key_id = xxxxxx" >> ~/.aws/credentials
+echo "aws_secret_access_key = xxxxx" >> ~/.aws/credentials
+```
+
+* Mount your development folders into WSL using the LINUX console:&#x20;
+
+```
+sudo -s
+rm -rf /etc/fstab
+touch /etc/fstab
+echo "c:/Users/xxxx/sources /home/yyyy/sources drvfs default,metadata,uid=1000,gid=1000 0 0" > /etc/fstab
+mount -a
+exit
+```
+
+{% hint style="success" %}
+Replace xxxx with your EmployeeID/User Account from CoB.
+
+Replace yyyy with the accountname you used when you installed WSL (you can find this in the LINUX console by running `cd ~ && pwd` the path displayed be in the format /home/accountname
+{% endhint %}
 
 **USEFUL**
 
