@@ -4,7 +4,7 @@
 
 **EVERYONE**
 
-Step 1: Enable WSL using Windows POWERSHELL:
+**Step 1**: Enable WSL using Windows POWERSHELL:
 
 {% hint style="success" %}
 Launch POWERSHELL as administrator: search `powershell` from Windows search
@@ -14,7 +14,7 @@ Launch POWERSHELL as administrator: search `powershell` from Windows search
 Enable-WindowsOptionalFeature -Online -FeatureName $("VirtualMachinePlatform", "Microsoft-Windows-Subsystem-Linux")
 ```
 
-Step 2: Install Debian using CMD (console):
+**Step 2**: Install Debian using CMD (console):
 
 {% hint style="success" %}
 To open a CMD console search for `cmd` in the Windows search
@@ -25,7 +25,7 @@ wsl --set-default-version 2
 wsl --install -d Debian
 ```
 
-Step 3: Configure WSl to access the internet using LINUX (console):
+**Step 3**: Configure WSl to access the internet using LINUX (console):
 
 {% hint style="success" %}
 To get the Linux console, open a CMD console, type: `wsl`
@@ -41,7 +41,7 @@ chattr +i /etc/resolv.conf
 exit
 ```
 
-Step 4: install packages needed in WSL:
+**Step 4**: install packages needed in WSL:
 
 ```
 sudo apt-get update
@@ -51,7 +51,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
-Step 4 Troubleshooting:
+**Troubleshooting:** Step 4:
 
 * If you have accessing the internet from WSL first try RESTARTING the computer.
 * If that does not work, try:
@@ -65,14 +65,16 @@ ipconfig /flushdns
 
 then restart the computer.
 
-Step 5: Install Docker desktop for windows
+**Step 5**: Install Docker desktop for windows
 
-Step 6: Install IDE:
+[https://docs.docker.com/desktop/windows/install/](https://docs.docker.com/desktop/windows/install/)
+
+**Step 6:** Install IDE:
 
 * Microsoft Visual Studio Code (VSC)
 * PHP Storm
 
-Step 7: Install Dashlane password manager
+**Step 7**: Install Dashlane password manager
 
 ****
 
