@@ -80,7 +80,7 @@ then restart the computer.
 
 _If you do not, and subsequently restart the computer while off the city network, your installation will be broken, and you will have to remove Docker and WSL, and start over._
 
-_(see notes_
+_(see "Docker Fails to Restart" notes below to fix broken/non-functional WSL installs)_
 {% endhint %}
 
 **Step 6:** Install IDE:
