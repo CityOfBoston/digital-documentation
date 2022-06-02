@@ -1,8 +1,6 @@
 # Windows install
 
-
-
-**EVERYONE**
+## **Basic WSL set up**
 
 {% hint style="danger" %}
 **Steps 1 - 5 must be completed while the computer is connected to the city network.**&#x20;
@@ -55,7 +53,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
-**Troubleshooting:** Step 4:
+### **Troubleshooting: (mainly for** Step 4):
 
 * If you have accessing the internet from WSL first try RESTARTING the computer.
 * If that does not work, try:
@@ -81,6 +79,8 @@ then restart the computer.
 **Restart your computer after this step.**
 
 _If you do not, and subsequently restart the computer while off the city network, your installation will be broken, and you will have to remove Docker and WSL, and start over._
+
+_(see notes_
 {% endhint %}
 
 **Step 6:** Install IDE:
@@ -92,9 +92,7 @@ _If you do not, and subsequently restart the computer while off the city network
 
 ****
 
-****
-
-**DEVELOPER**
+## **Setup other developer tooling**
 
 * Verify AWS is installed using LINUX console:
 
@@ -146,7 +144,7 @@ exit
 2. Replace `yyyy` with the accountname you used when you installed WSL (you can find this in the LINUX console by running `cd ~ && pwd` - the path displayed be in the format /home/accountname
 {% endhint %}
 
-**USEFUL**
+### **USEFUL**
 
 * Restart the wsl service using POWERSHELL:&#x20;
 
@@ -188,5 +186,26 @@ Disable-WindowsOptionalFeature -Online -FeatureName $("VirtualMachinePlatform", 
 restart computer...
 ```
 
+#### Docker Fails to start
 
+If, when restarting the computer, Docker fails to start and/or you get the following error when starting WSL:
 
+`The service cannot be started, either because it is disabled or because it has no enabled devices associated with it.`
+
+To fix this, perform the following steps.
+
+**Step 1:** Using Powershell (ps) as Admin:
+
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+**Step 2:** Then using a CMD shell (as Admin)
+
+```
+sc config LxssManager start=auto
+wsl --set-default-version 2
+```
+
+**Step 3:** Restart Docker for Windows from the start menu.
