@@ -34,6 +34,18 @@ wsl --set-default-version 2
 wsl --install -d Debian
 ```
 
+**Alternative strategy**:
+
+_This may be more fault tolerant when we are switching from City network to external network._
+
+```
+mkdir %USERPROFILE%\WSLDistros
+# Download the cobdistro.tar file into the users home folder (c:\Users\xxxx\)
+wsl --set-default-version 2
+wsl --import CoB-Debian %USERPROFILE%\WSLDistros %USERPROFILE%\cobdistro.tar
+wsl --set-default CoB-Debian
+```
+
 ### **Step 3**: Configure WSL to access the internet&#x20;
 
 Using LINUX (WSL) console:
