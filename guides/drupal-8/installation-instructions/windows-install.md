@@ -16,10 +16,18 @@ Launch POWERSHELL as administrator: search `powershell` from Windows search
 
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName $("VirtualMachinePlatform", "Microsoft-Windows-Subsystem-Linux")
-? This may work without restart ...
+```
+
+{% hint style="success" %}
+**Alternative strategy**&#x20;
+
+_This may work without Windows requesting a restart at the end._
+
+```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
+{% endhint %}
 
 ### **Step 2**: Install Debian&#x20;
 
@@ -34,9 +42,10 @@ wsl --set-default-version 2
 wsl --install -d Debian
 ```
 
+{% hint style="success" %}
 **Alternative strategy**:
 
-_This may be more fault tolerant when we are switching from City network to external network._
+_This may provide a more fault tolerant WSL environment when we are switching from City network to external network (because we are controlling where the distro is installed, and its not on the user's profile)._
 
 ```
 mkdir %USERPROFILE%\WSLDistros
@@ -45,6 +54,7 @@ wsl --set-default-version 2
 wsl --import CoB-Debian %USERPROFILE%\WSLDistros %USERPROFILE%\cobdistro.tar
 wsl --set-default CoB-Debian
 ```
+{% endhint %}
 
 ### **Step 3**: Configure WSL to access the internet&#x20;
 
