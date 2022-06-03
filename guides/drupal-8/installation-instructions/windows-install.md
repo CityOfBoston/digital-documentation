@@ -3,7 +3,7 @@
 ## **Basic WSL set up**
 
 {% hint style="danger" %}
-**Steps 1 - 6 must be completed while the computer is connected to the city network.**&#x20;
+**Steps 1 - 7 must be completed while the computer is connected to the city network.**&#x20;
 {% endhint %}
 
 ### **Step 1**: Enable WSL&#x20;
@@ -36,7 +36,7 @@ wsl --install -d Debian
 
 ### **Step 3**: Configure WSL to access the internet&#x20;
 
-Using LINUX console
+Using LINUX (WSL) console:
 
 {% hint style="info" %}
 To get the Linux console, open a CMD console, type: `wsl`
@@ -45,20 +45,63 @@ To get the Linux console, open a CMD console, type: `wsl`
 ```
 sudo -s
 rm -rf /etc/resolv.conf
-bash -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'
+bash -c 'echo "nameserver 10.241.241.70" > /etc/resolv.conf'
 bash -c 'echo "[network]" > /etc/wsl.conf'
 bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
 chattr +i /etc/resolv.conf
 exit
 ```
 
-### **Step 4**: install packages needed in WSL
+### **Step 4: Custom WSL configurations**
+
+@see [https://docs.microsoft.com/en-us/windows/wsl/wsl-config](https://docs.microsoft.com/en-us/windows/wsl/wsl-config)
+
+These configuration files tweak the WSL environments to enable a better developer experience based on a standard CoB laptop configuration (i.e. minimum i7 chip, 32GB RAM and SSD harddisk).
+
+Using a POWERSHELL console from the windows host:
+
+```
+echo '[wsl2]' > $env:USERPROFILE/.wslconfig
+echo 'memory=16GB' >> $env:USERPROFILE/.wslconfig
+```
+
+Using a LINUX console (WSL):
+
+```
+cat << EOF > /etc/wsl.conf
+[automount]
+# Stops the entire hard disk(s) from being mounted into WSL
+enabled = false
+# Causes the /etc/fstab file to be processed as WSL starts
+mountFsTab = true
+options = "metadata,uid=1000,gid=1000
+# Set whether WSL supports interop process like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
+[interop]
+enabled = false
+appendWindowsPath = false
+# Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
+[network]
+hostname = DoITWSL
+generateHosts = false
+generateResolvConf = false
+EOF
+
+wsl --shutdown
+[Wait 30 seconds]
+wsl
+```
+
+### **Step 5**: install packages needed in WSL
 
 Using LINUX console
 
 ```
 sudo apt-get update
 sudo apt-get install -y gzip unzip vim git curl groff
+
+# optional for network diagnostics
+sudo apt-get install -y net-tools dnsutils
+
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
@@ -78,7 +121,7 @@ ipconfig /flushdns
 
 \=> then restart the computer.
 
-### Step 5: Mount local folders into WSL.
+### Step 6: Mount local folders into WSL.
 
 Mount your development folders into WSL using the LINUX console:&#x20;
 
@@ -98,7 +141,7 @@ exit
 2. Replace `yyyy` with the accountname you used when you installed WSL (you can find this in the LINUX console by running `cd ~ && pwd` - the path displayed be in the format /home/accountname
 {% endhint %}
 
-### **Step 6**: Install Docker Desktop for Windows
+### **Step 7**: Install Docker Desktop for Windows
 
 1. Download installer from h[ttps://docs.docker.com/desktop/windows/install/](https://docs.docker.com/desktop/windows/install/)
 2. Double click the installer to launch:\
@@ -137,7 +180,7 @@ echo "aws_secret_access_key = xxxxx" >> ~/.aws/credentials
 ```
 
 {% hint style="info" %}
-Alternatively. you could also create and edit the credentials file using `vim` which is installed in the WSL instance (from step 4 above).
+Alternatively. you could also create and edit the credentials file using `vim` which is installed in the WSL instance (from step 5 above).
 {% endhint %}
 
 ### Add SSH keys
