@@ -295,20 +295,20 @@ dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux
 
 #### Moving Home=>Office or Office=>Home
 
-From Powershell console:
+From Powershell console reinitialize WSL:
 
 ```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-From LINUX (WSL) console:
+From LINUX (WSL) console reset the nameserver so you can access the internet:
 
 ```
 bash -c 'echo "nameserver X.X.X.X" > /etc/resolv.conf'
 ```
 
-Where X.X.X.X is the IPAddress: **8.8.8.8** when in the office and **10.241.241.70** when not on the city network but using a VPN.
+Where X.X.X.X is the IPAddress: **8.8.8.8** _(confirm if there should be a different address)_ when in the office and **10.241.241.70** when not on the city network but using a VPN.
 
 #### Docker Fails to start
 
