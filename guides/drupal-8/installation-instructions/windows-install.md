@@ -293,6 +293,23 @@ wsl --terminate -s debian
 dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
+#### Moving Home=>Office or Office=>Home
+
+From Powershell console:
+
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+From LINUX (WSL) console:
+
+```
+bash -c 'echo "nameserver X.X.X.X" > /etc/resolv.conf'
+```
+
+Where X.X.X.X is the IPAddress: **8.8.8.8** when in the office and **10.241.241.70** when not on the city network but using a VPN.
+
 #### Docker Fails to start
 
 If, when restarting the computer, Docker fails to start and/or you get the following error when starting WSL:
