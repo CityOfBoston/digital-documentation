@@ -26,6 +26,8 @@ _This may work without Windows requesting a restart at the end._
 ```
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+Invoke-WebRequest -Uri https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi -OutFile $env:TMP\wsl_update_x64.msi -UseBasicParsing
+msiexec.exe /i $env:TMP\wsl_update_x64.msi /passive
 ```
 {% endhint %}
 
@@ -53,6 +55,9 @@ mkdir %USERPROFILE%\WSLDistros
 wsl --set-default-version 2
 wsl --import CoB-Debian %USERPROFILE%\WSLDistros %USERPROFILE%\cobdistro.tar
 wsl --set-default CoB-Debian
+
+# to create an image
+# wsl --export CoB-Debian %USERPROFILE%\WSLDistros
 ```
 {% endhint %}
 
