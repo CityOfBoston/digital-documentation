@@ -247,6 +247,6 @@ The email registration for Street Occupancy and Street Sweeping alerts uses an I
 
 Examples:
 
-1. 169th Street get split into two (for sweeping activities).  The original schedule started at 0ft and ended at 1000ft, a MainID of 236 and sweeping was even days. The street now gets split by adding a new street partition (MainID of 423) from 501ft to 1000ft  and sweeping set for odd days. The original (MainID 236) is updated so it holds now starts at 0ft but ends at 500ft.  The issue is that anyone who lives between 500 and 1000ft will be registered against MainID 236 instead of MainID 423 and will thus get email reminders for the wrong days.
+1. 169th Street get split into two (for sweeping activities).  The original schedule started at 0ft and ended at 1000ft, with a MainID of 236 and sweeping was even days. The street now gets split by adding a new street partition (MainID of 423) from 501ft to 1000ft  and sweeping is set for odd days. The original (MainID 236) is updated so it  now starts at 0ft but ends at 500ft.  The issue is that anyone who lives between 500 and 1000ft will be registered against MainID 236 instead of MainID 423 and will thus get email reminders for the wrong days.
 2. A similar type of issue could occur if streets are merged, but in this case registrations the street being "removed" would stop getting emails even though from their perspective the sweeping continues unchanged.
 {% endhint %}
