@@ -135,6 +135,18 @@ This is useful for planned events - city holidays (e.g. Christmas), but if cance
 * _but remember emails remind about sweeping the next day_&#x20;
 {% endhint %}
 
+### :admin/Default.aspx
+
+This page allows an administrator to login, alter and export detailed and low-level street cleaning metadata in the `PwdSweeping` table.
+
+Login information is in DashLane.
+
+{% hint style="info" %}
+The `PwdSweeping` table, contains all information on the partitioning and scheduling of Boston City streets cleaning activities.
+
+[See notes below.](street-sweeping-reminders.md#undefined)
+{% endhint %}
+
 ## Database
 
 {% hint style="info" %}
@@ -155,10 +167,8 @@ The tables used by this sub-service are:
 
 | Table Name        | Key Fields                                                                                                                                | Description                                                                                                                                                                                                                                                                     |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| PwdSweeping       | <ul><li>MainID</li><li>St_name</li><li>Dist(rict)</li><li>StartTime</li><li>EndTime</li><li>Side</li><li>...<br>[schedule info]</li></ul> | <p>Contains street sweeping schedule information for streets in the city.</p><p></p><p>It is unknown how this table is maintained.</p>                                                                                                                                          |
+| PwdSweeping       | <ul><li>MainID</li><li>St_name</li><li>Dist(rict)</li><li>StartTime</li><li>EndTime</li><li>Side</li><li>...<br>[schedule info]</li></ul> | <p>Contains street sweeping schedule information for streets in the city.</p><p></p><p>This table is managed from the admin/default.aspx page.</p>                                                                                                                              |
 | PwdSweepingEmails | <ul><li>EmailAddr</li><li>StreetID</li></ul>                                                                                              | <p>Contains information on who has subscribed to what.</p><p><br>StreetID maps to the MainID in the PwdSweeping table.<br></p><p>This table is maintained by the scripts in this sub-service.  It is also used by the <strong>Subscription Search</strong> (aka remind me).</p> |
-
-PwdSweeping is maintained elsewhere and is active - The last update (as at 2021-10-01) was 2021-09-07.  \[**Check with Satyen on how the data gets into that table**]
 
 ### Lyris
 
@@ -205,3 +215,38 @@ Lyris is responsible for:
 * Generate or manage the email body text
 
 (These are managed by the :lyris.asp script)
+
+### Street Administration
+
+A page at admin/default.aspx allows an administrator to maintain information on the partitioning and scheduling of Boston City streets cleaning activities used (primarily) by the NoTow suite of apps..
+
+PWD tend to re-organize street cleaning at the start of the "season" in March/April, and they will update the database table, using the admin page, at that time.  Subsequent schedule changes are maintained in the table by PWD staff as they occur.  The main PWD staff member doing this work is Paul Taylor.  Any errors and omissions reported during the year are reviewed by Paul Taylor and (if required) he updates/alters the database using the admin page.  This final step could be done by Digital provided a note is sent to Paul after the change is made.
+
+The current street sweeping database can be dumped to a csv here: [https://www.cityofboston.gov/publicworks/sweeping/admin/database.csv](https://www.cityofboston.gov/publicworks/sweeping/admin/database.csv)
+
+{% hint style="info" %}
+The `PwdSweeping` is not a copy of any other database, and it does not appear that there is any other centralized record of the street partitioning and sweeping schedule.
+{% endhint %}
+
+{% hint style="success" %}
+Districts can be found from an ArcGIS map on the COB ArcGIS server.
+
+[http://zppwdapp01.web.cob:83/apps/stations/](http://zppwdapp01.web.cob:83/apps/stations/)
+{% endhint %}
+
+{% hint style="success" %}
+Additional street information, including linear feet from street origin to intersections can be found here: [http://zppwdapp01.web.cob:83/apps/stations/](http://zppwdapp01.web.cob:83/apps/stations/) (created and maintained by Paul Taylor)
+{% endhint %}
+
+{% hint style="danger" %}
+**Potential Data Issues**
+
+_**(Needs verifying)**_
+
+The email registration for Street Occupancy and Street Sweeping alerts uses an ID from the the PwdSweeping table (MainID). If a street is split or merged, it is possible that email registrations could become orphaned.
+
+Examples:
+
+1. 169th Street get split into two (for sweeping activities).  The original schedule started at 0ft and ended at 1000ft, a MainID of 236 and sweeping was even days. The street now gets split by adding a new street partition (MainID of 423) from 501ft to 1000ft  and sweeping set for odd days. The original (MainID 236) is updated so it holds now starts at 0ft but ends at 500ft.  The issue is that anyone who lives between 500 and 1000ft will be registered against MainID 236 instead of MainID 423 and will thus get email reminders for the wrong days.
+2. A similar type of issue could occur if streets are merged, but in this case registrations the street being "removed" would stop getting emails even though from their perspective the sweeping continues unchanged.
+{% endhint %}
