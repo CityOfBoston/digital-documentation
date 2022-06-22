@@ -123,6 +123,7 @@
       * [CodeRed Subscription](guides/drupal-8/drupal-8-micro-services-api-end-points/site-alerts/codered-subscription.md)
     * [Public Notices](guides/drupal-8/drupal-8-micro-services-api-end-points/public-notices.md)
     * [Cityscore](guides/drupal-8/drupal-8-micro-services-api-end-points/cityscore.md)
+    * [Bos311 API](guides/drupal-8/drupal-8-micro-services-api-end-points/bos311-api.md)
   * [On Demand Instances](guides/drupal-8/on-demand-instances/README.md)
     * [Acquia Environment setup checklist](guides/drupal-8/on-demand-instances/acquia-environment-setup-checklist.md)
   * [AWS Setup Drupal - hub.boston.gov](guides/drupal-8/aws-setup-drupal.md)
