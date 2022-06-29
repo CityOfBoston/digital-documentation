@@ -42,6 +42,9 @@
 
 ## Guides
 
+* [AgilePoint](guides/agilepoint/README.md)
+  * [AgilePoint: Adding Users](guides/agilepoint/agilepoint-adding-users.md)
+  * [Migrating AGP Applications from one platform to another](guides/agilepoint/migrating-agp-applications-from-one-platform-to-another.md)
 * [Patterns Library Cleanup](guides/patterns-library/README.md)
   * [Refactoring Legacy CSS](guides/patterns-library/legacy-css-removal/README.md)
     * [Strategy](guides/patterns-library/legacy-css-removal/strategy.md)
