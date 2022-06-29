@@ -6,6 +6,10 @@ Note: HCM only periodically refreshes their non-Prod environments. If an employe
 
 Users need to log in to Test Access Boston here [https://access-test.boston.gov/](https://access-test.boston.gov/)
 
+or
+
+Users need to log in to Dev Access Boston here [https://access-boston-dev.digital-staging.boston.gov/](https://access-boston-dev.digital-staging.boston.gov/)
+
 Select "Ping Federate" to login in & authenticate
 
 Click on AgilePoint icon
