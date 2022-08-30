@@ -14,6 +14,7 @@
 
 ## Standards & best practices
 
+* [Digital Team Release Notes](standards-and-best-practices/digital-team-release-notes.md)
 * [Accessibility at COB](standards-and-best-practices/accessibility/README.md)
   * [Developers](standards-and-best-practices/accessibility/developers.md)
   * [Content Editors](standards-and-best-practices/accessibility/editors/README.md)
