@@ -8,12 +8,7 @@ description: Code release details will be documented with each code deployment h
 
 
 
-## AccessBoston\_Tags/2022-08-18
-
-DIG-65 - Group Management URL Security Fix&#x20;
-
-* Fixes the following security issue of allowing users to access group management via copying a URL directly into the browser&#x20;
-* Users that do not have access to group management will be directed back to the Access Boston Portal screen
+##
 
 ## Drupal\_Tags/2022-8-24
 
@@ -44,3 +39,10 @@ DIG-733: Features sidebar svg&#x20;
 DIG-781: Apply button on listings gets 404
 
 * Fix the apply button on Metrolist listing so when clicked user can apply to any listing&#x20;
+
+## AccessBoston\_Tags/2022-08-18
+
+DIG-65 - Group Management URL Security Fix&#x20;
+
+* Fixes the following security issue of allowing users to access group management via copying a URL directly into the browser&#x20;
+* Users that do not have access to group management will be directed back to the Access Boston Portal screen
