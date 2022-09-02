@@ -4,11 +4,52 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022-09-07
 
+DIG-542(Metrolist) Calendar events do not show physical location
 
+* This will update calendar events to pull in the physical address of the event so users see the correct address on the site
+* This update will also accommodate events that will be held virtually - users will see language on screen saying the event will be virtual
 
+DIG-738(Metrolist) Stop re-submission of form once submitted
 
-##
+* Update to add language to the Metrolist listing form informing users the unique link they receive to submit a listing should only be used once. The following language has been added to these screen/emails
+  * Listing Form Request - ** **_**Important: If you need to submit listings in multiple properties, please request a new form for each one.**_
+  * Email communication -_**Important: Do not reuse link. If you need to submit listings for additional properties, please request a new form**_
+  * Listing form request on screen notification- _**Important: If you need to submit multiple listings, please request a new form for each building.** _&#x20;
+
+DIG-776(Metrolist) Submission Confirmation Email
+
+* Send a "Submission successfully completed" email notice to the contact associated with the listing when a submission is completed
+
+DIG-775(Metrolist) Update Admin email alert
+
+*   Update the Admin email recipient list, add meaningful info, and include a link to the Salesforce Development. Email will contain:&#x20;
+
+    | <p>Submitted on: [Date/time stamp]<br>Submitted By: [Listing Contact Name]<br>Listing Contact Company: [Listing Contact Company]<br>Contact Email: [Listing Contact Email]<br>Contact Phone: [Listing Contact Phone]</p><p>Property Name: [Development Name]<br>Property Address: [Street, City, Zip]</p> |
+    | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+DIG-781(Metrolist) Apply Button on listings gets 404 Not Found
+
+* Fixed bug where Apply button on MetroList Listing page was getting a 404 page error
+
+DIG-809(Metrolist) Issues accessing Metrolist from external devices&#x20;
+
+* Fixed bug where Metrolist search page was not loading on some devices&#x20;
+* In the listing date code \T was being read as timezone updating this to \\\T fixed the issue&#x20;
+
+DIG-433 (Metrolist)Telephone number (\&date) format on metrolist\_listing webform
+
+* Fixed bug where user sees a formatting error after entering a phone number&#x20;
+
+DIG-824 Update BOS311 API for Chinese translation
+
+* Chinese translation was not appearing in BOS:311 App
+* API was updated to send correct language code so alerts show in Simplified Chinese &#x20;
+
+DIG- 865 Fix styling of events component in how-to page
+
+* Fixed styling on events and notices component so events boxes are not pushed to right of the screen and appear centered on the site
 
 ## Drupal\_Tags/2022-8-24
 
