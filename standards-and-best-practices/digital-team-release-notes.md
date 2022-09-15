@@ -27,7 +27,7 @@ DIG-853 Re-integrates Percy&#x20;
 DIG-876 Resolves internal link WSD
 
 * This fixes a validation error for broken internal links in components
-* When users try to save a draft page with a broken internal link they will get an error message and will be unable to save the page until the error is corrected&#x20;
+* When users try to save a draft page with a broken internal link they will get an error message.
 
 
 
