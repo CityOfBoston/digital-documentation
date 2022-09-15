@@ -2,7 +2,7 @@
 
 
 
-![City of Boston’s Digital Team](<.gitbook/assets/image (1).png>)
+![City of Boston’s Digital Team](<.gitbook/assets/image (1) (1).png>)
 
 We build digital experiences designed around the needs of our constituents. We work to make these tools beautiful, welcoming, and highly useful.\
 

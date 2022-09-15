@@ -4,6 +4,33 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022-09-15
+
+DIG-31 Custom 500 Error&#x20;
+
+* This will activate the 500 error page on Boston.gov.&#x20;
+* When a user gets a 500 error they will see the following:&#x20;
+
+\
+Text: _Sorry! Looks like something went wrong on our end. We're currently working to fix the issue. You can try re-loading the page in a few minutes, or email_ [_feedback@boston.gov_](mailto:feedback@boston.gov) _with any questions or concerns._
+
+__![](<../.gitbook/assets/image (1).png>)__
+
+__
+
+DIG-853 Re-integrates Percy&#x20;
+
+* This work re-enables Percy on Boston.gov
+* Percy will assist in automated testing by comparing screenshots to ensure new code does not break anything on Boston.gov
+* Percy tests must pass in order to merge new PRs
+
+DIG-876 Resolves internal link WSD
+
+* This fixes a validation error for broken internal links in components
+* When users try to save a draft page with a broken internal link they will get an error message and will be unable to save the page until the error is corrected&#x20;
+
+
+
 ## Drupal\_Tags/2022-09-07
 
 DIG-542(Metrolist) Calendar events do not show physical location
