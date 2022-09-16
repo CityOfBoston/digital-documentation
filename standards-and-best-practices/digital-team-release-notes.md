@@ -4,6 +4,38 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## BoardsandCommissions\_Tag/2022-09-16
+
+DIG-905
+
+* Fixes a 400 error users see when they click the Apply Online button on a Boards and Commission page
+* Issue was due to a malformed cookie
+
+## Drupal\_Tags/2022-09-16
+
+
+
+DIG-67 -Caching issue displaying incorrect breadcrumbs
+
+* This fixed an issue where the breadcrumbs on the top of a boston.gov page was not consistent with user navigation
+* The solution is to specify that the breadcrumb block be cached per url and not per content type
+* The breadcrumbs now appear consistent to the users navigation path
+
+DIG-831 (metrolist)- Clarify "Minimum income" is annual income
+
+* Added a tooltip to the “Minimum Income” field explaining that the amount entered in this field should be annual income
+
+DIG -925 (metrolist)- Email Language Errors
+
+* Updated confirmation email with correct language for the user
+
+DIG-989 - Fix subdomain redirect in configuration for rentsmart.boston.gov\
+
+
+* Updated our config file to point the [rentsmart.boston.gov](http://rentsmart.boston.gov/) redirect to [www.boston.gov/rentsmart](http://www.boston.gov/rentsmart)&#x20;
+
+
+
 ## Drupal\_Tags/2022-09-15
 
 DIG-31 Custom 500 Error&#x20;
@@ -27,6 +59,7 @@ DIG-853 Re-integrates Percy&#x20;
 DIG-876 Resolves internal link WSD
 
 * This fixes a validation error for broken internal links in components
+* If a user enters an internal URL the page will resolve itself and navigate to the correct URL when saved
 * When users try to save a draft page with a broken internal link they will get an error message.
 
 
