@@ -4,9 +4,18 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022-09-19
+
+DIG-993 Contact forms on Boston.gov failing to send
+
+* Fixes issue where users were unable to send emails via the "mail to" links on Boston.gov&#x20;
+* A class was not registered for the email sending process via postmark
+
+
+
 ## BoardsandCommissions\_Tag/2022-09-16
 
-DIG-905
+DIG-905 Apply button error in 'commission summary' component
 
 * Fixes a 400 error users see when they click the Apply Online button on a Boards and Commission page
 * Issue was due to a malformed cookie
