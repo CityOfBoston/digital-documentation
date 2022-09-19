@@ -11,6 +11,14 @@ DIG-993 Contact forms on Boston.gov failing to send
 * Fixes issue where users were unable to send emails via the "mail to" links on Boston.gov&#x20;
 * A class was not registered for the email sending process via postmark
 
+DIG-872 Add 'last updated' to 'updated' date in 'posts'
+
+* This adds "Last Updated" before dates on a published Boston.gov page so users know when Boston.gov page has last been updated
+
+DIG-949 Verify pages to be scanned by Percy
+
+* Added a good selection of pages from Boston.gov for Percy testing
+
 
 
 ## BoardsandCommissions\_Tag/2022-09-16
