@@ -19,6 +19,11 @@ DIG-949 Verify pages to be scanned by Percy
 
 * Added a good selection of pages from Boston.gov for Percy testing
 
+DIG-1005 Internal links considered "external" causes WSD on older pages
+
+* Fixes issue where a URL link cannot resolve because drupal considers is external&#x20;
+* Fix is to check if the link is external before trying to load the associated node&#x20;
+
 
 
 ## BoardsandCommissions\_Tag/2022-09-16
