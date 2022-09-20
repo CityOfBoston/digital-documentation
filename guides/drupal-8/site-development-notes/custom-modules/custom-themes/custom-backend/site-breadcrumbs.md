@@ -7,10 +7,15 @@ description: >-
 
 # Site Breadcrumbs
 
-Drupal has a built-in breadcrumbs methodology, which will attempt to build out a pathway based on the URI (e.g. `/departments/housing/metrolist`) defined by the pages (i.e. nodes) _**URL Alias**_. \
-_It does not matter if the URL Alias is set manually or automatically, the value shown in the back-end editor form once the node is saved is used to build out the breadcrumb._
-
 A breadcrumb is an ordered collection of crumbs, with each crumb having a title and a link.
+
+### Drupal Core Breadcrumb Functionality
+
+Drupal has a built-in breadcrumbs methodology, which will attempt to build out a pathway based on the URI (e.g. `/departments/housing/metrolist`) defined by the pages (i.e. nodes) _**URL Alias**_.&#x20;
+
+{% hint style="success" %}
+_It does not matter if the **URL Alias** is set manually or automatically, the value shown in the back-end editor form once the node is saved is used to build out the breadcrumb._
+{% endhint %}
 
 The Drupal core process creates the breadcrumb by scanning the path represented by the URI, and testing if a local page exists for each path element.  It stops adding crumbs when a path element does not resolve. &#x20;
 
@@ -34,15 +39,38 @@ When evaluating if a page exists on the site, Drupal only considers **URL Aliase
 So in the example above, the `boston` crumb/link still would not appear in the breadcrumb even if a `place_profile` page for Boston existed with the URL Alias of `/places/boston` and a URL Redirect for `/departments/housing/boston`.
 {% endhint %}
 
+### CoB Theme extension for breadcrumbs
+
 Where Drupal core cannot build out its own breadcrumb trail, there is some additional custom code intended to help make a logical breadcrumb.
+
+{% hint style="info" %}
+<mark style="color:orange;">**The custom breadcrumb code only functions when it determines that Drupal has not built out the entire breadcrumb.**</mark> &#x20;
+
+<mark style="color:orange;">**If Drupal has been able to build out all parts of the URI path, then the Drupal breadcrumb is used.**</mark>
+{% endhint %}
+
+#### Scans Redirects
+
+The custom code scans URL redirects as well as URL Aliases when building out the breadcrumbs.
+
+{% hint style="danger" %}
+**Care:** Redirects which are manually made on the page `admin/config/search/redirect` are usually considered "external" by default.  Breadcrumbs which use an external link may behave unexpectedly when clicked.&#x20;
+
+**Example:** the breadcrumb on d8-dev.boston.gov may open a page on www.boston.gov when clicked.
+
+**Solution:** Do not create redirects for internal (i.e. Drupal hosted) pages on in the `admin/config/search/redirect` page.  Instead create redirects using the redirect function on the "advanced" tab of the editor form for a page.
+{% endhint %}
+
+#### Custom Replacements
+
+Some URI paths are hard-coded to build specific breadcrumbs. &#x20;
+
+For example pages which have a URI path starting with `government/cabinet` . The custom code ignores the "government/cabinets" part of the path and then build the breadcrumb from the remainder of the path.
 
 {% hint style="info" %}
 The custom breadcrumb object is **built** here: `bos_theme/bos_theme.theme::bos_theme_preprocess_breadcrumb()`
 {% endhint %}
 
-The custom breadcrumb code catches the situation where Drupal has only been able to generate a breadcrumb with the `Home` crumb.  The code does similar URI scanning as the Drupal core activity, but it does recognize URL Redirects as well as URL Aliases.
-
 {% hint style="info" %}
 The breadcrumb is **styled** here: `bos_theme/templates/navigation/breadcrumb.html.twig`
 {% endhint %}
-
