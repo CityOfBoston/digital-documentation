@@ -4,6 +4,22 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Registry\_Tags/2022-09-20
+
+DIG-1002 Error message in Registry suite of applications
+
+* Fixes issue where users are getting a 400 error in Registry Suite of Applications
+* Issue was due to a malformed cookie
+
+## Drupal\_Tags/2022-09-20
+
+DIG-1009 Internal links considered "external" causes WSD on older pages
+
+* Fixes issue where Cabinet page links were broken&#x20;
+* Updated code to ignore hard coded part of the URL and read the remainder of the path to display the correct page&#x20;
+
+&#x20;
+
 ## Drupal\_Tags/2022-09-19
 
 DIG-993 Contact forms on Boston.gov failing to send
@@ -19,10 +35,14 @@ DIG-949 Verify pages to be scanned by Percy
 
 * Added a good selection of pages from Boston.gov for Percy testing
 
+
+
 DIG-1005 Internal links considered "external" causes WSD on older pages
 
 * Fixes issue where a URL link cannot resolve because drupal considers is external&#x20;
 * Fix is to check if the link is external before trying to load the associated node&#x20;
+
+
 
 
 
