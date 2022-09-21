@@ -4,6 +4,16 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tag2/2022-09-21
+
+DIG-881 - This updates the my neighborhood look up tool by swapping out the summer links for the winter links.&#x20;
+
+DIG-2021 -Routine scheduled updates to Drupal contributed modules
+
+## AWS AMI Update/2022-09-21
+
+* Weekly Maintenance that updates both PROD and the REPO
+
 ## Registry\_Tags/2022-09-20
 
 DIG-1002 Error message in Registry suite of applications
