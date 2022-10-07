@@ -4,6 +4,10 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Patterns/2022-10-07
+
+DIG-854 Update patterns library to Node 18&#x20;
+
 ## Drupal\_Tags/2022-09-23
 
 DIG-1060 - Fixes a bug where the postmark contact form was not automatically adding the correct email address in the CC field so Boston City Workers could click reply all without having to cut and paste the email address into the To field. This fix allows users to see the email address in the To field after click reply or reply all.&#x20;
