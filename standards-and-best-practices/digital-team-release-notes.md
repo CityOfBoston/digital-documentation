@@ -4,6 +4,12 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022-10-17
+
+* DIG-1206 Drupal Security update 9.4.8
+
+
+
 ## Patterns/2022-10-07
 
 DIG-854 Update patterns library to Node 18&#x20;
