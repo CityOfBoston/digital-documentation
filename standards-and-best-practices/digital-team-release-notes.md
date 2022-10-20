@@ -6,7 +6,7 @@ description: Code release details will be documented with each code deployment h
 
 ## Drupal\_Tags/2022-10-17
 
-* DIG-1206 Drupal Security update 9.4.8
+DIG-1206 Drupal Security update 9.4.8
 
 
 
