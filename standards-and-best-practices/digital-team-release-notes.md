@@ -4,6 +4,36 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022-10-28
+
+### Unofficial elections results are mobile-friendly on Boston.gov
+
+#### ****[**Epic: DIG- 943**](https://bostondoit.atlassian.net/browse/DIG-943) ****&#x20;
+
+**Background:** The [unofficial election results website](https://www.boston.gov/departments/elections/unofficial-election-results) gets updated with new data each election that reflects the current race. The data for the current page is currently being iframed into a website on [Boston.gov](http://boston.gov/). The data from the iframe is coming from the old [cityofboston.gov](http://cityofboston.gov/) website. It does not have City of Boston branding and it isn’t mobile-friendly.
+
+**Goal:** Make unofficial election results mobile-friendly on [Boston.gov](http://boston.gov/)
+
+**UI Design**
+
+[Mobile Version](https://xd.adobe.com/view/829947d0-12ec-4bc8-9b4e-30c924bfd551-d7ca/)
+
+[Desktop Version ](https://xd.adobe.com/view/829947d0-12ec-4bc8-9b4e-30c924bfd551-d7ca/)
+
+**Related Tickets**&#x20;
+
+DIG- 1004 Importing Elections Data into Drupal&#x20;
+
+* Created a new content type packaged in the module node\_elections allowing the elections dept to upload elections results into a drupal page
+* Created an import page for the elections department to import election results file that will appear on the elections website
+* Created an import process where election results file contents are loaded into the new content type to updated the elections results site
+
+DIG- 1004 Create display pages for unofficial results
+
+* Front end development work to create display pages for election results that align with approved UI designs and our patterns library
+
+
+
 ## Drupal\_Tags/2022-10-17
 
 DIG-1206 Drupal Security update 9.4.8
