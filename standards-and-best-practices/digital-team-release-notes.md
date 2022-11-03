@@ -4,6 +4,12 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tag/2022-11-01
+
+DIG - 1333 Adjust text in filtered dropdown for primary elections
+
+* Capitalized "rep" and "dem" party descriptors in the race selection dropdown&#x20;
+
 ## Drupal\_Tags/2022-10-28
 
 ### Unofficial elections results are mobile-friendly on Boston.gov
