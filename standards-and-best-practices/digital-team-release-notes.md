@@ -4,6 +4,22 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal \_Tag/2022-11-03
+
+* DIG- 1363 - Add disclaimer message to top of unofficial election results
+
+Added a disclaimer message to the top of our unofficial election results election card to clarify the order that results appear for users.
+
+* DIG -1374 - Add error validation in election uploads
+
+This addresses an issue with uploading xml files in our new Election Results section in Drupal. It adds further error validation for users uploading problematic files.
+
+## Patterns\_Tag/2022-11-03
+
+* DIG- 1343-Adjust styling of tables on mobile
+
+Adjusted the styling of our tables when viewing them on mobile in our patterns library. This change eliminates adding an extra border at the bottom of each cell, and instead adds the bottom border below groups of data on mobile.
+
 ## Drupal\_Tag/2022-11-01
 
 DIG - 1333 Adjust text in filtered dropdown for primary elections
