@@ -4,7 +4,31 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
-## Drupal \_Tag/2022-11-03
+## Digital\_Tags/2022-11-09
+
+DIG-62 Unmask a Password - Sign in Screen Access Boston Portal&#x20;
+
+* Added a show password feature to the sign in screen on Access Boston Portal. This allows users to click on the word 'Show' to unmask the password they are typing to make sure it is correct
+
+**NOTE:** This code was developed by the digital team but released by the IAM team because this page lives on their servers
+
+![](<../.gitbook/assets/image (2).png>)
+
+DIG-1155 Unmask a password - Change Password Screen&#x20;
+
+* Added a show password feature to the Change Password screen on Access Boston Portal. This allows users to click on the word 'Show' to unmask the password they are typing to make sure it is correct
+
+![](<../.gitbook/assets/image (3).png>)
+
+DIG-1156 - Unmask Password - Forgot Password Screen
+
+* Added a show password feature to the Forgot Password screen on Access Boston Portal. This allows users to click on the word 'Show' to unmask the password they are typing to make sure it is correct
+
+![](../.gitbook/assets/image.png)
+
+
+
+## Drupal \_Tags/2022-11-03
 
 * DIG- 1363 - Add disclaimer message to top of unofficial election results
 
@@ -14,13 +38,13 @@ Added a disclaimer message to the top of our unofficial election results electio
 
 This addresses an issue with uploading xml files in our new Election Results section in Drupal. It adds further error validation for users uploading problematic files.
 
-## Patterns\_Tag/2022-11-03
+## Patterns\_Tags/2022-11-03
 
 * DIG- 1343-Adjust styling of tables on mobile
 
 Adjusted the styling of our tables when viewing them on mobile in our patterns library. This change eliminates adding an extra border at the bottom of each cell, and instead adds the bottom border below groups of data on mobile.
 
-## Drupal\_Tag/2022-11-01
+## Drupal\_Tags/2022-11-01
 
 DIG - 1333 Adjust text in filtered dropdown for primary elections
 

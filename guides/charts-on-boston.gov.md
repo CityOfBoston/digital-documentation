@@ -206,7 +206,7 @@ Line chart with selection JSON schema
 
 Due to a [bug](https://github.com/vega/vega-lite/issues/4122) in the version on VegaLite we're using, defining your own tooltip with a "line" mark will **break the chart**.&#x20;
 
-![Defining a tooltip when using a line mark will break the chart. ](<../.gitbook/assets/image (2).png>)
+![Defining a tooltip when using a line mark will break the chart. ](<../.gitbook/assets/image (2) (1).png>)
 
 When you are **not using a selection**, you can get around this by [layering](https://vega.github.io/vega-lite/docs/layer.html) a line mark and a point mark on top of each other in the chart and defining the tooltip in the _point mark's encoding_. Use the line chart schema [linked above](charts-on-boston.gov.md#line-charts) as an example of how to do this.&#x20;
 
@@ -228,7 +228,7 @@ Grouped bar chart JSON schema
 {% tab title="Grouped Bar Chart with Selection" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
 
-![\<cob-chart> grouped bar chart.](<../.gitbook/assets/image (4).png>)
+![\<cob-chart> grouped bar chart.](<../.gitbook/assets/image (4) (1).png>)
 
 {% file src="../.gitbook/assets/grouped-bar-chart-select-schema.json" %}
 Grouped bar chart with selection schema JSON
@@ -375,7 +375,7 @@ This can be extremely helpful as Departments may often store and/or conceptualiz
         },
 ```
 
-![State Aid data in a "long" format.](../.gitbook/assets/image.png)
+![State Aid data in a "long" format.](<../.gitbook/assets/image (4).png>)
 
 Now that our data is formatted correctly, we can use the "Type" column to color our chart so we get three lines showing the trends in the different types of State Aid.&#x20;
 
