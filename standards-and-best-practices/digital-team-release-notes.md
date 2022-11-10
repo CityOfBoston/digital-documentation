@@ -17,6 +17,7 @@ DIG-62 Unmask a Password - Sign in Screen Access Boston Portal&#x20;
 DIG-1155 Unmask a password - Change Password Screen&#x20;
 
 * Added a show password feature to the Change Password screen on Access Boston Portal. This allows users to click on the word 'Show' to unmask the password they are typing to make sure it is correct
+* This screen is also used in the create password process for new users/employees
 
 ![](<../.gitbook/assets/image (3).png>)
 
