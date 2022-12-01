@@ -4,6 +4,35 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022-12-01
+
+DIG-878 'Grid of quotes' component image upload issues
+
+* This fix allows users to upload an image by easily clicking the “media add page” in the "Grid of Quotes" component, instead of forcing them to add the media then searching to to find it so it displays
+* This also fixes the display itself so that the image can been seen instead of displaying the file name
+
+DIG-1362 Display unofficial results in the same order as the ballot
+
+* This fix allows user to see the unofficial election results data displayed in the same order as it is listed on the official election ballot when it appears on the unofficial elections results page&#x20;
+* The election data order should also display in the same order as the ballot in the filtered drop down for searching
+
+DIG-1393 Add field to Drupal to allow election editors / admins to edit disclaimer
+
+* This fix gives election editors or admins the ability to update the disclaimer message on the Elections Results page&#x20;
+* The editor will see a new field to add or update a disclaimer message in Drupal&#x20;
+
+DIG-1435 Error on elections file upload crashes upload form
+
+* Fixes an issue to prevent upload crashes when an elections file is uploaded
+* To fix this issue the following solutions were implemented:&#x20;
+  * Made the form more tolerant to missing or orphaned data in the history object which is dynamically stored in the node\_elections config settings.
+  * Added a clear history button to the form so an admin can manage the history&#x20;
+  * Added logging into the history so that clearing and deleting history is recorded&#x20;
+
+DIG-1511: Maintenance Updates
+
+* Routine contributed module updates for Drupal&#x20;
+
 ## Digital\_Tags/2022-11-09
 
 DIG-62 Unmask a Password - Sign in Screen Access Boston Portal&#x20;
@@ -75,7 +104,7 @@ DIG- 1004 Importing Elections Data into Drupal&#x20;
 * Created an import page for the elections department to import election results file that will appear on the elections website
 * Created an import process where election results file contents are loaded into the new content type to updated the elections results site
 
-DIG- 1004 Create display pages for unofficial results
+DIG- 1093 Create display pages for unofficial results
 
 * Front end development work to create display pages for election results that align with approved UI designs and our patterns library
 
