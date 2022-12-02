@@ -33,6 +33,11 @@ DIG-1511: Maintenance Updates
 
 * Routine contributed module updates for Drupal&#x20;
 
+DIG- 1519 Content authors / editors unable to see drafts of unpublished content
+
+* Fixes a bug where editors were unable to see their Draft Drupal pages, When a user saves a “draft” for a new content type, they get a “temporarily unavailable” message
+* After an update in Drupal the DateTime module seemed to be less tolerant to formatting a date, the code was updated so that the published date will only be formatted if the node has been published
+
 ## Digital\_Tags/2022-11-09
 
 DIG-62 Unmask a Password - Sign in Screen Access Boston Portal&#x20;
