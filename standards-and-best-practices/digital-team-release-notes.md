@@ -4,6 +4,15 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Digital\_Tags/2022-12-02
+
+DIG-1024 View Only Group Management&#x20;
+
+* Enhancement to the Group Management Tool on Access Boston Portal that allows users to search and view employees/contractors list of security groups in view only mode
+* Users with the following security group SG\_AB\_GROUPMGMT\_SERVICEDESKVIEWONLY will see the Group Management link on their Access Portal page&#x20;
+* Users will have the ability to search on users by name or ID&#x20;
+* Once the correct user is found and selected their security groups will be displayed in view only mode. No edits can be made to the security groups
+
 ## Drupal\_Tags/2022-12-01
 
 DIG-878 'Grid of quotes' component image upload issues
