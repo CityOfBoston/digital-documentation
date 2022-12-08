@@ -6,6 +6,27 @@ description: Code release details will be documented with each code deployment h
 
 ## Drupal\_Tags/2022-12-08
 
+**Digital Team**&#x20;
+
+DIG-1463 Create Boston.gov feedback form
+
+* Enhancement in Drupal to create a feedback form that editors have to the ability to  add to the bottom of any page on Boston.gov
+* Feedback form works on both desktop and mobile
+*   &#x20;The feedback form has the following features:
+
+    * Yes/No check boxes for user experience - Required field
+    *   A comment text box for users to share their experience in paragraph form
+
+
+
+        ![](<../.gitbook/assets/image (4).png>)\
+
+
+
+
+    DIG-1544 'Notes' error when viewing feedback form submissions&#x20;
+* Fixes a bug where users were seeing an error when they clicked the notes option on individual Drupal pages
+
 **Metrolist**
 
 DIG-777 Listing Form: Availability Info Screen
@@ -26,29 +47,7 @@ Three changes to the notification requiring equitable treatment and non-discrimi
 
 DIG-1040 Fix Pagination icons to show displayed page&#x20;
 
-* This updates the Metrolist Listing form so the user sees the pagination icon highlighted to indicate which page they are currently on \
-
-
-**Digital Team**&#x20;
-
-DIG-1463 Create Boston.gov feedback form
-
-* Enhancement in Drupal to create a feedback form that editors have to the ability to  add to the bottom of any page on Boston.gov
-* Feedback form works on both desktop and mobile
-*   &#x20;The feedback form has the following features:
-
-    * Yes/No check boxes for user experience - Required field
-    *   A comment text box for users to share their experience in paragraph form
-
-
-
-        ![](<../.gitbook/assets/image (4).png>)\
-
-
-
-
-    DIG-1544 'Notes' error when viewing feedback form submissions&#x20;
-* Fixes a bug where users were seeing an error when they clicked the notes option on individual drupal pages
+* This updates the Metrolist Listing form so the user sees the pagination icon highlighted to indicate which page they are currently on&#x20;
 
 ## Digital\_Tags/2022-12-02
 
