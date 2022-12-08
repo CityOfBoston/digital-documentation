@@ -228,7 +228,7 @@ Grouped bar chart JSON schema
 {% tab title="Grouped Bar Chart with Selection" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
 
-![\<cob-chart> grouped bar chart.](<../.gitbook/assets/image (4) (1).png>)
+![\<cob-chart> grouped bar chart.](<../.gitbook/assets/image (4) (1) (1).png>)
 
 {% file src="../.gitbook/assets/grouped-bar-chart-select-schema.json" %}
 Grouped bar chart with selection schema JSON
@@ -375,7 +375,7 @@ This can be extremely helpful as Departments may often store and/or conceptualiz
         },
 ```
 
-![State Aid data in a "long" format.](<../.gitbook/assets/image (4).png>)
+![State Aid data in a "long" format.](<../.gitbook/assets/image (4) (1).png>)
 
 Now that our data is formatted correctly, we can use the "Type" column to color our chart so we get three lines showing the trends in the different types of State Aid.&#x20;
 

@@ -4,6 +4,52 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022-12-08
+
+**Metrolist**
+
+DIG-777 Listing Form: Availability Info Screen
+
+The following updates were made to the Availability Screen on the Metrolist form:
+
+* Set default time in Deadline Time field to 11:59PM
+* Add the “**Remove Posting Date**” date field so users can add a date to indicate when a posting should be removed so applications cannot be submitted after that date
+* Updated the name of the “When would you like this posted to Metrolist“ field to “Available On”
+
+DIG-838 Equitable Treatment agreement
+
+Three changes to the notification requiring equitable treatment and non-discriminatory practices agreement:
+
+1. Moved to bottom of page, just above submit button
+2. Added "I agree" checkbox as part of notification
+3. Disabled "Submit" button until "I agree" has been checked
+
+DIG-1040 Fix Pagination icons to show displayed page&#x20;
+
+* This updates the Metrolist Listing form so the user sees the pagination icon highlighted to indicate which page they are currently on \
+
+
+**Digital Team**&#x20;
+
+DIG-1463 Create Boston.gov feedback form
+
+* Enhancement in Drupal to create a feedback form that editors have to the ability to  add to the bottom of any page on Boston.gov
+* Feedback form works on both desktop and mobile
+*   &#x20;The feedback form has the following features:
+
+    * Yes/No check boxes for user experience - Required field
+    *   A comment text box for users to share their experience in paragraph form
+
+
+
+        ![](<../.gitbook/assets/image (4).png>)\
+
+
+
+
+    DIG-1544 'Notes' error when viewing feedback form submissions&#x20;
+* Fixes a bug where users were seeing an error when they clicked the notes option on individual drupal pages
+
 ## Digital\_Tags/2022-12-02
 
 DIG-1024 View Only Group Management&#x20;
