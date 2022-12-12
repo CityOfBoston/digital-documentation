@@ -134,8 +134,8 @@ _The Daytime Street Cleaning Program runs from April 1 to November 30 in most Bo
 {% hint style="info" %}
 **Email Schedule**
 
-Emails are sent out by a scheduled mailing from lyris at 7am, 2pm and 5pm each day. The constituent can choose a time when they register. \
-_A constituent may make multiple separate registrations for the same street but different notification times to get multiple notifications._
+Emails are sent out by a scheduled mailing from lyris at 7am, 2pm and 5pm each day. That scheduled mailing calls this script to generate emails which Lyris then sends out. The constituent can choose a time (7am, 2pm, 11pm) when they register. \
+_A constituent may make multiple separate registrations for the same street with different notification times to get multiple notifications._
 
 The script will accept a date as part of the querystring, but if no date is provided, then tomorrows date is assumed.
 
