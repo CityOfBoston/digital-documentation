@@ -6,6 +6,12 @@ description: >-
 
 # Street Sweeping Reminders
 
+{% hint style="success" %}
+The Summer/Winter sweeping timetable is automatically adjusted by the scripts and does not require developer intervention to restrict notifications in the winter months.
+
+See Summer/Winter section of lyris.asp below.
+{% endhint %}
+
 ## Summary
 
 Residents can use the page at [https://www.cityofboston.gov/publicworks/sweeping/](https://www.cityofboston.gov/publicworks/sweeping/).
@@ -126,13 +132,48 @@ _The Daytime Street Cleaning Program runs from April 1 to November 30 in most Bo
 {% endhint %}
 
 {% hint style="info" %}
+**Email Schedule**
+
+Emails are sent out at 7am, 2pm and 5pm, and the constituent can choose a time when they register. _A constituent may make multiple separate registrations for the same street but different notification times to get multiple notifications._
+
+**7am, 2pm and 5pm Notifications:** Emails are sent advising of daytime sweeping for following day, and overnight sweeping for the following night. e.g. Email generated on Friday provides notifications for daytime sweeping on Saturday, and overnight sweeping Saturday evening though Sunday morning.
+{% endhint %}
+
+{% hint style="info" %}
+**Sweeping Cancellations**
+
 The script can be manually edited and advance cancellation dates can be added. &#x20;
 
-If the logic determines that a recipient should receive an email, and a matching date is found in the list of cancellations a note is added to the reminder that sweeping is cancelled for the day/night.&#x20;
+If the logic determines that a recipient should receive an email, and a matching date is found in the list of cancellations a note is added to the reminder advising that sweeping has in fact been cancelled.&#x20;
 
-This is useful for planned events - city holidays (e.g. Christmas), but if cancellation is known sufficiently far in advance or the cancellation is for an extended period (e.g. snow storms) then it could be used to advise subscribers of the cancellation.
+`dictCancellations.Add` All sweeping on this day is cancelled (i.e. both daytime and overnight). Content Editors should add to this dictionary (i.e. list of cancellations):\
+1\. For planned city sweeping holidays (e.g. Christmas).  **Adding to this dictionary is a scheduled task to be undertaken every year at the start of November for the following calendar year.**\
+****2. On notification from Public Works Dept when one-off, unplanned exceptional circumstances (e.g. snow storms) occur.&#x20;
 
-* _but remember emails remind about sweeping the next day_&#x20;
+`dictOvernightCancellations.Add` Only overnight sweeping is cancelled.  Content Editors should add to this dictionary (i.e. list of cancellations) when notified by Public Works Dept for one-off, unplanned exceptional circumstances (e.g. snow storms).\
+_Note: In some cases cancellations are decided late in the evening, after emails have been sent._
+
+* _Remember emails remind about sweeping the next day_&#x20;
+* _**Because in most cases some emails reminders will have been sent before the cancellation occurs and the cancellation is added to the script - the city Content Editors also place a cancellation notice on the homepage of boston.gov.**_
+{% endhint %}
+
+{% hint style="info" %}
+**Summer/Winter Adjustments.**
+
+The City has 3 classifications which indicate which winter sweeping program is operated on city managed streets. Streets are classified as _**Normal**_ (no sweeping 01 Dec through 31 March), _**Northend Pilot**_ (no sweeping 01 Jan through last day of Feb) and **YearRound** (streets sweept all year). .
+
+The `PwdSweeping`table in the `Towing` database holds information on streets managed by the city and columns `yearround` and `northendpilot` to indicate the streets sweeping program. (if neither column has a "1" in it, then the street is "Normal"). There also appears to be a **Charlestown Pilot** (defined as streets in district 1C) The timetable is  controlled using the same flags, but a note is added to emails to advise elevated fines in lieu of towing.
+
+If there is an issue with a constituent receiving a sweeping notification during a winter "no-sweeping" period then:
+
+1. Ask the constituent to check signage to be sure the mail was sent in error.\
+   If the mail does appear to be incorrect, then
+2. Check the Street definition at the page:\
+   &#x20;     cityofboston.gov/publicworks/sweeping/admin/default.aspx \
+   (check dashlane for the password)\
+   Ensure the checkboxes next to "Winter Extension" (aka Northend Pilot) and "Year Round" are set properly,\
+   The checkboxes are correctly set, then
+3. &#x20;Contact a developer.
 {% endhint %}
 
 ### :admin/Default.aspx
