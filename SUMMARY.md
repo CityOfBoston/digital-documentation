@@ -159,7 +159,6 @@
 * [311 CRM Upgrade](projects/311-crm-upgrade/README.md)
   * [City Worker Upgrade to City Worker 5](projects/311-crm-upgrade/city-worker-upgrade-to-city-worker-5.md)
   * [Lagan 311 CRM upgrade to 15r4](projects/311-crm-upgrade/lagan-311-crm-upgrade-to-15r4.md)
-* [Assessing Online](projects/assessing-online.md)
 * [Fleet (Pattern Library Design System)](projects/fleet-pattern-library-design-system.md)
 * [Legacy No Tow Architecture](projects/architecture/README.md)
   * [Reillys Notes](projects/architecture/street-sweeping-no-tow.md)
@@ -217,6 +216,8 @@
         * [Knowledge Base](projects/decommissioned-apps-or-services/drupal-7/end-points/cityscore/knowledgebase..md)
       * [Public Notices](projects/decommissioned-apps-or-services/drupal-7/end-points/public-notices.md)
   * [SnowStats](projects/decommissioned-apps-or-services/snowstats.md)
+* [Assessing Online](projects/assessing-online/README.md)
+  * [2022 Notes](projects/assessing-online/2022-notes.md)
 
 ## External resources <a href="#other-resources" id="other-resources"></a>
 
