@@ -4,6 +4,20 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022-12-14&15
+
+**Metrolist**&#x20;
+
+DIG-1047 Open Project Pages in New Tab
+
+* Fixes a navigation issue for users that want to open a project page from the Build In Boston map. When clicking on a project from the map the project page will open in a new tab allowing users the ability to toggle between the map and project tabs they are viewing, and close the project pages without closing the map.&#x20;
+
+**Digtial Team**&#x20;
+
+DIG-1591 - Dupal Updates
+
+* Routine maintenance and code release cycle for boston.gov
+
 ## Drupal\_Tags/2022-12-08
 
 **Digital Team**&#x20;
