@@ -70,6 +70,16 @@ Testing/verification of the new data can then be completed at:\
 
 </details>
 
+### Assessing Forms
+
+There are a number of forms which are provided as part of the assessment process during the first part of each calendar year.  The files are saved in `assessing\search\forms\FY20XX\.`When a consituent requests a form, it is processed through `assessing/search/itextsharp/` which adds a barcode (related to the parcelid) to the top of the form.
+
+The code at `itextsharp` is a c# application, and at this time, the location of the source code is unknown.
+
+#### December Activity
+
+1. New forms are provided by the Assessing Team and are uploaded to a new folder in `assessing\search\forms\.`
+
 ### MSSQL Database
 
 The database which contains the data for the assessing online app is contained on`vsql01` (aka `vsql02`, `zrb01`(?)). This may well be migrated to `vsql71` at some point.&#x20;

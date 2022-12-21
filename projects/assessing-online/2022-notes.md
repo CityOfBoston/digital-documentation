@@ -1,9 +1,3 @@
----
-description: >-
-  This page is used to log the annual assessing process as it relates to the
-  assessing online app.
----
-
 # 2022 Notes
 
 ### Assessing Team
@@ -50,7 +44,3 @@ Arlande StLouis
 ### Other Information
 
 There are approx 176,000 tax bills (aka Parcels) (aka Inventory Items) (aka Properties)
-
-{% content-ref url="assessing-online-maintenance.md" %}
-[assessing-online-maintenance.md](assessing-online-maintenance.md)
-{% endcontent-ref %}
