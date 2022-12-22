@@ -47,6 +47,7 @@ The files which are appear to be live (i.e. have no redirect to boston.gov) and 
 | res\_prop\_sales\_archive.asp | 03/2016       | _Suspect this file is not live, just an archive of res\_sales\_prop.asp which has not been redirected._ |
 | taxratehistory.asp            | 03/2016       |                                                                                                         |
 | global.asa (assessing)        | 08/2013       | Contains connection strings which do not appear to be used.                                             |
+| paymentshistory\default.aspx  | 03/2014       | Unknown, appears to be a file uploader  - inserts records into the Treasury database on vsql01          |
 | search\default.asp            | 11/2022       |                                                                                                         |
 | search\hotline.asp            | 06/2020       | Unknown, looks unused.                                                                                  |
 | search\json.asp               | 05/2016       | Unknown, looks unused.                                                                                  |
