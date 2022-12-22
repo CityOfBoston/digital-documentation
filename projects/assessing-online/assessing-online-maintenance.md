@@ -6,6 +6,31 @@ description: >-
 
 # Assessing Online Maintenance
 
+### Maintenance Cycle Checklist
+
+{% tabs %}
+{% tab title="December" %}
+See tabbed notes for December (on this page) for detailed instructions.
+
+* [ ] Create sandbox `default.asp` page for testing,
+* [ ] Update the dates and tax rates in sandbox,
+* [ ] Update sandbox to connect to the `assessingupdates` MS SQL database,
+* [ ] Update MS SQL `assessingupdates` database with data from MS Access,
+* [ ] Run any adjustment processes in `assessingupdates` database,
+* [ ] Copy new forms into the folder at `wwwcob/assessing/search/forms`,
+* [ ] Test sandbox, and re-import data as needed/provided by Assessing Team,
+* [ ] Copy data in `assessingupdates` database into `assessingsearch` database,
+* [ ] Update sandbox `default.asp` page to connect to `assessingsearch` database and then copy the sandbox page over the live `default.asp` page.
+* [ ] Cleanup sandbox and redundant databases and tables.
+{% endtab %}
+
+{% tab title="July" %}
+See tabbed notes for July (on this page) for detailed instructions.
+
+* [ ] Step 1
+{% endtab %}
+{% endtabs %}
+
 ### ASP Application
 
 The ASP application is served by an IIS Server from `zpcobweb01.web.cob.`
@@ -25,10 +50,6 @@ The files which are appear to be live (i.e. have no redirect to boston.gov) and 
 | search\default.asp            | 11/2022       |                                                                                                         |
 | search\hotline.asp            | 06/2020       | Unknown, looks unused.                                                                                  |
 | search\json.asp               | 05/2016       | Unknown, looks unused.                                                                                  |
-
-#### December Activity
-
-The main files which require maintenance are:
 
 <details>
 
@@ -56,19 +77,35 @@ This file contains the assessing online search service.
 
 There is a section titled BEGIN CONSTANTS (line 20) to END CONSTANTS (line 70).  This block of code contains a number of constants.  Principally these are dates, but also some tax rate information.  This data is provided by the Assessing Team in Dec each year.  _**Nothing outside of this block requires routine maintenance.**_
 
+</details>
+
+#### Maintenance Cycle
+
+{% tabs %}
+{% tab title="December" %}
 **Create sandbox ASP page for testing.**
 
-1. Create a copy of `default.asp` named `default20xx.asp`.&#x20;
-2. The constant for `AssessingSearchDB` in (line 56 of) `assessing\search\default.asp` indicates the connection string for the page to use. Change it to `assessingupdates` (which will then run SQL queries on the page in the assessingupdates database in the MSSQL Server).
+Create a copy of `default.asp` named `default20xx.asp`.&#x20;
+
+**Update DB connection string.**
+
+The constant for `AssessingSearchDB` in (line 56 of) `default.asp/default20xx.asp` indicates the connection string for the page to use.  Change it to `assessingupdates` (which will then run SQL queries on the page in the `assessingupdates` database in the MSSQL Server).
 
 **Make changes to dates and tax rates for next year.**
 
-1. Using data provided by the Assessing Team, update the constants in `default20xx.asp`
+Using data provided by the Assessing Team, update the constants in `default20xx.asp.` \
+``_Refer to the notes in the default.asp page next to each constant for guidance._
 
-Testing/verification of the new data can then be completed at:\
+{% hint style="success" %}
+Testing/verification of the new data can now be completed at:\
 &#x20; `https://cityofboston.gov/assessing/search/default20xx.asp`
+{% endhint %}
+{% endtab %}
 
-</details>
+{% tab title="July" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### Assessing Forms
 
@@ -76,13 +113,23 @@ There are a number of forms which are provided as part of the assessment process
 
 The code at `itextsharp` is a c# application, and at this time, the location of the source code is unknown.
 
-#### December Activity
+#### Maintenance Cycle
 
-1. New forms are provided by the Assessing Team and are uploaded to a new folder in `assessing\search\forms\.`
+{% tabs %}
+{% tab title="December" %}
+Each year new forms for appeals etc are generated and will be provided by the Assessing Team.
+
+Upload the forms (typically 4) to a new folder at `assessing\search\forms\`
+{% endtab %}
+
+{% tab title="July" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### MSSQL Database
 
-The database which contains the data for the assessing online app is contained on`vsql01` (aka `vsql02`, `zrb01`(?)). This may well be migrated to `vsql71` at some point.&#x20;
+The database which contains the data for the assessing online app is contained on`vsql01` (aka `zpdmzsql01, vsql02`, `zrb01`(?)). This may well be migrated to `vsql71` at some point.&#x20;
 
 The assessing department validate and transfer data to the Digital Team via an MS Access database.  This database contains tables of data that should be mapped and uploaded to databases on the MS SQLServer.
 
@@ -90,13 +137,25 @@ The production database is `assessingsearch` and the staging database is `assess
 
 December data should first be imported into `assessingupdates`, verified and then copied to `assessingsearch`
 
-#### December Activity
+#### Maintenance Cycle
 
-During December, the Assessing Team will send Digital an updated copy of the MS Access database. &#x20;
+{% tabs %}
+{% tab title="December" %}
+Obtain the updated copy of the MS Access database. &#x20;
 
-The Access database contains tables which can be mapped directly with tables in the MS SQL Databases.
+Using an ODBC connection copy tables from Access to `assessingupdates` in MS SQL.
 
-Using an ODBC connection, data can be copied from Access to MSSQL, and then some stored procs executed to make additional data changes.
+Notes from Assessing Team will detail any particular instructions on data manipulations that are required. &#x20;
 
+_For example, in 2022 there is a  stored procedure `sp_update_current_owners` which should be executed to make additional data changes to parcel/property ownership._
+
+{% hint style="success" %}
 Testing/verification of the new data can then be completed at:\
 &#x20; `https://cityofboston.gov/assessing/search/default20xx.asp`
+{% endhint %}
+{% endtab %}
+
+{% tab title="July" %}
+
+{% endtab %}
+{% endtabs %}
