@@ -4,6 +4,25 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2022\_12\_23
+
+**Digital Team**&#x20;
+
+DIG-1545 - Adjust feedback link in navigation for pages where feedback form appears
+
+* This adds functionality to the feedback link seen the on top of Boston.gov pages. If a Boston.gov page has the newly created feedback embedded when the feedback link is clicked the user will navigate directly to the new feedback form at the bottom of the page&#x20;
+* If there is no feedback form embedded on the page, when the feedback link is clicked the user will see a contact form that submits an email to [311supervisors@boston.gov](mailto:311supervisors@boston.gov)&#x20;
+
+DIG-1307 - Add updated styling to tables on Boston.gov
+
+* This updates all the tables on Boston.gov to match the newly designed tables created for the Elections results. These new designs are for both desktop and mobile. These updates were created to align with our commitment to design and brand consistency on Boston.gov
+
+**Metrolist**&#x20;
+
+DIG-1547 Make Availability Info Page Required
+
+* Removes the check box option on the “Select Building” Page of the listing form that allows the users to skip the “Availability Info” page. This step will now be required in the submission process on the Metrolist Listing Form
+
 ## Drupal\_Tags/2022-12-14&15
 
 **Metrolist**&#x20;
