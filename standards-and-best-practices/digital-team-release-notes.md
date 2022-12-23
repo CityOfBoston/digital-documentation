@@ -4,6 +4,12 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Digital\_Tag/2022\_12\_23
+
+DIG-Error message in search of Permit Finder website
+
+* This fixes a bug where users where seeing an 400 error when using the permit finder website&#x20;
+
 ## Drupal\_Tags/2022\_12\_23
 
 **Digital Team**&#x20;
