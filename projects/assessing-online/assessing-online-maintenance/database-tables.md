@@ -389,38 +389,61 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                                             | Source | Notes |
-| -------------------------------------------------- | ------ | ----- |
-| parcel\_id nchar(10)                               |        |       |
-| condo\_main nchar(10)                              |        |       |
-| ward\_precinct\_block nvarchar(7)                  |        |       |
-| street\_number nvarchar(10)                        |        |       |
-| street\_number\_suffix nvarchar(10)                |        |       |
-| street\_name nvarchar(50)                          |        |       |
-| street\_name\_only nvarchar(50)                    |        |       |
-| street\_name\_suffix nvarchar(2)                   |        |       |
-| apt\_unit nvarchar(20)                             |        |       |
-| city nvarchar(50)                                  |        |       |
-| location\_zip\_code nvarchar(5)                    |        |       |
-| location\_zip\_code\_plus\_four nvarchar(4)        |        |       |
-| owner nvarchar(50)                                 |        |       |
-| mail\_addressee nvarchar(50)                       |        |       |
-| mail\_street\_address1 nvarchar(50)                |        |       |
-| mail\_street\_address2 nvarchar(50)                |        |       |
-| mail\_city\_and\_state nvarchar(50)                |        |       |
-| mail\_zip\_code nvarchar(5)                        |        |       |
-| mail\_zip\_code\_plus\_four nvarchar(4)            |        |       |
-| country nvarchar(50)                               |        |       |
-| future\_owner nvarchar(50)                         |        |       |
-| future\_mail\_addressee nvarchar(50)               |        |       |
-| future\_owner\_mail\_street\_address1 nvarchar(50) |        |       |
-| future\_owner\_mail\_street\_address1 nvarchar(50) |        |       |
-|                                                    |        |       |
-|                                                    |        |       |
-|                                                    |        |       |
-|                                                    |        |       |
-|                                                    |        |       |
-|                                                    |        |       |
+| Column                                                                                                                                                                                                                                                    | Source | Notes |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ----- |
+| parcel\_id nchar(10)                                                                                                                                                                                                                                      |        |       |
+| condo\_main nchar(10)                                                                                                                                                                                                                                     |        |       |
+| ward\_precinct\_block nvarchar(7)                                                                                                                                                                                                                         |        |       |
+| street\_number nvarchar(10)                                                                                                                                                                                                                               |        |       |
+| street\_number\_suffix nvarchar(10)                                                                                                                                                                                                                       |        |       |
+| street\_name nvarchar(50)                                                                                                                                                                                                                                 |        |       |
+| street\_name\_only nvarchar(50)                                                                                                                                                                                                                           |        |       |
+| street\_name\_suffix nvarchar(2)                                                                                                                                                                                                                          |        |       |
+| apt\_unit nvarchar(20)                                                                                                                                                                                                                                    |        |       |
+| city nvarchar(50)                                                                                                                                                                                                                                         |        |       |
+| location\_zip\_code nvarchar(5)                                                                                                                                                                                                                           |        |       |
+| location\_zip\_code\_plus\_four nvarchar(4)                                                                                                                                                                                                               |        |       |
+| owner nvarchar(50)                                                                                                                                                                                                                                        |        |       |
+| mail\_addressee nvarchar(50)                                                                                                                                                                                                                              |        |       |
+| mail\_street\_address1 nvarchar(50)                                                                                                                                                                                                                       |        |       |
+| mail\_street\_address2 nvarchar(50)                                                                                                                                                                                                                       |        |       |
+| mail\_city\_and\_state nvarchar(50)                                                                                                                                                                                                                       |        |       |
+| mail\_zip\_code nvarchar(5)                                                                                                                                                                                                                               |        |       |
+| mail\_zip\_code\_plus\_four nvarchar(4)                                                                                                                                                                                                                   |        |       |
+| country nvarchar(50)                                                                                                                                                                                                                                      |        |       |
+| future\_owner nvarchar(50)                                                                                                                                                                                                                                |        |       |
+| future\_mail\_addressee nvarchar(50)                                                                                                                                                                                                                      |        |       |
+| future\_owner\_mail\_street\_address1 nvarchar(50)                                                                                                                                                                                                        |        |       |
+| future\_owner\_mail\_street\_address2 nvarchar(50)                                                                                                                                                                                                        |        |       |
+| future\_owner\_mail\_city\_and\_state nvarchar(50)                                                                                                                                                                                                        |        |       |
+| future\_owner\_mail\_zip\_code nvarchar(5)                                                                                                                                                                                                                |        |       |
+| future\_owner\_mail\_zip\_code\_plus\_four nvarchar(4)                                                                                                                                                                                                    |        |       |
+| future\_owner\_country nvarchar(50)                                                                                                                                                                                                                       |        |       |
+| land\_area int                                                                                                                                                                                                                                            |        |       |
+| land\_use nvarchar(2)                                                                                                                                                                                                                                     |        |       |
+| exempt\_code nvarchar(4)                                                                                                                                                                                                                                  |        |       |
+| property\_type nvarchar(4)                                                                                                                                                                                                                                |        |       |
+| state\_class\_code nvarchar(1)                                                                                                                                                                                                                            |        |       |
+| <p>residential_building_value decimal(12, 2)<br>residential_land_value decimal(12, 2)<br>residential_air_rights_value decimal(12, 2)</p>                                                                                                                  |        |       |
+| <p>commercial_building_value decimal(12, 2)<br>commercial_land_value decimal(12, 2)<br>commercial_air_rights_value decimal(12, 2)</p>                                                                                                                     |        |       |
+| industrial\_building\_value decimal(12, 2) industrial\_land\_value decimal(12, 2) industrial\_air\_rights\_value decimal(12, 2)                                                                                                                           |        |       |
+| open\_space\_land\_value decimal(12, 2)                                                                                                                                                                                                                   |        |       |
+| exempt\_building\_value decimal(12, 2) exempt\_land\_value decimal(12, 2)                                                                                                                                                                                 |        |       |
+| total\_building\_value decimal(12, 2) total\_land\_value decimal(12, 2) total\_value decimal(12, 2)                                                                                                                                                       |        |       |
+| latest\_sale\_date date                                                                                                                                                                                                                                   |        |       |
+| latest\_bkpgcert nvarchar(10)                                                                                                                                                                                                                             |        |       |
+| residential\_exemption\_flag bit                                                                                                                                                                                                                          |        |       |
+| coop\_value decimal(12, 2)                                                                                                                                                                                                                                |        |       |
+| clause\_abatement\_type\_1 nvarchar(6) clause\_abt\_1\_pct\_ownership nvarchar(5) clause\_abt\_1\_pct\_occupancy nvarchar(5) clause\_abatement\_type\_2 nvarchar(6) clause\_abt\_2\_pct\_ownership nvarchar(5) clause\_abt\_2\_pct\_occupancy nvarchar(5) |        |       |
+| paraplegic nvarchar(6)                                                                                                                                                                                                                                    |        |       |
+| workoff\_type nvarchar(6) workoff\_credit\_amt decimal(12, 2)                                                                                                                                                                                             |        |       |
+| sewer\_betterment\_amt decimal(12, 2) street\_betterment\_amt decimal(12, 2) sidewalk\_betterment\_amt decimal(12, 2)                                                                                                                                     |        |       |
+| penalty1\_type nvarchar(6) penalty1\_amt decimal(12, 2) penalty2\_type nvarchar(6) penalty2\_amt decimal(12, 2) penalty3\_type nvarchar(6) penalty3\_amt decimal(12, 2)                                                                                   |        |       |
+| <p>fine1_type nvarchar(6) <br>fine1_amt decimal(12, 2) <br>fine2_type nvarchar(6) <br>fine2_amt decimal(12, 2) <br>fine3_type nvarchar(6) <br>fine3_amt decimal(12, 2)</p>                                                                                |        |       |
+| <p>BID_type nvarchar(6) <br>BID_amt decimal(12, 2)</p>                                                                                                                                                                                                    |        |       |
+| nontax\_collection\_type nvarchar(6) nontax\_collection\_amt decimal(12, 2)                                                                                                                                                                               |        |       |
+| personal\_exemption\_flag bit                                                                                                                                                                                                                             |        |       |
+| condo\_main\_value decimal(12, 2)                                                                                                                                                                                                                         |        |       |
 {% endtab %}
 
 {% tab title="Notes" %}
