@@ -10,8 +10,6 @@ description: >-
 
 ### additional\_data
 
-
-
 {% hint style="info" %}
 This table is accessed from `default.asp`.
 {% endhint %}
@@ -30,12 +28,8 @@ _**If so, then the query and HTML table in**** ****`default.asp`**** ****needs t
 | condo\_units\_commercial smallint   | MS Access |       |
 | condo\_units\_mixed smallint        | MS Access |       |
 | stories decimal(4, 1)               | MS Access |       |
-|                                     |           |       |
 
 ### bid
-
-_**Check the tables in the MS Access database to see if new BID region/categories have been created.  If the unlikely event there are, then check with Assessing Dept to see if the info needs to be displayed.**_  \
-_**If so, then this table will need an additional column for the new bid region/category, and the HTML in**** ****`default.asp`**** ****will need to be updated.**_
 
 {% hint style="info" %}
 This table is accessed from `default.asp`.
@@ -44,6 +38,9 @@ This table is accessed from `default.asp`.
 {% hint style="warning" %}
 Potentially, there is some adjustment of the bid amount depending on billing schedule.
 {% endhint %}
+
+_**Check the tables in the MS Access database to see if new BID region/categories have been created.  If the unlikely event there are, then check with Assessing Dept to see if the info needs to be displayed.**_  \
+_**If so, then this table will need an additional column for the new bid region/category, and the HTML in**** ****`default.asp`**** ****will need to be updated.**_
 
 | Column                  | Source    | Notes                                                                                 |
 | ----------------------- | --------- | ------------------------------------------------------------------------------------- |
@@ -135,11 +132,16 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                      | Source | Notes |
+| --------------------------- | ------ | ----- |
+| parcel\_id nchar(10)        |        |       |
+| street\_number nvarchar(10) |        |       |
+| street\_name nvarchar(50)   |        |       |
+| apartment\_no nvarchar(20)  |        |       |
+| suffix nvarchar(2)          |        |       |
+| landuse nvarchar(2)         |        |       |
+| owner nvarchar(255)         |        |       |
+| condo\_main nchar(10)       |        |       |
 
 ### parcel\_all\_owners
 
@@ -147,11 +149,16 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                      | Source | Notes |
+| --------------------------- | ------ | ----- |
+| parcel\_id nchar(10)        |        |       |
+| street\_number nvarchar(10) |        |       |
+| street\_name nvarchar(50)   |        |       |
+| apartment\_no nvarchar(20)  |        |       |
+| suffix nvarchar(2)          |        |       |
+| landuse nvarchar(2)         |        |       |
+| owner nvarchar(255)         |        |       |
+| condo\_main nchar(10)       |        |       |
 
 ### propertycodes\_described
 
@@ -159,11 +166,14 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                                   | Source | Notes |
+| ---------------------------------------- | ------ | ----- |
+| property-code smallint                   |        |       |
+| property-class tinyint                   |        |       |
+| property-class-description nvarchar(255) |        |       |
+| property-code-description nvarchar(255)  |        |       |
+| property-code-state bit                  |        |       |
+| property-code-city bit                   |        |       |
 
 ### Res\_exempt
 
@@ -171,11 +181,11 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                               | Source | Notes |
+| ------------------------------------ | ------ | ----- |
+| parcel\_id nvarchar(10)              |        |       |
+| residential\_exemption nvarchar(255) |        |       |
+| personal\_exemption bit              |        |       |
 
 ### RESIDENTIAL PROPERTY ATTRIBUTES
 
@@ -231,11 +241,12 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                 | Source | Notes |
+| ---------------------- | ------ | ----- |
+| Parcel\_id nchar(10)   |        |       |
+| Fiscal\_Year smallint  |        |       |
+| Assessed\_value bigint |        |       |
+| Land\_use nvarchar(4)  |        |       |
 
 ## Updating Database Tables
 
