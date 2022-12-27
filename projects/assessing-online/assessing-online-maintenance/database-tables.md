@@ -197,7 +197,86 @@ This table is accessed from `default.asp`.
 {% endtab %}
 
 {% tab title="Populating Table" %}
+```sql
+USE assessingupdates2023Q3;
 
+-- Create the table.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS [dbo].[condo_attributes];
+GO 
+CREATE TABLE [dbo].[condo_attributes](
+    [parcel_id] [nvarchar](10) NULL,
+    [Composite Land Use] [nvarchar](255) NULL,
+    [Orientation] [nvarchar](255) NULL,
+    [Corner Unit] [nvarchar](255) NULL,
+    [Floor] [nvarchar](255) NULL,
+    [Rooms] [nvarchar](255) NULL,
+    [Bedrooms] [nvarchar](255) NULL,
+    [Bedroom Type] [nvarchar](255) NULL,
+    [Full Bath] [float] NULL,
+    [Half Bath] [float] NULL,
+    [Other Fixtures] [float] NULL,
+    [Bath Style 1] [nvarchar](255) NULL,
+    [Bath Style 2] [nvarchar](255) NULL,
+    [Bath Style 3] [nvarchar](255) NULL,
+    [Kitchens] [float] NULL,
+    [Kitchen Type] [nvarchar](255) NULL,
+    [Kitchen Style 1] [nvarchar](255) NULL,
+    [Kitchen Style 2] [nvarchar](255) NULL,
+    [Kitchen Style 3] [nvarchar](255) NULL,
+    [Fireplaces] [float] NULL,
+    [Penthouse Unit] [bit] NOT NULL,
+    [AC Type] [nvarchar](255) NULL,
+    [Heat Type] [nvarchar](255) NULL,
+    [Year Built] [float] NULL,
+    [Interior Condition] [nvarchar](255) NULL,
+    [Interior Finish] [nvarchar](255) NULL,
+    [View] [nvarchar](255) NULL,
+    [Grade] [nvarchar](255) NULL,
+    [# of Parking Spots] [nvarchar](255) NULL,
+    [Parking Ownership] [nvarchar](255) NULL,
+    [Parking Type] [nvarchar](255) NULL,
+    [Tandem Parking] [nvarchar](255) NULL,
+    [Complex] [nvarchar](255) NULL,
+    [Story Height] [nvarchar](255) NULL,
+    [Roof Cover] [nvarchar](255) NULL,
+    [Roof Structure] [nvarchar](255) NULL,
+    [Exterior Condition] [nvarchar](255) NULL,
+    [Exterior Finish] [nvarchar](255) NULL,
+    [Building Style] [nvarchar](255) NULL,
+    [Foundation] [nvarchar](255) NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-192043] ON [dbo].[condo_attributes]
+    ([parcel_id] ASC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
+
+-- Insert data from working table, delete existing contents first
+TRUNCATE TABLE dbo.condo_attributes; 
+INSERT INTO dbo.condo_attributes
+(   [parcel_id], [Composite Land Use], [Orientation], [Corner Unit], [Floor], [Rooms]
+    ,[Bedrooms], [Bedroom Type], [Full Bath], [Half Bath], [Other Fixtures], [Bath Style 1]
+    ,[Bath Style 2], [Bath Style 3], [Kitchens], [Kitchen Type], [Kitchen Style 1], [Kitchen Style 2]
+    ,[Kitchen Style 3], [Fireplaces], [Penthouse Unit], [AC Type], [Heat Type], [Year Built]
+    ,[Interior Condition], [Interior Finish], [View], [Grade], [# of Parking Spots], [Parking Ownership]
+    ,[Parking Type], [Tandem Parking], [Complex], [Story Height], [Roof Cover], [Roof Structure]
+    ,[Exterior Condition], [Exterior Finish], [Building Style], [Foundation])
+SELECT 
+     [parcel_id], [Composite Land Use], [Orientation], [Corner Unit], [Floor], [Rooms]
+    ,[Bedrooms], [Bedroom Type], [Full Bath], [Half Bath], [Other Fixtures], [Bath Style 1]
+    ,[Bath Style 2], [Bath Style 3], [Kitchens], [Kitchen Type], [Kitchen Style 1], [Kitchen Style 2]
+    ,[Kitchen Style 3], [Fireplaces], [Penthouse Unit], [AC Type], [Heat Type], [Year Built]
+    ,[Interior Condition], [Interior Finish], [View], [Grade], [# of Parking Spots], [Parking Ownership]
+    ,[Parking Type], [Tandem Parking], [Complex], [Story Height], [Roof Cover], [Roof Structure]
+    ,[Exterior Condition], [Exterior Finish], [Building Style], [Foundation]
+FROM dbo._CONDO_PROPERTY_ATTRIBUTES
+```
 {% endtab %}
 {% endtabs %}
 
