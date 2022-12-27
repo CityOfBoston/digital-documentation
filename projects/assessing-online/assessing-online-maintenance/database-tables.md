@@ -16,7 +16,17 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-
+| Column                             | Source    | Notes                       |
+| ---------------------------------- | --------- | --------------------------- |
+| parcel\_id nvarchar(10)            | MS Access | **PK** The unique parcel ID |
+| living\_area int                   | MS Access |                             |
+| gross\_area int                    | MS Access |                             |
+| year\_built smallint               | MS Access |                             |
+| year\_remodeled smallint           | MS Access |                             |
+| condo\_units\_residential smallint | MS Access |                             |
+| condo\_units\_commercial smallint  | MS Access |                             |
+| condo\_units\_mixed smallint       | MS Access |                             |
+| stories decimal(4, 1)              | MS Access |                             |
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -27,7 +37,46 @@ If so, then the query and HTML table in `default.asp` needs to be updated to dis
 {% endtab %}
 
 {% tab title="Populating Table" %}
+```sql
+-- Create the table
+USE assessingupdates2023Q3;
 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[additional_data](
+	[parcel_id] [nchar](10) NOT NULL,
+	[living_area] [int] NULL,
+	[gross_area] [int] NULL,
+	[year_built] [smallint] NULL,
+	[year_remodeled] [smallint] NULL,
+	[condo_units_residential] [int] NULL,
+	[condo_units_commercial] [int] NULL,
+	[condo_units_mixed] [int] NULL,
+	[stories] [decimal](4, 1) NULL
+) ON [PRIMARY]
+GO
+
+-- Create the index
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-20190701-115214] ON [dbo].[additional_data]
+(
+	[parcel_id] ASC
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
+
+-- Insert data from working table
+TRUNCATE TABLE dbo.additional_data; 
+
+INSERT INTO dbo.additional_data
+    (parcel_id, living_area, gross_area, year_built, year_remodeled, condo_units_residential, condo_units_commercial, condo_units_mixed, stories)
+SELECT [parcel_id], ROUND([Living Area] , 0), ROUND([Gross Area], 0), [Year Built], [Year Remodel], 0, [Commercial Units], 0, CONVERT(numeric(4,1),  ISNULL(NULLIF([Story Height],''), 0))
+FROM dbo._ADDITIONAL_DATA;
+
+```
 {% endtab %}
 {% endtabs %}
 
@@ -51,6 +100,12 @@ _**If so, then this table will need an additional column for the new bid region/
 | parcel\_id nvarchar(10) |           | **PK** The unique parcel ID                                                           |
 | bid\_greenway money     | MS Access | This is extracted and compiled from the greenway\_bid table in the MSAccess database. |
 | bid\_downtown money     | MS Access | This is extracted and compiled from the greenway\_bid table in the MSAccess database. |
+
+
+
+
+
+
 {% endtab %}
 
 {% tab title="Notes" %}
