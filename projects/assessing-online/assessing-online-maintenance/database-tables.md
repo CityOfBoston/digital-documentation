@@ -58,7 +58,9 @@ This table is accessed from `default.asp`.
 
 ### landuse\_described
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -68,7 +70,9 @@ Accessed from `default.asp`.
 
 ### outbuildings
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -78,7 +82,9 @@ Accessed from `default.asp`.
 
 ### parcel
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -88,7 +94,9 @@ Accessed from `default.asp`.
 
 ### parcel\_all\_owners
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -98,7 +106,9 @@ Accessed from `default.asp`.
 
 ### propertycodes\_described
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -108,7 +118,9 @@ Accessed from `default.asp`.
 
 ### Res\_exempt
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -118,7 +130,9 @@ Accessed from `default.asp`.
 
 ### RESIDENTIAL PROPERTY ATTRIBUTES
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -128,7 +142,9 @@ Accessed from `default.asp`.
 
 ### tax\_preliminary
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -138,7 +154,9 @@ Accessed from `default.asp`.
 
 ### taxbill
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -148,7 +166,9 @@ Accessed from `default.asp`.
 
 ### taxes
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -158,7 +178,9 @@ Accessed from `default.asp`.
 
 ### value\_history
 
-Accessed from `default.asp`.
+{% hint style="info" %}
+This table is accessed from `default.asp`.
+{% endhint %}
 
 | Column | Source | Notes |
 | ------ | ------ | ----- |
@@ -166,4 +188,4 @@ Accessed from `default.asp`.
 |        |        |       |
 |        |        |       |
 
-## Updating Datbase Tables
+## Updating Database Tables

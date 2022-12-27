@@ -51,6 +51,6 @@ Arlande StLouis
 
 There are approx 176,000 tax bills (aka Parcels) (aka Inventory Items) (aka Properties)
 
-{% content-ref url="assessing-online-maintenance/" %}
-[assessing-online-maintenance](assessing-online-maintenance/)
+{% content-ref url="assessing-online-maintenance.md" %}
+[assessing-online-maintenance.md](assessing-online-maintenance.md)
 {% endcontent-ref %}

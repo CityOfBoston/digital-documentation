@@ -218,7 +218,7 @@
   * [SnowStats](projects/decommissioned-apps-or-services/snowstats.md)
 * [Assessing Online](projects/assessing-online/README.md)
   * [2022 Notes](projects/assessing-online/2022-notes.md)
-  * [Assessing Online Maintenance](projects/assessing-online/assessing-online-maintenance/README.md)
+  * [Assessing Online Maintenance](projects/assessing-online/assessing-online-maintenance.md)
     * [Database Tables](projects/assessing-online/assessing-online-maintenance/database-tables.md)
 
 ## External resources <a href="#other-resources" id="other-resources"></a>
