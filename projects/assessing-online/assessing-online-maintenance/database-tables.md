@@ -45,6 +45,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+DROP TABLE IF EXISTS dbo.additional_data;
+GO
 CREATE TABLE [dbo].[additional_data](
     [parcel_id] [nchar](10) NOT NULL,
     [living_area] [int] NULL,
@@ -59,7 +61,7 @@ CREATE TABLE [dbo].[additional_data](
 GO
 SET ANSI_PADDING ON
 GO
-CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-20190701-115214] ON [dbo].[additional_data]
+CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-115214] ON [dbo].[additional_data]
     ([parcel_id] ASC) 
     WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) 
     ON [PRIMARY]
@@ -86,9 +88,6 @@ This table is accessed from `default.asp`.
 Potentially, there is some adjustment of the bid amount depending on billing schedule.
 {% endhint %}
 
-_**Check the tables in the MS Access database to see if new BID region/categories have been created.  If the unlikely event there are, then check with Assessing Dept to see if the info needs to be displayed.**_  \
-_**If so, then this table will need an additional column for the new bid region/category, and the HTML in**** ****`default.asp`**** ****will need to be updated.**_
-
 {% tabs %}
 {% tab title="Table Columns" %}
 | Column                  | Source    | Notes                                                                                 |
@@ -105,11 +104,48 @@ _**If so, then this table will need an additional column for the new bid region/
 {% endtab %}
 
 {% tab title="Notes" %}
+Check the tables in the MS Access database to see if new BID region/categories have been created.  If the unlikely event there are, then check with Assessing Dept to see if the info needs to be displayed.  \
 
+
+If so, then this table will need an additional column for the new bid region/category, and the HTML in `default.asp` will need to be updated.
 {% endtab %}
 
 {% tab title="Populating Table" %}
+```sql
+USE assessingupdates2023Q3;
 
+-- Create the table.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS dbo.bid;
+GO
+CREATE TABLE [dbo].[bid](
+    [parcel_id] [nvarchar](10) NOT NULL,
+    [bid_greenway] [money] NOT NULL,
+    [bid_downtown] [money] NOT NULL,
+    [bid_newmarket] [money] NOT NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-013148] ON [dbo].[bid]
+    ([parcel_id] ASC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+-- Insert the data
+TRUNCATE TABLE dbo.bid;
+INSERT INTO dbo.bid (parcel_id, bid_greenway, bid_newmarket, bid_downtown)
+SELECT parcel.parcel_id, ISNULL(greenway.[Unpaid Balance],0) AS Greenway_BID, ISNULL(newmarket.[Unpaid Balance],0) as Newmarket_BID, ISNULL(downtown.[Unpaid Balance], 0) as Downtown_BID
+FROM dbo._Taxes AS parcel
+    LEFT JOIN dbo._Greenway_BID AS greenway ON parcel.parcel_id = greenway.parcel_id
+    LEFT JOIN dbo._Newmarket_BID AS newmarket ON parcel.parcel_id = newmarket.parcel_id
+    LEFT JOIN dbo._Downtown_BID AS downtown ON parcel.parcel_id = downtown.parcel_id
+WHERE ISNULL(greenway.[Unpaid Balance], 0) + ISNULL(newmarket.[Unpaid Balance], 0) + ISNULL(downtown.[Unpaid Balance], 0) <> 0 
+
+```
 {% endtab %}
 {% endtabs %}
 
@@ -121,6 +157,8 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
+
+
 | Column                                   | Source | Notes |
 | ---------------------------------------- | ------ | ----- |
 | parcel\_id nchar(10)                     |        |       |
