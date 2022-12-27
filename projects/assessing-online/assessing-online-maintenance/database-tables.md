@@ -10,27 +10,46 @@ description: >-
 
 ### additional\_data
 
+
+
 {% hint style="info" %}
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+_**Check the columns in the MS Access database to see if new information is provided.  If the unlikely event that it is, then check with Assessing Dept to see if the info needs to be displayed.**_  \
+_**If so, then the query and HTML table in**** ****`default.asp`**** ****needs to be updated to display the new information.**_
+
+| Column                              | Source    | Notes |
+| ----------------------------------- | --------- | ----- |
+| parcel\_id nchar(10)                | MS Access |       |
+| living\_area int                    | MS Access |       |
+| gross\_area int                     | MS Access |       |
+| year\_built smallint                | MS Access |       |
+| year\_remodeled smallint            | MS Access |       |
+| condo\_units\_residential smallint  | MS Access |       |
+| condo\_units\_commercial smallint   | MS Access |       |
+| condo\_units\_mixed smallint        | MS Access |       |
+| stories decimal(4, 1)               | MS Access |       |
+|                                     |           |       |
 
 ### bid
 
+_**Check the tables in the MS Access database to see if new BID region/categories have been created.  If the unlikely event there are, then check with Assessing Dept to see if the info needs to be displayed.**_  \
+_**If so, then this table will need an additional column for the new bid region/category, and the HTML in**** ****`default.asp`**** ****will need to be updated.**_
+
 {% hint style="info" %}
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+{% hint style="warning" %}
+Potentially, there is some adjustment of the bid amount depending on billing schedule.
+{% endhint %}
+
+| Column                  | Source    | Notes                                                                                 |
+| ----------------------- | --------- | ------------------------------------------------------------------------------------- |
+| parcel\_id nvarchar(10) |           | **Primary Key.** The unique parcel ID                                                 |
+| bid\_greenway money     | MS Access | This is extracted and compiled from the greenway\_bid table in the MSAccess database. |
+| bid\_downtown money     | MS Access | This is extracted and compiled from the greenway\_bid table in the MSAccess database. |
 
 ### condo\_attributes
 
@@ -38,11 +57,37 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                                   | Source | Notes |
+| ---------------------------------------- | ------ | ----- |
+| parcel\_id nchar(10)                     |        |       |
+| Style nvarchar(20)                       |        |       |
+| Exterior Condition nvarchar(14)          |        |       |
+| Exterior Wall nvarchar(14)               |        |       |
+| Grade nvarchar(14)                       |        |       |
+| Stories nvarchar(4)                      |        |       |
+| '#Units' decimal(9, 0)                   |        |       |
+| Street Type nvarchar(50)                 |        |       |
+| Square Feet of Living area decimal(9, 0) |        |       |
+| Base Floor nvarchar(4)                   |        |       |
+| Fireplaces nvarchar(4)                   |        |       |
+| '# Floors' nvarchar(4)                   |        |       |
+| Total Rooms nvarchar(4)                  |        |       |
+| Bedrooms nvarchar(4)                     |        |       |
+| Bathrooms nvarchar(4)                    |        |       |
+| Half Bathrooms nvarchar(4)               |        |       |
+| Bathroom Style1 nvarchar(14)             |        |       |
+| Bathroom Style2 nvarchar(14)             |        |       |
+| Bathroom Style3 nvarchar(14)             |        |       |
+| Kitchen Style nvarchar(14)               |        |       |
+| Kitchen Type nvarchar(14)                |        |       |
+| Heat Type nvarchar(14)                   |        |       |
+| Interior Condition nvarchar(14)          |        |       |
+| Interior Finish nvarchar(14)             |        |       |
+| Orientation nvarchar(14)                 |        |       |
+| Corner Unit nvarchar(14)                 |        |       |
+| View nvarchar(14)                        |        |       |
+| condo\_main nchar(10)                    |        |       |
+| CNS\_BID decimal(9, 0)                   |        |       |
 
 ### current\_owners
 
@@ -50,11 +95,11 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                    | Source | Notes  |
+| ------------------------- | ------ | ------ |
+| Parcel\_id nchar(10)      |        | **PK** |
+| seqno tinyint             |        | **PK** |
+| owner\_name nvarchar(255) |        |        |
 
 ### landuse\_described
 
@@ -62,11 +107,11 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                          | Source | Notes |
+| ------------------------------- | ------ | ----- |
+| id int                          |        |       |
+| Short\_Description nvarchar(10) |        |       |
+| Description nvarchar(50)        |        |       |
 
 ### outbuildings
 
@@ -74,11 +119,15 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+| Column                  | Source | Notes  |
+| ----------------------- | ------ | ------ |
+| parcel\_id nchar(10)    |        | **PK** |
+| line\_number tinyint    |        | **PK** |
+| Code nvarchar(50)       |        |        |
+| Tot Units decimal(9, 2) |        |        |
+| Quantity decimal(9, 2)  |        |        |
+| Quality nvarchar(50)    |        |        |
+| Condition nvarchar(50)  |        |        |
 
 ### parcel
 
@@ -207,9 +256,9 @@ In 12/2022 for FY2023 the process used was as follows: (using a linux server or 
 5. Import the data into the temp/wprking tables in `assessingupdates2023q3`&#x20;
 6. Manipulate the data from the working tables into the "permanent" tables in `assessingupdates2023q3`.
 
-In Linux the following commands were performed:
+For steps 1-5, (in Linux) the following commands were performed:
 
-```
+```bash
 # Install mdbtools, a suite of cli scripts to manipulate access databases on linux/mac
 sudo apt-get update && sudo apt-get install mdbtools 
 
@@ -253,6 +302,14 @@ This will output a series of +/-75MB files with a numeric-sequence suffix.
 and,
 
 `sqlcmd` cli is significantly quicker than using, say `azure data studio` or other grapical query tools. @[see](https://learn.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver16) and @[see](https://learn.microsoft.com/en-us/sql/tools/mssql-cli?source=recommendations\&view=sql-server-ver16)&#x20;
+{% endhint %}
+
+{% hint style="info" %}
+**Verify Import**\
+Use the `wc` command to count the number of lines in a file, to verify that all records have been imported: e.g.:\
+`wc -l taxes.sql` and compare with\
+`select count(*) from _Taxes;`\
+If the numbers are not the same, you have a problem ... !
 {% endhint %}
 
 ``
