@@ -14,20 +14,22 @@ description: >-
 This table is accessed from `default.asp`.
 {% endhint %}
 
-_**Check the columns in the MS Access database to see if new information is provided.  If the unlikely event that it is, then check with Assessing Dept to see if the info needs to be displayed.**_  \
-_**If so, then the query and HTML table in**** ****`default.asp`**** ****needs to be updated to display the new information.**_
+{% tabs %}
+{% tab title="Table Columns" %}
 
-| Column                              | Source    | Notes |
-| ----------------------------------- | --------- | ----- |
-| parcel\_id nchar(10)                | MS Access |       |
-| living\_area int                    | MS Access |       |
-| gross\_area int                     | MS Access |       |
-| year\_built smallint                | MS Access |       |
-| year\_remodeled smallint            | MS Access |       |
-| condo\_units\_residential smallint  | MS Access |       |
-| condo\_units\_commercial smallint   | MS Access |       |
-| condo\_units\_mixed smallint        | MS Access |       |
-| stories decimal(4, 1)               | MS Access |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+Check the columns in the MS Access database to see if new information is provided.  If the unlikely event that it is, then check with Assessing Dept to see if the info needs to be displayed. &#x20;
+
+\
+If so, then the query and HTML table in `default.asp` needs to be updated to display the new information.
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### bid
 
@@ -42,11 +44,23 @@ Potentially, there is some adjustment of the bid amount depending on billing sch
 _**Check the tables in the MS Access database to see if new BID region/categories have been created.  If the unlikely event there are, then check with Assessing Dept to see if the info needs to be displayed.**_  \
 _**If so, then this table will need an additional column for the new bid region/category, and the HTML in**** ****`default.asp`**** ****will need to be updated.**_
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                  | Source    | Notes                                                                                 |
 | ----------------------- | --------- | ------------------------------------------------------------------------------------- |
-| parcel\_id nvarchar(10) |           | **Primary Key.** The unique parcel ID                                                 |
+| parcel\_id nvarchar(10) |           | **PK** The unique parcel ID                                                           |
 | bid\_greenway money     | MS Access | This is extracted and compiled from the greenway\_bid table in the MSAccess database. |
 | bid\_downtown money     | MS Access | This is extracted and compiled from the greenway\_bid table in the MSAccess database. |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### condo\_attributes
 
@@ -54,6 +68,8 @@ _**If so, then this table will need an additional column for the new bid region/
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                                   | Source | Notes |
 | ---------------------------------------- | ------ | ----- |
 | parcel\_id nchar(10)                     |        |       |
@@ -85,6 +101,16 @@ This table is accessed from `default.asp`.
 | View nvarchar(14)                        |        |       |
 | condo\_main nchar(10)                    |        |       |
 | CNS\_BID decimal(9, 0)                   |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### current\_owners
 
@@ -92,11 +118,23 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                    | Source | Notes  |
 | ------------------------- | ------ | ------ |
 | Parcel\_id nchar(10)      |        | **PK** |
 | seqno tinyint             |        | **PK** |
 | owner\_name nvarchar(255) |        |        |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### landuse\_described
 
@@ -104,11 +142,23 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                          | Source | Notes |
 | ------------------------------- | ------ | ----- |
 | id int                          |        |       |
 | Short\_Description nvarchar(10) |        |       |
 | Description nvarchar(50)        |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### outbuildings
 
@@ -116,6 +166,8 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                  | Source | Notes  |
 | ----------------------- | ------ | ------ |
 | parcel\_id nchar(10)    |        | **PK** |
@@ -125,6 +177,16 @@ This table is accessed from `default.asp`.
 | Quantity decimal(9, 2)  |        |        |
 | Quality nvarchar(50)    |        |        |
 | Condition nvarchar(50)  |        |        |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### parcel
 
@@ -132,16 +194,28 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column                      | Source | Notes |
-| --------------------------- | ------ | ----- |
-| parcel\_id nchar(10)        |        |       |
-| street\_number nvarchar(10) |        |       |
-| street\_name nvarchar(50)   |        |       |
-| apartment\_no nvarchar(20)  |        |       |
-| suffix nvarchar(2)          |        |       |
-| landuse nvarchar(2)         |        |       |
-| owner nvarchar(255)         |        |       |
-| condo\_main nchar(10)       |        |       |
+{% tabs %}
+{% tab title="Table Columns" %}
+| Column                      | Source | Notes  |
+| --------------------------- | ------ | ------ |
+| parcel\_id nchar(10)        |        | **PK** |
+| street\_number nvarchar(10) |        |        |
+| street\_name nvarchar(50)   |        |        |
+| apartment\_no nvarchar(20)  |        |        |
+| suffix nvarchar(2)          |        |        |
+| landuse nvarchar(2)         |        |        |
+| owner nvarchar(255)         |        |        |
+| condo\_main nchar(10)       |        |        |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### parcel\_all\_owners
 
@@ -149,6 +223,8 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                      | Source | Notes |
 | --------------------------- | ------ | ----- |
 | parcel\_id nchar(10)        |        |       |
@@ -159,6 +235,16 @@ This table is accessed from `default.asp`.
 | landuse nvarchar(2)         |        |       |
 | owner nvarchar(255)         |        |       |
 | condo\_main nchar(10)       |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### propertycodes\_described
 
@@ -166,6 +252,8 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                                   | Source | Notes |
 | ---------------------------------------- | ------ | ----- |
 | property-code smallint                   |        |       |
@@ -174,6 +262,16 @@ This table is accessed from `default.asp`.
 | property-code-description nvarchar(255)  |        |       |
 | property-code-state bit                  |        |       |
 | property-code-city bit                   |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Tables" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### Res\_exempt
 
@@ -181,11 +279,23 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                               | Source | Notes |
 | ------------------------------------ | ------ | ----- |
 | parcel\_id nvarchar(10)              |        |       |
 | residential\_exemption nvarchar(255) |        |       |
 | personal\_exemption bit              |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Tables" %}
+Populating Tables
+{% endtab %}
+{% endtabs %}
 
 ### RESIDENTIAL PROPERTY ATTRIBUTES
 
@@ -193,11 +303,52 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
-| Column | Source | Notes |
-| ------ | ------ | ----- |
-|        |        |       |
-|        |        |       |
-|        |        |       |
+{% tabs %}
+{% tab title="Table Columns" %}
+| Column                             | Source    | Notes |
+| ---------------------------------- | --------- | ----- |
+| parcel\_id nvarchar(255)           |           |       |
+| Building Seq float                 |           |       |
+| Composite Land Use nvarchar(255)   |           |       |
+| Building Style nvarchar(255)       |           |       |
+| Rooms nvarchar(255)                |           |       |
+| Bedrooms nvarchar(255)             |           |       |
+| Full Bath float                    |           |       |
+| Half Bath float                    |           |       |
+| Other Fixtures float               |           |       |
+| Bath Style 1 nvarchar(255)         |           |       |
+| Bath Style 2 nvarchar(255)         |           |       |
+| Bath Style 3 nvarchar(255)         |           |       |
+| Kitchens float                     |           |       |
+| Kitchen Type nvarchar(255)         |           |       |
+| Kitchen Style 1 nvarchar(255)      |           |       |
+| Kitchen Style 2 nvarchar(255)      |           |       |
+| Kitchen Style 3 nvarchar(255)      |           |       |
+| Fireplaces float                   |           |       |
+| AC Type nvarchar(255)              |           |       |
+| Heat Type nvarchar(255)            |           |       |
+| Interior Condition nvarchar(255)   |           |       |
+| Interior Finish nvarchar(255)      |           |       |
+| View nvarchar(255)                 |           |       |
+| Grade nvarchar(255)                |           |       |
+| "# of Parking Spots" nvarchar(255) | <h2></h2> |       |
+| Year Built float                   |           |       |
+| Story Height nvarchar(255)         |           |       |
+| Roof Cover nvarchar(255)           |           |       |
+| Roof Structure nvarchar(255)       |           |       |
+| Exterior Finish nvarchar(255)      |           |       |
+| Exterior Condition nvarchar(255)   |           |       |
+| Foundation nvarchar(255)           |           |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Tables" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### tax\_preliminary
 
@@ -205,11 +356,23 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column | Source | Notes |
 | ------ | ------ | ----- |
 |        |        |       |
 |        |        |       |
 |        |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Tables" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### taxbill
 
@@ -217,11 +380,23 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column | Source | Notes |
 | ------ | ------ | ----- |
 |        |        |       |
 |        |        |       |
 |        |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### taxes
 
@@ -229,11 +404,23 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column | Source | Notes |
 | ------ | ------ | ----- |
 |        |        |       |
 |        |        |       |
 |        |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### value\_history
 
@@ -241,12 +428,24 @@ This table is accessed from `default.asp`.
 This table is accessed from `default.asp`.
 {% endhint %}
 
+{% tabs %}
+{% tab title="Table Columns" %}
 | Column                 | Source | Notes |
 | ---------------------- | ------ | ----- |
 | Parcel\_id nchar(10)   |        |       |
 | Fiscal\_Year smallint  |        |       |
 | Assessed\_value bigint |        |       |
 | Land\_use nvarchar(4)  |        |       |
+{% endtab %}
+
+{% tab title="Notes" %}
+
+{% endtab %}
+
+{% tab title="Populating Table" %}
+
+{% endtab %}
+{% endtabs %}
 
 ## Updating Database Tables
 
