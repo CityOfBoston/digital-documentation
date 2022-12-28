@@ -561,7 +561,50 @@ This table is accessed from `default.asp`.
 {% endtab %}
 
 {% tab title="Populating Table" %}
+```sql
+USE assessingupdates2023Q3;
 
+-- Create the table.SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS dbo.parcel_all_owners;
+GO
+CREATE TABLE [dbo].[parcel_all_owners](
+	[parcel_id] [nchar](10) NOT NULL,
+	[street_number] [nvarchar](10) NULL,
+	[street_name] [nvarchar](50) NULL,
+	[apartment_no] [nvarchar](20) NULL,
+	[suffix] [nvarchar](2) NULL,
+	[landuse] [nvarchar](2) NULL,
+	[owner] [nvarchar](255) NULL,
+	[condo_main] [nchar](10) NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE CLUSTERED INDEX [ClusteredIndex-114826] ON [dbo].[parcel_all_owners]
+   ([parcel_id] ASC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [NonClusteredIndex-115431] ON [dbo].[parcel_all_owners]
+    ([owner] ASC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
+
+-- Insert data from working table, delete existing contents first
+TRUNCATE TABLE dbo.parcel_all_owners; 
+GO
+INSERT INTO [dbo].[parcel_all_owners] ([parcel_id], [street_number], [street_name], [apartment_no], 
+    [suffix], [landuse], [owner], [condo_main])
+SELECT tyler.[parcel_id], ISNULL([street_number], '') street_number, SUBSTRING(TRIM([street_name]), 1, LEN(TRIM(street_name)) - 2) street_name, ISNULL([apt_unit], '') apartment_no, 
+    RIGHT(TRIM(street_name), 2) suffix, [land_use], owners.[owner_name], [condo_main]
+FROM dbo._Tyler_Real_Estate_Export_File AS tyler
+    INNER JOIN dbo.current_owners as owners ON tyler.parcel_id = owners.parcel_id
+order by parcel_id
+```
 {% endtab %}
 {% endtabs %}
 
@@ -584,11 +627,40 @@ This table is accessed from `default.asp`.
 {% endtab %}
 
 {% tab title="Notes" %}
-
+This data should be unchanged between years, but double check with Assessing Team to be sure.This data should be unchanged between years, but double check with Assessing Team to be sure.
 {% endtab %}
 
 {% tab title="Populating Tables" %}
+```sql
+USE assessingupdates2023Q3;
 
+-- Create the table.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS assessingupdates2023Q3.dbo.propertycodes_described
+GO
+CREATE TABLE [assessingupdates2023Q3].[dbo].[propertycodes_described](
+	[property-code] [smallint] NOT NULL,
+	[property-class] [tinyint] NOT NULL,
+	[property-class-description] [nvarchar](255) NOT NULL,
+	[property-code-description] [nvarchar](255) NOT NULL,
+	[property-code-state] [bit] NOT NULL,
+	[property-code-city] [bit] NOT NULL
+) ON [PRIMARY]
+GO
+
+-- Insert data from working table, delete existing contents first
+TRUNCATE TABLE [assessingupdates2023Q3].[dbo].[propertycodes_described] 
+GO
+INSERT INTO [assessingupdates2023Q3].[dbo].[propertycodes_described]
+    ([property-code], [property-class], [property-class-description], [property-code-description]
+    ,[property-code-state], [property-code-city])
+SELECT [property-code], [property-class], [property-class-description], [property-code-description]
+    ,[property-code-state], [property-code-city]
+  FROM [assessingsearch].[dbo].[propertycodes_described]
+```
 {% endtab %}
 {% endtabs %}
 
