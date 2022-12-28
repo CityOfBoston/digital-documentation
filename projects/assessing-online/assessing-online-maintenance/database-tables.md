@@ -900,6 +900,22 @@ GO
 -- Insert data from working table, delete existing contents first
 TRUNCATE TABLE [dbo].[tax_preliminary] 
 GO
+INSERT INTO [dbo].[tax_preliminary]
+    ([parcel_id], [Bill Year], [Bill Number], [RE Tax Amt], [CPA Amt]
+    , [Downtown BID Amt], [Greenway BID Amt], [Newmarket BID Amt], [Total Billed Amt]) 
+SELECT taxes.parcel_id, 2023, taxes.bill_number
+    , CONVERT(decimal(12,2), taxes.net_tax )
+    , CONVERT(decimal(12,2), isnull(taxes.cpa, 0))
+    , CONVERT(decimal(12,2), isnull(downtown.Billed, 0) )
+    , CONVERT(decimal(12,2), isnull(greenway.Billed, 0) )
+    , CONVERT(decimal(12,2), isnull(newmarket.Billed, 0) )
+    , CONVERT(decimal(12,2), (taxes.net_tax + isnull(taxes.cpa, 0) + isnull(downtown.Billed, 0) + isnull(greenway.Billed, 0) + isnull(newmarket.Billed, 0)) ) AS total
+FROM dbo.taxes AS taxes
+    LEFT OUTER JOIN dbo.[_Downtown_BID] AS downtown ON taxes.parcel_id = downtown.parcel_id
+    LEFT OUTER JOIN dbo.[_Greenway_BID] AS greenway ON taxes.parcel_id = greenway.parcel_id
+    LEFT OUTER JOIN dbo.[_Newmarket_BID] AS newmarket ON taxes.parcel_id = newmarket.parcel_id
+    
+
 ```
 {% endtab %}
 {% endtabs %}
