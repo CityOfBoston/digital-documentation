@@ -1336,11 +1336,45 @@ SET QUOTED_IDENTIFIER ON
 GO
 DROP TABLE IF EXISTS [dbo].[taxes]
 GO
-
+CREATE TABLE [dbo].[taxes](
+	[parcel_id] [nchar](10) NOT NULL,
+	[gross_tax] [decimal](12, 2) NOT NULL,
+	[net_tax] [decimal](12, 2) NOT NULL,
+	[persexempt_1] [decimal](12, 2) NOT NULL,
+	[persexempt_2] [decimal](12, 2) NOT NULL,
+	[persexempt_total] [decimal](12, 2) NOT NULL,
+	[resexempt] [decimal](12, 2) NOT NULL,
+	[cpa] [decimal](12, 2) NOT NULL,
+	[code_enforcement_tax] [decimal](12, 2) NOT NULL,
+	[38D_fine] [decimal](12, 2) NOT NULL,
+	[sidewalk_betterment] [decimal](12, 2) NOT NULL,
+	[street_betterment] [decimal](12, 2) NOT NULL,
+	[bill_number] [int] NOT NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-211258] ON [dbo].[taxes]
+    ([parcel_id] ASC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[taxes] ADD  CONSTRAINT [DF_taxes_bill_number]  DEFAULT ((0)) FOR [bill_number]
+GO
 
 -- Insert data from working table, delete existing contents first
 TRUNCATE TABLE [dbo].[taxes] 
 GO
+INSERT INTO [dbo].[taxes]
+    ([parcel_id], [gross_tax], [net_tax], [persexempt_1], [persexempt_2]
+    , [persexempt_total]
+    , [resexempt], [cpa], [code_enforcement_tax], [38D_fine]
+    ,[sidewalk_betterment], [street_betterment], [bill_number])
+SELECT 
+    [parcel_id], [Gross RE Tax], [Net RE Tax], ISNULL([Personal Ex Amt 1], 0), ISNULL([Personal Ex Amt 2], 0)
+    , ISNULL([Personal Ex Amt 1], 0) + ISNULL([Personal Ex Amt 2], 0)
+    , ISNULL([Resex Value], 0), ISNULL([CPA Tax], 0), ISNULL([Code Enforcement Tax], 0), ISNULL([38D Fine], 0)
+    , ISNULL([Sidewalk Betterment], 0), ISNULL([Street Betterment], 0), [Bill Number]
+FROM [dbo].[_Taxes] 
 ```
 {% endtab %}
 {% endtabs %}
@@ -1376,11 +1410,33 @@ SET QUOTED_IDENTIFIER ON
 GO
 DROP TABLE IF EXISTS [dbo].[value_history]
 GO
-
+CREATE TABLE [dbo].[value_history](
+	[Parcel_id] [nchar](10) NOT NULL,
+	[Fiscal_Year] [smallint] NULL,
+	[Assessed_value] [bigint] NULL,
+	[Land_use] [nvarchar](4) NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-115010] ON [dbo].[value_history]
+    ([Parcel_id] ASC, [Fiscal_Year] DESC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
 
 -- Insert data from working table, delete existing contents first
 TRUNCATE TABLE [dbo].[value_history] 
 GO
+-- Copy data from current live database
+INSERT INTO [dbo].[value_history]
+    ([Parcel_id], [Fiscal_Year], [Assessed_value], [Land_use])
+SELECT [Parcel_id], [Fiscal_Year], [Assessed_value], [Land_use]
+    FROM [assessingsearch].[dbo].[value_history] 
+-- Add in the current valuations
+INSERT INTO [dbo].[value_history]
+    ([Parcel_id], [Fiscal_Year], [Assessed_value], [Land_use]) 
+SELECT parcel_id, 2023, [total_value], [land_use]
+    FROM dbo.taxbill
 ```
 {% endtab %}
 {% endtabs %}
