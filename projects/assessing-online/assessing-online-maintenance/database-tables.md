@@ -684,7 +684,32 @@ This table is accessed from `default.asp`.
 {% endtab %}
 
 {% tab title="Populating Tables" %}
-Populating Tables
+```sql
+USE assessingupdates2023Q3;
+
+-- Create the table.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS [dbo].[Res_exempt]
+GO
+CREATE TABLE [dbo].[Res_exempt](
+	[parcel_id] [nvarchar](10) NULL,
+	[residential_exemption] [nvarchar](255) NULL,
+	[personal_exemption] [bit] NOT NULL
+) ON [PRIMARY]
+GO
+
+-- Insert data from working table, delete existing contents first
+TRUNCATE TABLE [dbo].[Res_exempt] 
+GO
+-- INSERT INTO [assessingsearch].[dbo].[Res_exempt]
+--    ([parcel_id], [residential_exemption], [personal_exemption])
+SELECT tyler.parcel_id, tyler.residential_exemption_flag as Residential, 0 AS personal
+    FROM _Tyler_Real_Estate_Export_File tyler
+
+```
 {% endtab %}
 {% endtabs %}
 
