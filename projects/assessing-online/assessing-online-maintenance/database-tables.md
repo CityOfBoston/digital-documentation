@@ -1262,9 +1262,6 @@ SELECT
     , CONVERT(int, [residential_air_rights_value]), CONVERT(int, [commercial_building_value]), CONVERT(int, [commercial_land_value]), CONVERT(int, [commercial_air_rights_value]), CONVERT(int, [industrial_building_value])
     , CONVERT(int, [industrial_land_value]), CONVERT(int, [industrial_air_rights_value]), CONVERT(int, [open_space_land_value]), CONVERT(int, [exempt_building_value]), CONVERT(int, [exempt_land_value])
     , 0, 0, 0
-    --, [residential_building_value]+[residential_air_rights_value]+[commercial_building_value]+[commercial_air_rights_value]+[industrial_building_value]+[industrial_air_rights_value]+[exempt_building_value] AS total_building_value
-    --, [commercial_land_value]+[industrial_land_value]+[open_space_land_value]+[residential_land_value]+[exempt_land_value] AS total_land_value
-    --, [residential_building_value]+[residential_air_rights_value]+[commercial_building_value]+[commercial_air_rights_value]+[industrial_building_value]+[industrial_air_rights_value]+[exempt_building_value]+[commercial_land_value]+[industrial_land_value]+[open_space_land_value]+[residential_land_value]+[exempt_land_value] AS total_value
     , ISNULL([latest_sale_date], ''), ISNULL([latest_bkpgcert], '')
     , IIF([residential_exemption_flag] = 'Y', 1, 0), CONVERT(int, ISNULL([coop_value], 0)), ISNULL([clause_abatement_type_1], ''), ISNULL([clause_abt_1_pct_ownership], ''), ISNULL([clause_abt_1_pct_occupancy], '')
     , ISNULL([clause_abatement_type_2], ''), ISNULL([clause_abt_2_pct_ownership], ''), ISNULL([clause_abt_2_pct_occupancy], ''), ISNULL([paraplegic], ''), ISNULL([workoff_type], '')
@@ -1276,6 +1273,23 @@ SELECT
     , 0 AS condo_main_value
 FROM dbo.[_Tyler_Real_Estate_Export_File] tyler
     INNER JOIN _Taxes taxes ON tyler.parcel_id = taxes.parcel_id
+GO
+-- Create the valuation totals
+UPDATE [dbo].[taxbill]
+SET 
+    [total_building_value] = [residential_building_value]+[residential_air_rights_value]+[commercial_building_value]+[commercial_air_rights_value]+[industrial_building_value]+[industrial_air_rights_value]+[exempt_building_value], 
+    [total_land_value] = [commercial_land_value]+[industrial_land_value]+[open_space_land_value]+[residential_land_value]+[exempt_land_value], 
+    [total_value] = [residential_building_value]+[residential_air_rights_value]+[commercial_building_value]+[commercial_air_rights_value]+[industrial_building_value]+[industrial_air_rights_value]+[exempt_building_value]+[commercial_land_value]+[industrial_land_value]+[open_space_land_value]+[residential_land_value]+[exempt_land_value]
+GO
+-- Calculate condo complex valuations
+UPDATE [dbo].[taxbill]
+SET 
+    [condo_main_value] = (
+        SELECT sum([total_value]) 
+        FROM dbo.taxbill i 
+        WHERE i.condo_main = taxbill.parcel_id
+        )
+WHERE taxbill.condo_main = taxbill.parcel_id
 ```
 {% endtab %}
 {% endtabs %}
