@@ -259,6 +259,7 @@ GO
 
 -- Insert data from working table, delete existing contents first
 TRUNCATE TABLE dbo.condo_attributes; 
+GO
 INSERT INTO dbo.condo_attributes
 (   [parcel_id], [Composite Land Use], [Orientation], [Corner Unit], [Floor], [Rooms]
     ,[Bedrooms], [Bedroom Type], [Full Bath], [Half Bath], [Other Fixtures], [Bath Style 1]
@@ -296,11 +297,44 @@ This table is accessed from `default.asp`.
 {% endtab %}
 
 {% tab title="Notes" %}
+It seems that this table only contains owners with the `seqno` >= 1, so the primary current owners.
 
+2022 year only included `seqno` = 1, but the code looks like it will be OK with `seqno` > 1
 {% endtab %}
 
 {% tab title="Populating Table" %}
+```sql
+USE assessingupdates2023Q3;
 
+-- Create the table.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS dbo.current_owners;
+GO
+CREATE TABLE [dbo].[current_owners](
+    [Parcel_id] [nchar](10) NOT NULL,
+    [seqno] [tinyint] NULL,
+    [owner_name] [nvarchar](255) NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE CLUSTERED INDEX [ClusteredIndex-20190701-115106] ON [dbo].[current_owners]
+    ([Parcel_id] ASC, [seqno] ASC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
+
+-- Insert the data
+TRUNCATE TABLE dbo.current_owners;
+GO
+INSERT INTO dbo.current_owners ([Parcel_id], [seqno], [owner_name])
+SELECT [parcel_id], [seqno], [owner_name]
+FROM dbo._CURRENT_OWNERS
+WHERE seqno >= 1
+
+```
 {% endtab %}
 {% endtabs %}
 
@@ -320,11 +354,52 @@ This table is accessed from `default.asp`.
 {% endtab %}
 
 {% tab title="Notes" %}
-
+This data should be unchanged between years, but double check with Assessing Team to be sure.
 {% endtab %}
 
 {% tab title="Populating Table" %}
+Nothing to do, just be sure the table exists from the previous year
 
+```sql
+USE assessingupdates2023Q3;
+
+-- Create the table.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS dbo.Landuse_Described
+GO
+CREATE TABLE [dbo].[Landuse_Described](
+	[id] [int] NOT NULL,
+	[Short_Description] [nvarchar](10) NOT NULL,
+	[Description] [nvarchar](50) NULL
+) ON [PRIMARY]
+GO
+
+-- Insert the metadata
+TRUNCATE TABLE dbo.Landuse_Described;
+GO
+INSERT INTO dbo.Landuse_Described ([id], [Short_Description], [Description])
+VALUES 	(1, 'A', 'Apartment Building')
+	,(2, 'AH', 'Agricultural')
+	,(3, 'C', 'Commercial')
+	,(4, 'CC', 'Commercial Condo Unit')
+	,(5, 'CD', 'Residential Condo Unit')
+	,(6, 'CL', 'Commercial Land')
+	,(7, 'CM', 'Condo Main Building')
+	,(8, 'CP', 'Condo Parking')
+	,(9, 'E', 'Exempt')
+	,(10, 'EA', 'Exempt - 121A')
+	,(11, 'I', 'Industrial')
+	,(12, 'R1', 'One Family')
+	,(13, 'R2', 'Two Family')
+	,(14, 'R3', 'Three Family')
+	,(15, 'R4', 'Four to Six Family')
+	,(16, 'RC', 'Residential/Commercial') 
+	,(17, 'RL', 'Residential Land')
+
+```
 {% endtab %}
 {% endtabs %}
 
@@ -352,7 +427,47 @@ This table is accessed from `default.asp`.
 {% endtab %}
 
 {% tab title="Populating Table" %}
+```sql
+USE assessingupdates2023Q3;
 
+-- Create the table.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS dbo.outbuildings
+GO
+CREATE TABLE [dbo].[outbuildings](
+	[parcel_id] [nchar](10) NOT NULL,
+	[line_number] [tinyint] NOT NULL,
+	[Code] [nvarchar](255) NOT NULL,
+	[Tot Units] [decimal](9, 2) NOT NULL,
+	[Quality] [nvarchar](50) NOT NULL,
+	[Condition] [nvarchar](50) NOT NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-135523] ON [dbo].[outbuildings]
+    ([parcel_id] ASC, [line_number] ASC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+-- Insert data from working table, delete existing contents first
+TRUNCATE TABLE dbo.condo_attributes; 
+GO
+INSERT INTO [dbo].[outbuildings] ([parcel_id],[line_number],[Code],[Tot Units],[Quality],[Condition])
+SELECT [parcel_id]
+    ,ROW_NUMBER() OVER (
+        PARTITION BY parcel_id
+        order by parcel_id
+    ) AS line_number
+    ,[Code]
+    ,ISNULL([Tot Units], 0)
+    ,ISNULL([Quality], ' ')
+    ,ISNULL([Condition], ' ')
+  FROM [dbo].[_SPECIAL_FEATURES]
+```
 {% endtab %}
 {% endtabs %}
 
@@ -381,7 +496,43 @@ This table is accessed from `default.asp`.
 {% endtab %}
 
 {% tab title="Populating Table" %}
+<pre class="language-sql"><code class="lang-sql"><strong>USE assessingupdates2023Q3;
+</strong>
+-- Create the table.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE IF EXISTS dbo.parcel;
+GO
+CREATE TABLE [dbo].[parcel](
+	[parcel_id] [nchar](10) NOT NULL,
+	[street_number] [nvarchar](10) NULL,
+	[street_name] [nvarchar](50) NULL,
+	[apartment_no] [nvarchar](20) NULL,
+	[suffix] [nvarchar](2) NULL,
+	[landuse] [nvarchar](2) NULL,
+	[owner] [nvarchar](255) NULL,
+	[condo_main] [nchar](10) NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE CLUSTERED INDEX [ClusteredIndex-114720] ON [dbo].[parcel]
+    ([parcel_id] ASC)
+    WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+GO
 
+-- Insert data from working table, delete existing contents first
+TRUNCATE TABLE dbo.condo_attributes; 
+GO
+INSERT INTO [dbo].[parcel] ([parcel_id], [street_number], [street_name], 
+    [apartment_no], [suffix], [landuse], [owner], [condo_main])
+SELECT [parcel_id], ISNULL([street_number], '') street_number, SUBSTRING(TRIM([street_name]), 1, LEN(TRIM(street_name)) - 2) street_name, 
+    ISNULL([apt_unit], '') apartment_no, RIGHT(TRIM(street_name), 2) suffix, [land_use], [owner], [condo_main]
+FROM dbo._Tyler_Real_Estate_Export_File
+order by parcel_id
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
