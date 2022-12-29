@@ -1381,14 +1381,18 @@ GO
 TRUNCATE TABLE [dbo].[taxes] 
 GO
 INSERT INTO [dbo].[taxes]
-    ([parcel_id], [gross_tax], [net_tax], [persexempt_1], [persexempt_2]
+    ([parcel_id], [gross_tax]
+    , [net_tax]
+    , [persexempt_1], [persexempt_2]
     , [persexempt_total]
     , [resexempt], [cpa], [code_enforcement_tax], [38D_fine]
     ,[sidewalk_betterment], [street_betterment], [bill_number])
 SELECT 
-    [parcel_id], [Gross RE Tax], [Net RE Tax], ISNULL([Personal Ex Amt 1], 0), ISNULL([Personal Ex Amt 2], 0)
+    [parcel_id], [Gross RE Tax]
+    , [Gross RE Tax] - ISNULL([Personal Ex Amt 1], 0) - ISNULL([Personal Ex Amt 2], 0) - ISNULL([Resex amt], 0) + ISNULL([Resex amt], 0) + ISNULL([CPA Tax], 0) + ISNULL([Code Enforcement Tax], 0) + ISNULL([38D Fine], 0) + ISNULL([Sidewalk Betterment], 0) + ISNULL([Street Betterment], 0)
+    , ISNULL([Personal Ex Amt 1], 0), ISNULL([Personal Ex Amt 2], 0)
     , ISNULL([Personal Ex Amt 1], 0) + ISNULL([Personal Ex Amt 2], 0)
-    , ISNULL([Resex Value], 0), ISNULL([CPA Tax], 0), ISNULL([Code Enforcement Tax], 0), ISNULL([38D Fine], 0)
+    , ISNULL([Resex amt], 0), ISNULL([CPA Tax], 0), ISNULL([Code Enforcement Tax], 0), ISNULL([38D Fine], 0)
     , ISNULL([Sidewalk Betterment], 0), ISNULL([Street Betterment], 0), [Bill Number]
 FROM [dbo].[_Taxes] 
 ```
