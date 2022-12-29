@@ -1389,7 +1389,7 @@ INSERT INTO [dbo].[taxes]
     ,[sidewalk_betterment], [street_betterment], [bill_number])
 SELECT 
     [parcel_id], [Gross RE Tax]
-    , [Gross RE Tax] - ISNULL([Personal Ex Amt 1], 0) - ISNULL([Personal Ex Amt 2], 0) - ISNULL([Resex amt], 0) + ISNULL([Resex amt], 0) + ISNULL([CPA Tax], 0) + ISNULL([Code Enforcement Tax], 0) + ISNULL([38D Fine], 0) + ISNULL([Sidewalk Betterment], 0) + ISNULL([Street Betterment], 0)
+    , [Gross RE Tax] - ISNULL([Personal Ex Amt 1], 0) - ISNULL([Personal Ex Amt 2], 0) - ISNULL([Resex amt], 0) + ISNULL([CPA Tax], 0) + ISNULL([Code Enforcement Tax], 0) + ISNULL([38D Fine], 0) + ISNULL([Sidewalk Betterment], 0) + ISNULL([Street Betterment], 0)
     , ISNULL([Personal Ex Amt 1], 0), ISNULL([Personal Ex Amt 2], 0)
     , ISNULL([Personal Ex Amt 1], 0) + ISNULL([Personal Ex Amt 2], 0)
     , ISNULL([Resex amt], 0), ISNULL([CPA Tax], 0), ISNULL([Code Enforcement Tax], 0), ISNULL([38D Fine], 0)
