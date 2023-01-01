@@ -6,6 +6,333 @@ description: >-
 
 # Database Tables
 
+## Views
+
+```sql
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create view [dbo].[value_tax]
+as 
+SELECT TOP 1 dbo.taxbill.*, dbo.Res_exempt.personal_exemption, dbo.Landuse_Described.Description, dbo.propertycodes_described.*,
+dbo.Res_exempt.residential_exemption, dbo.parcel.condo_main condo__main, tax_preliminary.[Bill Year], tax_preliminary.[Bill Number],
+tax_preliminary.[RE Tax Amt], tax_preliminary.[CPA Amt], tax_preliminary.[Downtown BID Amt], tax_preliminary.[Greenway BID Amt], tax_preliminary.[Total Billed Amt]
+FROM dbo.taxbill  
+LEFT OUTER JOIN dbo.parcel ON dbo.taxbill.parcel_id = dbo.parcel.parcel_id  
+LEFT OUTER JOIN dbo.Res_exempt ON dbo.taxbill.parcel_id = dbo.Res_exempt.parcel_id  
+LEFT OUTER JOIN dbo.propertycodes_described ON dbo.taxbill.property_type = dbo.propertycodes_described.[property-code]  
+LEFT OUTER JOIN dbo.Landuse_Described ON dbo.taxbill.land_use = dbo.Landuse_Described.Short_Description  
+LEFT OUTER JOIN dbo.tax_preliminary ON dbo.taxbill.parcel_id = dbo.tax_preliminary.parcel_id  
+
+GO
+```
+
+## Stored Procedures
+
+```sql
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[parcel_value_history]
+	@parcelId nchar(10)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT parcel_history.*, [landuse_described].[description] 
+		FROM (SELECT * FROM [value_history] WHERE [value_history].parcel_id = @parcelId) AS parcel_history 
+			JOIN [landuse_described] ON parcel_history.land_use=[landuse_described].Short_Description 
+	ORDER BY parcel_history.fiscal_year DESC
+END
+GO
+
+-- =============================================
+-- Author:		<Kumat,Rashmi>
+-- Create date: <Jul 23,2008,>
+-- Description:	<Get Exempt status based on parcel id >
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_get_exempt_status]
+	-- Add the parameters for the stored procedure here
+ @parcel_id nchar(10),
+ @land_type nchar(2)
+	
+AS
+BEGIN
+
+SET NOCOUNT ON;
+declare @personal_exemption nchar(5)
+
+if @land_type = 'r'
+	begin
+	select residential_exemption from res_exempt where parcel_id = @parcel_id
+	end
+else
+	begin
+	select @personal_exemption = clause_abatement_type_1 from taxbillw where parcel_id = @parcel_id
+		if @personal_exemption is null or @personal_exemption = ''
+			select 'N'
+		else
+			select 'Y'
+		end
+END
+GO
+
+-- =============================================
+-- Author:		<Kumat,Rashmi>
+-- Create date: <Jul 30,2008,>
+-- Description:	<Get Application_number for overval forms >
+
+-- Check wheteher Parcel Id exists . IF yes , then return full_appnumber
+-- If parcel_id does not exist , insert one entry into table , with incremental app number and current year
+
+-- =============================================
+
+CREATE PROCEDURE [dbo].[sp_get_overval_application_number]
+	-- Add the parameters for the stored procedure here
+ @parcel_id nchar(10)
+AS
+BEGIN
+SET NOCOUNT ON;
+
+declare @count int
+-- increment appyear to next calendar year after December 1, to make development easier
+select @count = count(id) from overval_app_numbers where parcel_id = @parcel_id and [appyear] = Cast(YEAR(DATEADD(month,1,getdate())) as nchar(10))
+
+--IF @count > 0 and @count = 1
+--	begin
+--	select full_appnumber from overval_app_numbers where parcel_id = @parcel_id
+--	end
+--
+--else 
+
+if @count < 50 
+
+	begin
+
+	declare @appyear nvarchar(10)
+	declare @apprange nvarchar(10) 
+	declare @full_appnumber nvarchar(15)
+
+	set @appyear = YEAR(DATEADD(month,1,getdate()))
+
+	select @apprange = max(apprange) from overval_app_numbers where appyear = @appyear
+		
+		if @apprange is null 
+		set @apprange = 60000
+		else
+		set @apprange = @apprange + 1	
+
+	set @full_appnumber = @appyear + @apprange	
+		
+	insert into overval_app_numbers (appyear,Parcel_id,apprange, full_appnumber)
+	values (@appyear,@parcel_id,@apprange,@full_appnumber)
+	
+	select full_appnumber from overval_app_numbers where parcel_id = @parcel_id and apprange = @apprange
+
+	end
+
+if @count >= 50 
+
+	begin
+	
+	select '50'
+	
+	end
+
+
+END
+GO
+
+-- =============================================
+-- Author:		<Kumat,Rashmi>
+-- Create date: <Jul 23,2008,>
+-- Description:	<Get Residential or Personal Exemption data to prefill the PDF >
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_get_overval_data]
+	-- Add the parameters for the stored procedure here
+ @parcel_id nchar(10)
+AS
+BEGIN
+
+SET NOCOUNT ON;
+
+select isnull(owner,'') , isnull(street_number,''), isnull(street_number_suffix,''),isnull(street_name,'') ,isnull(apt_unit,''),' BOSTON MA ',isnull(location_zip_code,''),isnull(land_use,''),isnull(total_value,'') ,isnull(bill_number,'') 
+from taxbillw a
+where a.parcel_id = @parcel_id
+
+END
+GO
+
+-- =============================================
+-- Author:		<Kumat,Rashmi>
+-- Create date: <Jul 23,2008,>
+-- Description:	<Determine Overvaluation type based on parcel id >
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_get_overval_type]
+	-- Add the parameters for the stored procedure here
+ @parcel_id nchar(10)
+AS
+BEGIN
+SET NOCOUNT ON;
+
+declare @land_use varchar(10)
+declare @overval_type varchar(10)
+
+select @land_use = land_use from taxbillw where parcel_id = @parcel_id
+
+if @land_use in ('R1','R2','R3','CD')
+set @overval_type = 'short'
+else
+set @overval_type = 'long'
+
+select @overval_type
+
+END
+GO
+
+-- =============================================
+-- Author:		Satyen
+-- Create date: 2020-01
+-- Description:	Return parcel data to abatement/exemption .NET application
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_get_pdf_data]
+	-- Add the parameters for the stored procedure here
+ @parcel_id nchar(10),
+ @form_type nvarchar(25)
+	
+AS
+BEGIN
+
+SET NOCOUNT ON;
+
+DECLARE @application_number int
+
+IF @form_type = 'overval'
+BEGIN
+ SELECT @application_number = [id] FROM [overval_application_numbers] WHERE [overval_application_numbers].[parcel_id]=@parcel_id and [id] >= (YEAR(DATEADD(month,1,getdate())) * 100000)
+
+ IF @application_number IS NULL
+ BEGIN
+  SELECT @application_number = 1 + MAX([id]) FROM [overval_application_numbers]
+  INSERT INTO [overval_application_numbers] VALUES (@application_number, @parcel_id)
+ END
+END
+
+IF ISNUMERIC(@parcel_id) = 1
+ SELECT [owner]
+ ,[street_number]
+ ,[street_number_suffix]
+ ,[street_name]
+ ,[apt_unit]
+ ,[location_zip_code]
+ ,[land_use]
+ ,[total_value] = Format([total_value], 'N0')
+ ,[bill_number]
+ ,[residential_exemption]
+ ,[personal_exemption]
+ ,[application_number] = COALESCE(@application_number,0)
+ FROM [taxbill], [taxes], [Res_exempt]
+ WHERE [taxbill].[parcel_id] = @parcel_id
+ AND [taxes].[parcel_id] = @parcel_id
+ AND [Res_exempt].[parcel_id] = @parcel_id
+
+END
+
+
+GO
+
+-- =============================================
+-- Author:		<Kumat,Rashmi>
+-- Create date: <Jul 23,2008,>
+-- Description:	<Get Residential or Personal Exemption data to prefill the PDF >
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_get_resex_and_persex_data]
+	-- Add the parameters for the stored procedure here
+ @parcel_id nchar(10)
+AS
+BEGIN
+
+SET NOCOUNT ON;
+
+select isnull(owner,'') , isnull(street_number,''), isnull(street_number_suffix,''), isnull(street_name,'') ,isnull(apt_unit,''),' BOSTON MA ',isnull(location_zip_code,''),isnull(land_use,'') from taxbillw where parcel_id = @parcel_id
+
+END
+GO
+
+-- =============================================
+-- Author:		<Kumat,Rashmi>
+-- Create date: <Jul 23,2008,>
+-- Description:	<Get Exempt status based on parcel id >
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_get_resex_land_use]
+	-- Add the parameters for the stored procedure here
+ @parcel_id nchar(10)
+ 	
+AS
+BEGIN
+
+SET NOCOUNT ON;
+
+declare @land_use varchar(10)
+select @land_use = land_use from taxbillw where parcel_id = @parcel_id
+
+If @land_use in ('R1','R2','R3','R4','CD','A','RC') 
+select 'Y'
+else
+select 'N'
+
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Satyen
+-- Create date: 2017-05-01
+-- Description:	update current owners
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_update_current_owners]
+AS
+BEGIN
+
+UPDATE [dbo].[parcel_from_vsql]
+	SET [owner] = LTRIM(RTRIM(REPLACE(REPLACE(REPLACE([owner],'  ',' '),'  ',' '),'  ',' ')))
+
+UPDATE [current_owners]
+	SET [owner_name] = [parcel_from_vsql].[owner]
+	FROM [parcel_from_vsql]
+	WHERE [current_owners].[Parcel_id] <> [parcel_from_vsql].[parcelid]
+	AND [current_owners].[seqno] = 1
+
+-- update all_owners table
+DELETE FROM [parcel_all_owners]
+
+INSERT INTO [parcel_all_owners]
+	SELECT [parcel_id], [street_number], [street_name], [apartment_no], [suffix], [landuse], [owner], [condo_main]
+		FROM [parcel]
+	UNION
+	SELECT [parcel].[parcel_id], [parcel].[street_number], [parcel].[street_name], [parcel].[apartment_no], [parcel].[suffix], [parcel].[landuse], coalesce([current_owners].[owner_name],''), [parcel].[condo_main]
+		FROM [current_owners] JOIN [parcel]
+		ON [current_owners].[parcel_id] = [parcel].[parcel_id]
+
+--reindex
+DBCC DBREINDEX(current_owners,'',100)
+DBCC DBREINDEX(parcel_all_owners,'',100)
+
+
+
+
+END
+
+GO
+
+```
+
 ## Database Table Structure
 
 ### additional\_data
@@ -470,6 +797,20 @@ SELECT [parcel_id]
 ```
 {% endtab %}
 {% endtabs %}
+
+### Overval\_application\_numbers
+
+```sql
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[overval_application_numbers](
+	[id] [int] NOT NULL,
+	[parcel_id] [nchar](10) NOT NULL
+) ON [PRIMARY]
+GO
+```
 
 ### parcel
 
