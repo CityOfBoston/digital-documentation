@@ -4,7 +4,13 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
-## Digital\_Tag/2022\_12\_23
+## Digital\_Tag/2023\_01\_05
+
+DIG-1509 - Group Management Search Order
+
+* The search order in the Group Management tool on Access Boston Portal was enhanced so users see their search results in alphabetical order
+
+## Digital\_Tags/2022\_12\_23
 
 DIG-Error message in search of Permit Finder website
 
