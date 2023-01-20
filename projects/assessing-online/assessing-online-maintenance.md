@@ -110,9 +110,11 @@ Testing/verification of the new data can now be completed at:\
 
 ### Assessing Forms
 
-There are a number of forms which are provided as part of the assessment process during the first part of each calendar year.  The files are saved in `assessing\search\forms\FY20XX\.`When a consituent requests a form, it is processed through `assessing/search/itextsharp/` which adds a barcode (related to the parcelid) to the top of the form.
+There are a number of forms which are provided as part of the assessment process during the first part of each calendar year.  The templates for these forms are saved in `docroot/modules/custom/bos_components/modules/bos_assessing/pdf/FY20xx.`
 
-The code at `itextsharp` is a c# application, and at this time, the location of the source code is unknown.
+When a constituent requests a form, it is processed through the `bos_assessing` managed endpoint at `boston.gov/assessing-online/` This endpoint adds a barcode (related to the parcelid) and selected tax bill information onto the form.
+
+See [Assessing Form generation notes here](../../guides/drupal-8/drupal-8-micro-services-api-end-points/assessing-forms.md), and more detailed notes on [PDF generation here.](../../guides/drupal-8/drupal-8-micro-services-api-end-points/pdf-manager.md)
 
 #### Maintenance Cycle
 
