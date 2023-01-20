@@ -120,9 +120,10 @@ See [Assessing Form generation notes here](../../guides/drupal-8/drupal-8-micro-
 
 {% tabs %}
 {% tab title="December" %}
-Each year new forms for appeals etc are generated and will be provided by the Assessing Team.
+Each year new forms for exemptions and other request are generated and will be provided by the Assessing Team.
 
-Upload the forms (typically 4) to a new folder at `assessing\search\forms\`
+* [ ] Upload the forms (typically 4) to a new folder at `docroot/modules/custom/bos_components/modules/bos_assessing/pdf/FY20xx.`
+* [ ] Update the the json and fdf files in the same folder.
 {% endtab %}
 
 {% tab title="July" %}
