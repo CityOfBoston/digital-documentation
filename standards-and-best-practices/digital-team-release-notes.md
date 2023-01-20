@@ -4,15 +4,57 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tags/2023\_01\_19
+
+DIG-1720 -PDF Generation may fail if multiple requests occur simultaneously
+
+* This fix allows endpoint folders to accept both upper and lower case fiscal year names so the form accept process is not blocked.&#x20;
+
+## Drupal\_Tags/2023\_01\_17
+
+**Digital Team**&#x20;
+
+DIG-1164 Address Barcode for abatement application through assessing online
+
+* This update added code that writes a PDF and adds a barcode to the downloadable exemption information section of the abatement application
+
+DIG-1653 Bug with last name in 'grid of quotes' component
+
+* This bug fixes the name display on the grid of quotes feature in Drupal.  When editors add a persons full name to grid of quotes it will display correctly on Boston.gov&#x20;
+
+DIG-1687 'Add to calendar' button not working on 'events"
+
+* This bug fixes the error where the Add to Calendar button on the events page was not working properly. When users clicked this button to add the event to their calendar nothing happened. When users click this button now it gives them the option to add the event to their preferred electronic calendar&#x20;
+
+DIG-1712 - Update Street Numbers on Forms
+
+* This fix updates the way addresses appear across assessing forms.&#x20;
+
+**Metrolist**&#x20;
+
+DIG-1561 Fix Styling of Metrolist Grid of Cards
+
+* This fix updates the Grid of Cards styling on the Metrolist page to match everywhere else on the site&#x20;
+
+DIG-1584 Change "Calculate" to estimate on unit details screen&#x20;
+
+* This update changes the text on the Metrolist unit details screen from calculate your eligibility to estimate your eligibility in the Eligibility Section&#x20;
+
+## Patterns\_Tag/2023\_01\_13
+
+DIG-1652 Styling of bullets needs to be adjusted
+
+* This fixes a bug that was introduced when the bullet styling was updated to make them display better in the new tables, the bullets were being displayed in the middle of a multi-line sentence instead of in front of the first line. When bullets are used in a list the user will see the bullet positioned in front of the first sentence in a list&#x20;
+
 ## Digital\_Tag/2023\_01\_05
 
-DIG-1509 - Group Management Search Order
+DIG-1509  Group Management Search Order
 
 * The search order in the Group Management tool on Access Boston Portal was enhanced so users see their search results in alphabetical order
 
 ## Digital\_Tags/2022\_12\_23
 
-DIG-Error message in search of Permit Finder website
+DIG-1223 Error message in search of Permit Finder website
 
 * This fixes a bug where users where seeing an 400 error when using the permit finder website&#x20;
 
