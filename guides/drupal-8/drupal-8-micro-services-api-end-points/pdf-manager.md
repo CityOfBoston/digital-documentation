@@ -88,13 +88,13 @@ Generally the workflow is to create a new instance of the object, then to pass i
 
 Sets the template to be used for building the final document.
 
-* _**@param string $filename**_ The absolute path on the server to the template.
+* _**@param string $filename**_ The absolute path on the server to the template. This must be a pdf.
 
 **setPageData(array)**
 
-Sets an array of data that will be used to complete the PDF document.
+Sets an array of data that will be used to insert text and barcodes over the template file and into the final PDF document.
 
-_**@param array $page\_data**_ The raw array, an array with each element containing an array of arrays defining content (text and barcodes) to be added to the page.
+_**@param array $page\_data**_ The raw array, an array with each element containing an array of arrays defining content (text and barcodes) to be inserted into the page.
 
 ```
 [
@@ -109,34 +109,40 @@ _**@param array $page\_data**_ The raw array, an array with each element contain
 &#x20;   where \[content] is an array for text or a barcode:
 
 ```
-["type"=>"text", "note"=>"", "x"=>0, "y"=>0, "txt"=>""]
-["type"=>"barcode", "note"=>"", "x"=>0, "y"=>0, "val"=>"", "encode"=>"C128"]
+["type"=>"text", "note"=>"", "x"=>0, "y"=>0, "txt"=>"", "size"=>"", "font"=>"" , "color"=>[]]
+["type"=>"barcode", "note"=>"", "x"=>0, "y"=>0, "val"=>"", "encode"=>"C128", "color"=>[]]
 
 WHERE:
 type = 'barcode' or 'text'
-note = descriptive text for management
 x = insertion distance from left margin
 y = insertion distance from top margin
-txt = the text to insert (for text type)
-val = string to be encoded in barcode (usually a number as a string)
-encode = barcode encoding (see class pdfBarcodeElement)
+color = (optional) RGB array (e.g. black = [0,0,0]) color (overrides default)
+font = [text only] (optional) Name of the font (overrides default
+size = [text only] (optional) size in points for the text (overrides default)
+txt = [text only] the text to insert 
+val = [barcode only] string to be encoded in barcode (usually a number as a string)
+encode = [barcode only] barcode encoding (see class pdfBarcodeElement)
+note = (optional) descriptive text for administration
 ```
 
 * _**@return $this**_ This class
 
 **setDocumentData(array, string)**
 
-Sets an array of data which relates to the documents properties.
+Sets an array of data which will be added to the final pdf document properties.
 
 * _**@param array $document\_data**_
 
-&#x20;   where Key value pairs for:
-
 ```
-"output_dest": I (in-browser), D (download), F (file) or S (text),
-"title": Title for the output pdf
-"author": Author for the output pdf
-"subject": Subject for the output pdf
+["output_dest"=>"", "title"=>"", "author"=>"", "subject"=>"", "creator"=>"", "producer"=>""]
+
+WHERE
+output_dest = (D=default) I [in-browser], D [download], F [file] or S [text],
+title = (optional) Title for the output pdf
+author = (optional) Author for the output pdf
+subject = (optional) Subject for the output pdf
+creator = (optional) Creator for the output pdf (forms only)
+producer = (optional) Producer for the output pdf (forms only)
 ```
 
 * _**@return $this**_ This class
@@ -144,36 +150,17 @@ Sets an array of data which relates to the documents properties.
 **setFormData(string)**
 
 _\[used for fillable form PDF's only]_\
-Sets the form data file to be used for building the final document.
+Sets the form data file (an FDF file) to be used for inserting data into the fields of the template (form) pdf.
 
 * **@param stri**_**ng $filename**_ The absolute path on the server to the form data.
 * **@return $this** This class.
 
 **setOutputFilename(string)**
 
-Set the output filename - this is the name of the completed PDF that is delivered to the caller.
+Set the output filename - this is the name of the completed PDF that is delivered to the caller. This is a filename, there is no path required.
 
 * _**@param string $filename**_ The filename that the caller will see/receive.
 * _**@return $this**_ This class.
-
-**makeBarcodePdf(object:PdfFilenames, array, string)**
-
-Create a PDF with just a barcode in the desired place on each page defined by array added using setFormData. \
-Typically, this is used as the overlay file for multistamp, adding a barcode to a fillable pdf.&#x20;
-
-* _**@param PdfFilenames $outputfile**_ The filename and path to create the pdf.
-* _**@param array $elements**_ An array of pdfBarcodeElement barcode definitions.
-* _**@param string $pagesize**_ a string for the pagesize
-* _**@return bool**_ If the process succeeded
-
-**makeOverlayPdf(object:PdfFilenames, array)**
-
-Overlay text on a template pdf file. \
-Typically, this is used for multistamp, adding a uneditable text to a fillable pdf using pdftk library.
-
-* _**@param PdfFilenames $template**_ The basefile to use as a template (pdf).
-* _**@param array $elements**_ An array of pdfTextElement text definitions.
-* _**@return bool**_ If the file was written successfully.
 
 **generate\_fillable()**
 
@@ -207,9 +194,11 @@ This class is used to define a file, providing a url, route and physical path to
 
 </details>
 
-### Use
+### Example Use
 
-This example shows a simple use of the PDFManager.
+{% tabs %}
+{% tab title="Flat PDF Example" %}
+This example shows a simple use of the PDFManager to complete flat PDF.
 
 ```php
 <?php
@@ -276,8 +265,91 @@ This example shows a simple use of the PDFManager.
     }
   }
 ```
+{% endtab %}
 
+{% tab title="Fillable PDF Example" %}
+This example shows a simple use of the PDFManager to complete a fillable form PDF.
+
+```php
+<?php
+  /*
+    This function takes the example_template_form.pdf (a 2 page document) and adds 
+    a refernce number to page 1 and a barcode to the top of each page.
+    It is assumed that the example_template_form.pdf is a fillable form, and the data
+    in the example_template_form_data.fdf will be copied into the fields of the form.
+    The completed/updated pdf is returned to the caller in a response payload.
+  */
+
+  // Reference the PDFManager
+  use Drupal\bos_pdfmanager\Controller\PdfManager;
+
+  function example() {
+  
+    // Initialize the PDFManager.
+    $pdf_manager = new PdfManager("Helvetica", "12", [0,0,0]);
+
+    // Set the document properties array.
+    $document_data = [
+      'title' => 'my document', 'author' => 'me'
+    ];
+    
+    // Set the data we wish to add to the form, in this case a reference number is added top left
+    // and a barcode on the top of both pages.
+    // Note:
+    //     1. In this example, the text is still inserted on the pdf, and is not editable.
+    //     2. We are expecting 2 pages in the example_template_form.pdf file.
+    $page_data = [
+      [
+        ["type"=>"text", "note"=>"Page 1: RefNumber", "x"=>300, "y"=>5, "txt"=>"Ref: 202310000"],
+        ["type"=>"barcode", "note"=>"Page 1: Barcode def", "x"=>350, "y"=>5, "val"=>"1234567890", "encode"=>"C128"]
+      ],
+      [
+        ["type"=>"barcode", "note"=>"Page 2: Barcode def", "x"=>300, "y"=>5, "val"=>"1234567890", "encode"=>"C128"]            
+      ]
+    ];
+    
+    try {
+      // OK lets make this thing.
+      // setFormData() defines the FDF file which will contain the data for the 
+      // fields to be comepleted in the PDF.
+      $document = $pdf_manager
+        ->setTemplate("example_template_form.pdf")
+        ->setFormData("example_template_form_data.fdf")
+        ->setPageData($page_data)
+        ->setDocumentData($document_data)
+        ->setOutputFilename("example_template_form_updated.pdf")
+        ->generate_fillable();
+    }
+    catch (\Exception $e) {
+      // Return a json error string, and a 400 message.
+      // If this is Drupal, you might consider logging and then throwing a
+      // NotFoundHttpException() (see else clause at bottom of function)
+      return new Response(json_encode([
+        "error" => $e->getMessage()
+      ]), 400);
+    }
+
+    if ($document) {
+      // Download the file in the callers browser.
+      return new new BinaryFileResponse($document, 200, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'attachment; filename="example_template_form_updated.pdf"'
+      ], true);
+    }
+    else {
+      // Generate and returns a 404 error.
+      throw new NotFoundHttpException();     
+    }
+  }
+```
+
+
+{% endtab %}
+
+{% tab title="Advanced Examples" %}
 There are more complex examples in `bos_assessing` - `pdf.php` and `pdf2.php`, these also show how a json file can be used for managing the text and barcode insertions, and how it can be parameterized so that data can be injected from a database.
+{% endtab %}
+{% endtabs %}
 
 ### Extending the Module.
 
