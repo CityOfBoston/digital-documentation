@@ -4,11 +4,27 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
-## Drupal\_Tags/2023\_01\_19
+## Drupal\_Tags/2023\_01\_25
+
+DIG-1679- Adjust style for document link button in "three column w/ image" component
+
+* Update the styling of document link on a three column image component so internal and external button links match&#x20;
 
 DIG-1720 -PDF Generation may fail if multiple requests occur simultaneously
 
 * This fix allows endpoint folders to accept both upper and lower case fiscal year names so the form accept process is not blocked.&#x20;
+
+## Registry\_Tags/2023\_01\_24
+
+DIG-1564- Add email validation to marriage intention form&#x20;
+
+* This adds email validation to the marriage intention form. A user must enter matching emails before submitting the intention form. If the emails do not match the user will get an onscreen error message. This will ensure we do not receive postmark errors due to incorrect/incomplete email addresses.&#x20;
+
+DIG-807- Add email validation to registry applications
+
+* This adds email validation to the birth, death and marriage certificate request forms. A user must enter matching emails before submitting any of these request forms. If the emails do not match the user will get an onscreen error message. This will ensure we do not receive postmark errors due to incorrect/incomplete email addresses.&#x20;
+
+
 
 ## Drupal\_Tags/2023\_01\_17
 
