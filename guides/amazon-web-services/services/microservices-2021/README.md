@@ -6,6 +6,6 @@ Microservices are (usually API style) services or applications which perform a s
 2. Standardization and provision of the same process that can be used by multiple web applications or other services, and/or
 3. Predefined information or processes to bridge (or be shared between) organizations without direct network connections.
 
-{% content-ref url="sql-proxy-2021/" %}
-[sql-proxy-2021](sql-proxy-2021/)
+{% content-ref url="sql-proxy-2021.md" %}
+[sql-proxy-2021.md](sql-proxy-2021.md)
 {% endcontent-ref %}

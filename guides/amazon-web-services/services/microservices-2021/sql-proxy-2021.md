@@ -21,12 +21,12 @@ The `DBConnector` micro-service is available at:
 
 #### 1. Authenticate (get or refresh an authToken)
 
-The first step is to post to the **** [**/v1/auth**](./#authenticate-user) **** endpoint, providing **username** and **password** credentials. &#x20;
+The first step is to post to the **** [**/v1/auth**](sql-proxy-2021.md#authenticate-user) **** endpoint, providing **username** and **password** credentials. &#x20;
 
 * If authenticated, an Authentication Token, and Refresh Token will be returned.
 * By default, the Authentication Token (authToken) is valid for 180 seconds, and the Refresh Token for 900 seconds.
 * When your account was setup, a different lifetime may have been specified for authTokens issued using your credentials.
-* The authToken inherits [role-based permissions](./#user-permissions) that have been assigned to your credentials.
+* The authToken inherits [role-based permissions](sql-proxy-2021.md#user-permissions) that have been assigned to your credentials.
 
 The authToken is then passed as a "bearer token" in the "Authroization" header - and can be used multiple times until it expires.
 
@@ -49,7 +49,7 @@ If you have not saved or been given a connToken (which is a uuid representing a 
 
 #### 3. Perform database/remoteAPI operation
 
-Depending on the role attached to the authToken (see [User Permissions](./#user-permissions)), you can use the **/select, /insert, /update, /delete** and **/query** endpoints to interact with data on the remote host defined by a connToken.
+Depending on the role attached to the authToken (see [User Permissions](sql-proxy-2021.md#user-permissions)), you can use the **/select, /insert, /update, /delete** and **/query** endpoints to interact with data on the remote host defined by a connToken.
 
 **Notes:** \
 1\. You will need to pass the authToken in the "Authorization" header of your request. \
@@ -257,7 +257,7 @@ Generally, 401 errors are returned when there is an issue with the AuthToken pro
 When a user attempts to perform a task with insufficient permissions, a 403 error is generated.  The 403 Errors raised by `DBConnector` typically do not provide much information, but errors are logged. Typical 403 errors are:
 
 * Authenticating account or using token from an unregistered IPAddress
-* Account has insufficient permissions to perform requested task (see **Permission** description for each endpoint in this guide and also [User Permissions](./#user-permissions) section)
+* Account has insufficient permissions to perform requested task (see **Permission** description for each endpoint in this guide and also [User Permissions](sql-proxy-2021.md#user-permissions) section)
 
 ```
 {}
@@ -718,7 +718,7 @@ A connection string record contains all the information required for a suitable 
 Each connection string record is defined by a unique UUID (the connToken) -and also a unique name.
 
 {% hint style="info" %}
-The connToken is used to refer to the remote system in [execution endpoints](./#execute-commands-on-remote-system) so that connectivity details do not need to be stored in and passed from the calling system.
+The connToken is used to refer to the remote system in [execution endpoints](sql-proxy-2021.md#execute-commands-on-remote-system) so that connectivity details do not need to be stored in and passed from the calling system.
 {% endhint %}
 
 {% hint style="success" %}
