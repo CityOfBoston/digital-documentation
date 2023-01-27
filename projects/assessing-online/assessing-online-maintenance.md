@@ -101,12 +101,6 @@ Using data provided by the Assessing Team, update the constants in `default20xx.
 Testing/verification of the new data can now be completed at:\
 &#x20; `https://cityofboston.gov/assessing/search/default20xx.asp`
 {% endhint %}
-
-{% hint style="info" %}
-While testing, you can use the variable `TodaysTime` (around line 70) to test the site for a future date and see that the date fields are aletring the page as expected.
-{% endhint %}
-
-
 {% endtab %}
 
 {% tab title="July" %}
@@ -134,7 +128,6 @@ Once those dates are set, the form display is controlled by code and no further 
 {% tab title="December" %}
 Each year new forms for exemptions and other request are generated and will be provided by the Assessing Team.
 
-* [ ] Ensure dates (`AbatementExemptionStartThisYear`, `AbatementDeadlineThisYear` and `ExemptionDeadlineThisYear`) are set correctly in `wwwcob\assessing\search\default.asp`
 * [ ] Upload the forms (typically 4) to a new folder at `docroot/modules/custom/bos_components/modules/bos_assessing/pdf/FY20xx.`
 * [ ] Update the the json and fdf files in the same folder.
 {% endtab %}
