@@ -1,8 +1,8 @@
-# PDFToolkit API
+# PDFToolkit API (DB Connector)
 
 ## Requirement
 
-As part of the [PDFManager Module](../../../drupal-8/drupal-8-micro-services-api-end-points/pdf-manager-module.md) creation, a method was required that would allow the manipultaion of fillable (form) PDF's. &#x20;
+As part of the [PDFManager Module](../../../../drupal-8/drupal-8-micro-services-api-end-points/pdf-manager-module.md) creation, a method was required that would allow the manipultaion of fillable (form) PDF's. &#x20;
 
 The requirement was to:
 

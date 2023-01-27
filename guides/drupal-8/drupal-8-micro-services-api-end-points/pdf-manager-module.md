@@ -35,7 +35,7 @@ This module can be used by any other module in Drupal.
 
 ### Phase 2: Fillable PDFs
 
-The CLI package [PDFToolkit (pdftk)](https://www.pdflabs.com/docs/pdftk-man-page) was leveraged and [a City of Boston managed API](../../amazon-web-services/services/microservices-2021/pdftoolkit-api-db-connector.md) was deployed in AWS as a microservice to create and edit fillable PDF's (fillable forms).&#x20;
+The CLI package [PDFToolkit (pdftk)](https://www.pdflabs.com/docs/pdftk-man-page) was leveraged and [a City of Boston managed API](../../amazon-web-services/services/microservices-2021/pdftoolkit-api-db-connector/) was deployed in AWS as a microservice to create and edit fillable PDF's (fillable forms).&#x20;
 
 {% hint style="info" %}
 The pdftk runs from a Linux command line.  \
