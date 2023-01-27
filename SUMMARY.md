@@ -67,7 +67,7 @@
   * [Mounting AWS SFTP as a Drive (Mac)](guides/amazon-web-services/mounting-aws-sftp-as-a-drive-mac.md)
   * [Services](guides/amazon-web-services/services/README.md)
     * [AWS Bastion Access](guides/amazon-web-services/services/aws-bastion-access.md)
-    * [Microservices 2021-22](guides/amazon-web-services/services/microservices-2021/README.md)
+    * [AWS-hosted Microservices](guides/amazon-web-services/services/microservices-2021/README.md)
       * [Monorepo Decoupling](guides/amazon-web-services/services/microservices-2021/monorepo-decoupling.md)
       * [SQL Proxy (DBConnector)](guides/amazon-web-services/services/microservices-2021/sql-proxy-2021.md)
       * [PDFToolkit API](guides/amazon-web-services/services/microservices-2021/pdf-manager.md)
