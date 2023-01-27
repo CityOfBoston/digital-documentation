@@ -61,11 +61,11 @@ The /v1/pdf/generate\_fdf endpoint can be used to generate a blank FDF data file
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="formfile" required="true" %}
-A form PDF
+Url to a form PDF
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="datafile" required="true" %}
-A form data file in FDF format
+Url to a form data file in FDF format
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="Returns a reference to a file saved on the endpoint." %}
@@ -77,7 +77,19 @@ A form data file in FDF format
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="" %}
-```javascript
+```json
+{
+    // If nothing is provided in payload.
+    "error": "Missing body payload"
+}
+{
+    // formfile not provided.
+    "error": "Missing PDF file path in payload."
+}
+{
+    // datafile not provided.
+    "error": "Missing PDF file path in payload."
+}
 {
     "error": 'Error fetching form data file <additional info>'
 }
@@ -99,30 +111,111 @@ A form data file in FDF format
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="basefile" required="true" %}
-
+A PDF document - can be a URL or a file-reference returned from another endpoint.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="overlayfile" required="true" %}
-
+URL to a PDF document
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="overwrite" %}
 Defaults to "true"
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="Returns a reference to a file saved on the endpoint." %}
+```javascript
+{
+    "output": "file-reference"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+```javascript
+{
+    // If nothing is provided in payload.
+    "error": "Missing body payload"
+}
+{
+    // basefile not provided.
+    "error": "Missing base PDF file path."
+}
+{
+    // overlayfile not provided.
+    "error": "Missing overlay PDF file path."
+}
+{
+    // General failure
+    "error": '<reason>'
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="" %}
+```javascript
+{
+    // basefile url did not resolve to a file
+    "error": "Error fetching base PDF file <reason>."
+}
+{
+    // overlayfile url did not resolve to a file
+    "error": "Error fetching overlay PDF file <reason>."
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="get" path="/v1/pdf/decompress" baseUrl=" " summary="Removes compression on a PDF, and returns the decompressed file as an attachment." %}
 {% swagger-description %}
 This is a useful utility to use the PDFManager cannot manipulate a PDF because its compression is later than PDF1.5.
+
+The endpoint first checks to see if it already has a file with the filename specified in the `pdf_file` query parameter.  If it does, then it just returns that file. \
+_**NOTE: restarting the dbconnector task(s) on AWS will empty this cache.**_
+
+If the `del` parameter is "true" then the file is deleted after decompression and downloading.  To reduce load on the endpoint, set to "false" if the `pdf_file` does not change often and if you expect to call the function frequently.
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="pdf_file" required="true" %}
-
+Url to a PDF document
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="del" %}
 Should the file be deleted after it is downloaded. Defaults to "true".
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+```javascript
+{
+    // If nothing is provided in querystring.
+    "error": "Missing body payload"
+}
+{
+    // pdf_file not provided.
+    "error": "Missing PDF file/path."
+}
+{
+    // General failure
+    "error": '<reason>'
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="" %}
+```javascript
+{
+    // pdf_file url did not resolve to a file
+    "error": "Error fetching compressed data file <reason>."
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="post" path="/v1/pdf/metadata" baseUrl=" " summary="Updates the PDF document properties and outputs a reference to the updated PDF." %}
@@ -137,6 +230,30 @@ Should the file be deleted after it is downloaded. Defaults to "true".
 {% swagger-parameter in="body" name="meta_data" %}
 
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 {% swagger method="get" path="/v1/pdf/fetch" baseUrl=" " summary="Returns the requested PDF document from its reference." %}
