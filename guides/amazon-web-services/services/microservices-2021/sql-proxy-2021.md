@@ -1,4 +1,4 @@
-# SQL Proxy API (DBConnector)
+# SQL Proxy (DBConnector)
 
 ## Requirement
 
@@ -69,22 +69,6 @@ Results from all endpoints will be returned in JSON format.
 | **ConnToken / ConnectionToken** | <p>Each ConnectionString defined within the <code>DBConnector</code> is issued a unique ConnToken when it is saved. Any query requests made via the <code>DBConnector</code> <strong>/v1/query</strong> or <strong>/v1/select</strong> endpoints provide the ConnToken (rather than a Connection String).  </p><ul><li>No Host or Credentials information needs to be stored in the caller system, nor passed across the network by the caller.</li><li>No Host or Credentials are passed across the internet from the caller system.</li><li>If Credentials need to be changed, the change is done once in the <code>DBConnector</code> and all callers will use the new credentials without having to update their ConnTokens.</li></ul> |
 | **Session**                     | A session begins when a user authenticates and receives an AuthToken, and ends when the AuthToken expires.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **Calling System**              | The originating application which calls endpoints in this API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-
-### Heartbeat
-
-The ECS requires that an application have an endpoint `/admin/ok` which returns an HTTP Status Code of 200 when queried.  The ECS container management functions use this to determine if the container is healthy or not.  After some time, if that endpoint does not respond or return a 200, the task is stopped and restarted.
-
-{% swagger method="get" path="" baseUrl="" summary="Heartbeat required by ECS" %}
-{% swagger-description %}
-This endpoint must return a 200 code when the task (instance of the dbconnector service) is running.  A non 200 code will cause the task to be stopped.
-{% endswagger-description %}
-
-{% swagger-response status="200: OK" description="Expected response" %}
-```javascript
-{}
-```
-{% endswagger-response %}
-{% endswagger %}
 
 ### Authentication
 

@@ -177,39 +177,47 @@ A test object is structured as follows:
 
 ```json
 {
-    description: [opt] string,
+    description: [optional] string,
     enabled: bool,
     debug: bool,
     path: string,
-    use_creds: [opt] int,
-    save: [opt] string,
+    use_creds: [optional] int,
+    save: [optional] string,
     method: method_object,
     expected_response: response_object
 }
-
-where:
+    where:
     description = An explanation of what is being tested.
     enabled = Whether this test should be executed.
     debug = Should additional process information be output.
-    path = The base URL (scheme://domain) for the endpoint.
+    path = enpoint (excluding scheme://domain which is defined in config element).
     use_creds = Use previously generated and saved credentials.
     save = If not empty, a name used to save response (see dynamic arguments).
     method = {
-        
-    }
-    where:
+        type: string,
+        payload: [optional] {},
+        querystring: [optional] {}
+    }.
+        where:
+        type = GET | POST | PATCH | DELETE the type of call to the path.
+        payload = for type=POST|PATCH|DELETE, a JSON object with the payload.
+        querystring = for type=GET, a JSON object with key:value querystring fragments.
     expected_response = {
-        narrative: [opt] string,
+        narrative: [optional] string,
         code: int,
         json_data: bool,
-        exact: [opt] {}
-    }
-    where:
+        exact: [optional] {},
+        attachment: [optional] bool,
+        size: [optional] int
+    }.
+        where:
         narrative = An explanation of what the test proved.
         code = The expected HTTP_Code from test.
         json_data = Whether a json response is expected.
         exact = If json_data = true, a JSON object which represents the expected
                 exact JSON response.
+        attachment = Is an attachment expected in response.
+        size = (if attachment=true) size of attachment.
 ```
 
 </details>
