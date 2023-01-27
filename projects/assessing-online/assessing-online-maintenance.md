@@ -101,6 +101,12 @@ Using data provided by the Assessing Team, update the constants in `default20xx.
 Testing/verification of the new data can now be completed at:\
 &#x20; `https://cityofboston.gov/assessing/search/default20xx.asp`
 {% endhint %}
+
+{% hint style="info" %}
+While testing, you can use the variable `TodaysTime` (around line 70) to test the site for a future date and see that the date fields are aletring the page as expected.
+{% endhint %}
+
+
 {% endtab %}
 
 {% tab title="July" %}
@@ -116,12 +122,19 @@ When a constituent requests a form, it is processed through the `bos_assessing` 
 
 See [Assessing Form generation notes here](../../guides/drupal-8/drupal-8-micro-services-api-end-points/assessing-forms.md), and more detailed notes on [PDF generation here.](../../guides/drupal-8/drupal-8-micro-services-api-end-points/pdf-manager.md)
 
+{% hint style="success" %}
+Various assessing forms are made available to consitituents based on a calendar. The calendar is set in the constants fields in `wwwcob\assessing\search\default.asp` (see box above).
+
+Once those dates are set, the form display is controlled by code and no further action is needed to enable or disable them.
+{% endhint %}
+
 #### Maintenance Cycle
 
 {% tabs %}
 {% tab title="December" %}
 Each year new forms for exemptions and other request are generated and will be provided by the Assessing Team.
 
+* [ ] Ensure dates (`AbatementExemptionStartThisYear`, `AbatementDeadlineThisYear` and `ExemptionDeadlineThisYear`) are set correctly in `wwwcob\assessing\search\default.asp`
 * [ ] Upload the forms (typically 4) to a new folder at `docroot/modules/custom/bos_components/modules/bos_assessing/pdf/FY20xx.`
 * [ ] Update the the json and fdf files in the same folder.
 {% endtab %}
