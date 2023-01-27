@@ -17,6 +17,8 @@ The main Drupal site (served by an Acquia webserver), while running on Linux is 
 
 The dbconnector service was extended to provide the following endpoints:
 
+### Administration Functions
+
 {% swagger method="get" path="v1/pdf/heartbeat" baseUrl="/" summary="Ping to test service is available." %}
 {% swagger-description %}
 
@@ -52,6 +54,8 @@ Internally calls the pdftk and captures the version of the cli.
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+### PDF File Operations
 
 {% swagger method="post" path="/v1/pdf/fill" baseUrl=" " summary="Adds data to fields of a PDF form, and outputs a reference to the completed PDF form." %}
 {% swagger-description %}
@@ -165,62 +169,6 @@ Defaults to "true"
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/v1/pdf/decompress" baseUrl=" " summary="Removes compression on a PDF, and returns the decompressed file as an attachment." %}
-{% swagger-description %}
-This is a useful utility to use the PDFManager cannot manipulate a PDF because its compression is later than PDF1.5.
-
-The endpoint first checks to see if it already has a file with the filename specified in the `pdf_file` query parameter.  If it does, then it just returns that file. \
-_**NOTE: restarting the dbconnector task(s) on AWS will empty this cache.**_
-
-If the `del` parameter is "true" then the file is deleted after decompression and downloading.  To reduce load on the endpoint, set to "false" if the `pdf_file` does not change often and if you expect to call the function frequently.
-{% endswagger-description %}
-
-{% swagger-parameter in="query" name="pdf_file" required="true" %}
-Url to a PDF document
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="del" %}
-Should the file be deleted after it is downloaded. Defaults to "true".
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-Returns the decompressed document as an attachment.
-
-The expected headers are:
-
-```
-Content-Disposition:attachment;filename=<pdf_file>
-Content-Type:application/pdf
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="" %}
-```javascript
-{
-    // If nothing is provided in querystring.
-    "error": "Missing body payload"
-}
-{
-    // pdf_file not provided.
-    "error": "Missing PDF file/path."
-}
-{
-    // General failure
-    "error": '<reason>'
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-```javascript
-{
-    // pdf_file url did not resolve to a file
-    "error": "Error fetching compressed data file <reason>."
-}
-```
-{% endswagger-response %}
-{% endswagger %}
-
 {% swagger method="post" path="/v1/pdf/metadata" baseUrl=" " summary="Updates the PDF document properties and outputs a reference to the updated PDF." %}
 {% swagger-description %}
 
@@ -284,6 +232,64 @@ A file in a the following format:\
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+{% swagger method="get" path="/v1/pdf/decompress" baseUrl=" " summary="Removes compression on a PDF, and returns the decompressed file as an attachment." %}
+{% swagger-description %}
+This is a useful utility to use the PDFManager cannot manipulate a PDF because its compression is later than PDF1.5.
+
+The endpoint first checks to see if it already has a file with the filename specified in the `pdf_file` query parameter.  If it does, then it just returns that file. \
+_**NOTE: restarting the dbconnector task(s) on AWS will empty this cache.**_
+
+If the `del` parameter is "true" then the file is deleted after decompression and downloading.  To reduce load on the endpoint, set to "false" if the `pdf_file` does not change often and if you expect to call the function frequently.
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="pdf_file" required="true" %}
+Url to a PDF document
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="del" %}
+Should the file be deleted after it is downloaded. Defaults to "true".
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+Returns the decompressed document as an attachment.
+
+The expected headers are:
+
+```
+Content-Disposition:attachment;filename=<pdf_file>
+Content-Type:application/pdf
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="" %}
+```javascript
+{
+    // If nothing is provided in querystring.
+    "error": "Missing body payload"
+}
+{
+    // pdf_file not provided.
+    "error": "Missing PDF file/path."
+}
+{
+    // General failure
+    "error": '<reason>'
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="" %}
+```javascript
+{
+    // pdf_file url did not resolve to a file
+    "error": "Error fetching compressed data file <reason>."
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### PDF Retrieval
 
 {% swagger method="get" path="/v1/pdf/fetch" baseUrl=" " summary="Returns the requested PDF document from its reference." %}
 {% swagger-description %}
