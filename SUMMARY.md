@@ -70,7 +70,7 @@
     * [Microservices 2021-22](guides/amazon-web-services/services/microservices-2021/README.md)
       * [Monorepo Decoupling](guides/amazon-web-services/services/microservices-2021/monorepo-decoupling.md)
       * [SQL Proxy (DBConnector)](guides/amazon-web-services/services/microservices-2021/sql-proxy-2021.md)
-      * [PDFToolkit API](guides/amazon-web-services/services/microservices-2021/pdftoolkit-api.md)
+      * [PDFToolkit API](guides/amazon-web-services/services/microservices-2021/pdf-manager.md)
     * [Access-Boston](guides/amazon-web-services/services/access-boston/README.md)
       * [Node Server](guides/amazon-web-services/services/access-boston/node-server.md)
       * [Config Repository](guides/amazon-web-services/services/access-boston/config-repository.md)
