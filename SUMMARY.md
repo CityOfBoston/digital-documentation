@@ -97,7 +97,7 @@
   * [Development environment](guides/drupal-8/development-environment/README.md)
     * [PHP CodeSniffer](guides/drupal-8/development-environment/php-codesniffer.md)
     * [VSCode IDE Setup](guides/drupal-8/development-environment/vscode-ide-setup.md)
-    * [AWS for developers](guides/drupal-8/development-environment/aws-for-developers.md)
+    * [AWS for Developers](guides/drupal-8/development-environment/aws-for-developers.md)
     * [Using Windows](guides/drupal-8/development-environment/using-windows.md)
   * [Installation instructions](guides/drupal-8/installation-instructions/README.md)
     * [Typical build output](guides/drupal-8/installation-instructions/typical-build-output.md)

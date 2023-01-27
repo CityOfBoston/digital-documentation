@@ -1,4 +1,4 @@
-# Microservices 2021
+# AWS-hosted Microservices
 
 Microservices are (usually API style) services or applications which perform a specific task that other web services or applications can leverage. They are typically middleware type components that enable:
 

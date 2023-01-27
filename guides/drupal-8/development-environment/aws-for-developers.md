@@ -1,4 +1,4 @@
-# AWS for developers
+# AWS for Developers
 
 ## **Obtain AWS Credentials from Administrator**
 
