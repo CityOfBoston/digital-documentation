@@ -1,4 +1,4 @@
-# SQL Proxy API (DBConnector)
+# SQL Proxy (DBConnector)
 
 ## Requirement
 

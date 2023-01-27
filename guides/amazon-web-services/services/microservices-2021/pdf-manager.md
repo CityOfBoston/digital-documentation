@@ -1,4 +1,4 @@
-# PDFToolkit API (DB Connector)
+# PDFToolkit API
 
 ## Requirement
 

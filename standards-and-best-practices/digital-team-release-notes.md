@@ -4,6 +4,18 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tag/2023\_01\_26
+
+DIG-1770- Metrolist Listing Form Error
+
+* Code was rolled back to the previous version after the listing form was throwing an error. Cause and Solution will be investigated for permenant fix
+
+## Patterns\_Tags/2023\_01\_26
+
+DIG-1659 - UI change to Boston.gov contact form
+
+* This adds email validation to the contact forms to avoid postmark errors
+
 ## Drupal\_Tags/2023\_01\_25
 
 DIG-1679- Adjust style for document link button in "three column w/ image" component
