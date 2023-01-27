@@ -1,4 +1,4 @@
-# Assessing Forms
+# Assessing Forms Endpoint
 
 ## Overview & Requirement
 
@@ -12,7 +12,7 @@ The pdf should be available as a "GET" download with a "parameterized" url so it
 
 ## Solution
 
-An endpoint was written using PHP in the Drupal framework, utilizing the [PDFManager module](pdf-manager.md).
+An endpoint was written using PHP in the Drupal framework, utilizing the [PDFManager module](pdf-manager-module.md).
 
 A get endpoint was designed which has a url format of:
 
