@@ -71,7 +71,7 @@ Url to a form data file in FDF format
 {% swagger-response status="200: OK" description="Returns a reference to a file saved on the endpoint." %}
 ```javascript
 {
-    "output": "file-reference"
+    "output": "<file-reference>"
 }
 ```
 {% endswagger-response %}
@@ -125,7 +125,7 @@ Defaults to "true"
 {% swagger-response status="200: OK" description="Returns a reference to a file saved on the endpoint." %}
 ```javascript
 {
-    "output": "file-reference"
+    "output": "<file-reference>"
 }
 ```
 {% endswagger-response %}
@@ -184,10 +184,13 @@ Should the file be deleted after it is downloaded. Defaults to "true".
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
-```javascript
-{
-    // Response
-}
+Returns the decompressed document as an attachment.
+
+The expected headers are:
+
+```
+Content-Disposition:attachment;filename=<pdf_file>
+Content-Type:application/pdf
 ```
 {% endswagger-response %}
 
@@ -223,18 +226,31 @@ Should the file be deleted after it is downloaded. Defaults to "true".
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="pdf_file" %}
-
+{% swagger-parameter in="body" name="pdf_file" required="true" %}
+A PDF document - can be a URL or a file-reference returned from another endpoint.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="meta_data" %}
+{% swagger-parameter in="body" name="meta_data" required="true" %}
+A file in a the following format:\
 
+
+`InfoBegin`
+
+`InfoKey: <one of title, author, subject, creator, producer>`
+
+`InfoValue: <the value to set>`
+
+`InfoKey: ..`
+
+`InfoValue: ...`
+
+`...`
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="" %}
+{% swagger-response status="200: OK" description="Returns a reference to a file saved on the endpoint." %}
 ```javascript
 {
-    // Response
+    "output": "<file-reference>"
 }
 ```
 {% endswagger-response %}
@@ -242,7 +258,20 @@ Should the file be deleted after it is downloaded. Defaults to "true".
 {% swagger-response status="400: Bad Request" description="" %}
 ```javascript
 {
-    // Response
+    // If nothing is provided in payload.
+    "error": "Missing body payload"
+}
+{
+    // basefile not provided.
+    "error": "Missing base PDF path."
+}
+{
+    // overlayfile not provided.
+    "error": "Missing document properties path."
+}
+{
+    // General failure
+    "error": '<reason>'
 }
 ```
 {% endswagger-response %}
@@ -250,7 +279,7 @@ Should the file be deleted after it is downloaded. Defaults to "true".
 {% swagger-response status="404: Not Found" description="" %}
 ```javascript
 {
-    // Response
+    "error": "Error fetching document properties data file <reason>."
 }
 ```
 {% endswagger-response %}
@@ -262,14 +291,40 @@ Should the file be deleted after it is downloaded. Defaults to "true".
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="file" required="true" %}
-
+A file-reference from one of the endpoints
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="del" %}
-
+Delete the file after downloading. defaults to false
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="show" %}
-
+Download method: D (default) downloads attachment, I download and display in browser (if supported)
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+Returns the document as an attachment.
+
+When show=D, expected headers are:
+
+```
+Content-Disposition:attachment;filename=<pdf_file>
+Content-Type:application/pdf
+```
+
+The when show=I, expected headers are:
+
+```
+Content-Disposition:filename=<pdf_file>
+Content-Type:application/pdf
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="File-reference not found" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
 {% endswagger %}
