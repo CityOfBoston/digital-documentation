@@ -256,7 +256,7 @@ or
 This is all that is needed to initiate a deploy.
 {% endhint %}
 
-## Example workflow
+## Best Practice Developer Workflow
 
 The might be the way a developer works:
 
@@ -272,16 +272,20 @@ The might be the way a developer works:
 * [build code locally](developer-notes.md#updating-local-container-with-updated-changed-code)
 * [test locally](developer-notes.md#manual-testing-in-the-local-container)
 
-... iterate as necessary
+... iterate these steps as necessary
 
 ### Project External Testing
 
 * [update automated test rules](developer-notes.md#test-configuration)
 * [run automated tests locally](developer-notes.md#automated-testing)
 * commit code and push to AWS Code Commit
-* create PR on CodeCommit follow peer review etc and then merge PR
-* [build stage version](developer-notes.md#deploying) (stage)
+* create PR on CodeCommit (follow peer review and other related project steps) \
+  and then merge PR (on CodeCommit)
+* [build and deploy stage version](developer-notes.md#deploying) (stage)
+* advise external testers
+
+... iterate back through development stage steps as needed.
 
 ### Project End
 
-* [build + depoy production](developer-notes.md#deploying) (production)
+* [build and depoy production](developer-notes.md#deploying) (production)
