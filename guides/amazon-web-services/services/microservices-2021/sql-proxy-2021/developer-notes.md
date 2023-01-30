@@ -6,7 +6,7 @@ description: >-
 
 # Developer Notes
 
-## Developer Setup
+Developer Setup
 
 The code for the dbconnector is stored in the AWS codecommit [cob\_dbconnector](https://us-east-1.console.aws.amazon.com/codesuite/codecommit/repositories/cob\_dbconnector/browse?region=us-east-1) repository (CoB Digital account).
 
@@ -81,7 +81,7 @@ Once changes have been made and saved in the `src` folder, the application needs
 
 ### Updating local container with updated/changed code
 
-The repository files on the host are NOT mounted into the container.  Therefore changes to code on the host machine are not automatically replicated to the container, even if a local build is forced.  In order to "load" changed code into the container, it must be rebuilt.
+The repository files on the host are NOT mounted into the container.  Therefore changes to code on the host machine are not automatically replicated to the container, even if a local build is forced (e.g. running `npm run dev`inside the container) .  In order to "load" changed code into the container, it must be rebuilt.
 
 To re-build and re-deploy the container:
 
@@ -99,6 +99,14 @@ Or more concisely (ensure you are in the correct folder):
 ./build.sh local && docker stop dbconnector && docker rm dbconnector && docker-compose up --no-build -d dbconnecto
 ```
 
+{% hint style="warning" %}
+Each time you build the container using `build.sh`, a new local image is created and tagged.  The old image is not automatically deleted, so over time you will get a lot of images saved on your local computer, taking up disk space. &#x20;
+
+Which this is nice if you want to manually create a new container from a previous image, mostly its a nuisance and just takes up local disk space.
+
+You can delete all DBConnector images which do not have a tag.
+{% endhint %}
+
 ### Manual testing in the local container
 
 Because the dbconnector is an API designed to be used via an REST endpoint, the best tool for testing is either a custom written testbed which calls the container, or else a tool like postman.
@@ -111,7 +119,7 @@ docker container inspect -f '{{ .NetworkSettings.Networks }}' dbconnector
 docker container inspect -f '{{ .NetworkSettings.Networks.xxx.IPAddress }}' dbconnector
 ```
 
-The IPAddress will typically be something like `172.x.0.x`, depending on your docker setup. Locally the service runs on port 3000, and the conatiner has port 3000 exposed.
+The IPAddress will typically be something like `172.x.0.x`, depending on your docker setup. Locally the service runs on port 3000, and the container has port 3000 exposed.
 
 https://\<IPAddress>:3000/ should be used as the endpoint for testing locally: \
 **For example** In postman run a test GET request on [the URL](../sql-proxy-2021.md#heartbeat) :
@@ -133,7 +141,7 @@ docker attach dbconnector
 
 #### Create a new interactive session (shell) on container
 
-Using docker you can open a new bash shell in the container and run commands in the console for that session.  You could use this to verify the existence of files, or to check if dependencies are installed etc. This command creates an inetractive shell:
+Using docker you can open a new bash shell in the container and run commands in the console for that session.  You could use this to verify the existence of files, or to check if dependencies are installed etc. This command creates an interactive shell:
 
 ```
 docker exec -it /bin/bash
@@ -289,3 +297,49 @@ The might be the way a developer works:
 ### Project End
 
 * [build and depoy production](developer-notes.md#deploying) (production)
+
+## Troubleshooting
+
+Add solutions to issues as you encounter them here.
+
+<details>
+
+<summary>docker-compose.yml</summary>
+
+The container is built locally using docker compose.  This file contains directives which only affect the local build, such as port mappings etc.  The contents of docker-compose do not affect stage or production builds, so you can alter these files locally as you need.
+
+The most common changes to docker compose will be to add networks to add extra hosts or possibly to alter port mappings if port 3000 is already used by another service/contaer or app on the host.
+
+</details>
+
+<details>
+
+<summary>dockerfile</summary>
+
+#### Linux Packages
+
+The dockerfile contains information about the construction of the container image, and hence the content of any and all containers built from the image.
+
+The dockerfile should not need changing in the normal course of development.
+
+The exception to this would be if a new Linux package were needed by the app.  This is possible, but would be an uncommon situation.  Updates to Linux packages are made (based on Ubuntu apt/apt-get package manager) each time `docker build` is executed. &#x20;
+
+Typically, there is no manual maintenance required for Linux packages to be maintained on the current/best version at the time of running `docker build`.
+
+#### Project Files
+
+The docker file does also have entries which control the copying of files from the host into the container.  The repository is copied into the container from the repo root, so adding new files and folders should not require changes to the dockerfile.
+
+If you add new folders to your project (outside of the repo root) then the dockerfile may need to be updated/altered.
+
+</details>
+
+<details>
+
+<summary>build.sh</summary>
+
+This file has 2 modes, local builds (using docker-compose) and remote builds (to stage and prod)(using docker build).
+
+This file should not need changing by something the developer does to the project/app code.
+
+</details>
