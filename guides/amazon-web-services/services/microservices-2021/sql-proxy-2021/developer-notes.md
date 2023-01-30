@@ -255,3 +255,33 @@ or
 {% hint style="info" %}
 This is all that is needed to initiate a deploy.
 {% endhint %}
+
+## Example workflow
+
+The might be the way a developer works:
+
+### Project Start
+
+* follow setup instructions [here](developer-notes.md#developer-setup)
+* create a local working branch from `develop` branch&#x20;
+
+### Project Development & Local Testing
+
+* [alter code](developer-notes.md#modifying-code)
+* commit code locally to working branch
+* [build code locally](developer-notes.md#updating-local-container-with-updated-changed-code)
+* [test locally](developer-notes.md#manual-testing-in-the-local-container)
+
+... iterate as necessary
+
+### Project External Testing
+
+* [update automated test rules](developer-notes.md#test-configuration)
+* [run automated tests locally](developer-notes.md#automated-testing)
+* commit code and push to AWS Code Commit
+* create PR on CodeCommit follow peer review etc and then merge PR
+* [build stage version](developer-notes.md#deploying) (stage)
+
+### Project End
+
+* [build + depoy production](developer-notes.md#deploying) (production)
