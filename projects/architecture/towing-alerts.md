@@ -118,30 +118,6 @@ The stored procedure `SendBrokerMessage` is called in order to route an SMS mess
 
 ## Connected Services
 
-### Emails originated by towing alert sub-service
-
-**Reminder emails:**
-
-Reminder emails created and sent by the `remindme.asp` page (one-time & on-demand by the resident) are routed through an SMTP server the mail at **smtp.web.cob.**
-
-**Alert emails:**
-
-Alert emails which are generated as vehicles are towed are originated and handled by the **Towing** database on the MSSQL Server at **vSQL01.**  This process is fully decoupled from the cityofboston.gov hosted asp pages, and fully contained within the MSSQL server vSQL01.
-
-The process is managed within a _stored procedure_ (`sp_process_towing_messages` ) in the `Towing`Database which is executed every 5 minutes by an SQL Job. &#x20;
-
-* The sp evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert. &#x20;
-* The sp uses the system stored procedure `sp_send_dbmail`, to send mails directly to the subscriber from the MS SQL server
-* The sp interfaces directly with Twi
-* lio (for SMS's)&#x20;
-* The sp drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
-* The sp records which recipients have been communicated with, and which have been processed
-* The sp maintains statistics on what has been sent out.
-
-{% hint style="info" %}
-The email process handles both emails and (the majority of) sms messages. SMS strategy is to send an email to a mobile provider specific email address which then routes the SMS to the recipient/subscriber.
-{% endhint %}
-
 ### Police Updates
 
 The police update information on newly towed vehicles every 15 minutes.  The police have a job/process that pushes the data to vSQL01.&#x20;
@@ -159,6 +135,43 @@ The police data is inserted directly into the `Towline_bpd`table by the Police I
 | Rich Petruccelli         | Data Services Manager | [Rich.Petruccelli@pd.boston.gov](mailto:Rich.Petruccelli@pd.boston.gov)     |
 | Thomas Hutchings (Hutch) |                       | **t**[homas.hutchings@pd.boston.gov](mailto:thomas.hutchings@pd.boston.gov) |
 | Frank Alexopoulos        | Apps development      | [Frank.Alexopoulos@pd.boston.gov](mailto:Frank.Alexopoulos@pd.boston.gov)   |
+
+### Outbound Communication (email, sms and voice)
+
+As the police update the `towline_bpd` table (i.e. as vehicles are towed) alerts are originated and handled by the **Towing** database and **TwiSQL** database on the MSSQL Server at **vSQL01.** &#x20;
+
+Alerting is fully decoupled from the cityofboston.gov hosted asp pages, and initiated by the MSSQL server vSQL01.
+
+#### Alert Initiation
+
+There is a _stored procedure_ (`sp_process_towing_messages` ) in the `Towing`Database which is executed every 5 minutes by an SQL Job. &#x20;
+
+The stored procedure reads the `towline_bpd` table and discovers new tow events. It then determines which tows have subscriptions.  Finally it dispatches the outbound communications to subscribers.
+
+* The sp evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert. &#x20;
+* The sp uses the system stored procedure `sp_send_dbmail`, to send mails directly to the subscriber from the MS SQL server
+* The sp interfaces directly with Twilio (for SMS's)&#x20;
+* The sp drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
+* The sp records which recipients have been communicated with, and which have been processed
+* The sp maintains statistics on what has been sent out.
+
+<mark style="color:red;">**Reminder emails:**</mark>
+
+<mark style="color:red;">Reminder emails created and sent by the</mark> <mark style="color:red;"></mark><mark style="color:red;">`remindme.asp`</mark> <mark style="color:red;"></mark><mark style="color:red;">page (one-time & on-demand by the resident) are routed through an SMTP server the mail at</mark> <mark style="color:red;"></mark><mark style="color:red;">**smtp.web.cob.**</mark>
+
+**Alert emails:**
+
+Emails are sent directly from `sp_process_towing_message` . The sp constructs and send them out using the built-in MSSQL email service (from `msdb.dbo.sp_send_dbmail`).
+
+{% hint style="info" %}
+The email process handles both emails and (the majority of) sms messages. SMS strategy is to send an email to a mobile provider specific email address which then routes the SMS to the recipient/subscriber.
+{% endhint %}
+
+### Voice originated by towing alert sub-service
+
+**Alert voice calls:**
+
+The process is managed within a _stored procedure_ (`sp_process_towing_messages` ) in the `Towing`Database which is executed every 5 minutes by an SQL Job.  The stored procedure discovers emails which need to be sent, and then sends them using the built-in MSSQL email service from `msdb.dbo.sp_send_dbmail.`
 
 #### Permissions&#x20;
 
