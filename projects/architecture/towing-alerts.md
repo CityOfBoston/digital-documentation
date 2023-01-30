@@ -14,8 +14,8 @@ Residents can use the page at [https://www.cityofboston.gov/towing/alerts](https
 The resident is able to register a license plate and receive one or any of:
 
 * an email alert (managed by SQL Server)
-* a text alert (sometimes managed by Twillio, otherwise is SMS via email)
-* a voice alert (managed by Twillio)
+* a text alert (sometimes managed by Twilio, otherwise is SMS via email)
+* a voice alert (managed by Twilio)
 
 Every 15 minutes the city gets [an update from the police](towing-alerts.md#police-updates) on towed vehicles.  For each new vehicle towed the license plate is checked against plates registered by residents and alerts are sent when matches are found.&#x20;
 
@@ -65,7 +65,7 @@ Text subscription is completed by adding a record to the `towing_emails` table, 
 **Provider email to text gateways can be found here:** [**https://avtech.com/articles/138/list-of-email-to-sms-addresses/**](https://avtech.com/articles/138/list-of-email-to-sms-addresses/)****
 {% endhint %}
 
-**Note:** We do have the option to send SMS via Twillio using a stored procedure in the `twiSQL` database, however this incurs an additional cost.  As at 2021-11-17, this process does work, and is used by the SMS block in the `sp_process_towing_messages` stored procedure.  To be certain that SMS messages are delivered, it could be that users who select 'No Provider' are added to the `towing_sms` table.
+**Note:** We do have the option to send SMS via Twilio using a stored procedure in the `twiSQL` database, however this incurs an additional cost.  As at 2021-11-17, this process does work, and is used by the SMS block in the `sp_process_towing_messages` stored procedure.  To be certain that SMS messages are delivered, it could be that users who select 'No Provider' are added to the `towing_sms` table.
 
 **Voice:**
 
@@ -110,7 +110,7 @@ The tables used by this sub-service are:
 
 ### _twiSQL_
 
-Manages SMS message dispatch via the Twillio SMS gateway.
+Manages SMS message dispatch via the Twilio SMS gateway.
 
 This database is used by the `sp_process_towing_messages`.  There are no tables inside the database, and 3 stored procedures.  There is also an Assembly (twilioSQL) loaded., plus (possibly auto-created) a Service Broker.
 
@@ -132,7 +132,8 @@ The process is managed within a _stored procedure_ (`sp_process_towing_messages`
 
 * The sp evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert. &#x20;
 * The sp uses the system stored procedure `sp_send_dbmail`, to send mails directly to the subscriber from the MS SQL server
-* The sp interfaces directly with Twillio (for SMS's)&#x20;
+* The sp interfaces directly with Twi
+* lio (for SMS's)&#x20;
 * The sp drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
 * The sp records which recipients have been communicated with, and which have been processed
 * The sp maintains statistics on what has been sent out.
@@ -194,9 +195,9 @@ The job which initiates the sp which processes new alerts does need extensive pe
 
 ### Twilio - Voice Alerts
 
-Voice alerts are somehow processed by Twillio using a complicated call-back process to cityofboston.gov. &#x20;
+Voice alerts are somehow processed by Twilio using a complicated call-back process to cityofboston.gov. &#x20;
 
-**This needs further investigation and access to the twillio UI.**
+**This needs further investigation and access to the twilio UI.**
 
 ### Twilio - Text Alerts
 
