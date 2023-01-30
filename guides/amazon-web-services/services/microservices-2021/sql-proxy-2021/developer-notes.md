@@ -183,8 +183,8 @@ A test object is structured as follows:
     path: string,
     use_creds: [optional] int,
     save: [optional] string,
-    method: method_object,
-    expected_response: response_object
+    method: {method_object},
+    expected_response: {response_object}
 }
     where:
     description = An explanation of what is being tested.
@@ -193,7 +193,7 @@ A test object is structured as follows:
     path = enpoint (excluding scheme://domain which is defined in config element).
     use_creds = Use previously generated and saved credentials.
     save = If not empty, a name used to save response (see dynamic arguments).
-    method = {
+    method = method_object = {
         type: string,
         payload: [optional] {},
         querystring: [optional] {}
@@ -202,22 +202,36 @@ A test object is structured as follows:
         type = GET | POST | PATCH | DELETE the type of call to the path.
         payload = for type=POST|PATCH|DELETE, a JSON object with the payload.
         querystring = for type=GET, a JSON object with key:value querystring fragments.
-    expected_response = {
+    expected_response = {response-object} = {
         narrative: [optional] string,
         code: int,
         json_data: bool,
-        exact: [optional] {},
+        exact: [optional] {json-data},
         attachment: [optional] bool,
         size: [optional] int
     }.
         where:
-        narrative = An explanation of what the test proved.
-        code = The expected HTTP_Code from test.
-        json_data = Whether a json response is expected.
-        exact = If json_data = true, a JSON object which represents the expected
-                exact JSON response.
-        attachment = Is an attachment expected in response.
-        size = (if attachment=true) size of attachment.
+        narrative = [optional] An explanation of what the test proved.
+        code = [required] The expected HTTP_Code from test.
+        json_data = [required] Whether a json response is expected.
+        exact = [optional] If json_data = true, a JSON object which represents 
+                the (exact) expected JSON response from the endpoint.
+        attachment = [optional] if true, an attachment is expected in response.
+        size = [optional] (if attachment=true) size of attachment.
+
+NOTES:  1. if <code> does not equal the received code from the endpoint, 
+           then the test is marked as failed.
+        2. if <json_data>=true then the test is marked as false if the
+           received body/payload is not a json string (empty string is ok).
+        3. if <json_data>=true and <exact> is provided, then the test 
+           is marked as failed if the recieved json payload (as an object)
+           does not match the <exact> value (as an object).
+        4. if <attachment>=true, the test is marked as failed if no 
+           attachment is detected in the returned payload body.
+        5. if <attachment>=true and <size> is provided, the test fails 
+           if char length of the body returned is not equal to <size>.
+        6. in all cases, if the endpoint does not exist, or has a 500 error, 
+           the test is marked as failed.
 ```
 
 </details>
