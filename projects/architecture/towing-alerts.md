@@ -128,6 +128,10 @@ The police data is inserted directly into the `Towline_bpd`table by the Police I
 
 **Note:** The MSSQL bulk insert does not fire triggers by default.
 
+#### **Permissions**
+
+The police account (youvebeentowed (?)) needs permission to truncate the `Towline_bpd` table and to (bulk) insert new records.  It does not need permissions to stored procedures, triggers or the twiSQL database.
+
 #### **Contacts**
 
 | Staff                    | Position              | Email                                                                       |
@@ -138,51 +142,71 @@ The police data is inserted directly into the `Towline_bpd`table by the Police I
 
 ### Outbound Communication (email, sms and voice)
 
+#### **Reminder emails**
+
+Reminder emails created and sent by the `remindme.asp` page (one-time & on-demand by the resident) are routed through an SMTP server the mail at **smtp.web.cob.**
+
+#### Alert Initiation
+
 As the police update the `towline_bpd` table (i.e. as vehicles are towed) alerts are originated and handled by the **Towing** database and **TwiSQL** database on the MSSQL Server at **vSQL01.** &#x20;
 
 Alerting is fully decoupled from the cityofboston.gov hosted asp pages, and initiated by the MSSQL server vSQL01.
 
-#### Alert Initiation
+**There is a stored procedure, `sp_process_towing_messages` , in the `Towing` database which is executed every 5 minutes by the  SQL Job; `TowingSendMail`.** &#x20;
 
-There is a _stored procedure_ (`sp_process_towing_messages` ) in the `Towing`Database which is executed every 5 minutes by an SQL Job. &#x20;
-
-The stored procedure reads the `towline_bpd` table and discovers new tow events. It then determines which tows have subscriptions.  Finally it dispatches the outbound communications to subscribers.
+`sp_process_towing_messages` reads the `towline_bpd` table and discovers new tow events. It then determines which tows have subscriptions.  Finally, it dispatches the outbound communications to subscribers.
 
 * The sp evaluates the inserted rows, looks to see if the license plate is registered (`towed_emails, towed_phonenumbers and towed_sms`), and if so ends out an alert. &#x20;
-* The sp uses the system stored procedure `sp_send_dbmail`, to send mails directly to the subscriber from the MS SQL server
-* The sp interfaces directly with Twilio (for SMS's)&#x20;
+* The sp uses the system stored procedure `sp_send_dbmail`, to send emails directly to the subscriber from the MS SQL server. \
+  Some SMS subscribers are also in the `towed_emails` table because the subscriber has registered for SMS/text by providing a phone number and provider. (see box below)
+* The sp interfaces directly with Twilio (for unspecified-provider SMS's)&#x20;
 * The sp drops records into a queue for voice processing (which runs on a scheduled task). &#x20;
 * The sp records which recipients have been communicated with, and which have been processed
 * The sp maintains statistics on what has been sent out.
 
-<mark style="color:red;">**Reminder emails:**</mark>
-
-<mark style="color:red;">Reminder emails created and sent by the</mark> <mark style="color:red;"></mark><mark style="color:red;">`remindme.asp`</mark> <mark style="color:red;"></mark><mark style="color:red;">page (one-time & on-demand by the resident) are routed through an SMTP server the mail at</mark> <mark style="color:red;"></mark><mark style="color:red;">**smtp.web.cob.**</mark>
-
 **Alert emails:**
 
-Emails are sent directly from `sp_process_towing_message` . The sp constructs and send them out using the built-in MSSQL email service (from `msdb.dbo.sp_send_dbmail`).
+Emails are sent directly from `Towing.dbo.sp_process_towing_messages` . The sp constructs and send them out using the built-in MSSQL email service (from `msdb.dbo.sp_send_dbmail`).
 
 {% hint style="info" %}
-The email process handles both emails and (the majority of) sms messages. SMS strategy is to send an email to a mobile provider specific email address which then routes the SMS to the recipient/subscriber.
+The email process handles both emails and (the majority of) sms messages. SMS strategy is to send an email to a mobile provider specific email address which then routes the email as an SMS to the recipient/subscriber.
+
+For example the email record in `towed_emails` **781###@att.net** was registered as phone number 781### and AT\&T as the provider. Using that email format prompts an email-to-sms service at att.net.
 {% endhint %}
 
-### Voice originated by towing alert sub-service
+#### SMS/Text messages:
 
-**Alert voice calls:**
+The majority of text messages are sent via email-to-sms (see box-out above).
 
-The process is managed within a _stored procedure_ (`sp_process_towing_messages` ) in the `Towing`Database which is executed every 5 minutes by an SQL Job.  The stored procedure discovers emails which need to be sent, and then sends them using the built-in MSSQL email service from `msdb.dbo.sp_send_dbmail.`
+**Note:** Some subscriptions are saved in the table `towed_sms`and initiated by `process_towing_messages` .
+
+**Voice calls:**
+
+* The process is managed within `sp_process_towing_messages` which is executed every 5 minutes by the SQLAgent Job `TowingSendMail`. &#x20;
+* Voice calls identified in the stored procedure are queued into the table `Towing_twilio_Queue` in the `Towing` database.
+* Every 10 minutes, a scheduled task `Towing_Twilio_Queue` runs <mark style="color:red;">****</mark> on `zpcobweb10` (10.241.250.22). The task runs a script `c:\installs\scripts\curl_towing_queue_process.bat` .
+* The script simply calls `twilio-alert-place.aspx.` \
+  `curl.exe -connect-timeout 300 http://zpcobweb01.web.cob/towing/alerts/twilio/twilio-alert-place.aspx`
+* `Twilio-alert-place.aspx` app/script calls a stored procedure `Towing.dbo.spTowingTwilioQueueRead` which fetches queued voice messages from the `towed_phone_alerts_queued` table.  For each queued message the endpoint payload and creates a Twilio object and initiates the outbound call (via the Twilio REST API). The app/script also removes the record from the queue (`towed_phone_alerts_queued`) using the stored procedure `towing.dbo.spTowingTwilioQueueDelete`.
+
+{% hint style="info" %}
+The message which is sent to theTwilio REST service (to make the voice call to the subscriber) includes a call to an endpoint `twiml-alert-content.aspx`  This app/script receives the towed vehicle details from the querystring/payload and creates and returns the correct message for the Twilio voice service to read out.
+
+The message also defines an interaction where the call recipient can hear the message again, obtain tow company information or unsubscribe from future voice alerts.&#x20;
+{% endhint %}
+
+{% hint style="info" %}
+There is an additional endpoint at `Twilio-incoming.aspx` . This is provided to handle incoming calls to the No-Tow telephone number.  This app/script determines the caller phonenumber and looks up recent towing records to see if a vehicle with a plate registered to this number has been towed.  If so the details of the tow event are read back to the caller
+{% endhint %}
 
 #### Permissions&#x20;
-
-The police account (youvebeentowed (?)) needs permission to truncate the `Towline_bpd` table and to (bulk) insert new records.  It does not need permissions to stored procedures, triggers or the twiSQL database.
 
 The job which initiates the sp which processes new alerts does need extensive permissions.
 
 **Stored Procedures** (execute permission)**:**
 
 * **msdb.dbo.sp\_send\_dbmail:** to actually send out emails using MSSQL Mail services.
-* **twiSQl.dbo.SendBrokerMessage**: This interacts with a service on the twiSQL DB on the same server
+* _<mark style="color:purple;">**twiSQl.dbo.SendBrokerMessage**</mark><mark style="color:purple;">: This interacts with a service on the twiSQL DB on the same server (????) There is a twilioSQL assembly loaded on the twiSQL database, but not on the Towing DB.</mark>_
 
 **Functions** (Call/Execute permission)**:**
 
@@ -211,7 +235,3 @@ The job which initiates the sp which processes new alerts does need extensive pe
 Voice alerts are somehow processed by Twilio using a complicated call-back process to cityofboston.gov. &#x20;
 
 **This needs further investigation and access to the twilio UI.**
-
-### SMS - Text Alerts
-
-Text alerts are sent by sms-to-email services offered by the main teleco carriers.
