@@ -174,7 +174,7 @@ The email process handles both emails and (the majority of) sms messages. SMS st
 For example the email record in `towed_emails` **781###@att.net** was registered as phone number 781### and AT\&T as the provider. Using that email format prompts an email-to-sms service at att.net.
 {% endhint %}
 
-#### SMS/Text messages:
+**SMS/Text messages:**
 
 The majority of text messages are sent via email-to-sms (see box-out above).
 
@@ -192,7 +192,7 @@ The majority of text messages are sent via email-to-sms (see box-out above).
 {% hint style="info" %}
 The message which is sent to theTwilio REST service (to make the voice call to the subscriber) includes a call to an endpoint `twiml-alert-content.aspx`  This app/script receives the towed vehicle details from the querystring/payload and creates and returns the correct message for the Twilio voice service to read out.
 
-The message also defines an interaction where the call recipient can hear the message again, obtain tow company information or unsubscribe from future voice alerts.&#x20;
+The message also defines an interaction where the call recipient can hear the message again, obtain tow company information or unsubscribe (using `spTowingTwilioUnsubscribe`) from future voice alerts.&#x20;
 {% endhint %}
 
 {% hint style="info" %}
