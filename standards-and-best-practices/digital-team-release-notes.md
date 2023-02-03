@@ -4,6 +4,21 @@ description: Code release details will be documented with each code deployment h
 
 # Digital Team Release Notes
 
+## Drupal\_Tag/2023\_02\_03
+
+DIG-1033 - Price Filter Updates
+
+* This enhancement updates the price filter on the Metro Listing page so users have the ability to enter minimum and maximum prices to filter a price range appropriate to the listing type(rental or sales) they are searching
+
+DIG-1043 - Show either rental units or for sale homes, not both
+
+* This enhancement separates rentals and sale properties in the search results so users are not confused by the listing type they are viewing
+
+\
+DIG-1714 - Metrolist price filters don't work on Sale properties
+
+* This enhancement shows the user sale properties when they are using the price filters on the Metro Listing page&#x20;
+
 ## Drupal\_Tag/2023\_01\_26
 
 DIG-1770- Metrolist Listing Form Error
