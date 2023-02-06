@@ -1,3 +1,7 @@
+---
+description: '-- OUT OF DATE Feb 2023 --'
+---
+
 # Election results
 
 Digital team is responsible for showing unofficial election results on Boston.gov.
@@ -12,4 +16,3 @@ As of January 2019, we’ve modified both the source file and our Incapsula sett
 
 * **Production:** [https://www.boston.gov/departments/elections/unofficial-election-results](https://www.boston.gov/departments/elections/unofficial-election-results)
 * **Source:** [https://www.cityofboston.gov/elections/CurrentElections/fetch.aspx](https://www.cityofboston.gov/elections/CurrentElections/fetch.aspx)
-

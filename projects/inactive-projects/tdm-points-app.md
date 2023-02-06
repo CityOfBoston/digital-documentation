@@ -18,7 +18,7 @@ _Development projects will need to select TDM strategies to meet this minimum nu
 
 ### Design
 
-![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.57.37 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.58.04 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.58.33 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.59.08 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 3.59.49 PM.png>) ![](<../.gitbook/assets/Screen Shot 2022-06-01 at 4.03.01 PM.png>)
+![](<../../.gitbook/assets/Screen Shot 2022-06-01 at 3.57.37 PM.png>) ![](<../../.gitbook/assets/Screen Shot 2022-06-01 at 3.58.04 PM.png>) ![](<../../.gitbook/assets/Screen Shot 2022-06-01 at 3.58.33 PM.png>) ![](<../../.gitbook/assets/Screen Shot 2022-06-01 at 3.59.08 PM.png>) ![](<../../.gitbook/assets/Screen Shot 2022-06-01 at 3.59.49 PM.png>) ![](<../../.gitbook/assets/Screen Shot 2022-06-01 at 4.03.01 PM.png>)
 
 ### Development
 

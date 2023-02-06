@@ -108,7 +108,7 @@ This feature shows details about a Building Housing Project. Any new data is pul
 10. **Email sign-up** - Custom field in node\_buildinghousing.module
 11. **Feedback form** - settings
 
-![](../../.gitbook/assets/BuildingHousing\_ProjectPage.png)
+![](../../../.gitbook/assets/BuildingHousing\_ProjectPage.png)
 
 ## Auto-create Community Meeting Events from Sales Force on CRON (5 minutes)
 

@@ -38,7 +38,7 @@ _Lyris maintains subscribers (members) in its **no-tow** list._
 | August 2021 Unsubscribe      | -258                                                                |
 | August 2021 unsubscribe      | -256                                                                |
 
-![](<../../.gitbook/assets/image (28).png>)![](<../../.gitbook/assets/image (29) (1).png>)
+![](<../../../.gitbook/assets/image (28).png>)![](<../../../.gitbook/assets/image (29) (1).png>)
 
 **Note:**  _Lyris subscribes street occupancy and street sweeping members to the same **no-tow** list._
 

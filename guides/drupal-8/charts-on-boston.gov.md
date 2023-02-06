@@ -6,7 +6,7 @@ description: Technical and project documentation for charts on boston.gov.
 
 We use the [VegaLite](https://vega.github.io/vega-lite/) and [Vega](https://vega.github.io/vega/) libraries to create our charts on boston.gov. VegaLite is an easier to use version of Vega. Both libraries are built on top of [D3](https://d3js.org/). It does a little more guess work for us so we don't have to be so specific in defining our charts. These libraries let users define/create a chart using a JSON schema.&#x20;
 
-From a technical standpoint, we wrap this library up as a web component that is stored in [Fleet](libraries-and-tools/fleet-pattern-library/), our patterns library. The `<cob-chart>` component takes a JSON object as input in a Vega or VegaLite schema as input and creates a chart.&#x20;
+From a technical standpoint, we wrap this library up as a web component that is stored in [Fleet](../libraries-and-tools/fleet-pattern-library/), our patterns library. The `<cob-chart>` component takes a JSON object as input in a Vega or VegaLite schema as input and creates a chart.&#x20;
 
 From a functional standpoint, when putting charts on boston.gov, we place them within text components in an effort to bring context to the data and information the chart is displaying. The [FY20 Budget Website](https://www.boston.gov/departments/budget/fy20-budget) has good examples of how charts should be used with narrative explanation.&#x20;
 
@@ -41,7 +41,7 @@ For testing purposes, you could upload a csv as a [Github Gist](https://gist.git
 
 The Analytics Team has the ability to create s3 buckets that can store completely public csv files. Once a file has been loaded to a public bucket, you can supply the "Object URL" to Vega.&#x20;
 
-![Location of the "Object URL" in s3. ](<../.gitbook/assets/image (19).png>)
+![Location of the "Object URL" in s3. ](<../../.gitbook/assets/image (19).png>)
 
 Storing data for charts on s3, means we can set up separate workflows that will automatically update the data on the chart. For example, for the [FY20 Budget website](https://www.boston.gov/departments/budget/fy20-budget), we set up a workflow in [Civis](https://app.gitbook.com/@boston/s/analytics/guides/civis/introduction) (the Analytics Teams data wharehouse and ETL platform) that:
 
@@ -105,9 +105,9 @@ The **width** of the chart will be overwritten based on the screen size the char
 {% tab title="Bar Chart" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below ([chart in production](https://www.boston.gov/departments/budget/fy20-education-overview#universal-pre-k)):
 
-![\<cob-chart> simple bar chart.](<../.gitbook/assets/image (15).png>)
+![\<cob-chart> simple bar chart.](<../../.gitbook/assets/image (15).png>)
 
-{% file src="../.gitbook/assets/bar-chart-schema.json" %}
+{% file src="../../.gitbook/assets/bar-chart-schema.json" %}
 Bar Chart schema JSON
 {% endfile %}
 {% endtab %}
@@ -115,9 +115,9 @@ Bar Chart schema JSON
 {% tab title="Bar Chart with Selection" %}
 Drop the json linked below into the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below ([chart in production](https://www.boston.gov/departments/budget/fy20-budget/fy20-capital-budget)):
 
-![\<cob-chart> bar chart with selection.](<../.gitbook/assets/image (22).png>)
+![\<cob-chart> bar chart with selection.](<../../.gitbook/assets/image (22).png>)
 
-{% file src="../.gitbook/assets/bar-chart-select-schema.json" %}
+{% file src="../../.gitbook/assets/bar-chart-select-schema.json" %}
 Bar Chart with Selection schema JSON
 {% endfile %}
 {% endtab %}
@@ -153,7 +153,7 @@ You can then use that field to [order the bars](https://vega.github.io/vega-lite
 
 You can use the ["sort" section](https://vega.github.io/vega-lite/docs/sort.html) of the schema or an axis to sort by various metrics. For example, we may want to have the longest bars at the top of a chart on a bar chart.&#x20;
 
-![Bars sorted by "amount".](<../.gitbook/assets/image (16).png>)
+![Bars sorted by "amount".](<../../.gitbook/assets/image (16).png>)
 
 To achieve that, we add `"sort"` and define the field, operation, and order of the bars to the axis definition we want sorted.
 
@@ -180,9 +180,9 @@ To achieve that, we add `"sort"` and define the field, operation, and order of t
 {% tab title="Line Chart" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below ([chart in production](https://www.boston.gov/departments/budget/fy20-budget/fy20-state-aid#net-state-aid)):
 
-![\<cob-chart> simple line chart.](<../.gitbook/assets/image (18).png>)
+![\<cob-chart> simple line chart.](<../../.gitbook/assets/image (18).png>)
 
-{% file src="../.gitbook/assets/line-chart-schema.json" %}
+{% file src="../../.gitbook/assets/line-chart-schema.json" %}
 Line chart schema JSON
 {% endfile %}
 {% endtab %}
@@ -190,9 +190,9 @@ Line chart schema JSON
 {% tab title="Line Chart with Selection" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
 
-![\<cob-chart> line chart with selection.](<../.gitbook/assets/image (9).png>)
+![\<cob-chart> line chart with selection.](<../../.gitbook/assets/image (9).png>)
 
-{% file src="../.gitbook/assets/line-chart-select-schema.json" %}
+{% file src="../../.gitbook/assets/line-chart-select-schema.json" %}
 Line chart with selection JSON schema
 {% endfile %}
 {% endtab %}
@@ -206,7 +206,7 @@ Line chart with selection JSON schema
 
 Due to a [bug](https://github.com/vega/vega-lite/issues/4122) in the version on VegaLite we're using, defining your own tooltip with a "line" mark will **break the chart**.&#x20;
 
-![Defining a tooltip when using a line mark will break the chart. ](<../.gitbook/assets/image (2) (1).png>)
+![Defining a tooltip when using a line mark will break the chart. ](<../../.gitbook/assets/image (2) (1).png>)
 
 When you are **not using a selection**, you can get around this by [layering](https://vega.github.io/vega-lite/docs/layer.html) a line mark and a point mark on top of each other in the chart and defining the tooltip in the _point mark's encoding_. Use the line chart schema [linked above](charts-on-boston.gov.md#line-charts) as an example of how to do this.&#x20;
 
@@ -218,9 +218,9 @@ If you **are using a selection**, the chart will work if you _do not define tool
 {% tab title="Grouped Bar Chart" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below ([chart in production](https://www.boston.gov/departments/budget/fy20-operating-budget#expenditures)):
 
-![\<cob-chart> grouped bar chart.](<../.gitbook/assets/image (17).png>)
+![\<cob-chart> grouped bar chart.](<../../.gitbook/assets/image (17).png>)
 
-{% file src="../.gitbook/assets/grouped-bar-chart-schema.json" %}
+{% file src="../../.gitbook/assets/grouped-bar-chart-schema.json" %}
 Grouped bar chart JSON schema
 {% endfile %}
 {% endtab %}
@@ -228,9 +228,9 @@ Grouped bar chart JSON schema
 {% tab title="Grouped Bar Chart with Selection" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
 
-![\<cob-chart> grouped bar chart.](<../.gitbook/assets/image (4) (1) (1).png>)
+![\<cob-chart> grouped bar chart.](<../../.gitbook/assets/image (4) (1) (1).png>)
 
-{% file src="../.gitbook/assets/grouped-bar-chart-select-schema.json" %}
+{% file src="../../.gitbook/assets/grouped-bar-chart-select-schema.json" %}
 Grouped bar chart with selection schema JSON
 {% endfile %}
 {% endtab %}
@@ -264,9 +264,9 @@ Pie charts are the only chart type the `<cob-chart>` component supports that use
 {% tab title="Pie Chart" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below ([chart in production](https://www.boston.gov/departments/budget/fy20-budget#operating-budget)):
 
-![\<cob-chart> pie chart.](<../.gitbook/assets/image (23).png>)
+![\<cob-chart> pie chart.](<../../.gitbook/assets/image (23).png>)
 
-{% file src="../.gitbook/assets/pie-chart-schema.json" %}
+{% file src="../../.gitbook/assets/pie-chart-schema.json" %}
 Pie chart schema JSON
 {% endfile %}
 {% endtab %}
@@ -274,9 +274,9 @@ Pie chart schema JSON
 {% tab title="Pie Chart with Selection" %}
 Drop the JSON from the file linked below in the [COB chart editor](https://patterns.boston.gov/web-components/chart-editor.html) to see the chart below:
 
-![\<cob-chart> pie chart with a selection.](<../.gitbook/assets/image (5).png>)
+![\<cob-chart> pie chart with a selection.](<../../.gitbook/assets/image (5).png>)
 
-{% file src="../.gitbook/assets/pie-chart-select-schema.json" %}
+{% file src="../../.gitbook/assets/pie-chart-select-schema.json" %}
 Pie chart with Selection schema JSON
 {% endfile %}
 {% endtab %}
@@ -288,7 +288,7 @@ The height and width on pie charts should pretty much always be set to **200px**
 
 If the height and width are set to more than 200px, the chart **will resize to best fit the container it is loaded in**, but the center of the chart will not change if the screen is resized, so it may get **cut off if the user adjusts their screen size.**
 
-![Pie charts don't perform well if resized, so their height and width should always be 200px. ](<../.gitbook/assets/image (14).png>)
+![Pie charts don't perform well if resized, so their height and width should always be 200px. ](<../../.gitbook/assets/image (14).png>)
 
 #### Good Reads
 
@@ -357,7 +357,7 @@ Vega and VegaLite support a ["fold" transformation](https://vega.github.io/vega-
 
 This can be extremely helpful as Departments may often store and/or conceptualize their data in the "wide" format, while charting libraries and data nerds like data in a "long" format.
 
-![State aid data in "wide format".](<../.gitbook/assets/image (6).png>)
+![State aid data in "wide format".](<../../.gitbook/assets/image (6).png>)
 
 ```javascript
 // The "fold" transform will take an array of columns and reduce them to two.
@@ -375,11 +375,11 @@ This can be extremely helpful as Departments may often store and/or conceptualiz
         },
 ```
 
-![State Aid data in a "long" format.](<../.gitbook/assets/image (4) (1).png>)
+![State Aid data in a "long" format.](<../../.gitbook/assets/image (4) (1).png>)
 
 Now that our data is formatted correctly, we can use the "Type" column to color our chart so we get three lines showing the trends in the different types of State Aid.&#x20;
 
-![](<../.gitbook/assets/image (7).png>)
+![](<../../.gitbook/assets/image (7).png>)
 
 #### Formatting numbers with d3 and calculated fields
 
@@ -411,7 +411,7 @@ When working with large numbers, you can use Vega's [`"calculate"` transform](ht
         },
 ```
 
-![Chart with divided y-axis amounts and full amounts in the tooltip.](../.gitbook/assets/pic.JPG)
+![Chart with divided y-axis amounts and full amounts in the tooltip.](../../.gitbook/assets/pic.JPG)
 
 ### Known limitations
 

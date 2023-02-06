@@ -101,7 +101,7 @@ This feature shows details about a development and its aggregated units. Any new
 
 
 
-![](../../.gitbook/assets/MetroList\_DevelopmentsPage.png)
+![](../../../.gitbook/assets/MetroList\_DevelopmentsPage.png)
 
 ## Submit a new Development listing to DND (Sales Force)
 

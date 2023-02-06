@@ -122,7 +122,7 @@ The stored procedure `SendBrokerMessage` is called in order to route an SMS mess
 
 The police update information on newly towed vehicles every 15 minutes.  The police have a job/process that pushes the data to vSQL01.&#x20;
 
-![](<../../.gitbook/assets/image (29).png>)
+![](<../../../.gitbook/assets/image (29).png>)
 
 The police data is inserted directly into the `Towline_bpd`table by the Police IT department (contacts below). The actual SSIS-ODBC process involves truncating the towline\_bpd table and then bulk inserting a complete set of new records. &#x20;
 

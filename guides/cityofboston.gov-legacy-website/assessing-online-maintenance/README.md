@@ -120,7 +120,7 @@ There are a number of forms which are provided as part of the assessment process
 
 When a constituent requests a form, it is processed through the `bos_assessing` managed endpoint at `boston.gov/assessing-online/` This endpoint adds a barcode (related to the parcelid) and selected tax bill information onto the form.
 
-See [Assessing Form generation notes here](../../guides/drupal-8/drupal-8-micro-services-api-end-points/assessing-forms-endpoint.md), and more detailed notes on [PDF generation here.](../../guides/drupal-8/drupal-8-micro-services-api-end-points/pdf-manager-module.md)
+See [Assessing Form generation notes here](../../drupal-8/drupal-8-micro-services-api-end-points/assessing-forms-endpoint.md), and more detailed notes on [PDF generation here.](../../drupal-8/drupal-8-micro-services-api-end-points/pdf-manager-module.md)
 
 {% hint style="success" %}
 Various assessing forms are made available to consitituents based on a calendar. The calendar is set in the constants fields in `wwwcob\assessing\search\default.asp` (see box above).
