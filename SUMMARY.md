@@ -73,7 +73,6 @@
       * [Config Repository](guides/amazon-web-services/services/access-boston/config-repository.md)
     * [Registry-Certs](guides/amazon-web-services/services/registry-certs/README.md)
       * [Marriage Intention](guides/amazon-web-services/services/registry-certs/marriage-intention.md)
-    * [Ruby](guides/amazon-web-services/services/ruby.md)
   * [Deploy to AWS 2021](guides/amazon-web-services/deploy-to-aws-2021/README.md)
     * [Deploy Tool (cob\_ecrDeploy)](guides/amazon-web-services/deploy-to-aws-2021/deploy-tool-cob\_ecrdeploy.md)
 * [cityofboston.gov (legacy website)](guides/cityofboston.gov-legacy-website/README.md)
@@ -184,6 +183,7 @@
       * [Why do we peer-review pull-requests ?](guides/decommissioned-apps-or-services/drupal-7/deployment-2019/why-do-we-peer-review-pull-requests.md)
   * [Rentsmart](guides/decommissioned-apps-or-services/rentsmart.md)
   * [SnowStats](guides/decommissioned-apps-or-services/snowstats.md)
+  * [Ruby](guides/decommissioned-apps-or-services/ruby.md)
 
 ## Projects
 
