@@ -15,7 +15,7 @@ This app uses the `bos_email` provided services as [described here](../drupal-8-
 1. A contact us form template is maintained (within script tags) in `bos_theme/templates/snippets/contactFormTemplate.html.twig` and is included on **every** boston.gov (Drupal) page.
 2. The patterns library contact form javascript function `start()`(in `scripts/components/contact.js` ) is executed when a boston.gov (Drupal) page loads.  \
    The `start()` function scans the completed page looking for email addresses anywhere in the html being served.  Essentially, it:\
-   \- replaces the default `mailto` directive with a click event listener which will trigger the `handleEmailClick()` function and \
+   \- replaces the default `mailto` directive for each email address with a click event listener which will trigger the `handleEmailClick()` function, and \
    \- attaches a click event listener to the forms' submit button and calls the `handleFormSubmit()`function when the user clicks the submit button on the contact form.
 
 {% hint style="warning" %}
