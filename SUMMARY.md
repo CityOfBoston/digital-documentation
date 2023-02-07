@@ -125,6 +125,8 @@
     * [Cityscore](guides/drupal-8/drupal-8-micro-services-api-end-points/cityscore/README.md)
       * [Knowledge Base](guides/drupal-8/drupal-8-micro-services-api-end-points/cityscore/knowledgebase..md)
     * [PDF Manager Module](guides/drupal-8/drupal-8-micro-services-api-end-points/pdf-manager-module.md)
+    * [PostMark Email Services](guides/drupal-8/drupal-8-micro-services-api-end-points/postmark-email-services.md)
+    * [Upaknee Email List Services](guides/drupal-8/drupal-8-micro-services-api-end-points/upaknee-email-list-services.md)
     * [Public Notices](guides/drupal-8/drupal-8-micro-services-api-end-points/public-notices.md)
     * [Site Alerts](guides/drupal-8/drupal-8-micro-services-api-end-points/site-alerts/README.md)
       * [CodeRed Subscription](guides/drupal-8/drupal-8-micro-services-api-end-points/site-alerts/codered-subscription.md)
@@ -183,7 +185,7 @@
       * [Why do we peer-review pull-requests ?](guides/decommissioned-apps-or-services/drupal-7/deployment-2019/why-do-we-peer-review-pull-requests.md)
   * [Rentsmart](guides/decommissioned-apps-or-services/rentsmart.md)
   * [SnowStats](guides/decommissioned-apps-or-services/snowstats.md)
-  * [Ruby](guides/decommissioned-apps-or-services/ruby.md)
+  * [Ruby](guides/amazon-web-services/services/ruby.md)
 
 ## Projects
 
