@@ -50,46 +50,6 @@ or
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="/rest/email/{server}" baseUrl="" summary="Send an email via PostMark (legacy)" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-response status="200: OK" description="" %}
-```javascript
-{
-    'status': 'success',
-    'response': 'Message sent'
-}
-
-or 
-
-{
-    'status': 'success',
-    'response': 'Message queued'
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="400: Bad Request" description="Catch-all for errors" %}
-```javascript
-{
-    'status': 'error',
-    'response': '{error message}',
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="The authorization header is wrong" %}
-```javascript
-{
-    'status': 'error',
-    'response': 'could not authenticate',
-}
-```
-{% endswagger-response %}
-{% endswagger %}
-
 {% swagger method="post" path="/rest/email_session/{server}" baseUrl="" summary="Send an email via PostMark" %}
 {% swagger-description %}
 
@@ -178,6 +138,46 @@ or
 {
         'status': 'error',
         'response': 'invalid token',
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="post" path="/rest/email/{server}" baseUrl="" summary="[legacy] Send an email via PostMark (legacy)" %}
+{% swagger-description %}
+Use email_session for additional security.
+{% endswagger-description %}
+
+{% swagger-response status="200: OK" description="" %}
+```javascript
+{
+    'status': 'success',
+    'response': 'Message sent'
+}
+
+or 
+
+{
+    'status': 'success',
+    'response': 'Message queued'
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="Catch-all for errors" %}
+```javascript
+{
+    'status': 'error',
+    'response': '{error message}',
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="The authorization header is wrong" %}
+```javascript
+{
+    'status': 'error',
+    'response': 'could not authenticate',
 }
 ```
 {% endswagger-response %}
