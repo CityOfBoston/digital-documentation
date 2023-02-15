@@ -168,6 +168,7 @@
     * [Patterns Library Architecture](guides/libraries-and-tools/fleet-pattern-library/patterns-library-architecture.md)
     * [Icon Library Architecture](guides/libraries-and-tools/fleet-pattern-library/icon-library-architecture.md)
   * [Storybook](guides/libraries-and-tools/storybook.md)
+  * [Rollbar](guides/libraries-and-tools/rollbar.md)
 * [Maintenance](guides/maintenance/README.md)
   * [Boston.gov Weekly Maintenance](guides/maintenance/weekly-maintenance.md)
   * [The Hub (Drupal 7 on AWS)](guides/maintenance/the-hub-drupal-7-on-aws.md)
