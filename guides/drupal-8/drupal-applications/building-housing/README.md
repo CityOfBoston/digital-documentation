@@ -1,8 +1,16 @@
+---
+description: >-
+  Building Housing allows constituents to see a full inventory of projects and
+  parcels managed by the city of Boston.
+---
+
 # Building Housing
 
 ## Description
 
-Building Housing allows constituents to see a full inventory of projects and parcels managed by the city of Boston. It allows them to browse all active Housing, Open Space, Commercial, and To Be Decided (TBD) projects. Click on a project to view goals, timeline, photos, meetings and more. It also allows them to see city owned land and some other land for sale.
+This Drupal App allows residents to browse all active housing, open space, commercial, and to be decided (TBD) projects. It also provides information on city-owned land for sale.
+
+Residents can click search for a specific project and/or view a map of all projects. A drill-down into a project page displays goals, a timeline, photos, meetings and more.&#x20;
 
 ## Features
 
@@ -103,12 +111,13 @@ This feature shows details about a Building Housing Project. Any new data is pul
 7. **Project Timeline** - Altered field to combine other fields
    * docroot/modules/custom/bos\_content/modules/node\_buildinghousing/src/Plugin/Field/FieldFormatter/EntityReferenceTaxonomyTermBSPublicStageFormatter.php
    * docroot/modules/custom/bos\_content/modules/node\_buildinghousing/src/BuildingHousingUtils.php
+   * [More Information](project-timeline.md)
 8. **Project Type** - Custom field in node\_buildinghousing.module
 9. **Contact information** - Custom field in node\_buildinghousing.module
 10. **Email sign-up** - Custom field in node\_buildinghousing.module
 11. **Feedback form** - settings
 
-![](../../../.gitbook/assets/BuildingHousing\_ProjectPage.png)
+![](../../../../.gitbook/assets/BuildingHousing\_ProjectPage.png)
 
 ## Auto-create Community Meeting Events from Sales Force on CRON (5 minutes)
 
