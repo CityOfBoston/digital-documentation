@@ -48,16 +48,16 @@ This synchronization manages project stages, documents and messages to appear on
 {% hint style="info" %}
 There is only ever 1 Website Update (`Website_Update__c`) record per Project (`Project__c`) record in Salesforce.&#x20;
 
-There is a rule in Salesforce to stop multiple records this potentially creates confusion for project stages etc.
+There is a rule in Salesforce to stop multiple records which would potentially create confusion for project stages etc.
 
-**If multiple Website Update records do exist for a Project in Salesforce, then all records will be imported into Drupal, but ONLY the last (when ordered by createdDate) will be used in the timeline.**
+**If multiple Website Update records do exist for a Project in Salesforce, then all records will be imported into Drupal, but ONLY the last (when ordered by createdDate) will be used in the** [**Project Timeline**](project-timeline.md)**.**
 {% endhint %}
 
 <details>
 
 <summary>About Posts (aka Messages, Text Messages)</summary>
 
-MOH Staff sometimes wish to add comments, information or documents (see next section) onto the Projects Timeline in Drupal.&#x20;
+MOH Staff sometimes wish to add comments, information or documents (see _"About Attachments"_ section) onto the Projects Timeline in Drupal.&#x20;
 
 This is done by making Chatter Posts attached to the Website Update (`Website_Update__c)` object in Salesforce.
 
@@ -72,7 +72,7 @@ In Drupal, Posts are saved into an "array" in the `field_bh_text_updates` field 
 
 Custom code handles updating and deleting Posts.
 
-In Salesforce, adding a text-only (`TextPost`) Chatter Post to a Website Update **does not** automatically trigger a sync.  In order to sync a Chatter Post, a MOH Staff member must update the Website Update which then triggers a sync of the Website Update in turn causing the Posts to be scanned and processed.
+In Salesforce, adding a text-only (`TextPost`) Chatter Post to a Website Update **does not** automatically trigger a sync.  In order to sync a Chatter Post, a MOH Staff member must manually save the Website Update record which then triggers a Drupal sync of the Website Update in turn causing the Posts to be scanned and processed.
 
 </details>
 
@@ -80,9 +80,13 @@ In Salesforce, adding a text-only (`TextPost`) Chatter Post to a Website Update 
 
 <summary>About Attachments (aka Documents, Files, Images)</summary>
 
-MOH Staff can add documents to a Website Update (`Website_Update__c)`in Salesforce by uploading an `Attachment` in the Website Update, or by creating a Website Update Chatter Post with an attached document.
+MOH Staff sometimes wish to add documents or images to the project and/or onto the Projects Timeline in Drupal
+
+Documents and images can be added to a Website Update (`Website_Update__c)`in Salesforce by uploading an `Attachment` in the Website Update, or by creating a Website Update Chatter Post with an attached document.
 
 _**Note:** There is a process on the Salesforce side which processes Website Update Chatter Posts and saves any attachments as Salesforce `Attachment` objects._
+
+_**Note:** At the moment, PNG, JPG/JPEG images and PDF documents are properly handled and should open in the users browser.  Other document types will import and link to the timeline, but may not display reliably when clicked by a user in the Project Timeline (in Drupal) ._
 
 In Drupal, Attachments are saved as `file` entities and are linked to both the `bh_project` entity and its associated `bh_project` entity.
 
@@ -138,8 +142,11 @@ This handles legacy TextMessages (now use chatter) and document attachments (now
 
 in `SalesforceBuildingHousingUpdateSubscriber.php`:
 
-* `function pullQueryAlter` changes the SF query to include information
-* `function PullPresave` runs before the SF Query results are applied to Drupal and manually
+* `function pullQueryAlter` changes the SF query to include information on the  Project Updates' Attachments, and the Attachment files.
+* `function PullPresave` runs before the SF Query results are applied to Drupal and manually\
+  \- manages Posts in `bh_update,`and \
+  \- manages Attachments as `file` objects, and\
+  \- links the `file` objects to the `bh_update` and the `bh_project` entities.
 
 </details>
 
@@ -167,8 +174,7 @@ If a Meeting event is updated, or deleted in SF, then the associated record will
 
 in `SalesforceBuildingHousingUpdateSubscriber.php`:
 
-* `function pullQueryAlter` changes the SF query to include information&#x20;
-* `function PullPresave` runs before the SF Query results are applied to Drupal and manually
+* `function PullPresave` runs before the SF Query results are applied to Drupal and manually cleans up URL's and addresses
 
 </details>
 
@@ -186,6 +192,24 @@ in `SalesforceBuildingHousingUpdateSubscriber.php`:
 
 <summary>Custom Sync Code</summary>
 
+None
 
+</details>
+
+### Building Housing - Parcels-Project Assoc
+
+<details>
+
+<summary>Synchronization</summary>
+
+
+
+</details>
+
+<details>
+
+<summary>Custom Sync Code</summary>
+
+None
 
 </details>
