@@ -115,6 +115,7 @@
     * [Building Housing](guides/drupal-8/drupal-applications/building-housing/README.md)
       * [Salesforce Sync](guides/drupal-8/drupal-applications/building-housing/salesforce-sync.md)
       * [Project Timeline](guides/drupal-8/drupal-applications/building-housing/project-timeline.md)
+      * [Drupal Entities](guides/drupal-8/drupal-applications/building-housing/drupal-entities.md)
     * [Contact Form](guides/drupal-8/drupal-applications/contact-form.md)
     * [Election results](guides/drupal-8/drupal-applications/election-results.md)
     * [Google reCAPTCHA](guides/drupal-8/drupal-applications/recaptcha.md)
