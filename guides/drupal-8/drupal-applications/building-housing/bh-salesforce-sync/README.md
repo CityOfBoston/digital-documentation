@@ -5,7 +5,7 @@ description: >-
   or changed in Drupal.
 ---
 
-# Salesforce Sync
+# BH Salesforce Sync
 
 There are 6 synchronizations with Salesforce which run in the following order, every cron run (so every 5 mins)  _The order is important, because Projects must be created before Attachments & Website Updates before Meetings & Chatter postings._
 
@@ -81,7 +81,7 @@ There is only ever 1 Website Update (`Website_Update__c`) record per Project (`P
 
 There is a rule in Salesforce to stop multiple records which would potentially create confusion for project stages etc.
 
-**If multiple Website Update records do exist for a Project in Salesforce, then all records will be imported into Drupal, but ONLY the last (when ordered by createdDate) will be used in the** [**Project Timeline**](project-timeline.md)**.**
+**If multiple Website Update records do exist for a Project in Salesforce, then all records will be imported into Drupal, but ONLY the last (when ordered by createdDate) will be used in the** [**Project Timeline**](../bh-property-webpage/bh-project-timeline.md)**.**
 {% endhint %}
 
 <details>
