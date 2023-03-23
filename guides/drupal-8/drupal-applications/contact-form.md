@@ -7,7 +7,7 @@ description: >-
 # Contact Form
 
 {% hint style="success" %}
-This app uses the `bos_email` provided services as [described here](../drupal-8-micro-services-api-end-points/postmark-email-services.md).
+This app uses the `bos_email` provided services as [described here](../drupal-8-micro-services-api-end-points/postmark-email-services/).
 {% endhint %}
 
 ## Overview
