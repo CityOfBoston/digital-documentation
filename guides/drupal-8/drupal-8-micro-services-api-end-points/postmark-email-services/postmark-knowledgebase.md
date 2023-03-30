@@ -70,8 +70,8 @@ City of Boston use a number of Servers to send Production-originating outbound e
 
 City of Boston have configured **one** Server for Testing where the sending of emails is an important part of the functionality being tested.  Templates can be added to this server as needed. To avoid accidental delivery of emails and possible suspension of the Server for non-delivery etc, this Server should only be used sparingly.
 
-City of Boston use one sandbox for testing outbound emails.  All non-production environments which dont actually need emails to be delivered should use the Test Sandbox rather than the Test Server.
+City of Boston use one sandbox for testing outbound emails.  All non-production environments which don't actually need emails to be delivered should use the Test Sandbox rather than the Test Server.
 
-
+Current Acquia to Postmark server mappings are described in the table in [this JIRA ticket](https://bostondoit.atlassian.net/browse/DIG-1925).
 
 </details>
