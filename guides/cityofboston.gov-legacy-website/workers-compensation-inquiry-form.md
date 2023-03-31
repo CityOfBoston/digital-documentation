@@ -4,7 +4,7 @@ description: >-
   compensation claims filed with the City.
 ---
 
-# Workers' Compensation Inquiry From
+# Workers' Compensation Inquiry Form
 
 {% hint style="info" %}
 **This is a form and data grid C# app hosted on ZPCOBWEB01 (cityofboston.gov IIS server in DMZ).**

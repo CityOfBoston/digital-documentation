@@ -87,7 +87,7 @@
     * [Subscription Search](guides/cityofboston.gov-legacy-website/architecture/subscription-search.md)
     * [Proposed Restructure](guides/cityofboston.gov-legacy-website/architecture/proposed-restructure/README.md)
       * [Backend](guides/cityofboston.gov-legacy-website/architecture/proposed-restructure/backend.md)
-  * [Workers' Compensation Inquiry From](guides/cityofboston.gov-legacy-website/workers-compensation-inquiry-from.md)
+  * [Workers' Compensation Inquiry Form](guides/cityofboston.gov-legacy-website/workers-compensation-inquiry-form.md)
   * [Assessing Online Maintenance](guides/cityofboston.gov-legacy-website/assessing-online-maintenance/README.md)
     * [Database Tables](guides/cityofboston.gov-legacy-website/assessing-online-maintenance/database-tables.md)
 * [Drupal](guides/drupal-8/README.md)
