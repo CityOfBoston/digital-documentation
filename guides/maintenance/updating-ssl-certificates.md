@@ -89,6 +89,12 @@ The hub will now use the new certificate without any further changes required.
 
 The cityofboston.gov certificate is installed on the Imperva load balancer/WAF.  Digital do not need to install the certificate on the IIS server at zpcobweb01.
 
+#### **Video streaming**
+
+The wowza service on ZSTREAMING requires the updated cityofboston.gov certificate to be added/updated in the keystore.&#x20;
+
+See [here](https://www.wowza.com/docs/How-to-request-an-SSL-certificate-from-a-certificate-authority) or [here](https://www.wowza.com/docs/how-to-import-an-existing-ssl-certificate-and-private-key)
+
 ## AWS Issued Certificates
 
 {% hint style="info" %}
