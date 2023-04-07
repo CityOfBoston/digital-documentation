@@ -18,6 +18,8 @@ There are 6 synchronizations with Salesforce which run in the following order, e
 | Building Housing - Parcels               | bh\_parcel                 | Parcel\_\_c                     |
 | Building Housing - Parcels-Project Assoc | bh\_parcel\_project\_assoc | ParcelProject\_Association\_\_c |
 
+Each synchronization process does the following: A Drupal Application runs a Salesforce API object query to identify any records in the SF object which have been deleted or which have their last updated date after a last updated date stored by Drupal for that SF object. The identified records are then added/updated or deleted in Drupal. At the end of the process Drupal updates its last updated date for that object with the latest SF updated date found in the import.  This date is then used as a high-water mark for the next import cycle.&#x20;
+
 ### Building Housing - Projects
 
 This synchronization imports Project records from Salesforce `Project__c` object into Drupals' `bh_project` entity.
