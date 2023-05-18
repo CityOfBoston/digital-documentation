@@ -8,14 +8,14 @@ Storybook lets us:
 
 * quickly build UI components in isolation
 * mock out a component’s different states/variations
-* experiment and test with different props \(i.e. what happens if the text for a label is really, really long?\)
+* experiment and test with different props (i.e. what happens if the text for a label is really, really long?)
 
 It also:
 
 * provides documentation of our components
 * is used by Percy to perform its visual diffs
-* works with Jest to do automatic code snapshot testing \([StoryShots addon](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core)\)
-* can catch simple a11y violations as soon as they occur \([a11y addon](https://github.com/storybooks/storybook/tree/master/addons/a11y)\)
+* works with Jest to do automatic code snapshot testing ([StoryShots addon](https://github.com/storybooks/storybook/tree/master/addons/storyshots/storyshots-core))
+* can catch simple a11y violations as soon as they occur ([a11y addon](https://github.com/storybooks/storybook/tree/master/addons/a11y))
 
 ## Writing Stories
 
@@ -37,10 +37,10 @@ storiesOf('Notifications|Modals/StatusModal', module)
 ```
 {% endcode %}
 
-![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.52.20-pm.png)
+![Result](../../../.gitbook/assets/screen-shot-2019-04-19-at-4.52.20-pm.png)
 
 {% hint style="info" %}
-If you group any Stories \(i.e. Group\|Folder/Story\) in your Storybook, Stories without a defined group will now appear in an automatically-generated "Others" group in the sidebar.
+If you group any Stories (i.e. Group|Folder/Story) in your Storybook, Stories without a defined group will now appear in an automatically-generated "Others" group in the sidebar.
 {% endhint %}
 
 ### The most basic Story
@@ -112,9 +112,9 @@ storiesOf('Form Elements|Inputs/TextInput', module)
   ));
 ```
 
-![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.29.25-pm.png)
+![Result](../../../.gitbook/assets/screen-shot-2019-04-19-at-4.29.25-pm.png)
 
-#### Add/remove options from a &lt;select&gt;
+#### Add/remove options from a \<select>
 
 ```jsx
 import React from 'react';
@@ -134,7 +134,7 @@ storiesOf('Form Elements|SelectDropdown', module)
   ));
 ```
 
-![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.35.59-pm.png)
+![Result](../../../.gitbook/assets/screen-shot-2019-04-19-at-4.35.59-pm.png)
 
 #### Simulate performing an action
 
@@ -180,5 +180,4 @@ storiesOf('ProgressBar', module)
   ));
 ```
 
-![Result](../../.gitbook/assets/screen-shot-2019-04-19-at-4.42.02-pm.png)
-
+![Result](../../../.gitbook/assets/screen-shot-2019-04-19-at-4.42.02-pm.png)

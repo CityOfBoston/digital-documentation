@@ -51,6 +51,6 @@ Arlande StLouis
 
 There are approx 176,000 tax bills (aka Parcels) (aka Inventory Items) (aka Properties)
 
-{% content-ref url="../../../guides/cityofboston.gov-legacy-website/assessing-online-maintenance/" %}
-[assessing-online-maintenance](../../../guides/cityofboston.gov-legacy-website/assessing-online-maintenance/)
+{% content-ref url="../../../guides/legacy-website-cityofboston.gov/legacy-website-maintenance/assessing-online-maintenance/" %}
+[assessing-online-maintenance](../../../guides/legacy-website-cityofboston.gov/legacy-website-maintenance/assessing-online-maintenance/)
 {% endcontent-ref %}

@@ -9,12 +9,12 @@ description: A description of the how and why of our deployment system for the w
 ### Staging
 
 1. Commit your changes locally
-2. Run `git push --force --no-verify origin HEAD:staging/service-name` or `git push --force --no-verify origin HEAD:staging/service-name@variant` to get the changes on GitHub 
+2. Run `git push --force --no-verify origin HEAD:staging/service-name` or `git push --force --no-verify origin HEAD:staging/service-name@variant` to get the changes on GitHub&#x20;
 3. Click “Deploy” when prompted by Shippy-Toe in the `#digital_builds` channel
 
 ### Production
 
-1. Get your PR reviewed and merge it to `develop` \(see: [Git / GitHub](../../standards-and-best-practices/git-and-github/)\)
+1. Get your PR reviewed and merge it to `develop` (see: [Git / GitHub](../../../standards-and-best-practices/git-and-github/))
 2. Travis will do a full test run which, if it succeeds, will notify Shippy-Toe
 3. Click “Deploy” when prompted by Shippy-Toe in the `#digital_builds` channel
 
@@ -37,7 +37,7 @@ If you need to manually re-try a build, or if Slack or just `internal-slack-bot`
 3. In the “Source” section of the dialog that comes up, enter the branch name under “Source version.” This will be either `staging/service-name[@variant]` or `production/service-name`
 4. Click “Start build” at the bottom of the dialog
 
-![Manually starting a build through CodeBuild&#x2019;s web UI](../../.gitbook/assets/screen-shot-2019-05-30-at-2.08.44-pm.png)
+![Manually starting a build through CodeBuild’s web UI](../../../.gitbook/assets/screen-shot-2019-05-30-at-2.08.44-pm.png)
 
 ## Design and Implementation
 
@@ -73,7 +73,7 @@ The DNS for staging is taken care of by a wildcard `*.digital-staging.boston.gov
 * Does not support variants
 * Containers are replicated across 2 AZs for resilience
 
-New `boston.gov` subdomains need to be manually added by the network team. See [New service setup](new-service-setup/).
+New `boston.gov` subdomains need to be manually added by the network team. See [New service setup](../new-service-setup/).
 
 ### Types of Deployment
 
@@ -87,13 +87,12 @@ Docker containers let us trivially deploy many isolated apps on to a few machine
 
 Some of our sites are just static HTML, or are static HTML and static JavaScript. The `public-notices` app is an example of this.
 
-These apps are served from the `cob-digital-apps-prod-static` S3 bucket by an nginx server running in a container in the ECS cluster. This is set up by the [`proxy_pass_service`](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/modules/proxy_pass_service/main.tf) module in digital-terraform.
+These apps are served from the `cob-digital-apps-prod-static` S3 bucket by an nginx server running in a container in the ECS cluster. This is set up by the [`proxy_pass_service`](https://github.com/CityOfBoston/digital-terraform/blob/production/apps/modules/proxy\_pass\_service/main.tf) module in digital-terraform.
 
 ### Shippy-Toe
 
-All of the webapp deployments through the monorepo use our [`internal-slack-bot`](https://github.com/CityOfBoston/digital/tree/develop/services-js/internal-slack-bot) service, which appears as [Shippy-Toe](https://en.wikipedia.org/wiki/Squirrel_Girl#Tippy-Toe) the [squirrel](https://www.quora.com/On-GitHub-what-is-the-significance-of-the-Ship-It-squirrel) in the `#digital_builds` channel.
+All of the webapp deployments through the monorepo use our [`internal-slack-bot`](https://github.com/CityOfBoston/digital/tree/develop/services-js/internal-slack-bot) service, which appears as [Shippy-Toe](https://en.wikipedia.org/wiki/Squirrel\_Girl#Tippy-Toe) the [squirrel](https://www.quora.com/On-GitHub-what-is-the-significance-of-the-Ship-It-squirrel) in the `#digital_builds` channel.
 
 Deployable changes to staging branches or the `develop` branch will trigger prompts in `#digital_builds`. Just press the “Deploy” button to release them.
 
-![An example deployment prompt from Shippy-Toe](../../.gitbook/assets/screen-shot-2019-05-17-at-11.07.38-am.png)
-
+![An example deployment prompt from Shippy-Toe](../../../.gitbook/assets/screen-shot-2019-05-17-at-11.07.38-am.png)

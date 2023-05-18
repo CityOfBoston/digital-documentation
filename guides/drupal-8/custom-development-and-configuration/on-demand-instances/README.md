@@ -12,7 +12,7 @@ These on demand versions of boston.gov are designed to be housed on a near-dupli
 {% tab title="Acquia" %}
 Acquia provide 6 environments to CityOfBoston.
 
-![](../../../.gitbook/assets/acquiacloudenvironments.png)
+![](../../../../.gitbook/assets/acquiacloudenvironments.png)
 
 {% hint style="danger" %}
 The `dev, stage(test) and prod`environments are associated with git branches used in the [continuous-deploy workflow](https://docs.boston.gov/digital/guides/drupal-8/continuous-deployment-process) and **can not** be attached to different branches or repository tags without disrupting and potentially breaking the workflow.

@@ -44,11 +44,11 @@ The AWS access key/secret pair is **not** the same thing as the credentials you 
 ![](../../../.gitbook/assets/screen-shot-2019-05-03-at-11.09.29-am.png)
 
 {% hint style="info" %}
-If you’re adding a secret to the config file, see the [Encrypting service configuration for S3](encrypting-service-configuration.md) guide.
+If you’re adding a secret to the config file, see the [Encrypting service configuration for S3](../making-changes-with-terraform/encrypting-service-configuration.md) guide.
 {% endhint %}
 
 {% hint style="danger" %}
 Don’t forget to always press Refresh before editing! If you mess up and forget, you can usually go back and edit a previous version and re-save it to make it the most recent version, then re-apply your changes.
 {% endhint %}
 
-8\. Once you’ve updated the configuration, you’ll need to restart the ECS tasks for the service, since they only get the latest configuration on startup. See the [Restarting an ECS service guide](restarting-an-ecs-service.md).
+8\. Once you’ve updated the configuration, you’ll need to restart the ECS tasks for the service, since they only get the latest configuration on startup. See the [Restarting an ECS service guide](../making-changes-with-terraform/restarting-an-ecs-service.md).

@@ -1,11 +1,11 @@
 # React/TypeScript
 
-Since we are using Prettier to enforce basic code style, there’s no need to go into detail on those bits of syntax \(e.g. always using semicolons, avoiding extraneous whitespace, etc\).
+Since we are using Prettier to enforce basic code style, there’s no need to go into detail on those bits of syntax (e.g. always using semicolons, avoiding extraneous whitespace, etc).
 
 ## General
 
 * In nearly all cases, there should be only one React component per file. The file name should match the component name.
-* A component’s story file \(or test file\) should be colocated with the component.
+* A component’s story file (or test file) should be colocated with the component.
 
 ## Naming
 
@@ -91,5 +91,4 @@ export default class CustomInput extends React.Component {
 
 ## Emotion
 
-See the [Emotion guide](../../../guides/libraries-and-tools/emotion.md).
-
+See the [Emotion guide](../../../guides/amazon-web-services/libraries-and-tools/emotion.md).

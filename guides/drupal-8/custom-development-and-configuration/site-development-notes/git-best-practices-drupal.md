@@ -48,7 +48,7 @@ Branches attached to environments other than **dev**, **stage** and **production
 
 Sometimes a picture is worth 1,000 words.
 
-![Example Git Branch Usage](<../../../.gitbook/assets/image (27).png>)
+![Example Git Branch Usage](<../../../../.gitbook/assets/image (27).png>)
 
 In the above diagram,&#x20;
 
@@ -81,8 +81,8 @@ In the above diagram,&#x20;
 [continuous-deployment-process.md](../continuous-deployment-process.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../../standards-and-best-practices/git-and-github/" %}
-[git-and-github](../../../standards-and-best-practices/git-and-github/)
+{% content-ref url="../../../../standards-and-best-practices/git-and-github/" %}
+[git-and-github](../../../../standards-and-best-practices/git-and-github/)
 {% endcontent-ref %}
 
 {% content-ref url="../on-demand-instances/" %}

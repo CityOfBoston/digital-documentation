@@ -10,7 +10,7 @@ Developer Setup
 
 The code for the dbconnector is stored in the AWS codecommit [cob\_dbconnector](https://us-east-1.console.aws.amazon.com/codesuite/codecommit/repositories/cob\_dbconnector/browse?region=us-east-1) repository (CoB Digital account).
 
-Typically the code is cloned from that repository onto the developers local machine. In order do this, AWS credentials must set up correctly.  See [these notes](../../../../drupal-8/onboarding/to-be-sorted/development-environment/aws-for-developers.md). The AWS-CLI is required, so it must be installed locally, and credentials must be set in the `~/.aws/credentials` file.
+Typically the code is cloned from that repository onto the developers local machine. In order do this, AWS credentials must set up correctly.  See [these notes](../../../../drupal-8/custom-development-and-configuration/onboarding/to-be-sorted/development-environment/aws-for-developers.md). The AWS-CLI is required, so it must be installed locally, and credentials must be set in the `~/.aws/credentials` file.
 
 This command will clone the `develop` branch of`cob_dbconnector` application into a folder at `~/sources/cob_dbconnector`. The file may be cloned anywhere on the local computer, however this document assumes it will cloned into `~/sources/cob_dbconnector`and if it is not, then commands given here will need to be modified for the new location.
 

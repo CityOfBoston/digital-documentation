@@ -21,7 +21,7 @@ where pm.bundle = 'map'
 
 That will give you an output that looks something like this JSON file (last ran 10/1/20). A "1" in the status field means they are published pages and publicly accessible, a "0" means they are not published and cannot be seen unless the user can log into the website.
 
-{% file src="../.gitbook/assets/maps-on-bostongov.json" %}
+{% file src="../../../.gitbook/assets/maps-on-bostongov.json" %}
 JSON file of maps on boston.gov
 {% endfile %}
 
@@ -67,7 +67,7 @@ To create a new feature service using Google Sheets, you need to:
 
 &#x20;1\. Download it as a csv file:
 
-![Download a google sheet as a csv file.](../.gitbook/assets/screen-shot-2020-10-01-at-10.50.26-am.png)
+![Download a google sheet as a csv file.](../../../.gitbook/assets/screen-shot-2020-10-01-at-10.50.26-am.png)
 
 2\. Re-name the file to whatever it is you want your feature service to  be named.
 
@@ -75,23 +75,23 @@ To create a new feature service using Google Sheets, you need to:
 
 4\. Create a new folder for this feature service.
 
-![Create a new folder under the "Content" page in the ETL Developers BostonMaps log in.](../.gitbook/assets/screen-shot-2020-10-01-at-10.54.58-am.png)
+![Create a new folder under the "Content" page in the ETL Developers BostonMaps log in.](../../../.gitbook/assets/screen-shot-2020-10-01-at-10.54.58-am.png)
 
 5\. Click on "Add Item" the "From Computer":
 
-![Add an item to BostonMaps from your computer.](../.gitbook/assets/screen-shot-2020-10-01-at-10.56.13-am.png)
+![Add an item to BostonMaps from your computer.](../../../.gitbook/assets/screen-shot-2020-10-01-at-10.56.13-am.png)
 
 6\. Choose the file you want to upload. Give it clear tags and confirm that it is using the correct fields for locations. If you are using addresses instead of Latitude and Longitude fields, make sure "ArcGIS World Geocoding Service" is selected.
 
 Below is a screen recording of this process:
 
-{% file src="../.gitbook/assets/adding-csv-file-to-bostonmaps.mov" %}
+{% file src="../../../.gitbook/assets/adding-csv-file-to-bostonmaps.mov" %}
 Add csv file to BostonMaps
 {% endfile %}
 
 7\. Once the feature service is created, you need to make sure the share settings are set to "public". If you don't do this, we won't be able to access the service from boston.gov.
 
-![Update the created feature service to be set to "public".](../.gitbook/assets/share-settings-set-to-public.png)
+![Update the created feature service to be set to "public".](../../../.gitbook/assets/share-settings-set-to-public.png)
 
 ### Use an ArcGIS hosted feature service.
 
@@ -132,7 +132,7 @@ To manually update a map:
 4. Click on "Update Data" then "Overwrite Entire Layer"
 5. Chose the csv file you downloaded are renamed.
 
-{% file src="../.gitbook/assets/overwrite-entire-layer.mov" %}
+{% file src="../../../.gitbook/assets/overwrite-entire-layer.mov" %}
 Manually update hosted feature service
 {% endfile %}
 
@@ -140,11 +140,11 @@ Manually update hosted feature service
 
 Date fields can get read into ArcGIS Online as what I think are unix time stamps (number of seconds since Jan 1, 1970).&#x20;
 
-![Date and time getting shown as a unix timestamp on boston.gov map.](../.gitbook/assets/screen-shot-2020-10-01-at-2.28.38-pm.png)
+![Date and time getting shown as a unix timestamp on boston.gov map.](../../../.gitbook/assets/screen-shot-2020-10-01-at-2.28.38-pm.png)
 
 A hack-y fix for this is the add an additional row to the spreadsheet and just add "test" into the date field for that row. All other fields can be blank.
 
-![Add an extra field to force dates to strings.](../.gitbook/assets/screen-shot-2020-10-01-at-2.32.21-pm.png)
+![Add an extra field to force dates to strings.](../../../.gitbook/assets/screen-shot-2020-10-01-at-2.32.21-pm.png)
 
 This extra field with force the dates to be parsed as strings in ArcMap. After you've updated the map, you can delete the test entry so you don't confuse the stakeholder, just remember to put it in again before you update it next time. Again, this is a hack-y solution! I do not believe this issue exists when lat/longs are used and the connection is automated.
 
@@ -154,9 +154,9 @@ You may have to work with your stakeholders to fudge some addresses to get them 
 
 For example, mapping City hall with the ArcGIS world geocoder can lead to different results depending on the address entered:&#x20;
 
-![Location of 1 City Hall Plz according to Arc World Geocoder.](../.gitbook/assets/screen-shot-2020-10-01-at-3.22.48-pm.png)
+![Location of 1 City Hall Plz according to Arc World Geocoder.](../../../.gitbook/assets/screen-shot-2020-10-01-at-3.22.48-pm.png)
 
-![Location of 1 City Hall Sq according to Arc World Geocoder.](../.gitbook/assets/screen-shot-2020-10-01-at-3.23.34-pm.png)
+![Location of 1 City Hall Sq according to Arc World Geocoder.](../../../.gitbook/assets/screen-shot-2020-10-01-at-3.23.34-pm.png)
 
 ## Functionality Overview of the Maps component
 
@@ -170,29 +170,29 @@ Any map icons need to be publicly accessible somewhere on the internet for us to
 
 We can cluster points on maps, we use leaflet's marker clustering functionality to do this. This is important to note, because this is one of the **only** ways to view points that are on top of each other. The other way is to leverage filtering, discussed below.&#x20;
 
-![Point clustering on the public restrooms map.](../.gitbook/assets/screen-shot-2020-10-01-at-3.41.35-pm.png)
+![Point clustering on the public restrooms map.](../../../.gitbook/assets/screen-shot-2020-10-01-at-3.41.35-pm.png)
 
 If you have a dataset or are mapping two datasets where points over lap, you need to move to location of one of the points if you don't want to use clustering to display them both. We **do not** have the functionality to click through multiple pop-ups like ArcGIS Online maps do.&#x20;
 
 For example, in the 2020 early voting map, we display both ballot dropboxes and early voting locations on the same map as two separate layers. There is a ballot dropbox at City Hall as well as an early voting location. The were originally sitting on top of each other until we updated the address for the early voting location.
 
-![Early voting and dropbox location at the same location, but adjusted so they don't cover each other.](../.gitbook/assets/screen-shot-2020-10-01-at-3.52.20-pm.png)
+![Early voting and dropbox location at the same location, but adjusted so they don't cover each other.](../../../.gitbook/assets/screen-shot-2020-10-01-at-3.52.20-pm.png)
 
 ### Polygons and Lines
 
 Polygons and lines can only have one color. For polygons the color will be made transparent and fill the space. The outline of the shape will be the true color.
 
-![Transparent polygons on Drupal maps component.](../.gitbook/assets/screen-shot-2020-10-01-at-4.12.41-pm.png)
+![Transparent polygons on Drupal maps component.](../../../.gitbook/assets/screen-shot-2020-10-01-at-4.12.41-pm.png)
 
 For lines, the line will be that color but as the user zooms in, it will get transparent so that street names are visible.&#x20;
 
-![Lines turn transparent when you zoom in.](../.gitbook/assets/screen-shot-2020-10-01-at-4.13.36-pm.png)
+![Lines turn transparent when you zoom in.](../../../.gitbook/assets/screen-shot-2020-10-01-at-4.13.36-pm.png)
 
 #### Hover Color
 
 Polygons and lines can be set to change color when a user hovers over them:&#x20;
 
-![Map with a hover color set on layer.](../.gitbook/assets/screen-shot-2020-10-02-at-1.40.51-pm.png)
+![Map with a hover color set on layer.](../../../.gitbook/assets/screen-shot-2020-10-02-at-1.40.51-pm.png)
 
 ### Color by attribute does not exist for these maps
 
@@ -204,7 +204,7 @@ The layers on this maps can be set up to be filtered by the user. Each filter wi
 
 For example, the food trucks map has multiple trucks in the same location various days of the week. We use filters with a default value of the current day to determine what trucks to show when the map is opened:&#x20;
 
-![Filters can be set to a default value. ](../.gitbook/assets/screen-shot-2020-10-02-at-2.01.43-pm.png)
+![Filters can be set to a default value. ](../../../.gitbook/assets/screen-shot-2020-10-02-at-2.01.43-pm.png)
 
 These filters can also be aware of each other. For example, the "Truck" filter above will only show trucks that show up on Fridays now that the Day has been set to that.
 
