@@ -243,7 +243,7 @@ DIG-1156 - Unmask Password - Forgot Password Screen
 
 * Added a show password feature to the Forgot Password screen on Access Boston Portal. This allows users to click on the word 'Show' to unmask the password they are typing to make sure it is correct
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (10).png>)
 
 
 
@@ -273,7 +273,7 @@ DIG - 1333 Adjust text in filtered dropdown for primary elections
 
 ### Unofficial elections results are mobile-friendly on Boston.gov
 
-#### ****[**Epic: DIG- 943**](https://bostondoit.atlassian.net/browse/DIG-943) ****&#x20;
+#### [**Epic: DIG- 943**](https://bostondoit.atlassian.net/browse/DIG-943)&#x20;
 
 **Background:** The [unofficial election results website](https://www.boston.gov/departments/elections/unofficial-election-results) gets updated with new data each election that reflects the current race. The data for the current page is currently being iframed into a website on [Boston.gov](http://boston.gov/). The data from the iframe is coming from the old [cityofboston.gov](http://cityofboston.gov/) website. It does not have City of Boston branding and it isn’t mobile-friendly.
 
@@ -407,9 +407,9 @@ DIG-31 Custom 500 Error&#x20;
 \
 Text: _Sorry! Looks like something went wrong on our end. We're currently working to fix the issue. You can try re-loading the page in a few minutes, or email_ [_feedback@boston.gov_](mailto:feedback@boston.gov) _with any questions or concerns._
 
-__![](<../.gitbook/assets/image (1).png>)__
+![](<../.gitbook/assets/image (1).png>)
 
-__
+
 
 DIG-853 Re-integrates Percy&#x20;
 
@@ -435,9 +435,9 @@ DIG-542(Metrolist) Calendar events do not show physical location
 DIG-738(Metrolist) Stop re-submission of form once submitted
 
 * Update to add language to the Metrolist listing form informing users the unique link they receive to submit a listing should only be used once. The following language has been added to these screen/emails
-  * Listing Form Request - ** **_**Important: If you need to submit listings in multiple properties, please request a new form for each one.**_
+  * Listing Form Request - _**Important: If you need to submit listings in multiple properties, please request a new form for each one.**_
   * Email communication -_**Important: Do not reuse link. If you need to submit listings for additional properties, please request a new form**_
-  * Listing form request on screen notification- _**Important: If you need to submit multiple listings, please request a new form for each building.** _&#x20;
+  * Listing form request on screen notification- _**Important: If you need to submit multiple listings, please request a new form for each building.**_&#x20;
 
 DIG-776(Metrolist) Submission Confirmation Email
 

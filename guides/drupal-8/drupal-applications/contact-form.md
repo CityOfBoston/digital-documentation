@@ -26,7 +26,7 @@ It should be extended to also run when ajax events return data to the page (sinc
 {% endhint %}
 
 3. When an email address is clicked on the page, `handleEmailClick()`\
-   ``- copies the template form from the script tags, \
+   \- copies the template form from the script tags, \
    \- inserts the correct email recipient to a hidden field, \
    \- inserts all this onto the page and displays the contact us form, and\
    \- in the background makes an ajax request to `/rest/email_token/create,` generating and saving a unique "session" token in the form.
@@ -49,7 +49,7 @@ Emails which fail to send can be viewed in the email\_contactform queue.
 
 {% hint style="danger" %}
 **This requirement could be obselete, and a requirement from earler versions of the form.**  \
-****_Can consider removing this "feature" and reverting to having the sender be the email address provided by constituent.  That way the cob employee/recipient can simply reply to the email._
+_Can consider removing this "feature" and reverting to having the sender be the email address provided by constituent.  That way the cob employee/recipient can simply reply to the email._
 {% endhint %}
 
 Emails are sent from an email address that is generated for each email sent. The format of the email address is:

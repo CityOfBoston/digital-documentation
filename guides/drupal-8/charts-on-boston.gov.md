@@ -357,7 +357,11 @@ Vega and VegaLite support a ["fold" transformation](https://vega.github.io/vega-
 
 This can be extremely helpful as Departments may often store and/or conceptualize their data in the "wide" format, while charting libraries and data nerds like data in a "long" format.
 
-![State aid data in "wide format".](<../../.gitbook/assets/image (6).png>)
+<div align="center">
+
+<img src="../../.gitbook/assets/image (6).png" alt="State aid data in &#x22;wide format&#x22;.">
+
+</div>
 
 ```javascript
 // The "fold" transform will take an array of columns and reduce them to two.

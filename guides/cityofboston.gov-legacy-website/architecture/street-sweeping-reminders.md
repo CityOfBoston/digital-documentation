@@ -152,7 +152,7 @@ If the logic determines that a recipient should receive an email, and a matching
 
 `dictCancellations.Add` All sweeping on this day is cancelled (i.e. both daytime and overnight). Content Editors should add to this dictionary (i.e. list of cancellations):\
 1\. For planned city sweeping holidays (e.g. Christmas).  **Adding to this dictionary is a scheduled task to be undertaken every year at the start of November for the following calendar year.**\
-****2. On notification from Public Works Dept when one-off, unplanned exceptional circumstances (e.g. snow storms) occur.&#x20;
+2\. On notification from Public Works Dept when one-off, unplanned exceptional circumstances (e.g. snow storms) occur.&#x20;
 
 `dictOvernightCancellations.Add` Only overnight sweeping is cancelled.  Content Editors should add to this dictionary (i.e. list of cancellations) when notified by Public Works Dept for one-off, unplanned exceptional circumstances (e.g. snow storms).\
 _Note: In some cases cancellations are decided late in the evening, after emails have been sent._

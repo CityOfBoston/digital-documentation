@@ -27,9 +27,9 @@ You’ll need to update our Terraform configuration for the new service. In the 
 
 If it’s a while until the public launch, you may want to comment out the production parts of the service.
 
-Besides adding the service, you’ll need to modify `terraform.tvars` to add variants to the `service_variants` variable \(even if it’s just to put `default` in there\) and add lines into `staging_listener_rule_priorities` for each variant. If you’re setting up production now, you’ll need a `prod_listener_rule_priorities` entry as well.
+Besides adding the service, you’ll need to modify `terraform.tvars` to add variants to the `service_variants` variable (even if it’s just to put `default` in there) and add lines into `staging_listener_rule_priorities` for each variant. If you’re setting up production now, you’ll need a `prod_listener_rule_priorities` entry as well.
 
-See the [Making changes with Terraform guide](../making-changes-with-terraform.md) for more information about opening a PR and using Atlantis.
+See the [Making changes with Terraform guide](../making-changes-with-terraform/) for more information about opening a PR and using Atlantis.
 
 ## Initial deploys
 
@@ -50,27 +50,26 @@ $ git push origin -u --no-verify
 
 If you’re using variants, use the branch name `staging/app-name@variant`instead.
 
-Shippy-Toe should chime in on \#digital\_builds and offer to deploy to staging. Tell her to do it! She’ll kick off a CodeBuild process to do the deployment.
+Shippy-Toe should chime in on #digital\_builds and offer to deploy to staging. Tell her to do it! She’ll kick off a CodeBuild process to do the deployment.
 
-If you’re staging an S3-based service \(like Public Notices\), you will be able to see it at `https://apps.digital-staging.boston.gov/app-name`.
+If you’re staging an S3-based service (like Public Notices), you will be able to see it at `https://apps.digital-staging.boston.gov/app-name`.
 
-If your service is container-based, you’ll need to update the ECS service to increase the **Number of tasks** from 0 to 1. Do this via the ECS web console. Once you’re done, your app will be available at `app-name.digital-staging.boston.gov` or `app-name-variant.digital-staging.boston.gov`. \(There’s no additional DNS setup needed.\)
+If your service is container-based, you’ll need to update the ECS service to increase the **Number of tasks** from 0 to 1. Do this via the ECS web console. Once you’re done, your app will be available at `app-name.digital-staging.boston.gov` or `app-name-variant.digital-staging.boston.gov`. (There’s no additional DNS setup needed.)
 
 ### Production
 
 When you’re ready for production, don’t forget to create configuration files in the prod config bucket. While you hopefully won’t have the same secrets between staging and prod, if you do you’ll need to re-encrypt them because the staging and production services have separate encryption keys.
 
-Shippy-Toe prompts you to do a production deploy \(in the \#digital\_builds channel in slack\) when a Travis run completes on `develop`. Shippy-Toe works out what requires deployment by checking for changes to files in a service’s dependencies that are out-of-sync with that service’s `production/*` branch.
+Shippy-Toe prompts you to do a production deploy (in the #digital\_builds channel in slack) when a Travis run completes on `develop`. Shippy-Toe works out what requires deployment by checking for changes to files in a service’s dependencies that are out-of-sync with that service’s `production/*` branch.
 
 {% hint style="success" %}
 **First time deploy for a new app/service.**
 
-The easiest way to do the very first production push for a service is to make a `production/app-name` branch off of `develop` before you make your last set of changes to the app. _**Make sure you push it up to GitHub and merge to `develop`.**_  \(it wont deploy your app yet\).
+The easiest way to do the very first production push for a service is to make a `production/app-name` branch off of `develop` before you make your last set of changes to the app. _**Make sure you push it up to GitHub and merge to `develop`.**_  (it wont deploy your app yet).
 
-Make your last PR for the service in a new branch \(off the `develop`branch\) and once it is approved, merge it to `develop.`Once Travis passes, Shippy-Toe will prompt you for a production push \(deploy\) for your app/service.  This will deploy your app to AWS.
+Make your last PR for the service in a new branch (off the `develop`branch) and once it is approved, merge it to `develop.`Once Travis passes, Shippy-Toe will prompt you for a production push (deploy) for your app/service.  This will deploy your app to AWS.
 {% endhint %}
 
 As with staging, you’ll need to increase the number of tasks from 0. For most web services, you’ll bring it up to 2, one for each availability zone.
 
 If you’re hosting your app at a subdirectory of `apps.boston.gov`, it will be available there. If it’s on its own subdomain, you’ll need to get a DNS change done to point at the ELB.
-

@@ -111,7 +111,7 @@ For example, tasks can be created to capture initial development work and accept
 
 Draft Tasks can be converted to Issues. Issues need to be associated with a repository. Issues can be assigned to multiple projects and people. Issues can be moved between swimlanes or given a status. Project managers can use issues to track the work on their project done by anyone on the team.
 
-All issues should be assigned a project. If there is not project associated with a specific issue it can be assigned to the following project in [_GitHub: Boston.gov - Non Project Issues_](https://github.com/orgs/CityOfBoston/projects/54)__
+All issues should be assigned a project. If there is not project associated with a specific issue it can be assigned to the following project in [_GitHub: Boston.gov - Non Project Issues_](https://github.com/orgs/CityOfBoston/projects/54)
 
 Project managers should create a high level issue(s) to represent project work, which may have its own project board, and link it to the digital project board so the team can track ongoing projects.
 
@@ -175,7 +175,7 @@ We have created a project intake form that people can fill out if they are inter
 
 If you want to add this to your email signature here is some suggested phrasing:
 
-_Have an idea for a digital project or application?_ [_Submit your ideas here!_](https://docs.google.com/forms/d/1avlYGpadvhVNwU9O7Y8-5i8bOY\_0Y6UGBVPSwwA0RUg/edit)__
+_Have an idea for a digital project or application?_ [_Submit your ideas here!_](https://docs.google.com/forms/d/1avlYGpadvhVNwU9O7Y8-5i8bOY\_0Y6UGBVPSwwA0RUg/edit)
 
 ## Enhancement Requests/Bug Reporting
 

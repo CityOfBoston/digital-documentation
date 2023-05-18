@@ -18,7 +18,7 @@ Follow these steps:
 
 1. Login to the boston.gov environment (.i.e dev, stage, prod etc.) at xxx.boston.gov/user/login
 2. Access the simplesaml config system at xxx.boston.gov/simplesaml
-3. (in the SAML config system) On the _Welcome_ tab, login using the _**Login as administrator**_** ** link in the top right of the welcome box.  The password is available in the `simplesamlphp/config/config.php` file in the private repository.
+3. (in the SAML config system) On the _Welcome_ tab, login using the _**Login as administrator**_ link in the top right of the welcome box.  The password is available in the `simplesamlphp/config/config.php` file in the private repository.
 4. (in the SAML config system) Click on the _Federation_  tab and then at the bottom of the page click on XML to _**SimpleSAMLphp metadata converter.**_ On the page that opens, either paste in the metadata file contents, or select the metadata xml file you have been sent, and click the **Parse** button.
 5. In the _Converted metadata_ section of the page, copy the entire contents of the **saml20-idp-remote** converted meta data.
 6. Finally, The copied content needs to be added to the `saml20-idp-remote.php` file which is found in `simplesamlphp/metadata/saml20-idp-remote.php` folder in the **boston.gov-d8-private** repository in GitHub.  The file defines a `$metadata` PHP std\_object with a node for each environment (see box below).  Select the correct environment node and paste the metadata as follows: &#x20;

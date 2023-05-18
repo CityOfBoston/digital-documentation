@@ -62,7 +62,7 @@ Text subscription is completed by adding a record to the `towing_emails` table, 
 {% hint style="danger" %}
 **There is a "No Provider' option, which should ideally be removed.**
 
-**Provider email to text gateways can be found here:** [**https://avtech.com/articles/138/list-of-email-to-sms-addresses/**](https://avtech.com/articles/138/list-of-email-to-sms-addresses/)****
+**Provider email to text gateways can be found here:** [**https://avtech.com/articles/138/list-of-email-to-sms-addresses/**](https://avtech.com/articles/138/list-of-email-to-sms-addresses/)
 {% endhint %}
 
 **Note:** We do have the option to send SMS via Twilio using a stored procedure in the `twiSQL` database, however this incurs an additional cost.  As at 2021-11-17, this process does work, and is used by the SMS block in the `sp_process_towing_messages` stored procedure.  To be certain that SMS messages are delivered, it could be that users who select 'No Provider' are added to the `towing_sms` table.
@@ -184,7 +184,7 @@ The majority of text messages are sent via email-to-sms (see box-out above).
 
 * The process is managed within `sp_process_towing_messages` which is executed every 5 minutes by the SQLAgent Job `TowingSendMail`. &#x20;
 * Voice calls identified in the stored procedure are queued into the table `Towing_twilio_Queue` in the `Towing` database.
-* Every 10 minutes, a scheduled task `Towing_Twilio_Queue` runs <mark style="color:red;">****</mark> on `zpcobweb10` (10.241.250.22). The task runs a script `c:\installs\scripts\curl_towing_queue_process.bat` .
+* Every 10 minutes, a scheduled task `Towing_Twilio_Queue` runs on `zpcobweb10` (10.241.250.22). The task runs a script `c:\installs\scripts\curl_towing_queue_process.bat` .
 * The script simply calls `twilio-alert-place.aspx.` \
   `curl.exe -connect-timeout 300 http://zpcobweb01.web.cob/towing/alerts/twilio/twilio-alert-place.aspx`
 * `Twilio-alert-place.aspx` app/script calls a stored procedure `Towing.dbo.spTowingTwilioQueueRead` which fetches queued voice messages from the `towed_phone_alerts_queued` table.  For each queued message the endpoint payload and creates a Twilio object and initiates the outbound call (via the Twilio REST API). The app/script also removes the record from the queue (`towed_phone_alerts_queued`) using the stored procedure `towing.dbo.spTowingTwilioQueueDelete`.

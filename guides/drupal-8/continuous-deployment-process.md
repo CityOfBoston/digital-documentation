@@ -41,7 +41,7 @@ The `doit` scripts serve to prepare the cloned repository prior to running `land
 #### Local Build Steps.
 
 **Lando**\
-****`lando start` causes the following processes to be run from lando.yml
+`lando start` causes the following processes to be run from lando.yml
 
 1. 3 standard Linux (ubuntu) containers are created.  One optimized as an appserver with Apache, one optimized as a database server with MySQL and one with Node. &#x20;
 2. Install the required/dependent packages and tools -including Phing and Composer.&#x20;

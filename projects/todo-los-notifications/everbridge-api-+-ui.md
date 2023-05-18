@@ -16,11 +16,11 @@ For historical information on emergency alert sign ups see here: [https://app.gi
 2. Development: d8-dev.boston.gov/alerts > [https://d8-dev.boston.gov/departments/711/city-boston-alerts-and-notifications](https://d8-dev.boston.gov/departments/711/city-boston-alerts-and-notifications) (connected to the test API)
 
 **City of Boston organization ID’s are:**\
-****ALERTBoston: 892807736721548 \
+ALERTBoston: 892807736721548 \
 Alert Boston API Testing: 454102597238915
 
 **Contact at Everbridge:**\
-****Chris Rigby \
+Chris Rigby \
 Implementation Team Lead \
 Office: 781-819-5161 \
 Cell: 781-771-4590 \
@@ -42,7 +42,7 @@ chris.rigby@everbridge.com
 * Can geolocate, but would need full address
 
 **Scope for Version 1:**\
-****1. Swap Everbridge API in for CodeRed API on boston.gov (there is an emergency notifications component. Determine if email or phone is unique identifier (still TBD).\
+1\. Swap Everbridge API in for CodeRed API on boston.gov (there is an emergency notifications component. Determine if email or phone is unique identifier (still TBD).\
 2\. Add additional address fields so that address is address line (street number and name), city, state, and zip code (rather than just zip code)\
 3\. Add additional languages to drop down, so that the dropdown includes 10 languages, which are and should be in this order: English, Español, Kreyòl ayisyen, 中文, Tiếng Việt, Kriolu, Русский, عربية#, Português, Français, Af Soomaali
 

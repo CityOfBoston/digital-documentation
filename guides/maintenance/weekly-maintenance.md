@@ -84,8 +84,8 @@ If you see this message:&#x20;
 `In CopyRequest.php line 91:`
 
 `fopen(/app/docroot/sites/default/default.services.yml): failed to open stream: Permission denied`\
-``\
-``Then you need to change the permissions on your local (i.e. on your host not in the docker container)`docroot/sites/default`folder to 777, and then rerun the composer command.
+\
+Then you need to change the permissions on your local (i.e. on your host not in the docker container)`docroot/sites/default`folder to 777, and then rerun the composer command.
 {% endhint %}
 
 After the update is completed, update the Drupal caches (so that the Drupal registries are updated).
@@ -116,7 +116,7 @@ _again, take care to check these over, changes to settings files (in particular)
 {% hint style="info" %}
 **COMPOSER Command Overview:**
 
-**composer update:** \[[notes](https://getcomposer.org/doc/03-cli.md#install-i)] **** reads the `composer.json` file, works out the package versions which meet all rules (and recursive dependencies), compares versions with the existing packages in the local environment and downloads the packages _and dependencies_ which need updating.  \
+**composer update:** \[[notes](https://getcomposer.org/doc/03-cli.md#install-i)] reads the `composer.json` file, works out the package versions which meet all rules (and recursive dependencies), compares versions with the existing packages in the local environment and downloads the packages _and dependencies_ which need updating.  \
 Finally, it updates `composer.lock`with the exact versions of each package that are currently installed.
 
 **composer install:** \[[notes](https://getcomposer.org/doc/03-cli.md#update-u)] reads the `composer.lock` file, compares to existing packages and downloads those packages _and dependencies_ which need updating. \

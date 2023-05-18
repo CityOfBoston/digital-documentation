@@ -8,5 +8,5 @@ description: >-
 
 ## Resources
 
-**SAML Libraries:** [simplesaml.php](http://www.simplesamlphp.org/)****\
+**SAML Libraries:** [simplesaml.php](http://www.simplesamlphp.org/)\
 **Drupal module**: [simplesamlphp\_auth](https://www.drupal.org/project/simplesamlphp\_auth)&#x20;

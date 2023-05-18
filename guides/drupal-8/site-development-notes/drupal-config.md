@@ -113,39 +113,39 @@ Drupal is an alternative CLI and is installed and enabled on the CoB Drupal back
 **`config:edit (ced,cdit)`** \
 &#x20;`Change a configuration object with a text editor.`
 
-<mark style="color:blue;">**`config:export (ce)`**</mark><mark style="color:blue;">` `</mark><mark style="color:blue;">``</mark> \
+<mark style="color:blue;">**`config:export (ce)`**</mark> \
 &#x20;<mark style="color:blue;">`Export current application configuration.`</mark>&#x20;
 
-**`config:export:content:type (cect)`**` ``` \
+**`config:export:content:type (cect)`** \
 &#x20;`Export a specific content type and their fields.`&#x20;
 
-**`config:export:entity (cee)`**` ``` \
+**`config:export:entity (cee)`** \
 &#x20;`Export a specific config entity and their fields.`&#x20;
 
-_**`config:export:single (ces)`**` ```_ \
+_**`config:export:single (ces)`**_ \
 &#x20;_`Export a single configuration or a list of configurations as yml file(s).`_&#x20;
 
-**`config:export:view (cev)`**` ``` \
+**`config:export:view (cev)`** \
 &#x20;`Export a view in YAML format inside a provided module to reuse in another website.`&#x20;
 
-<mark style="color:blue;">**`config:import (ci)`**</mark><mark style="color:blue;">` `</mark><mark style="color:blue;">``</mark> \
+<mark style="color:blue;">**`config:import (ci)`**</mark> \
 &#x20;<mark style="color:blue;">`Import configuration to current application.`</mark>&#x20;
 
-_**`config:import:single (cis)`**` ```_ \
-&#x20;_`Import a single configuration or a list of configurations.`_` ```&#x20;
+_**`config:import:single (cis)`**_ \
+&#x20;_`Import a single configuration or a list of configurations.`_&#x20;
 
-**`config:override (co)`**` ``` \
+**`config:override (co)`** \
 &#x20;`Override config value in active configuration.`&#x20;
 
-**`config:validate (cv)`**` ``` \
+**`config:validate (cv)`** \
 &#x20;`Validate a drupal config against its schema`
 
-``
+
 
 **These are unique to the drupal CLI, rarely needed but can be useful for manually creating configs for cusom modules.**
 
 <mark style="color:green;">**`generate:entity:config (gec)`**</mark> \
-&#x20;<mark style="color:green;"></mark> <mark style="color:green;"></mark><mark style="color:green;">`Generate a new config entity`</mark>&#x20;
+&#x20;<mark style="color:green;">`Generate a new config entity`</mark>&#x20;
 
 <mark style="color:green;">**`generate:form:config (gfc)`**</mark> \
 &#x20;<mark style="color:green;">`Generate a new "ConfigFormBase"`</mark>&#x20;
@@ -301,14 +301,14 @@ This module provides **configuration separation**. Configurations can be split i
 **Drush Command Summary:**
 
 **`config-split:activate`** \
-&#x20;**** `Activate a config split.`\
-``**`config-split:deactivate`** \
-**``**` ``Deactivate a config split.`\
-``**`config-split:export`** \
+&#x20;`Activate a config split.`\
+**`config-split:deactivate`** \
+` ``Deactivate a config split.`\
+**`config-split:export`** \
 &#x20;`Export only split configuration to a directory.`\
-``**`config-split:import`** \
+**`config-split:import`** \
 &#x20;`Import only config from a split.`\
-``**`config-split:status-override (csso)`** \
+**`config-split:status-override (csso)`** \
 &#x20;`Override the status of a split via state.`
 
 Config split can be used to create a number of different configuration sets which can be applied on different environments and/or at different times.  This is an ideal way to control which modules are installed on which environments, and even to provide environment-centric settings (for settings controlled via config).

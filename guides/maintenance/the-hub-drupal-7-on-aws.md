@@ -4,7 +4,7 @@ Weekly maintenance for the Hub is slightly different because it is a legacy Drup
 
 Login to [https://hub.boston.gov](https://hub.boston.gov) as an administrator and then open the [Update Status](https://hub.boston.gov/admin/reports/updates/update) page in the Hub UI.  Check the list of available updates - look specifically for **security updates** (usually highlighted in red).\
 _**If there are updates you want to perform then:**_\
-_****_Switch to your _**local build**_  (https://hub.lndo.site), and ensure you have the latest `develop` branch checked out and that it is up to date with the remote (AWS CodeCommit) repo.  Verify that your local version is requiring the same updates are required on the [local Update Status ](https://hub.lndo.site/admin/reports/updates/update)page (if not then check the branch and possibly sync the local DB with a version from Prod or Dev).
+Switch to your _**local build**_  (https://hub.lndo.site), and ensure you have the latest `develop` branch checked out and that it is up to date with the remote (AWS CodeCommit) repo.  Verify that your local version is requiring the same updates are required on the [local Update Status ](https://hub.lndo.site/admin/reports/updates/update)page (if not then check the branch and possibly sync the local DB with a version from Prod or Dev).
 
 {% hint style="warning" %}
 If any updates or changes need to be made, then backup your local database before starting, it may save time and heartache later !!!

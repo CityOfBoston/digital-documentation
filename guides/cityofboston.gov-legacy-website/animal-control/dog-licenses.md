@@ -20,13 +20,13 @@ Improve the existing business process(es) associated with applying for new dog l
 
 **Tracking**: Essentially the [cityofboston.gov](http://cityofboston.gov/) sends Animal Care and Control an email, and staff manually enter information from that email into [Chameleon](https://chameleonbeach.com/).&#x20;
 
-Chameleon is a software used by Animal Care and Control to track the licenses - all info that is submitted. __ Theoretically shares information nationally with any groups that also use the software and/or with major sites for lost pets, etc.
+Chameleon is a software used by Animal Care and Control to track the licenses - all info that is submitted. Theoretically shares information nationally with any groups that also use the software and/or with major sites for lost pets, etc.
 
 **Form Submission**: Custom asp.net form app.
 
 **Payments**: Connects to Invoicecloud payments API - payment data sent via invoicecloud.
 
-#### Desired process: [**https://drive.google.com/open?id=0B\_0Rju6iKR0aWXl0SzI1bUJ4LWc**](https://drive.google.com/open?id=0B\_0Rju6iKR0aWXl0SzI1bUJ4LWc)****
+#### Desired process: [**https://drive.google.com/open?id=0B\_0Rju6iKR0aWXl0SzI1bUJ4LWc**](https://drive.google.com/open?id=0B\_0Rju6iKR0aWXl0SzI1bUJ4LWc)
 
 ### Project History
 

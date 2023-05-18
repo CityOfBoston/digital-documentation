@@ -1877,4 +1877,3 @@ Use the `wc` command to count the number of lines in a file, to verify that all 
 If the numbers are not the same, you have a problem ... !
 {% endhint %}
 
-``

@@ -48,7 +48,7 @@ description: >-
 * A link should always be a link and not a placeholder
 * Buttons&#x20;
 
-****
+
 
 **Miscellaneous**
 
@@ -60,7 +60,7 @@ Potential ideas we found/brainstormed while writing this:&#x20;
 
 _Tools/things Reilly found via Googling:_&#x20;
 
-* __[https://chrome.google.com/webstore/detail/talkie-text-to-speech-man/enfbcfmmdpdminapkflljhbfeejjhjjk?hl=en](https://chrome.google.com/webstore/detail/talkie-text-to-speech-man/enfbcfmmdpdminapkflljhbfeejjhjjk?hl=en)
+* [https://chrome.google.com/webstore/detail/talkie-text-to-speech-man/enfbcfmmdpdminapkflljhbfeejjhjjk?hl=en](https://chrome.google.com/webstore/detail/talkie-text-to-speech-man/enfbcfmmdpdminapkflljhbfeejjhjjk?hl=en)
 * [https://ai.googleblog.com/2019/09/large-scale-multilingual-speech.html](https://ai.googleblog.com/2019/09/large-scale-multilingual-speech.html)
 * [https://github.com/Tomiinek/Multilingual\_Text\_to\_Speech](https://github.com/Tomiinek/Multilingual\_Text\_to\_Speech)
 * https://www.techradar.com/best/best-text-to-speech-software

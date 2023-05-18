@@ -1,7 +1,7 @@
 # Contacts at Github
 
 **State and Local Gitub Reps/Team/Sales Development Team @ GitHub**\
-****(don't know much more)
+(don't know much more)
 
 Tanner Hogan, [githogan@github.com](mailto:githogan@github.com)
 

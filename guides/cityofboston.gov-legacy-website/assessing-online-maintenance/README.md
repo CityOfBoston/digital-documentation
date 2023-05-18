@@ -95,7 +95,7 @@ The constant for `AssessingSearchDB` in (line 56 of) `default.asp/default20xx.as
 **Make changes to dates and tax rates for next year.**
 
 Using data provided by the Assessing Team, update the constants in `default20xx.asp.` \
-``_Refer to the notes in the default.asp page next to each constant for guidance._
+_Refer to the notes in the default.asp page next to each constant for guidance._
 
 {% hint style="success" %}
 Testing/verification of the new data can now be completed at:\

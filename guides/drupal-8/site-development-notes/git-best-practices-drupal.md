@@ -18,10 +18,10 @@ The `develop` branch is bound to the Acquia **dev** environment, and the `master
 * Updated code should be committed to the locally checked out copy of the `working branch`&#x20;
   * Updating the local `working branch` will update the local containerized website for testing.
 * Periodically, the local `working branch` should be pushed to the remote `working branch` in GitHub_._&#x20;
-  * Updating the `working branch` in GitHub will not trigger any deploys or update any website. __&#x20;
-* To start the deploy to the **dev** environment,  a PR is created in GitHub to merge the `working branch` in GitHub into __ the `develop` branch in GitHub.&#x20;
+  * Updating the `working branch` in GitHub will not trigger any deploys or update any website. &#x20;
+* To start the deploy to the **dev** environment,  a PR is created in GitHub to merge the `working branch` in GitHub into the `develop` branch in GitHub.&#x20;
   * Merging will trigger a build and the website on the **dev** environment will be updated.
-* When ready to deploy to the **stage** environment,  a PR is created in GitHub to merge the `develop` __ into __ the `master` branch in GitHub.&#x20;
+* When ready to deploy to the **stage** environment,  a PR is created in GitHub to merge the `develop` into the `master` branch in GitHub.&#x20;
   * Merging will trigger a build and the website on the **stage** environment will be updated.
 * To deploy to the **production** environment, use the Acquia Cloud UI - see [continuous deployment](../continuous-deployment-process.md#deploy-to-production) notes.
 
@@ -70,7 +70,7 @@ In the above diagram,&#x20;
   * Best practice reuquires that a `working branch` is not bound to Acquia Environments
   * Merging does not trigger Travis, there is no deploy and 0 Travis credits are used
 
-****
+
 
 * **Note:** A GitHub `environment branch` can be bound to **one or more** Acquia Environments. When this is the case, deploys will occur simultaeously to all bound environments when the GitHub `environment branch` is updated.
   * Travis always controls deploys, but only one set of credits is used per `environment branch` merge regardless of how many Acquia environments it is bound to.

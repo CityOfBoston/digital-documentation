@@ -14,8 +14,8 @@ The my neighborhood application is a Drupal component that can be added to any p
 
 There are two Drupal endpoints associated with this application.one for receiving the updates
 
-* One for receiving the updated records on a nightly basis (updates): [`https://www.boston.gov/rest/mnl/update`](https://www.boston.gov/rest/mnl/update?)``
-* One for receiving the full load of records: [`https://www.boston.gov/rest/mnl/import`](https://www.boston.gov/rest/mnl/import)``
+* One for receiving the updated records on a nightly basis (updates): [`https://www.boston.gov/rest/mnl/update`](https://www.boston.gov/rest/mnl/update?)
+* One for receiving the full load of records: [`https://www.boston.gov/rest/mnl/import`](https://www.boston.gov/rest/mnl/import)
 
 [This page](https://content.boston.gov/admin/config/services/mnl) has information on the status of Drupal import scripts that run nightly and once a month.&#x20;
 
@@ -35,7 +35,7 @@ Jonathan Porter (Analytics division of DoIT) is the best point of contact for th
 
 **Product**
 
-* ****[Product requirements](https://docs.google.com/document/d/1w\_BknpFRHAudTEO2wdSdPIFboNSroY5LHmMWn4vwjRA/edit#heading=h.kfsq8a92ggxf) (historical and current)\
+* [Product requirements](https://docs.google.com/document/d/1w\_BknpFRHAudTEO2wdSdPIFboNSroY5LHmMWn4vwjRA/edit#heading=h.kfsq8a92ggxf) (historical and current)\
 
 
 Historical work that \*potentially\* isn't reflected above: [https://drive.google.com/drive/u/0/folders/1QVSDn6CgJiMY7dbYEiKKDRRX1cYOEHmu](https://drive.google.com/drive/u/0/folders/1QVSDn6CgJiMY7dbYEiKKDRRX1cYOEHmu)

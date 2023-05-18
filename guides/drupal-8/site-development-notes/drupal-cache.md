@@ -61,7 +61,7 @@ curl -IXGET http://boston.lndo.site
 
 {% hint style="info" %}
 **On `production` cron runs every 5 minutes,** \
-****_so (if there is no active queue) it could take up to 5 minutes for content changes to appear._&#x20;
+_so (if there is no active queue) it could take up to 5 minutes for content changes to appear._&#x20;
 
 On**`stage`and`develop`cron runs every 15 minutes.**
 {% endhint %}

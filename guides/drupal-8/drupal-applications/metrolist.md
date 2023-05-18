@@ -18,7 +18,7 @@ Controlled by: React\
 APIs in use: Developments API\
 \
 **AMI Estimator**\
-****Takes user’s household income and household size, and calculates a recommendation for which housing opportunities to look at.\
+Takes user’s household income and household size, and calculates a recommendation for which housing opportunities to look at.\
 URL: [/metrolist/ami-estimator/](http://www.boston.gov/metrolist/ami-estimator/)\
 Sub-routes:
 
@@ -30,15 +30,15 @@ Controlled by: React\
 APIs in use: AMI API\
 \
 **Property Pages**\
-****Route: /metrolist/search/housing/\[property]?\[parameters]\
+Route: /metrolist/search/housing/\[property]?\[parameters]\
 Controlled by: Drupal\
 \
 **Developments API**\
-****Lists housing opportunities as a JSON object.\
+Lists housing opportunities as a JSON object.\
 URL: [/metrolist/api/v1/developments?\_format=json](https://www.boston.gov/metrolist/api/v1/developments?\_format=json)\
 \
 **AMI API**\
-****Lists income qualification brackets as a JSON object, taken from HUD (Department of Housing and Urban Development) data.\
+Lists income qualification brackets as a JSON object, taken from HUD (Department of Housing and Urban Development) data.\
 URL: [/metrolist/api/v1/ami/hud/base?\_format=json](https://www.boston.gov/metrolist/api/v1/ami/hud/base?\_format=json)
 
 ## Installing

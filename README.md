@@ -2,7 +2,11 @@
 
 
 
-![City of Boston’s Digital Team](<.gitbook/assets/image (1) (1).png>)
+<div align="center">
+
+<img src=".gitbook/assets/image (1) (1).png" alt="City of Boston’s Digital Team">
+
+</div>
 
 We build digital experiences designed around the needs of our constituents. We work to make these tools beautiful, welcoming, and highly useful.\
 
@@ -11,7 +15,7 @@ _**Getting started**_  is where you’ll find general onboarding/high-level info
 
 _**Standards and best practices**_  ensure that our code and workflows are consistent across the team.
 
-_**Guides**_**  **  is a collection of how-tos and references for the technologies we work with. These should not project-specific.
+_**Guides**_  is a collection of how-tos and references for the technologies we work with. These should not project-specific.
 
 {% hint style="info" %}
 If you were getting ready to contribute code to a project, _“Standards and best practices”_ will give you information such as what your feature branch name should look like._“Guides”_ is where you’d find a walkthrough of how to make your pull request.

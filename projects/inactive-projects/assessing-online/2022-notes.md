@@ -34,12 +34,12 @@ Arlande StLouis
 \- (Assessing Dept) Opening of property-owner "Apply for Exemptions" and "Appeal Valuation" periods.
 
 **01 February:** \
-****- Close of "Appeal Valuation" period,\
+\- Close of "Appeal Valuation" period,\
 \- (Digital) ensure form is removed from Assessing on-line app,\
 \- no Online DB Updates at this time.
 
 **01 April:** \
-****- **** Close of "Apply for Exemptions" period,\
+\- Close of "Apply for Exemptions" period,\
 \- (Digital) ensure form is removed from Assessing on-line app,\
 \- No Online DB updates at this time.
 
