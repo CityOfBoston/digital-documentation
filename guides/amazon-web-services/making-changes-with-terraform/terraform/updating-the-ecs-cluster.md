@@ -65,7 +65,7 @@ If you have [terraform installed](./#installing-terraform) on your local compute
 11. Finally you should merge the changes in your new (local) branch into the local `production` branch, and then push the your local `production` branch to the origin in Github.
 
 {% hint style="success" %}
-After the production instances are fully up, check that they have roughly equal “Running tasks” numbers. ECS should schedule duplicate tasks on separate machines so that they are split across AZs. If you see a service has both of its tasks on the same instance you can run a force deployment to restart it. (See [Restarting an ECS service](../restarting-an-ecs-service.md))
+After the production instances are fully up, check that they have roughly equal “Running tasks” numbers. ECS should schedule duplicate tasks on separate machines so that they are split across AZs. If you see a service has both of its tasks on the same instance you can run a force deployment to restart it. (See [Restarting an ECS service](../../service-configuration/restarting-an-ecs-service.md))
 {% endhint %}
 
 <details>

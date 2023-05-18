@@ -13,7 +13,7 @@ We configure our container-based services using S3. We store files in special S3
 ### Guides
 
 * [Editing a project’s configuration using Cyberduck](editing-a-projects-.env-using-cyberduck.md)
-* [Encrypting service configuration variables](../making-changes-with-terraform/encrypting-service-configuration.md)
+* [Encrypting service configuration variables](encrypting-service-configuration.md)
 
 ## How it’s set up
 
@@ -39,4 +39,4 @@ Some values, like database passwords or OAuth secrets, should not be stored in p
 
 Our Node-based apps use the [`srv-decrypt-env` module](https://github.com/CityOfBoston/digital/tree/develop/modules-js/srv-decrypt-env) to automatically decrypt any environment variables that end in the `_KMS_ENCRYPTED` suffix at runtime. (We do not have a similar library for Ruby, so we don’t encrypt those passwords for our few Ruby apps.)
 
-See the [Encrypting service configuration for S3 guide](../making-changes-with-terraform/encrypting-service-configuration.md) for how to generate the encrypted values.
+See the [Encrypting service configuration for S3 guide](encrypting-service-configuration.md) for how to generate the encrypted values.

@@ -91,4 +91,4 @@ export default class CustomInput extends React.Component {
 
 ## Emotion
 
-See the [Emotion guide](../../../guides/amazon-web-services/libraries-and-tools/emotion.md).
+See the [Emotion guide](../../../guides/libraries-and-tools/emotion.md).

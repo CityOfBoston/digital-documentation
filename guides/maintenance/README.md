@@ -4,8 +4,8 @@ description: This section covers routine and one-off maintenance activities
 
 # Maintenance
 
-{% content-ref url="../drupal-8/weekly-maintenance.md" %}
-[weekly-maintenance.md](../drupal-8/weekly-maintenance.md)
+{% content-ref url="weekly-maintenance.md" %}
+[weekly-maintenance.md](weekly-maintenance.md)
 {% endcontent-ref %}
 
 {% content-ref url="../amazon-web-services/webapps-maintenance.md" %}
@@ -20,6 +20,6 @@ description: This section covers routine and one-off maintenance activities
 [legacy-website-maintenance](../legacy-website-cityofboston.gov/legacy-website-maintenance/)
 {% endcontent-ref %}
 
-{% content-ref url="../aws-setup-drupal/the-hub-drupal-7-on-aws.md" %}
-[the-hub-drupal-7-on-aws.md](../aws-setup-drupal/the-hub-drupal-7-on-aws.md)
+{% content-ref url="the-hub-drupal-7-on-aws.md" %}
+[the-hub-drupal-7-on-aws.md](the-hub-drupal-7-on-aws.md)
 {% endcontent-ref %}

@@ -28,6 +28,6 @@ See our [code review](https://boston.gitbook.io/digital-documentation/standards-
 
 For Drupal see:
 
-{% content-ref url="../../guides/drupal-8/custom-development-and-configuration/site-development-notes/git-best-practices-drupal.md" %}
-[git-best-practices-drupal.md](../../guides/drupal-8/custom-development-and-configuration/site-development-notes/git-best-practices-drupal.md)
+{% content-ref url="../../guides/drupal-8/site-development-notes/git-best-practices-drupal.md" %}
+[git-best-practices-drupal.md](../../guides/drupal-8/site-development-notes/git-best-practices-drupal.md)
 {% endcontent-ref %}

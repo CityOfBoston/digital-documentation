@@ -12,7 +12,7 @@ See GitBook’s documentation at [https://docs.gitbook.com/content-editing](http
 
 ### “Guide” or “Standards and best practices”?
 
-If you’re documenting **how** to perform a task, organize it as a Guide. Most of the docs in our GitBook space will be Guides. _\(e.g. How do I start a new project?\)_
+If you’re documenting **how** to perform a task, organize it as a Guide. Most of the docs in our GitBook space will be Guides. _(e.g. How do I start a new project?)_
 
 “Standards and best practices” is where to document things like _What files need to be included in every project? What library should I be using?_
 
@@ -33,8 +33,3 @@ When you are in editing mode, any changes you make will be autosaved as one draf
 ### Adding a file to gitbooks
 
 If you add a new file in github, then you must also [add it to the summary](https://docs.gitbook.com/integrations/github/faq#nothing-happens-on-gitbook-after-adding-a-new-file-to-my-repository) for it to appear in gitbooks.
-
-## GitBook roadmap
-
-You can see the roadmap and vote on features [here](https://gitbook.canny.io/).
-

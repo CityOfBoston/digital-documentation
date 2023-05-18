@@ -1,6 +1,6 @@
 # Upaknee Email List Services
 
-See [general notes](../../../projects/upaknee.md) on Upaknee.
+See [general notes](../../../projects/todo-los-notifications/upaknee.md) on Upaknee.
 
 Upaknee API documentation: [Upaknee re-subscribe API](https://drive.google.com/file/d/1DS7MlR7ayjy6lCV5ZKZ29zOkux2sqcRc/view)
 
