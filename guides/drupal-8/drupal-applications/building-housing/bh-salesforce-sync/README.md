@@ -9,14 +9,7 @@ description: >-
 
 There are 6 synchronizations with Salesforce which run in the following order, every cron run (so every 5 mins)  _The order is important, because Projects must be created before Attachments & Website Updates before Meetings & Chatter postings._
 
-| Sync Name                                | Drupal Destination         | SF Origin                       |
-| ---------------------------------------- | -------------------------- | ------------------------------- |
-| Building Housing - Projects              | bh\_project                | Project\_\_c                    |
-| Building Housing - Website Update        | bh\_update                 | Website\_Update\_\_c            |
-| Building Housing - Project Update        | bh\_update                 | Update\_\_c                     |
-| BH Community Meeting Event               | bh\_meeting                | Community\_Meeting\_Event\_\_c  |
-| Building Housing - Parcels               | bh\_parcel                 | Parcel\_\_c                     |
-| Building Housing - Parcels-Project Assoc | bh\_parcel\_project\_assoc | ParcelProject\_Association\_\_c |
+<table><thead><tr><th width="328">Sync Name</th><th width="174.33333333333331">Drupal Destination</th><th>SF Origin</th></tr></thead><tbody><tr><td>Building Housing - Projects</td><td>bh_project</td><td>Project__c</td></tr><tr><td>Building Housing - Website Update</td><td>bh_update</td><td>Website_Update__c</td></tr><tr><td>Building Housing - Project Update</td><td>bh_update</td><td>Update__c</td></tr><tr><td>BH Community Meeting Event</td><td>bh_meeting</td><td>Community_Meeting_Event__c</td></tr><tr><td>Building Housing - Parcels</td><td>bh_parcel</td><td>Parcel__c</td></tr><tr><td>Building Housing - Parcels-Project Assoc</td><td>bh_parcel_project_assoc</td><td>ParcelProject_Association__c</td></tr></tbody></table>
 
 Each synchronization process does the following: A Drupal Application runs a Salesforce API object query to identify any records in the SF object which have been deleted or which have their last updated date after a last updated date stored by Drupal for that SF object. The identified records are then added/updated or deleted in Drupal. At the end of the process Drupal updates its last updated date for that object with the latest SF updated date found in the import.  This date is then used as a high-water mark for the next import cycle.&#x20;
 

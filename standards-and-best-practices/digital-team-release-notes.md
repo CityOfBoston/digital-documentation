@@ -243,7 +243,7 @@ DIG-1156 - Unmask Password - Forgot Password Screen
 
 * Added a show password feature to the Forgot Password screen on Access Boston Portal. This allows users to click on the word 'Show' to unmask the password they are typing to make sure it is correct
 
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (25).png>)
 
 
 

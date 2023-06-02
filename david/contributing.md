@@ -27,12 +27,12 @@ If you need to submit a bug report for Boston.gov, please follow these guideline
 * Include a bulleted list of steps to reproduce your issue.
 * Include the URL of the page that you're seeing the issue on.
 * Include screenshots if possible. Bonus points if you include an animated GIF of the issue.
-* Include details about your browser \(which one, what version, using ad blockers?\).
+* Include details about your browser (which one, what version, using ad blockers?).
 * When filing your issue, assume that the recipient knows nothing about what you're talking about. There is no such thing as too many details when filing your issue.
 
 **Bug report template**
 
-```text
+```
 ## Basic details
 
 URL: [URL]
@@ -66,7 +66,7 @@ Have an idea for Boston.gov? If so, [create an issue](https://github.com/CityOfB
 
 **Feature template**
 
-```text
+```
 ## User story
 
 [Don't write:
@@ -99,7 +99,7 @@ _well_. Add a brief description of what you like and/or dislike about it.]
 
 To contribute to the development of Boston.gov, you'll need to get a development environment up and running. This section will get you started.
 
-**Contributors should first review our \[\[Development Standards\]\].**
+**Contributors should first review our \[\[Development Standards]].**
 
 Our process resembles a [Gitflow Workflow](https://www.atlassian.com/git/workflows#!workflow-gitflow) with the following specifics:
 
@@ -117,7 +117,7 @@ Pull requests should be submitted from the forked repo to the `develop` branch o
 
 **Pull request template**
 
-```text
+```
 ## Changes
 
  * [First change]
@@ -126,4 +126,3 @@ Pull requests should be submitted from the forked repo to the `develop` branch o
 
 This PR references #[GitHub issue number]
 ```
-

@@ -39,18 +39,7 @@ On the Windows server hosting the IIS Server, the ASP files which make up the as
 
 The files which are appear to be live (i.e. have no redirect to boston.gov) and which currently live in the folder are:
 
-| Filename                      | Last Modified | Description                                                                                             |
-| ----------------------------- | ------------- | ------------------------------------------------------------------------------------------------------- |
-| ..\global.asa (wwwcob)        | 2022          | Contains the database connection strings for the whole cityofboston.gov website                         |
-| paymentinfo.asp               | 07/2017       |                                                                                                         |
-| payments.asp                  | 11/2015       |                                                                                                         |
-| res\_prop\_sales\_archive.asp | 03/2016       | _Suspect this file is not live, just an archive of res\_sales\_prop.asp which has not been redirected._ |
-| taxratehistory.asp            | 03/2016       |                                                                                                         |
-| global.asa (assessing)        | 08/2013       | Contains connection strings which do not appear to be used.                                             |
-| paymentshistory\default.aspx  | 03/2014       | Unknown, appears to be a file uploader  - inserts records into the Treasury database on vsql01          |
-| search\default.asp            | 11/2022       |                                                                                                         |
-| search\hotline.asp            | 06/2020       | Unknown, looks unused.                                                                                  |
-| search\json.asp               | 05/2016       | Unknown, looks unused.                                                                                  |
+<table><thead><tr><th width="261">Filename</th><th>Last Modified</th><th>Description</th></tr></thead><tbody><tr><td>..\global.asa (wwwcob)</td><td>2022</td><td>Contains the database connection strings for the whole cityofboston.gov website</td></tr><tr><td>paymentinfo.asp</td><td>07/2017</td><td></td></tr><tr><td>payments.asp</td><td>11/2015</td><td></td></tr><tr><td>res_prop_sales_archive.asp</td><td>03/2016</td><td><em>Suspect this file is not live, just an archive of res_sales_prop.asp which has not been redirected.</em></td></tr><tr><td>taxratehistory.asp</td><td>03/2016</td><td></td></tr><tr><td>global.asa (assessing)</td><td>08/2013</td><td>Contains connection strings which do not appear to be used.</td></tr><tr><td>paymentshistory\default.aspx</td><td>03/2014</td><td>Unknown, appears to be a file uploader  - inserts records into the Treasury database on vsql01</td></tr><tr><td>search\default.asp</td><td>11/2022</td><td></td></tr><tr><td>search\hotline.asp</td><td>06/2020</td><td>Unknown, looks unused.</td></tr><tr><td>search\json.asp</td><td>05/2016</td><td>Unknown, looks unused.</td></tr></tbody></table>
 
 <details>
 

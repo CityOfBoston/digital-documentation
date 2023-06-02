@@ -343,17 +343,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                             | Source    | Notes                       |
-| ---------------------------------- | --------- | --------------------------- |
-| parcel\_id nvarchar(10)            | MS Access | **PK** The unique parcel ID |
-| living\_area int                   | MS Access |                             |
-| gross\_area int                    | MS Access |                             |
-| year\_built smallint               | MS Access |                             |
-| year\_remodeled smallint           | MS Access |                             |
-| condo\_units\_residential smallint | MS Access |                             |
-| condo\_units\_commercial smallint  | MS Access |                             |
-| condo\_units\_mixed smallint       | MS Access |                             |
-| stories decimal(4, 1)              | MS Access |                             |
+<table><thead><tr><th width="309.3333333333333">Column</th><th width="192">Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nvarchar(10)</td><td>MS Access</td><td><strong>PK</strong> The unique parcel ID</td></tr><tr><td>living_area int</td><td>MS Access</td><td></td></tr><tr><td>gross_area int</td><td>MS Access</td><td></td></tr><tr><td>year_built smallint</td><td>MS Access</td><td></td></tr><tr><td>year_remodeled smallint</td><td>MS Access</td><td></td></tr><tr><td>condo_units_residential smallint</td><td>MS Access</td><td></td></tr><tr><td>condo_units_commercial smallint</td><td>MS Access</td><td></td></tr><tr><td>condo_units_mixed smallint</td><td>MS Access</td><td></td></tr><tr><td>stories decimal(4, 1)</td><td>MS Access</td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -417,11 +407,7 @@ Potentially, there is some adjustment of the bid amount depending on billing sch
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                  | Source    | Notes                                                                                 |
-| ----------------------- | --------- | ------------------------------------------------------------------------------------- |
-| parcel\_id nvarchar(10) |           | **PK** The unique parcel ID                                                           |
-| bid\_greenway money     | MS Access | This is extracted and compiled from the greenway\_bid table in the MSAccess database. |
-| bid\_downtown money     | MS Access | This is extracted and compiled from the greenway\_bid table in the MSAccess database. |
+<table><thead><tr><th width="236.33333333333331">Column</th><th width="192">Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nvarchar(10)</td><td></td><td><strong>PK</strong> The unique parcel ID</td></tr><tr><td>bid_greenway money</td><td>MS Access</td><td>This is extracted and compiled from the greenway_bid table in the MSAccess database.</td></tr><tr><td>bid_downtown money</td><td>MS Access</td><td>This is extracted and compiled from the greenway_bid table in the MSAccess database.</td></tr></tbody></table>
 
 
 
@@ -486,37 +472,7 @@ This table is accessed from `default.asp`.
 {% tab title="Table Columns" %}
 
 
-| Column                                   | Source | Notes |
-| ---------------------------------------- | ------ | ----- |
-| parcel\_id nchar(10)                     |        |       |
-| Style nvarchar(20)                       |        |       |
-| Exterior Condition nvarchar(14)          |        |       |
-| Exterior Wall nvarchar(14)               |        |       |
-| Grade nvarchar(14)                       |        |       |
-| Stories nvarchar(4)                      |        |       |
-| '#Units' decimal(9, 0)                   |        |       |
-| Street Type nvarchar(50)                 |        |       |
-| Square Feet of Living area decimal(9, 0) |        |       |
-| Base Floor nvarchar(4)                   |        |       |
-| Fireplaces nvarchar(4)                   |        |       |
-| '# Floors' nvarchar(4)                   |        |       |
-| Total Rooms nvarchar(4)                  |        |       |
-| Bedrooms nvarchar(4)                     |        |       |
-| Bathrooms nvarchar(4)                    |        |       |
-| Half Bathrooms nvarchar(4)               |        |       |
-| Bathroom Style1 nvarchar(14)             |        |       |
-| Bathroom Style2 nvarchar(14)             |        |       |
-| Bathroom Style3 nvarchar(14)             |        |       |
-| Kitchen Style nvarchar(14)               |        |       |
-| Kitchen Type nvarchar(14)                |        |       |
-| Heat Type nvarchar(14)                   |        |       |
-| Interior Condition nvarchar(14)          |        |       |
-| Interior Finish nvarchar(14)             |        |       |
-| Orientation nvarchar(14)                 |        |       |
-| Corner Unit nvarchar(14)                 |        |       |
-| View nvarchar(14)                        |        |       |
-| condo\_main nchar(10)                    |        |       |
-| CNS\_BID decimal(9, 0)                   |        |       |
+<table><thead><tr><th width="321.3333333333333">Column</th><th width="244">Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nchar(10)</td><td></td><td></td></tr><tr><td>Style nvarchar(20)</td><td></td><td></td></tr><tr><td>Exterior Condition nvarchar(14)</td><td></td><td></td></tr><tr><td>Exterior Wall nvarchar(14)</td><td></td><td></td></tr><tr><td>Grade nvarchar(14)</td><td></td><td></td></tr><tr><td>Stories nvarchar(4)</td><td></td><td></td></tr><tr><td>'#Units' decimal(9, 0)</td><td></td><td></td></tr><tr><td>Street Type nvarchar(50)</td><td></td><td></td></tr><tr><td>Square Feet of Living area decimal(9, 0)</td><td></td><td></td></tr><tr><td>Base Floor nvarchar(4)</td><td></td><td></td></tr><tr><td>Fireplaces nvarchar(4)</td><td></td><td></td></tr><tr><td>'# Floors' nvarchar(4)</td><td></td><td></td></tr><tr><td>Total Rooms nvarchar(4)</td><td></td><td></td></tr><tr><td>Bedrooms nvarchar(4)</td><td></td><td></td></tr><tr><td>Bathrooms nvarchar(4)</td><td></td><td></td></tr><tr><td>Half Bathrooms nvarchar(4)</td><td></td><td></td></tr><tr><td>Bathroom Style1 nvarchar(14)</td><td></td><td></td></tr><tr><td>Bathroom Style2 nvarchar(14)</td><td></td><td></td></tr><tr><td>Bathroom Style3 nvarchar(14)</td><td></td><td></td></tr><tr><td>Kitchen Style nvarchar(14)</td><td></td><td></td></tr><tr><td>Kitchen Type nvarchar(14)</td><td></td><td></td></tr><tr><td>Heat Type nvarchar(14)</td><td></td><td></td></tr><tr><td>Interior Condition nvarchar(14)</td><td></td><td></td></tr><tr><td>Interior Finish nvarchar(14)</td><td></td><td></td></tr><tr><td>Orientation nvarchar(14)</td><td></td><td></td></tr><tr><td>Corner Unit nvarchar(14)</td><td></td><td></td></tr><tr><td>View nvarchar(14)</td><td></td><td></td></tr><tr><td>condo_main nchar(10)</td><td></td><td></td></tr><tr><td>CNS_BID decimal(9, 0)</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -616,11 +572,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                    | Source | Notes  |
-| ------------------------- | ------ | ------ |
-| Parcel\_id nchar(10)      |        | **PK** |
-| seqno tinyint             |        | **PK** |
-| owner\_name nvarchar(255) |        |        |
+<table><thead><tr><th width="289.3333333333333">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>Parcel_id nchar(10)</td><td></td><td><strong>PK</strong></td></tr><tr><td>seqno tinyint</td><td></td><td><strong>PK</strong></td></tr><tr><td>owner_name nvarchar(255)</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -673,11 +625,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                          | Source | Notes |
-| ------------------------------- | ------ | ----- |
-| id int                          |        |       |
-| Short\_Description nvarchar(10) |        |       |
-| Description nvarchar(50)        |        |       |
+<table><thead><tr><th width="295.3333333333333">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>id int</td><td></td><td></td></tr><tr><td>Short_Description nvarchar(10)</td><td></td><td></td></tr><tr><td>Description nvarchar(50)</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -820,16 +768,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                      | Source | Notes  |
-| --------------------------- | ------ | ------ |
-| parcel\_id nchar(10)        |        | **PK** |
-| street\_number nvarchar(10) |        |        |
-| street\_name nvarchar(50)   |        |        |
-| apartment\_no nvarchar(20)  |        |        |
-| suffix nvarchar(2)          |        |        |
-| landuse nvarchar(2)         |        |        |
-| owner nvarchar(255)         |        |        |
-| condo\_main nchar(10)       |        |        |
+<table><thead><tr><th width="314.3333333333333">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nchar(10)</td><td></td><td><strong>PK</strong></td></tr><tr><td>street_number nvarchar(10)</td><td></td><td></td></tr><tr><td>street_name nvarchar(50)</td><td></td><td></td></tr><tr><td>apartment_no nvarchar(20)</td><td></td><td></td></tr><tr><td>suffix nvarchar(2)</td><td></td><td></td></tr><tr><td>landuse nvarchar(2)</td><td></td><td></td></tr><tr><td>owner nvarchar(255)</td><td></td><td></td></tr><tr><td>condo_main nchar(10)</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -885,16 +824,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                      | Source | Notes |
-| --------------------------- | ------ | ----- |
-| parcel\_id nchar(10)        |        |       |
-| street\_number nvarchar(10) |        |       |
-| street\_name nvarchar(50)   |        |       |
-| apartment\_no nvarchar(20)  |        |       |
-| suffix nvarchar(2)          |        |       |
-| landuse nvarchar(2)         |        |       |
-| owner nvarchar(255)         |        |       |
-| condo\_main nchar(10)       |        |       |
+<table><thead><tr><th width="314.3333333333333">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nchar(10)</td><td></td><td></td></tr><tr><td>street_number nvarchar(10)</td><td></td><td></td></tr><tr><td>street_name nvarchar(50)</td><td></td><td></td></tr><tr><td>apartment_no nvarchar(20)</td><td></td><td></td></tr><tr><td>suffix nvarchar(2)</td><td></td><td></td></tr><tr><td>landuse nvarchar(2)</td><td></td><td></td></tr><tr><td>owner nvarchar(255)</td><td></td><td></td></tr><tr><td>condo_main nchar(10)</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -957,14 +887,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                                   | Source | Notes |
-| ---------------------------------------- | ------ | ----- |
-| property-code smallint                   |        |       |
-| property-class tinyint                   |        |       |
-| property-class-description nvarchar(255) |        |       |
-| property-code-description nvarchar(255)  |        |       |
-| property-code-state bit                  |        |       |
-| property-code-city bit                   |        |       |
+<table><thead><tr><th width="369.3333333333333">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>property-code smallint</td><td></td><td></td></tr><tr><td>property-class tinyint</td><td></td><td></td></tr><tr><td>property-class-description nvarchar(255)</td><td></td><td></td></tr><tr><td>property-code-description nvarchar(255)</td><td></td><td></td></tr><tr><td>property-code-state bit</td><td></td><td></td></tr><tr><td>property-code-city bit</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -1015,11 +938,7 @@ This table is accessed from `default.asp`.
 {% tab title="Table Columns" %}
 
 
-| Column                               | Source                                 | Notes                                                                                          |
-| ------------------------------------ | -------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| parcel\_id nvarchar(10)              | MSAccess:Tyler Real Estate Export File |                                                                                                |
-| residential\_exemption nvarchar(255) | MSAccess:Tyler Real Estate Export File |                                                                                                |
-| personal\_exemption bit              | MSAccess:Taxes                         | Defaults to 0 but is 1 if either of `Personal Ex Type 1` or `Personal Ex Type 2` is not null.  |
+<table><thead><tr><th width="284.3333333333333">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nvarchar(10)</td><td>MSAccess:Tyler Real Estate Export File</td><td></td></tr><tr><td>residential_exemption nvarchar(255)</td><td>MSAccess:Tyler Real Estate Export File</td><td></td></tr><tr><td>personal_exemption bit</td><td>MSAccess:Taxes</td><td>Defaults to 0 but is 1 if either of <code>Personal Ex Type 1</code> or <code>Personal Ex Type 2</code> is not null. </td></tr></tbody></table>
 
 
 {% endtab %}
@@ -1066,40 +985,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                             | Source    | Notes |
-| ---------------------------------- | --------- | ----- |
-| parcel\_id nvarchar(255)           |           |       |
-| Building Seq float                 |           |       |
-| Composite Land Use nvarchar(255)   |           |       |
-| Building Style nvarchar(255)       |           |       |
-| Rooms nvarchar(255)                |           |       |
-| Bedrooms nvarchar(255)             |           |       |
-| Full Bath float                    |           |       |
-| Half Bath float                    |           |       |
-| Other Fixtures float               |           |       |
-| Bath Style 1 nvarchar(255)         |           |       |
-| Bath Style 2 nvarchar(255)         |           |       |
-| Bath Style 3 nvarchar(255)         |           |       |
-| Kitchens float                     |           |       |
-| Kitchen Type nvarchar(255)         |           |       |
-| Kitchen Style 1 nvarchar(255)      |           |       |
-| Kitchen Style 2 nvarchar(255)      |           |       |
-| Kitchen Style 3 nvarchar(255)      |           |       |
-| Fireplaces float                   |           |       |
-| AC Type nvarchar(255)              |           |       |
-| Heat Type nvarchar(255)            |           |       |
-| Interior Condition nvarchar(255)   |           |       |
-| Interior Finish nvarchar(255)      |           |       |
-| View nvarchar(255)                 |           |       |
-| Grade nvarchar(255)                |           |       |
-| "# of Parking Spots" nvarchar(255) | <h2></h2> |       |
-| Year Built float                   |           |       |
-| Story Height nvarchar(255)         |           |       |
-| Roof Cover nvarchar(255)           |           |       |
-| Roof Structure nvarchar(255)       |           |       |
-| Exterior Finish nvarchar(255)      |           |       |
-| Exterior Condition nvarchar(255)   |           |       |
-| Foundation nvarchar(255)           |           |       |
+<table><thead><tr><th width="331.66666666666663">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nvarchar(255)</td><td></td><td></td></tr><tr><td>Building Seq float</td><td></td><td></td></tr><tr><td>Composite Land Use nvarchar(255)</td><td></td><td></td></tr><tr><td>Building Style nvarchar(255)</td><td></td><td></td></tr><tr><td>Rooms nvarchar(255)</td><td></td><td></td></tr><tr><td>Bedrooms nvarchar(255)</td><td></td><td></td></tr><tr><td>Full Bath float</td><td></td><td></td></tr><tr><td>Half Bath float</td><td></td><td></td></tr><tr><td>Other Fixtures float</td><td></td><td></td></tr><tr><td>Bath Style 1 nvarchar(255)</td><td></td><td></td></tr><tr><td>Bath Style 2 nvarchar(255)</td><td></td><td></td></tr><tr><td>Bath Style 3 nvarchar(255)</td><td></td><td></td></tr><tr><td>Kitchens float</td><td></td><td></td></tr><tr><td>Kitchen Type nvarchar(255)</td><td></td><td></td></tr><tr><td>Kitchen Style 1 nvarchar(255)</td><td></td><td></td></tr><tr><td>Kitchen Style 2 nvarchar(255)</td><td></td><td></td></tr><tr><td>Kitchen Style 3 nvarchar(255)</td><td></td><td></td></tr><tr><td>Fireplaces float</td><td></td><td></td></tr><tr><td>AC Type nvarchar(255)</td><td></td><td></td></tr><tr><td>Heat Type nvarchar(255)</td><td></td><td></td></tr><tr><td>Interior Condition nvarchar(255)</td><td></td><td></td></tr><tr><td>Interior Finish nvarchar(255)</td><td></td><td></td></tr><tr><td>View nvarchar(255)</td><td></td><td></td></tr><tr><td>Grade nvarchar(255)</td><td></td><td></td></tr><tr><td>"# of Parking Spots" nvarchar(255)</td><td><h2></h2></td><td></td></tr><tr><td>Year Built float</td><td></td><td></td></tr><tr><td>Story Height nvarchar(255)</td><td></td><td></td></tr><tr><td>Roof Cover nvarchar(255)</td><td></td><td></td></tr><tr><td>Roof Structure nvarchar(255)</td><td></td><td></td></tr><tr><td>Exterior Finish nvarchar(255)</td><td></td><td></td></tr><tr><td>Exterior Condition nvarchar(255)</td><td></td><td></td></tr><tr><td>Foundation nvarchar(255)</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -1190,18 +1076,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                          | Source | Notes |
-| ------------------------------- | ------ | ----- |
-| parcel\_id nchar(10)            |        |       |
-| Bill Year smallint              |        |       |
-| Bill Number int                 |        |       |
-| RE Tax Amt decimal(12, 2)       |        |       |
-| CPA Amt decimal(12, 2)          |        |       |
-| Downtown BID Amt decimal(12, 2) |        |       |
-| Greenway BID Amt decimal(12, 2) |        |       |
-| Total Billed Amt decimal(12, 2) |        |       |
-|                                 |        |       |
-|                                 |        |       |
+<table><thead><tr><th width="311.66666666666663">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nchar(10)</td><td></td><td></td></tr><tr><td>Bill Year smallint</td><td></td><td></td></tr><tr><td>Bill Number int</td><td></td><td></td></tr><tr><td>RE Tax Amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>CPA Amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>Downtown BID Amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>Greenway BID Amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>Total Billed Amt decimal(12, 2)</td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -1269,61 +1144,7 @@ This table is accessed from `default.asp`.
 
 {% tabs %}
 {% tab title="Table Columns" %}
-| Column                                                                                                                                                                                                                                                    | Source | Notes |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ----- |
-| parcel\_id nchar(10)                                                                                                                                                                                                                                      |        |       |
-| condo\_main nchar(10)                                                                                                                                                                                                                                     |        |       |
-| ward\_precinct\_block nvarchar(7)                                                                                                                                                                                                                         |        |       |
-| street\_number nvarchar(10)                                                                                                                                                                                                                               |        |       |
-| street\_number\_suffix nvarchar(10)                                                                                                                                                                                                                       |        |       |
-| street\_name nvarchar(50)                                                                                                                                                                                                                                 |        |       |
-| street\_name\_only nvarchar(50)                                                                                                                                                                                                                           |        |       |
-| street\_name\_suffix nvarchar(2)                                                                                                                                                                                                                          |        |       |
-| apt\_unit nvarchar(20)                                                                                                                                                                                                                                    |        |       |
-| city nvarchar(50)                                                                                                                                                                                                                                         |        |       |
-| location\_zip\_code nvarchar(5)                                                                                                                                                                                                                           |        |       |
-| location\_zip\_code\_plus\_four nvarchar(4)                                                                                                                                                                                                               |        |       |
-| owner nvarchar(50)                                                                                                                                                                                                                                        |        |       |
-| mail\_addressee nvarchar(50)                                                                                                                                                                                                                              |        |       |
-| mail\_street\_address1 nvarchar(50)                                                                                                                                                                                                                       |        |       |
-| mail\_street\_address2 nvarchar(50)                                                                                                                                                                                                                       |        |       |
-| mail\_city\_and\_state nvarchar(50)                                                                                                                                                                                                                       |        |       |
-| mail\_zip\_code nvarchar(5)                                                                                                                                                                                                                               |        |       |
-| mail\_zip\_code\_plus\_four nvarchar(4)                                                                                                                                                                                                                   |        |       |
-| country nvarchar(50)                                                                                                                                                                                                                                      |        |       |
-| future\_owner nvarchar(50)                                                                                                                                                                                                                                |        |       |
-| future\_mail\_addressee nvarchar(50)                                                                                                                                                                                                                      |        |       |
-| future\_owner\_mail\_street\_address1 nvarchar(50)                                                                                                                                                                                                        |        |       |
-| future\_owner\_mail\_street\_address2 nvarchar(50)                                                                                                                                                                                                        |        |       |
-| future\_owner\_mail\_city\_and\_state nvarchar(50)                                                                                                                                                                                                        |        |       |
-| future\_owner\_mail\_zip\_code nvarchar(5)                                                                                                                                                                                                                |        |       |
-| future\_owner\_mail\_zip\_code\_plus\_four nvarchar(4)                                                                                                                                                                                                    |        |       |
-| future\_owner\_country nvarchar(50)                                                                                                                                                                                                                       |        |       |
-| land\_area int                                                                                                                                                                                                                                            |        |       |
-| land\_use nvarchar(2)                                                                                                                                                                                                                                     |        |       |
-| exempt\_code nvarchar(4)                                                                                                                                                                                                                                  |        |       |
-| property\_type nvarchar(4)                                                                                                                                                                                                                                |        |       |
-| state\_class\_code nvarchar(1)                                                                                                                                                                                                                            |        |       |
-| <p>residential_building_value decimal(12, 2)<br>residential_land_value decimal(12, 2)<br>residential_air_rights_value decimal(12, 2)</p>                                                                                                                  |        |       |
-| <p>commercial_building_value decimal(12, 2)<br>commercial_land_value decimal(12, 2)<br>commercial_air_rights_value decimal(12, 2)</p>                                                                                                                     |        |       |
-| industrial\_building\_value decimal(12, 2) industrial\_land\_value decimal(12, 2) industrial\_air\_rights\_value decimal(12, 2)                                                                                                                           |        |       |
-| open\_space\_land\_value decimal(12, 2)                                                                                                                                                                                                                   |        |       |
-| exempt\_building\_value decimal(12, 2) exempt\_land\_value decimal(12, 2)                                                                                                                                                                                 |        |       |
-| total\_building\_value decimal(12, 2) total\_land\_value decimal(12, 2) total\_value decimal(12, 2)                                                                                                                                                       |        |       |
-| latest\_sale\_date date                                                                                                                                                                                                                                   |        |       |
-| latest\_bkpgcert nvarchar(10)                                                                                                                                                                                                                             |        |       |
-| residential\_exemption\_flag bit                                                                                                                                                                                                                          |        |       |
-| coop\_value decimal(12, 2)                                                                                                                                                                                                                                |        |       |
-| clause\_abatement\_type\_1 nvarchar(6) clause\_abt\_1\_pct\_ownership nvarchar(5) clause\_abt\_1\_pct\_occupancy nvarchar(5) clause\_abatement\_type\_2 nvarchar(6) clause\_abt\_2\_pct\_ownership nvarchar(5) clause\_abt\_2\_pct\_occupancy nvarchar(5) |        |       |
-| paraplegic nvarchar(6)                                                                                                                                                                                                                                    |        |       |
-| workoff\_type nvarchar(6) workoff\_credit\_amt decimal(12, 2)                                                                                                                                                                                             |        |       |
-| sewer\_betterment\_amt decimal(12, 2) street\_betterment\_amt decimal(12, 2) sidewalk\_betterment\_amt decimal(12, 2)                                                                                                                                     |        |       |
-| penalty1\_type nvarchar(6) penalty1\_amt decimal(12, 2) penalty2\_type nvarchar(6) penalty2\_amt decimal(12, 2) penalty3\_type nvarchar(6) penalty3\_amt decimal(12, 2)                                                                                   |        |       |
-| <p>fine1_type nvarchar(6) <br>fine1_amt decimal(12, 2) <br>fine2_type nvarchar(6) <br>fine2_amt decimal(12, 2) <br>fine3_type nvarchar(6) <br>fine3_amt decimal(12, 2)</p>                                                                                |        |       |
-| <p>BID_type nvarchar(6) <br>BID_amt decimal(12, 2)</p>                                                                                                                                                                                                    |        |       |
-| nontax\_collection\_type nvarchar(6) nontax\_collection\_amt decimal(12, 2)                                                                                                                                                                               |        |       |
-| personal\_exemption\_flag bit                                                                                                                                                                                                                             |        |       |
-| condo\_main\_value decimal(12, 2)                                                                                                                                                                                                                         |        |       |
+<table><thead><tr><th width="335.66666666666663">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nchar(10)</td><td></td><td></td></tr><tr><td>condo_main nchar(10)</td><td></td><td></td></tr><tr><td>ward_precinct_block nvarchar(7)</td><td></td><td></td></tr><tr><td>street_number nvarchar(10)</td><td></td><td></td></tr><tr><td>street_number_suffix nvarchar(10)</td><td></td><td></td></tr><tr><td>street_name nvarchar(50)</td><td></td><td></td></tr><tr><td>street_name_only nvarchar(50)</td><td></td><td></td></tr><tr><td>street_name_suffix nvarchar(2)</td><td></td><td></td></tr><tr><td>apt_unit nvarchar(20)</td><td></td><td></td></tr><tr><td>city nvarchar(50)</td><td></td><td></td></tr><tr><td>location_zip_code nvarchar(5)</td><td></td><td></td></tr><tr><td>location_zip_code_plus_four nvarchar(4)</td><td></td><td></td></tr><tr><td>owner nvarchar(50)</td><td></td><td></td></tr><tr><td>mail_addressee nvarchar(50)</td><td></td><td></td></tr><tr><td>mail_street_address1 nvarchar(50)</td><td></td><td></td></tr><tr><td>mail_street_address2 nvarchar(50)</td><td></td><td></td></tr><tr><td>mail_city_and_state nvarchar(50)</td><td></td><td></td></tr><tr><td>mail_zip_code nvarchar(5)</td><td></td><td></td></tr><tr><td>mail_zip_code_plus_four nvarchar(4)</td><td></td><td></td></tr><tr><td>country nvarchar(50)</td><td></td><td></td></tr><tr><td>future_owner nvarchar(50)</td><td></td><td></td></tr><tr><td>future_mail_addressee nvarchar(50)</td><td></td><td></td></tr><tr><td>future_owner_mail_street_address1 nvarchar(50)</td><td></td><td></td></tr><tr><td>future_owner_mail_street_address2 nvarchar(50)</td><td></td><td></td></tr><tr><td>future_owner_mail_city_and_state nvarchar(50)</td><td></td><td></td></tr><tr><td>future_owner_mail_zip_code nvarchar(5)</td><td></td><td></td></tr><tr><td>future_owner_mail_zip_code_plus_four nvarchar(4)</td><td></td><td></td></tr><tr><td>future_owner_country nvarchar(50)</td><td></td><td></td></tr><tr><td>land_area int</td><td></td><td></td></tr><tr><td>land_use nvarchar(2)</td><td></td><td></td></tr><tr><td>exempt_code nvarchar(4)</td><td></td><td></td></tr><tr><td>property_type nvarchar(4)</td><td></td><td></td></tr><tr><td>state_class_code nvarchar(1)</td><td></td><td></td></tr><tr><td>residential_building_value decimal(12, 2)<br>residential_land_value decimal(12, 2)<br>residential_air_rights_value decimal(12, 2)</td><td></td><td></td></tr><tr><td>commercial_building_value decimal(12, 2)<br>commercial_land_value decimal(12, 2)<br>commercial_air_rights_value decimal(12, 2)</td><td></td><td></td></tr><tr><td>industrial_building_value decimal(12, 2) industrial_land_value decimal(12, 2) industrial_air_rights_value decimal(12, 2)</td><td></td><td></td></tr><tr><td>open_space_land_value decimal(12, 2)</td><td></td><td></td></tr><tr><td>exempt_building_value decimal(12, 2) exempt_land_value decimal(12, 2)</td><td></td><td></td></tr><tr><td>total_building_value decimal(12, 2) total_land_value decimal(12, 2) total_value decimal(12, 2)</td><td></td><td></td></tr><tr><td>latest_sale_date date</td><td></td><td></td></tr><tr><td>latest_bkpgcert nvarchar(10)</td><td></td><td></td></tr><tr><td>residential_exemption_flag bit</td><td></td><td></td></tr><tr><td>coop_value decimal(12, 2)</td><td></td><td></td></tr><tr><td>clause_abatement_type_1 nvarchar(6) clause_abt_1_pct_ownership nvarchar(5) clause_abt_1_pct_occupancy nvarchar(5) clause_abatement_type_2 nvarchar(6) clause_abt_2_pct_ownership nvarchar(5) clause_abt_2_pct_occupancy nvarchar(5)</td><td></td><td></td></tr><tr><td>paraplegic nvarchar(6)</td><td></td><td></td></tr><tr><td>workoff_type nvarchar(6) workoff_credit_amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>sewer_betterment_amt decimal(12, 2) street_betterment_amt decimal(12, 2) sidewalk_betterment_amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>penalty1_type nvarchar(6) penalty1_amt decimal(12, 2) penalty2_type nvarchar(6) penalty2_amt decimal(12, 2) penalty3_type nvarchar(6) penalty3_amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>fine1_type nvarchar(6) <br>fine1_amt decimal(12, 2) <br>fine2_type nvarchar(6) <br>fine2_amt decimal(12, 2) <br>fine3_type nvarchar(6) <br>fine3_amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>BID_type nvarchar(6) <br>BID_amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>nontax_collection_type nvarchar(6) nontax_collection_amt decimal(12, 2)</td><td></td><td></td></tr><tr><td>personal_exemption_flag bit</td><td></td><td></td></tr><tr><td>condo_main_value decimal(12, 2)</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}
@@ -1661,21 +1482,7 @@ This table is accessed from `default.asp`.
 {% tab title="Table Columns" %}
 
 
-| Column                                | Source | Notes  |
-| ------------------------------------- | ------ | ------ |
-| parcel\_id nchar(10)                  |        | **PK** |
-| gross\_tax decimal(12, 2)             |        |        |
-| net\_tax decimal(12, 2)               |        |        |
-| persexempt\_1 decimal(12, 2)          |        |        |
-| persexempt\_2 decimal(12, 2)          |        |        |
-| persexempt\_total decimal(12, 2)      |        |        |
-| resexempt decimal(12, 2)              |        |        |
-| cpa decimal(12, 2)                    |        |        |
-| code\_enforcement\_tax decimal(12, 2) |        |        |
-| 38D\_fine decimal(12, 2)              |        |        |
-| sidewalk\_betterment decimal(12, 2)   |        |        |
-| street\_betterment decimal(12, 2)     |        |        |
-| bill\_number int                      |        |        |
+<table><thead><tr><th width="296.66666666666663">Column</th><th>Source</th><th>Notes</th></tr></thead><tbody><tr><td>parcel_id nchar(10)</td><td></td><td><strong>PK</strong></td></tr><tr><td>gross_tax decimal(12, 2)</td><td></td><td></td></tr><tr><td>net_tax decimal(12, 2)</td><td></td><td></td></tr><tr><td>persexempt_1 decimal(12, 2)</td><td></td><td></td></tr><tr><td>persexempt_2 decimal(12, 2)</td><td></td><td></td></tr><tr><td>persexempt_total decimal(12, 2)</td><td></td><td></td></tr><tr><td>resexempt decimal(12, 2)</td><td></td><td></td></tr><tr><td>cpa decimal(12, 2)</td><td></td><td></td></tr><tr><td>code_enforcement_tax decimal(12, 2)</td><td></td><td></td></tr><tr><td>38D_fine decimal(12, 2)</td><td></td><td></td></tr><tr><td>sidewalk_betterment decimal(12, 2)</td><td></td><td></td></tr><tr><td>street_betterment decimal(12, 2)</td><td></td><td></td></tr><tr><td>bill_number int</td><td></td><td></td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Notes" %}

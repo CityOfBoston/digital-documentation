@@ -134,11 +134,7 @@ The police account (youvebeentowed (?)) needs permission to truncate the `Towlin
 
 #### **Contacts**
 
-| Staff                    | Position              | Email                                                                       |
-| ------------------------ | --------------------- | --------------------------------------------------------------------------- |
-| Rich Petruccelli         | Data Services Manager | [Rich.Petruccelli@pd.boston.gov](mailto:Rich.Petruccelli@pd.boston.gov)     |
-| Thomas Hutchings (Hutch) |                       | **t**[homas.hutchings@pd.boston.gov](mailto:thomas.hutchings@pd.boston.gov) |
-| Frank Alexopoulos        | Apps development      | [Frank.Alexopoulos@pd.boston.gov](mailto:Frank.Alexopoulos@pd.boston.gov)   |
+<table><thead><tr><th width="204.11859838274933">Staff</th><th>Position</th><th>Email</th></tr></thead><tbody><tr><td>Rich Petruccelli</td><td>Data Services Manager</td><td><a href="mailto:Rich.Petruccelli@pd.boston.gov">Rich.Petruccelli@pd.boston.gov</a></td></tr><tr><td>Thomas Hutchings (Hutch)</td><td></td><td><strong>t</strong><a href="mailto:thomas.hutchings@pd.boston.gov">homas.hutchings@pd.boston.gov</a></td></tr><tr><td>Frank Alexopoulos</td><td>Apps development</td><td><a href="mailto:Frank.Alexopoulos@pd.boston.gov">Frank.Alexopoulos@pd.boston.gov</a></td></tr></tbody></table>
 
 ### Outbound Communication (email, sms and voice)
 
