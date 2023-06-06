@@ -7,6 +7,18 @@ description: >-
 
 # Legacy Website - cityofboston.gov
 
+The applications on this server are all slated for either decommission, or migration to a more appropriate host and/or boston.gov.&#x20;
+
+## Inventory
+
+These docs inform or manage the migration process.
+
+1. From the CMDB project: [https://docs.google.com/spreadsheets/d/14fn46vCwNk\_\_EppXFf5OkM4rf48omU\_rxXWCicf5c3U/edit?usp=sharing](https://docs.google.com/spreadsheets/d/14fn46vCwNk\_\_EppXFf5OkM4rf48omU\_rxXWCicf5c3U/edit?usp=sharing)
+2. From the Legacy App Discovery Project:\
+   [https://docs.google.com/spreadsheets/d/1Th2htYUHf4LVvbQ\_rWC0eLBhAiHGKjszzO8w2tg9i8g/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1Th2htYUHf4LVvbQ\_rWC0eLBhAiHGKjszzO8w2tg9i8g/edit?usp=sharing)
+
+## Testing/Verification Links
+
 List of applications on this server:
 
 | App                       | Location                                         | Test Page/Links                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Notes                                                                                       |
