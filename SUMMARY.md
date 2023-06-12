@@ -8,7 +8,7 @@
   * [Meetings](getting-started/life-on-the-digital-team/meetings.md)
   * [Communication](getting-started/life-on-the-digital-team/communication.md)
   * [Software engineering working agreement](getting-started/life-on-the-digital-team/software-engineering-working-agreement.md)
-* [Contributing to Boston.gov](david/contributing.md)
+* [Contributing to Boston.gov](getting-started/contributing.md)
 * [Using GitBook](getting-started/using-gitbook.md)
 
 ## Standards & best practices
@@ -43,8 +43,8 @@
 
 ## Guides
 
-* [Technology stack and technologies used](getting-started/technology-stack/README.md)
-  * [Web applications](getting-started/technology-stack/web-applications.md)
+* [Technology stack and technologies used](guides/technology-stack/README.md)
+  * [Web applications](guides/technology-stack/web-applications.md)
 * [Drupal - boston.gov](guides/drupal-8/README.md)
   * [Custom Development & Configuration](guides/drupal-8/custom-development-and-configuration/README.md)
     * [On Demand Instances](guides/drupal-8/on-demand-instances/README.md)
@@ -91,6 +91,7 @@
         * [Image Styles & UX](guides/drupal-8/site-development-notes/drupal-ux-specific/untitled.md)
         * [Example Content Pages](guides/drupal-8/site-development-notes/drupal-ux-specific/example-content-pages.md)
       * [PHPStorm IDE](guides/drupal-8/site-development-notes/phpstorm-ide.md)
+    * [CKEditor](guides/drupal-8/custom-development-and-configuration/ckeditor.md)
   * [Drupal Applications](guides/drupal-8/drupal-applications/README.md)
     * [Budget Website](guides/drupal-8/drupal-applications/budget-website.md)
     * [Building Housing](guides/drupal-8/drupal-applications/building-housing/README.md)
@@ -142,7 +143,7 @@
       * [Updating the ECS cluster AMI](guides/amazon-web-services/making-changes-with-terraform/terraform/updating-the-ecs-cluster.md)
     * [Restarting an ECS service](guides/amazon-web-services/service-configuration/restarting-an-ecs-service.md)
     * [Encrypting service configuration for S3](guides/amazon-web-services/service-configuration/encrypting-service-configuration.md)
-    * [Mounting AWS SFTP as a Drive (Mac)](guides/amazon-web-services/mounting-aws-sftp-as-a-drive-mac.md)
+    * [Mounting AWS SFTP as a Drive (Mac)](guides/amazon-web-services/making-changes-with-terraform/mounting-aws-sftp-as-a-drive-mac.md)
   * [Libraries and Tools](guides/libraries-and-tools/README.md)
     * [Emotion](guides/libraries-and-tools/emotion.md)
     * [Storybook](guides/libraries-and-tools/storybook.md)

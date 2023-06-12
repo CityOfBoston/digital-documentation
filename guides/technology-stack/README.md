@@ -5,8 +5,8 @@
 [![Build Status](https://camo.githubusercontent.com/059573f47d24bb422b9c5436d9da728195188774/68747470733a2f2f7472617669732d63692e6f72672f436974794f66426f73746f6e2f626f73746f6e2e676f762d64382e706e67)](https://travis-ci.org/CityOfBoston/boston.gov-d8)[\
 ​](https://travis-ci.org/CityOfBoston/boston.gov-d8)The main City of Boston website is a CMS developed using Drupal (a PHP - MySQL framework) hosted on Linux - Apache (LAMP) in the Cloud. Implemented as Drupal 7 in 2016, migrated to Drupal 8 in 2019, then Drupal 9 in March 2022.
 
-{% content-ref url="../../guides/drupal-8/" %}
-[drupal-8](../../guides/drupal-8/)
+{% content-ref url="../drupal-8/" %}
+[drupal-8](../drupal-8/)
 {% endcontent-ref %}
 
 ## Cityofboston.gov
