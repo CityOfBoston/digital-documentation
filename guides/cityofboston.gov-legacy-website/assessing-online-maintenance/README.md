@@ -9,10 +9,10 @@ description: >-
 ### Maintenance Cycle Checklist
 
 {% tabs %}
-{% tab title="December" %}
+{% tab title="December (Q3)" %}
 See tabbed notes for December (on this page) for detailed instructions.
 
-* [ ] Request SQLDBA's to clone the current live database to a new database called `assessingupdates20YYQ3` where YY is the current financial year.
+* [ ] Request SQLDBA's to clone the current live database (`assessingupdates20YYQ1` ) to a new database called `assessingupdates20YYQ3` where YY is the current financial year.
 * [ ] Create sandbox `default.asp` page  for testing by copying the current `default.asp` to `default20YYQ3.asp` ,
 * [ ] Update the dates and tax rates in sandbox,
 * [ ] Update sandbox to connect to the `assessingupdates20YYQ3` MS SQL database,
@@ -25,10 +25,10 @@ See tabbed notes for December (on this page) for detailed instructions.
 * [ ] Cleanup any remaining asp pages you may have created and any redundant databases and tables.
 {% endtab %}
 
-{% tab title="July" %}
+{% tab title="July (Q1)" %}
 See tabbed notes for July (on this page) for detailed instructions.
 
-* [ ] Request SQLDBA's to clone the current live database to a new database called `assessingupdates20YYQ1` where YY is the next financial year.
+* [ ] Request SQLDBA's to clone the current live database (`assessingupdates20YYQ3` ) to a new database called `assessingupdates20YYQ1` where YY is the next financial year.
 * [ ] Create sandbox `default.asp` page for testing by copying the current `default.asp` to `default20YYQ1.asp`,
 * [ ] Update sandbox to connect to the `assessingupdates20YYQ1` MS SQL database,
 * [ ] Update MS SQL `assessingupdates20YYQ1` database with [data from MS Access](database-tables.md#updating-database-tables),
@@ -79,7 +79,7 @@ There is a section titled BEGIN CONSTANTS (line 20) to END CONSTANTS (line 70). 
 #### Maintenance Cycle
 
 {% tabs %}
-{% tab title="December" %}
+{% tab title="December (Q3)" %}
 **Create sandbox ASP page for testing.**
 
 Create a copy of `default.asp` named `default20XXQ3.asp`.&#x20;
@@ -107,7 +107,7 @@ While testing, you can use the variable `TodaysTime` (around line 70) to test th
 {% endhint %}
 {% endtab %}
 
-{% tab title="July" %}
+{% tab title="July (Q1)" %}
 **Create sandbox ASP page for testing.**
 
 Create a copy of `default.asp` named `default20YYQ1.asp`.&#x20;
@@ -148,15 +148,15 @@ Once those dates are set, the form display is controlled by code and no further 
 #### Maintenance Cycle
 
 {% tabs %}
-{% tab title="December" %}
+{% tab title="December (Q3)" %}
 Each year new forms for exemptions and other request are generated and will be provided by the Assessing Team.
 
-* [ ] Ensure dates (`AbatementExemptionStartThisYear`, `AbatementDeadlineThisYear` and `ExemptionDeadlineThisYear`) are set correctly in `wwwcob\assessing\search\default.asp`
+* [ ] Ensure dates (`AbatementExemptionStartThisYear`, `AbatementDeadlineThisYear` and `ExemptionDeadlineThisYear`) are set correctly in `wwwcob\assessing\search\default20YYQ3.asp`
 * [ ] Upload the forms (typically 4) to a new folder at `docroot/modules/custom/bos_components/modules/bos_assessing/pdf/FY20xx.`
 * [ ] Update the the json and fdf files in the same folder.
 {% endtab %}
 
-{% tab title="July" %}
+{% tab title="July (Q1)" %}
 **There is nothing to be done with forms in the July updates.**
 {% endtab %}
 {% endtabs %}
@@ -174,7 +174,7 @@ The assessing department validate and transfer data to the Digital Team via an M
 #### Maintenance Cycle
 
 {% tabs %}
-{% tab title="December" %}
+{% tab title="December (Q3)" %}
 Obtain the updated copy of the MS Access database. &#x20;
 
 Following [these instructions](database-tables.md#updating-database-tables), copy tables from Access to `assessingupdates20YYQ3` in MS SQL.
@@ -185,11 +185,11 @@ _For example, in 2022 there is a  stored procedure `sp_update_current_owners` wh
 
 {% hint style="success" %}
 Testing/verification of the new data can then be completed at:\
-&#x20; `https://cityofboston.gov/assessing/search/default20xx.asp`
+&#x20; `https://cityofboston.gov/assessing/search/default20YYQ3.asp`
 {% endhint %}
 {% endtab %}
 
-{% tab title="July" %}
+{% tab title="July (Q1)" %}
 Obtain the updated copy of the MS Access database. &#x20;
 
 Following [these instructions](database-tables.md#updating-database-tables), copy tables from Access to `assessingupdates20YYQ1` in MS SQL.
