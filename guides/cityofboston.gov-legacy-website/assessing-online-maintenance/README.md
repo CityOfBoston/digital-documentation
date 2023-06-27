@@ -12,22 +12,29 @@ description: >-
 {% tab title="December" %}
 See tabbed notes for December (on this page) for detailed instructions.
 
-* [ ] Create sandbox `default.asp` page for testing,
+* [ ] Request SQLDBA's to clone the current live database to a new database called `assessingupdates20YYQ3` where YY is the current financial year.
+* [ ] Create sandbox `default.asp` page  for testing by copying the current `default.asp` to `default20YYQ3.asp` ,
 * [ ] Update the dates and tax rates in sandbox,
-* [ ] Update sandbox to connect to the `assessingupdates` MS SQL database,
-* [ ] Update MS SQL `assessingupdates` database with data from MS Access,
-* [ ] Run any adjustment processes in `assessingupdates` database,
+* [ ] Update sandbox to connect to the `assessingupdates20YYQ3` MS SQL database,
+* [ ] Update MS SQL `assessingupdates20YYQ3` database [with data from MS Access,](database-tables.md#updating-database-tables)
+* [ ] Run any adjustment processes in `assessingupdates20YYQ3` database,
 * [ ] Copy new forms into the folder at `wwwcob/assessing/search/forms`,
 * [ ] Test sandbox, and re-import data as needed/provided by Assessing Team,
-* [ ] Copy data in `assessingupdates` database into `assessingsearch` database,
-* [ ] Update sandbox `default.asp` page to connect to `assessingsearch` database and then copy the sandbox page over the live `default.asp` page.
-* [ ] Cleanup sandbox and redundant databases and tables.
+* [ ] Backup the current `default.asp` page by copying into `default.asp20YYQ3.bak` .
+* [ ] To put the new page and data live, simply delete `default.asp` and then rename `default20YYQ3.asp` to`default.asp.`
+* [ ] Cleanup any remaining asp pages you may have created and any redundant databases and tables.
 {% endtab %}
 
 {% tab title="July" %}
 See tabbed notes for July (on this page) for detailed instructions.
 
-* [ ] Step 1
+* [ ] Request SQLDBA's to clone the current live database to a new database called `assessingupdates20YYQ1` where YY is the next financial year.
+* [ ] Create sandbox `default.asp` page for testing by copying the current `default.asp` to `default20YYQ1.asp`,
+* [ ] Update sandbox to connect to the `assessingupdates20YYQ1` MS SQL database,
+* [ ] Update MS SQL `assessingupdates20YYQ1` database with [data from MS Access](database-tables.md#updating-database-tables),
+* [ ] Run any needed adjustment processes in `assessingupdates20YYQ1` database,
+* [ ] To put the new page and data live, simply delete `default.asp` and then rename `default20YYQ1.asp` to`default.asp.`
+* [ ] Cleanup any remaining asp pages you may have created and any redundant databases and tables.
 {% endtab %}
 {% endtabs %}
 
@@ -75,31 +82,52 @@ There is a section titled BEGIN CONSTANTS (line 20) to END CONSTANTS (line 70). 
 {% tab title="December" %}
 **Create sandbox ASP page for testing.**
 
-Create a copy of `default.asp` named `default20xx.asp`.&#x20;
+Create a copy of `default.asp` named `default20XXQ3.asp`.&#x20;
 
 **Update DB connection string.**
 
-The constant for `AssessingSearchDB` in (line 56 of) `default.asp/default20xx.asp` indicates the connection string for the page to use.  Change it to `assessingupdates` (which will then run SQL queries on the page in the `assessingupdates` database in the MSSQL Server).
+_Once the SQLDBA's have cloned the current live database:_
+
+In the `global.asa` for the IIS server (in the root of wwwcob folder) there are a number of database connection strings defined. Search for `assessingupdates` and you will find a block defining the assessing-online apps connection strings.  Make a new connection string called `assessingupdates20YYQ3` and point it at the new database created by the DBA's.
+
+The constant for `AssessingSearchDB` in (line 56 of) `default20YYQ3.asp` indicates the actual connection string for the page to use.  Change it to `assessingupdates20YYQ3` (which will then run SQL queries on the page in the `assessingupdates20YYQ3` database in the MSSQL Server).
 
 **Make changes to dates and tax rates for next year.**
 
-Using data provided by the Assessing Team, update the constants in `default20xx.asp.` \
+Using data provided by the Assessing Team, update the constants in `default20YYQ3.asp.` \
 _Refer to the notes in the default.asp page next to each constant for guidance._
 
 {% hint style="success" %}
 Testing/verification of the new data can now be completed at:\
-&#x20; `https://cityofboston.gov/assessing/search/default20xx.asp`
+&#x20; `https://cityofboston.gov/assessing/search/default20YYQ3.asp`
 {% endhint %}
 
 {% hint style="info" %}
-While testing, you can use the variable `TodaysTime` (around line 70) to test the site for a future date and see that the date fields are aletring the page as expected.
+While testing, you can use the variable `TodaysTime` (around line 70) to test the site for a future date and see that the date fields and the availability of exemption forms links are altering on the page as expected.
 {% endhint %}
-
-
 {% endtab %}
 
 {% tab title="July" %}
+**Create sandbox ASP page for testing.**
 
+Create a copy of `default.asp` named `default20YYQ1.asp`.&#x20;
+
+**Update DB connection string.**
+
+_Once the SQLDBA's have cloned the current live database:_
+
+In the `global.asa` for the IIS server (in the root of wwwcob folder) there are a number of database connection strings defined. Search for `assessingupdates` and you will find a block defining the assessing-online apps connection strings.  Make a new connection string called `assessingupdates20YYQ1` and point it at the new database created by the DBA's.
+
+The constant for `AssessingSearchDB` in (line 56 of) `default20YYQ1.asp` indicates the actual connection string for the page to use.  Change it to `assessingupdates20YYQ1` (which will then run SQL queries on the page in the `assessingupdates20YYQ1` database in the MSSQL Server).
+
+{% hint style="success" %}
+Testing/verification of the new data can now be completed at:\
+&#x20; `https://cityofboston.gov/assessing/search/default20YYQ1.asp`
+{% endhint %}
+
+{% hint style="info" %}
+Typically the dates in the form do not change, and the tax rate should also not change.  Really, the only expected change to `default20YYQ1.asp` is to change the DB connection string name.
+{% endhint %}
 {% endtab %}
 {% endtabs %}
 
@@ -129,7 +157,7 @@ Each year new forms for exemptions and other request are generated and will be p
 {% endtab %}
 
 {% tab title="July" %}
-
+**There is nothing to be done with forms in the July updates.**
 {% endtab %}
 {% endtabs %}
 
@@ -139,9 +167,9 @@ The database which contains the data for the assessing online app is contained o
 
 The assessing department validate and transfer data to the Digital Team via an MS Access database.  This database contains tables of data that should be mapped and uploaded to databases on the MS SQLServer.
 
-The production database is `assessingsearch` and the staging database is `assessingupdates`.&#x20;
+~~The production database is `assessingsearch` and the staging database is `assessingupdates`~~.&#x20;
 
-December data should first be imported into `assessingupdates`, verified and then copied to `assessingsearch`
+~~December data should first be imported into `assessingupdates`, verified and then copied to `assessingsearch`~~
 
 #### Maintenance Cycle
 
@@ -149,7 +177,7 @@ December data should first be imported into `assessingupdates`, verified and the
 {% tab title="December" %}
 Obtain the updated copy of the MS Access database. &#x20;
 
-Using an ODBC connection copy tables from Access to `assessingupdates` in MS SQL.
+Following [these instructions](database-tables.md#updating-database-tables), copy tables from Access to `assessingupdates20YYQ3` in MS SQL.
 
 Notes from Assessing Team will detail any particular instructions on data manipulations that are required. &#x20;
 
@@ -162,6 +190,10 @@ Testing/verification of the new data can then be completed at:\
 {% endtab %}
 
 {% tab title="July" %}
+Obtain the updated copy of the MS Access database. &#x20;
 
+Following [these instructions](database-tables.md#updating-database-tables), copy tables from Access to `assessingupdates20YYQ1` in MS SQL.
+
+Notes from Assessing Team will detail any particular instructions on data manipulations that are required. &#x20;
 {% endtab %}
 {% endtabs %}
