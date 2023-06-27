@@ -1649,10 +1649,12 @@ curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /et
 sudo apt-get update && sudo apt-get install sqlcmd mssql-tools unixodbc-dev
 
 # Import the table schema
-sqlcmd -S vsql01.web.cob -U sqlDigital -P **** -d assessingupdates2023q3 -i /path/to/schema.sql
+export SQLCMDPASSWORD=**** \
+  && sqlcmd -S vsql01.web.cob -U sqlDigital -d assessingupdates2023q3 -i /path/to/schema.sql
 
 # Import the data
-sqlcmd -S vsql01.web.cob -U sqlDigital -P **** -d assessingupdates2023q3 -i /path/to/_ADDITIONAL_DATA.sql
+export SQLCMDPASSWORD=**** \
+  && sqlcmd -S vsql01.web.cob -U sqlDigital -d assessingupdates2023q3 -i /path/to/_ADDITIONAL_DATA.sql
 
 ```
 
@@ -1673,7 +1675,7 @@ This will output a series of +/-75MB files with a numeric-sequence suffix.
 
 and,
 
-`sqlcmd` cli is significantly quicker than using, say `azure data studio` or other grapical query tools. @[see](https://learn.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver16) and @[see](https://learn.microsoft.com/en-us/sql/tools/mssql-cli?source=recommendations\&view=sql-server-ver16)&#x20;
+`sqlcmd` cli is significantly quicker than using, say `azure data studio` or other graphical query tools. @[see](https://learn.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-ver16) and @[see](https://learn.microsoft.com/en-us/sql/tools/mssql-cli?source=recommendations\&view=sql-server-ver16)&#x20;
 {% endhint %}
 
 {% hint style="info" %}
@@ -1684,3 +1686,14 @@ Use the `wc` command to count the number of lines in a file, to verify that all 
 If the numbers are not the same, you have a problem ... !
 {% endhint %}
 
+{% hint style="success" %}
+You may need to convert the MSAccess data types to MSSQL data types. Here is a common list:
+
+Text (x) => varchar (x)
+
+Double => float
+
+Boolean => int
+
+
+{% endhint %}
