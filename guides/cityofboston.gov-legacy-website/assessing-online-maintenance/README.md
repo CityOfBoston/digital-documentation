@@ -167,6 +167,12 @@ The database which contains the data for the assessing online app is contained o
 
 The assessing department validate and transfer data to the Digital Team via an MS Access database.  This database contains tables of data that should be mapped and uploaded to databases on the MS SQLServer.
 
+{% hint style="info" %}
+MSAccess data is imported into tables prefixed "\_" in the MSSQL Database.&#x20;
+
+Stored procedures are then written to update/merge data from the import tables into the main tables used by the app. The stored procedure is saved in the DB as a record of the updates and manipulations performed.
+{% endhint %}
+
 ~~The production database is `assessingsearch` and the staging database is `assessingupdates`~~.&#x20;
 
 ~~December data should first be imported into `assessingupdates`, verified and then copied to `assessingsearch`~~
@@ -177,11 +183,16 @@ The assessing department validate and transfer data to the Digital Team via an M
 {% tab title="December (Q3)" %}
 Obtain the updated copy of the MS Access database. &#x20;
 
+In the `assessingupdates20YYQ3` database, delete all tables prefixed "\_", these are import tables from the previous Q1 update.
+
 Following [these instructions](database-tables.md#updating-database-tables), copy tables from Access to `assessingupdates20YYQ3` in MS SQL.
 
 Notes from Assessing Team will detail any particular instructions on data manipulations that are required. &#x20;
 
-_For example, in 2022 there is a  stored procedure `sp_update_current_owners` which should be executed to make additional data changes to parcel/property ownership._
+To keep a record and for replaying updates, and data updates (from import tables to main tables) and data manipulations should be coded into stored procedures and executed from the stored procedure. \
+The stored procedure should be saved in the DB, and named `sp_20YYQ3_import`. If multiple sp's are used, then number them sequentially (`sp_20YYQ3_import_1` etc).
+
+_For example, in 2023Q3 there is a (incorrectly named...) stored procedure `sp_update_current_owners` which should be executed to make additional data changes to parcel/property ownership._
 
 {% hint style="success" %}
 Testing/verification of the new data can then be completed at:\
@@ -192,8 +203,13 @@ Testing/verification of the new data can then be completed at:\
 {% tab title="July (Q1)" %}
 Obtain the updated copy of the MS Access database. &#x20;
 
+In the `assessingupdates20YYQ1` database, delete all tables prefixed "\_", these are import tables from the previous Q3 update.
+
 Following [these instructions](database-tables.md#updating-database-tables), copy tables from Access to `assessingupdates20YYQ1` in MS SQL.
 
 Notes from Assessing Team will detail any particular instructions on data manipulations that are required. &#x20;
+
+To keep a record and for replaying updates, and data updates (from import tables to main tables) and data manipulations should be coded into stored procedures and executed from the stored procedure. \
+The stored procedure should be saved in the DB, and named `sp_20YYQ1_import`. If multiple sp's are used, then number them sequentially (`sp_20YYQ1_import_1` etc).
 {% endtab %}
 {% endtabs %}
