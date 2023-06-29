@@ -8,6 +8,14 @@ description: >-
 
 ## Views
 
+{% hint style="danger" %}
+This view does not appear to be used by `default.asp` or any other procedures.
+{% endhint %}
+
+{% hint style="warning" %}
+This view could be deleted from the DB.
+{% endhint %}
+
 ```sql
 SET ANSI_NULLS ON
 GO
@@ -29,6 +37,14 @@ GO
 ```
 
 ## Stored Procedures
+
+{% hint style="danger" %}
+None of these stored procedures appear to be used by `default.asp` or any view or triggers.
+{% endhint %}
+
+{% hint style="warning" %}
+These procedures could be deleted from the DB
+{% endhint %}
 
 ```sql
 SET ANSI_NULLS ON
@@ -747,6 +763,10 @@ SELECT [parcel_id]
 {% endtabs %}
 
 ### Overval\_application\_numbers
+
+{% hint style="danger" %}
+This table does not appear to be used.
+{% endhint %}
 
 ```sql
 SET ANSI_NULLS ON
