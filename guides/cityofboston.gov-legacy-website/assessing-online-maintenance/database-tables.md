@@ -1688,6 +1688,8 @@ Double => float
 Boolean => int
 
 Currency => money
+
+Long Integer => bigint
 {% endhint %}
 
 {% hint style="warning" %}
