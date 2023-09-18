@@ -95,9 +95,19 @@ Test a single function by invoking it directly with a test event. An event is a 
 
 Run functions locally and invoke them with the `sam local invoke` command.
 
+{% hint style="warning" %}
+_Check the **event/event.json** file before running the command below - it will cause the image:tag specified to be deployed._
+{% endhint %}
+
 ```bash
-cob_ecr_deploy$ sam local invoke ecrDeploy_function --event events/event.json
+cob_ecr_deploy$ sam local invoke ecrDeployFunction --event events/event.json
 ```
+
+{% hint style="info" %}
+**Note:** This command will start a lambda-like docker container loaded with an AWS supplied Python image and the built app loaded into it. &#x20;
+
+The app will be automatically run as if the even loaded in the `event.json` had fired, without any delay or any user input. &#x20;
+{% endhint %}
 
 #### Debugging the application
 
@@ -152,6 +162,42 @@ To delete the application after you have created it, use the AWS CLI or the [Clo
 ```bash
 $ aws cloudformation delete-stack --stack-name ecrDeploy-application
 ```
+
+### Maintenance
+
+From time to time, the python package versions and dependencies should be checked and updated as needed. &#x20;
+
+To do this, you can specify actual package versions in `requirements.txt` and then run&#x20;
+
+```
+$ pip3 install -r requirememts.txt
+```
+
+You can update a specific package with this command:
+
+```
+pip3 install package==version 
+```
+
+You can check dependencies with this command:
+
+```
+pip3 check 
+```
+
+Your IDE may also be able to identify packages which should/could be updated. Or you can use this command
+
+```
+pip3 list --outdated
+```
+
+{% hint style="danger" %}
+Take care with updating packages.&#x20;
+
+Only packages which appear in the folder  `.aws-sam/build/ecrDeployFunction` need to be manually managed, there are a load of other packages pre-loaded within the AWS supplied container.
+
+Really, running the `pip3 list --outdated` command should be run inside the container to get an accurate picture across all Python dependencies.
+{% endhint %}
 
 ### Other Resources
 
