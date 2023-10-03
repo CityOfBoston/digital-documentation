@@ -90,25 +90,13 @@ This endpoint must return a 200 code when the task (instance of the dbconnector 
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/auth" method="post" summary="Authenticate User" %}
 {% swagger-description %}
-This endpoint is used to initially authenticate the user, and returns an Authentication Token which must be used in the header of all subsequent endpoint calls.
-
-\
-
-
-\- The Auth Token has a default lifetime of 180 seconds (3 min) (can be set per username),
-
-\
-
-
+This endpoint is used to initially authenticate the user, and returns an Authentication Token which must be used in the header of all subsequent endpoint calls.\
+\- The Auth Token has a default lifetime of 180 seconds (3 min) (can be set per username),\
 \- The Refresh Token has an additional validity of 180 seconds (3 min).
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="username" type="string" %}
-A username (either a name or an email) which is registered in the 
-
-`DBConnector`
-
- (see /v1/users)
+A username (either a name or an email) which is registered in the `DBConnector` (see /v1/users)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="password" type="string" %}
@@ -175,15 +163,7 @@ The password set for the username provided.
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/auth/refresh" method="post" summary="Refresh Authentication Token" %}
 {% swagger-description %}
-Using a valid Refresh Token (provided from 
-
-**/v1/auth**
-
- endpoint), this endpoint will refresh a current (or expired) Authentication Token.
-
-\
-
-
+Using a valid Refresh Token (provided from **/v1/auth** endpoint), this endpoint will refresh a current (or expired) Authentication Token.\
 Also generates a new Refresh Token.
 {% endswagger-description %}
 
@@ -294,27 +274,9 @@ If too many requests have been made by a user in a given time period, then the u
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/users" method="get" summary="List all Users (paged)" %}
 {% swagger-description %}
-Returns a list of current users.
-
+Returns a list of current users.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN or OWNER.
-
-\
-
-
-
-
+**Permission:** ADMIN or OWNER.\
 _If the optional `page` & `list` parameters are provided, then a paged output will be returned (sorted by UserID)_
 {% endswagger-description %}
 
@@ -323,16 +285,8 @@ Bearer - A valid connToken
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="page" type="number" %}
-The page number to return.
-
-\
-
-
-
-
-**Note:**
-
- Page numbering starts at zero.
+The page number to return.\
+**Note:** Page numbering starts at zero.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="limit" type="number" %}
@@ -362,60 +316,16 @@ Note: The password field is obfuscated.
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/users/:useridentifier" method="get" summary="List a single User" %}
 {% swagger-description %}
-Returns a single user.
-
+Returns a single user.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN, OWNER or the user specified in 
-
-`useridentifier`
-
-.
-
-\
-
-
+**Permission:** ADMIN, OWNER or the user specified in `useridentifier`.\
 i.e. You can only read your own user record unless you are an ADMIN or OWNER.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="useridentifier" type="integer" %}
-The useridentifier may be either of:
-
-\
-
-
-\- 
-
-**userID**
-
- (
-
-_numeric_
-
-): unique user number
-
-\
-
-
-\- 
-
-**username**
-
- (
-
-_string_
-
-): unique username
+The useridentifier may be either of:\
+\- **userID** (_numeric_): unique user number\
+\- **username** (_string_): unique username
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
@@ -444,60 +354,16 @@ Note: The password field is not obfuscated.
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/users/:useridentifier/connections" method="get" summary="List Connections available to a User" %}
 {% swagger-description %}
-Provides a list of connection strings that the user has been granted permission to use.
-
+Provides a list of connection strings that the user has been granted permission to use.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN, OWNER or user defined by 
-
-`useridentifier`
-
-.
-
-\
-
-
+**Permission:** ADMIN, OWNER or user defined by `useridentifier`.\
 i.e. You can only read your own user record unless you are an ADMIN or OWNER.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="useridentifier" type="string" %}
-The useridentifier may be either of:
-
-\
-
-
-\- 
-
-**userID**
-
- (
-
-_numeric_
-
-): unique user number
-
-\
-
-
-\- 
-
-**username**
-
- (
-
-_string_
-
-): unique username
+The useridentifier may be either of:\
+\- **userID** (_numeric_): unique user number\
+\- **username** (_string_): unique username
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
@@ -526,21 +392,9 @@ Bearer: A valid authToken.
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/users" method="post" summary="Add a new User" %}
 {% swagger-description %}
-Adds a new user.
-
+Adds a new user.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN or OWNER.
+**Permission:** ADMIN or OWNER.
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
@@ -548,16 +402,12 @@ Bearer: A valid authToken.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="username" type="string" %}
-Any unique string to identify this user.  Recommended to use email addresses for human users (e.g. "someone@boston.gov") or a meaningful name built around the calling service name (e.g. "cmdb_nightly_update"). 
-
-\
-
-
+Any unique string to identify this user.  Recommended to use email addresses for human users (e.g. "someone@boston.gov") or a meaningful name built around the calling service name (e.g. "cmdb\_nightly\_update"). \
 Maximum 100 chars.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="password" type="string" %}
-A complex password. The longer and more complex the better. 
+A complex password. The longer and more complex the better.&#x20;
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="role" type="number" %}
@@ -569,29 +419,13 @@ See User Permissions
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="ipaddresses" type="string" %}
-A comma separated list of IPAddresses the user can make requests from.  If this is left blank, then requests are accepted from all IPAddresses. 
-
-\
-
-
+A comma separated list of IPAddresses the user can make requests from.  If this is left blank, then requests are accepted from all IPAddresses. \
 Maximum 150 chars.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="ttl" type="string" %}
-The lifetime of authTokens generated for this user.  If this is left blank, then 180s will be used.  Format is "xxxm/s" (e.g. "90s" for 90 seconds, or "3m" for 3 minutes)
-
-\
-
-
-
-
-**Note:**
-
- Shorter key lifetimes provide better security.
-
-\
-
-
+The lifetime of authTokens generated for this user.  If this is left blank, then 180s will be used.  Format is "xxxm/s" (e.g. "90s" for 90 seconds, or "3m" for 3 minutes)\
+**Note:** Shorter key lifetimes provide better security.\
 Maxmum 10m or 600s.
 {% endswagger-parameter %}
 
@@ -621,34 +455,14 @@ Maxmum 10m or 600s.
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/users/:useridentifier" method="patch" summary="Update an existing User" %}
 {% swagger-description %}
-Updates the specified user with information provided in the payload.
-
+Updates the specified user with information provided in the payload.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN or OWNER 
+**Permission:** ADMIN or OWNER&#x20;
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="useridentifier" type="number" %}
-The userid.
-
-\
-
-
-Userid is returned from the 
-
-**/v1/auth**
-
- request.
+The userid.\
+Userid is returned from the **/v1/auth** request.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authroization" type="string" %}
@@ -678,34 +492,14 @@ Bearer: A valid authToken
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/users/:userid" method="delete" summary="Delete an existing User" %}
 {% swagger-description %}
-Deletes the specified user.
-
+Deletes the specified user.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN or OWNER
+**Permission:** ADMIN or OWNER
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="userid" type="number" required="true" %}
-The userid (number).
-
-\
-
-
-Userid is returned from the 
-
-**/v1/auth**
-
- request.
+The userid (number).\
+Userid is returned from the **/v1/auth** request.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
@@ -743,21 +537,9 @@ The connToken (UUID) should never change once the connections string record is c
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connections" method="get" summary="List all Connections (paged)" %}
 {% swagger-description %}
-Returns a list of all active remote system connection strings.
-
+Returns a list of all active remote system connection strings.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN OR OWNER
+**Permission:** ADMIN OR OWNER
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
@@ -772,21 +554,9 @@ Bearer: A valid authToken.
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token" method="get" summary="List single Connection" %}
 {% swagger-description %}
-Returns the remote system connection string defined by the specified Connection Token.
-
+Returns the remote system connection string defined by the specified Connection Token.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN, OWNER or by a user who has permission to use the connection.
+**Permission:** ADMIN, OWNER or by a user who has permission to use the connection.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="token" type="string" %}
@@ -812,21 +582,9 @@ Bearer: A valid authToken
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/find/:name" method="get" summary="Find connToken" %}
 {% swagger-description %}
-Fetch a connection token using the tokens name.
-
+Fetch a connection token using the tokens name.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- All authenticated users.
+**Permission:** All authenticated users.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name=":name" type="string" %}
@@ -845,21 +603,9 @@ Bearer: A valid authToken
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connection/:token/users" method="get" summary="List Users who may use a Connection" %}
 {% swagger-description %}
-Provides a list of users who have been granted permission to use a connection string.
-
+Provides a list of users who have been granted permission to use a connection string.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN or OWNER
+**Permission:** ADMIN or OWNER
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="token" type="string" %}
@@ -878,16 +624,8 @@ Bearer: A valid authToken
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connection" method="post" summary="Add a new Connection" %}
 {% swagger-description %}
-Saves a connection string.
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN or OWNER.
+Saves a connection string.\
+**Permission:** ADMIN or OWNER.
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
@@ -895,41 +633,11 @@ Bearer: A valid authToken.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="connectionString" type="string" %}
-The connection string, usually as a JSON string.
-
-\
-
-
-
-
-`"{`
-
-\
-
-
-  
-
-`\"host\":\"somewhere.com\",`
-
- 
-
-\
-
-
-  
-
-`\"username\":\"sa\",`
-
-\
-
-
-  
-
-`\"password\": \"asdfasd\"`
-
-\
-
-
+The connection string, usually as a JSON string.\
+`"{`\
+&#x20; `\"host\":\"somewhere.com\",` \
+&#x20; `\"username\":\"sa\",`\
+&#x20; `\"password\": \"asdfasd\"`\
 `}"`
 {% endswagger-parameter %}
 
@@ -938,25 +646,13 @@ A name by which this connection string can be easily referred to.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="description" type="string" %}
-The purpose of the connection string.
-
-\
-
-
-
-
-**Tip:**
-
- Include the driver and/or type of connection defined.
+The purpose of the connection string.\
+**Tip:** Include the driver and/or type of connection defined.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="enabled" type="number" %}
-1 (enabled) or 0 (disabled).
-
-\
-
-
-Defaults to 1 (enabled) 
+1 (enabled) or 0 (disabled).\
+Defaults to 1 (enabled)&#x20;
 {% endswagger-parameter %}
 
 {% swagger-response status="201" description="Returns a message with the newly created connToken." %}
@@ -986,21 +682,9 @@ Defaults to 1 (enabled)
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connection/:token/user/:userid" method="post" summary="Grant User Permission to Connection" %}
 {% swagger-description %}
-Grants a user permission to use a connection string.
-
+Grants a user permission to use a connection string.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- FULL/SUPER, ADMIN or OWNER.
+**Permission:** FULL/SUPER, ADMIN or OWNER.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="token" type="string" %}
@@ -1008,16 +692,8 @@ A valid connToken
 {% endswagger-parameter %}
 
 {% swagger-parameter in="path" name="userid" type="integer" %}
-A userid (number).
-
-\
-
-
-(The userid is returned from the 
-
-**/v1/auth**
-
- request)
+A userid (number).\
+(The userid is returned from the **/v1/auth** request)
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
@@ -1050,21 +726,9 @@ Bearer: a valid authToken
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token" method="patch" summary="Update an existing Connection" %}
 {% swagger-description %}
-Updates the remote system connection string defined by the specified Connection Token. 
-
+Updates the remote system connection string defined by the specified Connection Token. \
 \
-
-
-
-
-\
-
-
-
-
-**Permission**
-
-: ADMIN or OWNER..
+**Permission**: ADMIN or OWNER..
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="token" type="string" %}
@@ -1100,21 +764,9 @@ Bearer: A valid authToken
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connections/:token" method="delete" summary="Delete an existing Connection" %}
 {% swagger-description %}
-Deletes the remote system connection string defined by the specified Connection Token.
-
+Deletes the remote system connection string defined by the specified Connection Token.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN or OWNER
+**Permission:** ADMIN or OWNER
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="token" type="string" %}
@@ -1143,21 +795,9 @@ Bearer: A valid authToken
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/connection/:token/user/:userid" method="delete" summary="Revoke User Permission for Connection" %}
 {% swagger-description %}
-Revoke an existing permission for a user to use a connection string.
-
+Revoke an existing permission for a user to use a connection string.\
 \
-
-
-
-
-\
-
-
-
-
-**Permission:**
-
- ADMIN or OWNER
+**Permission:** ADMIN or OWNER
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="token" type="string" %}
@@ -1165,16 +805,8 @@ A valid connToken.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="path" name="userid" type="integer" %}
-A userid.
-
-\
-
-
-UserIds are returned from the 
-
-**/v1/auth**
-
- request.
+A userid.\
+UserIds are returned from the **/v1/auth** request.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
@@ -1226,34 +858,18 @@ Generally a 400 error will be generated with a "cleaned" error message in this g
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/query/:driver" method="post" summary="Execute SQL Statement" %}
 {% swagger-description %}
-Runs a command (or commands) on the remote system.  
-
-\
-
-
+Runs a command (or commands) on the remote system.  \
 Depending on the command/s, returns a JSON Array (of Arrays) of Objects.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name=":driver" type="string" %}
-The driver to use to execute the statement on the remote system.
-
-\
-
-
-At this time, we only have 
-
-**mssql**
-
-.
+The driver to use to execute the statement on the remote system.\
+At this time, we only have **mssql**.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
-A  valid Authentication Token in format:
-
-\
-
-
-   "Bearer xxxxx-xxxxxx-xxxxxx"
+A  valid Authentication Token in format:\
+&#x20;  "Bearer xxxxx-xxxxxx-xxxxxx"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="token" type="string" %}
@@ -1261,20 +877,12 @@ A  valid Authentication Token in format:
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="statement" type="string" %}
-A single statement or command that can be executed on the remote system.
-
-\
-
-
+A single statement or command that can be executed on the remote system.\
 Multiple statements may be included and should be separated by semi-colons.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="args" type="string" %}
-A JSON string containing parameters to be substituted into the 
-
-**statement**
-
- parameter.
+A JSON string containing parameters to be substituted into the **statement** parameter.
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Returns a JSON array of arrays of objects.
@@ -1356,36 +964,18 @@ Treat a view like a table.
 
 {% swagger baseUrl="https://dbconnector.digital-staging.boston.gov" path="/v1/exec/:driver" method="post" summary="Execute Stored Procedure" %}
 {% swagger-description %}
-Execute a stored procedure on the remote system.
-
-\
-
-
-
-
-**Permission:**
-
- ALTER, FULL, ADMIN or OWNER
+Execute a stored procedure on the remote system.\
+**Permission:** ALTER, FULL, ADMIN or OWNER
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name=":driver" type="string" %}
-The driver to use to execute the statement on the remote system. 
-
-\
-
-
-At this time, we only have 
-
-**mssql**
+The driver to use to execute the statement on the remote system. \
+At this time, we only have **mssql**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
-A valid Authentication Token in format:
-
-\
-
-
-   "Bearer xxxxx-xxxxxx-xxxxxx"
+A valid Authentication Token in format:\
+&#x20;  "Bearer xxxxx-xxxxxx-xxxxxx"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="token" %}
@@ -1397,34 +987,14 @@ The name of the procedure to execute
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="params" type="object" %}
-An object containing key:value pairs for parameters to be passed into the stored procedure.
-
-\
-
-
-
-
-**Note**
-
-: Input parameters can be declared in any order
+An object containing key:value pairs for parameters to be passed into the stored procedure.\
+**Note**: Input parameters can be declared in any order
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="output" type="object" %}
-An object containing name:type pairs for output parameters to be passed into the stored procedure.
-
-\
-
-
-The type must be one of the following strings: "number" or "varchar" 
-
-\
-
-
-
-
-**Note:**
-
- Ouput parameters can be declared in any order.
+An object containing name:type pairs for output parameters to be passed into the stored procedure.\
+The type must be one of the following strings: "number" or "varchar" \
+**Note:** Ouput parameters can be declared in any order.
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Return recordset or recordsets from the stored procedure - if any." %}
@@ -1540,23 +1110,13 @@ This runs a command on the remote system which is expected to return a paged dat
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name=":driver" type="string" %}
-The driver to use to execute the statement on the remote system.
-
-\
-
-
-At this time, we only have 
-
-**mssql.**
+The driver to use to execute the statement on the remote system.\
+At this time, we only have **mssql.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
-A  valid Authentication Token in format:
-
-\
-
-
-   "Bearer xxxxx-xxxxxx-xxxxxx"
+A  valid Authentication Token in format:\
+&#x20;  "Bearer xxxxx-xxxxxx-xxxxxx"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="token" type="string" %}
@@ -1564,84 +1124,34 @@ A valid connection string Token
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="table" type="string" %}
-The table to select data from.
-
-\
-
-
-
-
-**Note:**
-
- Can also be a view name
+The table to select data from.\
+**Note:** Can also be a view name
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="fields" type="array" %}
-Fields to return. If omitted then all fields will be returned.
-
-\
-
-
-e.g. 
-
-`[ "ID", "name", "enabled" ]`
+Fields to return. If omitted then all fields will be returned.\
+e.g. `[ "ID", "name", "enabled" ]`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="filter" type="array" %}
-A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  (see where arrays)
-
-\
-
-
-e.g. 
-
-`[ {"ID": 1}, {"enabled": "false"} ]`
+A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  (see where arrays)\
+e.g. `[ {"ID": 1}, {"enabled": "false"} ]`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="sort" type="array" %}
-A JSON string array of fields to sort by. Required if 
-
-_**limit**_
-
- parameter is provided.
-
-\
-
-
-e.g. 
-
-`[ "ID DESC", "name" ]`
+A JSON string array of fields to sort by. Required if _**limit**_ parameter is provided.\
+e.g. `[ "ID DESC", "name" ]`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="limit" type="string" %}
-Number of results to return in a page. 
-
-\
-
-
-If omitted, then defaults to 100 if the 
-
-_**sort**_
-
- parameter is provided - else all records are returned.
+Number of results to return in a page. \
+If omitted, then defaults to 100 if the _**sort**_ parameter is provided - else all records are returned.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="page" type="string" %}
-Page to be returned. 
-
-\
-
-
-If omitted then defaults to page 0 (first page).
-
-\
-
-
-
-
-**Note: **
-
-_**Page numbering starts at zero.**_
+Page to be returned. \
+If omitted then defaults to page 0 (first page).\
+**Note: **_**Page numbering starts at zero.**_
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Returns a JSON array with each record in the table expressed as a row." %}
@@ -1680,20 +1190,12 @@ This endpoint creates a new record (or records) in the specified table.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name=":driver" type="string" %}
-The driver to use to execute the statement on the remote system. At this time, we only have 
-
-**mssql**
-
-.
+The driver to use to execute the statement on the remote system. At this time, we only have **mssql**.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
-A valid Authentication Token in format:
-
-\
-
-
-   "Bearer xxxxx-xxxxxx-xxxxxx"
+A valid Authentication Token in format:\
+&#x20;  "Bearer xxxxx-xxxxxx-xxxxxx"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="token" type="string" %}
@@ -1705,34 +1207,14 @@ The table to insert data into
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="fields" type="array" %}
-An array of fields to add values to. Each array element is a separate record to be added to the table. 
-
-\
-
-
-e.g.  
-
-`[ "ID", "Name" ]`
+An array of fields to add values to. Each array element is a separate record to be added to the table. \
+e.g.  `[ "ID", "Name" ]`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="values" type="array" %}
-An array of arrays. Each array is a record. Each field in the record array is a value to add.
-
-\
-
-
-
-
-**Note:**
-
- The order of values must match the order of fields.
-
-\
-
-
-e.g. 
-
-`[ [ 1, "david" ], [ 2, "mike" ] ]`
+An array of arrays. Each array is a record. Each field in the record array is a value to add.\
+**Note:** The order of values must match the order of fields.\
+e.g. `[ [ 1, "david" ], [ 2, "mike" ] ]`
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Returns a confirmation or else the @@IDENTITY value of the record added." %}
@@ -1767,19 +1249,11 @@ This endpoint will update existing records in a table.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name=":driver" type="string" %}
-The driver to use to execute the statement on the remote system. At this time, we only have 
-
-**mssql**
-
-.
+The driver to use to execute the statement on the remote system. At this time, we only have **mssql**.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
-A valid authToken in the format:
-
-\
-
-
+A valid authToken in the format:\
 "Bearer xxxxx-xxxxxx-xxxxxx
 {% endswagger-parameter %}
 
@@ -1792,27 +1266,13 @@ The table in which to update data.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="values" type="object" %}
-Object containing key:value pairs where the key is the fieldname and the value is the fields value.
-
-\
-
-
-e.g. 
-
-`{ "name":"david", "address": "my house" }`
+Object containing key:value pairs where the key is the fieldname and the value is the fields value.\
+e.g. `{ "name":"david", "address": "my house" }`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="filter" type="array" %}
-A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  (see where arrays)
-
-\
-
-
-e.g. 
-
-`[ {"ID": 1}, {"enabled": "false"} ]`
-
- 
+A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  (see where arrays)\
+e.g. `[ {"ID": 1}, {"enabled": "false"} ]`&#x20;
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="If the command executes successfully.  The Updated value (N) indicates how many records were actually updated.
@@ -1842,20 +1302,12 @@ Note: The returned value for Updated should be checked, because if no records ma
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name=":driver" type="string" %}
-The driver to use to execute the statement on the remote system. At this time, we only have 
-
-**mssql**
-
-.
+The driver to use to execute the statement on the remote system. At this time, we only have **mssql**.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
-A valid authToken in the format:
-
-\
-
-
- "Bearer xxxxx-xxxxxx-xxxxxx"
+A valid authToken in the format:\
+&#x20;"Bearer xxxxx-xxxxxx-xxxxxx"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="token" type="string" %}
@@ -1867,14 +1319,8 @@ The table to delete data from.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="filter" type="array" %}
-A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  (see where arrays)
-
-\
-
-
-e.g. 
-
-`[ {"ID": 1}, {"enabled": "false"} ]`
+A JSON array of key/value pair objects containing filtering options for the data to be extracted from the table.  (see where arrays)\
+e.g. `[ {"ID": 1}, {"enabled": "false"} ]`
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="If the command executes successfully.  The Deleted value (N) indicates how many records were actually deleted.

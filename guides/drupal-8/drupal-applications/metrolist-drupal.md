@@ -54,7 +54,7 @@ Another feature of this module is allowing property managers to list and update 
 * Unit Type
 * Utilities Included
 
-***
+
 
 ## View details of a MetroList Development listing
 
@@ -118,7 +118,7 @@ This feature allows project managers throughout the state to submit new developm
 
 **Sales Force Connector** (Uses Sales Force module): docroot/modules/custom/bos\_content/modules/bos\_metrolist/src/MetroListSalesForceConnection.php
 
-***
+
 
 ## Provide data about Developments via JSON API to the Search and AMI Calculator JS WebApp
 
@@ -140,7 +140,7 @@ This feature used Views REST Export to create a simple JSON API for the MetroLis
 
 **Helper Functions** (Pre-process and alters): docroot/modules/custom/bos\_content/modules/bos\_metrolist/bos\_metrolist.module
 
-***
+
 
 ## AMI data tables
 
@@ -162,7 +162,7 @@ This feature uses a View to creat a couple of data tables that are then used on 
 
 **Helper Functions** (Pre-process and alters): docroot/modules/custom/bos\_content/modules/bos\_metrolist/bos\_metrolist.module
 
-***
+
 
 ## Auto-create and update Developments from Sales Force on CRON (5 minutes)
 

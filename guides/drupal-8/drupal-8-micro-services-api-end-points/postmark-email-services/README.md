@@ -10,11 +10,7 @@ Code for this service/endpoint is contained in the module `bos_email`.
 
 {% swagger method="post" path="/rest/email_token/create" baseUrl="" summary="Requests an email token." %}
 {% swagger-description %}
-Provides an email session token which must be supplied as a field when the form is submitted to the
-
-`rest/email_session`
-
- endpoints.
+Provides an email session token which must be supplied as a field when the form is submitted to the`rest/email_session` endpoints.
 {% endswagger-description %}
 
 {% swagger-response status="200: OK" description="Creates and saves a new session token." %}
@@ -145,7 +141,7 @@ or
 
 {% swagger method="post" path="/rest/email/{server}" baseUrl="" summary="[legacy] Send an email via PostMark (legacy)" %}
 {% swagger-description %}
-Use email_session for additional security.
+Use email\_session for additional security.
 {% endswagger-description %}
 
 {% swagger-response status="200: OK" description="" %}

@@ -1,12 +1,19 @@
 ---
 description: >-
   The code used to manage the single sign on process with Ping Federate is
-  simplesamphp.
+  SamlAuth.
 ---
 
-# SimpleSAMLPHP
+# SamlAuth
 
 ## Resources
 
-**SAML Libraries:** [simplesaml.php](http://www.simplesamlphp.org/)\
-**Drupal module**: [simplesamlphp\_auth](https://www.drupal.org/project/simplesamlphp\_auth)&#x20;
+### SAML Configuration:
+
+* **SAML:** /admin/config/people/saml
+* **Keys** /admin/config/system/keys
+
+### **Drupal Modules**
+
+* **SamlAuth:** [https://www.drupal.org/project/samlauth](https://www.drupal.org/project/samlauth)
+* **Keys:** [https://www.drupal.org/project/key](https://www.drupal.org/project/key)
