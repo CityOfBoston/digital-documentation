@@ -19,26 +19,25 @@ In the case of boston.gov the SP is Drupal, or more specifically the SamlAuth mo
 
 The [SamlAuth](https://www.drupal.org/project/samlauth) module ([config-UI here](https://content.boston.gov/admin/config/people/saml)) manages the communication with Ping (IDP) and exchanges SAML messages during a standard SAML process.
 
-The IDP is used only to authenticate the user and SamlAuth receives a SAML message back from Ping (IDP) containing the username, firstname, lastname and email only of the authenticated user.  If Authentication at Ping fails, the user cannot login to Drupal.
+The IDP is used only to authenticate the user and SamlAuth receives a SAML message back from Ping (IDP) containing the username (cn), firstname, lastname and email of the authenticated user.  If Authentication at Ping fails, the user cannot login to Drupal.
 
-* SamlAuth maps user accounts from Ping with user accounts in Drupal, where the `cn` in Ping equals the `username` in Drupal.  If no matching account exists, SamlAuth creates an account in Drupal, and assigns the `content_author`role.&#x20;
-* Security Groups in Ping are not reported to Drupal/SamlAuth, so no attempt is made to synchronize roles between Ping and Drupal.  Even though it is not done at this time, this can be simply implemented in the future. Therefore changes to user groups in Ping and Drupal are independent and never synchronized.
-* Drupal requires an email address to create an account. The email address does not need to be on the bostomn.gov domain, and it does not need to be unique.  Ping (actually the IAM authoritative record systems behind Ping) cannot guarantee to provide an email address, so SamlAuth has been modified to create a "fake" email address using the pattern `username@boston.gov`.
-
-SamlAuth requires an x509 security certificate to be issued from the IDP (Ping) in order to verify authenticity of the SAML response, and to decrypt the SAML message contents.  This x509 certificate is issued by IAM and is managed by the [Key](https://www.drupal.org/project/key) module.
+* SamlAuth maps user accounts from Ping with user accounts in Drupal, where the `cn` from Ping equals the `username` in Drupal.  If no matching account exists, SamlAuth automatically creates an account in Drupal, and assigns the `content_author`role.&#x20;
+* Security Groups in Ping are not reported to Drupal/SamlAuth, so no attempt is made to synchronize roles between Ping and Drupal.  Even though it is not done at this time, this can be simply implemented in the future. Therefore, changes to user groups in Ping and Drupal are independent and never synchronized.
+* Drupal requires an email address to create an account. The email address does not need to be on the boston.gov domain, and it does not need to be unique.  Ping (actually the IAM authoritative record systems behind Ping) cannot guarantee to provide an email address, so SamlAuth has been modified to create a "fake" email address using the pattern `username@boston.gov` when there is no email in the SAML response from Ping.
+* SamlAuth requires an x509 security certificate (issued from or by the IDP (Ping)) in order to verify authenticity of the SAML response, and to decrypt the SAML message contents.  This x509 certificate is created and distributed by IAM and is stored in environment variables and accessed by SamlAuth via the [Key](https://www.drupal.org/project/key) module.
 {% endhint %}
 
 {% hint style="info" %}
-There are 2 IDP metadata certificates one for prod and one for non-prod. &#x20;
+In COB, we usee 2 IDP providers - one for prod and one for all non-prod. &#x20;
 
-* The Prod metadata connects to sso.boston.gov.&#x20;
-* The Non-prod environments all connect to the IAM Test environment at sso-test.boston.gov.
+* The prod IDP provider is accessed via to sso.boston.gov.&#x20;
+* The non-prod IDP provider is the IAM test provider at sso-test.boston.gov.
 
 Boston.gov users typically use Access Boston to login to boston.gov (Drupal).&#x20;
 
-* The tile on Access Boston Production launches content.boston.gov&#x20;
-* The tile on Access Boston Test launches d8-stg.boston.gov.
-* To use SSO to login to any other environment, you need to use the saml link. For example:
+* The tile on Access Boston Production launches content.boston.gov (prod)
+* The tile on Access Boston Test launches d8-stg.boston.gov (stage).
+* To use SSO to login to any other Acquia environment, you cannot use Access Boston and need to use the saml/login link. For example:
   * Boston.gov dev => https://d8-dev.boston.gov/saml/login
   * Boston.gov UAT => https://d8-uat.boston.gov/saml/login
   * Boston.gov local => https://boston.lndo.site/saml/login
@@ -51,14 +50,14 @@ From time to time the IDP certificate will expire and need to be re-issued by th
 
 You should request the `IDP Metadata XML` from IAM. This info will come as a single file per environment - with the extension .xml. See the next box to work out which part of the metadata is the certificate.
 
-**For Acquia Environments**
+**For Acquia Environments:**
 
 1. Login to the Acquia Cloud Console
 2. Navigate to the environment you wish to update, and select the `variables`section
 3. Update the environment variable with the new certificate (cut and paste it over the existing entry) and save.
 4. **Note:** The change will be immediate on the environment.
 
-**For your Local Dev Environment**
+**For your Local Dev Environment:**
 
 Your local dev environment uses the IDP Metadata from the IAM Test environment.
 
